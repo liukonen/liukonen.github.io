@@ -22,8 +22,8 @@
     "SubTitle":"A riverscript based Javascript chatbot.",
     "Description":"Around 2002, 2003, I was interested in taking the chat bot out out of the standard container. I had an AIM source code project, which I tied with an MS agent, and TTS, with speach recognition, and I was talking to a bot, and it was responding. Few years later, and the AIM code cant connect, so I found AIML and the Alice project. 2016 hits, and at work, Im asked to present for MMAC Be The Spark tour, where my project, Sarra, tied her with Alice (and updated some of the scripts) as well as Microsoft cognitive services and presented a vocal chat bot that could detect and translate on the fly. Desided to take the AIML code and migrate it to RiverScript and make a bot out of it.",
     "image": "img/chat.webp",
-    "releaase": "https://liukonen.github.io/tictacmath/",
-    "source" : "https://github.com/liukonen/tictacmath"
+    "releaase": "https://liukonen.github.io/RiverScriptBot/",
+    "source" : "https://github.com/liukonen/RiverScriptBot"
   },
   {
     "Title":"NATS",
@@ -53,11 +53,52 @@
     "Title":"Simple Weather Tray",
     "SubTitle":"Something simple to tell you the weather",
     "Description":"This idea goes way back to my college days. I liked weathebug, but did not like the adware and spyware it was littered with. Code for this is based on weatherwallpaper, and the engine behind can be changed just like weatherwallpaper.",
-    "image": "img/weatherwallpaper.webp",
+    "image": "img/weather.webp",
     "releaase": "https://github.com/liukonen/SimpleWeatherTray/releases",
     "source" : "https://github.com/liukonen/SimpleWeatherTray"
+  },
+    {
+    "Title":"Desert Changer",
+    "SubTitle":"Something simple to tell you the weather",
+    "Description":"Simmilar to Weather Wallpaper, only without the need of external calls, this app will change your wallpaper throughout the day like Mac OS Mojave +.",
+    "image": "img/dchanger.webp",
+    "releaase": "https://github.com/liukonen/DesertChanger/releases",
+    "source" : "https://github.com/liukonen/DesertChanger"
+  },
+   
+        {
+    "Title":"PodLoad",
+    "SubTitle":"Download your favorite audio or video podcasts through RSS",
+    "Description":"written when RSS was still a major thing. I still pull video and audio podcasts using this app. App was more recently rewritten to support the .net core framework and has been confirmed to work on linux. ",
+    "image": "img/podcast.webp",
+    "releaase": "https://github.com/liukonen/Podload",
+    "source" : "https://github.com/liukonen/Podload"
+  },
+        {
+    "Title":"Dif",
+    "SubTitle":"useful tool with robocopy, to see what will move",
+    "Description":"This program was created out of a need to see what changes could happen if I ran a robocopy command between 2 directories. I was hoping at first that robocopy (command line application built into windows) had this functionality built in. While there a number of different ways to compare files, I chose to use the LastModifided timestamp of the file for distinction. ",
+    "image": "img/cmd.webp",
+    "releaase": "https://github.com/liukonen/Dif/releases",
+    "source" : "https://github.com/liukonen/Dif"
+  },
+            {
+    "Title":"Clipboard++",
+    "SubTitle":"Keep more then 1 item in your clipboard",
+    "Description":"written when RSS was still a major thing. I still pull video and audio podcasts using this app. App was more recently rewritten to support the .net core framework and has been confirmed to work on linux. ",
+    "image": "img/clip.webp",
+    "releaase": "https://github.com/liukonen/Clipboard-/releases",
+    "source" : "https://github.com/liukonen/Clipboard-"
+  },
+         {
+    "Title":"WinFrost",
+    "SubTitle":"a simple site-specific browser generator and browser",
+    "Description":"When I first got into the web, I always thought that there would be a time web pages would be full blown apps. Unfortunitly, projects like Mozilla Prism. Once that was discontinued. I worked on my own until Chomr had there own, in shortcuts. But even that is going away. I love the idea of Pepperments Ice SSB app, and attempted to make my own. Since Windows <> Linux though, Im dependent on Nuget updates, so I dont make release of the project, and leave it up to developers to get latest and compile it themselves.",
+    "image": "img/winfrost.webp",
+    "releaase": "https://github.com/liukonen/WinFrost",
+    "source" : "https://github.com/liukonen/WinFrost"
   }
-
-
+    
+    
   ]
 }
