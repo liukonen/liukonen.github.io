@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Luke Liukonen">
+    <title>Luke Liukonen</title>
+    <link href="./css/luke.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
+      integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">Welcome</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+      aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Resume</a>
+          </li>
+          <li>
+            <a class="nav-link" href="#"  data-toggle="modal" data-target=".bd-example-modal-lg">The 2020 Furlough Diaries</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main role="main">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container text-light">
+          <h1 class="display-3"><img src="img/me-bw.webp" class="rounded-circle user_img" /> Hello, world!</h1>
+          <p>Developer / Former Instructor / Tech enthusiast</p>
+          <p>Welcome to my personal github page.</p>
+          <a target="_blank" class="btn btn-primary btn-circle btn-sm" href="https://www.facebook.com/liukonen" role="button" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a target="_blank" class="btn btn-secondary btn-circle btn-sm" href="https://github.com/liukonen" role="button" aria-label="Github"><i class="fab fa-github-alt"></i></a>
+          <a target="_blank" class="btn btn-info btn-circle btn-sm" href="https://www.linkedin.com/in/lukeliukonen/" role="button" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a class="btn btn-danger btn-circle btn-sm" href="mailto:liukonen@gmail.com?subject=GitHub_Home_Page" role="button" aria-label="email"><i class="far fa-envelope"></i></a>
+        </div>
+      </div>
+
+      <div class="container" id="mainContainer">
+          <!-- START THE FEATURETTES -->
+          <hr class="featurette-divider">
+     </div><!-- /.container -->
+  </div> <!-- /container -->
+
+</main>
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="embed-responsive embed-responsive-4by3">
+  <iframe class="embed-responsive-item" src="https://liukonen.github.io/furlough/"></iframe>
+</div>
+    </div>
+  </div>
+</div>
+    <script id="itemTemplate" type="text/x-jQuery-tmpl">
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">${Title}
+            <span class="text-muted"> ${SubTitle}</span>
+          </h2>
+          <p class="lead">${Description}</p>
+          <a class="btn btn-primary" href="${releaase}" target="_blank">Release</a>
+          <a class="btn btn-secondary" href="${source}" target="_blank">source</a>
+          <p></p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-fluid mx-auto" src="${image}">
+        </div>
+      </div>
+      <hr class="featurette-divider">
+    </script>
+
+    <script id="itemTemplate2" type="text/x-jQuery-tmpl">
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading">${Title}
+              <span class="text-muted"> ${SubTitle}</span>
+            </h2>
+            <p class="lead">${Description}</p>
+            <a class="btn btn-primary" href="${releaase}" target="_blank">Release</a>
+            <a class="btn btn-secondary" href="${source}" target="_blank">source</a>
+            <p></p>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <img class="featurette-image img-fluid mx-auto" src="${image}">
+          </div>
+        </div>
+        <hr class="featurette-divider">
+      </script>
+
+<footer class="container">
+  <p>© Luke Liukonen 2020</p>
+</footer>
+<script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="js/jQuery.tmpl.js"></script>
+<script src="js/luke.js"></script>
+</body></html>

@@ -1,0 +1,60 @@
+
+body,html{
+    height: 100%;
+    margin: 0;
+  /*  background: #7F7FD5;
+   background: -webkit-linear-gradient(to right, yellow, #000, navy);
+    background: linear-gradient(to right, yellow, #000, navy);*/
+}
+
+.jumbotron {
+  background-image: url("../img/jumbotron.webp");
+  background-size: cover;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.user_img{
+    height: 90px;
+    width: 90px;
+    border:1.5px solid #f5f6fa;}
+
+
+.btn-circle.btn-sm {
+            width: 30px;
+            height: 30px;
+            //padding: 6px 0px;
+            border-radius: 50%;
+border:1.5px solid #f5f6fa;
+            //font-size: 8px;
+            text-align: center;
+        }
+        .btn-circle.btn-md {
+            width: 50px;
+            height: 50px;
+            //padding: 7px 10px;
+border-radius: 50%;border:1.5px solid #f5f6fa;
+            //font-size: 10px;
+            text-align: center;
+        }
+        .btn-circle.btn-xl {
+            width: 70px;
+            height: 70px;
+          //  padding: 10px 16px;
+border-radius: 50%;border:1.5px solid #f5f6fa;
+            //font-size: 12px;
+            text-align: center;
+        }
