@@ -15,11 +15,7 @@
   <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <a class="navbar-brand" href="#">Welcome</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
-      aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
@@ -27,11 +23,17 @@
           <li class="nav-item">
             <a class="nav-link" href="#" data-toggle="modal" data-target=".resumeModal">Resume</a>
           </li>
-          <li>
-            <a class="nav-link" href="#"  data-toggle="modal" data-target=".bd-example-modal-lg">The 2020 Furlough Diaries</a>
-          </li>
+
+         <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 The 2020 Furlough Diaries
+               </a>
+               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="FD2020">
+               </ul>
+             </li>
+
+
         </ul>
-      </div>
     </nav>
 
     <main role="main">
@@ -56,11 +58,13 @@
   </div> <!-- /container -->
 
 </main>
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+
+
+<div class="modal fade dynamicModal" tabindex="-1" role="dialog" aria-labelledby="diary" aria-hidden="true" id="dynamicModal">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="embed-responsive embed-responsive-4by3">
-  <iframe class="embed-responsive-item" src="https://liukonen.github.io/furlough/"></iframe>
+  <iframe class="embed-responsive-item" src=""></iframe>
 </div>
     </div>
   </div>
