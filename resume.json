@@ -1,1 +1,373 @@
-{"basics":{"name":"Luke Liukonen","picture":"https://avatars2.githubusercontent.com/u/28105142?v=4","label":"Software Analyst | Mid to Senior level Software Engineer |  Trisept Solutions","headline":".net Full Stack Software Developer / Analyst  since 2006 |\r\nInstructor, ITT Tech (2008, 2010) \r\n| BBA Management Information Systems","summary":"Developing powerful and dynamic applications, using some of the latest technologies, that are stable, reliable and productive.","website":"https://liukonen.github.io/","blog":null,"yearsOfExperience":14,"id":"2efdea59-3fcd-4153-a84d-9a182d40ce1d","username":"liukonen","karma":10,"email":"liukonen@gmail.com","region":"Milwaukee Wi","location":{},"phone":null,"followers":2,"following":3,"profiles":[{"network":"gitconnected","username":"liukonen","url":"https://gitconnected.com/liukonen"},{"network":"GitHub","username":"liukonen","url":"https://github.com/liukonen"},{"network":"LinkedIn","url":"https://www.linkedin.com/in/lukeliukonen","username":"lukeliukonen"},{"network":"Facebook","url":"https://www.facebook.com/liukonen","username":"liukonen"}]},"skills":[{"name":"C#","level":"Expert","rating":5,"yearsOfExperience":14,"keywords":[]},{"name":"VB.Net","level":"Expert","rating":5,"yearsOfExperience":14,"keywords":[]},{"name":"ASP.Net","level":"Advanced","rating":4,"yearsOfExperience":14,"keywords":[]},{"name":"SQL","level":"Advanced","rating":4,"yearsOfExperience":14,"keywords":[]},{"name":"Windows Communication Foundation (WCF) services","level":"Intermediate","rating":3,"yearsOfExperience":13,"keywords":[]},{"name":"Cognitive and AI services","level":"Intermediate","rating":3,"yearsOfExperience":4,"keywords":[]},{"name":"Bots and the MS Bot Framework","level":"Intermediate","rating":3,"yearsOfExperience":4,"keywords":[]},{"name":"Development using Object Oriented and Service Oriented (SOA) development","level":"Expert","rating":5,"yearsOfExperience":14,"keywords":[]},{"name":"Agile Development frameworks such as Scrum and Kanban","level":"Intermediate","rating":3,"yearsOfExperience":3,"keywords":[]},{"name":"OWASP top 10 certified","level":"Intermediate","rating":3,"yearsOfExperience":7,"keywords":[]},{"name":"N-Tier software architecture design","level":"Intermediate","rating":3,"yearsOfExperience":14,"keywords":[]},{"name":"Database design and development","level":"Intermediate","rating":3,"yearsOfExperience":14,"keywords":[]},{"name":"Javascript and Jquery experience","level":"Intermediate","rating":3,"yearsOfExperience":14,"keywords":[]},{"name":"development and consumption of Microservices ","level":"Intermediate","rating":3,"yearsOfExperience":14,"keywords":[]},{"name":"Python","level":"Beginner","rating":2,"yearsOfExperience":1,"keywords":[]}],"projects":[{"name":"nats","displayName":"nats","summary":"Not Another Text Scanner","website":"","githubUrl":"https://github.com/liukonen/nats","primaryLanguage":"C#","languages":["Smalltalk","C#"],"libraries":[],"images":[],"videos":[]},{"name":"riverscriptbot","displayName":"RiverScriptBot","summary":"A riverscript based Javascript chatbot","website":"","githubUrl":"https://github.com/liukonen/RiverScriptBot","primaryLanguage":"","languages":[],"libraries":[],"images":[],"videos":[]},{"name":"tictacmath","displayName":"tictacmath","summary":"Tic tac math is a tic tac toe game that involves playing against the PC and math equations","website":"","githubUrl":"https://github.com/liukonen/tictacmath","primaryLanguage":"Visual Basic .NET","languages":["Visual Basic .NET"],"libraries":[],"images":[],"videos":[]},{"name":"weatherwallpaper","displayName":"WeatherWallpaper","summary":"Changes your wallpaper based on the weather conditions outside","website":"","githubUrl":"https://github.com/liukonen/WeatherWallpaper","primaryLanguage":"C#","languages":["Smalltalk","C#","Visual Basic"],"libraries":[],"images":[],"videos":[]},{"name":"htmltexteditor","displayName":"htmlTextEditor","summary":"a more advanced text editor developed from the need to have mini applications do custom work","website":"","githubUrl":"https://github.com/liukonen/htmlTextEditor","primaryLanguage":"JavaScript","languages":["HTML","JavaScript"],"libraries":[],"images":[],"videos":[]}],"work":[{"company":"Trisept Solutions","position":"Application Software Analyst (Mid to Senior level Software Engineer equiv)","website":"triseptsolutions.com","location":"Milwaukee WI","summary":" continuation from Blue7, my first 3 years were maintaining and being the development lead for the product support area of the company.\n\nCurrently working on the backend system (Avail, packaging, booking) engine of the system. This is a Full stack position.\n\nOther tasks I've also taken on include writing setup materials / documentation, consulted in system analysis tasks on system performance and monitoring, and mentored both new developers, and junior developers in our system.","isCurrentRole":true,"startDate":"2014-04-01","endDate":"","start":{"year":2014,"month":4},"end":{},"highlights":["2014 - 2017 lead developer for the break-fix team. This involves knowledge of Trisept's entire system, debugging and resolving issues in the code base, and assisting in managing the company's off shore resources when needed.","2014-2019 - Active in a number of sub committees involving boosting company moral and wellness initiatives","2017, and 2018 \"COSBE be the spark\" Trisept representative: Helped organize Trisept presentation and vision. Demonstrated what roles and responsibilities Developers have, and showcased 2 custom applications that students could interact with involving real-time voice translation with AI","2017, Worked with Microsoft's Chicago offices and representatives, focusing on Azure deployment, bot technologies, cognitive services , and natural language processing including involvement in a hands on learning session Hackathon in developing a custom chat-bot."]},{"company":"Blue7 Solutions","position":"Software Engineer","website":"","location":"Milwaukee Wi","summary":"Blue7 Solutions LLC, a Joint Venture between Blue Star Infotech America Inc. and Trisept Solutions, leverages the extensive technology and solutions experience of both companies to solve business problems of modern day enterprises and software product companies.\n\n\nHalf of my role was working with Trisept solutions to develop and maintain the companies dynamic packaging engine which bundled vacation packages together based on preset rules, and there booking engine which then booked the vacation packages.\n\nThe second half of my role was to be the Development lead for the Product Support team, which involves knowledge of Trisept's entire system, debugging and resolving issues in the code base, and managing the company's off shore resources when needed.","isCurrentRole":false,"startDate":"2012-01-01","endDate":"2014-04-01","start":{"year":2012,"month":1},"end":{"year":2014,"month":4},"highlights":["participated in the companies wellness and event planing team, which focused on organizing events, participating in community outreach and promoting the company."]},{"company":"Trisept Solutions","position":"Software Developer","website":"triseptsolutions.com","location":"Milwaukee Wi","summary":"Developed and maintained the companies dynamic packaging engine which bundled vacation packages together based on preset rules, and there booking engine which then booked the vacation packages.\nLead Developer for companies vendor and supplier based web interface, \"Solutions by Trisept\".\nManaged migration from the 2.0 .Net framework to 4.0, and upgrading solutions to Visual studio 2010.\nDeveloped WCF services built on the .net framework.\nWorked with offshore development team.\nDeveloped one off Windows Services.\nOWASP Top 10 certified for PCI compliance.\nDevelop and work on multiple levels of an n-tier architecture.\nInvestigated new technologies to implement and integrate into existing code-bases.\n\nTechnologies that interacted with at a given time included, C#, VB.net, SQL, XML, javascript and ASP.net","isCurrentRole":false,"startDate":"2006-05-01","endDate":"2012-01-01","start":{"year":2006,"month":5},"end":{"year":2012,"month":1},"highlights":[]},{"company":"ITT Technical Institute","position":"Adjunct Instructor","website":"","location":"Greenfield Wi","summary":"taught an overview of the computing field and computer technology trends with emphasis on terminology and concepts related to PC hardware and software components and their functions from a hands-on approach. Entry-level hands-on skills as well as theory in handling PC hardware were taught.","isCurrentRole":false,"startDate":"2010-05-01","endDate":"2010-09-01","start":{"year":2010,"month":5},"end":{"year":2010,"month":9},"highlights":[]},{"company":"ITT Technical Institute","position":"Adjunct Instructor","website":"","location":"Greenfield Wi","summary":"The course served as a foundation for understanding the logical function and process of computer programming in a given language environment. Basic computer programming knowledge and skills in logic and syntax were covered. Coding convention and procedures were discussed relevant to the given programming language environment.","isCurrentRole":false,"startDate":"2008-05-01","endDate":"2008-09-01","start":{"year":2008,"month":5},"end":{"year":2008,"month":9},"highlights":[]},{"company":"University of Wisconsin, Milwaukee","position":"Teaching Assistant ","website":"https://UWM.EDU","location":"Milwaukee WI","summary":"TA - BusAdm 531 Web Application Development - Marc Haines\n\nDeveloping n-tier systems with Web Services and the Internet, using visual languages such as Visual Basic Script and C# and the SOAP and XML protocols","isCurrentRole":false,"startDate":"2006-01-01","endDate":"2006-05-01","start":{"year":2006,"month":1},"end":{"year":2006,"month":5},"highlights":[]}],"publications":[],"education":[{"institution":"University of Wisconsin, Milwaukee","area":"Business - Management Information Systems","studyType":"Bachelor of Business Administration","startDate":"2002-09-01","endDate":"2006-05-01","start":{"year":2002,"month":9},"end":{"year":2006,"month":5},"description":"","activities":"","gpa":"","courses":[]}],"volunteer":[],"awards":[],"languages":[],"interests":[],"references":[]}
+{
+	"basics": {
+		"name": "Luke Liukonen",
+		"picture": "https://avatars2.githubusercontent.com/u/28105142?v=4",
+		"label": "Software Analyst | Mid to Senior level Software Engineer |  Trisept Solutions",
+		"headline": ".net Full Stack Software Developer / Analyst  since 2006 |\r\nInstructor, ITT Tech (2008, 2010) \r\n| BBA Management Information Systems",
+		"summary": "Developing powerful and dynamic applications, using some of the latest technologies, that are stable, reliable and productive.",
+		"website": "https://liukonen.github.io/",
+		"blog": null,
+		"yearsOfExperience": 14,
+		"id": "2efdea59-3fcd-4153-a84d-9a182d40ce1d",
+		"username": "liukonen",
+		"karma": 12,
+		"email": "liukonen@gmail.com",
+		"region": "Milwaukee Wi",
+		"location": {},
+		"phone": "414 810-6465",
+		"followers": 2,
+		"following": 3,
+		"profiles": [
+			{
+				"network": "gitconnected",
+				"username": "liukonen",
+				"url": "https://gitconnected.com/liukonen"
+			},
+			{
+				"network": "GitHub",
+				"username": "liukonen",
+				"url": "https://github.com/liukonen"
+			},
+			{
+				"network": "LinkedIn",
+				"url": "https://www.linkedin.com/in/lukeliukonen",
+				"username": "lukeliukonen"
+			},
+			{
+				"network": "Facebook",
+				"url": "https://www.facebook.com/liukonen",
+				"username": "liukonen"
+			}
+		]
+	},
+	"skills": [
+		{
+			"name": "C#",
+			"level": "Expert",
+			"rating": 5,
+			"yearsOfExperience": 14,
+			"keywords": []
+		},
+		{
+			"name": "VB.Net",
+			"level": "Expert",
+			"rating": 5,
+			"yearsOfExperience": 14,
+			"keywords": []
+		},
+		{
+			"name": "ASP.Net",
+			"level": "Advanced",
+			"rating": 4,
+			"yearsOfExperience": 14,
+			"keywords": []
+		},
+		{
+			"name": "Microsoft SQL Server (Design and Development)",
+			"level": "Advanced",
+			"rating": 4,
+			"yearsOfExperience": 14,
+			"keywords": []
+		},
+		{
+			"name": "Windows Communication Foundation services",
+			"level": "Intermediate",
+			"rating": 3,
+			"yearsOfExperience": 13,
+			"keywords": []
+		},
+		{
+			"name": "Microsoft Cognitive and AI services",
+			"level": "Intermediate",
+			"rating": 3,
+			"yearsOfExperience": 4,
+			"keywords": []
+		},
+		{
+			"name": "Chat Bots and the MS Bot Framework",
+			"level": "Intermediate",
+			"rating": 3,
+			"yearsOfExperience": 4,
+			"keywords": []
+		},
+		{
+			"name": "Agile - Scrum and Kanban",
+			"level": "Intermediate",
+			"rating": 3,
+			"yearsOfExperience": 3,
+			"keywords": []
+		},
+		{
+			"name": "OWASP top 10 Cert, and PCI compliance trained",
+			"level": "Intermediate",
+			"rating": 3,
+			"yearsOfExperience": 7,
+			"keywords": []
+		},
+		{
+			"name": "N-Tier software architecture design",
+			"level": "Intermediate",
+			"rating": 3,
+			"yearsOfExperience": 14,
+			"keywords": []
+		},
+		{
+			"name": "Javascript and Jquery",
+			"level": "Intermediate",
+			"rating": 3,
+			"yearsOfExperience": 14,
+			"keywords": []
+		},
+		{
+			"name": "Python",
+			"level": "Beginner",
+			"rating": 2,
+			"yearsOfExperience": 1,
+			"keywords": []
+		}
+	],
+	"projects": [
+		{
+			"name": "nats",
+			"displayName": "nats",
+			"summary": "Not Another Text Scanner",
+			"website": "",
+			"githubUrl": "https://github.com/liukonen/nats",
+			"primaryLanguage": "C#",
+			"languages": [
+				"Smalltalk",
+				"C#"
+			],
+			"libraries": [],
+			"images": [],
+			"videos": []
+		},
+		{
+			"name": "riverscriptbot",
+			"displayName": "RiverScriptBot",
+			"summary": "A riverscript based Javascript chatbot",
+			"website": "",
+			"githubUrl": "https://github.com/liukonen/RiverScriptBot",
+			"primaryLanguage": "",
+			"languages": [],
+			"libraries": [],
+			"images": [],
+			"videos": []
+		},
+		{
+			"name": "tictacmath",
+			"displayName": "tictacmath",
+			"summary": "Tic tac math is a tic tac toe game that involves playing against the PC and math equations",
+			"website": "",
+			"githubUrl": "https://github.com/liukonen/tictacmath",
+			"primaryLanguage": "Visual Basic .NET",
+			"languages": [
+				"Visual Basic .NET"
+			],
+			"libraries": [],
+			"images": [],
+			"videos": []
+		},
+		{
+			"name": "weatherwallpaper",
+			"displayName": "WeatherWallpaper",
+			"summary": "Changes your wallpaper based on the weather conditions outside",
+			"website": "",
+			"githubUrl": "https://github.com/liukonen/WeatherWallpaper",
+			"primaryLanguage": "C#",
+			"languages": [
+				"Smalltalk",
+				"C#",
+				"Visual Basic"
+			],
+			"libraries": [],
+			"images": [],
+			"videos": []
+		},
+		{
+			"name": "htmltexteditor",
+			"displayName": "htmlTextEditor",
+			"summary": "a more advanced text editor developed from the need to have mini applications do custom work",
+			"website": "",
+			"githubUrl": "https://github.com/liukonen/htmlTextEditor",
+			"primaryLanguage": "JavaScript",
+			"languages": [
+				"HTML",
+				"JavaScript"
+			],
+			"libraries": [],
+			"images": [],
+			"videos": []
+		}
+	],
+	"work": [
+		{
+			"company": "Trisept Solutions",
+			"position": "Application Software Analyst (Mid to Senior level Software Engineer equiv)",
+			"website": "http://triseptsolutions.com",
+			"location": "Milwaukee WI",
+			"summary": "First 3 years were maintaining and being the development lead for the product support area of the company. Current roll is working on a team focused the backend system (Avail, packaging, booking) engine of the system. This is a Full stack position. Other tasks I've also taken on include writing setup materials / documentation, consulted in system analysis tasks on system performance and monitoring, and mentored both new developers, and junior developers in our system.",
+			"isCurrentRole": true,
+			"startDate": "2014-04-01",
+			"endDate": "",
+			"start": {
+				"year": 2014,
+				"month": 4
+			},
+			"end": {},
+			"highlights": [
+				"2014 - 2017 lead developer for the break-fix team. This involves knowledge of Trisept's entire system, debugging and resolving issues in the code base, and assisting in managing the company's off shore resources when needed.",
+				"2014-2019 - Active in a number of sub committees involving boosting company moral and wellness initiatives",
+				"2017, and 2018 \"COSBE be the spark\" Trisept representative: Helped organize Trisept presentation and vision. Demonstrated what roles and responsibilities Developers have, and showcased 2 custom applications that students could interact with involving real-time voice translation with AI",
+				"2017, Worked with Microsoft's Chicago offices and representatives, focusing on Azure deployment, bot technologies, cognitive services , and natural language processing including involvement in a hands on learning session Hackathon in developing a custom chat-bot."
+			]
+		},
+		{
+			"company": "Blue7 Solutions",
+			"position": "Software Engineer",
+			"website": "",
+			"location": "Milwaukee Wi",
+			"summary": "Blue7 Solutions LLC, a Joint Venture between Blue Star Infotech America Inc. and Trisept Solutions, leverages the extensive technology and solutions experience of both companies to solve business problems of modern day enterprises and software product companies. Half of my role was working with Trisept solutions to develop and maintain the companies dynamic packaging engine which bundled vacation packages together based on preset rules, and there booking engine which then booked the vacation packages. The second half of my role was to be the Development lead for the Product Support team, which involves knowledge of Trisept's entire system, debugging and resolving issues in the code base, and managing the company's off shore resources when needed.",
+			"isCurrentRole": false,
+			"startDate": "2012-01-01",
+			"endDate": "2014-04-01",
+			"start": {
+				"year": 2012,
+				"month": 1
+			},
+			"end": {
+				"year": 2014,
+				"month": 4
+			},
+			"highlights": [
+				"Lead Developer and Engineer on Product Support team",
+				"participated in the companies wellness and event planing team, which focused on organizing events, participating in community outreach and promoting the company.",
+				"Consulting role. Had to maintain hours and keep projects within thresholds of hourly constraints"
+			]
+		},
+		{
+			"company": "Trisept Solutions",
+			"position": "Software Developer",
+			"website": "http://triseptsolutions.com",
+			"location": "Milwaukee Wi",
+			"summary": "Developed and maintained the companies dynamic packaging engine which bundled vacation packages together based on preset rules, and there booking engine which then booked the vacation packages.\nTechnologies that interacted with at a given time included, C#, VB.net, SQL, XML, javascript and ASP.net",
+			"isCurrentRole": false,
+			"startDate": "2006-05-01",
+			"endDate": "2012-01-01",
+			"start": {
+				"year": 2006,
+				"month": 5
+			},
+			"end": {
+				"year": 2012,
+				"month": 1
+			},
+			"highlights": [
+				"Lead Developer for companies vendor and supplier based web interface, \"Solutions by Trisept\".",
+				"Developed WCF services built on the .net framework.",
+				"Technical lead on migration from the 2.0 .Net framework to 4.0, and upgrading solutions to Visual studio 2010.",
+				"Worked with offshore development team.",
+				"Developed one off Windows Services.",
+				"OWASP Top 10 certified for PCI compliance.",
+				"Investigated new technologies to implement and integrate into existing code-bases."
+			]
+		},
+		{
+			"company": "ITT Technical Institute",
+			"position": "Adjunct Instructor",
+			"website": "",
+			"location": "Greenfield Wi",
+			"summary": "taught an overview of the computing field and computer technology trends with emphasis on terminology and concepts related to PC hardware and software components and their functions from a hands-on approach. Entry-level hands-on skills as well as theory in handling PC hardware were taught.",
+			"isCurrentRole": false,
+			"startDate": "2010-05-01",
+			"endDate": "2010-09-01",
+			"start": {
+				"year": 2010,
+				"month": 5
+			},
+			"end": {
+				"year": 2010,
+				"month": 9
+			},
+			"highlights": [
+				"Presented course material in a concise manner that encouraged applied knowledge of theory to real world settings.\n\t\t",
+				"Demonstrated hardware repair methods and troubleshooting through interactive detailed lessons.",
+				"Administered and corrected examinations and home work assignements.",
+				"Maintained and kept office hours outside of normal work hours.",
+				"Class ranged from 20-30 students",
+				"Reported info directly to the Dean of the department."
+			]
+		},
+		{
+			"company": "ITT Technical Institute",
+			"position": "Adjunct Instructor",
+			"website": "",
+			"location": "Greenfield Wi",
+			"summary": "The course served as a foundation for understanding the logical function and process of computer programming in a given language environment. Basic computer programming knowledge and skills in logic and syntax were covered. Coding convention and procedures were discussed relevant to the given programming language environment.",
+			"isCurrentRole": false,
+			"startDate": "2008-05-01",
+			"endDate": "2008-09-01",
+			"start": {
+				"year": 2008,
+				"month": 5
+			},
+			"end": {
+				"year": 2008,
+				"month": 9
+			},
+			"highlights": [
+				"Presented course material in a concise manner that encouraged applied knowledge of theory to real world settings.",
+				"Administered and corrected examinations and home work assignements.",
+				"Maintained and kept office hours outside of normal work hours.",
+				"Class ranged from 20-30 students.",
+				"reported info directly to the Dean of the department."
+			]
+		},
+		{
+			"company": "University of Wisconsin, Milwaukee",
+			"position": "Teaching Assistant ",
+			"website": "https://UWM.EDU",
+			"location": "Milwaukee WI",
+			"summary": "TA - BusAdm 531 Web Application Development - Marc Haines\n\nDeveloping n-tier systems with Web Services and the Internet, using visual languages such as Visual Basic Script and C# and the SOAP and XML protocols",
+			"isCurrentRole": false,
+			"startDate": "2006-01-01",
+			"endDate": "2006-05-01",
+			"start": {
+				"year": 2006,
+				"month": 1
+			},
+			"end": {
+				"year": 2006,
+				"month": 5
+			},
+			"highlights": []
+		}
+	],
+	"publications": [],
+	"education": [
+		{
+			"institution": "University of Wisconsin, Milwaukee",
+			"area": "Management Information Systems",
+			"studyType": "Bachelor of Business Administration",
+			"startDate": "2002-09-01",
+			"endDate": "2006-05-01",
+			"start": {
+				"year": 2002,
+				"month": 9
+			},
+			"end": {
+				"year": 2006,
+				"month": 5
+			},
+			"description": "",
+			"activities": "",
+			"gpa": "",
+			"courses": []
+		}
+	],
+	"volunteer": [],
+	"awards": [],
+	"languages": [],
+	"interests": [],
+	"references": []
+}
