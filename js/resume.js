@@ -129,5 +129,3 @@ function parseWorkDate(strDate){
 }
 
 generateResume();
-console.log("pre hit");
-GenerateDiary();

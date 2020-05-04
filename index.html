@@ -51,6 +51,42 @@
       <div class="container" id="mainContainer">
           <!-- START THE FEATURETTES -->
           <hr class="featurette-divider">
+          <!--Object Item Template-->
+          <script id="itemTemplate" type="text/x-jQuery-tmpl">
+            <div class="row featurette">
+              <div class="col-md-7">
+                <h2 class="featurette-heading">${Title}
+                  <span class="text-muted"> ${SubTitle}</span>
+                </h2>
+                <p class="lead">${Description}</p>
+                <a class="btn btn-primary" href="${releaase}" target="_blank">Release</a>
+                <a class="btn btn-secondary" href="${source}" target="_blank">source</a>
+                <p></p>
+              </div>
+              <div class="col-md-5">
+                <img class="featurette-image img-fluid mx-auto" src="${image}">
+              </div>
+            </div>
+            <hr class="featurette-divider">
+          </script>
+          <!--Object Item Inverted template (to flip the control on every other item)-->
+          <script id="itemTemplate2" type="text/x-jQuery-tmpl">
+              <div class="row featurette">
+                <div class="col-md-7 order-md-2">
+                  <h2 class="featurette-heading">${Title}
+                    <span class="text-muted"> ${SubTitle}</span>
+                  </h2>
+                  <p class="lead">${Description}</p>
+                  <a class="btn btn-primary" href="${releaase}" target="_blank">Release</a>
+                  <a class="btn btn-secondary" href="${source}" target="_blank">source</a>
+                  <p></p>
+                </div>
+                <div class="col-md-5 order-md-1">
+                  <img class="featurette-image img-fluid mx-auto" src="${image}">
+                </div>
+              </div>
+              <hr class="featurette-divider">
+            </script>
       </div><!-- /.container -->
     </main>
     <div class="modal fade dynamicModal" id="dynamicModal" data-backdrop="static" tabindex="-1" role="dialog"
@@ -77,51 +113,13 @@
         </div>
       </div>
     </div>
-    <!--Start Javascript Templates-->
-
-    <!--Object Item Template-->
-    <script id="itemTemplate" type="text/x-jQuery-tmpl">
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">${Title}
-            <span class="text-muted"> ${SubTitle}</span>
-          </h2>
-          <p class="lead">${Description}</p>
-          <a class="btn btn-primary" href="${releaase}" target="_blank">Release</a>
-          <a class="btn btn-secondary" href="${source}" target="_blank">source</a>
-          <p></p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-fluid mx-auto" src="${image}">
-        </div>
-      </div>
-      <hr class="featurette-divider">
-    </script>
-    <!--Object Item Inverted template (to flip the control on every other item)-->
-    <script id="itemTemplate2" type="text/x-jQuery-tmpl">
-        <div class="row featurette">
-          <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading">${Title}
-              <span class="text-muted"> ${SubTitle}</span>
-            </h2>
-            <p class="lead">${Description}</p>
-            <a class="btn btn-primary" href="${releaase}" target="_blank">Release</a>
-            <a class="btn btn-secondary" href="${source}" target="_blank">source</a>
-            <p></p>
-          </div>
-          <div class="col-md-5 order-md-1">
-            <img class="featurette-image img-fluid mx-auto" src="${image}">
-          </div>
-        </div>
-        <hr class="featurette-divider">
-      </script>
-
 <footer class="container">
   <p>© Luke Liukonen 2020</p>
 </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" integrity="sha256-0rguYS0qgS6L4qVzANq4kjxPLtvnp5nn2nB5G1lWRv4=" crossorigin="anonymous"></script>
 <script src="js/jquery.tmpl.js"></script>
 <script src="js/base.js"></script>
 <script src="js/luke.js"></script>

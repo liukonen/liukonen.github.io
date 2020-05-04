@@ -39,18 +39,57 @@
     </nav>
     <main role="main" class="container">
       <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-dark rounded shadow-sm" id="HeaderItem">
+        <!--Header Template (fill out Name and Image dynamicly)-->
+        <script id="headerTemp" type="text/x-jQuery-tmpl">
+          <img src="${picture}"  width="50" height="50" style="filter:grayscale(100%)" />
+          <div class="lh-100">
+            <h1 class="mb-0 text-white lh-100"> ${name}</h1>
+          </div>
+        </script>
       </div>
       <div class="row">
         <div class="col-md-4">
           <div class="my-3 p-3 bg-white rounded shadow-sm" id="BasicItems">
             <h1 class=" h6 border-bottom border-gray pb-2 mb-0">Basics</h1>
+            <!--Basic Info Template-->
+            <script id="basicsTemp" type="text/x-jQuery-tmpl">
+              <div>
+                <ul class="list-group">
+                  <li class="list-group-item"><i class="fas fa-mobile-alt"></i> Telephone - <a href="tel:${phone}">${phone}</a></li>
+                  <li class="list-group-item"><i class="fas fa-envelope-square"></i> Email - <a href="mailto:${email}">${email}</a></li>
+                  <li class="list-group-item"><i class="fas fa-map-marker-alt"></i> Region - ${region}</li>
+                </ul>
+              </div>
+            </script>
+            <!--Bast Info SubGroup - Media Items-->
+            <script id="basicsMediaTemp" type="text/x-jQuery-tmpl">
+              <li class="list-group-item"><i class="${getIconSM(network)}"></i> ${network} - <a href="${url}" target="_blank">${username}</a>
+            </script>
           </div>
           <div class="my-3 p-3 bg-white rounded shadow-sm" id="">
             <h1 class=" h6 border-bottom border-gray pb-2 mb-0">Skills</h1>
-            <ul id="SkillItems" class="list-group"></ul>
+            <ul id="SkillItems" class="list-group">
+              <!--Skills Template (fills out uL item)-->
+              <script id="skillsTemp" type="text/x-jQuery-tmpl">
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div><img src="/img/${getImg(name)}.webp" height="16" width="16" alt="${name} image" />  ${getImage(name)} ${name}</div>
+                <span class="badge badge-dark badge-pill" title="${level} [${yearsOfExperience} years experence]">${level}</span>
+              </li>
+              </script>
+            </ul>
           </div>
           <div class="my-3 p-3 bg-white rounded shadow-sm" id="EduItems">
             <h1 class=" h6 border-bottom border-gray pb-2 mb-0">Education</h1>
+            <!--Education Template-->
+            <script id="eduTemp" type="text/x-jQuery-tmpl">
+              <div>
+                <img src="img/${institution}.webp" width="32" height="32" alt="${institution}" class="left"><br />
+                <span class="lead">${area}</span><br/>
+                <span class="text-muted">${studyType}</span><br/>
+                <span class="lead">${institution}</span><br/>
+                <span class="text-muted">${parseWorkDate(startDate)} - ${parseWorkDate(endDate)}</span>
+              </div>
+            </script>
           </div>
         </div>
         <div class="col">
@@ -60,10 +99,23 @@
           </div>
           <div class="my-3 p-3 bg-white rounded shadow-sm" id="ExperenceItems">
             <h1 class=" h6 border-bottom border-gray pb-2 mb-0">Professional Experience</h1>
+            <!--Work Experence Template-->
+            <script id="experenceTemp" type="text/x-jQuery-tmpl">
+              <div class="media text-muted pt-3 lh-125 border-bottom border-gray">
+                <img class="" width="32" height="32" src="img/${company}.webp" alt="${company}" />
+                <div class="col">
+                  <strong class="d-block"><a href="${website}">${company}</a></strong> - ${location}<br />
+                  <small class="text-muted">${position} - ${parseWorkDate(startDate)} - ${parseWorkDate(endDate)}</small>
+                  <p class="media-body pb-3 mb-0"> ${summary}<ul></ul></p></div>
+              </div>
+            </script>
           </div>
         </div>
       </div>
     </main>
+    <footer class="container">
+      <p>© Luke Liukonen 2020</p>
+    </footer>
     <div class="modal fade dynamicModal" id="dynamicModal" data-backdrop="static" tabindex="-1" role="dialog"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog  modal-lg modal-dialog-scrollable" role="document">
@@ -88,65 +140,10 @@
         </div>
       </div>
     </div>
-
-<!--Start Javascript Templates-->
-
-<!--Basic Info Template-->
-<script id="basicsTemp" type="text/x-jQuery-tmpl">
-  <div>
-    <ul class="list-group">
-      <li class="list-group-item"><i class="fas fa-mobile-alt"></i> Telephone - <a href="tel:${phone}">${phone}</a></li>
-      <li class="list-group-item"><i class="fas fa-envelope-square"></i> Email - <a href="mailto:${email}">${email}</a></li>
-      <li class="list-group-item"><i class="fas fa-map-marker-alt"></i> Region - ${region}</li>
-    </ul>
-  </div>
-</script>
-<!--Bast Info SubGroup - Media Items-->
-<script id="basicsMediaTemp" type="text/x-jQuery-tmpl">
-  <li class="list-group-item"><i class="${getIconSM(network)}"></i> ${network} - <a href="${url}" target="_blank">${username}</a>
-</script>
-
-<!--Education Template-->
-<script id="eduTemp" type="text/x-jQuery-tmpl">
-  <div>
-    <img src="img/${institution}.webp" width="32" height="32" alt="${institution}" class="left"><br />
-    <span class="lead">${area}</span><br/>
-    <span class="text-muted">${studyType}</span><br/>
-    <span class="lead">${institution}</span><br/>
-    <span class="text-muted">${parseWorkDate(startDate)} - ${parseWorkDate(endDate)}</span>
-  </div>
-</script>
-
-<!--Header Template (fill out Name and Image dynamicly)-->
-<script id="headerTemp" type="text/x-jQuery-tmpl">
-  <img src="${picture}"  width="50" height="50" style="filter:grayscale(100%)" />
-  <div class="lh-100">
-    <h1 class="mb-0 text-white lh-100"> ${name}</h1>
-  </div>
-</script>
-
-<!--Work Experence Template-->
-<script id="experenceTemp" type="text/x-jQuery-tmpl">
-  <div class="media text-muted pt-3 lh-125 border-bottom border-gray">
-    <img class="" width="32" height="32" src="img/${company}.webp" alt="${company}" />
-    <div class="col">
-      <strong class="d-block"><a href="${website}">${company}</a></strong> - ${location}<br />
-      <small class="text-muted">${position} - ${parseWorkDate(startDate)} - ${parseWorkDate(endDate)}</small>
-      <p class="media-body pb-3 mb-0"> ${summary}<ul></ul></p></div>
-  </div>
-</script>
-
-<!--Skills Template (fills out uL item)-->
-<script id="skillsTemp" type="text/x-jQuery-tmpl">
-<li class="list-group-item d-flex justify-content-between align-items-center">
-  <div><img src="/img/${getImg(name)}.webp" height="16" width="16" alt="${name} image" />  ${getImage(name)} ${name}</div>
-  <span class="badge badge-dark badge-pill" title="${level} [${yearsOfExperience} years experence]">${level}</span>
-</li>
-</script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" integrity="sha256-0rguYS0qgS6L4qVzANq4kjxPLtvnp5nn2nB5G1lWRv4=" crossorigin="anonymous"></script>
 <script src="js/jquery.tmpl.js"></script>
 <script src="js/base.js"></script>
 <script src="js/resume.js"></script>
