@@ -53,42 +53,53 @@ function BuildEdu(eduItems){
 
 }
 function BuildSkills(skillsItems){
-  let parent = document.createElement("ul");
-  parent.setAttribute("class", "list-group");
-  skillsItems.forEach(function(skill){
-    let li = document.createElement("li");
-    li.setAttribute("class", "list-group-item d-flex justify-content-between align-items-center")
-    li.innerHTML ='<div>'
-                  + getImage(skill.name, skill.rating)
-                  + " "
-                  + skill.name + '</div> '
-                  + '<span class="badge badge-dark badge-pill" title="'
-                  + skill.level
-                  + '['
-                  + skill.yearsOfExperience
-                  + ' years experence]">'
-                  + skill.rating
-                  + '</span>';
+let main = $("#SkillItems");
+let temp = $("#skillsTemp");
+skillsItems.forEach(function (skill){
+main.append(temp.tmpl(skill));
 
-                  parent.appendChild(li);
-  });
-  $("#SkillItems").append(parent);
+});
+
+
+  //let parent = document.createElement("ul");
+  //parent.setAttribute("class", "list-group");
+  //skillsItems.forEach(function(skill){
+  //  let li = document.createElement("li");
+  //  li.setAttribute("class", "list-group-item d-flex justify-content-between align-items-center")
+  //  li.innerHTML ='<div>'
+  //                + getImage(skill.name, skill.rating)
+  //                + " "
+  //                + skill.name + '</div> '
+  //                + '<span class="badge badge-dark badge-pill" title="'
+  //                + skill.level
+  //                + '['
+  //                + skill.yearsOfExperience
+  //                + ' years experence]">'
+  //                + skill.rating
+  //                + '</span>';
+
+  //                parent.appendChild(li);
+  //});
+  //$("#SkillItems").append(parent);
 }
 
 
-function getImage(type, count){
-  let img = '<i class="far fa-check-square"></i>';
-  if (type == "C#"){img='<img src="img/csharp.webp" height="16" width="16" />';}
-  if (type.indexOf("Scrum")> 0){img='<img src="img/scrum.webp" height="16" width="16" />';}
-  if (type.indexOf("Jquery")> 0){img='<i class="fab fa-js"></i>'}
-  if (type =="Python") {img='<i class="fab fa-python"></i>';}
-  if (type.indexOf("SQL") > 0){img='<i class="fas fa-database"></i>';}
-  if (type == "VB.Net"){img='<img src="img/vb.webp" height="16" width="16" />';}
-  if (type == "ASP.Net"){img='<img src="img/ASP.webp" height="16" width="16" />';}
-  if (type.indexOf("Cognitive") > 0){img='<img src="img/bot.webp" height="16" width="16" />';}
-  if (type.indexOf("Bot")> 0){img='<img src="img/bot.webp" height="16" width="16" />';}
-  return img;
+
+
+function getImg(imgUrl){
+  let lType = imgUrl.toLowerCase();
+  if (lType == "c#"){return "csharp";}
+  if (lType == "vb.net"){return "vb";}
+  if (lType == "asp.net"){return "ASP";}
+  if (lType == "python"){return "python";}
+  if (lType.indexOf("scrum") > 0){return "scrum";}
+  if (lType.indexOf("jquery")> 0){return "javascript";}
+  if (lType.indexOf("sql") > 0){return "db";}
+  if (lType.indexOf("cognitive") > 0){ return "bot";}
+  if (lType.indexOf("bot") > 0){ return "bot";}
+  return "check";
 }
+
 
 
 function BuildExperence(experenceItems){

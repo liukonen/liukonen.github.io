@@ -5,126 +5,146 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="Luke Liukonen">
-    <!-- Bootstrap core CSS -->
-    <title>Luke Liukonen</title>
-    <link href="./css/luke.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
-      integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
-    <link href="./css/offcanvas.css" rel="stylesheet">
-  </head>
-  <body class="bg-light">
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="#">Welcome</a>
-      </button>
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#" data-toggle="modal" data-target=".resumeModal">Resume <span class="sr-only">(current)</span></a>
-          </li>
+  <title>Luke Liukonen</title>
+  <link href="./css/luke.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
+    integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
+</head>
+<body class="bg-light">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Wecome</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="resume.html">Resume <span class="sr-only">(current)</span></a>
+        </li>
 
-         <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                 The 2020 Furlough Diaries
-               </a>
-               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="FD2020">
-               </ul>
-             </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              The 2020 Furlough Diaries
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="FD2020">
+            </ul>
+          </li>
         </ul>
+      </div>
     </nav>
-
-
-<main role="main" class="container">
-  <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-dark rounded shadow-sm" id="HeaderItem">
-  </div>
-
-<div class="row">
-  <div class="col-4">
-    <div class="my-3 p-3 bg-white rounded shadow-sm" id="BasicItems">
-      <h1 class=" h6 border-bottom border-gray pb-2 mb-0">Basics</h1>
-
+    <main role="main" class="container">
+      <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-dark rounded shadow-sm" id="HeaderItem">
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="my-3 p-3 bg-white rounded shadow-sm" id="BasicItems">
+            <h1 class=" h6 border-bottom border-gray pb-2 mb-0">Basics</h1>
+          </div>
+          <div class="my-3 p-3 bg-white rounded shadow-sm" id="">
+            <h1 class=" h6 border-bottom border-gray pb-2 mb-0">Skills</h1>
+            <ul id="SkillItems" class="list-group"></ul>
+          </div>
+          <div class="my-3 p-3 bg-white rounded shadow-sm" id="EduItems">
+            <h1 class=" h6 border-bottom border-gray pb-2 mb-0">Education</h1>
+          </div>
+        </div>
+        <div class="col">
+          <div class="my-3 p-3 bg-white rounded shadow-sm">
+            <h1 class=" h6 border-bottom border-gray pb-2 mb-0">Summary</h1>
+            <div id="summaryItem"></div>
+          </div>
+          <div class="my-3 p-3 bg-white rounded shadow-sm" id="ExperenceItems">
+            <h1 class=" h6 border-bottom border-gray pb-2 mb-0">Profesional Experience</h1>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="modal fade dynamicModal" id="dynamicModal" data-backdrop="static" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-lg modal-dialog-scrollable" role="document">
+      <div class="modal-content text-white bg-dark">
+        <div class="modal-header">
+          <h1 class="h5 modal-title" id="staticBackdropLabel">Modal title</h1>
+          <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!--" ">  <div class="modal-content">-->
+            <div class="embed-responsive embed-responsive-4by3">
+              <iframe class="embed-responsive-item" src=""></iframe>
+              <!--</div>-->
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <a type="button" class="btn btn-primary" href="#" id="aSite" target="_blank">Original</a>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="my-3 p-3 bg-white rounded shadow-sm" id="SkillItems">
-      <h1 class=" h6 border-bottom border-gray pb-2 mb-0">Skills</h1>
 
-    </div>
-    <div class="my-3 p-3 bg-white rounded shadow-sm" id="EduItems">
-      <h1 class=" h6 border-bottom border-gray pb-2 mb-0">Education</h1>
+<!--Start Javascript Templates-->
 
-    </div>
-
-  </div>
-
-  <div class="col">
-
-    <div class="my-3 p-3 bg-white rounded shadow-sm">
-      <h1 class=" h6 border-bottom border-gray pb-2 mb-0">Summary</h1>
-      <div id="summaryItem"></div>
-    </div>
-    <div class="my-3 p-3 bg-white rounded shadow-sm" id="ExperenceItems">
-      <h1 class=" h6 border-bottom border-gray pb-2 mb-0">Profesional Experience</h1>
-
-    </div>
-
-  </div>
-
-</div>
-</main>
-
-<div class="modal fade dynamicModal" tabindex="-1" role="dialog" aria-labelledby="diary" aria-hidden="true" id="dynamicModal">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="embed-responsive embed-responsive-4by3">
-  <iframe class="embed-responsive-item" src=""></iframe>
-</div>
-    </div>
-  </div>
-</div>
-
+<!--Basic Info Template-->
 <script id="basicsTemp" type="text/x-jQuery-tmpl">
-<div>
-  <ul class="list-group">
-    <li class="list-group-item"><i class="fas fa-mobile-alt"></i> Telephone - <a href="tel:${phone}">${phone}</a></li>
-    <li class="list-group-item"><i class="fas fa-envelope-square"></i> Email - <a href="mailto:${email}">${email}</a></li>
-    <li class="list-group-item"><i class="fas fa-map-marker-alt"></i> Region - ${region}</li>
-  </ul>
-</div>
+  <div>
+    <ul class="list-group">
+      <li class="list-group-item"><i class="fas fa-mobile-alt"></i> Telephone - <a href="tel:${phone}">${phone}</a></li>
+      <li class="list-group-item"><i class="fas fa-envelope-square"></i> Email - <a href="mailto:${email}">${email}</a></li>
+      <li class="list-group-item"><i class="fas fa-map-marker-alt"></i> Region - ${region}</li>
+    </ul>
+  </div>
 </script>
+<!--Bast Info SubGroup - Media Items-->
 <script id="basicsMediaTemp" type="text/x-jQuery-tmpl">
   <li class="list-group-item"><i class="${getIconSM(network)}"></i> ${network} - <a href="${url}" target="_blank">${username}</a>
 </script>
 
+<!--Education Template-->
 <script id="eduTemp" type="text/x-jQuery-tmpl">
-<div>
-  <img src="img/${institution}.webp" width="32" height="32" alt="${institution}" class="left"><br />
-  <span class="lead">${area}</span><br/>
-  <span class="text-muted">${studyType}</span><br/>
-  <span class="lead">${institution}</span><br/>
-  <span class="text-muted">${parseWorkDate(startDate)} - ${parseWorkDate(endDate)}</span>
-</div>
+  <div>
+    <img src="img/${institution}.webp" width="32" height="32" alt="${institution}" class="left"><br />
+    <span class="lead">${area}</span><br/>
+    <span class="text-muted">${studyType}</span><br/>
+    <span class="lead">${institution}</span><br/>
+    <span class="text-muted">${parseWorkDate(startDate)} - ${parseWorkDate(endDate)}</span>
+  </div>
 </script>
 
+<!--Header Template (fill out Name and Image dynamicly)-->
 <script id="headerTemp" type="text/x-jQuery-tmpl">
-<img src="${picture}"  width="50" height="50" style="filter:grayscale(100%)" />
-<div class="lh-100">
-  <h1 class="mb-0 text-white lh-100"> ${name}</h1>
-</div>
+  <img src="${picture}"  width="50" height="50" style="filter:grayscale(100%)" />
+  <div class="lh-100">
+    <h1 class="mb-0 text-white lh-100"> ${name}</h1>
+  </div>
 </script>
 
+<!--Work Experence Template-->
 <script id="experenceTemp" type="text/x-jQuery-tmpl">
-<div class="media text-muted pt-3 lh-125 border-bottom border-gray">
-  <img class="" width="32" height="32" src="img/${company}.webp" alt="${company}" />
-<div class="col">
-  <strong class="d-block"><a href="${website}">${company}</a></strong> - ${location}<br />
-  <small class="text-muted">${position} - ${parseWorkDate(startDate)} - ${parseWorkDate(endDate)}</small>
-  <p class="media-body pb-3 mb-0"> ${summary}<ul></ul></p></div>
-</div>
+  <div class="media text-muted pt-3 lh-125 border-bottom border-gray">
+    <img class="" width="32" height="32" src="img/${company}.webp" alt="${company}" />
+    <div class="col">
+      <strong class="d-block"><a href="${website}">${company}</a></strong> - ${location}<br />
+      <small class="text-muted">${position} - ${parseWorkDate(startDate)} - ${parseWorkDate(endDate)}</small>
+      <p class="media-body pb-3 mb-0"> ${summary}<ul></ul></p></div>
+  </div>
 </script>
 
-<script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+<!--Skills Template (fills out uL item)-->
+<script id="skillsTemp" type="text/x-jQuery-tmpl">
+<li class="list-group-item d-flex justify-content-between align-items-center">
+  <div><img src="/img/${getImg(name)}.webp" height="16" width="16" alt="${name} image" />  ${getImage(name)} ${name}</div>
+  <span class="badge badge-dark badge-pill" title="${level} [${yearsOfExperience} years experence]">${level}</span>
+</li>
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="js/jquery.tmpl.js"></script>

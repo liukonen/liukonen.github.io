@@ -1,9 +1,17 @@
 $(document).ready(function() {
   $(".showModal").click(function(e) {
+
     e.preventDefault();
     var url = $(this).attr("data-href");
+    console.log($(this));
+if (window.innerWidth >= 576){
+    $("#staticBackdropLabel").text($(this).text());
+
     $("#dynamicModal iframe").attr("src", url);
     $("#dynamicModal").modal("show");
+    $("#aSite").attr("href", url);
+}else{  var win = window.open(url, '_blank'); win.focus();}
+
   });
 });
 
