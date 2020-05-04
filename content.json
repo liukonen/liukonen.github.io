@@ -85,7 +85,7 @@
             {
     "Title":"Clipboard++",
     "SubTitle":"Keep more then 1 item in your clipboard",
-    "Description":"written when RSS was still a major thing. I still pull video and audio podcasts using this app. App was more recently rewritten to support the .net core framework and has been confirmed to work on linux. ",
+    "Description":"reason: I wanted an application that I could use that kept an in memory cache of mutiple clipboard items. That way if I accidently copied over some data I was working on, I could go back to the original version. Its a lightweight clipboard 'manager' that implements items like, encrpytion, in memory compression, keeping state on reboots or restarts, and being able to save files, right from the clipboard.",
     "image": "img/clip.webp",
     "releaase": "https://github.com/liukonen/Clipboard-/releases",
     "source" : "https://github.com/liukonen/Clipboard-"
