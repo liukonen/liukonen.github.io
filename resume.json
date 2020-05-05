@@ -18,11 +18,7 @@
 		"followers": 2,
 		"following": 3,
 		"profiles": [
-			{
-				"network": "gitconnected",
-				"username": "liukonen",
-				"url": "https://gitconnected.com/liukonen"
-			},
+			
 			{
 				"network": "GitHub",
 				"username": "liukonen",
@@ -32,11 +28,6 @@
 				"network": "LinkedIn",
 				"url": "https://www.linkedin.com/in/lukeliukonen",
 				"username": "lukeliukonen"
-			},
-			{
-				"network": "Facebook",
-				"url": "https://www.facebook.com/liukonen",
-				"username": "liukonen"
 			}
 		]
 	},
