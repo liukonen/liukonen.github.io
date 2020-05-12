@@ -9,7 +9,6 @@ let temp;
     success: function(data, textStatus, jqXHR) {temp = data;}
   });
   return temp;
-
 }
 
 function GenerateDiary(){
@@ -134,25 +133,5 @@ $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
 
 
 });
-
-
-
-
-
-/*
-$('img').each(function() {
-     var $img = $(this);
-     var imgsrc = $img.attr('src');
-
-     var imgsrc1 = imgsrc.substr(imgsrc.lastIndexOf("img/"));
-     imgsrc1     = imgsrc.substr(4);
-     var imgalt  = imgsrc1.substr(4,imgsrc.length - 4);
-
-     var imgsrc2 ='http://dl.dropbox.com/u/xxxxxx/img/' + imgsrc1;
-     $img.attr('src',imgsrc2);
-     $img.attr('alt',imgalt);
-}
-*/
-
 
 //Sub Menu Support End

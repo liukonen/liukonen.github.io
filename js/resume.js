@@ -1,16 +1,27 @@
 var month = ["", "Jan","Feb","Mar","Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
-function generateResume(){
+async function generateResume(){
 
-  var items = JSON.parse(getFile("./resume.json"));
-BuildExperence(items["work"]);
-BuildSkills(items["skills"]);
-BuildHeader(items["basics"]);
-BuildEdu(items["education"]);
-BuildBasic(items["basics"]);
-console.log(items["basics"]["summary"]);
-$("#summaryItem").text(items["basics"]["summary"]);
+//let items = JSON.parse(getFile("./resume.json"));
 
+$.ajax({
+  url:  "./resume.json",
+    dataType: "text",	async: false,
+  error: function(jqXHR, textStatus, error) {window.alert(error);},
+  success: function(data, textStatus, jqXHR) {temp = data;}
+}).then( async function(item){
+let items = JSON.parse(item);
+let arrayOfPromises = [
+        BuildExperence(items["work"]),
+        BuildSkills(items["skills"]),
+        BuildHeader(items["basics"]),
+        BuildEdu(items["education"]),
+        BuildEdu(items["education"]),
+        $("#summaryItem").text(items["basics"]["summary"])
+    ];
+
+      console.log(items["basics"]["summary"]);await Promise.all(arrayOfPromises);
+});
 }
 
 
@@ -31,6 +42,7 @@ basicItem["profiles"].forEach(function(item){
 });
 console.log(Item);
 $("#BasicItems").append(Item);
+return 1;
 }
 
 function buildBasicSM(item){
@@ -50,7 +62,7 @@ function BuildEdu(eduItems){
   eduItems.forEach(function(item){
     template.tmpl(item).appendTo(main);
   });
-
+return 1;
 }
 function BuildSkills(skillsItems){
 let main = $("#SkillItems");
@@ -58,33 +70,8 @@ let temp = $("#skillsTemp");
 skillsItems.forEach(function (skill){
 main.append(temp.tmpl(skill));
 
-});
-
-
-  //let parent = document.createElement("ul");
-  //parent.setAttribute("class", "list-group");
-  //skillsItems.forEach(function(skill){
-  //  let li = document.createElement("li");
-  //  li.setAttribute("class", "list-group-item d-flex justify-content-between align-items-center")
-  //  li.innerHTML ='<div>'
-  //                + getImage(skill.name, skill.rating)
-  //                + " "
-  //                + skill.name + '</div> '
-  //                + '<span class="badge badge-dark badge-pill" title="'
-  //                + skill.level
-  //                + '['
-  //                + skill.yearsOfExperience
-  //                + ' years experence]">'
-  //                + skill.rating
-  //                + '</span>';
-
-  //                parent.appendChild(li);
-  //});
-  //$("#SkillItems").append(parent);
+});return 1;
 }
-
-
-
 
 function getImg(imgUrl){
   let lType = imgUrl.toLowerCase();
@@ -115,7 +102,7 @@ function BuildExperence(experenceItems){
         });
       }
     response.appendTo(MainContainer);
-  });
+  });return 1;
 }
 
 
