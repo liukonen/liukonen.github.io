@@ -16,7 +16,7 @@ let arrayOfPromises = [
         BuildSkills(items["skills"]),
         BuildHeader(items["basics"]),
         BuildEdu(items["education"]),
-        BuildBasic(items["education"]),
+        BuildBasic(items["basics"]),
         $("#summaryItem").text(items["basics"]["summary"])
     ];
 
