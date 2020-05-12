@@ -1,7 +1,7 @@
 {
 	"basics": {
 		"name": "Luke Liukonen",
-		"picture": "https://avatars2.githubusercontent.com/u/28105142?v=4",
+		"picture": "img/me-bw/webp.png",
 		"label": "Software Analyst | Mid to Senior level Software Engineer |  Trisept Solutions",
 		"headline": ".net Full Stack Software Developer / Analyst  since 2006 |\r\nInstructor, ITT Tech (2008, 2010) \r\n| BBA Management Information Systems",
 		"summary": "Developing powerful and dynamic applications, using some of the latest technologies, that are stable, reliable and productive.",
@@ -18,7 +18,7 @@
 		"followers": 2,
 		"following": 3,
 		"profiles": [
-			
+
 			{
 				"network": "GitHub",
 				"username": "liukonen",
