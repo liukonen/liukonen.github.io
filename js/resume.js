@@ -1,27 +1,28 @@
 var month = ["", "Jan","Feb","Mar","Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
-async function generateResume(){
+function generateResume(){
 
-//let items = JSON.parse(getFile("./resume.json"));
+let items = JSON.parse(getFile("./resume.json"));
 
-$.ajax({
-  url:  "./resume.json",
-    dataType: "text",	async: false,
-  error: function(jqXHR, textStatus, error) {window.alert(error);},
-  success: function(data, textStatus, jqXHR) {temp = data;}
-}).then( async function(item){
-let items = JSON.parse(item);
-let arrayOfPromises = [
+//$.ajax({
+//  url:  "./resume.json",
+//    dataType: "text",	async: false,
+//  error: function(jqXHR, textStatus, error) {window.alert(error);},
+//  success: function(data, textStatus, jqXHR) {temp = data;}
+//}).then( async function(item){
+//let items = JSON.parse(item);
+//let arrayOfPromises = [
         BuildExperence(items["work"]),
         BuildSkills(items["skills"]),
         BuildHeader(items["basics"]),
         BuildEdu(items["education"]),
         BuildBasic(items["basics"]),
         $("#summaryItem").text(items["basics"]["summary"])
-    ];
+  //  ];
 
-      console.log(items["basics"]["summary"]);await Promise.all(arrayOfPromises);
-});
+      console.log(items["basics"]["summary"]);
+      //await Promise.all(arrayOfPromises);
+//});
 }
 
 
