@@ -92,7 +92,9 @@ function liLinkParser(file){
 //if (Modernizr("createelementattrs") || Modernizr("createelement-attrs")){alert("No Support");}
 Modernizr.on("createelement", function(result){
   if (result){GenerateDiary();}
-  else{let item = document.getElementById("FD2020"); item.setAttribute("target", "_blank"); item.setAttribute("href", furloughDiary); }
+  else{
+    $("#FD2020").innerHTML = "<li><a href='" + furloughDiary + "' target='_blank'>link</a></li>";
+     }
 })
 
 
