@@ -12,6 +12,6 @@ function generate(){
   });
 }
 
-function DetermButtonColor(release){return (release.startsWith("https://liukonen.github.io")) ? "" : "";}
-function DetermButtonName(release){return release.startsWith("https://liukonen.github.io")? "" : "";}
+function DetermButtonColor(release){return (release.startsWith("https://liukonen.github.io")) ? "success" : "primary";}
+function DetermButtonName(release){return release.startsWith("https://liukonen.github.io")? "Website" : "Release";}
 generate();
