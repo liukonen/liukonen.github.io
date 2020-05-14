@@ -90,7 +90,7 @@ function liLinkParser(file){
 
 
 //if (Modernizr("createelementattrs") || Modernizr("createelement-attrs")){alert("No Support");}
-Modernizr.on("createelement", result=>{
+Modernizr.on("createelement", function(result){
   if (result){GenerateDiary();}
   else{let item = document.getElementById("FD2020"); item.setAttribute("target", "_blank"); item.setAttribute("href", furloughDiary); }
 })
