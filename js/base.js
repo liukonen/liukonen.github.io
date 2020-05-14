@@ -138,7 +138,10 @@ $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
         $('img').each(function() {
           var $img = $(this);
           var src = $img.attr("src");
-          if (src.endsWith(".webp")){src += ".png"; $img.attr("src", src);}
+
+          let EW = src.substring(src.length-5);
+
+          if (EW == ".webp"){src += ".png"; $img.attr("src", src);}
           $(".jumbotron").css("background-image", "url('../img/jumbotron.webp.png')");
         });
       }
