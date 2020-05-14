@@ -85,10 +85,10 @@ function liLinkParser(file){
  if(navigator.appName.indexOf("Internet Explorer")!=-1 || navigator.userAgent.match(/Trident.*rv[ :]*11\./)){ window.location = "IE.html"; }
 
 
-
+ GenerateDiary();
 
 $(document).ready(function() {
-  GenerateDiary();
+
   $(".showModal").click(function(e) {
     e.preventDefault();
     var url = $(this).attr("data-href");
