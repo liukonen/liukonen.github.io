@@ -5,7 +5,7 @@
     "Title":"Html Text Editor",
     "SubTitle":"manipulate and batch text files in your browser",
     "image": "img/htmledit.webp",
-    "releaase": "https://liukonen.github.io/htmlTextEditor/",
+    "release": "https://liukonen.github.io/htmlTextEditor/",
     "source" : "https://github.com/liukonen/htmlTextEditor",
     "Description":"a more advanced text editor developed from the need to have mini applications do custom work"
   },
@@ -14,7 +14,7 @@
     "SubTitle":"A simple game, that can now teach.",
     "Description":"In 2003 or 04 (while in school) I wrote this in Visual basic 6 and used Microsoft Agents as driving forces for Input and output. who would fly around the screen and play tic tac toe, using simple math equations. I found the original source code, and re wrote it in .net.  and since they were all based on the same source, consolidate the logic to one program, with options to switch math types (divide, multiply, add, and subtract) Since I have some time off, I was able to rewrite this using Javascript and HTML, and bring back Agents and text to speach over the browser.",
     "image": "img/ttm.webp",
-    "releaase": "https://liukonen.github.io/tictacmath/",
+    "release": "https://liukonen.github.io/tictacmath/",
     "source" : "https://github.com/liukonen/tictacmath"
   },
   {
@@ -22,7 +22,7 @@
     "SubTitle":"A riverscript based Javascript chatbot.",
     "Description":"Around 2002, 2003, I was interested in taking the chat bot out out of the standard container. I had an AIM source code project, which I tied with an MS agent, and TTS, with speach recognition, and I was talking to a bot, and it was responding. Few years later, and the AIM code cant connect, so I found AIML and the Alice project. 2016 hits, and at work, Im asked to present for MMAC Be The Spark tour, where my project, Sarra, tied her with Alice (and updated some of the scripts) as well as Microsoft cognitive services and presented a vocal chat bot that could detect and translate on the fly. Desided to take the AIML code and migrate it to RiverScript and make a bot out of it.",
     "image": "img/chat.webp",
-    "releaase": "https://liukonen.github.io/RiverScriptBot/",
+    "release": "https://liukonen.github.io/RiverScriptBot/",
     "source" : "https://github.com/liukonen/RiverScriptBot"
   },
   {
@@ -30,7 +30,7 @@
     "SubTitle":"Not Another Text Search.",
     "Description":"Nats is a command line based search engine for text files on your hard drive. It uses multithreading, indexs (including windows) and an optional cached index for faster lookups. It was written to find items in source code easily, even if they were not included in a project. It is written in .net core, however there would probibly need some work to port to linux or mac. I have to test that.",
     "image": "img/cmd.webp",
-    "releaase": "https://github.com/liukonen/nats/releases",
+    "release": "https://github.com/liukonen/nats/releases",
     "source" : "https://github.com/liukonen/nats"
   },
   {
@@ -38,7 +38,7 @@
     "SubTitle":"a remake of DJAkbar's cloudy-a project",
     "Description":"Owning raspberry pi pcs, I wanted to try my hand at a lamp that could also tell you the weather. I found DJAkbars project, but found that it was too relient on operation timing and also had some issues calling the service (only called once). Refactored the code and upgraded it to python verion 3.",
     "image": "img/cp.webp",
-    "releaase": "https://github.com/liukonen/cloudy-pie/releases",
+    "release": "https://github.com/liukonen/cloudy-pie/releases",
     "source" : "https://github.com/liukonen/cloudy-pie"
   },
   {
@@ -46,7 +46,7 @@
     "SubTitle":"Wallpaper based on outside conditions",
     "Description":"This was a project I wrote years ago. I had it working for a while, and then lost my source code. The original app only used weather, and pulled the data from Yahoo. The new verison will have multiple sources to pick from (in case one goes down), and have the ability to have different wallpapers also by time of day.",
     "image": "img/weatherwallpaper.webp",
-    "releaase": "https://github.com/liukonen/WeatherWallpaper/releases",
+    "release": "https://github.com/liukonen/WeatherWallpaper/releases",
     "source" : "https://github.com/liukonen/WeatherWallpaper"
   },
   {
@@ -54,7 +54,7 @@
     "SubTitle":"Something simple to tell you the weather",
     "Description":"This idea goes way back to my college days. I liked weathebug, but did not like the adware and spyware it was littered with. Code for this is based on weatherwallpaper, and the engine behind can be changed just like weatherwallpaper.",
     "image": "img/weather.webp",
-    "releaase": "https://github.com/liukonen/SimpleWeatherTray/releases",
+    "release": "https://github.com/liukonen/SimpleWeatherTray/releases",
     "source" : "https://github.com/liukonen/SimpleWeatherTray"
   },
     {
@@ -62,7 +62,7 @@
     "SubTitle":"Different wallpaper for different times of day",
     "Description":"Simmilar to Weather Wallpaper, only without the need of external calls, this app will change your wallpaper throughout the day like Mac OS Mojave +.",
     "image": "img/dchanger.webp",
-    "releaase": "https://github.com/liukonen/DesertChanger/releases",
+    "release": "https://github.com/liukonen/DesertChanger/releases",
     "source" : "https://github.com/liukonen/DesertChanger"
   },
 
@@ -71,7 +71,7 @@
     "SubTitle":"Download your favorite audio or video podcasts through RSS",
     "Description":"written when RSS was still a major thing. I still pull video and audio podcasts using this app. App was more recently rewritten to support the .net core framework and has been confirmed to work on linux. ",
     "image": "img/podcast.webp",
-    "releaase": "https://github.com/liukonen/Podload",
+    "release": "https://github.com/liukonen/Podload",
     "source" : "https://github.com/liukonen/Podload"
   },
         {
@@ -79,7 +79,7 @@
     "SubTitle":"useful tool with robocopy, to see what will move",
     "Description":"This program was created out of a need to see what changes could happen if I ran a robocopy command between 2 directories. I was hoping at first that robocopy (command line application built into windows) had this functionality built in. While there a number of different ways to compare files, I chose to use the LastModifided timestamp of the file for distinction. ",
     "image": "img/cmd.webp",
-    "releaase": "https://github.com/liukonen/Dif/releases",
+    "release": "https://github.com/liukonen/Dif/releases",
     "source" : "https://github.com/liukonen/Dif"
   },
             {
@@ -87,7 +87,7 @@
     "SubTitle":"Keep more then 1 item in your clipboard",
     "Description":"reason: I wanted an application that I could use that kept an in memory cache of mutiple clipboard items. That way if I accidently copied over some data I was working on, I could go back to the original version. Its a lightweight clipboard 'manager' that implements items like, encrpytion, in memory compression, keeping state on reboots or restarts, and being able to save files, right from the clipboard.",
     "image": "img/clip.webp",
-    "releaase": "https://github.com/liukonen/Clipboard-/releases",
+    "release": "https://github.com/liukonen/Clipboard-/releases",
     "source" : "https://github.com/liukonen/Clipboard-"
   },
          {
@@ -95,7 +95,7 @@
     "SubTitle":"a simple site-specific browser generator and browser",
     "Description":"When I first got into the web, I always thought that there would be a time web pages would be full blown apps. Unfortunitly, projects like Mozilla Prism. Once that was discontinued. I worked on my own until Chomr had there own, in shortcuts. But even that is going away. I love the idea of Pepperments Ice SSB app, and attempted to make my own. Since Windows <> Linux though, Im dependent on Nuget updates, so I dont make release of the project, and leave it up to developers to get latest and compile it themselves.",
     "image": "img/winfrost.webp",
-    "releaase": "https://github.com/liukonen/WinFrost",
+    "release": "https://github.com/liukonen/WinFrost",
     "source" : "https://github.com/liukonen/WinFrost"
   }
 
