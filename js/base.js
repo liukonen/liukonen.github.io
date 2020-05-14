@@ -84,7 +84,7 @@ function liLinkParser(file){
 Modernizr.on("createelement", function(result){
   if (result){GenerateDiary();}
   else{
-    location.href= "./ie.html"; //struggled for this for a bit... but getting the furlough diaries to show correctly became too much. Just redirect if IE
+    window.location.replace("https://liukonen.github.io/ie.html"); //struggled for this for a bit... but getting the furlough diaries to show correctly became too much. Just redirect if IE
      }
 })
 
