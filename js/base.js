@@ -11,7 +11,7 @@ let temp;
   return temp;
 }
 
-function GenerateDiary(){
+/*function GenerateDiary(){
   let urlItem = new URL(furloughDiary);
   let baseUrl = urlItem.protocol + "//" + urlItem.host;
   let WeeksString = getFile(furloughDiary);
@@ -52,7 +52,7 @@ function generateSubListItem(parsedItem, baseUrl){
   a.innerHTML = parsedItem.Name;
   li.appendChild(a);
   return li;
-}
+}*/
 
 
 function liLinkParser(file){
@@ -85,7 +85,7 @@ function liLinkParser(file){
  if(navigator.appName.indexOf("Internet Explorer")!=-1 || navigator.userAgent.match(/Trident.*rv[ :]*11\./)){ window.location = "ie.html"; }
 
 
- GenerateDiary();
+ //GenerateDiary();
 
 $(document).ready(function() {
 

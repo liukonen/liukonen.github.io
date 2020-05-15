@@ -27,14 +27,14 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="resume.html">Resume</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="diary.html">The 2020 Furlough Diaries</a>
+          <li class="nav-item active">
+            <a class="nav-link" href="diary.html">The 2020 Furlough Diaries <span class="sr-only">(current)</span></a>
           </li>
           <!--<li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -47,55 +47,55 @@
       </div>
     </nav>
     <main role="main">
-      <div class="jumbotron">
-        <div class="container text-light">
-          <h1 class="display-3"><img src="img/me-bw.webp" class="rounded-circle user_img" /> Hello, world!</h1>
-          <p>Developer / Former Instructor / Tech enthusiast</p>
-          <p>Welcome to my personal github page.</p>
-          <a target="_blank" class="btn btn-secondary btn-circle btn-sm" href="https://github.com/liukonen" role="button" aria-label="Github"><i class="fab fa-github-alt"></i></a>
-          <a target="_blank" class="btn btn-info btn-circle btn-sm" href="https://www.linkedin.com/in/lukeliukonen/" role="button" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a class="btn btn-danger btn-circle btn-sm" href="mailto:liukonen@gmail.com?subject=GitHub_Home_Page" role="button" aria-label="email"><i class="far fa-envelope"></i></a>
-        </div>
-      </div>
       <div class="container" id="mainContainer">
           <!-- START THE FEATURETTES -->
           <hr class="featurette-divider">
           <!--Object Item Template-->
-          <script id="itemTemplate" type="text/x-jQuery-tmpl">
-            <div class="row featurette">
-              <div class="col-md-7">
-                <h2 class="featurette-heading">${Title}
-                  <span class="text-muted"> ${SubTitle}</span>
-                </h2>
-                <p class="lead">${Description}</p>
-                <a class="btn btn-${DetermButtonColor(release)}" href="${release}" target="_blank">${DetermButtonName(release)}</a>
-                <a class="btn btn-secondary" href="${source}" target="_blank">source</a>
-                <p></p>
-              </div>
-              <div class="col-md-5">
-                <img class="featurette-image img-fluid mx-auto" src="${image}">
-              </div>
+          <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+            <div class="col-md-10 px-0">
+              <h1 class="display-4 font-italic" id="JtHead">The 2020 Furlough Diaries</h1>
+              <p class="lead my-3" id="JtBody">I've started this diary for a few reasons. 
+                One, because no one wants to listen to me ramble on like a madman (because, face it, buzwords mean nothing to someone outside of tech).
+                 2 so I can remember what I learned the week or even month before.
+                  And 3, so that I have some sort of accountablity in pushing myself to be better by the time I get back to work.</p>
+              
             </div>
-            <hr class="featurette-divider">
+          </div>
+
+          <h2>week</h2>
+          <nav aria-label="Page navigation example">
+            <ul class="pagination pg-blue" id="ulNav">
+              <!--<li class="page-item" id="prev"><a class="page-link">Previous</a></li>
+              <li class="page-item" id="next"><a class="page-link">Next</a></li>-->
+              <script id="templateNav" type="text/x-jQuery-tmpl">
+                <li class="page-item"  id="li-${RmName(Name)}"><a class="page-link" onclick="PopulateWeek('${Link}', '${Name}')">${RmName(Name)}</a></li>
+              </script>
+            </ul>
+          </nav>
+        
+          <!--<div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+            <div class="col-md-6 px-0">
+              <h1 class="display-4 font-italic" id="JtHead"></h1>
+              <p class="lead my-3" id="JtBody"></p>
+              <p class="lead mb-0"><a href="#" id="JtLink" class="text-white font-weight-bold showModal">Continue reading...</a></p>
+            </div>
+          </div>-->
+          <div id="PlaceHolderItem" class="row mb-2"></div>
+
+          <script id="dTemp" type="text/x-jQuery-tmpl">
+              <div class="col-md-4">
+                <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                  <div class="col p-4 d-flex flex-column position-static">
+                    <h3 class="mb-0">${Name}</h3>
+                    <div class="mb-1 text-muted">${CalcDate(ItemNumber, ActiveWeek).toDateString()}</div>
+                    <p class="card-text mb-auto">${ExtractBlogItem(Link)}...<a class="showModal" href="#" data-href="${baseUrl() + Link}">Continue</a></p>
+                  </div>
+                </div>
+              </div>  
+          
           </script>
-          <!--Object Item Inverted template (to flip the control on every other item)-->
-          <script id="itemTemplate2" type="text/x-jQuery-tmpl">
-              <div class="row featurette">
-                <div class="col-md-7 order-md-2">
-                  <h2 class="featurette-heading">${Title}
-                    <span class="text-muted"> ${SubTitle}</span>
-                  </h2>
-                  <p class="lead">${Description}</p>
-                  <a class="btn btn-${DetermButtonColor(release)}" href="${release}" target="_blank">${DetermButtonName(release)}</a>
-                  <a class="btn btn-secondary" href="${source}" target="_blank">source</a>
-                  <p></p>
-                </div>
-                <div class="col-md-5 order-md-1">
-                  <img class="featurette-image img-fluid mx-auto" src="${image}">
-                </div>
-              </div>
-              <hr class="featurette-divider">
-            </script>
+
+
       </div><!-- /.container -->
     </main>
     <div class="modal fade dynamicModal" id="dynamicModal" data-backdrop="static" tabindex="-1" role="dialog"
@@ -130,6 +130,6 @@
 <script src="js/modernizr.min.js"></script>
 <script src="js/jquery.tmpl.js"></script>
 <script src="js/base.js"></script>
-<script src="js/luke.js"></script>
+<script src="js/diary.js"></script>
 <script src="js/basepost.js"></script>
 </body></html>
