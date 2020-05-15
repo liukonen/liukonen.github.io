@@ -8,18 +8,16 @@
   <link href="./css/luke.css" rel="stylesheet" />
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
   <link href="/fontawesome/css/all.min.css" rel="stylesheet">
-
-    <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png" sizes="180x180">
-    <link rel="icon" href="/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-    <link rel="manifest" href="/img/favicons/manifest.json">
-    <link rel="mask-icon" href="/img/favicons/safari-pinned-tab.svg" color="#ffffff">
-    <link rel="icon" href="/img/favicons/favicon.ico">
-    <meta name="msapplication-config" content="/img/favicons/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
-<link rel="stylesheet" href="css/about.css">
-<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-
+  <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon" href="/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="manifest" href="/img/favicons/manifest.json">
+  <link rel="mask-icon" href="/img/favicons/safari-pinned-tab.svg" color="#ffffff">
+  <link rel="icon" href="/img/favicons/favicon.ico">
+  <meta name="msapplication-config" content="/img/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 </head>
 <body data-gr-c-s-loaded="true">
   <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
@@ -50,16 +48,14 @@
 <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
   <h3 style="text-align:center;">Welcome</h3>
   <p>
-My name is Luke liukonen, and I am a developer, former educatior, and tech enthusiast. Lets be honest though, thats only a small sliver of who I am. I've been in development for over 14 years perfessionally, spending most of my time in the travel space in my home town of Milwaukee, Wi. I have as long as I know, been fascinated with the direction technology could take us, and was a huge fan of how we would interact with them in the future. To this day, I like to consider myself a technologist, reading up on current trends, and what progress we are making in the field.
+    <div id="welcome"></div>
 <i>* this page, its contents, are opinions of my own, and represent no one else</i>  
 </p>
 </div>
-
 <div class="bgimg-2">
   <div class="caption">
   <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">Profesional Highlights</span>
   </div>
-
 </div>
 
 <div style="position:relative;">
@@ -68,104 +64,41 @@ My name is Luke liukonen, and I am a developer, former educatior, and tech enthu
     <div class="row justify-content-md-center">
       
       <div><h1 class="h3">Highlights</h1>
-        <ul class="list-group text-dark">
-          <li class="list-group-item">2-time Trisept Solutions representative for Cosbe Be the spark tour</li>
-          <li class="list-group-item">Multiple time winner of Trisept Solutions Hack-a-thon competition</li>
-          <li class="list-group-item">Represented Trisept Solutions at Microsoft bot Hack-a-thon</li>
-          <li class="list-group-item">On multiple committees for outreach, wellness, and event planning</li>
-          <li class="list-group-item">Developer lead on team for nearly 6 years</li>
-          <li class="list-group-item">Adjunct Instructor for 2 semesters at ITT Technical Institute</li>
-          <li class="list-group-item">Owasp top 10 trained. Maintained PCI complience</li>
+        <ul class="list-group text-dark" id="highlights">
+          <script id="tmpHighlights" type="text/x-jQuery-tmpl"><li class="list-group-item">${a}</li></script>
         </ul>
       </div>
         <div class="col-lg-4">
           <h1 class="h3">History</h1>
-          <ul>
-            <li class="NoDot"><img src="./img/Trisept Solutions.webp.png" height="32" width="32"><b>Trisept Solutions</b><br/> <i>April 2014-Present</i> Software Analyst (Mid/Senior Software Engineer eq)</li>
-            <li class="NoDot"><img src="./img/Blue7 Solutions.webp.png" height="32" width="32"> <b>Blue 7 Solutions</b><br/> <i>Jan 2012-April 2014</i> Software Engineer</li>
-            <li class="NoDot"><img src="./img/Trisept Solutions.webp.png" height="32" width="32"> <b>Trisept Soltuions</b><br/> <i>May 2006 - Dec 2012</i> Software Developer</li>
-            <li class="NoDot"><img src="./img/ITT Technical Institute.webp.png" height="32" width="32"> <b>ITT Techincal Institue</b><br/><i>Summer 2008 / Summer 2010</i> Adjunct Instructor</li>
+          <ul id="work">
+<script id="tmpWork" type="text/x-jQuery-tmpl">
+            <li class="NoDot">
+                <img src="${img}" height="32" width="32" />
+                <b>${name}</b>: ${title}
+                <br/> 
+                <i>${timeworked}</i>
+                </li>
+            <br />
+</script>
           </ul>
         <!--<ul class="list-group text-dark">
           <li class="list-group-item"><img src="./img/Trisept Solutions.webp.png" height="32" width="32"><b>Trisept Solutions</b> <i>April 2014-Present</i> Software Analyst (Mid/Senior Software Engineer eq)</li>
-          <li class="list-group-item"><img src="./img/Blue7 Solutions.webp.png" height="32" width="32"> <b>Blue 7 Solutions</b> <i>Jan 2012-April 2014</i> Software Engineer</li>
-          <li class="list-group-item"><img src="./img/Trisept Solutions.webp.png" height="32" width="32"> <b>Trisept Soltuions</b> <i>May 2006 - Dec 2012</i> Software Developer</li>
-          <li class="list-group-item"><img src="./img/ITT Technical Institute.webp.png" height="32" width="32"> <b>ITT Techincal Institue</b><i>Summer 2008 / Summer 2010</i> Adjunct Instructor</li>
-        </ul>-->
+ -->
       </div>
       <div class="col-lg-4">
         <h1 class="h3">Experience</h1>
-        <ul>
-          <li class="NoDot"> 
-                C# 
+        <ul id="eContainer">
+<script id="eTemp" type="text/x-jQuery-tmpl">
+            <li class="NoDot"> 
+            <br />
+                ${name}
             <div class="progress">
-              <div class="progress-bar bg-purple" role="progressbar" style="width: 95%" aria-valuenow="Expert" aria-valuemin="0" aria-valuemax="100">
-                   Expert
+              <div class="progress-bar bg-${color}" role="progressbar" style="width: ${GetPercent(OneTo5)}%" aria-valuenow="${GetName(OneTo5)}" aria-valuemin="0" aria-valuemax="100">
+                   ${GetName(OneTo5)}
                  </div>
             </div>
           </li>
-          <li class="NoDot">
-               Visual Basic (.Net) 
-            <div class="progress">
-              <div class="progress-bar bg-primary" role="progressbar" style="width: 95%" aria-valuenow="Expert" aria-valuemin="0" aria-valuemax="100">
-                 Expert
-               </div>
-            </div>
-          </li>
-          <li class="NoDot">
-               ASP.Net
-            <div class="progress">
-              <div class="progress-bar bg-info" role="progressbar" style="width: 75%" aria-valuenow="Advanced" aria-valuemin="0" aria-valuemax="100">
-                 Advanced
-                 </div>
-            </div>
-          </li>
-          <li class="NoDot">
-               Microsoft SQL Server (Design and Development) Advanced
-            <div class="progress">
-              <div class="progress-bar bg-purple" role="progressbar" style="width: 75%" aria-valuenow="Advanced" aria-valuemin="0" aria-valuemax="100">
-                   Advanced
-                 </div>
-            </div>
-          </li>
-          <li class="NoDot">
-               Windows Communication Foundation services 
-            <div class="progress">
-              <div class="progress-bar bg-primary" role="progressbar" style="width: 55%" aria-valuenow="Advanced" aria-valuemin="0" aria-valuemax="100">
-                   Intermediate
-                 </div>
-            </div>
-          </li>
-          <li class="NoDot">
-               Agile - Scrum and Kanban  Intermediate
-            <div class="progress">
-              <div class="progress-bar bg-danger" role="progressbar" style="width: 55%" aria-valuenow="Advanced" aria-valuemin="0" aria-valuemax="100">
-                   Intermediate
-                 </div>
-            </div>
-          </li>
-          <li class="NoDot">
-               OWASP top 10 Cert, and PCI compliance trained  Intermediate
-            <div class="progress">
-              <div class="progress-bar bg-success" role="progressbar" style="width: 55%" aria-valuenow="Advanced" aria-valuemin="0" aria-valuemax="100">
-                   Intermediate
-                 </div>
-            </div>
-          </li>
-          <li class="NoDot">
-               Javascript and Jquery
-            <div class="progress">
-              <div class="progress-bar bg-warning" role="progressbar" style="width: 55%" aria-valuenow="Advanced" aria-valuemin="0" aria-valuemax="100">
-                   Intermediate
-                 </div>
-            </div>
-          </li>
-          <li class="NoDot">
-               Python
-            <div class="progress">
-              <div class="progress-bar bg-info" role="progressbar" style="width: 30%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">Beginner</div>
-            </div>
-          </li>
+</script>
         </ul>
       </div>
     </div>
@@ -185,24 +118,17 @@ My name is Luke liukonen, and I am a developer, former educatior, and tech enthu
     <div class="row">
     <div class="col-lg-4">
       <h1 class="h3">Interests</h1>
-      <ul>
-        <li>Tech, including gaming, PC building, Micro PCs like the Raspberry Pi</li>
-        <li>Sports including the Brewers, Packers, Bucks</li>
-        <li>Live music and venues</li>
-        <li>Recently started riding a bicycle through state trails</li>
+      <ul id="interests"></ul>
       </ul>
     </div>
     <div class="col-lg-4">
       <h1 class="h3">Volunteer</h1>
-      <ul>
-        <li>Has worked at both the Schlitz Audubon and Urban Ecology Center helping plant trees</li>
-        <li>Running Folding@home to help battle Covid-19</li>
-        <li>Has run some kind of computer nearly non stop since 2014 for research through World Community Grid</li>
+      <ul id="volunteer">
       </ul>
     </div>
   </div>
   </p>
-
+  <script id="tmpLi" type="text/x-jQuery-tmpl"><li>${a}</li></script>
   </div>
 </div>
 
@@ -213,7 +139,8 @@ My name is Luke liukonen, and I am a developer, former educatior, and tech enthu
     <a target="_blank" class="btn btn-secondary btn-circle btn-md" href="https://github.com/liukonen" role="button" aria-label="Github"><i class="fab fa-github-alt fa-2x"></i></a>
     <a target="_blank" class="btn btn-info btn-circle btn-md" href="https://www.linkedin.com/in/lukeliukonen/" role="button" aria-label="LinkedIn"><i class="fab fa-linkedin-in fa-2x"></i></a>
     <a class="btn btn-danger btn-circle btn-md" href="mailto:liukonen@gmail.com?subject=GitHub_Home_Page" role="button" aria-label="email"><i class="far fa-envelope fa-2x"></i></a>
-</span>
+</span><br />
+&copy; 2020 Luke Liukonen
   </div>
 </div>
 
@@ -222,6 +149,6 @@ My name is Luke liukonen, and I am a developer, former educatior, and tech enthu
 <script src="js/modernizr.min.js"></script>
 <script src="js/jquery.tmpl.js"></script>
 <script src="js/base.js"></script>
-
+<script src="js/about.js"></script>
 
 </body></html>

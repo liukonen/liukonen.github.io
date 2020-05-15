@@ -1,0 +1,43 @@
+{
+    "welcome":"My name is Luke liukonen, and I am a developer, former educatior, and tech enthusiast. Lets be honest though, thats only a small sliver of who I am. I've been in development for over 14 years perfessionally, spending most of my time in the travel space in my home town of Milwaukee, Wi. I have as long as I know, been fascinated with the direction technology could take us, and was a huge fan of how we would interact with them in the future. To this day, I like to consider myself a technologist, reading up on current trends, and what progress we are making in the field.",
+
+    "highlights":[
+        {"a":"2-time Trisept Solutions representative for Cosbe Be the spark tour"}
+        ,{"a":"Multiple time winner of Trisept Solutions Hack-a-thon competition"}
+        ,{"a":"Represented Trisept Solutions at Microsoft bot Hack-a-thon"}
+        ,{"a":"On multiple committees for outreach, wellness, and event planning"}
+        ,{"a":"Developer lead on team for nearly 6 years"}
+        ,{"a":"Adjunct Instructor for 2 semesters at ITT Technical Institute"}
+        ,{"a":"Owasp top 10 trained. Maintained PCI complience"}
+    ],
+    "Experence":
+    [
+        {"name": "C#", "color": "purple", "OneTo5":5}
+        ,{"name": "Visual Basic (.Net)", "color": "primary", "OneTo5":5}
+        ,{"name": "ASP.Net", "color": "info", "OneTo5":4}
+        ,{"name": "Microsoft SQL Server (Design and Development)", "color": "purple", "OneTo5":4}
+        ,{"name": "Windows Communication Foundation services", "color": "primary", "OneTo5":3}
+        ,{"name": "Agile - Scrum and Kanban", "color": "danger", "OneTo5":3}
+        ,{"name": "Javascript and Jquery", "color": "warning", "OneTo5":3}
+        ,{"name": "Python", "color": "info", "OneTo5":2}
+    ],
+    "Work":[
+        {"name":"Trisept Solutions", "timeworked":"April 2014 - Present", "title":"Software Analyst (Mid/Snr Engineer Eq)", "img":"./img/Trisept Solutions.webp.png"}
+        ,{"name":"Blue7 Solutions", "timeworked":"January 2012 - April 2014", "title":"Software Engineer", "img":"./img/Blue7 Solutions.webp.png"}
+        ,{"name":"Trisept Solutions", "timeworked":"May 2006 - December 2011", "title":"Software Developer", "img":"./img/Trisept Solutions.webp.png"}
+        ,{"name":"ITT Tech", "timeworked":"Summer, 2008 and 2010", "title":"Adjunct Instructor", "img":"./img/ITT Technical Institute.webp.png"}
+    ],
+    "Hobbies":
+    [
+        {"a":"Tech, including gaming, PC building, Micro PCs like the Raspberry Pi"}
+        ,{"a":"Sports including the Brewers, Packers, Bucks"}
+        ,{"a":"Live music and venues"}
+        ,{"a":"Recently started riding a bicycle through state trails"}
+    ],
+    "volunteer":[
+        {"a": "Has worked at both the Schlitz Audubon and Urban Ecology Center helping plant trees"}
+        ,{"a": "Running Folding@home to help battle Covid-19"}
+        ,{"a": "Has run some kind of computer nearly non stop since 2014 for research through World Community Grid"}
+
+    ]
+}
