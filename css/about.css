@@ -15,17 +15,18 @@ body, html {
   
   }
   .bgimg-1 {
-    background-image: url("../img/meAndDB.jpg");
+    background-image: url("../img/me_outfield_MillerPark.jpg");
     min-height: 100%;
   }
   
   .bgimg-2 {
     background-image: url("../img/ext.jpeg");
     min-height: 800px;
+    background-position: 90% 53%;
   }
   
   .bgimg-3 {
-    background-image: url("../img_parallax3.jpg");
+    background-image: url("../img/vol.jpg");
     min-height: 400px;
   }
   
@@ -59,7 +60,23 @@ body, html {
       background-attachment: scroll;
     }
   }
-
+/*
   .card {
     background-color: rgba(255,255,255, 0.7) !important;
+}*/
+
+.bg-purple {
+  background-color: #A47EDE !important;
+}
+
+.NoDot{
+  list-style: none;
+}
+
+
+.btn-circle.btn-md {
+  width: 50px;
+  height: 50px;
+border-radius: 50%;border:0px solid #f5f6fa;
+  text-align: center;padding: 10px 10px;
 }
