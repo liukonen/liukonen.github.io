@@ -11,50 +11,6 @@ let temp;
   return temp;
 }
 
-/*function GenerateDiary(){
-  let urlItem = new URL(furloughDiary);
-  let baseUrl = urlItem.protocol + "//" + urlItem.host;
-  let WeeksString = getFile(furloughDiary);
-  let parsed = liLinkParser(WeeksString);
-  let master = document.getElementById("FD2020");
-  parsed.forEach(function(el){
-    master.appendChild(generateParentListItem(el, baseUrl));
-  });
-}
-
-function generateParentListItem(parsedItem, baseUrl){
-  let parent = document.createElement("li");
-  parent.setAttribute("class", "dropdown-submenu");
-  let parentTitle = document.createElement("a")
-  parentTitle.setAttribute("class", "dropdown-item dropdown-toggle")
-  parentTitle.setAttribute("href", baseUrl + parsedItem.Link);
-  parentTitle.setAttribute("target", "_blank");
-  parentTitle.innerHTML = parsedItem.Name;
-
-  let parentSub = document.createElement("ul");
-  parentSub.setAttribute("class", "dropdown-menu");
-  liLinkParser(getFile(baseUrl + parsedItem.Link)).forEach(function(el){
-    parentSub.appendChild(generateSubListItem(el, baseUrl));
-  });
-
-  parent.appendChild(parentTitle);
-  parent.appendChild(parentSub);
-  return parent;
-}
-
-function generateSubListItem(parsedItem, baseUrl){
-  let li = document.createElement("li");
-  let a = document.createElement("a");
-  a.setAttribute("class", "showModal dropdown-item");
-  a.setAttribute("href", "#");//baseUrl + parsedItem.Link);
-  a.setAttribute("data-href", baseUrl + parsedItem.Link);
-  a.setAttribute("data-toggle", "modal");
-  a.innerHTML = parsedItem.Name;
-  li.appendChild(a);
-  return li;
-}*/
-
-
 function liLinkParser(file){
   let response = [];
   let startIndex = file.indexOf("<ul>");
@@ -84,8 +40,6 @@ function liLinkParser(file){
 
  if(navigator.appName.indexOf("Internet Explorer")!=-1 || navigator.userAgent.match(/Trident.*rv[ :]*11\./)){ window.location = "ie.html"; }
 
-
- //GenerateDiary();
 
 $(document).ready(function() {
 

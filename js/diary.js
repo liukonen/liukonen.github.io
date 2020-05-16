@@ -86,7 +86,7 @@ return (addDays(MagicDate, (WeekNumber * 7)+ ItemNumber));
 function ExtractBlogItem(dayUrl){
 
     let dayString = getFile(baseUrl() + dayUrl);
-    let startIndex = dayString.indexOf('<section id="main_content">');
+    let startIndex = dayString.indexOf('<section id="main_content"');
     let sstring = dayString.substring(startIndex);
     sstring = sstring.replace( /(<([^>]+)>)/ig, '');
 

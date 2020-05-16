@@ -34,7 +34,7 @@
             <a class="nav-link" href="about.htm">About</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="diary.html">2020 Furlough logs <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="furlough.html">2020 Furlough logs <span class="sr-only">(current)</span></a>
           </li>
         </ul>
       </div>
@@ -48,31 +48,24 @@
             <div class="col-md-10 px-0">
               <h1 class="display-4 font-italic" id="JtHead">The 2020 Furlough Logs</h1>
               <p class="lead my-3" id="JtBody">I've started this daily log of what I learned for a few reasons.
-                 One, because no one wants to listen to me ramble on like a madman 
-                 (face it, buzzwords mean nothing to someone outside of tech). 
-                 2 so I can remember what I learned the week or even month before. 
-                 And 3, so that I have some sort of accountability in pushing myself to be better by the time I get back to work.</p>
+                One, because no one wants to listen to me ramble on like a madman 
+                (face it, buzzwords mean nothing to someone outside of tech). 
+                2 so I can remember what I learned the week or even month before. 
+                And 3, so that I have some sort of accountability in pushing myself to be better by the time I get back to work.</p>
+              
             </div>
           </div>
 
           <h2>week</h2>
           <nav aria-label="Page navigation example">
             <ul class="pagination pg-blue" id="ulNav">
-              <!--<li class="page-item" id="prev"><a class="page-link">Previous</a></li>
-              <li class="page-item" id="next"><a class="page-link">Next</a></li>-->
               <script id="templateNav" type="text/x-jQuery-tmpl">
                 <li class="page-item"  id="li-${RmName(Name)}"><a class="page-link" onclick="PopulateWeek('${Link}', '${Name}')">${RmName(Name)}</a></li>
               </script>
             </ul>
           </nav>
         
-          <!--<div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
-            <div class="col-md-6 px-0">
-              <h1 class="display-4 font-italic" id="JtHead"></h1>
-              <p class="lead my-3" id="JtBody"></p>
-              <p class="lead mb-0"><a href="#" id="JtLink" class="text-white font-weight-bold showModal">Continue reading...</a></p>
-            </div>
-          </div>-->
+
           <div id="PlaceHolderItem" class="row mb-2"></div>
 
           <script id="dTemp" type="text/x-jQuery-tmpl">
