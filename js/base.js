@@ -35,7 +35,7 @@ function liLinkParser(file){
 
 function navActiveText(fileName){
   let currentPath = new URL(window.location.href).pathname;
-if (currentPath.toLowerCase().includes(fileName) || (currentPath == "/" && filename== "index.html")){
+if (currentPath.toLowerCase().includes(fileName) || (currentPath == "/" && fileName== "index.html")){
   return "(current)";
 } return "";
 }
