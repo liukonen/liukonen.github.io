@@ -1,5 +1,5 @@
 function BindPage(){   
-let I = JSON.parse(getFile("about.json"));
+let I = JSON.parse(getFile("./json/about.json"));
 
 $("#welcome").text(I["welcome"]);
 

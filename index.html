@@ -7,8 +7,8 @@
     <meta name="author" content="Luke Liukonen">
     <title>Luke Liukonen</title>
     <link href="./css/luke.css" rel="stylesheet" />
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link href="/fontawesome/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
+    <link href="./lib/fontawesome/css/all.min.css" rel="stylesheet">
 
       <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png" sizes="180x180">
       <link rel="icon" href="/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
@@ -21,21 +21,17 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="#">Wecome</a>
+      <a class="navbar-brand" href="index.html">Wecome</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.htm">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="furlough.html">2020 Furlough logs</a>
-          </li>
+        <ul class="navbar-nav" id="navMenuBind">
+          <script id="navTemp" type="text/x-jQuery-tmpl">
+            <li class="nav-item ${navActiveFormat(value)}">
+            <a class="nav-link" href="${value}">${name} <span class="sr-only">${navActiveText(value)}</span></a>
+            </li>
+          </script>      
         </ul>
       </div>
     </nav>
@@ -118,11 +114,11 @@
 <footer class="container">
   <p>© Luke Liukonen 2020</p>
 </footer>
-<script src="js/jquery.min.js"></script>
-<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="js/modernizr.min.js"></script>
-<script src="js/jquery.tmpl.js"></script>
+<script src="./lib/js/jquery.min.js"></script>
+<script src="./lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="./lib/js/modernizr.min.js"></script>
+<script src="./lib/js/jquery.tmpl.js"></script>
 <script src="js/base.js"></script>
 <script src="js/luke.js"></script>
-<script src="js/basepost.js"></script>
+
 </body></html>

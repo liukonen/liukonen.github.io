@@ -2,7 +2,7 @@ var month = ["", "Jan","Feb","Mar","Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oc
 
 function generateResume(){
 
-let items = JSON.parse(getFile("./resume.json"));
+let items = JSON.parse(getFile("./json/resume.json"));
 
 //$.ajax({
 //  url:  "./resume.json",
