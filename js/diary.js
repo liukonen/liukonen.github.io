@@ -83,15 +83,20 @@ function CalcDate(ItemNumber, WeekNumber){
 return (addDays(MagicDate, (WeekNumber * 7)+ ItemNumber));
 }
 
-function ExtractBlogItem(dayUrl){
+function ExtractBlogItem(dayUrl){ return ExtractBlogItem(dayUrl, "");}
+
+function ExtractBlogItem(dayUrl, name){
 
     let dayString = getFile(baseUrl() + dayUrl);
     let startIndex = dayString.indexOf('<section id="main_content"');
     let sstring = dayString.substring(startIndex);
     sstring = sstring.replace( /(<([^>]+)>)/ig, '');
-
-    
-    if (sstring.length > 120){return sstring.substring(0,120);}return sstring;
+    console.log(sstring.startsWith(name));
+    sstring = sstring.trim();
+    if (sstring.startsWith(name)){sstring = sstring.substring(name.length);}
+    console.log(name);
+    if (sstring.length > 120){return sstring.substring(0,120);}
+    return sstring;
 }
 
 function addDays(date, days) {
