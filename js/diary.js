@@ -19,10 +19,6 @@ liLinkParser(weeksString).forEach(item =>{navTemp.tmpl(item).appendTo(MainContai
 $("#li-"+ RmName(lastName)).attr("class", "page-item active");
 MaxWeek = parseInt(RmName(lastName));
 PopulateWeek(LastLink, lastName);
-//$("#JtHead").text(lastName);
-//$("#JtBody").text(ExtractBlogItem(LastLink));
-//$("JtLink").attr("data-href", baseUrl() + LastLink);
-
 }
 
 var days;
