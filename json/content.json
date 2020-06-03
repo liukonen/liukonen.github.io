@@ -51,8 +51,8 @@
   },
   {
     "Title":"Simple Weather Tray",
-    "SubTitle":"Something simple to tell you the weather",
-    "Description":"This idea goes way back to my college days. I liked weathebug, but did not like the adware and spyware it was littered with. Code for this is based on weatherwallpaper, and the engine behind can be changed just like weatherwallpaper.",
+    "SubTitle":"Something simple to tell you the weather, on nearly any desktop enviroment",
+    "Description":"This idea goes way back to my college days. I liked weathebug, but did not like the adware and spyware it was littered with. App is now compiled using GTK, so it runs on Mac, Linux and PC! Code for this is based on weatherwallpaper, and the engine behind can be changed just like weatherwallpaper.",
     "image": "img/weather.webp",
     "release": "https://github.com/liukonen/SimpleWeatherTray/releases",
     "source" : "https://github.com/liukonen/SimpleWeatherTray"
