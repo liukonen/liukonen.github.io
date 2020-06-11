@@ -51,7 +51,11 @@
           <!--Object Item Template-->
           <script id="itemTemplate" type="text/x-jQuery-tmpl">
             <div class="row featurette">
-              <div class="col-md-7">
+              
+              <div class="col-md-5 order-md-2 fade-in">
+                <img class="featurette-image img-fluid mx-auto dShaddow" src="${image}">
+              </div>
+              <div class="col-md-7 order-md-1 fade-in">
                 <h2 class="featurette-heading">${Title}
                   <span class="text-muted"> ${SubTitle}</span>
                 </h2>
@@ -60,16 +64,19 @@
                 <a class="btn btn-secondary" href="${source}" target="_blank">source</a>
                 <p></p>
               </div>
-              <div class="col-md-5">
-                <img class="featurette-image img-fluid mx-auto" src="${image}">
-              </div>
+              
             </div>
             <hr class="featurette-divider">
           </script>
           <!--Object Item Inverted template (to flip the control on every other item)-->
           <script id="itemTemplate2" type="text/x-jQuery-tmpl">
               <div class="row featurette">
-                <div class="col-md-7 order-md-2">
+
+                <div class="col-md-5 fade-in">
+                  <img class="featurette-image img-fluid mx-auto dShaddow" src="${image}">
+                </div>
+
+                <div class="col-md-7 fade-in">
                   <h2 class="featurette-heading">${Title}
                     <span class="text-muted"> ${SubTitle}</span>
                   </h2>
@@ -78,9 +85,7 @@
                   <a class="btn btn-secondary" href="${source}" target="_blank">source</a>
                   <p></p>
                 </div>
-                <div class="col-md-5 order-md-1">
-                  <img class="featurette-image img-fluid mx-auto" src="${image}">
-                </div>
+
               </div>
               <hr class="featurette-divider">
             </script>
@@ -119,8 +124,10 @@
 <script src="./lib/js/jquery.tmpl.js"></script>
 <script src="js/base.js"></script>
 <script src="js/luke.js"></script>
+<script src="/lib//particles/particles.min.js"></script>
+<script src="/lib/particles/app.js"></script>
 <!-- Begin Web-Stat code v 7.0 -->
 <span id="wts1983157"></span><script>var wts=document.createElement('script');wts.async=true;wts.src='https://wts.one/log7.js';document.head.appendChild(wts);wts.onload = function(){ wtslog7(1983157,4); };
-</script><noscript><a href="https://www.web-stat.com"><img src="https://wts.one/7/4/1983157.png" alt="Web-Stat web statistics"></a></noscript>
+</script><noscript><a href="https://www.web-stat.com"><img src="https://wts.one/7/4/1983157.png" alt="Web-Stat web statistics" width="1px" height="1px"</a></noscript>
 <!-- End Web-Stat code v 7.0 -->
 </body></html>

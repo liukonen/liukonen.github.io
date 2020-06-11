@@ -13,3 +13,30 @@ function GetPercent(OneToFive){switch (OneToFive){case 5: return 95;case 4: retu
 function GetName(OneToFive){switch (OneToFive){case 5: return "Expert"; case 4: return "Advanced"; case 3: return "Intermediate"; case 2: return "Beginner"; default: return "New";}}
 
     BindPage();
+
+
+
+
+    function DynamicProgress()
+{
+  $('.progress-bar').each( function(i){
+  var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+  var bottom_of_window = $(window).scrollTop() + $(window).height();  
+  if( bottom_of_window > bottom_of_object ){ 
+    $(this).animate({
+        width: $(this).attr("per")
+    }, 750);
+    
+    $(this).addClass("progress-barAnimate");
+    }
+  });
+}
+
+    $(document).ready(function() {
+        DynamicProgress();    
+        /* Every time the window is scrolled ... */
+        $(window).scroll( function(){
+            DynamicProgress();
+        });
+        
+      });

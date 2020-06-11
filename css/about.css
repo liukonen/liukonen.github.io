@@ -7,13 +7,17 @@ body, html {
   
   .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-end {
     position: relative;
-    filter: brightness(50%);
+   
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  
+    filter:brightness(0.5); 
+    -webkit-filter:brightness(0.5);
   }
+
+  
+
   .bgimg-1 {
     background-image: url("../img/me_outfield_MillerPark.jpg");
     min-height: 60%;
@@ -43,7 +47,7 @@ body, html {
     text-align: center;
     color: #000;
   }
-  .clearBoarder{background-color:transparent !important;font-size:25px;color: #f7f7f7 !important;}
+  .clearBoarder{background-color:transparent !important;font-size:25px;color: #FFF !important;}
 
 
   .caption2 {
@@ -101,4 +105,10 @@ body, html {
   height: 50px;
 border-radius: 50%;border:0px solid #f5f6fa;
   text-align: center;padding: 10px 10px;
+}
+
+
+.progress-bar {
+  -webkit-transition: none !important;
+  transition: none !important;
 }

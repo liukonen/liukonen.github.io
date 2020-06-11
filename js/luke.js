@@ -12,6 +12,28 @@ function generate(){
   });
 }
 
+
+
+
 function DetermButtonColor(release){return (release.startsWith("https://liukonen.github.io")) ? "success" : "primary";}
 function DetermButtonName(release){return release.startsWith("https://liukonen.github.io")? "Website" : "Release";}
 generate();
+
+
+function CheckFade()
+{
+  $('.fade-in').each( function(i){
+  var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+  var bottom_of_window = $(window).scrollTop() + $(window).height();  
+  if( bottom_of_window > bottom_of_object ){ $(this).animate({'opacity':'1'},500);}
+  });
+}
+
+$(document).ready(function() {
+  CheckFade();    
+  /* Every time the window is scrolled ... */
+  $(window).scroll( function(){
+            CheckFade();
+  });
+  
+});

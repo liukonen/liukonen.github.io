@@ -108,3 +108,13 @@ border-radius: 50%;border:1.5px solid #f5f6fa;
   margin-left: .1rem;
   margin-right: .1rem;
 }
+
+.fade-in{
+
+  opacity: 0.5;
+  transition: opacity 25ms ease-in;
+}
+
+.dShaddow{
+  filter: drop-shadow(10px 10px 4px #727272);
+}
