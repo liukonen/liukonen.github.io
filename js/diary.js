@@ -101,5 +101,31 @@ function addDays(date, days) {
     return copy
   }
 
+/*region - navbar transparent effect*/
+const header = document.querySelector("nav");
+const Jumbo = document.querySelector(".jumbotron");
+const navOptions = {rootMargin:"-50px 0px 0px 0px"};
+
+const navObserver = new IntersectionObserver((entries, navObserver) =>{
+  entries.forEach(entry =>{
+    if (!entry.isIntersecting){
+      console.log("dark");
+      header.classList.add("bg-dark");
+      header.classList.add("transition");
+    }else{
+      console.log("trans");
+      header.classList.remove("bg-dark");
+      header.classList.remove("transition");
+    }
+  });
+}, {rootMargin:"-50px 0px 0px 0px"});
+
+//load
+console.log("observe");
+console.log(header);
+console.log(Jumbo);
+navObserver.observe(Jumbo);
+/*end region navbar transparent effect */
 
 generateNavs();
+

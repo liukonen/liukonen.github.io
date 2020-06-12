@@ -62,32 +62,32 @@ background-size: cover;
 .user_img{
     height: 90px;
     width: 90px;
-    border:1.5px solid #f5f6fa;}
-
+    /*border:1.5px solid #f5f6fa;}*/
+}
 /*Round Buttons*/
 .btn-circle.btn-sm {
             width: 30px;
             height: 30px;
-            //padding: 6px 0px;
+            /*padding: 6px 0px;*/
             border-radius: 50%;
 border:1.5px solid #f5f6fa;
-            //font-size: 8px;
+            /*font-size: 8px;*/
             text-align: center;
         }
         .btn-circle.btn-md {
             width: 50px;
             height: 50px;
-            //padding: 7px 10px;
+            /*padding: 7px 10px;*/
 border-radius: 50%;border:1.5px solid #f5f6fa;
-            //font-size: 10px;
+            /*font-size: 10px;*/
             text-align: center;
         }
         .btn-circle.btn-xl {
             width: 70px;
             height: 70px;
-          //  padding: 10px 16px;
+          /*  padding: 10px 16px;*/
 border-radius: 50%;border:1.5px solid #f5f6fa;
-            //font-size: 12px;
+            /*font-size: 12px;*/
             text-align: center;
         }
 /*Sub Menus*/
@@ -117,4 +117,12 @@ border-radius: 50%;border:1.5px solid #f5f6fa;
 
 .dShaddow{
   filter: drop-shadow(10px 10px 4px #727272);
+}
+
+.navbar.transparent {
+  background: rgba(0,0,0,0.4);
+}
+
+.navbar.transition{
+transition:  background 250ms ease-in-out;
 }

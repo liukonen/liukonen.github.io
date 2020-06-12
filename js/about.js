@@ -16,8 +16,22 @@ function GetName(OneToFive){switch (OneToFive){case 5: return "Expert"; case 4: 
 
 
 
-
-    function DynamicProgress()
+/*region Dynamic Progress bars*/
+const progressbars = document.querySelectorAll(".progress-bar");
+const ProgressBarObsever = new IntersectionObserver((entries, ProgressBarObsever)=> {
+  entries.forEach(entry =>{
+    if (entry.isIntersecting){
+      console.log("hit");
+      let I = $(entry.target);
+console.log(I);
+      I.animate({width: $(I).attr("per")}, 750); 
+      ProgressBarObsever.unobserve(entry.target);
+    }
+  });
+}, {threshold: 1, rootMargin:"0px 0px -20px 0px"});
+progressbars.forEach(progressbar => {ProgressBarObsever.observe(progressbar);});
+/*
+function DynamicProgress()
 {
   $('.progress-bar').each( function(i){
   var bottom_of_object = $(this).offset().top + $(this).outerHeight();
@@ -33,10 +47,33 @@ function GetName(OneToFive){switch (OneToFive){case 5: return "Expert"; case 4: 
 }
 
     $(document).ready(function() {
-        DynamicProgress();    
+        DynamicProgress(); */   
         /* Every time the window is scrolled ... */
-        $(window).scroll( function(){
+       /* $(window).scroll( function(){
             DynamicProgress();
         });
         
-      });
+      });*/
+/*end region*/
+
+/*region transparent Navbar */
+const header = document.querySelector("nav");
+const firstImage = document.querySelector(".bgimg-1");
+
+const navObserver = new IntersectionObserver((entries, navObserver) =>{
+  entries.forEach(entry =>{
+    if (!entry.isIntersecting){
+      header.classList.add("bg-dark");
+      header.classList.add("transition");
+    }else{
+      header.classList.remove("bg-dark");
+      header.classList.remove("transition");
+    }
+  });
+}, {rootMargin:"-250px 0px 0px 0px"});
+
+//load
+navObserver.observe(firstImage);
+
+/*end region*/
+
