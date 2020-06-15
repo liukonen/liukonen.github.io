@@ -52,31 +52,71 @@
           <hr class="featurette-divider">
           <!--Object Item Template-->
 
+          <div class="row">
+            <h2>week</h2>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+          
+               
+                  
+                <div class="btn-group" role="group" id="ulNav">
+                  <script id="templateNav" type="text/x-jQuery-tmpl">
+                    <button id="btn-${RmName(Name)}" class="btn btn-primary" onclick="PopulateWeek('${Link}', '${Name}')">${RmName(Name)}</buton>
+                    <!--<li class="page-item" id="li-${RmName(Name)}"><a class="page-link" onclick="PopulateWeek('${Link}', '${Name}')">${RmName(Name)}</a></li>-->
+                  </script>
+                </div>
+              
+              </div>
 
-          <h2>week</h2>
-          <nav aria-label="Page navigation example">
-            <ul class="pagination pg-blue" id="ulNav">
-              <script id="templateNav" type="text/x-jQuery-tmpl">
-                <li class="page-item"  id="li-${RmName(Name)}"><a class="page-link" onclick="PopulateWeek('${Link}', '${Name}')">${RmName(Name)}</a></li>
+            <div class="input-group col-md-6">
+              <input type="text" name="search" id="search"  placeholder="Search" list="searchresults" autocomplete="off"  class="form-control" onselect="SearchFind2()"/>
+                <div class="input-group-append"><datalist id="searchresults"></datalist>
+                <a class="btn btn-primary" onclick="SearchFind2()"><i class="fa fa-search" aria-hidden="true"></i></a>
+              </div>
+            </div>          
+            
+          </div>
+          <hr class="featurette-divider">
+          <div class="row">
+            <div class="col-md-2">
+
+              <h2 class="h3">Top keywords</h2>
+              <ul class="list-group" id="ulKeywords">
+              </ul>
+              <script id="tempKeywordList" type="text/x-jQuery-tmpl">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <a onclick="SearchFind('${keyword}')" >${keyword}</a>
+                  <span class="badge badge-primary badge-pill">${count}</span>
+                </li>
               </script>
-            </ul>
-          </nav>
+
+
+
+  
+            </div>
+            <div class="col">
+              <div id="PlaceHolderItem" class="row mb-2"></div>
+
+
+              <script id="dTemp" type="text/x-jQuery-tmpl">
+                <div class="col-md-4">
+                  <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                      <h3 class="mb-0">${Name}</h3>
+                      <div class="mb-1 text-muted">${CalcDate(ItemNumber, ActiveWeek).toDateString()}</div>
+                      <p class="card-text mb-auto">${ExtractBlogItem(Link, Name)}...<a href="${baseUrl() + Link}" onclick="showModal(this, event)" target="_blank">Continue</a></p>
+                    </div>
+                  </div>
+                </div>  
+            </script>
+            </div>
+          </div>
+
+          
         
 
-          <div id="PlaceHolderItem" class="row mb-2"></div>
 
-          <script id="dTemp" type="text/x-jQuery-tmpl">
-              <div class="col-md-4">
-                <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow h-md-250 position-relative">
-                  <div class="col p-4 d-flex flex-column position-static">
-                    <h3 class="mb-0">${Name}</h3>
-                    <div class="mb-1 text-muted">${CalcDate(ItemNumber, ActiveWeek).toDateString()}</div>
-                    <p class="card-text mb-auto">${ExtractBlogItem(Link, Name)}...<a class="showModal" target="_blank" href="${baseUrl() + Link}" data-href="${baseUrl() + Link}">Continue</a></p>
-                  </div>
-                </div>
-              </div>  
-          
-          </script>
 
 
       </div><!-- /.container -->
@@ -115,5 +155,4 @@
 <script src="./lib/js/jquery.tmpl.js"></script>
 <script src="js/base.js"></script>
 <script src="js/diary.js"></script>
-
 </body></html>

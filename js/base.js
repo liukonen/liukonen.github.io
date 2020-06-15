@@ -11,27 +11,7 @@ let temp;
   return temp;
 }
 
-function liLinkParser(file){
-  let response = [];
-  let startIndex = file.indexOf("<ul>");
-  let lastIndex = file.indexOf("</ul>");
-  let sstring = file.substring(startIndex, lastIndex);
-  let i = 0;
-  while (i >=0){
-    i = sstring.indexOf("href", i);
-    if (i > 0){
-      i +=6;
-      let Y = sstring.indexOf('"', i);
-      let link = sstring.substring(i, Y);
-      i = Y;
-      i = sstring.indexOf(">", i) +1;
-      Y = sstring.indexOf("<", i);
-      let text = sstring.substring(i,Y);
-      response.push({Name: text, Link:link});
-      }
-    }
-  return response;
-}
+
 
 function navActiveText(fileName){
   let currentPath = new URL(window.location.href).pathname;
@@ -67,23 +47,7 @@ function generateMenu(){
 
 
 
-$(document).ready(function() {
 
-  $(".showModal").click(function(e) {
-    e.preventDefault();
-    var url = $(this).attr("data-href");
-    console.log($(this));
-    if (window.innerWidth >= 576){
-      $("#staticBackdropLabel").text($(this).text());
-
-      $("#dynamicModal iframe").attr("src", url);
-      $("#dynamicModal").modal("show");
-      $("#aSite").attr("href", url);
-    }
-  else {var win = window.open(url, '_blank'); win.focus();}
-  });
-
-});
 
 // Submenu support
 $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {

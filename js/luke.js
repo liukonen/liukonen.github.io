@@ -20,24 +20,6 @@ function DetermButtonName(release){return release.startsWith("https://liukonen.g
 
 generate();
 
-//items below this line must be done here, since generate puts in the items needed for the functionality below
-//function CheckFade()
-//{
-//  $('.fade-in').each( function(i){
-//  var bottom_of_object = $(this).offset().top + $(this).outerHeight();
-//  var bottom_of_window = $(window).scrollTop() + $(window).height();  
-//  if( bottom_of_window > bottom_of_object ){ $(this).animate({'opacity':'1'},500);}
-//  });
-//}
-
-//$(document).ready(function() {
-//  CheckFade();    
-  /* Every time the window is scrolled ... */
-//  $(window).scroll( function(){
-//            CheckFade();
-//  });
-  
-//});
 /*region Lazy Load */
 
 const lloadImages = document.querySelectorAll(".featurette-image");
@@ -96,6 +78,7 @@ const faderObsever = new IntersectionObserver((entries, faderObsever) => {
 }, faderOptions);
 faderItems.forEach(item => faderObsever.observe(item));
 /*end region fader */
+
 
 
 
