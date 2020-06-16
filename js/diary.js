@@ -6,30 +6,65 @@ var MagicDate = new Date(2020,02,29);
 var search = document.querySelector('#search');
 var results = document.querySelector('#searchresults');
 var SearchItems = JSON.parse( getFile("https://liukonen.github.io/furlough/keywords.json"));
+var ActiveWeeks = [];
+var AllWeeks = [];
+var days;
 
 
+const observerOptions = {threshold:1, rootMargin:"0px 0px 0px 0px"};
+const ContentObserver = new IntersectionObserver((entries, 
+  ContentObserver)=> {
+    entries.forEach(entry => {
+      if (entry.isIntersecting){
+        let S = entry.target.getAttribute("data-src");
+        let item = S.split("|");
+        console.log(item);
+        entry.target.innerHTML =  ExtractBlogItem(item[0], item[1]);
+        ContentObserver.unobserve(entry.target);  
+      }
+});
+
+}, observerOptions);
 
 function baseUrl(){
-let item = new URL(furloughDiary);
-return item.protocol + "//" + item.host;
-
+  let item = new URL(furloughDiary);
+  return item.protocol + "//" + item.host;
 }
-
 
 function generateNavs(){
-let weeksString = getFile(furloughDiary);
-let navTemp = $("#templateNav");
-let MainContainer = $("#ulNav");
+  let weeksString = getFile(furloughDiary);
+  let navTemp = $("#templateNav");
+  let MainContainer = $("#ulNav");
+  AllWeeks = liLinkParser2(weeksString);
+  ActiveWeeks = AllWeeks.slice(AllWeeks.length -4);
+  ActiveWeeks.forEach(item =>{navTemp.tmpl(item).appendTo(MainContainer); lastName = item.Name; LastLink=item.Link;});
 
-liLinkParser(weeksString).forEach(item =>{navTemp.tmpl(item).appendTo(MainContainer); lastName = item.Name; LastLink=item.Link;});
-$("#li-"+ RmName(lastName)).attr("class", "page-item active");
-MaxWeek = parseInt(RmName(lastName));
-console.log(lastName);
-PopulateWeek(LastLink, lastName);
-
+  $("#li-"+ RmName(lastName)).attr("class", "page-item active");
+  MaxWeek = parseInt(RmName(lastName));
+  console.log(lastName);
+  PopulateWeek(LastLink, lastName);
 }
 
-var days;
+function adjustNavs(direction){
+  let navTemp = $("#templateNav");
+  let MainContainer = $("#ulNav");
+  MainContainer.empty();
+  if (direction == 0){
+
+    let currentLow = ActiveWeeks[0].ItemNumber;
+    let newLow = (currentLow-4 >= 1) ? currentLow -4 : 1;
+    console.log(newLow-1, 4);
+    ActiveWeeks = AllWeeks.slice(newLow-1, newLow + 3);
+    console.log(AllWeeks);
+
+  }else{
+     let newlow = ActiveWeeks[ActiveWeeks.length -1].ItemNumber;
+     let length = (newlow + 4 >= MaxWeek) ? MaxWeek - newlow : 4;
+    ActiveWeeks = AllWeeks.slice(newlow, newlow + length);    
+  }
+  ActiveWeeks.forEach(item =>{navTemp.tmpl(item).appendTo(MainContainer);});
+  SetActive(ActiveWeek);
+}
 
 function PopulateWeek(weekUrl, name){
 
@@ -39,7 +74,8 @@ function PopulateWeek(weekUrl, name){
   placeholder.empty();
   ActiveWeek = parseInt(RmName(name));
   days = liLinkParser2(weekString);
-  days.reverse().forEach(item=>{blogTemp.tmpl(item).appendTo(placeholder)});
+   days.reverse().forEach(item=>{blogTemp.tmpl(item).appendTo(placeholder)});
+  BindDynamic();
   SetActive(ActiveWeek);
 }
 
@@ -57,47 +93,36 @@ function PopulateSearchResults(SearchResults){
     RI.push({Name: FakeNewName(sItem), Link:NewURL, ItemNumber: counter});
     counter++;
   });
+  //LoadContent(RI);
   RI.forEach(item => {blogTemp.tmpl(item).appendTo(placeholder)});
+  BindDynamic();
   SetActive(-1);  
 }
 
+function BindDynamic(){
+  const DynamicContent = document.querySelectorAll(".EItem");
+  ContentObserver.disconnect();
+  console.log(DynamicContent);
+  DynamicContent.forEach(item=>{ContentObserver.observe(item);});
+}
 function FakeNewName(name)
 {
   let X = name[0].toUpperCase() + name.substring(1);
-let Y = X.substring(0, 3) + " " + X.substring(3);
-return Y.substring(0, Y.length -3);
+  let Y = X.substring(0, 3) + " " + X.substring(3);
+  return Y.substring(0, Y.length -3);
 }
 
 function SetActive(activeWeek)
 {
     var i;
-    for (i = 0; i <= MaxWeek; i++) {
-      $("#btn-" + i).attr("class", (i == activeWeek ? "btn btn-primary": "btn btn-light"));
-    }
- //$("#prev").attr("class", (activeWeek == 1 || activeWeek == -1) ? "page-item disabled": "page-item");
- //$("#next").attr("class", (activeWeek == MaxWeek || activeWeek == -1) ? "page-item disabled" : "page-item");
-}
+    ActiveWeeks.forEach(item =>{
+      $("#btn-" + item.ItemNumber).attr("class", (item.ItemNumber == activeWeek ? "nav-link active": "nav-link"));
+    })
+    $("#prev").show();
+    $("#next").show();
 
-function liLinkParser(file){
-  let response = [];
-  let startIndex = file.indexOf("<ul>");
-  let lastIndex = file.indexOf("</ul>");
-  let sstring = file.substring(startIndex, lastIndex);
-  let i = 0;
-  while (i >=0){
-    i = sstring.indexOf("href", i);
-    if (i > 0){
-      i +=6;
-      let Y = sstring.indexOf('"', i);
-      let link = sstring.substring(i, Y);
-      i = Y;
-      i = sstring.indexOf(">", i) +1;
-      Y = sstring.indexOf("<", i);
-      let text = sstring.substring(i,Y);
-      response.push({Name: text, Link:link});
-      }
-    }
-  return response;
+  if (ActiveWeeks[0].ItemNumber == 1){$("#prev").hide();}
+  if (ActiveWeeks[ActiveWeeks.length-1].ItemNumber == MaxWeek){$("#next").hide();}
 }
 
 function liLinkParser2(file){
@@ -128,12 +153,11 @@ function RmName(name){return name.replace("Week ", "");}
 
 function CalcDate(ItemNumber, WeekNumber){
   if (WeekNumber == -1) {
-console.log(ItemNumber);
-  let calcWeek = parseInt(ItemNumber / 5) + 1;
-  let CalcDay = parseInt(ItemNumber % 5) + 1;
-  return CalcDate(CalcDay, calcWeek); 
-    //let P = "day05.md".substring(3).substring(0,2)
-    return new Date(0);}
+    console.log(ItemNumber);
+    let calcWeek = parseInt(ItemNumber / 5) + 1;
+    let CalcDay = parseInt(ItemNumber % 5) + 1;
+    return CalcDate(CalcDay, calcWeek); 
+  }
   return (addDays(MagicDate, (WeekNumber * 7)+ ItemNumber));
 }
 
@@ -155,32 +179,19 @@ function addDays(date, days) {
   }
 
 
-  function SearchFind2()
-{
-
-    let searchString = search.value.trim().toLowerCase();
-    SearchFind(searchString);
-
-}
+  function SearchFind2() {SearchFind(search.value.trim().toLowerCase());}
 
 function SearchFind(searchString)
 {
     let ResponseItem  = SearchItems.filter(x=> x.keyword == searchString)[0] || null;
-    if (ResponseItem != null){
-        PopulateSearchResults(ResponseItem.files);
-    }
+    if (ResponseItem != null) PopulateSearchResults(ResponseItem.files);
 }
 
 
 function GenerateKeywords()
 {
     let template = $("#tempKeywordList");
-    for(i = 0; 5 > i; i++)
-    {
-        console.log(SearchItems[i]);
-        template.tmpl(SearchItems[i]).appendTo($("#ulKeywords"));
-    }
-
+    for(i = 0; 5 > i; i++) {template.tmpl(SearchItems[i]).appendTo($("#ulKeywords"));}
 }
 
 /*region - navbar transparent effect*/
