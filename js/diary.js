@@ -168,7 +168,7 @@ function ExtractBlogItem(dayUrl, name){
     let dayString = getFile(baseUrl() + dayUrl.substring(0, dayUrl.length -4) + "md");
     let sstring = dayString.replace("#", "").trim();
     if (sstring.startsWith(name)){sstring = sstring.substring(name.length);}
-    if (sstring.length > 120){return sstring.substring(0,120);}
+    if (sstring.length > 120){return sstring.substring(0,120) + "...";}
     return sstring;
 }
 
