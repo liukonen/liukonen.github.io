@@ -5,7 +5,7 @@ var lastName; var LastLink;
 var MagicDate = new Date(2020,02,29);
 var search = document.querySelector('#search');
 var results = document.querySelector('#searchresults');
-var SearchItems = JSON.parse( getFile("./furlough/keywords.json"));
+var SearchItems = JSON.parse( getFile("furlough/keywords.json"));
 var ActiveWeeks = [];
 var AllWeeks = [];
 var days;
