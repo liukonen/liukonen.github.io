@@ -1,4 +1,4 @@
-var furloughDiary = "https://liukonen.github.io/furlough/index.html";
+var furloughDiary = "./furlough/index.html";
 
 function getFile(fileUrl){
 let temp;
