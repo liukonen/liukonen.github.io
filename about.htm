@@ -54,48 +54,86 @@
 </div>
 
 <div style="position:relative;">
-  <div class="container-fluid" style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+  <div class="container-fluid" style="color:#000;background-color:#fff;text-align:center;padding:50px 80px;text-align: justify;">
   <p>
     <div class="row justify-content-md-center">
       
-      <div><h1 class="h3">Highlights</h1>
-        <ul class="list-group text-dark" id="highlights">
+      <div class="card shadow mr-4">
+        <div class="card-header bg-transparent">
+          <h1 class="h3">Current Work Highlights</h1>
+        </div>
+        <ul class="list-group list-group-flush text-dark" id="highlights">
           <script id="tmpHighlights" type="text/x-jQuery-tmpl"><li class="list-group-item">${a}</li></script>
         </ul>
       </div>
-        <div class="col-lg-4">
-          <h1 class="h3">History</h1>
-          <ul id="work">
-<script id="tmpWork" type="text/x-jQuery-tmpl">
-            <li class="NoDot">
-                <img src="${img}" height="32" width="32" />
+      
+      <div class="card shadow bg-transparent">
+        <div class="card-header bg-transparent">
+          <h1 class="h3">Work History</h1>
+        </div>
+        <ul class="list-group list-group-flush text-dark" id="work">
+          <script id="tmpWork" type="text/x-jQuery-tmpl">
+            <li class="list-group-item">
+              <div class="row">
+                <div>
+                <img src="${img}" height="32" width="32" class="mr-2" />
+                </div>
+                <div>
                 <b>${name}</b>: ${title}
-                <br/> 
+                <p> 
                 <i>${timeworked}</i>
+                </p>
+              </div>
                 </li>
-            <br />
-</script>
-          </ul>
-
-      </div>
-      <div class="col-lg-4">
-        <h1 class="h3">Experience</h1>
-        <ul id="eContainer">
-<script id="eTemp" type="text/x-jQuery-tmpl">
-            <li class="NoDot"> 
-            <br />
-                ${name}
-            <div class="progress">
-              <div class="progress-bar bg-${color}" role="progressbar" per="${GetPercent(OneTo5)}%" aria-valuenow="${GetName(OneTo5)}" aria-valuemin="0" aria-valuemax="100">
-                   ${GetName(OneTo5)}
-                 </div>
-            </div>
-          </li>
+              </div>
 </script>
         </ul>
       </div>
+
     </div>
   </p>
+  </div>
+</div>
+<div class="container-fluid"  style="color:#000;background-color:#fff;text-align:center;padding:50px 80px;text-align: justify;">
+<script id="tmpExp" type="text/x-jAuery-tmpl">
+  <div class="col2 mr-5 text-center lateloadfadeIn"><img data-src="${img}" title="${title}" width="100px" height="100px" style="display:none;" /><p>${title}<p></p><span class="badge badge-pill badge-${expPillColor(level)}">${expPillName(level)}</span></p></div>     
+</script>
+
+<div class="row text-dark">
+  <div class="card shadow col-md-12 ">
+    <div class="card-header bg-transparent"><h2 class="h4">Frontend / UI</h2></div>
+        <div class="card-body"><div class="row justify-content-md-center" id="UI"></div>  
+      </div>
+    </div>
+
+    <div class="card shadow col-md-6 mt-5">
+      <div class="card-header bg-transparent"><h2 class="h4">Backend</h2></div>
+          <div class="card-body"><div class="row justify-content-md-center" id="Backend"></div>  
+        </div>
+      </div>
+      <div class="card shadow col-md-6 mt-5">
+        <div class="card-header bg-transparent"><h2 class="h4">Database</h2></div>
+            <div class="card-body"><div class="row justify-content-md-center" id="Database"></div>  
+          </div>
+        </div>
+      <div class="card shadow col-md-12 mt-5">
+        <div class="card-header bg-transparent"><h2 class="h4">Frameworks</h2></div>
+            <div class="card-body"><div class="row justify-content-md-center" id="Frameworks"></div>  
+          </div>
+        </div>
+
+        <div class="card shadow col-md-4 mt-5">
+          <div class="card-header bg-transparent"><h2 class="h4">Version Control</h2></div>
+              <div class="card-body"><div class="row justify-content-md-center" id="VersionControl"></div>  
+            </div>
+          </div>
+
+          <div class="card shadow col-md-8 mt-5">
+            <div class="card-header bg-transparent"><h2 class="h4">Tools</h2></div>
+                <div class="card-body"><div class="row justify-content-md-center" id="Tools"></div>  
+              </div>
+            </div>
+          </div>
   </div>
 </div>
 
@@ -104,7 +142,6 @@
   <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">Hobbies</span>
   </div>
 </div>
-
 <div style="position:relative;">
   <div class="container-fluid" style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
   <p>

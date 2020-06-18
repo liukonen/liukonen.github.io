@@ -24,7 +24,15 @@ generate();
 
 const lloadImages = document.querySelectorAll(".featurette-image");
 const observerOptions = {threshold:1, rootMargin:"0px 0px 300px 0px"};
-function preloadImg(img){let src = img.getAttribute("data-src"); if (src){img.src = src; console.log(src);}}
+
+function preloadImg(img){
+  let src = img.getAttribute("data-src"); 
+  if (src){
+    if (SupportsWebp != 1){img.src = src + ".png";}
+    else{img.src = src;} 
+    console.log(src);
+  }
+}
 
 const imgObserver = new IntersectionObserver((entries, 
   imgObserver)=> {

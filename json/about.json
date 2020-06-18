@@ -1,8 +1,8 @@
 {
-    "welcome":"My name is Luke Liukonen, and I am a developer, former educator, and tech enthusiast based out of the Metro Milwaukee Wisconsin area. Let's be honest though, that's only a small sliver of who I am. I've been in development for over 14 years professionally, spending most of my time in the travel space. I have  been fascinated with the direction technology could take us, and was a huge fan of how we would interact with them in the future. To this day, I like to consider myself a technologist, reading up on current trends, and what progress we are making in the field.",
+    "welcome":"My name is Luke Liukonen, and I am a developer, former educator, and tech enthusiast based out of the Metro Milwaukee Wisconsin area. Let's be honest though, that's only a small sliver of who I am. I've been in development for over 14 years professionally, spending most of my time in the travel space. My main focus is backend development, however, I have transitioned to more of a full stack developer. I have  been fascinated with the direction technology could take us, and was a huge fan of how we would interact with them in the future. To this day, I like to consider myself a technologist, reading up on current trends, and what progress we are making in the field.",
 
     "highlights":[
-        {"a":"2-time Trisept Solutions representative for Cosbe Be the spark tour"}
+        {"a":"2-time Trisept Solutions representative for MMAC 'Be the Spark Tour'"}
         ,{"a":"Multiple time winner of Trisept Solutions Hack-a-thon competition"}
         ,{"a":"Represented Trisept Solutions at Microsoft bot Hack-a-thon"}
         ,{"a":"On multiple committees for outreach, wellness, and event planning"}
@@ -20,6 +20,46 @@
         ,{"name": "Agile - Scrum and Kanban", "color": "danger", "OneTo5":3}
         ,{"name": "Javascript and Jquery", "color": "warning", "OneTo5":3}
         ,{"name": "Python", "color": "info", "OneTo5":2}
+    ],
+    "UI":
+    [
+        {"title": "ASP.Net", "img": "./img/aspnet.webp", "level": 2},
+        {"title": "HTML 5", "img": "./img/html5.webp", "level": 2},
+        {"title": "JavaScript", "img": "./img/javascript.webp", "level": 2},
+        {"title": "jQuery", "img": "./img/jquery.webp", "level": 1},
+        {"title": "Blazzor Pages", "img": "./img/blazor.webp", "level": 1},
+        {"title": "CSS", "img": "./img/css3.webp", "level": 1}
+    ],
+    "Backend":
+    [
+        {"title": "C#", "img": "./img/csharp.webp", "level": 3},
+        {"title": "VB.Net", "img": "./img/vb.webp", "level": 3},
+        {"title": "Python", "img": "./img/python.webp", "level": 1}
+    ],
+    "Database":
+    [
+        {"title": "SQL Server", "img": "./img/sqlserver.webp", "level": 2},
+        {"title": "Sqlite", "img": "./img/sqlite.webp", "level": 1},
+        {"title": "LiteDB", "img": "./img/litedb.webp", "level": 1}          
+    ],
+    "Frameworks":[
+        {"title": "Scrum", "img": "./img/agile.webp", "level": 2} ,
+        {"title": "MVC", "img": "./img/mvc.webp", "level": 2} ,
+        {"title": "WCF", "img": "./img/wcf.webp", "level": 2} ,
+        {"title": "Kanban", "img": "./img/kanban.webp", "level": 1} ,
+        {"title": "MS Cognitive Services", "img": "./img/cognitive.webp", "level": 1} ,
+        {"title": "Slack", "img": "./img/slack.webp", "level": 1} 
+    ],
+    "VersionControl":[
+        {"title": "TFS", "img": "./img/TFS.webp", "level": 2} ,
+        {"title": "GitHub", "img": "./img/Octocat.webp", "level": 1} 
+    ],
+    "Tools":[
+        {"title": "Visual Studio", "img": "./img/visualstudio.webp", "level": 2} ,
+        {"title": "VS Code", "img": "./img/vscode.webp", "level": 1},
+        {"title": "Git", "img": "./img/Git.webp", "level": 1},
+        {"title": "XCode", "img": "./img/xcode.webp", "level": 1}
+        
     ],
     "Work":[
         {"name":"Trisept Solutions", "timeworked":"April 2014 - Present", "title":"Software Analyst (Mid/Snr Engineer Eq)", "img":"./img/Trisept Solutions.webp.png"}

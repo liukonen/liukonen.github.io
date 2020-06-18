@@ -1,4 +1,6 @@
 var furloughDiary = "https://liukonen.dev/furlough/index.html";
+var SupportsWebp = 2; // 2- not set, 1, true, 0, false
+
 
 function getFile(fileUrl){
 let temp;
@@ -68,10 +70,12 @@ $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
     Modernizr.on('webp', function(result) {
       if (result) {
         console.log("Webp supported");
+        SupportsWebp = 1
         // supported
       }
       else {
         console.log("webp not supported, fallback to png");
+        SupportsWebp = 0;
         $('img').each(function() {
           var $img = $(this);
           var src = $img.attr("src");
