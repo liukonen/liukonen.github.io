@@ -7,19 +7,18 @@
     <meta name="author" content="Luke Liukonen">
     <title>Luke Liukonen</title>
     <link href="./css/luke.css" rel="stylesheet" />
-    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
-    <link href="./lib/fontawesome/css/all.min.css" rel="stylesheet">
-      <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png" sizes="180x180">
-      <link rel="icon" href="/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-      <link rel="icon" href="/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-      <link rel="manifest" href="/img/favicons/manifest.json">
-      <link rel="mask-icon" href="/img/favicons/safari-pinned-tab.svg" color="#ffffff">
-      <link rel="icon" href="/img/favicons/favicon.ico">
-      <meta name="msapplication-config" content="/img/favicons/browserconfig.xml">
-      <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha256-aAr2Zpq8MZ+YA/D6JtRD3xtrwpEz2IqOS+pWD/7XKIw=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+    <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/img/favicons/safari-pinned-tab.svg" color="#ffffff">
+    <link rel="icon" href="/img/favicons/favicon.ico">
+    <meta name="msapplication-config" content="/img/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
   </head>
   <body>
-   
     <nav class="navbar transparent navbar-expand-md navbar-dark fixed-top">
       <a class="navbar-brand" href="index.html">Wecome</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,10 +34,10 @@
         </ul>
       </div>
     </nav>
-    <main role="main">
+    <main>
       <div class="jumbotron">
         <div class="container text-light">
-          <h1 class="display-3"><img src="img/me-bw.webp" class="rounded-circle user_img" /> Hello, world!</h1>
+          <h1 class="display-3"><img src="img/me-bw.webp" class="rounded-circle user_img" alt="Luke Liukonen" /> Hello, world!</h1>
           <p>Developer / Former Instructor / Tech enthusiast</p>
           <p>Welcome to my personal page.</p>
           <a target="_blank" class="btn btn-secondary" href="https://github.com/liukonen" role="button" aria-label="Github"><i class="fab fa-github-alt"></i> GitHub</a>
@@ -55,7 +54,7 @@
             <div class="row featurette">
               
               <div class="col-md-5 order-md-2 fade-in">
-                <img class="featurette-image img-fluid mx-auto dShaddow" data-src="${image}">
+                <img class="featurette-image img-fluid mx-auto dShaddow" data-src="${image}" alt="${Title}">
               </div>
               <div class="col-md-7 order-md-1 fade-in">
                 <h2 class="featurette-heading">${Title}
@@ -93,41 +92,19 @@
             </script>
       </div><!-- /.container -->
     </main>
-    <div class="modal fade dynamicModal" id="dynamicModal" data-backdrop="static" tabindex="-1" role="dialog"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog  modal-lg modal-dialog-scrollable" role="document">
-      <div class="modal-content text-white bg-dark">
-        <div class="modal-header">
-          <h1 class="h5 modal-title" id="staticBackdropLabel">Modal title</h1>
-          <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <!--" ">  <div class="modal-content">-->
-            <div class="embed-responsive embed-responsive-4by3">
-              <iframe class="embed-responsive-item" src=""></iframe>
-              <!--</div>-->
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <a type="button" class="btn btn-primary" href="#" id="aSite" target="_blank">Original</a>
-          </div>
-        </div>
-      </div>
-    </div>
-<footer class="container">
-  <p>© Luke Liukonen 2020</p>
-</footer>
-<script src="./lib/js/jquery.min.js"></script>
-<script src="./lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="./lib/js/modernizr.min.js"></script>
-<script src="./lib/js/jquery.tmpl.js"></script>
-<script src="js/base.js"></script>
-<script src="js/luke.js"></script>
-<!-- Begin Web-Stat code v 7.0 -->
-<span id="wts1983157"></span><script>var wts=document.createElement('script');wts.async=true;wts.src='https://wts.one/log7.js';document.head.appendChild(wts);wts.onload = function(){ wtslog7(1983157,4); };
-</script><noscript><a href="https://www.web-stat.com"><img src="https://wts.one/7/4/1983157.png" alt="Web-Stat web statistics" width="1px" height="1px"</a></noscript>
-<!-- End Web-Stat code v 7.0 -->
-</body></html>
+    <footer class="container">
+      <p>© Luke Liukonen 2020</p>
+    </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha256-Xt8pc4G0CdcRvI0nZ2lRpZ4VHng0EoUDMlGcBSQ9HiQ=" crossorigin="anonymous"></script>
+    <script src="./lib/js/modernizr.min.js"></script>
+    <script src="./lib/js/jquery.tmpl.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/luke.js"></script>
+    <!-- Begin Web-Stat code v 7.0 -->
+    <span id="wts1983157"></span><script>var wts=document.createElement('script');wts.async=true;wts.src='https://wts.one/log7.js';document.head.appendChild(wts);wts.onload = function(){ wtslog7(1983157,4); };
+    </script><noscript><a href="https://www.web-stat.com"><img src="https://wts.one/7/4/1983157.png" alt="Web-Stat web statistics"></a></noscript>
+    <!-- End Web-Stat code v 7.0 -->
+  </body>
+</html>

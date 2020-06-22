@@ -7,17 +7,16 @@
     <meta name="author" content="Luke Liukonen">
     <title>Luke Liukonen</title>
     <link href="./css/luke.css" rel="stylesheet" />
-    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
-    <link href="./lib/fontawesome/css/all.min.css" rel="stylesheet">
-
-      <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png" sizes="180x180">
-      <link rel="icon" href="/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-      <link rel="icon" href="/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-      <link rel="manifest" href="/img/favicons/manifest.json">
-      <link rel="mask-icon" href="/img/favicons/safari-pinned-tab.svg" color="#ffffff">
-      <link rel="icon" href="/img/favicons/favicon.ico">
-      <meta name="msapplication-config" content="/img/favicons/browserconfig.xml">
-      <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha256-aAr2Zpq8MZ+YA/D6JtRD3xtrwpEz2IqOS+pWD/7XKIw=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+    <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/img/favicons/safari-pinned-tab.svg" color="#ffffff">
+    <link rel="icon" href="/img/favicons/favicon.ico">
+    <meta name="msapplication-config" content="/img/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-dark transparent fixed-top">
@@ -35,7 +34,7 @@
         </ul>
       </div>
     </nav>
-    <main role="main">
+    <main>
       <div class="jumbotron text-white bg-dark">
         <div class="col-md-10 px-0">
           <h1 class="display-4 font-italic" id="JtHead">The 2020 Furlough Logs</h1>
@@ -43,8 +42,7 @@
             One, because no one wants to listen to me ramble on like a madman 
             (face it, buzzwords mean nothing to someone outside of tech). 
             2 so I can remember what I learned the week or even month before. 
-            And 3, so that I have some sort of accountability in pushing myself to be better by the time I get back to work.</p>
-          
+            And 3, so that I have some sort of accountability in pushing myself to be better by the time I get back to work.</p>       
         </div>
       </div>
       <div class="container" id="mainContainer">
@@ -88,15 +86,9 @@
                   <span class="badge badge-primary badge-pill">${count}</span>
                 </li>
               </script>
-
-
-
-  
             </div>
             <div class="col">
               <div id="PlaceHolderItem" class="row mb-2"></div>
-
-
               <script id="dTemp" type="text/x-jQuery-tmpl">
                 <div class="col-md-4">
                   <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow h-md-250 position-relative">
@@ -110,14 +102,7 @@
             </script>
             </div>
           </div>
-
-          
-        
-
-
-
-
-      </div><!-- /.container -->
+      </div>
     </main>
     <div class="modal fade dynamicModal" id="dynamicModal" data-backdrop="static" tabindex="-1" role="dialog"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -130,27 +115,27 @@
           </button>
         </div>
         <div class="modal-body">
-          <!--" ">  <div class="modal-content">-->
             <div class="embed-responsive embed-responsive-4by3">
-              <iframe class="embed-responsive-item" src=""></iframe>
-              <!--</div>-->
+              <iframe class="embed-responsive-item" src="about:blank"></iframe>
             </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <a type="button" class="btn btn-primary" href="#" id="aSite" target="_blank">Original</a>
+            <a class="btn btn-primary" href="#" id="aSite" target="_blank">Original</a>
           </div>
         </div>
       </div>
     </div>
-<footer class="container">
-  <p>© Luke Liukonen 2020</p>
-  *this page, its contents, are opinions of my own, and represent no one else
-</footer>
-<script src="./lib/js/jquery.min.js"></script>
-<script src="./lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="./lib/js/modernizr.min.js"></script>
-<script src="./lib/js/jquery.tmpl.js"></script>
-<script src="js/base.js"></script>
-<script src="js/diary.js"></script>
-</body></html>
+    <footer class="container">
+      <p>© Luke Liukonen 2020</p>
+      *this page, its contents, are opinions of my own, and represent no one else
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha256-Xt8pc4G0CdcRvI0nZ2lRpZ4VHng0EoUDMlGcBSQ9HiQ=" crossorigin="anonymous"></script>
+    <script src="./lib/js/modernizr.min.js"></script>
+    <script src="./lib/js/jquery.tmpl.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/diary.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js" integrity="sha256-jl1+DOsSs9uABTKppOJ2GF8kXoc3XQzBtFFyS0i9Xoo=" crossorigin="anonymous"></script>
+  </body>
+</html>

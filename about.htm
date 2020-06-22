@@ -1,185 +1,193 @@
 <!DOCTYPE html>
-<html><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="Luke Liukonen">
-  <title>About - Luke Liukonen</title>
-  <link href="./css/luke.css" rel="stylesheet" />
-  <link href="./lib/fontawesome/css/all.min.css" rel="stylesheet">
-  <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png" sizes="180x180">
-  <link rel="icon" href="/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-  <link rel="icon" href="/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-  <link rel="manifest" href="/img/favicons/manifest.json">
-  <link rel="mask-icon" href="/img/favicons/safari-pinned-tab.svg" color="#ffffff">
-  <link rel="icon" href="/img/favicons/favicon.ico">
-  <meta name="msapplication-config" content="/img/favicons/browserconfig.xml">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="stylesheet" href="css/about.css">
-  <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
-</head>
-<body data-gr-c-s-loaded="true">
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="index.html">Wecome</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav" id="navMenuBind">
-        <script id="navTemp" type="text/x-jQuery-tmpl">
-          <li class="nav-item ${navActiveFormat(value)}">
-          <a class="nav-link" href="${value}">${name} <span class="sr-only">${navActiveText(value)}</span></a>
-          </li>
-        </script>      
-      </ul>
-    </div>
-  </nav>
-<div class="bgimg-1">
-  <div class="caption2">
-  <span class="border clearBoarder">Luke Liukonen</span>
-  </div>
-</div>
-
-<div class="container" style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
-  <h3 style="text-align:center;">Welcome</h3>
-  <p>
-    <div id="welcome"></div>
-
-</p>
-</div>
-<div class="bgimg-2">
-  <div class="caption">
-  <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">Profesional Highlights</span>
-  </div>
-</div>
-
-<div style="position:relative;">
-  <div class="container-fluid" style="color:#000;background-color:#fff;text-align:center;padding:50px 80px;text-align: justify;">
-  <p>
-    <div class="row justify-content-md-center">
-      
-      <div class="card shadow mr-4">
-        <div class="card-header bg-transparent">
-          <h1 class="h3">Current Work Highlights</h1>
-        </div>
-        <ul class="list-group list-group-flush text-dark" id="highlights">
-          <script id="tmpHighlights" type="text/x-jQuery-tmpl"><li class="list-group-item">${a}</li></script>
-        </ul>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="about page for Luke Liukonen. Software Developer, Former Instructor, Tech enthusiast">
+    <meta name="author" content="Luke Liukonen">
+    <meta name="msapplication-config" content="/img/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <title>About - Luke Liukonen</title>
+    <link href="./css/luke.css" rel="stylesheet" />
+    <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/img/favicons/safari-pinned-tab.svg" color="#ffffff">
+    <link rel="icon" href="/img/favicons/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha256-aAr2Zpq8MZ+YA/D6JtRD3xtrwpEz2IqOS+pWD/7XKIw=" crossorigin="anonymous" />
+  </head>
+  <body data-gr-c-s-loaded="true">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="index.html">Wecome</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+       <ul class="navbar-nav" id="navMenuBind">
+         <script id="navTemp" type="text/x-jQuery-tmpl">
+           <li class="nav-item ${navActiveFormat(value)}">
+           <a class="nav-link" href="${value}">${name} <span class="sr-only">${navActiveText(value)}</span></a>
+           </li>
+         </script>      
+       </ul>
       </div>
-      
-      <div class="card shadow bg-transparent">
-        <div class="card-header bg-transparent">
-          <h1 class="h3">Work History</h1>
-        </div>
-        <ul class="list-group list-group-flush text-dark" id="work">
-          <script id="tmpWork" type="text/x-jQuery-tmpl">
-            <li class="list-group-item">
-              <div class="row">
-                <div>
-                <img src="${img}" height="32" width="32" class="mr-2" />
-                </div>
-                <div>
-                <b>${name}</b>: ${title}
-                <p> 
-                <i>${timeworked}</i>
-                </p>
-              </div>
+    </nav>
+    <div class="bgimg-1">
+      <div class="caption2">
+        <span class="border clearBoarder">Luke Liukonen</span>
+      </div>
+    </div>
+
+    <div class="container" style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
+      <h3 style="text-align:center;">Welcome</h3>
+        <div id="welcome"></div>
+    </div>
+
+    <div class="bgimg-2">
+      <div class="caption">
+        <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">Profesional Highlights</span>
+      </div>
+    </div>
+
+    <div style="position:relative;">
+      <div class="container-fluid" style="color:#000;background-color:#fff;text-align:center;padding:50px 80px;text-align: justify;">
+        <div class="row justify-content-md-center">
+          <div class="card shadow mr-4">
+            <div class="card-header bg-transparent">
+              <h1 class="h3">Current Work Highlights</h1>
+            </div>
+            <ul class="list-group list-group-flush text-dark" id="highlights">
+              <script id="tmpHighlights" type="text/x-jQuery-tmpl"><li class="list-group-item">${a}</li></script>
+            </ul>
+          </div>
+          <div class="card shadow bg-transparent">
+            <div class="card-header bg-transparent">
+              <h1 class="h3">Work History</h1>
+            </div>
+            <ul class="list-group list-group-flush text-dark" id="work">
+              <script id="tmpWork" type="text/x-jQuery-tmpl">
+                <li class="list-group-item">
+                  <div class="row">
+                    <div>
+                      <img src="${img}" height="32" width="32" class="mr-2" alt="${name}" />
+                    </div>
+                    <div>
+                      <b>${name}</b>: ${title}
+                      <p> 
+                        <i>${timeworked}</i>
+                      </p>
+                    </div>
+                  </div>
                 </li>
-              </div>
-</script>
-        </ul>
-      </div>
-
-    </div>
-  </p>
-  </div>
-</div>
-<div class="container-fluid"  style="color:#000;background-color:#fff;text-align:center;padding:50px 80px;text-align: justify;">
-<script id="tmpExp" type="text/x-jAuery-tmpl">
-  <div class="col2 mr-5 text-center lateloadfadeIn"><img data-src="${img}" title="${title}" width="100px" height="100px" style="display:none;" /><p>${title}<p></p><span class="badge badge-pill badge-${expPillColor(level)}">${expPillName(level)}</span></p></div>     
-</script>
-
-<div class="row text-dark">
-  <div class="card shadow col-md-12 ">
-    <div class="card-header bg-transparent"><h2 class="h4">Frontend / UI</h2></div>
-        <div class="card-body"><div class="row justify-content-md-center" id="UI"></div>  
-      </div>
-    </div>
-
-    <div class="card shadow col-md-6 mt-5">
-      <div class="card-header bg-transparent"><h2 class="h4">Backend</h2></div>
-          <div class="card-body"><div class="row justify-content-md-center" id="Backend"></div>  
-        </div>
-      </div>
-      <div class="card shadow col-md-6 mt-5">
-        <div class="card-header bg-transparent"><h2 class="h4">Database</h2></div>
-            <div class="card-body"><div class="row justify-content-md-center" id="Database"></div>  
+              </script>
+            </ul>
           </div>
         </div>
-      <div class="card shadow col-md-12 mt-5">
-        <div class="card-header bg-transparent"><h2 class="h4">Frameworks</h2></div>
-            <div class="card-body"><div class="row justify-content-md-center" id="Frameworks"></div>  
+      </div>
+    </div>
+    <div class="container"  style="color:#000;background-color:#fff;text-align:center;padding:50px 80px;text-align: justify;">
+      <script id="tmpExp" type="text/x-jAuery-tmpl">
+        <div class="col2 mr-5 text-center lateloadfadeIn">
+          <img data-src="${img}" title="${title}" width="100px" height="100px" style="display:none;" />
+          <p>${title}</p>
+          <p>
+            <span class="badge badge-pill badge-${expPillColor(level)}">${expPillName(level)}</span>
+          </p>
+        </div>     
+      </script>
+
+      <div class="row text-dark">
+        <div class="card shadow col-md-12 ">
+          <div class="card-header bg-transparent"><h2 class="h4">Frontend / UI</h2></div>
+          <div class="card-body">
+            <div class="row justify-content-md-center" id="UI"></div>  
+          </div>
+        </div>
+        
+        <div class="card shadow col-md-6 mt-5">
+          <div class="card-header bg-transparent"><h2 class="h4">Backend</h2></div>
+          <div class="card-body">
+            <div class="row justify-content-md-center" id="Backend"></div>  
+          </div>
+        </div>
+        <div class="card shadow col-md-6 mt-5">
+          <div class="card-header bg-transparent"><h2 class="h4">Database</h2></div>
+          <div class="card-body">
+            <div class="row justify-content-md-center" id="Database"></div>  
+          </div>
+        </div>
+        
+        <div class="card shadow col-md-12 mt-5">
+          <div class="card-header bg-transparent"><h2 class="h4">Frameworks</h2></div>
+          <div class="card-body">
+            <div class="row justify-content-md-center" id="Frameworks"></div>  
           </div>
         </div>
 
         <div class="card shadow col-md-4 mt-5">
           <div class="card-header bg-transparent"><h2 class="h4">Version Control</h2></div>
-              <div class="card-body"><div class="row justify-content-md-center" id="VersionControl"></div>  
-            </div>
+          <div class="card-body">
+            <div class="row justify-content-md-center" id="VersionControl"></div>  
           </div>
-
-          <div class="card shadow col-md-8 mt-5">
-            <div class="card-header bg-transparent"><h2 class="h4">Tools</h2></div>
-                <div class="card-body"><div class="row justify-content-md-center" id="Tools"></div>  
-              </div>
-            </div>
+        </div>
+      
+        <div class="card shadow col-md-8 mt-5">
+          <div class="card-header bg-transparent"><h2 class="h4">Tools</h2></div>
+          <div class="card-body">
+            <div class="row justify-content-md-center" id="Tools"></div>  
           </div>
-  </div>
-</div>
-
-<div class="bgimg-3">
-  <div class="caption">
-  <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">Hobbies</span>
-  </div>
-</div>
-<div style="position:relative;">
-  <div class="container-fluid" style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
-  <p>
-    <div class="row justify-content-center">
-    <div class="col-lg-4">
-      <h1 class="h3">Interests</h1>
-      <ul id="interests"></ul>
-      </ul>
+        </div>
+      </div>
     </div>
-    <div class="col-lg-4">
-      <h1 class="h3">Volunteer</h1>
-      <ul id="volunteer">
-      </ul>
+    
+    <div class="bgimg-3">
+      <div class="caption">
+        <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">Hobbies</span>
+      </div>
     </div>
-  </div>
-  </p>
-  <script id="tmpLi" type="text/x-jQuery-tmpl"><li>${a}</li></script>
-  </div>
-</div>
+    <div style="position:relative;">
+      <div class="container-fluid" style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+        <div class="row justify-content-center">
+          <div class="col-lg-4">
+            <h1 class="h3">Interests</h1>
+            <ul id="interests"></ul>
+          </div>
+          <div class="col-lg-4">
+            <h1 class="h3">Volunteer</h1>
+            <ul id="volunteer"></ul>
+          </div>
+        </div>
+        <script id="tmpLi" type="text/x-jQuery-tmpl"><li>${a}</li></script>
+      </div>
+    </div>
 
-<div class="bgimg-end">
-  <div class="caption">
-  <span class="border">         
-    <a target="_blank" class="btn btn-secondary" href="https://github.com/liukonen" role="button" aria-label="Github"><i class="fab fa-github-alt fa-2x"></i>GitHub</a>
-    <a target="_blank" class="btn btn-info" href="https://www.linkedin.com/in/lukeliukonen/" role="button" aria-label="LinkedIn"><i class="fab fa-linkedin-in fa-2x"></i> LinkedIn</a>
-    <a class="btn btn-danger" href="mailto:liukonen@gmail.com?subject=GitHub_Home_Page" role="button" aria-label="email"><i class="far fa-envelope fa-2x"></i> email</a>
-</span><br /><br />
-  <div class="alert alert-dark">
-&copy; 2020 Luke Liukonen
-<i>* this page, its contents, are opinions of my own, and represent no one else</i> </div> 
-  </div>
-</div>
-
-<script src="./lib/js/jquery.min.js"></script>
-<script src="./lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="./lib/js/modernizr.min.js"></script>
-<script src="./lib/js/jquery.tmpl.js"></script>
-<script src="js/base.js"></script>
-<script src="js/about.js"></script>
-
-</body></html>
+    <div class="bgimg-end">
+      <div class="caption">
+        <span class="border">         
+          <a target="_blank" class="btn btn-secondary" href="https://github.com/liukonen" role="button" aria-label="Github">
+            <i class="fab fa-github-alt fa-2x"></i>GitHub
+          </a>
+          <a target="_blank" class="btn btn-info" href="https://www.linkedin.com/in/lukeliukonen/" role="button" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in fa-2x"></i> LinkedIn
+          </a>
+          <a class="btn btn-danger" href="mailto:liukonen@gmail.com?subject=GitHub_Home_Page" role="button" aria-label="email">
+            <i class="far fa-envelope fa-2x"></i> email
+          </a>
+        </span>
+        <br />
+        <br />
+        <div class="alert alert-dark">&copy; 2020 Luke Liukonen
+          <i>* this page, its contents, are opinions of my own, and represent no one else</i> 
+        </div> 
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha256-Xt8pc4G0CdcRvI0nZ2lRpZ4VHng0EoUDMlGcBSQ9HiQ=" crossorigin="anonymous"></script>        <script src="./lib/js/modernizr.min.js"></script>
+    <script src="./lib/js/jquery.tmpl.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/about.js"></script>
+  </body>
+</html>
