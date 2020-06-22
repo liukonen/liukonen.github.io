@@ -16,15 +16,9 @@ function generate(){
 function DetermButtonColor(release){return (release.startsWith("https://liukonen.github.io")) ? "success" : "primary";}
 function DetermButtonName(release){return release.startsWith("https://liukonen.github.io")? "Website" : "Release";}
 
-
-
 generate();
 
 /*region Lazy Load */
-
-const lloadImages = document.querySelectorAll(".featurette-image");
-const observerOptions = {threshold:1, rootMargin:"0px 0px 300px 0px"};
-
 function preloadImg(img){
   let src = img.getAttribute("data-src"); 
   if (src){
@@ -34,29 +28,20 @@ function preloadImg(img){
   }
 }
 
-const imgObserver = new IntersectionObserver((entries, 
-  imgObserver)=> {
+const imgObserver = new IntersectionObserver((entries, imgObserver)=> {
     entries.forEach(entry => {
-      if (!entry.isIntersecting){
-       console.log("Intersecting"); return;
-      }  else {
-         preloadImg(entry.target);
-         imgObserver.unobserve(entry.target);  
+      if (entry.isIntersecting){
+        preloadImg(entry.target);
+        imgObserver.unobserve(entry.target);  
       }
 });
-
-}, observerOptions);
-
-//Load
-lloadImages.forEach(img => {imgObserver.observe(img);});
+}, {threshold:1, rootMargin:"0px 0px 300px 0px"});
+document.querySelectorAll(".featurette-image").forEach(img => {imgObserver.observe(img);});
 
 /*end region - lazy load*/
 
 /*region - navbar transparent effect*/
 const header = document.querySelector(".navbar-brand");
-const Jumbo = document.querySelector(".jumbotron");
-const navOptions = {rootMargin:"-50px 0px 0px 0px"};
-
 const navObserver = new IntersectionObserver((entries, navObserver) =>{
   entries.forEach(entry =>{
     if (!entry.isIntersecting){
@@ -68,23 +53,18 @@ const navObserver = new IntersectionObserver((entries, navObserver) =>{
     }
   });
 }, {rootMargin:"-50px 0px 0px 0px"});
+navObserver.observe(document.querySelector(".jumbotron"));
 
-//load
-navObserver.observe(Jumbo);
 /*end region navbar transparent effect */
 
 
 /*region fader */
-
-const faderItems = document.querySelectorAll(".fade-in");
-const faderOptions = {rootMargin:"0px 0px 0px 0px"};
-
 const faderObsever = new IntersectionObserver((entries, faderObsever) => {
  entries.forEach(entry =>{
    if (entry.isIntersecting){$(entry.target).animate({'opacity':'1'},500); faderObsever.unobserve(entry.target); }
  });
-}, faderOptions);
-faderItems.forEach(item => faderObsever.observe(item));
+}, {rootMargin:"0px 0px 0px 0px"});
+document.querySelectorAll(".fade-in").forEach(item => faderObsever.observe(item));
 /*end region fader */
 
 
