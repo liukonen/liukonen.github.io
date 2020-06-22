@@ -242,6 +242,30 @@ function showModal(obj, e){
 catch{}//do nothing
 }
 
+
+
+function showModal(obj, e, title){
+  console.log("hit");
+  let url = obj.getAttribute("href");
+
+  if (window.innerWidth >= 576){
+    console.log(obj);
+    console.log(e);
+    console.log($(this));
+    $("#staticBackdropLabel").text(title);
+    let text = getFile(url.substring(0, url.length - 4) + "md");
+    let converter = new showdown.Converter();
+    let html = converter.makeHtml(text);
+   document.getElementById("DynamicContent").innerHTML = html;
+
+    $("#dynamicModal").modal("show");
+    $("#aSite").attr("href", url);
+  }
+  else {var win = window.open(url, '_blank'); win.focus();}
+  e.preventDefault();
+  return false;
+}
+
 search.addEventListener('keyup', (event) =>
 {
 

@@ -95,7 +95,7 @@
                     <div class="col p-4 d-flex flex-column position-static">
                       <h3 class="mb-0">${Name}</h3>
                       <div class="mb-1 text-muted">${CalcDate(ItemNumber, ActiveWeek).toDateString()}</div>
-                      <p class="card-text mb-auto"><div class="EItem" data-src="${Link}|${Name}"></div><a href="${baseUrl() + Link}" onclick="showModal(this, event)" target="_blank">Continue</a></p>
+                      <p class="card-text mb-auto"><div class="EItem" data-src="${Link}|${Name}"></div><a href="${baseUrl() + Link}" onclick="showModal(this, event, '${Name}')" target="_blank">Continue</a></p>
                     </div>
                   </div>
                 </div>  
@@ -114,11 +114,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
-            <div class="embed-responsive embed-responsive-4by3">
-              <iframe class="embed-responsive-item" src="about:blank"></iframe>
-            </div>
-          </div>
+        <div class="modal-body" id="DynamicContent"></div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <a class="btn btn-primary" href="#" id="aSite" target="_blank">Original</a>
@@ -132,10 +128,10 @@
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha256-Xt8pc4G0CdcRvI0nZ2lRpZ4VHng0EoUDMlGcBSQ9HiQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js" integrity="sha256-jl1+DOsSs9uABTKppOJ2GF8kXoc3XQzBtFFyS0i9Xoo=" crossorigin="anonymous"></script>
     <script src="./lib/js/modernizr.min.js"></script>
     <script src="./lib/js/jquery.tmpl.js"></script>
     <script src="js/base.js"></script>
     <script src="js/diary.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js" integrity="sha256-jl1+DOsSs9uABTKppOJ2GF8kXoc3XQzBtFFyS0i9Xoo=" crossorigin="anonymous"></script>
   </body>
 </html>
