@@ -43,11 +43,12 @@ $(window).on('load', function() {
     } else {
       console.log("webp not supported, fallback to png");
       SupportsWebp = 0;
-      $('img').each(function() {
-        var $img = $(this);
-        var src = $img.attr("src");
-        let EW = src.substring(src.length-4);
-        if (EW == "webp") $img.attr("src", src += ".png" );
+      let imgs = $("img").toArray();
+      imgs.forEach((img) =>{
+        var src = $(img).attr("src");
+        if (typeof src !== typeof undefined && src !== false && src != "" && src.substring(src.length -4) == "webp") {
+            $(img).attr("src", src + ".png");
+        }
       });
       $(".jumbotron").css("background-image", "url('../img/jumbotron.webp.png')");
     }
