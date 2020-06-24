@@ -40,13 +40,13 @@
           <h1 class="display-3"><img src="img/me-bw.webp" class="rounded-circle user_img" alt="Luke Liukonen" /> Hello, world!</h1>
           <p>Developer / Former Instructor / Tech enthusiast</p>
           <p>Welcome to my personal page.</p>
-          <a target="_blank" class="btn btn-secondary" href="https://github.com/liukonen" role="button" aria-label="Github"><i class="fab fa-github-alt"></i> GitHub</a>
-          <a target="_blank" class="btn btn-info" href="https://www.linkedin.com/in/lukeliukonen/" role="button" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-          <a class="btn btn-danger" href="mailto:liukonen@gmail.com?subject=GitHub_Home_Page" role="button" aria-label="email"><i class="far fa-envelope"></i> email</a>
+          <a target="_blank" class="btn btn-secondary" href="https://github.com/liukonen" role="button" aria-label="Github"><i class="fab fa-github-alt"></i> <b>GitHub</b></a>
+          <a target="_blank" class="btn btn-info" href="https://www.linkedin.com/in/lukeliukonen/" role="button" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i><b> LinkedIn</b></a>
+          <a class="btn btn-danger" href="mailto:liukonen@gmail.com?subject=GitHub_Home_Page" role="button" aria-label="email"><i class="far fa-envelope"></i><b> email</b></a>
         </div>
       </div>
       <div class="container" id="mainContainer">
-        <h1 class="h4 bold">Open Source Projects</h1>
+        <h2 class="h4 bold">Open Source Projects</h2>
           <!-- START THE FEATURETTES -->
           <hr class="featurette-divider">
           <!--Object Item Template-->
@@ -57,11 +57,11 @@
                 <img class="featurette-image img-fluid mx-auto dShaddow" data-src="${image}" alt="${Title}">
               </div>
               <div class="col-md-7 order-md-1 fade-in">
-                <h2 class="featurette-heading">${Title}
+                <h3 class="featurette-heading h2">${Title}
                   <span class="text-muted"> ${SubTitle}</span>
-                </h2>
+                </h3>
                 <p class="lead">${Description}</p>
-                <a class="btn btn-${DetermButtonColor(release)}" href="${release}" target="_blank">${DetermButtonName(release)}</a>
+                <a class="btn btn-${DetermButtonColor(release)}" href="${release}" target="_blank"><b>${DetermButtonName(release)}</b></a>
                 <a class="btn btn-secondary" href="${source}" target="_blank">source</a>
                 <p></p>
               </div>
@@ -74,15 +74,15 @@
               <div class="row featurette">
 
                 <div class="col-md-5 fade-in">
-                  <img class="featurette-image img-fluid mx-auto dShaddow" data-src="${image}">
+                  <img class="featurette-image img-fluid mx-auto dShaddow" data-src="${image}" alt="${Title}">
                 </div>
 
                 <div class="col-md-7 fade-in">
-                  <h2 class="featurette-heading">${Title}
+                  <h3 class="featurette-heading h2">${Title}
                     <span class="text-muted"> ${SubTitle}</span>
-                  </h2>
+                  </h3>
                   <p class="lead">${Description}</p>
-                  <a class="btn btn-${DetermButtonColor(release)}" href="${release}" target="_blank">${DetermButtonName(release)}</a>
+                  <a class="btn btn-${DetermButtonColor(release)}" href="${release}" target="_blank"><b>${DetermButtonName(release)}</b></a>
                   <a class="btn btn-secondary" href="${source}" target="_blank">source</a>
                   <p></p>
                 </div>

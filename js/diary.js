@@ -2,16 +2,15 @@ var liWeeks;
 var ActiveWeek = 0;
 var MaxWeek = 0;
 var lastName; var LastLink;
-var MagicDate = new Date(2020,02,29);
-var search = document.querySelector('#search');
-var results = document.querySelector('#searchresults');
-var SearchItems = JSON.parse( getFile("https://liukonen.dev/furlough/keywords.json"));
+const MagicDate = new Date(2020,02,29);
+const search = document.querySelector('#search');
+const results = document.querySelector('#searchresults');
+const SearchItems = JSON.parse( getFile("https://liukonen.dev/furlough/keywords.json"));
 var ActiveWeeks = [];
 var AllWeeks = [];
 var days;
 
 
-const observerOptions = {threshold:1, rootMargin:"0px 0px 0px 0px"};
 const ContentObserver = new IntersectionObserver((entries, 
   ContentObserver)=> {
     entries.forEach(entry => {
@@ -23,8 +22,7 @@ const ContentObserver = new IntersectionObserver((entries,
         ContentObserver.unobserve(entry.target);  
       }
 });
-
-}, observerOptions);
+}, {threshold:1, rootMargin:"0px 0px 0px 0px"});
 
 function baseUrl(){
   let item = new URL(furloughDiary);

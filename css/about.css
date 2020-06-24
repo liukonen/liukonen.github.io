@@ -12,26 +12,24 @@ body, html {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    filter:brightness(0.5); 
-    -webkit-filter:brightness(0.5);
   }
 
   
 
   .bgimg-1 {
-    background-image: url("../img/me_outfield_MillerPark.jpg");
+    background-image: url("../img/me_outfield_MillerPark-lb.jpg");
     min-height: 60%;
     background-position: 50% 43%;
   }
   
   .bgimg-2 {
-    background-image: url("../img/ext.jpeg");
+    background-image: url("../img/ext-lb.jpeg");
     min-height: 800px;
     background-position: 90% 53%;
   }
   
   .bgimg-3 {
-    background-image: url("../img/vol.jpg");
+    background-image: url("../img/vol-lb.jpg");
     min-height: 400px;
   }
   .bgimg-end{
@@ -46,6 +44,7 @@ body, html {
     width: 100%;
     text-align: center;
     color: #000;
+    filter:brightness(1);
   }
   .clearBoarder{background-color:transparent !important;font-size:25px;color: #FFF !important;}
 
@@ -92,7 +91,7 @@ body, html {
 }*/
 
 .bg-purple {
-  background-color: #A47EDE !important;
+  background-color: purple !important;
 }
 
 .NoDot{

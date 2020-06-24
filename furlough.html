@@ -65,6 +65,7 @@
             </div>
             <div class="col-md-6">
             <div class="input-group col-mb-6 shadow">
+              <label for="search" class="visuallyhidden">Search: </label>
               <input type="text" name="search" id="search"  placeholder="Search" list="searchresults" autocomplete="off"  class="form-control" onselect="SearchFind2()"/>
               <datalist id="searchresults"></datalist>  
               <div class="input-group-append">
@@ -95,7 +96,7 @@
                     <div class="col p-4 d-flex flex-column position-static">
                       <h3 class="mb-0">${Name}</h3>
                       <div class="mb-1 text-muted">${CalcDate(ItemNumber, ActiveWeek).toDateString()}</div>
-                      <p class="card-text mb-auto"><div class="EItem" data-src="${Link}|${Name}"></div><a href="${baseUrl() + Link}" onclick="showModal(this, event, '${Name}')" target="_blank">Continue</a></p>
+                      <p class="card-text mb-auto"><div class="EItem" data-src="${Link}|${Name}"></div><a href="${baseUrl() + Link}" onclick="showModal(this, event, '${Name}')" target="_blank">Continue ${Name}... </a></p>
                     </div>
                   </div>
                 </div>  
