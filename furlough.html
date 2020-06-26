@@ -20,7 +20,7 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-dark transparent fixed-top">
-      <a class="navbar-brand" href="index.html">Wecome</a>
+      <a class="navbar-brand" href="index.html" aria-label="welcome"><img src="/img/favicons/favicon-32x32.png" style="filter: invert(100%);" alt="logo" /></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -38,11 +38,7 @@
       <div class="jumbotron text-white bg-dark">
         <div class="col-md-10 px-0">
           <h1 class="display-4 font-italic" id="JtHead">The 2020 Furlough Logs</h1>
-          <p class="lead my-3" id="JtBody">I've started this daily log of what I learned for a few reasons.
-            One, because no one wants to listen to me ramble on like a madman 
-            (face it, buzzwords mean nothing to someone outside of tech). 
-            2 so I can remember what I learned the week or even month before. 
-            And 3, so that I have some sort of accountability in pushing myself to be better by the time I get back to work.</p>       
+          <p class="lead my-3" id="JtBody"></p>       
         </div>
       </div>
       <div class="container" id="mainContainer">
@@ -90,15 +86,15 @@
             <div class="col">
               <div id="PlaceHolderItem" class="row mb-2"></div>
               <script id="dTemp" type="text/x-jQuery-tmpl">
-                <div class="col-md-4">
+                <div class="col-md-12">
                   <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow h-md-250 position-relative">
-                    <div class="col p-4 d-flex flex-column position-static">
-                      <h3 class="mb-0">${Name}</h3>
+                    <div class="col-md-12 p-4 d-flex flex-column position-static">
+                      <a href="${Link}" target="_blank"><h3 class="mb-0">${Name}</h3></a>
                       <div class="mb-1 text-muted">${CalcDate(ItemNumber, ActiveWeek).toDateString()}</div>
-                      <p class="card-text mb-auto"><div class="EItem" data-src="${Link}|${Name}"></div><a href="${baseUrl() + Link}" onclick="showModal(this, event, '${Name}')" target="_blank">Continue ${Name}... </a></p>
+                      <p class="card-text mb-auto"><div class="EItem" data-src="${Link}|${Name}"></div></p>
                     </div>
                   </div>
-                </div>  
+                </div>
             </script>
             </div>
           </div>

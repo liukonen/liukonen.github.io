@@ -159,15 +159,25 @@ function CalcDate(ItemNumber, WeekNumber){
   return (addDays(MagicDate, (WeekNumber * 7)+ ItemNumber));
 }
 
+function ReplaceAll(fullText, replaceText, replaceWith) {
+  var r = new RegExp(replaceText, "igm");
+  return fullText.replace(r, replaceWith)
+}
+
 function ExtractBlogItem(dayUrl){ return ExtractBlogItem(dayUrl, "");}
 
 function ExtractBlogItem(dayUrl, name){
-//Ripping from MD files, which are WAY smaller in size
     let dayString = getFile(baseUrl() + dayUrl.substring(0, dayUrl.length -4) + "md");
-    let sstring = dayString.replace("#", "").trim();
-    if (sstring.startsWith(name)){sstring = sstring.substring(name.length);}
-    if (sstring.length > 120){return sstring.substring(0,120) + "...";}
-    return sstring;
+    let teststring = dayString.replace("#", "").trim();
+
+    console.log(teststring.substring(0, 10));
+    if (teststring.startsWith(name)){dayString = teststring.substring(name.length);}
+    
+    let sstring = ReplaceAll(dayString, "# ", "### ");
+    console.log(sstring);
+    let converter = new showdown.Converter();
+    let html = converter.makeHtml(sstring);
+    return html;
 }
 
 function addDays(date, days) {
@@ -238,30 +248,6 @@ function showModal(obj, e){
   return false;
 }
 catch{}//do nothing
-}
-
-
-
-function showModal(obj, e, title){
-  console.log("hit");
-  let url = obj.getAttribute("href");
-
-  if (window.innerWidth >= 576){
-    console.log(obj);
-    console.log(e);
-    console.log($(this));
-    $("#staticBackdropLabel").text(title);
-    let text = getFile(url.substring(0, url.length - 4) + "md");
-    let converter = new showdown.Converter();
-    let html = converter.makeHtml(text);
-   document.getElementById("DynamicContent").innerHTML = html;
-
-    $("#dynamicModal").modal("show");
-    $("#aSite").attr("href", url);
-  }
-  else {var win = window.open(url, '_blank'); win.focus();}
-  e.preventDefault();
-  return false;
 }
 
 search.addEventListener('keyup', (event) =>

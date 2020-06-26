@@ -34,6 +34,14 @@
     "source" : "https://github.com/liukonen/nats"
   },
   {
+    "Title": "Furlough Log",
+    "SubTitle": "learnings within a 12 week period.",
+    "Description": "I've started a daily log during the 2020 furlough do to covid 19. Idea behind it was One, because no one wants to listen to me ramble on like a madman (face it, buzzwords mean nothing to someone outside of tech). 2 so I can remind myself what I learned. And 3, so that I have some sort of accountability in pushing myself to be better.",
+    "image": "img/blog.webp",
+    "release" : "https://liukonen.github.io/furlough.html",
+    "source" : "http://github.com/liukonen/furlough"
+  },
+  {
     "Title":"CloudyPie",
     "SubTitle":"a remake of DJAkbar's cloudy-a project",
     "Description":"Owning raspberry pi pcs, I wanted to try my hand at a lamp that could also tell you the weather. I found DJAkbars project, but found that it was too relient on operation timing and also had some issues calling the service (only called once). Refactored the code and upgraded it to python verion 3.",
