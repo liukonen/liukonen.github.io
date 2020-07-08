@@ -40,7 +40,7 @@
           <h1 class="display-3"><img src="img/me-bw.webp" class="rounded-circle user_img" alt="Luke Liukonen" /> Hello, world!</h1>
           <p>Developer / Former Instructor / Tech enthusiast</p>
           <p>Welcome to my personal page.</p>
-          <a target="_blank" class="btn btn-secondary btn-circle btn-sm" href="https://github.com/liukonen" role="button" aria-label="Github"><i class="fab fa-github-alt"></i> <b>GitHub</b></a>
+          <a target="_blank" class="btn btn-secondary" href="https://github.com/liukonen" role="button" aria-label="Github"><i class="fab fa-github-alt"></i> <b>GitHub</b></a>
           <a target="_blank" class="btn btn-info" href="https://www.linkedin.com/in/lukeliukonen/" role="button" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i><b> LinkedIn</b></a>
           <a class="btn btn-danger" href="mailto:liukonen@gmail.com?subject=GitHub_Home_Page" role="button" aria-label="email"><i class="far fa-envelope"></i><b> email</b></a>
         </div>
@@ -49,48 +49,27 @@
         <h2 class="h4 bold">Open Source Projects</h2>
           <!-- START THE FEATURETTES -->
           <hr class="featurette-divider">
-          <!--Object Item Template-->
-          <script id="itemTemplate" type="text/x-jQuery-tmpl">
-            <div class="row featurette">
-              
-              <div class="col-md-5 order-md-2 fade-in">
-                <img class="featurette-image img-fluid mx-auto dShaddow" data-src="${image}" alt="${Title}">
+          <div id="app" >
+            <div v-for="(product, index) in this.Products">
+              <div class="row featurette">
+              <div v-bind:class="GetClass(index, 0)">
+                <img class="featurette-image img-fluid mx-auto shadow" v-lazy="GetImage(product.image)" v-on:once="log()" v-bind:alt="product.Title">
               </div>
-              <div class="col-md-7 order-md-1 fade-in">
-                <h3 class="featurette-heading h2">${Title}
-                  <span class="text-muted"> ${SubTitle}</span>
+              <div v-bind:class="GetClass(index, 1)">
+                <h3 class="featurette-heading h2">{{product.Title}}
+                  <span class="text-muted"> {{product.SubTitle}}</span>
                 </h3>
-                <p class="lead">${Description}</p>
-                <a class="btn btn-${DetermButtonColor(release)}" href="${release}" target="_blank"><b>${DetermButtonName(release)}</b></a>
-                <a class="btn btn-secondary" href="${source}" target="_blank">source</a>
+                <p class="lead">{{product.Description}}</p>
+                <a v-for="button in product.buttons" v-bind:class="DetermButtonColor(button.type)" v-bind:href="button.url" target="_blank">{{button.type}}</a>
                 <p></p>
+                <p>Learnings: <span v-for="tag in product.tags" class="badge badge-light font-weight-lighter">{{tag}}</span>
+                </p>
               </div>
-              
             </div>
             <hr class="featurette-divider">
-          </script>
-          <!--Object Item Inverted template (to flip the control on every other item)-->
-          <script id="itemTemplate2" type="text/x-jQuery-tmpl">
-              <div class="row featurette">
-
-                <div class="col-md-5 fade-in">
-                  <img class="featurette-image img-fluid mx-auto dShaddow" data-src="${image}" alt="${Title}">
-                </div>
-
-                <div class="col-md-7 fade-in">
-                  <h3 class="featurette-heading h2">${Title}
-                    <span class="text-muted"> ${SubTitle}</span>
-                  </h3>
-                  <p class="lead">${Description}</p>
-                  <a class="btn btn-${DetermButtonColor(release)}" href="${release}" target="_blank"><b>${DetermButtonName(release)}</b></a>
-                  <a class="btn btn-secondary" href="${source}" target="_blank">source</a>
-                  <p></p>
-                </div>
-
-              </div>
-              <hr class="featurette-divider">
-            </script>
-      </div><!-- /.container -->
+            </div>
+          </div>
+     </div><!-- /.container -->
     </main>
     <footer class="container">
       <p>© Luke Liukonen 2020</p>
@@ -100,11 +79,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha256-Xt8pc4G0CdcRvI0nZ2lRpZ4VHng0EoUDMlGcBSQ9HiQ=" crossorigin="anonymous"></script>
     <script src="./lib/js/modernizr.min.js"></script>
     <script src="./lib/js/jquery.tmpl.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script src="https://unpkg.com/vue-lazyload/vue-lazyload.js"></script>
     <script src="./js/base.js"></script>
-    <script src="./js/luke.js"></script>
-    <!-- Begin Web-Stat code v 7.0 -->
+    <script src="./js/index.vue.js"></script>
+    <!--<script src="./js/luke.js"></script>-->
+    <!--Begin Web-Stat code v 7.0  -->
     <span id="wts1983157"></span><script>var wts=document.createElement('script');wts.async=true;wts.src='https://wts.one/log7.js';document.head.appendChild(wts);wts.onload = function(){ wtslog7(1983157,4); };
     </script><noscript><a href="https://www.web-stat.com"><img src="https://wts.one/7/4/1983157.png" alt="Web-Stat web statistics"></a></noscript>
-    <!-- End Web-Stat code v 7.0 -->
+   <!-- End Web-Stat code v 7.0 -->
   </body>
 </html>
