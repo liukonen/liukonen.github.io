@@ -37,7 +37,7 @@
       {"type": "Angular Source", "url":"https://github.com/liukonen/RiverScript-Angular-Edition/"},
       {"type" : "Server Source", "url": "https://github.com/liukonen/RiverScriptBackend"}
       ],
-    "tags": ["Vue.JS","JavaScript","JQuery","Node.JS","SASS","Heroku", "API REST calls", "CI/CD", "RiveScript"]
+    "tags": ["Vue.JS", "Angular","JavaScript","JQuery","Node.JS","SASS","Heroku", "API REST calls", "CI/CD", "RiveScript"]
  
   },
   {
