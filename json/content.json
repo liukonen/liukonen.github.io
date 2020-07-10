@@ -15,7 +15,7 @@
   },
   {
     "Title":"Tic Tac Math",
-    "SubTitle":"A simple game, that can now teach.",
+    "SubTitle":"A simple game, that can help teach.",
     "Description":"In 2003 or 04 (while in school) I wrote this in Visual basic 6 and used Microsoft Agents as driving forces for Input and output. who would fly around the screen and play tic tac toe, using simple math equations. I found the original source code, and re wrote it in .net.  and since they were all based on the same source, consolidate the logic to one program, with options to switch math types (divide, multiply, add, and subtract) Since I have some time off, I was able to rewrite this using Javascript and HTML, and bring back Agents and text to speach over the browser.",
     "image": "img/ttm.webp",
     "buttons": [
@@ -23,7 +23,7 @@
       {"type": "Release", "url":"https://github.com/liukonen/tictacmath/releases"},
       {"type" : "Source", "url": "https://github.com/liukonen/tictacmath"}
       ],
-    "tags": ["MS Agents (discontinued)","Microsoft TTTS","Visual Basic 6","Visual Basic .net","Installers (nullsoft and Microsoft One Click Installer)","Javascript", "Jquery", "Browser TTS"]
+    "tags": ["Javascript", "Jquery", "Browser TTS","Progressive Web Apps (PWA)","MS Agents (discontinued)","Microsoft TTS","Visual Basic 6","Visual Basic .net","Installers (nullsoft and Microsoft One Click Installer)"]
   },
   {
     "Title":"RiverScriptBot",
@@ -35,7 +35,7 @@
       {"type": "Angular Source", "url":"https://github.com/liukonen/RiverScript-Angular-Edition/"},
       {"type" : "Server Source", "url": "https://github.com/liukonen/RiverScriptBackend"}
       ],
-    "tags": ["Vue.JS", "Angular","Progressive Web Apps (PWA)","JavaScript","JQuery","Node.JS","SASS","Heroku", "API REST calls", "CI/CD", "RiveScript"]
+    "tags": ["Angular","Progressive Web Apps (PWA)","JavaScript","JQuery","Node.JS","SASS","Heroku", "API REST calls", "CI/CD", "RiveScript"]
  
   },
   {
@@ -156,7 +156,15 @@
       ],
     "tags": ["Managed Extensibility Framework","Common Interfaces","HTTP request / response","configuration management","nuget","HTML parsing","GeckFX .net controls","CEFSharp .net controls"]
  
-  }
+  },
+  {
+    "Title:" : "",
+    "SubTitle": "This Page",
+    "Description": "",
+    "image":"img/html5.webp",
+    "tags": ["Vue", "HTML", "Javascript", "SASS", "JQuery", "JSON", "GitHub Pages"]
+
+}
 
 
   ]
