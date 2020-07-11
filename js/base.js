@@ -11,25 +11,8 @@ let temp;
   return temp;
 }
 
-function navActiveText(fileName){
-  let currentPath = new URL(window.location.href).pathname;
-  if (currentPath.toLowerCase().includes(fileName) || (currentPath == "/" && fileName== "index.html")){
-    return "(current)";
-  } return "";
-}
 
-function navActiveFormat(fileName){
-  let currentPath = new URL(window.location.href).pathname;
-  if (currentPath.toLowerCase().includes(fileName) || (currentPath == "/" && fileName== "index.html")){
-    return "active";
-  } return "";
-}
 
-function generateMenu(){
-  JSON.parse(getFile("./json/header.json"))["menu"].forEach(item =>{
-    $("#navTemp").tmpl(item).appendTo($("#navMenuBind"));  
-  });
-}
 
 /*! modernizr 3.6.0 (Custom Build) | MIT *
  * https://modernizr.com/download/?-createelementattrs_createelement_attrs-webp !*/
@@ -57,4 +40,23 @@ $(window).on('load', function() {
 
 if(navigator.appName.indexOf("Internet Explorer")!=-1 || navigator.userAgent.match(/Trident.*rv[ :]*11\./)){ window.location = "ie.html"; }
 
-generateMenu();
+
+var Nav = new Vue({
+  el: '#navItem',
+
+  methods: {
+
+    validatePath(path){
+      let current = location.pathname.substring(1).toLowerCase();
+      if (current == "") {current = "index.html";}
+      if (path == current) return "active";
+      return "";
+    }
+  },
+	data: {
+      MenuItems: [],
+    },
+  async created(){
+    await fetch("./json/header.json").then(response => response.json()).then(json =>{this.MenuItems = json.menu;});
+  }
+});

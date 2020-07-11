@@ -19,20 +19,14 @@
     <meta name="theme-color" content="#ffffff">
   </head>
   <body>
+    
     <nav class="navbar transparent navbar-expand-md navbar-dark fixed-top">
       <a class="navbar-brand" href="index.html" aria-label="welcome"><img src="/img/favicons/favicon-32x32.png" style="filter: invert(100%);" alt="logo" /></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav" id="navMenuBind">
-          <script id="navTemp" type="text/x-jQuery-tmpl">
-            <li class="nav-item ${navActiveFormat(value)}">
-            <a class="nav-link" href="${value}">${name} <span class="sr-only">${navActiveText(value)}</span></a>
+        <ul class="navbar-nav" id="navItem">
+            <li v-for="navItem in this.MenuItems" v-bind:class="validatePath(navItem.value)">
+              <a class="nav-link" v-bind:href="navItem.value">{{navItem.name}}</a>
             </li>
-          </script>      
-        </ul>
-      </div>
+        </ul>  
     </nav>
     <main>
       <div class="jumbotron">
@@ -78,15 +72,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha256-Xt8pc4G0CdcRvI0nZ2lRpZ4VHng0EoUDMlGcBSQ9HiQ=" crossorigin="anonymous"></script>
     <script src="./lib/js/modernizr.min.js"></script>
-    <script src="./lib/js/jquery.tmpl.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
     <script src="https://unpkg.com/vue-lazyload/vue-lazyload.js"></script>
     <script src="./js/base.js"></script>
     <script src="./js/index.vue.js"></script>
-    <!--<script src="./js/luke.js"></script>-->
-    <!--Begin Web-Stat code v 7.0  -->
+    <script src="./js/luke.js"></script>
+    <!--Begin Web-Stat code v 7.0 
     <span id="wts1983157"></span><script>var wts=document.createElement('script');wts.async=true;wts.src='https://wts.one/log7.js';document.head.appendChild(wts);wts.onload = function(){ wtslog7(1983157,4); };
     </script><noscript><a href="https://www.web-stat.com"><img src="https://wts.one/7/4/1983157.png" alt="Web-Stat web statistics"></a></noscript>
-   <!-- End Web-Stat code v 7.0 -->
+   --> <!-- End Web-Stat code v 7.0 -->
   </body>
 </html>

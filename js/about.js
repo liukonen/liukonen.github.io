@@ -1,18 +1,19 @@
 function BindPage(){   
   let I = JSON.parse(getFile("./json/about.json"));
   $("#welcome").text(I["welcome"]);
-  I["Work"].forEach(e => {$("#tmpWork").tmpl(e).appendTo($("#work"));});
-  I["highlights"].forEach(e =>{$("#tmpHighlights").tmpl(e).appendTo($("#highlights"))});
-  I["Hobbies"].forEach(e=>{$("#tmpLi").tmpl(e).appendTo($("#interests"));});
-  I["volunteer"].forEach(e=>{$("#tmpLi").tmpl(e).appendTo($("#volunteer"));});
-  I["UI"].forEach(e=>{$("#tmpExp").tmpl(e).appendTo($("#UI"));});
-  I["Backend"].forEach(e=>{$("#tmpExp").tmpl(e).appendTo($("#Backend"));});
-  I["Database"].forEach(e=>{$("#tmpExp").tmpl(e).appendTo($("#Database"));});
-  I["Frameworks"].forEach(e=>{$("#tmpExp").tmpl(e).appendTo($("#Frameworks"));});
-  I["VersionControl"].forEach(e=>{$("#tmpExp").tmpl(e).appendTo($("#VersionControl"));});
-  I["Tools"].forEach(e=>{$("#tmpExp").tmpl(e).appendTo($("#Tools"));});
+  I.Work.forEach(e => {$("#tmpWork").tmpl(e).appendTo($("#work"));});
+  I.highlights.forEach(e =>{$("#tmpHighlights").tmpl(e).appendTo($("#highlights"))});
+  I.Hobbies.forEach(e=>{$("#tmpLi").tmpl(e).appendTo($("#interests"));});
+  I.volunteer.forEach(e=>{$("#tmpLi").tmpl(e).appendTo($("#volunteer"));});
+  
+  I.Experence.UI.forEach(e=>{$("#tmpExp").tmpl(e).appendTo($("#UI"));});
+  I.Experence.Backend.forEach(e=>{$("#tmpExp").tmpl(e).appendTo($("#Backend"));});
+  I.Experence.Database.forEach(e=>{$("#tmpExp").tmpl(e).appendTo($("#Database"));});
+  I.Experence.Frameworks.forEach(e=>{$("#tmpExp").tmpl(e).appendTo($("#Frameworks"));});
+  I.Experence.VersionControl.forEach(e=>{$("#tmpExp").tmpl(e).appendTo($("#VersionControl"));});
+  I.Experence.Tools.forEach(e=>{$("#tmpExp").tmpl(e).appendTo($("#Tools"));});
+  I.Experence.UIFrameworks.forEach(e=>{$("#tmpExp").tmpl(e).appendTo("#UIFrameworks")}); //
 }
-
 BindPage();
 
 const lateLoadFadeInObserver = new IntersectionObserver((entries, lateLoadFadeInObserver)=>{
