@@ -7,7 +7,7 @@
     "image": "img/htmledit.webp",
     "Description":"a more advanced text editor developed from the need to have mini applications do custom work",
     "buttons": [
-      {"type" : "WebSite", "url": "https://liukonen.github.io/htmlTextEditor/"}, 
+      {"type" : "Website", "url": "https://liukonen.github.io/htmlTextEditor/"}, 
       {"type" : "Source", "url": "https://github.com/liukonen/htmlTextEditor"}
       ],
     "tags": ["Functional Programming","Local and Web storage","Client side File reader", "Javascript"]
@@ -19,7 +19,7 @@
     "Description":"In 2003 or 04 (while in school) I wrote this in Visual basic 6 and used Microsoft Agents as driving forces for Input and output. who would fly around the screen and play tic tac toe, using simple math equations. I found the original source code, and re wrote it in .net.  and since they were all based on the same source, consolidate the logic to one program, with options to switch math types (divide, multiply, add, and subtract) Since I have some time off, I was able to rewrite this using Javascript and HTML, and bring back Agents and text to speach over the browser.",
     "image": "img/ttm.webp",
     "buttons": [
-      {"type" : "WebSite", "url": "https://liukonen.github.io/tictacmath/"}, 
+      {"type" : "Website", "url": "https://liukonen.github.io/tictacmath/"}, 
       {"type": "Release", "url":"https://github.com/liukonen/tictacmath/releases"},
       {"type" : "Source", "url": "https://github.com/liukonen/tictacmath"}
       ],
@@ -31,7 +31,7 @@
     "Description":"This is a client-server model chatbot. First Website is the bot in Vue.js. The Second is a rewrite in Angular. A REST based Bot writen in Rivescript, built in Node.JS and hosted on Heroku. Server has API calls to NOAA and Duck Duck go for dynamic responses based on questions asked. And a client, built in Vue.JS, and hosted on github pages. Around 2002, 2003, I was interested in taking the chat bot out out of the standard container. I had an AIML source code project, which I tied with an MS agent, and TTS, with speach recognition, and I was talking to a bot, and it was responding. Few years later, and the AIM code cant connect, so I found AIML and the Alice project. 2016 hits, and at work, Im asked to present for MMAC Be The Spark tour, where my project, Sarra, tied her with Alice (and updated some of the scripts) as well as Microsoft cognitive services and presented a vocal chat bot that could detect and translate on the fly. Desided to take the AIML code and migrate it to RiveScript and make a bot out of it.",
     "image": "img/chat.webp",
     "buttons": [
-      {"type" : "WebSite", "url":"https://liukonen.dev/RiverScript-Angular-Edition/"},
+      {"type" : "Website", "url":"https://liukonen.dev/RiverScript-Angular-Edition/"},
       {"type": "Angular Source", "url":"https://github.com/liukonen/RiverScript-Angular-Edition/"},
       {"type" : "Server Source", "url": "https://github.com/liukonen/RiverScriptBackend"}
       ],
@@ -56,7 +56,7 @@
     "Description": "I've started a daily log during the 2020 furlough do to covid 19. Idea behind it was One, because no one wants to listen to me ramble on like a madman (face it, buzzwords mean nothing to someone outside of tech). 2 so I can remind myself what I learned. And 3, so that I have some sort of accountability in pushing myself to be better.",
     "image": "img/blog.webp",
     "buttons": [
-      {"type" : "WebSite", "url": "https://liukonen.github.io/furlough.html"}, 
+      {"type" : "Website", "url": "https://liukonen.github.io/furlough.html"}, 
       {"type" : "Source", "url": "http://github.com/liukonen/furlough"}
       ],
     "tags": ["Javascript", "Jquery", "Lazy Loading", "Keyword Extraction", "technical writing", "Screen Scrapping"]
