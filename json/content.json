@@ -41,7 +41,7 @@
   {
     "Title":"NATS",
     "SubTitle":"Not Another Text Search.",
-    "Description":"Nats is a command line based search engine for text files on your hard drive. It uses multithreading, indexs (including windows) and an optional cached index for faster lookups. It was written to find items in source code easily, even if they were not included in a project. It is written in .net core, however there would probibly need some work to port to linux or mac. I have to test that. Icon for mac and windows provided by material.io, and is Apache license version 2.0.",
+    "Description":"Nats is a command-line based search engine for text files on your hard drive. It uses multithreading, indexes (including windows), and an optional cached index for faster lookups (using a Lite DB locally hosted database, similar to Mongo DB). It was written to find items in source code easily, even if they were not included in a project. It was originally written in .net core, and I have made GUI editions for Windows, Mac, and GTK, which runs on Linux, Mac, and Windows. Icon for mac and windows provided by material.io, and is Apache license version 2.0.",
     "image": "img/nats.webp",
     "buttons": [
       {"type": "Release", "url":"https://github.com/liukonen/nats/releases"},
