@@ -15,171 +15,164 @@
     <link rel="manifest" href="/img/favicons/manifest.json">
     <link rel="mask-icon" href="/img/favicons/safari-pinned-tab.svg" color="#ffffff">
     <link rel="icon" href="/img/favicons/favicon.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/about.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha256-aAr2Zpq8MZ+YA/D6JtRD3xtrwpEz2IqOS+pWD/7XKIw=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha512-oidSClV2QEJnexqKyjJZtJqqhWEpDfa/PIEFCSX8mVA9YlaruAfykMto2uMyV8rc7dt00LieW10osgOyDhMkqg==" crossorigin="anonymous" />
+
   </head>
   <body data-gr-c-s-loaded="true">
     <nav class="navbar transparent navbar-expand-md navbar-dark fixed-top">
-      <a class="navbar-brand" href="index.html" aria-label="welcome"><img src="/img/favicons/favicon-32x32.png" style="filter: invert(100%);" alt="logo" /></a>
+      <a class="navbar-brand Invert" href="index.html" aria-label="welcome"><img src="/img/favicons/favicon-32x32.png" alt="logo" /></a>
         <ul class="navbar-nav" id="navItem">
             <li v-for="navItem in this.MenuItems" v-bind:class="validatePath(navItem.value)">
               <a class="nav-link" v-bind:href="navItem.value">{{navItem.name}}</a>
             </li>
         </ul>  
     </nav>
+
     <div class="bgimg-1">
       <div class="caption2">
-        <span class="border clearBoarder">Luke Liukonen</span>
+        <span class="border clearBoarder">Hello, I'm Luke Liukonen</span>
       </div>
     </div>
 
-    <div class="container aboutFormat">
+    <div class="container-fluid lightFormat">
+      <div class="container">
       <h3 class="text-center">Welcome</h3>
-        <div id="welcome"></div>
+        <div id="welcome">{{this.item}}</div>
+      </div>
+    </div>
+
+    <div class="aboutFormat container-fluid" id="career">
+      <div class="container">
+      <h3 class="text-center">Career So far</h3>
+  
+      <div v-for="job in this.Work" class="row">
+        <work v-bind:job="job"></work>
+      </div>
+      <br />
+      <h3 class="text-center mt-5">Current Overall Highlights</h3>
+      <ul class="list-group text-dark shadow" v-for="item in this.highlights">
+        <li class="list-group-item">{{item.a}}</li>
+      </ul>
+      <h3 class="text-center mt-5">Education</h3>
+      <div v-for="edu in this.school" class="row"><work v-bind:job="edu"></work></div>
+    </div>
     </div>
 
     <div class="bgimg-2">
-      <div class="caption">
-        <span class="border proBorder">Profesional Highlights</span>
-      </div>
+
     </div>
 
     <div class="position-relative">
-      <div class="container-fluid aboutFormat">
-        <div class="row justify-content-md-center">
-          <div class="card shadow mr-4">
-            <div class="card-header bg-transparent">
-              <h1 class="h3">Current Work Highlights</h1>
-            </div>
-            <ul class="list-group list-group-flush text-dark" id="highlights">
-              <script id="tmpHighlights" type="text/x-jQuery-tmpl"><li class="list-group-item">${a}</li></script>
-            </ul>
-          </div>
-          <div class="card shadow bg-transparent">
-            <div class="card-header bg-transparent">
-              <h1 class="h3">Work History</h1>
-            </div>
-            <ul class="list-group list-group-flush text-dark" id="work">
-              <script id="tmpWork" type="text/x-jQuery-tmpl">
-                <li class="list-group-item">
-                  <div class="row">
-                    <div>
-                      <img src="${img}" height="32" width="32" class="mr-2" alt="${name}" />
-                    </div>
-                    <div>
-                      <b>${name}</b>: ${title}
-                      <p> 
-                        <i>${timeworked}</i>
-                      </p>
-                    </div>
-                  </div>
-                </li>
-              </script>
-            </ul>
-          </div>
-        </div>
-      </div>
+
     </div>
-    <div class="container aboutFormat">
-      <script id="tmpExp" type="text/x-jAuery-tmpl">
-        <div class="col2 mr-5 text-center lateloadfadeIn">
-          <a href="${link}" target="blank" alt="${title}"><img data-src="${img}" title="${title}" width="100px" height="100px" style="display:none;" /></a>
-          <p>${title}</p>
-          <p>
-            <span class="badge badge-pill badge-${expPillColor(level)}">${expPillName(level)}</span>
-          </p>
-        </div>     
-      </script>
+    <div class="container-fluid lightFormat">
+      <div class="container">
+      <h3 class="text-center">Systems / Ideas I've worked with</h3>
 
-      <div class="row text-dark">
 
+
+      <div class="row text-dark" id="vbackend">
         <div class="card shadow col-md-12">
           <div class="card-header bg-transparent"><h2 class="h4">Backend</h2></div>
           <div class="card-body">
-            <div class="row justify-content-md-center" id="Backend"></div>  
+            <div class="row justify-content-md-center">
+                <Knowledge v-for="item in this.Ex.Backend" v-bind:item="item"></Knowledge>
+            </div>   
           </div>
         </div>
-
+ 
         <div class="card shadow col-md-6 mt-5">
           <div class="card-header bg-transparent"><h2 class="h4">Database</h2></div>
           <div class="card-body">
-            <div class="row justify-content-md-center" id="Database"></div>  
+            <div class="row justify-content-md-center">
+            <Knowledge v-for="item in this.Ex.Database" v-bind:item="item"></Knowledge>
+            </div>
           </div>
         </div>
 
         <div class="card shadow col-md-6 mt-5">
           <div class="card-header bg-transparent"><h2 class="h4">UI Frameworks</h2></div>
           <div class="card-body">
-            <div class="row justify-content-md-center" id="UIFrameworks"></div>  
+            <div class="row justify-content-md-center">
+              <Knowledge v-for="item in this.Ex.UIFrameworks" v-bind:item="item"></Knowledge>
+              </div> 
           </div>
         </div>
 
         <div class="card shadow col-md-12 mt-5">
           <div class="card-header bg-transparent"><h2 class="h4">Frontend / UI</h2></div>
           <div class="card-body">
-            <div class="row justify-content-md-center" id="UI"></div>  
+            <div class="row justify-content-md-center">
+              <Knowledge v-for="item in this.Ex.UI" v-bind:item="item"></Knowledge>
+              </div> 
           </div>
         </div>
-        
-
         
         <div class="card shadow col-md-12 mt-5">
           <div class="card-header bg-transparent"><h2 class="h4">Concepts</h2></div>
           <div class="card-body">
-            <div class="row justify-content-md-center" id="Frameworks"></div>  
+            <div class="row justify-content-md-center">
+              <Knowledge v-for="item in this.Ex.Frameworks" v-bind:item="item"></Knowledge>
+              </div>  
           </div>
         </div>
 
         <div class="card shadow col-md-4 mt-5">
           <div class="card-header bg-transparent"><h2 class="h4">Version Control</h2></div>
           <div class="card-body">
-            <div class="row justify-content-md-center" id="VersionControl"></div>  
+            <div class="row justify-content-md-center">
+              <Knowledge v-for="item in this.Ex.VersionControl" v-bind:item="item"></Knowledge>
+              </div> 
           </div>
         </div>
       
         <div class="card shadow col-md-8 mt-5">
           <div class="card-header bg-transparent"><h2 class="h4">Tools</h2></div>
           <div class="card-body">
-            <div class="row justify-content-md-center" id="Tools"></div>  
+            <div class="row justify-content-md-center">
+              <Knowledge v-for="item in this.Ex.Tools" v-bind:item="item"></Knowledge>
+              </div> 
           </div>
         </div>
       </div>
-    </div>
+    </div></div>
     
     <div class="bgimg-3">
       <div class="caption">
-        <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">Hobbies</span>
+        <span class="border hobbies">Hobbies</span>
       </div>
     </div>
-    <div class="position-relative">
-      <div class="container-fluid" style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+    <div class="position-relative" id="about">
+      <div class="container-fluid aboutFormat">
         <div class="row justify-content-center">
           <div class="col-lg-4">
             <h1 class="h3">Interests</h1>
-            <ul id="interests"></ul>
+            <ul class="list-group" id="interests">
+              <li v-for="item in this.Hobbies" class="list-group-item list-group-item-secondary">{{item.a}}</li>
+            </ul>
           </div>
           <div class="col-lg-4">
             <h1 class="h3">Volunteer</h1>
-            <ul id="volunteer"></ul>
+            <ul class="list-group" id="interests">
+              <li v-for="item in this.Vol" class="list-group-item list-group-item-secondary">{{item.a}}</li>
+            </ul>
           </div>
         </div>
-        <script id="tmpLi" type="text/x-jQuery-tmpl"><li>${a}</li></script>
       </div>
     </div>
 
     <div class="bgimg-end">
       <div class="caption">
-        <span class="border">         
-          <a target="_blank" class="btn btn-secondary" href="https://github.com/liukonen" role="button" aria-label="Github">
-            <i class="fab fa-github-alt fa-2x"></i>GitHub
+        <span class="border">    
+          <a target="_blank" class="btn btn-secondary" href="https://github.com/liukonen" role="button" aria-label="Github" data-toggle="tooltip" data-placement="top" title="GitHub">
+            <i class="fab fa-github-alt fa-2x"></i>
           </a>
-          <a target="_blank" class="btn btn-info" href="https://www.linkedin.com/in/lukeliukonen/" role="button" aria-label="LinkedIn">
-            <i class="fab fa-linkedin-in fa-2x"></i> LinkedIn
-          </a>
-          <a class="btn btn-danger" href="mailto:liukonen@gmail.com?subject=GitHub_Home_Page" role="button" aria-label="email">
-            <i class="far fa-envelope fa-2x"></i> email
-          </a>
+          <a target="_blank" class="btn btn-info" href="https://www.linkedin.com/in/lukeliukonen/" role="button" aria-label="LinkedIn" data-toggle="tooltip" data-placement="top" title="LinkedIn">
+            <i class="fab fa-linkedin-in fa-2x"></i></a>
+          <a class="btn btn-danger" href="mailto:liukonen@gmail.com?subject=GitHub_Home_Page" role="button" aria-label="email" data-toggle="tooltip" data-placement="top" title="email">
+            <i class="far fa-envelope fa-2x"></i></a>
         </span>
         <br />
         <br />
@@ -188,11 +181,11 @@
         </div> 
       </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha256-Xt8pc4G0CdcRvI0nZ2lRpZ4VHng0EoUDMlGcBSQ9HiQ=" crossorigin="anonymous"></script>        <script src="./lib/js/modernizr.min.js"></script>
-    <script src="./lib/js/jquery.tmpl.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.1/js/bootstrap.bundle.min.js" integrity="sha512-COov2QDX27yTLL6NzH3ENTDOyzX0u4bmNINynDFlOYdF/pw45P6vNKqTpYR4S4OesVQhZPHGLm4rPQa8LNTF/w==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js" integrity="sha512-QJsj3afWlCpnQ60XzzYE8Jb3IgHIK1BcGZox9rUSmRRq3Ocz9vQ1yR80eX2/b9jfx/UuT5zYWNdrM8Te/eCMhQ==" crossorigin="anonymous"></script>
     <script src="js/base.js"></script>
-    <script src="js/about.js"></script>
+    <script src="js/about.vue.js"></script>
   </body>
 </html>

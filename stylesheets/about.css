@@ -199,9 +199,38 @@ h3 {
   text-align: justify;
 }
 
+.lightFormat {
+  color: #000;
+  background-color: #eeeeee;
+  text-align: center;
+  padding: 50px 50px;
+  text-align: justify;
+  position: relative;
+}
+
 .proBorder {
   background-color: transparent !important;
   font-size: 25px;
   color: #f7f7f7;
+}
+
+.card-horizontal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.ImgRoundCorner {
+  border-radius: 25px;
+  width: 178px;
+  height: 178px;
+}
+
+.Invert {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
 }
 /*# sourceMappingURL=about.css.map */

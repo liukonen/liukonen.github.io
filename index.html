@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
+    <meta name="description" content="Personal Homepage for Luke Liukonen">
     <meta name="author" content="Luke Liukonen">
     <title>Luke Liukonen</title>
     <link href="./css/index.min.css" rel="stylesheet" />
@@ -21,7 +21,7 @@
   <body>
     
     <nav class="navbar transparent navbar-expand-md navbar-dark fixed-top">
-      <a class="navbar-brand" href="index.html" aria-label="welcome"><img src="/img/favicons/favicon-32x32.png" style="filter: invert(100%);" alt="logo" /></a>
+      <a class="navbar-brand" href="index.html" aria-label="welcome"><img src="/img/favicons/favicon-32x32.png" class="invert" alt="logo" /></a>
         <ul class="navbar-nav" id="navItem">
             <li v-for="navItem in this.MenuItems" v-bind:class="validatePath(navItem.value)">
               <a class="nav-link" v-bind:href="navItem.value">{{navItem.name}}</a>
@@ -44,15 +44,15 @@
           <!-- START THE FEATURETTES -->
           <hr class="featurette-divider">
           <div id="app" >
-            <div v-for="(product, index) in this.Products">
+            <div v-for="product in this.Products">
               <div class="row featurette">
-              <div v-bind:class="GetClass(1, 0)">
+              <div v-bind:class="GetClass(0)">
                 <h3 class="featurette-heading h2">{{product.Title}}</h3><P></P>
                 <img class="featurette-image img-fluid mx-auto shadow rounded-lg" v-lazy="GetImage(product.image)" v-on:once="log()" v-bind:alt="product.Title">
                 <p>Learnings: <span v-for="tag in product.tags" class="badge badge-light font-weight-lighter">{{tag}}</span>
 
               </div>
-              <div v-bind:class="GetClass(1, 1)">
+              <div v-bind:class="GetClass(1)">
                 
                   <h4 class="text-muted"> {{product.SubTitle}}</h4>
                 <br />
@@ -73,17 +73,16 @@
       <p>© Luke Liukonen 2020</p>
     </footer>
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha256-Xt8pc4G0CdcRvI0nZ2lRpZ4VHng0EoUDMlGcBSQ9HiQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.1/js/bootstrap.bundle.min.js" integrity="sha512-COov2QDX27yTLL6NzH3ENTDOyzX0u4bmNINynDFlOYdF/pw45P6vNKqTpYR4S4OesVQhZPHGLm4rPQa8LNTF/w==" crossorigin="anonymous"></script>
     <script src="./lib/js/modernizr.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
     <script src="https://unpkg.com/vue-lazyload/vue-lazyload.js"></script>
     <script src="./js/base.js"></script>
     <script src="./js/index.vue.js"></script>
-    <script src="./js/luke.js"></script>
     <!--Begin Web-Stat code v 7.0 -->
     <span id="wts1983157"></span><script>var wts=document.createElement('script');wts.async=true;wts.src='https://wts.one/log7.js';document.head.appendChild(wts);wts.onload = function(){ wtslog7(1983157,4); };
     </script><noscript><a href="https://www.web-stat.com"><img src="https://wts.one/7/4/1983157.png" alt="Web-Stat web statistics"></a></noscript>
-    <!-- End Web-Stat code v 7.0 -->
+   <!-- End Web-Stat code v 7.0 -->
   </body>
 </html>

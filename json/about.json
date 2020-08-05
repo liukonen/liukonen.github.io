@@ -12,59 +12,92 @@
     ],
     "Experence":
     {
-    "UI":
-    [
-        {"title": "HTML 5", "img": "./img/html5.webp", "level": 2, "link": "https://en.wikipedia.org/wiki/HTML"},
-        {"title": "JavaScript", "img": "./img/javascript.webp", "level": 2, "link": "https://en.wikipedia.org/wiki/JavaScript"},
-        {"title": "jQuery", "img": "./img/jquery.webp", "level": 1, "link": "https://jquery.com/"},
-        {"title": "Blazor Pages", "img": "./img/blazor.webp", "level": 1, "link": "https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor"},
-        {"title": "CSS", "img": "./img/css3.webp", "level": 1, "link": "https://en.wikipedia.org/wiki/Cascading_Style_Sheets"}
-        ,{"title": "SASS", "img":"./img/sass.webp", "level": 1, "link": "https://sass-lang.com/"}
-    ],
-    "UIFrameworks":[
-        {"title": "ASP.Net", "img": "./img/aspnet.webp", "level": 2, "link": "https://dotnet.microsoft.com/apps/aspnet"},
-        {"title": "Angular","img":"./img/Angular.webp", "level": 1, "link": "https://angular.io/"},
-        {"title": "Vue", "img": "./img/vue.webp", "level": 1, "link": "https://vuejs.org/"}
-    ],
-    "Backend":
-    [
-        {"title": "C#", "img": "./img/csharp.webp", "level": 3, "link": "https://en.wikipedia.org/wiki/C_Sharp_(programming_language)"}
-        ,{"title": "VB.Net", "img": "./img/vb.webp", "level": 3, "link": "https://en.wikipedia.org/wiki/Visual_Basic_.NET"}
-        ,{"title": "T-Sql and stored procs", "img": "./img/tsql.webp", "level":2, "link": "https://en.wikipedia.org/wiki/Transact-SQL"}
-        ,{"title": "Python", "img": "./img/python.webp", "level": 1, "link": "https://www.python.org/about/"}
-        ,{"title": "Node.JS", "img": "./img/node.webp","level":1, "link": "https://nodejs.org/en/about/"}
-    ],
-    "Database":
-    [
-        {"title": "SQL Server", "img": "./img/sqlserver.webp", "level": 2, "link": "https://en.wikipedia.org/wiki/Microsoft_SQL_Server"},
-        {"title": "Sqlite", "img": "./img/sqlite.webp", "level": 1, "link": "https://www.sqlite.org/index.html"},
-        {"title": "LiteDB", "img": "./img/litedb.webp", "level": 1, "link": "https://www.litedb.org/"}          
-    ],
-    "Frameworks":[
-        {"title": "MVC", "img": "./img/mvc.webp", "level": 2, "link": "https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller"} ,
-        {"title": "Agile", "img": "./img/agile.webp", "level": 2, "link": "https://en.wikipedia.org/wiki/Agile_software_development"} ,
-        {"title": "WCF", "img": "./img/wcf.webp", "level": 2, "link": "https://docs.microsoft.com/en-us/dotnet/framework/wcf/whats-wcf"} ,
-        {"title": "Rest Services", "img": "./img/rest.webp", "level": 2, "link": "https://en.wikipedia.org/wiki/Representational_state_transfer"},
-        {"title": "MS Cognitive Services", "img": "./img/cognitive.webp", "level": 1, "link": "https://azure.microsoft.com/en-us/services/cognitive-services/"} ,
-        {"title": "Slack API", "img": "./img/slack.webp", "level": 1, "link": "https://api.slack.com/"} 
-    ],
-    "VersionControl":[
-        {"title": "TFS / Azure DevOps", "img": "./img/TFS.webp", "level": 2, "link": "https://azure.microsoft.com/en-us/services/devops/server/"} ,
-        {"title": "GitHub / Other", "img": "./img/Octocat.webp", "level": 1, "link": "https://en.wikipedia.org/wiki/GitHub"} 
-    ],
-    "Tools":[
-        {"title": "Visual Studio", "img": "./img/visualstudio.webp", "level": 2, "link": "https://visualstudio.microsoft.com/vs/"} ,
-        {"title": "VS Code", "img": "./img/vscode.webp", "level": 1, "link": "https://code.visualstudio.com/"},
-        {"title": "Git", "img": "./img/Git.webp", "level": 1, "link": "https://git-scm.com/"},
-        {"title": "XCode", "img": "./img/xcode.webp", "level": 1, "link": "https://developer.apple.com/xcode/"}
-        
-    ]}
+        "UI":
+        [
+            {"title": "HTML 5", "img": "./img/html5.webp", "level": 2, "link": "https://en.wikipedia.org/wiki/HTML"},
+            {"title": "JavaScript", "img": "./img/javascript.webp", "level": 2, "link": "https://en.wikipedia.org/wiki/JavaScript"},
+            {"title": "jQuery", "img": "./img/jquery.webp", "level": 1, "link": "https://jquery.com/"},
+            {"title": "Blazor Pages", "img": "./img/blazor.webp", "level": 1, "link": "https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor"},
+            {"title": "CSS", "img": "./img/css3.webp", "level": 1, "link": "https://en.wikipedia.org/wiki/Cascading_Style_Sheets"}
+            ,{"title": "SASS", "img":"./img/sass.webp", "level": 1, "link": "https://sass-lang.com/"}
+        ],
+        "UIFrameworks":[
+            {"title": "ASP.Net", "img": "./img/aspnet.webp", "level": 2, "link": "https://dotnet.microsoft.com/apps/aspnet"},
+            {"title": "Angular","img":"./img/Angular.webp", "level": 1, "link": "https://angular.io/"},
+            {"title": "Vue", "img": "./img/vue.webp", "level": 1, "link": "https://vuejs.org/"}
+        ],
+        "Backend":
+        [
+            {"title": "C#", "img": "./img/csharp.webp", "level": 3, "link": "https://en.wikipedia.org/wiki/C_Sharp_(programming_language)"}
+            ,{"title": "VB.Net", "img": "./img/vb.webp", "level": 3, "link": "https://en.wikipedia.org/wiki/Visual_Basic_.NET"}
+            ,{"title": "T-Sql and stored procs", "img": "./img/tsql.webp", "level":2, "link": "https://en.wikipedia.org/wiki/Transact-SQL"}
+            ,{"title": "Python", "img": "./img/python.webp", "level": 1, "link": "https://www.python.org/about/"}
+            ,{"title": "Node.JS", "img": "./img/node.webp","level":1, "link": "https://nodejs.org/en/about/"}
+        ],
+        "Database":
+        [
+            {"title": "SQL Server", "img": "./img/sqlserver.webp", "level": 2, "link": "https://en.wikipedia.org/wiki/Microsoft_SQL_Server"},
+            {"title": "Sqlite", "img": "./img/sqlite.webp", "level": 1, "link": "https://www.sqlite.org/index.html"},
+            {"title": "LiteDB", "img": "./img/litedb.webp", "level": 1, "link": "https://www.litedb.org/"}          
+        ],
+        "Frameworks":[
+            {"title": "MVC", "img": "./img/mvc.webp", "level": 2, "link": "https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller"} ,
+            {"title": "Agile", "img": "./img/agile.webp", "level": 2, "link": "https://en.wikipedia.org/wiki/Agile_software_development"} ,
+            {"title": "WCF", "img": "./img/wcf.webp", "level": 2, "link": "https://docs.microsoft.com/en-us/dotnet/framework/wcf/whats-wcf"} ,
+            {"title": "Rest Services", "img": "./img/rest.webp", "level": 2, "link": "https://en.wikipedia.org/wiki/Representational_state_transfer"},
+            {"title": "MS Cognitive Services", "img": "./img/cognitive.webp", "level": 1, "link": "https://azure.microsoft.com/en-us/services/cognitive-services/"} ,
+            {"title": "Slack API", "img": "./img/slack.webp", "level": 1, "link": "https://api.slack.com/"} 
+        ],
+        "VersionControl":[
+            {"title": "TFS / Azure DevOps", "img": "./img/TFS.webp", "level": 2, "link": "https://azure.microsoft.com/en-us/services/devops/server/"} ,
+            {"title": "GitHub / Other", "img": "./img/Octocat.webp", "level": 1, "link": "https://en.wikipedia.org/wiki/GitHub"} 
+        ],
+        "Tools":[
+            {"title": "Visual Studio", "img": "./img/visualstudio.webp", "level": 2, "link": "https://visualstudio.microsoft.com/vs/"} ,
+            {"title": "VS Code", "img": "./img/vscode.webp", "level": 1, "link": "https://code.visualstudio.com/"},
+            {"title": "Git", "img": "./img/Git.webp", "level": 1, "link": "https://git-scm.com/"},
+            {"title": "XCode", "img": "./img/xcode.webp", "level": 1, "link": "https://developer.apple.com/xcode/"}   
+        ]
+    }
     ,
+    "School":[
+        {
+            "name": "University of Wisconsin - Milwaukee",
+            "timeworked": "September 2002 - May 2006",
+            "img":"./img/uwm.webp.png",
+            "title": "Bachelors in Business Administration",
+            "summary": "Management Information Systems"
+        }
+    ],
     "Work":[
-        {"name":"Trisept Solutions", "timeworked":"April 2014 - July 2020", "title":"Software Analyst (Mid/Snr Engineer Eq)", "img":"./img/Trisept Solutions.webp.png"}
-        ,{"name":"Blue7 Solutions", "timeworked":"January 2012 - April 2014", "title":"Software Engineer", "img":"./img/Blue7 Solutions.webp.png"}
-        ,{"name":"Trisept Solutions", "timeworked":"May 2006 - December 2011", "title":"Software Developer", "img":"./img/Trisept Solutions.webp.png"}
-        ,{"name":"ITT Tech", "timeworked":"Summer, 2008 and 2010", "title":"Adjunct Instructor", "img":"./img/ITT Technical Institute.webp.png"}
+        {
+            "name":"Trisept Solutions", 
+            "timeworked":"April 2014 - July 2020", 
+            "title":"Software Analyst (Mid/Snr Engineer Eq)", 
+            "img":"./img/Trisept Solutions.webp.png",
+            "summary":"For 3 years was the development lead for the product support area of the company. My current role is focused on the backend system (Avail, packaging, booking) engine of the system. This is a Full-stack position. Other tasks I've also taken on include writing setup materials/documentation, consulted in system analysis tasks on system performance and monitoring, and mentored both new developers and junior developers in our system."
+        }
+        ,{
+            "name":"Blue7 Solutions", 
+            "timeworked":"January 2012 - April 2014", 
+            "title":"Software Engineer", 
+            "img":"./img/Blue7 Solutions.webp.png",
+            "summary":"Worked with Trisept Solutions as there Development lead for the Product Support team, which involves knowledge of Trisept's entire system, debugging and resolving issues in the code base, and managing Blue 7's company offshore resources in Product Support when needed. I also worked as a consultant for Trisept Solutions in the dynamic packaging engine as a full stack developer."
+        }
+        ,{
+            "name":"Trisept Solutions", 
+            "timeworked":"May 2006 - December 2011", 
+            "title":"Software Developer", 
+            "img":"./img/Trisept Solutions.webp.png",
+            "summary":"Developed on and maintained the companies dynamic packaging engine which bundled vacation packages together based on preset rules, and there booking engine which then booked the vacation packages. Became a knowledge expert on the companies custom backend entry systems. Technologies that interacted with at a given time included, C#, VB.net, SQL, XML, javascript and ASP.net"
+        }
+        ,{
+            "name":"ITT Tech", 
+            "timeworked":"Summer, 2008 and 2010", 
+            "title":"Adjunct Instructor", 
+            "img":"./img/ITT Technical Institute.webp.png",
+            "summary":"I taught 2 courses during my time at ITT Tech. The first was Introduction to Programming and the second, Introduction to Computers. These courses helped me develop my managerial approach outlook, as I learned from it that it is best to guide people to the answer, then to just give them the answer. It also honed my skills of admin tasks, time management, and how to manage multiple people at the same time."
+        }
     ],
     "Hobbies":
     [
@@ -78,6 +111,7 @@
         {"a": "Has worked at both the Schlitz Audubon and Urban Ecology Center helping plant trees"}
         ,{"a": "Running Folding@home to help battle Covid-19"}
         ,{"a": "Has run some kind of computer nearly non stop since 2014 for research through World Community Grid"}
-
+        ,{"a": "Attend a number of charity events throughout the year when I can."}
+        ,{"a": "Managed a number of fundraisers at work, including a food drive and a cancer fundraiser."}
     ]
 }
