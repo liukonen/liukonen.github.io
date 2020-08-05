@@ -21,30 +21,22 @@ Vue.component('Knowledge', {
     template: `
     <div class="col2 mr-5 text-center lateloadfadeIn">
     <a v-bind:href="item.link" target="blank" v-bind:alt="item.title"><img v-bind:data-src="item.img" v-bind:title="item.title" width="100px" height="100px" style="display:none;" /></a>
-    <p>{{item.title}}</p>
-    <p>
-      <span v-bind:class="GetClass(item)">{{GetName(item.level)}}</span>
-    </p>
+    <p>{{item.title}}</p><p><span v-bind:class="GetClass(item)">{{GetName(item.level)}}</span></p>
   </div>`
   })
 
 Vue.component('Work', {
     props:['job'],
-    template: `        
-    <div class="col-10 mt-3 mx-auto">
-    <div class="card border-0">
-      <div class="card-horizontal">
-        <div class="img-square-wrapper">
-          <img class="ImgRoundCorner border-right shadow" v-bind:src="job.img" v-bind:alt="job.name"></img>
-        </div>
-        <div class="card-body">
-          <h4 class="card-title">{{job.name}}</h4>
-          <h5>{{job.title}}, {{job.timeworked}}</h5>
-          <p class="card-text">{{job.summary}}</p>
-        </div>
-      </div>
+    template: `  
+    
+    <div class="row justify-content-md-center">
+    <div class="col-md-2 mt-3"><img class="ImgRoundCorner border-right shadow" v-bind:src="job.img" v-bind:alt="job.name"></img></div>  
+    <div class="col-md-6 mt-3 offset-md-1">
+        <h4 class="card-title">{{job.name}}</h4>
+        <h5>{{job.title}}, {{job.timeworked}}</h5>
+        <p class="card-text">{{job.summary}}</p>
     </div>
-  </div>
+    </div>
     `
 })
 
