@@ -5,7 +5,7 @@
     "Title":"Html Text Editor",
     "SubTitle":"manipulate and batch text files in your browser",
     "image": "img/htmledit.webp",
-    "Description":"a more advanced text editor developed from the need to have mini applications do custom work",
+    "Description":"a more advanced text editor developed from the need to have mini applications do custom work. This came from multiple smaller programs I'd have to quickly write up to change string data that was given to me. It evolved from console and winform applciations into a single web page based app. It's evolved to now a PWA application that can load files from your desktop and save them either in browser cache, or locally as a download.",
     "buttons": [
       {"type" : "Website", "url": "https://liukonen.github.io/htmlTextEditor/"}, 
       {"type" : "Source", "url": "https://github.com/liukonen/htmlTextEditor"}
@@ -53,7 +53,7 @@
   {
     "Title": "Furlough Log",
     "SubTitle": "learnings within a 12 week period.",
-    "Description": "I've started a daily log during the 2020 furlough do to covid 19. Idea behind it was One, because no one wants to listen to me ramble on like a madman (face it, buzzwords mean nothing to someone outside of tech). 2 so I can remind myself what I learned. And 3, so that I have some sort of accountability in pushing myself to be better.",
+    "Description": "I've started a daily log during the 2020 furlough do to covid 19. Idea behind it was One, because no one wants to listen to me ramble on like a madman (face it, buzzwords mean nothing to someone outside of tech). 2 so I can remind myself what I learned. And 3, so that I have some sort of accountability in pushing myself to be better. It's a project, in the fact that I did a lot of dynamic content, such as client side screen scraping, and a built in search engine powered by a keyword driven JSON object.",
     "image": "img/blog.webp",
     "buttons": [
       {"type" : "Website", "url": "https://liukonen.github.io/furlough.html"}, 

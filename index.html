@@ -40,23 +40,27 @@
         </div>
       </div>
       <div class="container" id="mainContainer">
-        <h2 class="h4 bold">Open Source Projects</h2>
+        <h2 class="h3 bold">Open Source Projects</h2>
           <!-- START THE FEATURETTES -->
           <hr class="featurette-divider">
           <div id="app" >
             <div v-for="(product, index) in this.Products">
               <div class="row featurette">
-              <div v-bind:class="GetClass(index, 0)">
-                <img class="featurette-image img-fluid mx-auto shadow" v-lazy="GetImage(product.image)" v-on:once="log()" v-bind:alt="product.Title">
-              </div>
-              <div v-bind:class="GetClass(index, 1)">
-                <h3 class="featurette-heading h2">{{product.Title}}
-                  <span class="text-muted"> {{product.SubTitle}}</span>
-                </h3>
-                <p class="lead">{{product.Description}}</p>
-                <a v-for="button in product.buttons" v-bind:class="DetermButtonColor(button.type)" v-bind:href="button.url" target="_blank">{{button.type}}</a>
-                <p></p>
+              <div v-bind:class="GetClass(1, 0)">
+                <h3 class="featurette-heading h2">{{product.Title}}</h3><P></P>
+                <img class="featurette-image img-fluid mx-auto shadow rounded-lg" v-lazy="GetImage(product.image)" v-on:once="log()" v-bind:alt="product.Title">
                 <p>Learnings: <span v-for="tag in product.tags" class="badge badge-light font-weight-lighter">{{tag}}</span>
+
+              </div>
+              <div v-bind:class="GetClass(1, 1)">
+                
+                  <h4 class="text-muted"> {{product.SubTitle}}</h4>
+                <br />
+                <p><a v-for="button in product.buttons" v-bind:class="DetermButtonColor(button.type)" v-bind:href="button.url" target="_blank">{{button.type}}</a></p>
+                <p class="lead">{{product.Description}}</p>
+
+                <p></p>
+                
                 </p>
               </div>
             </div>
@@ -77,9 +81,9 @@
     <script src="./js/base.js"></script>
     <script src="./js/index.vue.js"></script>
     <script src="./js/luke.js"></script>
-    <!--Begin Web-Stat code v 7.0  --> 
+    <!--Begin Web-Stat code v 7.0 
     <span id="wts1983157"></span><script>var wts=document.createElement('script');wts.async=true;wts.src='https://wts.one/log7.js';document.head.appendChild(wts);wts.onload = function(){ wtslog7(1983157,4); };
     </script><noscript><a href="https://www.web-stat.com"><img src="https://wts.one/7/4/1983157.png" alt="Web-Stat web statistics"></a></noscript>
-  <!-- End Web-Stat code v 7.0 -->
+   --> <!-- End Web-Stat code v 7.0 -->
   </body>
 </html>
