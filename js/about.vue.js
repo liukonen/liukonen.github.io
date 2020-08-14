@@ -21,7 +21,7 @@ Vue.component('Knowledge', {
     template: `
     <div class="col2 mr-5 text-center lateloadfadeIn">
     <a v-bind:href="item.link" target="blank" v-bind:alt="item.title"><img v-bind:data-src="item.img" v-bind:title="item.title" width="100px" height="100px" style="display:none;" /></a>
-    <p>{{item.title}}</p><p><span v-bind:class="GetClass(item)">{{GetName(item.level)}}</span></p>
+    <p>{{item.title}}</p><p><span v-bind:class="GetClass(item)">{{GetName(item)}}</span></p>
   </div>`
   })
 
