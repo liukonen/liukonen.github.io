@@ -71,6 +71,13 @@
     ],
     "Work":[
         {
+            "name": "Brady Corp",
+            "timeworked": "",
+            "title": "Senior Software Engineer",
+            "img":"./img/brady.webp.png",
+            "summary": "TBD"
+        },
+        {
             "name":"Trisept Solutions", 
             "timeworked":"April 2014 - July 2020", 
             "title":"Software Analyst (Mid/Snr Engineer Eq)", 
