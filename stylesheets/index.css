@@ -64,4 +64,8 @@ body, html {
   -webkit-filter: invert(100%);
           filter: invert(100%);
 }
+
+.content {
+  display: none;
+}
 /*# sourceMappingURL=index.css.map */

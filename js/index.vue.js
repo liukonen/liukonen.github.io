@@ -45,7 +45,7 @@ vm = new Vue({
             return img + ".png";
         },
         log(){console.log(this);}
-        
+
 	}
   })
 
@@ -102,3 +102,21 @@ function preloadImg(img){
   }, {rootMargin:"0px 0px 0px 0px"});
   document.querySelectorAll(".fade-in").forEach(item => faderObsever.observe(item));
   /*end region fader */
+
+  function ExpandText(me){
+    var content = me.parentElement.nextElementSibling;
+    ExpandContent(me, content);
+  }
+
+
+
+  function ExpandContent(item, content){
+    if (content.style.display === "block") {
+      item.innerHTML = '[+]';
+      content.style.display = "none";
+    } else {
+      item.innerHTML ='[-]';
+    content.style.display = "block";
+    }
+
+  }
