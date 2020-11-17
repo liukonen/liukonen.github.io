@@ -49,13 +49,13 @@
             {"title": "Slack API", "img": "./img/slack.webp", "level": 1, "link": "https://api.slack.com/"} 
         ],
         "VersionControl":[
-            {"title": "TFS / Azure DevOps", "img": "./img/TFS.webp", "level": 2, "link": "https://azure.microsoft.com/en-us/services/devops/server/"} ,
-            {"title": "GitHub / Other", "img": "./img/Octocat.webp", "level": 1, "link": "https://en.wikipedia.org/wiki/GitHub"} 
+            {"title": "TFS", "img": "./img/TFS.webp", "level": 2, "link": "https://azure.microsoft.com/en-us/services/devops/server/"} ,
+            {"title": "GitHub  / Azure DevOps / Other", "img": "./img/Octocat.webp", "level": 2, "link": "https://en.wikipedia.org/wiki/GitHub"} 
         ],
         "Tools":[
             {"title": "Visual Studio", "img": "./img/visualstudio.webp", "level": 2, "link": "https://visualstudio.microsoft.com/vs/"} ,
-            {"title": "VS Code", "img": "./img/vscode.webp", "level": 1, "link": "https://code.visualstudio.com/"},
-            {"title": "Git", "img": "./img/Git.webp", "level": 1, "link": "https://git-scm.com/"},
+            {"title": "VS Code", "img": "./img/vscode.webp", "level": 2, "link": "https://code.visualstudio.com/"},
+            {"title": "Git", "img": "./img/Git.webp", "level": 2, "link": "https://git-scm.com/"},
             {"title": "XCode", "img": "./img/xcode.webp", "level": 1, "link": "https://developer.apple.com/xcode/"}   
         ]
     }
