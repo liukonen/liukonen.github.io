@@ -1,6 +1,5 @@
 {
 "items":[
-
   {
     "Title":"Html Text Editor",
     "SubTitle":"manipulate and batch text files in your browser",
@@ -48,18 +47,6 @@
       {"type" : "Source", "url": "https://github.com/liukonen/nats"}
       ],
     "tags": ["LiteDB"," Singleton"," Factory Pattern"," Parallel Library"," Sqlite"," String Hashing"," Cocoa (Mac OS) Development"," XCode"," GTK#"," .Net Standard"," Cross Platform Development"]
- 
-  },
-  {
-    "Title": "Furlough Log",
-    "SubTitle": "learnings within a 12 week period.",
-    "Description": "I've started a daily log during the 2020 furlough do to covid 19. Idea behind it was One, because no one wants to listen to me ramble on like a madman (face it, buzzwords mean nothing to someone outside of tech). 2 so I can remind myself what I learned. And 3, so that I have some sort of accountability in pushing myself to be better. It's a project, in the fact that I did a lot of dynamic content, such as client side screen scraping, and a built in search engine powered by a keyword driven JSON object.",
-    "image": "img/blog.webp",
-    "buttons": [
-      {"type" : "Website", "url": "https://liukonen.github.io/furlough.html"}, 
-      {"type" : "Source", "url": "http://github.com/liukonen/furlough"}
-      ],
-    "tags": ["Javascript", "Jquery", "Lazy Loading", "Keyword Extraction", "technical writing", "Screen Scrapping"]
  
   },
   {
