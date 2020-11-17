@@ -50,7 +50,7 @@
         ],
         "VersionControl":[
             {"title": "TFS", "img": "./img/TFS.webp", "level": 2, "link": "https://azure.microsoft.com/en-us/services/devops/server/"} ,
-            {"title": "GitHub  / Azure DevOps / Other", "img": "./img/Octocat.webp", "level": 2, "link": "https://en.wikipedia.org/wiki/GitHub"} 
+            {"title": "GitHub  / Azure DevOps", "img": "./img/Octocat.webp", "level": 2, "link": "https://en.wikipedia.org/wiki/GitHub"} 
         ],
         "Tools":[
             {"title": "Visual Studio", "img": "./img/visualstudio.webp", "level": 2, "link": "https://visualstudio.microsoft.com/vs/"} ,
