@@ -1,5 +1,5 @@
 {"menu":
     [
-        {"name":"Home", "value":"index.html"}
+        {"name":"Projects", "value":"projects.htm"}
         ,{"name": "About", "value": "about.htm"}
     ]}

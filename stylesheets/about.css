@@ -65,6 +65,10 @@ body, html {
           filter: invert(100%);
 }
 
+.content {
+  display: none;
+}
+
 body, html {
   height: 100%;
   margin: 0;
@@ -83,7 +87,7 @@ body, html {
 .bgimg-1 {
   background-image: url("../img/me_outfield_MillerPark-lb.jpg");
   min-height: 60%;
-  background-position: 50% 43%;
+  background-position: 0% 0%;
 }
 
 .bgimg-2 {
