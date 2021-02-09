@@ -74,9 +74,10 @@ body, html {
   margin: 0;
   font: 400 15px/1.8 "Lato", sans-serif;
   color: #000;
+  scroll-behavior: smooth;
 }
 
-.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-end {
+.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-end, .bgimg-4 {
   position: relative;
   background-attachment: fixed;
   background-position: center;
@@ -92,13 +93,18 @@ body, html {
 
 .bgimg-2 {
   background-image: url("../img/ext-lb.jpeg");
-  min-height: 800px;
+  min-height: 500px;
   background-position: 90% 53%;
 }
 
 .bgimg-3 {
   background-image: url("../img/vol-lb.jpg");
   min-height: 400px;
+}
+
+.bgimg-4 {
+  background-image: url("../img/bgf3.jpg");
+  min-height: 450px;
 }
 
 .bgimg-end {
