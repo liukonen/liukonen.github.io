@@ -3,97 +3,250 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Personal Homepage for Luke Liukonen">
+    <meta name="description" content="about page for Luke Liukonen. Software Developer, Former Instructor, Tech enthusiast">
     <meta name="author" content="Luke Liukonen">
-    <title>Luke Liukonen</title>
-    <link href="./css/index.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha256-aAr2Zpq8MZ+YA/D6JtRD3xtrwpEz2IqOS+pWD/7XKIw=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+    <meta name="msapplication-config" content="/img/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <title>About - Luke Liukonen</title>
+
     <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png" sizes="180x180">
     <link rel="icon" href="/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
     <link rel="icon" href="/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
     <link rel="manifest" href="/img/favicons/manifest.json">
     <link rel="mask-icon" href="/img/favicons/safari-pinned-tab.svg" color="#ffffff">
     <link rel="icon" href="/img/favicons/favicon.ico">
-    <meta name="msapplication-config" content="/img/favicons/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
-  </head>
-  <body>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="stylesheets/about.css">
+
+
     
+  
+  </head>
+  <body data-gr-c-s-loaded="true">
     <nav class="navbar transparent navbar-expand-md navbar-dark fixed-top">
-      <a class="navbar-brand" href="index.html" aria-label="welcome"><img src="/img/favicons/favicon-32x32.png" class="invert" alt="logo" /></a>
+      <a class="navbar-brand Invert" href="index.html" aria-label="welcome"><img src="/img/favicons/favicon-32x32.png" alt="logo" /></a>
         <ul class="navbar-nav" id="navItem">
             <li v-for="navItem in this.MenuItems" v-bind:class="validatePath(navItem.value)">
               <a class="nav-link" v-bind:href="navItem.value">{{navItem.name}}</a>
             </li>
         </ul>  
     </nav>
-    <main>
-      <div class="jumbotron">
-        <div class="container text-light">
-          <h1 class="display-3">
-            <img src="img/me-bw.webp" class="rounded-circle user_img" alt="Luke Liukonen" /> Hello, world!</h1>
-          <div class="d-none d-sm-block">
-            <p>Developer / Former Instructor / Tech enthusiast</p>
-          <p>Welcome to my personal page.</p>
-        </div>
-          <a target="_blank" class="btn btn-secondary" href="https://github.com/liukonen" role="button" aria-label="Github"><i class="fab fa-github-alt"></i> <b class="d-none d-sm-inline">GitHub</b></a>
-          <a target="_blank" class="btn btn-info" href="https://www.linkedin.com/in/lukeliukonen/" role="button" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i><b class="d-none d-sm-inline"> LinkedIn</b></a>
-          <a class="btn btn-danger" href="mailto:liukonen@gmail.com?subject=GitHub_Home_Page" role="button" aria-label="email"><i class="far fa-envelope"></i><b class="d-none d-sm-inline"> email</b></a>
-        </div>
+    <div class="jumbotron">
+      <div class="container text-light">
+        <h1 class="display-3">
+          <img src="img/me-bw.webp" class="rounded-circle user_img" alt="Luke Liukonen" /> Hello, world!</h1>
+        <div class="d-none d-sm-block">
+          <p>Developer / Former Instructor / Tech enthusiast</p>
+        <p>Welcome to my personal page.</p>
       </div>
-      <div class="container" id="mainContainer">
-        <h2 class="h3 bold">Welcome</h2>
-        <div class="row">
-<div class="col-sm-2">
-  You can contact me at using the following platforms
-  <ul>
-    <li><a target="_blank" href="https://github.com/liukonen">GitHub</a></li>
-    <li><a target="_blank" href="https://www.linkedin.com/in/lukeliukonen/">LinkedIn</a></li>
-    <li><a href="mailto:liukonen@gmail.com?subject=GitHub_Home_Page">e-mail</b></a></li>
-  </ul>
-</div>
-<div class="col-sm-5">
-  <div class="card">
-    <a href="projects.htm"><img class="card-img-top" src="img/programing.png" style="height:250px; filter: grayscale(100%);" ></a>
-    <div class="card-body">
-      <h5 class="card-title">Projects</h5>
-      <p class="card-text">Many open source projects I've either created or refactored. Many of these go back to my days in College.</p>
-      <a href="projects.htm" class="btn btn-primary">Goto Projects</a>
+        <a target="_blank" class="btn btn-secondary" href="https://github.com/liukonen" role="button" aria-label="Github"><i class="fab fa-github-alt"></i> <b class="d-none d-sm-inline">GitHub</b></a>
+        <a target="_blank" class="btn btn-info" href="https://www.linkedin.com/in/lukeliukonen/" role="button" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i><b class="d-none d-sm-inline"> LinkedIn</b></a>
+        <a class="btn btn-danger" href="mailto:liukonen@gmail.com?subject=GitHub_Home_Page" role="button" aria-label="email"><i class="far fa-envelope"></i><b class="d-none d-sm-inline"> email</b></a>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="container">
+      <h3 class="text-center">Welcome</h3>
+        <div id="welcome">{{this.item}}</div>
+      </div>
+    </div>
+
+
+<div class="container-fluid lightFormat">
+  <div class="container">
+    <h3 class="text-center">Open Source Projects</h3>
+    <div id="app">
+            
+      <div class="row row-cols-1 row-cols-md-3">
+        <div v-for="product in this.Products">
+
+        <div class="col mb-4 hoverItem">
+          <div class="card shadow">
+            <div class="">
+            <img v-lazy="GetImage(product.image)"  style="height:250px;"
+             class="card-img-top himg" v-bind:alt="product.Title"/>
+
+
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{product.Title}}</h5>
+              <p class="card-text">{{product.SubTitle}}<button class="btn btn-link text-dark" onclick="ExpandText(this)">[+]</button></p>
+              <div class="content">{{product.Description}}</div>
+              <p><a v-for="button in product.buttons" v-bind:class="DetermButtonColor(button.type)" v-bind:href="button.url" target="_blank">{{button.type}}</a></p>
+              <p>Learnings</p>
+              <div>
+                <span v-for="tag in product.tags" class="badge badge-light font-weight-light">{{tag}}</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+
+      </div>
+      </div>
+
+
+        
     </div>
   </div>
+</div>
+<div class="bgimg-2">
+
 </div>
 
-<div class="col-sm-5">
-  <div class="card">
-    <a href="about.htm"><img class="card-img-top" src="img/jnl.png" style="height:250px; filter: grayscale(100%);"></a>
-    <div class="card-body">
-      <h5 class="card-title">About Me</h5>
-      <p class="card-text">Not really a resume, but close enough. General about me information</p>
-      <a href="about.htm" class="btn btn-primary">Goto about me</a>
+    <div class="aboutFormat container-fluid lightFormat" id="career">
+      <div class="container">
+      <h3 class="text-center">Career So far</h3>
+  
+      <div v-for="job in this.Work">
+        <work v-bind:job="job"></work>
+      </div>
+      <br />
+      <div>
+      <h3 class="text-center mt-5">Current Overall Highlights</h3>
+      <ul class="list-group text-dark shadow" v-for="item in this.highlights">
+        <li class="list-group-item">{{item.a}}</li>
+      </ul>
+      </div>
+      <a ID="edu"></a>
+      <h3 class="text-center mt-5">Education</h3>
+      <div v-for="edu in this.school"><work v-bind:job="edu"></work></div>
     </div>
-  </div>
-</div>
-</div>
-        </div>
-    
+    </div>
+
+    <div class="bgimg-4">
+
+    </div>
+
+    <div class="position-relative">
+
+    </div>
+    <div class="container-fluid lightFormat">
+      <div class="container" id="Knowledge">
+      <h3 class="text-center">Systems / Ideas I've worked with</h3>
+
+
+
+      <div class="row text-dark" id="vbackend">
+        <div class="card shadow col-md-12">
+          <div class="card-header bg-transparent"><h2 class="h4">Backend</h2></div>
+          <div class="card-body">
+            <div class="row justify-content-md-center">
+                <Knowledge v-for="item in this.Ex.Backend" v-bind:item="item"></Knowledge>
+            </div>   
           </div>
-     </div>
-    </main>
-    <footer class="container">
-      <p>© Luke Liukonen 2020</p>
-    </footer>
+        </div>
+ 
+        <div class="card shadow col-md-6 mt-5">
+          <div class="card-header bg-transparent"><h2 class="h4">Database</h2></div>
+          <div class="card-body">
+            <div class="row justify-content-md-center">
+            <Knowledge v-for="item in this.Ex.Database" v-bind:item="item"></Knowledge>
+            </div>
+          </div>
+        </div>
+
+        <div class="card shadow col-md-6 mt-5">
+          <div class="card-header bg-transparent"><h2 class="h4">UI Frameworks</h2></div>
+          <div class="card-body">
+            <div class="row justify-content-md-center">
+              <Knowledge v-for="item in this.Ex.UIFrameworks" v-bind:item="item"></Knowledge>
+              </div> 
+          </div>
+        </div>
+
+        <div class="card shadow col-md-12 mt-5">
+          <div class="card-header bg-transparent"><h2 class="h4">Frontend / UI</h2></div>
+          <div class="card-body">
+            <div class="row justify-content-md-center">
+              <Knowledge v-for="item in this.Ex.UI" v-bind:item="item"></Knowledge>
+              </div> 
+          </div>
+        </div>
+        
+        <div class="card shadow col-md-12 mt-5">
+          <div class="card-header bg-transparent"><h2 class="h4">Concepts</h2></div>
+          <div class="card-body">
+            <div class="row justify-content-md-center">
+              <Knowledge v-for="item in this.Ex.Frameworks" v-bind:item="item"></Knowledge>
+              </div>  
+          </div>
+        </div>
+
+        <div class="card shadow col-md-4 mt-5">
+          <div class="card-header bg-transparent"><h2 class="h4">Version Control</h2></div>
+          <div class="card-body">
+            <div class="row justify-content-md-center">
+              <Knowledge v-for="item in this.Ex.VersionControl" v-bind:item="item"></Knowledge>
+              </div> 
+          </div>
+        </div>
+      
+        <div class="card shadow col-md-8 mt-5">
+          <div class="card-header bg-transparent"><h2 class="h4">Tools</h2></div>
+          <div class="card-body">
+            <div class="row justify-content-md-center">
+              <Knowledge v-for="item in this.Ex.Tools" v-bind:item="item"></Knowledge>
+              </div> 
+          </div>
+        </div>
+      </div>
+    </div></div>
     
+    <div class="bgimg-3">
+    </div>
+    <div class="position-relative" id="about">
+      <div class="container-fluid aboutFormat">
+        <div class="row justify-content-center">
+          <div class="col-lg-4">
+            <h1 class="h3">Interests</h1>
+            <ul class="list-group" id="interests">
+              <li v-for="item in this.Hobbies" class="list-group-item list-group-item-secondary">{{item.a}}</li>
+            </ul>
+          </div>
+          <div class="col-lg-4">
+            <h1 class="h3">Volunteer</h1>
+            <ul class="list-group" id="interests">
+              <li v-for="item in this.Vol" class="list-group-item list-group-item-secondary">{{item.a}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>    
+    </div>
+
+    <div class="bgimg-end">
+      <div class="caption">
+        <span class="border">    
+          <a target="_blank" class="btn btn-secondary" href="https://github.com/liukonen" role="button" aria-label="Github" data-toggle="tooltip" data-placement="top" title="GitHub">
+            <i class="fab fa-github-alt fa-2x"></i>
+          </a>
+          <a target="_blank" class="btn btn-info" href="https://www.linkedin.com/in/lukeliukonen/" role="button" aria-label="LinkedIn" data-toggle="tooltip" data-placement="top" title="LinkedIn">
+            <i class="fab fa-linkedin-in fa-2x"></i></a>
+          <a class="btn btn-danger" href="mailto:liukonen@gmail.com?subject=GitHub_Home_Page" role="button" aria-label="email" data-toggle="tooltip" data-placement="top" title="email">
+            <i class="far fa-envelope fa-2x"></i></a>
+            <br />
+     </span>
+        <br />
+        <br />
+        <div class="alert alert-dark">&copy; 2020 Luke Liukonen
+          <i>* this page, its contents, are opinions of my own, and represent no one else</i> 
+        </div> 
+      </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.1/js/bootstrap.bundle.min.js" integrity="sha512-COov2QDX27yTLL6NzH3ENTDOyzX0u4bmNINynDFlOYdF/pw45P6vNKqTpYR4S4OesVQhZPHGLm4rPQa8LNTF/w==" crossorigin="anonymous"></script>
-    <script src="./lib/js/modernizr.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+  
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js" integrity="sha512-QJsj3afWlCpnQ60XzzYE8Jb3IgHIK1BcGZox9rUSmRRq3Ocz9vQ1yR80eX2/b9jfx/UuT5zYWNdrM8Te/eCMhQ==" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/vue-lazyload/vue-lazyload.js"></script>
-    <script src="./js/base.js"></script>
-    <script src="./js/index.vue.js"></script>
-    <!--Begin Web-Stat code v 7.0-->
-    <span id="wts1983157"></span><script>var wts=document.createElement('script');wts.async=true;wts.src='https://wts.one/log7.js';document.head.appendChild(wts);wts.onload = function(){ wtslog7(1983157,4); };
-    </script><noscript><a href="https://www.web-stat.com"><img src="https://wts.one/7/4/1983157.png" alt="Web-Stat web statistics"></a></noscript>
-    <!-- End Web-Stat code v 7.0 -->
+    <script src="js/vue.js"></script>
+
   </body>
 </html>

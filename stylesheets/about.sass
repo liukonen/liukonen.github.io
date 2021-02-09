@@ -7,8 +7,10 @@ body, html
     margin: 0
     font: 400 15px/1.8 "Lato", sans-serif
     color: $black
+    scroll-behavior: smooth;
+
   
-.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-end 
+.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-end , .bgimg-4
     position: relative   
     background-attachment: fixed
     background-position: center
@@ -24,11 +26,14 @@ body, html
     background-position: 0% 0%
   
 .bgimg-2 
-    +Background("../img/ext-lb.jpeg", 800px)
+    +Background("../img/ext-lb.jpeg", 500px)
     background-position: 90% 53%
   
 .bgimg-3 
     +Background("../img/vol-lb.jpg", 400px)
+.bgimg-4
+    +Background("../img/bgf3.jpg", 450px)
+
 
   
 .bgimg-end

@@ -2,18 +2,20 @@
     "welcome":"My name is Luke Liukonen, and I am a developer, former educator, and tech enthusiast based out of the Metro Milwaukee Wisconsin area. Let's be honest though, that's only a small sliver of who I am. I've been in development for over 14 years professionally, spending most of my time in the travel space. My main focus is backend development, however, I have transitioned to more of a full stack developer. I have  been fascinated with the direction technology could take us, and was a huge fan of how we would interact with them in the future. To this day, I like to consider myself a technologist, reading up on current trends, and what progress we are making in the field.",
 
     "highlights":[
-        {"a":"2-time Trisept Solutions representative for MMAC 'Be the Spark Tour'"}
-        ,{"a":"Multiple time winner of Trisept Solutions Hack-a-thon competition"}
-        ,{"a":"Represented Trisept Solutions at Microsoft bot Hack-a-thon"}
+        {"a":"2-time company representative for MMAC 'Be the Spark Tour'"}
+         ,{"a":"Participant at  Microsoft chat bot Hack-a-thon, 2017"}
         ,{"a":"On multiple committees for outreach, wellness, and event planning"}
         ,{"a":"Developer lead on team for nearly 6 years"}
         ,{"a":"Adjunct Instructor for 2 semesters at ITT Technical Institute"}
         ,{"a":"Owasp top 10 trained. Maintained PCI complience"}
+        ,{"a": "Hackathon: Using AI and AWS to flag fraud transactions."}        
+        ,{"a": "Hackathon: keyword and sentiment analysis tool for consumer reviews."}
+        ,{"a": "Hackathon: Automation of rates and pricing based on competitor and historical pricing."}
+        ,{"a": "Hackathon: Natural language platform for conducting transactions."}
     ],
     "Experence":
     {
-        "UI":
-        [
+        "UI":[
             {"title": "HTML 5", "img": "./img/html5.webp", "level": 2, "link": "https://en.wikipedia.org/wiki/HTML"},
             {"title": "JavaScript", "img": "./img/javascript.webp", "level": 2, "link": "https://en.wikipedia.org/wiki/JavaScript"},
             {"title": "jQuery", "img": "./img/jquery.webp", "level": 1, "link": "https://jquery.com/"},
@@ -75,7 +77,7 @@
             "timeworked": "August 2020 - Present",
             "title": "Senior Software Engineer",
             "img":"./img/brady.webp.png",
-            "summary": "Developer on the ecommerce platform. Full stack development including Test driven development."
+            "summary": "Primary focus is on the ecommerce platform. This entails a full stack development platform, including SASS Stylesheets, Javascript and Javasript frameworks, MVC, Sitecore controls, Test Driven Development, and light DevOps. Other items I have focused on includes Docker Containerization of tools, and optimizing and creating one click 'Dev environments as code' setup scripts for onboarding and rebuilding of machines."
         },
         {
             "name":"Trisept Solutions", 
