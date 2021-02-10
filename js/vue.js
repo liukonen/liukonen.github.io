@@ -32,7 +32,7 @@ $(window).on('load', function() {
             $(img).attr("src", src + ".png");
         }
       });
-      $(".jumbotron").css("background-image", "url('../img/jumbotron.webp.png')");
+      $(".bgimg-1").css("background-image", "url('../img/jumbotron.webp.png')");
     }
   });
 });
@@ -94,7 +94,7 @@ Vue.component('Work', {
     template: `  
     
     <div class="row justify-content-md-center">
-    <div class="col-md-2 mt-3"><img class="ImgRoundCorner border-right shadow" v-bind:src="job.img" v-bind:alt="job.name"></img></div>  
+    <div class="col-md-2 mt-3"><img class="ImgRoundCorner border-right shadow" v-lazy="job.img" v-bind:alt="job.name"></img></div>  
     <div class="col-md-6 mt-3 offset-md-1">
         <h4 class="card-title">{{job.name}}</h4>
         <h5>{{job.title}}, {{job.timeworked}}</h5>
@@ -106,11 +106,33 @@ Vue.component('Work', {
 
 Vue.component('Project', {
 props: ['project'],
+methods:{
+  GetImage(img){
+    this.WebPSupport = SupportsWebp;
+    console.log(this.WebPSupport);
+    console.log(SupportsWebp)
+    if (this.WebPSupport == 1){return img;}
+    if (this.WebPSupport == 2){
+        var elem = document.createElement('canvas');
+        if (!!(elem.getContext && elem.getContext('2d'))) {
+            let CanDo = elem.toDataURL('image/webp').indexOf('data:image/webp') == 0;
+            if (CanDo){ this.WebPSupport = 1; SupportsWebp =1; return img;}
+        }
+        this.WebPSupport = 0;
+    }
+    return img + ".png";
+  },
+  DetermButtonColor(ItemType){
+    if (ItemType.toLowerCase() == "website") {return "btn btn-success shadow ml-2";}
+    if (ItemType.toLowerCase() == "release") {return "btn btn-primary shadow ml-2";}
+    return "btn btn-secondary shadow ml-2";
+  }
+},
 template: `
 <div class="col mb-4 hoverItem">
 <div class="card shadow">
   <div class="">
-  <img v-lazy="GetImage(project.image)"  style="height:250px;" class="card-img-top himg" v-bind:alt="product.Title"/>
+  <img v-lazy="GetImage(project.image)"  style="height:250px;" class="card-img-top himg" v-bind:alt="project.Title"/>
   </div>
   <div class="card-body">
     <h5 class="card-title">{{project.Title}}</h5>
@@ -119,7 +141,7 @@ template: `
     <p><a v-for="button in project.buttons" v-bind:class="DetermButtonColor(button.type)" v-bind:href="button.url" target="_blank">{{button.type}}</a></p>
     <p>Learnings</p>
     <div>
-      <span v-for="tag in project.tags" class="badge badge-light font-weight-lighter">{{tag}}</span></p>
+      <span v-for="tag in project.tags" class="badge badge-light font-weight-light">{{tag}}</span></p>
     </div>
   </div>
 </div>
@@ -158,8 +180,26 @@ backend = new Vue({el:"#vbackend",data:{Ex: sourceData.Experence, WepPSupport: W
 welcome = new Vue({el:"#welcome", data:{item: sourceData.welcome}});
 About = new Vue({el:"#about", data:{Hobbies: sourceData.Hobbies, Vol: sourceData.volunteer}});
 
+vm = new Vue({
+	el: '#app',
+	data: {
+      Products: [],
+      WebPSupport : 2
+    },
+    async created(){
+        await fetch("./json/content.json").then(response => response.json()).then(json =>{this.Products = json.items;});
+    },
+  })
+
+  vm.$Lazyload.$on('loaded', function ({ bindType, el, naturalHeight, naturalWidth, $parent, src, loading, error }, formCache) {
+    let T = $(el);
+    T.animate({'opacity':'1'},1500);
+  })
+
 
 /**Vanilla JS */
+
+
 const lateLoadFadeInObserver = new IntersectionObserver((entries, lateLoadFadeInObserver)=>{
     entries.forEach(entry =>{
       if (entry.isIntersecting){
@@ -174,55 +214,6 @@ const lateLoadFadeInObserver = new IntersectionObserver((entries, lateLoadFadeIn
   },{threshold: 1, rootMargin:"0px 0px 0px 0px"});
   document.querySelectorAll(".lateloadfadeIn").forEach(entry =>{lateLoadFadeInObserver.observe(entry);});
   
-vm = new Vue({
-	el: '#app',
-	data: {
-      Products: [],
-      WebPSupport : 2
-    },
-    async created(){
-        await fetch("./json/content.json").then(response => response.json()).then(json =>{this.Products = json.items;});
-    },
-	methods: {
-		 GetClass(index, valueType) {
-            if(index%2==1){
-                if (valueType == 0){return "col-md-5 fade-in"};
-                return "col-md-7 fade-in";
-            }else{
-                if (valueType == 0) return "col-md-5 order-md-2 fade-in";
-                return "col-md-7 order-md-1 fade-in";
-            }
-        },
-        GetClass(valueType){
-            if (valueType == 0){return "col-md-5 fade-in"};
-            return "col-md-7 fade-in";
-        },
-        DetermButtonColor(ItemType){
-            if (ItemType.toLowerCase() == "website") {return "btn btn-success shadow ml-2";}
-            if (ItemType.toLowerCase() == "release") {return "btn btn-primary shadow ml-2";}
-            return "btn btn-secondary shadow ml-2";
-        },
-        GetImage(img){
-            if (this.WebPSupport == 1){return img;}
-            if (this.WebPSupport == 2){
-                var elem = document.createElement('canvas');
-                if (!!(elem.getContext && elem.getContext('2d'))) {
-                    let CanDo = elem.toDataURL('image/webp').indexOf('data:image/webp') == 0;
-                    if (CanDo){ this.WebPSupport = 1; return img;}
-                }
-                this.WebPSupport = 0;
-            }
-            return img + ".png";
-        },
-        log(){console.log(this);}
-
-	}
-  })
-
-  vm.$Lazyload.$on('loaded', function ({ bindType, el, naturalHeight, naturalWidth, $parent, src, loading, error }, formCache) {
-    let T = $(el);
-    T.animate({'opacity':'1'},1500);
-  })
  
   /*region Lazy Load */
 function preloadImg(img){
@@ -244,7 +235,18 @@ function preloadImg(img){
   }, {threshold:1, rootMargin:"0px 0px 300px 0px"});
   document.querySelectorAll(".featurette-image").forEach(img => {imgObserver.observe(img);});
 
-  
+  const bgObserver = new IntersectionObserver((entries, imgObserver) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting)
+      {
+        var image = entry.target;
+        image.classList.remove("lazy");
+        imgObserver.unobserve(entry.target);
+      }
+    });
+
+  }, {threshold:1, rootMargin: "0px 0px 300px 0px"});
+  document.querySelectorAll(".lazy").forEach(item => bgObserver.observe(item));
   
   /*region fader */
   const faderObsever = new IntersectionObserver((entries, faderObsever) => {
@@ -272,8 +274,7 @@ function preloadImg(img){
     }
 
   }
-
-    
+     
   /*region transparent Navbar */
   const header = document.querySelector("nav");
   const navObserver = new IntersectionObserver((entries, navObserver) =>{
@@ -281,12 +282,10 @@ function preloadImg(img){
       if (!entry.isIntersecting){
         header.classList.add("bg-dark");
         header.classList.add("transition");
-        console.log("Not intersecting");
       }else{
         header.classList.remove("bg-dark");
         header.classList.remove("transition");
-        console.log("intersecting");
       }
     });
   }, {rootMargin:"-50px 0px 0px 0px"});
-  navObserver.observe(document.querySelector(".jumbotron"));
+  navObserver.observe(document.querySelector(".bgimg-1"));

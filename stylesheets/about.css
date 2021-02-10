@@ -86,9 +86,15 @@ body, html {
 }
 
 .bgimg-1 {
-  background-image: url("../img/me_outfield_MillerPark-lb.jpg");
-  min-height: 60%;
+  background-image: url("../img/jumbotron.webp");
+  min-height: 350px;
   background-position: 0% 0%;
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white !important;
+  background-size: cover;
 }
 
 .bgimg-2 {
@@ -105,6 +111,30 @@ body, html {
 .bgimg-4 {
   background-image: url("../img/bgf3.jpg");
   min-height: 450px;
+}
+
+.bgimg-2.lazy {
+  background-image: none;
+  background-color: #000000;
+  height: 500px;
+}
+
+.bgimg-3.lazy {
+  background-image: none;
+  background-color: #000000;
+  height: 400px;
+}
+
+.bgimg-4.lazy {
+  background-image: none;
+  background-color: #000000;
+  height: 450px;
+}
+
+.bgimg-end.lazy {
+  background-image: none;
+  background-color: #000000;
+  height: 100%;
 }
 
 .bgimg-end {
@@ -154,6 +184,10 @@ h3 {
   .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 {
     background-attachment: scroll;
   }
+}
+
+.anchor {
+  padding-top: 120px;
 }
 
 .bg-purple {
@@ -219,5 +253,9 @@ h3 {
 .hobbies {
   font-size: 25px;
   color: #f7f7f7;
+}
+
+.container .jumbotron {
+  border-radius: 0 !important;
 }
 /*# sourceMappingURL=about.css.map */
