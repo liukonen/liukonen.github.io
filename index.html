@@ -50,6 +50,8 @@
         <a target="_blank" class="btn btn-secondary" href="https://github.com/liukonen" role="button" aria-label="Github"><i class="bi bi-github"></i> <b class="d-none d-sm-inline">GitHub</b></a>
         <a target="_blank" class="btn btn-info" href="https://www.linkedin.com/in/lukeliukonen/" role="button" aria-label="LinkedIn"><i class="bi bi-linkedin"></i><b class="d-none d-sm-inline"> LinkedIn</b></a>
         <a class="btn btn-danger" href="mailto:liukonen@gmail.com?subject=GitHub_Home_Page" role="button" aria-label="email"><i class="bi bi-envelope-fill"></i><b class="d-none d-sm-inline"> email</b></a>
+        <a target="_blank" class="btn btn-light" href="https://dev.to/liukonen" role="button" aria-label="dev To"><i class="bi bi-file-code-fill"></i> 
+          DEV Community</a>
       </div>
     </div>
 
@@ -59,6 +61,30 @@
         <div id="welcome">{{this.item}}</div>
       </div>
     </div>
+
+    <div id="Blogs" class="container anchor">
+
+      <h3 class="text-center">Recent Articles / Blogs</h3>
+      <div class="row row-cols-1 row-cols-md-3">
+        <div v-for="article in GetItems()">
+          <div class="col mb-4 hoverItem">
+            <div class="card shadow">
+              <div><img v-lazy="getImg(article.index)"style="height:250px;" class="card-img-top himg" v-bind:alt="article.title"/></div>
+              <div class="card-body">
+                <h5><a :href="article.link" target="_blank">{{article.title}}</a></h5>
+                <p class="card-text">{{article.timestamp.substring(0, article.timestamp.length -9)}}</p>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      <div class="row">
+       
+          <h5>Want more, check out my feed on  DEV Community, <a href="https://dev.to/liukonen" target="_blank" alt="dev to">Dev.To/Liukonen</a></h5>
+        
+        </div>
+    </div>
+
   <div class="container-fluid lightFormat">
     <div class="container">
      <h3 class="text-center">Open Source Projects</h3>
@@ -190,6 +216,9 @@
             <i class="bi bi-linkedin"></i> LinkedIn</a>
           <a class="btn btn-danger" href="mailto:liukonen@gmail.com?subject=GitHub_Home_Page" role="button" aria-label="email" data-toggle="tooltip" data-placement="top" title="email">
             <i class="bi bi-envelope-fill"> Email</i></a>
+            <a target="_blank" class="btn btn-light" href="https://dev.to/liukonen" role="button" aria-label="dev To"><i class="bi bi-file-code-fill"></i> 
+              DEV Community</a>
+     
             <br />
      </span>
         <br />

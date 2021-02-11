@@ -104,6 +104,55 @@ Vue.component('Work', {
     `
 })
 
+var blogs = new Vue({
+  el: '#Blogs',
+
+  methods: {
+    getImg(index){
+      let img = "./img/blog/blog" + index + ".webp";
+      this.WebPSupport = SupportsWebp;
+      console.log(this.WebPSupport);
+      console.log(SupportsWebp)
+      if (this.WebPSupport == 1){return img;}
+      if (this.WebPSupport == 2){
+          var elem = document.createElement('canvas');
+          if (!!(elem.getContext && elem.getContext('2d'))) {let CanDo = elem.toDataURL('image/webp').indexOf('data:image/webp') == 0; if (CanDo){ this.WebPSupport = 1; SupportsWebp =1; return img;}}
+          this.WebPSupport = 0;
+      }
+     return img + ".png";
+    }
+    ,GetItems(){
+
+      console.log("hit");
+      let M = Array.from(this.BlogItems);
+      if (this.BlogItems.length > 3)
+      {
+        M = array.from(this.BlogItems).slice(0,3);
+      }
+      var objArr = M.map(function (idx, i) {
+        return {
+            title: idx.querySelector("title").innerHTML, link: idx.querySelector("link").innerHTML, timestamp: idx.querySelector("pubDate").innerHTML, index: i
+        };});
+console.log(objArr);
+return objArr;
+    }
+  },
+	data: {
+    BlogItems: [],
+    },
+   created(){
+     fetch("https://dev.to/feed/liukonen")
+     .then(response => response.text())
+     .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+     .then(data =>{
+       console.log(data);
+       this.BlogItems = data.querySelectorAll("item");
+       console.log(this.BlogItems);
+                   });
+   }
+   
+});
+
 Vue.component('Project', {
 props: ['project'],
 methods:{
@@ -289,3 +338,4 @@ function preloadImg(img){
     });
   }, {rootMargin:"-50px 0px 0px 0px"});
   navObserver.observe(document.querySelector(".bgimg-1"));
+
