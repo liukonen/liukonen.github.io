@@ -1,4 +1,3 @@
-@import "index"
 $black : #000
 $white : #fff
 
@@ -7,9 +6,15 @@ body, html
     margin: 0
     font: 400 15px/1.8 "Lato", sans-serif
     color: $black
-    scroll-behavior: smooth;
+    scroll-behavior: smooth
 
-  
+.invert
+  filter: invert(100%)
+
+.user_img 
+  height: 90px
+  width: 90px
+
 .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-end , .bgimg-4
     position: relative   
     background-attachment: fixed
@@ -30,7 +35,6 @@ body, html
     background-attachment: fixed
     color: white !important
     background-size: cover
-
     
 .bgimg-2 
     +Background("../img/ext-lb.jpeg", 500px)
@@ -41,28 +45,24 @@ body, html
 .bgimg-4
     +Background("../img/bgf3.jpg", 450px)
 
-.bgimg-2.lazy
+.bgimg-end
+    +Background("../img/me_outfield_MillerPark-lb.jpg", 100%)
+
+.bgimg-2.lazy, .bgimg-3.lazy, .bgimg-4.lazy, .bgimg-end.lazy
     background-image: none
     background-color: #000000
+    
+.bgimg-2.lazy
     height: 500px
 
 .bgimg-3.lazy
-    background-image: none
-    background-color: #000000
     height: 400px
 
 .bgimg-4.lazy
-    background-image: none
-    background-color: #000000
     height: 450px
 
 .bgimg-end.lazy
-    background-image: none
-    background-color: #000000
     height: 100%
-
-.bgimg-end
-    +Background("../img/me_outfield_MillerPark-lb.jpg", 100%)
 
 %captionExtend
     position: absolute
@@ -88,8 +88,6 @@ body, html
     color: $white !important
     padding: 18px
     letter-spacing: 5px
-
-
 
 .caption2 
     @extend %captionExtend
@@ -161,5 +159,32 @@ h3
     font-size: 25px
     color: #f7f7f7
 
-.container .jumbotron 
-    border-radius: 0 !important
+.btn-outline-danger
+  color: white
+  border-color: white
+  border-radius: 0px
+  font-weight: 100
+  margin-top: 20px 
+
+.lead
+  font-family: raleway
+  font-weight: 100
+  margin-top: -10px 
+
+.bd-placeholder-img 
+  font-size: 1.125rem
+  text-anchor: middle
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+@media (min-width: 768px)
+    .bd-placeholder-img-lg 
+        font-size: 3.5rem
+
+.featurette-image
+    opacity: 20%
+
+.content
+  display: none

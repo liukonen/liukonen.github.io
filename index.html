@@ -1,242 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="about page for Luke Liukonen. Software Developer, Former Instructor, Tech enthusiast">
-    <meta name="author" content="Luke Liukonen">
-    <meta name="msapplication-config" content="/img/favicons/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
-    <title>Luke Liukonen - Dev - </title>
-    <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png" sizes="180x180">
-    <link rel="icon" href="/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-    <link rel="manifest" href="/img/favicons/manifest.json">
-    <link rel="mask-icon" href="/img/favicons/safari-pinned-tab.svg" color="#ffffff">
-    <link rel="icon" href="/img/favicons/favicon.ico">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">   
-    <link rel="stylesheet" href="stylesheets/about.css">  
-  </head>
-  <body data-gr-c-s-loaded="true">
-
-   
-    <nav class="navbar transparent navbar-expand-md navbar-dark fixed-top">
-      <a class="navbar-brand Invert" href="index.html" aria-label="welcome"><img src="/img/favicons/favicon-32x32.png" alt="logo" /></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#toggle" 
-        aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="toggle">
-        <ul class="navbar-nav" id="navItem">
-          <li v-for="navItem in this.MenuItems" v-bind:class="validatePath(navItem.value)">
-            <a class="nav-link" v-bind:href="navItem.value">{{navItem.name}}</a>
-          </li>
-      </ul>
-      </div>
-    </nav>
-    
-    <div class="bgimg-1">
-
-
-      <div class="container text-light">
-        <div class="row" style="height: 40px;"></div>
-        <h1 class="display-3">
-          <img src="img/me-bw.webp" class="rounded-circle user_img" alt="Luke Liukonen" /> Hello, world!</h1>
-        <div class="d-none d-sm-block">
-          <p>Software Engineer / Former Instructor / Tech enthusiast</p>
-        <p>Welcome to my personal page.</p>
-      </div>
-        <a target="_blank" class="btn btn-secondary" href="https://github.com/liukonen" role="button" aria-label="Github"><i class="bi bi-github"></i> <b class="d-none d-sm-inline">GitHub</b></a>
-        <a target="_blank" class="btn btn-info" href="https://www.linkedin.com/in/lukeliukonen/" role="button" aria-label="LinkedIn"><i class="bi bi-linkedin"></i><b class="d-none d-sm-inline"> LinkedIn</b></a>
-        <a class="btn btn-danger" href="mailto:liukonen@gmail.com?subject=GitHub_Home_Page" role="button" aria-label="email"><i class="bi bi-envelope-fill"></i><b class="d-none d-sm-inline"> email</b></a>
-        <a target="_blank" class="btn btn-light" href="https://dev.to/liukonen" role="button" aria-label="dev To"><i class="bi bi-file-code-fill"></i> 
-          DEV Community</a>
-      </div>
-    </div>
-
-    <div class="container-fluid">
-      <div class="container">
-      <h3 class="text-center">Welcome</h3>
-        <div id="welcome">{{this.item}}</div>
-      </div>
-    </div>
-
-    <div id="Blogs" class="container anchor">
-
-      <h3 class="text-center">Recent Articles / Blogs</h3>
-      <div class="row row-cols-1 row-cols-md-3">
-        <div v-for="article in GetItems()">
-          <div class="col mb-4 hoverItem">
-            <div class="card shadow">
-              <div><img v-lazy="getImg(article.index)"style="height:250px;" class="card-img-top himg" v-bind:alt="article.title"/></div>
-              <div class="card-body">
-                <h5><a :href="article.link" target="_blank">{{article.title}}</a></h5>
-                <p class="card-text">{{article.timestamp.substring(0, article.timestamp.length -9)}}</p>
-              </div>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="about page for Luke Liukonen. Software Developer, Former Instructor, Tech enthusiast">
+        <meta name="author" content="Luke Liukonen">
+        <meta name="msapplication-config" content="/img/favicons/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
+        <title>Luke Liukonen - Dev -
+        </title>
+        <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png" sizes="180x180">
+        <link rel="icon" href="/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+        <link rel="icon" href="/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+        <link rel="manifest" href="/img/favicons/manifest.json">
+        <link rel="mask-icon" href="/img/favicons/safari-pinned-tab.svg" color="#ffffff">
+        <link rel="icon" href="/img/favicons/favicon.ico">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="stylesheets/about.css">
+    </head>
+    <body data-gr-c-s-loaded="true">
+        <nav class="navbar transparent navbar-expand-md navbar-dark fixed-top">
+            <a class="navbar-brand Invert" href="index.html" aria-label="welcome"><img src="/img/favicons/favicon-32x32.png" alt="logo"/></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#toggle" aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="toggle">
+                <ul class="navbar-nav" id="navItem">
+                    <li v-for="navItem in this.MenuItems" v-bind:class="validatePath(navItem.value)">
+                        <a class="nav-link" v-bind:href="navItem.value">{{navItem.name}}</a>
+                    </li>
+                </ul>
             </div>
+        </nav>
+        <div class="bgimg-1">
+            <div class="container text-light">
+                <div class="row" style="height: 40px;"></div>
+                <h1 class="display-3">
+                    <img src="img/me-bw.webp" class="rounded-circle user_img" alt="Luke Liukonen"/>
+                    Hello, world!</h1>
+                <div class="d-none d-sm-block">
+                    <p>Software Engineer / Former Instructor / Tech enthusiast</p>
+                    <p>Welcome to my personal page.</p>
+                </div>
+                <a target="_blank" class="btn btn-secondary" href="https://github.com/liukonen" role="button" aria-label="Github">
+                    <i class="bi bi-github"></i>
+                    <b class="d-none d-sm-inline">GitHub</b>
+                </a>
+                <a target="_blank" class="btn btn-info" href="https://www.linkedin.com/in/lukeliukonen/" role="button" aria-label="LinkedIn">
+                    <i class="bi bi-linkedin"></i>
+                    <b class="d-none d-sm-inline">
+                        LinkedIn</b>
+                </a>
+                <a class="btn btn-danger" href="mailto:liukonen@gmail.com?subject=GitHub_Home_Page" role="button" aria-label="email">
+                    <i class="bi bi-envelope-fill"></i>
+                    <b class="d-none d-sm-inline">
+                        email</b>
+                </a>
+                <a target="_blank" class="btn btn-light" href="https://dev.to/liukonen" role="button" aria-label="dev To">
+                    <i class="bi bi-file-code-fill"></i>
+                    DEV Community</a>
             </div>
-          </div>
         </div>
-      <div class="row">
-       
-          <h5>Want more, check out my feed on  DEV Community, <a href="https://dev.to/liukonen" target="_blank" alt="dev to">Dev.To/Liukonen</a></h5>
-        
-        </div>
-    </div>
-
-  <div class="container-fluid lightFormat">
-    <div class="container">
-     <h3 class="text-center">Open Source Projects</h3>
-      <div id="app" class="anchor"> 
-        <div class="row row-cols-1 row-cols-md-3">
-          <div v-for="product in this.Products">
-            <Project v-bind:project="product"></Project>
-          </div>
-       </div>
-     </div>
-   </div>
-  </div>
-  
-  <div class="bgimg-2 lazy"></div>
-
-  <div class="aboutFormat container-fluid lightFormat anchor" id="career">
-      <div class="container">
-      <h3 class="text-center">Career So far</h3>
-  
-      <div v-for="job in this.Work">
-        <work v-bind:job="job"></work>
-      </div>
-      <br />
-      <div>
-      <h3 class="text-center mt-5">Current Overall Highlights</h3>
-      <ul class="list-group text-dark shadow" v-for="item in this.highlights">
-        <li class="list-group-item">{{item.a}}</li>
-      </ul>
-      </div>
-      <a ID="edu" class="anchor"></a>
-      <h3 class="text-center mt-5">Education</h3>
-      <div v-for="edu in this.school"><work v-bind:job="edu"></work></div>
-    </div>
-    </div>
-    <div class="bgimg-4 lazy">
-    </div>
-    <div class="position-relative">
-    </div>
-    <div class="container-fluid lightFormat">
-      <div class="container" id="Knowledge">
-      <h3 class="text-center">Systems / Ideas I've worked with</h3>
-      <div class="row text-dark" id="vbackend">
-        <div class="card shadow col-md-12">
-          <div class="card-header bg-transparent"><h2 class="h4">Backend</h2></div>
-          <div class="card-body">
-            <div class="row justify-content-md-center">
-                <Knowledge v-for="item in this.Ex.Backend" v-bind:item="item"></Knowledge>
-            </div>   
-          </div>
-        </div>
-        <div class="card shadow col-md-6 mt-5">
-          <div class="card-header bg-transparent"><h2 class="h4">Database</h2></div>
-          <div class="card-body">
-            <div class="row justify-content-md-center">
-            <Knowledge v-for="item in this.Ex.Database" v-bind:item="item"></Knowledge>
+        <div class="container-fluid">
+            <div class="container">
+                <h3 class="text-center">Welcome</h3>
+                <div id="welcome">{{this.item}}</div>
             </div>
-          </div>
         </div>
-        <div class="card shadow col-md-6 mt-5">
-          <div class="card-header bg-transparent"><h2 class="h4">UI Frameworks</h2></div>
-          <div class="card-body">
-            <div class="row justify-content-md-center">
-              <Knowledge v-for="item in this.Ex.UIFrameworks" v-bind:item="item"></Knowledge>
-              </div> 
-          </div>
-        </div>
-        <div class="card shadow col-md-12 mt-5">
-          <div class="card-header bg-transparent"><h2 class="h4">Frontend / UI</h2></div>
-          <div class="card-body">
-            <div class="row justify-content-md-center">
-              <Knowledge v-for="item in this.Ex.UI" v-bind:item="item"></Knowledge>
-              </div> 
-          </div>
-        </div>
-        <div class="card shadow col-md-12 mt-5">
-          <div class="card-header bg-transparent"><h2 class="h4">Concepts</h2></div>
-          <div class="card-body">
-            <div class="row justify-content-md-center">
-              <Knowledge v-for="item in this.Ex.Frameworks" v-bind:item="item"></Knowledge>
-              </div>  
-          </div>
-        </div>
-        <div class="card shadow col-md-4 mt-5">
-          <div class="card-header bg-transparent"><h2 class="h4">Version Control</h2></div>
-          <div class="card-body">
-            <div class="row justify-content-md-center">
-              <Knowledge v-for="item in this.Ex.VersionControl" v-bind:item="item"></Knowledge>
-              </div> 
-          </div>
-        </div>
-        <div class="card shadow col-md-8 mt-5">
-          <div class="card-header bg-transparent"><h2 class="h4">Tools</h2></div>
-          <div class="card-body">
-            <div class="row justify-content-md-center">
-              <Knowledge v-for="item in this.Ex.Tools" v-bind:item="item"></Knowledge>
-              </div> 
-          </div>
-        </div>
-      </div>
-    </div></div>
-    
-    <div class="bgimg-3 lazy"></div>
+        <div id="Blogs" class="container anchor">
+            <h3 class="text-center">Recent Articles / Blogs</h3>
+            <div class="row row-cols-1 row-cols-md-3">
+                <div v-for="article in GetItems()">
+                    <div class="col mb-4 hoverItem">
+                        <div class="card shadow">
 
-    <div class="position-relative anchor" id="about">
-      <div class="container-fluid aboutFormat">
-        <div class="row justify-content-center">
-          <div class="col-lg-4">
-            <h1 class="h3">Interests</h1>
-            <ul class="list-group" id="interests">
-              <li v-for="item in this.Hobbies" class="list-group-item list-group-item-secondary">{{item.a}}</li>
-            </ul>
-          </div>
-          <div class="col-lg-4">
-            <h1 class="h3">Volunteer</h1>
-            <ul class="list-group" id="interests">
-              <li v-for="item in this.Vol" class="list-group-item list-group-item-secondary">{{item.a}}</li>
-            </ul>
-          </div>
+                            <div><img v-lazy="getImg(article.index)" style="height:250px;" class="card-img-top himg" v-bind:alt="article.title"/></div>
+                            <div class="card-body">
+                                <h5>
+                                    <a :href="article.link" target="_blank">{{article.title}}</a>
+                                </h5>
+                                <p class="card-text">{{article.timestamp.substring(0, article.timestamp.length -9)}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <h5>Want more, check out my feed on  DEV Community,
+                    <a href="https://dev.to/liukonen" target="_blank" alt="dev to">Dev.To/Liukonen</a>
+                </h5>
+            </div>
         </div>
-      </div>    
-    </div>
-    <div class="bgimg-end lazy">
-      <div class="caption">
-        <span class="border">    
-          <a target="_blank" class="btn btn-secondary" href="https://github.com/liukonen" role="button" aria-label="Github" data-toggle="tooltip" data-placement="top" title="GitHub">
-            <i class="bi bi-github"></i> GitHub
-          </a>
-          <a target="_blank" class="btn btn-info" href="https://www.linkedin.com/in/lukeliukonen/" role="button" aria-label="LinkedIn" data-toggle="tooltip" data-placement="top" title="LinkedIn">
-            <i class="bi bi-linkedin"></i> LinkedIn</a>
-          <a class="btn btn-danger" href="mailto:liukonen@gmail.com?subject=GitHub_Home_Page" role="button" aria-label="email" data-toggle="tooltip" data-placement="top" title="email">
-            <i class="bi bi-envelope-fill"> Email</i></a>
-            <a target="_blank" class="btn btn-light" href="https://dev.to/liukonen" role="button" aria-label="dev To"><i class="bi bi-file-code-fill"></i> 
-              DEV Community</a>
-     
-            <br />
-     </span>
-        <br />
-        <br />
-        <div class="alert alert-dark">&copy; 2021 Luke Liukonen
-          <i>* this page, its contents, are opinions of my own, and represent no one else</i> 
-        </div> 
-      </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.min.js" integrity="sha256-KSlsysqp7TXtFo/FHjb1T9b425x3hrvzjMWaJyKbpcI=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue-lazyload@1.3.3/vue-lazyload.js" integrity="sha256-j284gtJGvdW5xUD9p/9WIqbqwRRxqVipWRLSb2ecpQ4=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha256-7dA7lq5P94hkBsWdff7qobYkp9ope/L5LQy2t/ljPLo=" crossorigin="anonymous"></script>
-    <script src="js/vue.js"></script>
+        <div class="container-fluid lightFormat">
+            <div class="container">
+                <h3 class="text-center">Open Source Projects</h3>
+                <div id="app" class="anchor">
+                    <div class="row row-cols-1 row-cols-md-3">
+                            <Project v-for="product in this.Products" :project="product"></Project>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bgimg-2 lazy"></div>
+        <div class="aboutFormat container-fluid lightFormat anchor" id="career">
+            <div class="container">
+                <h3 class="text-center">Career So far</h3>
+                <work v-for="job in this.Work" :job="job"></work>
+                <br/>
+                <div>
+                    <h3 class="text-center mt-5">Current Overall Highlights</h3>
+                    <alist :list="this.highlights" :styles="1"></alist>
+                </div>
+                <a id="edu" class="anchor"></a>
+                <h3 class="text-center mt-5">Education</h3>
+                <work v-for="edu in this.school" :job="edu"></work>
+            </div>
+        </div>
+        <div class="bgimg-4 lazy"></div>
+        <div class="position-relative"></div>
+        <div class="container-fluid lightFormat">
+            <div class="container" id="Knowledge">
+                <h3 class="text-center">Systems / Ideas I've worked with</h3>
+                <div class="row text-dark" id="vbackend">
+                    <Thought v-for="item in this.Ex" v-bind:item="item"></Thought>
+                </div>
+            </div>
+        </div>
+        <div class="bgimg-3 lazy"></div>
+        <div class="position-relative anchor" id="about">
+            <div class="container-fluid aboutFormat">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4">
+                        <h1 class="h3">Interests</h1>
+                        <alist :list="this.Hobbies"></alist>
+                    </div>
+                    <div class="col-lg-4">
+                        <h1 class="h3">Volunteer</h1>
+                        <alist :list="this.Vol"></alist>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bgimg-end lazy">
+            <div class="caption">
+                <span class="border">
+                    <a target="_blank" class="btn btn-secondary" href="https://github.com/liukonen" role="button" aria-label="Github" data-toggle="tooltip" data-placement="top" title="GitHub">
+                        <i class="bi bi-github"></i>
+                        GitHub
+                    </a>
+                    <a target="_blank" class="btn btn-info" href="https://www.linkedin.com/in/lukeliukonen/" role="button" aria-label="LinkedIn" data-toggle="tooltip" data-placement="top" title="LinkedIn">
+                        <i class="bi bi-linkedin"></i>
+                        LinkedIn</a>
+                    <a class="btn btn-danger" href="mailto:liukonen@gmail.com?subject=GitHub_Home_Page" role="button" aria-label="email" data-toggle="tooltip" data-placement="top" title="email">
+                        <i class="bi bi-envelope-fill">
+                            Email</i>
+                    </a>
+                    <a target="_blank" class="btn btn-light" href="https://dev.to/liukonen" role="button" aria-label="dev To">
+                        <i class="bi bi-file-code-fill"></i>
+                        DEV Community</a>
 
-     <!--Begin Web-Stat code v 7.0-->
-     <span id="wts1983157"></span><script>var wts=document.createElement('script');wts.async=true;wts.src='https://wts.one/log7.js';document.head.appendChild(wts);wts.onload = function(){ wtslog7(1983157,4); };
-    </script><noscript><a href="https://www.web-stat.com"><img src="https://wts.one/7/4/1983157.png" alt="Web-Stat web statistics"></a></noscript>
-    <!-- End Web-Stat code v 7.0 -->
-  </body>
+                    <br/>
+                </span>
+                <br/>
+                <br/>
+                <div class="alert alert-dark">&copy; 2021 Luke Liukonen
+                    <i>* this page, its contents, are opinions of my own, and represent no one else</i>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.min.js" integrity="sha256-KSlsysqp7TXtFo/FHjb1T9b425x3hrvzjMWaJyKbpcI=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue-lazyload@1.3.3/vue-lazyload.js" integrity="sha256-j284gtJGvdW5xUD9p/9WIqbqwRRxqVipWRLSb2ecpQ4=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha256-7dA7lq5P94hkBsWdff7qobYkp9ope/L5LQy2t/ljPLo=" crossorigin="anonymous"></script>
+        <script src="js/vue.js"></script>
+        <!--Begin Web-Stat code v 7.0-->
+        <span id="wts1983157"></span>
+        <script>
+            var wts = document.createElement('script');
+            wts.async = true; 
+            wts.src = 'https://wts.one/log7.js'; 
+            document.head.appendChild(wts); 
+            wts.onload = function () {wtslog7(1983157, 4);};
+        </script>
+        <noscript>
+            <a href="https://www.web-stat.com"><img src="https://wts.one/7/4/1983157.png" alt="Web-Stat web statistics"></a>
+        </noscript>
+        <!-- End Web-Stat code v 7.0 -->
+    </body>
 </html>

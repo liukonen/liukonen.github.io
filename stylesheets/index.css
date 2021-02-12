@@ -14,8 +14,7 @@ body, html {
 }
 
 .invert {
-  -webkit-filter: invert(100%);
-          filter: invert(100%);
+  filter: invert(100%);
 }
 
 .page-scroll {
@@ -39,9 +38,6 @@ body, html {
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -61,8 +57,7 @@ body, html {
 }
 
 .Invert {
-  -webkit-filter: invert(100%);
-          filter: invert(100%);
+  filter: invert(100%);
 }
 
 .content {

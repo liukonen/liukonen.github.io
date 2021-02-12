@@ -1,0 +1,632 @@
+{
+    "menu":
+    [
+        {"name":"Projects", "value":"#app"}
+        ,{"name": "Career", "value": "#career"}
+        ,{"name": "Education", "value": "#edu"}
+        ,{"name": "Knowledge", "value": "#Knowledge"}
+        ,{"name": "About", "value": "#about"}
+    ],
+    "welcome": "My name is Luke Liukonen, and I am a Senior Software Engineer, educator, and tech enthusiast based out of the Metro Milwaukee Wisconsin area. Let's be honest though, that's only a small sliver of who I am. I've been in development for over 14 years professionally, spending most of my time in the travel space. My main focus is backend development, however, I have transitioned to more of a full stack developer. I have  been fascinated with the direction technology could take us, and was a huge fan of how we would interact with them in the future. To this day, I like to consider myself a technologist, reading up on current trends, and what progress we are making in the field.",
+    "projects": [
+        {
+            "Title": "Html Text Editor",
+            "SubTitle": "manipulate and batch text files in your browser",
+            "image": "img/htmledit.webp",
+            "Description": "a more advanced text editor developed from the need to have mini applications do custom work. This came from multiple smaller programs I'd have to quickly write up to change string data that was given to me. It evolved from console and winform applciations into a single web page based app. It's evolved to now a PWA application that can load files from your desktop and save them either in browser cache, or locally as a download.",
+            "buttons": [
+                {
+                    "type": "Website",
+                    "url": "https://liukonen.github.io/htmlTextEditor/"
+                },
+                {
+                    "type": "Source",
+                    "url": "https://github.com/liukonen/htmlTextEditor"
+                }
+            ],
+            "tags": [
+                "Functional Programming",
+                "Local and Web storage",
+                "Client side File reader",
+                "Javascript"
+            ]
+        },
+        {
+            "Title": "Tic Tac Math",
+            "SubTitle": "A simple game, that can help teach.",
+            "Description": "In 2003 or 04 (while in school) I wrote this in Visual basic 6 and used Microsoft Agents as driving forces for Input and output. who would fly around the screen and play tic tac toe, using simple math equations. I found the original source code, and re wrote it in .net.  and since they were all based on the same source, consolidate the logic to one program, with options to switch math types (divide, multiply, add, and subtract) Since I have some time off, I was able to rewrite this using Javascript and HTML, and bring back Agents and text to speach over the browser.",
+            "image": "img/ttm.webp",
+            "buttons": [
+                {
+                    "type": "Website",
+                    "url": "https://liukonen.github.io/tictacmath/"
+                },
+                {
+                    "type": "Release",
+                    "url": "https://github.com/liukonen/tictacmath/releases"
+                },
+                {
+                    "type": "Source",
+                    "url": "https://github.com/liukonen/tictacmath"
+                }
+            ],
+            "tags": [
+                "Javascript",
+                "Jquery",
+                "Browser TTS",
+                "Progressive Web Apps (PWA)",
+                "MS Agents (discontinued)",
+                "Microsoft TTS",
+                "Visual Basic 6",
+                "Visual Basic .net",
+                "Installers (nullsoft and Microsoft One Click Installer)"
+            ]
+        },
+        {
+            "Title": "RiverScriptBot",
+            "SubTitle": "A Rivescript based Javascript chatbot.",
+            "Description": "This is a client-server model chatbot. First Website is the bot in Vue.js. The Second is a rewrite in Angular. A REST based Bot writen in Rivescript, built in Node.JS and hosted on Heroku. Server has API calls to NOAA and Duck Duck go for dynamic responses based on questions asked. And a client, built in Vue.JS, and hosted on github pages. Around 2002, 2003, I was interested in taking the chat bot out out of the standard container. I had an AIML source code project, which I tied with an MS agent, and TTS, with speach recognition, and I was talking to a bot, and it was responding. Few years later, and the AIM code cant connect, so I found AIML and the Alice project. 2016 hits, and at work, Im asked to present for MMAC Be The Spark tour, where my project, Sarra, tied her with Alice (and updated some of the scripts) as well as Microsoft cognitive services and presented a vocal chat bot that could detect and translate on the fly. Desided to take the AIML code and migrate it to RiveScript and make a bot out of it.",
+            "image": "img/chat.webp",
+            "buttons": [
+                {
+                    "type": "Website",
+                    "url": "https://liukonen.dev/RiverScript-Angular-Edition/"
+                },
+                {
+                    "type": "Angular Source",
+                    "url": "https://github.com/liukonen/RiverScript-Angular-Edition/"
+                },
+                {
+                    "type": "Server Source",
+                    "url": "https://github.com/liukonen/RiverScriptBackend"
+                }
+            ],
+            "tags": [
+                "Angular",
+                "Progressive Web Apps (PWA)",
+                "JavaScript",
+                "JQuery",
+                "Node.JS",
+                "SASS",
+                "Heroku",
+                "API REST calls",
+                "CI/CD",
+                "RiveScript"
+            ]
+        },
+        {
+            "Title": "NATS",
+            "SubTitle": "Not Another Text Search.",
+            "Description": "Nats is a command-line based search engine for text files on your hard drive. It uses multithreading, indexes (including windows), and an optional cached index for faster lookups (using a Lite DB locally hosted database, similar to Mongo DB). It was written to find items in source code easily, even if they were not included in a project. It was originally written in .net core, and I have made GUI editions for Windows, Mac, and GTK, which runs on Linux, Mac, and Windows. Icon for mac and windows provided by material.io, and is Apache license version 2.0.",
+            "image": "img/nats.webp",
+            "buttons": [
+                {
+                    "type": "Release",
+                    "url": "https://github.com/liukonen/nats/releases"
+                },
+                {
+                    "type": "Source",
+                    "url": "https://github.com/liukonen/nats"
+                }
+            ],
+            "tags": [
+                "LiteDB",
+                " Singleton",
+                " Factory Pattern",
+                " Parallel Library",
+                " Sqlite",
+                " String Hashing",
+                " Cocoa (Mac OS) Development",
+                " XCode",
+                " GTK#",
+                " .Net Standard",
+                " Cross Platform Development"
+            ]
+        },
+        {
+            "Title": "CloudyPie",
+            "SubTitle": "a remake of DJAkbar's cloudy-a project",
+            "Description": "Owning raspberry pi pcs, I wanted to try my hand at a lamp that could also tell you the weather. I found DJAkbars project, but found that it was too relient on operation timing and also had some issues calling the service (only called once). Refactored the code and upgraded it to python verion 3.",
+            "image": "img/cp.webp",
+            "buttons": [
+                {
+                    "type": "Release",
+                    "url": "https://github.com/liukonen/cloudy-pie/releases"
+                },
+                {
+                    "type": "Source",
+                    "url": "https://github.com/liukonen/cloudy-pie"
+                }
+            ],
+            "tags": [
+                "Python",
+                "JSON ",
+                "API",
+                "linux (debian)",
+                "ssh",
+                "apache",
+                "html",
+                "bootstrap",
+                "css",
+                "Pigpio",
+                "basic shell scripting"
+            ]
+        },
+        {
+            "Title": "WeatherWallpaper",
+            "SubTitle": "Wallpaper based on outside conditions",
+            "Description": "This was a project I wrote years ago. I had it working for a while, and then lost my source code. The original app only used weather, and pulled the data from Yahoo. The new verison will have multiple sources to pick from (in case one goes down), and have the ability to have different wallpapers also by time of day.",
+            "image": "img/weatherwallpaper.webp",
+            "buttons": [
+                {
+                    "type": "Release",
+                    "url": "https://github.com/liukonen/WeatherWallpaper/releases"
+                },
+                {
+                    "type": "Source",
+                    "url": "https://github.com/liukonen/WeatherWallpaper"
+                }
+            ],
+            "tags": [
+                "Managed Extensibility Framework",
+                "REST API's",
+                "Notification Icon",
+                "Low Level DLL calls",
+                "Interface design",
+                "Memory Caching",
+                "WCF / Web Services",
+                "Cryptography",
+                "Configuration Management",
+                "NuGet Package Management",
+                "Remote Error Logging and management",
+                "ZipArchiveEntry compression",
+                ".net GeoCoordinate objects"
+            ]
+        },
+        {
+            "Title": "Simple Weather Tray",
+            "SubTitle": "Something simple to tell you the weather, on nearly any desktop enviroment",
+            "Description": "This idea goes way back to my college days. I liked weathebug, but did not like the adware and spyware it was littered with. App is now compiled using GTK, so it runs on Mac, Linux and PC! Code for this is based on weatherwallpaper, and the engine behind can be changed just like weatherwallpaper.",
+            "image": "img/weather.webp",
+            "buttons": [
+                {
+                    "type": "Release",
+                    "url": "https://github.com/liukonen/SimpleWeatherTray/releases"
+                },
+                {
+                    "type": "Source",
+                    "url": "https://github.com/liukonen/SimpleWeatherTray"
+                }
+            ],
+            "tags": [
+                "REST API's",
+                ".Net Standard",
+                ".Net Core",
+                "GTK#",
+                "Cross Platform Development and Testing"
+            ]
+        },
+        {
+            "Title": "Desert Changer",
+            "SubTitle": "Different wallpaper for different times of day",
+            "Description": "Simmilar to Weather Wallpaper, only without the need of external calls, this app will change your wallpaper throughout the day like Mac OS Mojave +.",
+            "image": "img/dchanger.webp",
+            "buttons": [
+                {
+                    "type": "Release",
+                    "url": "https://github.com/liukonen/DesertChanger/releases"
+                },
+                {
+                    "type": "Source",
+                    "url": "https://github.com/liukonen/DesertChanger"
+                }
+            ],
+            "tags": [
+                "Cryptography",
+                "notification objects",
+                "win-form objects",
+                "dialog menus",
+                "CSV parsing",
+                "GeoLocation objects",
+                "Linq",
+                "event handlers",
+                "mutex"
+            ]
+        },
+        {
+            "Title": "PodLoad",
+            "SubTitle": "Download your favorite audio or video podcasts through RSS",
+            "Description": "written when RSS was still a major thing. I still pull video and audio podcasts using this app. App was more recently rewritten to support the .net core framework and has been confirmed to work on linux. ",
+            "image": "img/podcast.webp",
+            "buttons": [
+                {
+                    "type": "Source",
+                    "url": "https://github.com/liukonen/Podload"
+                }
+            ],
+            "tags": [
+                "Mono Development",
+                "Parallel programming design practices",
+                "System Task Library",
+                "Basic file transfer over the network",
+                "XML",
+                "Linq",
+                "Compression"
+            ]
+        },
+        {
+            "Title": "Dif",
+            "SubTitle": "useful tool with robocopy, to see what will move",
+            "Description": "This program was created out of a need to see what changes could happen if I ran a robocopy command between 2 directories. I was hoping at first that robocopy (command line application built into windows) had this functionality built in. While there a number of different ways to compare files, I chose to use the LastModifided timestamp of the file for distinction. ",
+            "image": "img/cmd.webp",
+            "buttons": [
+                {
+                    "type": "Release",
+                    "url": "https://github.com/liukonen/Dif/releases"
+                },
+                {
+                    "type": "Source",
+                    "url": "https://github.com/liukonen/Dif"
+                }
+            ],
+            "tags": [
+                "Parallel tasks",
+                "File enumeration"
+            ]
+        },
+        {
+            "Title": "Clipboard++",
+            "SubTitle": "Keep more then 1 item in your clipboard",
+            "Description": "reason: I wanted an application that I could use that kept an in memory cache of mutiple clipboard items. That way if I accidently copied over some data I was working on, I could go back to the original version. Its a lightweight clipboard 'manager' that implements items like, encrpytion, in memory compression, keeping state on reboots or restarts, and being able to save files, right from the clipboard.",
+            "image": "img/clip.webp",
+            "buttons": [
+                {
+                    "type": "Release",
+                    "url": "https://github.com/liukonen/Clipboard-/releases"
+                },
+                {
+                    "type": "Source",
+                    "url": "https://github.com/liukonen/Clipboard-"
+                }
+            ],
+            "tags": [
+                "In Memory image formating",
+                "Message Pack (https://msgpack.org) ",
+                "sha1 hashing",
+                "binary serialization",
+                "winform development",
+                "notification icon development",
+                "System Cryptography Namespace",
+                "Data Encryption ",
+                "Microsofts Data Protection API"
+            ]
+        },
+        {
+            "Title": "WinFrost",
+            "SubTitle": "a simple site-specific browser generator and browser",
+            "Description": "When I first got into the web, I always thought that there would be a time web pages would be full blown apps. Unfortunitly, projects like Mozilla Prism. Once that was discontinued. I worked on my own until Chomr had there own, in shortcuts. But even that is going away. I love the idea of Pepperments Ice SSB app, and attempted to make my own. Since Windows <> Linux though, Im dependent on Nuget updates, so I dont make release of the project, and leave it up to developers to get latest and compile it themselves.",
+            "image": "img/winfrost.webp",
+            "buttons": [
+                {
+                    "type": "Source",
+                    "url": "https://github.com/liukonen/WinFrost"
+                }
+            ],
+            "tags": [
+                "Managed Extensibility Framework",
+                "Common Interfaces",
+                "HTTP request / response",
+                "configuration management",
+                "nuget",
+                "HTML parsing",
+                "GeckFX .net controls",
+                "CEFSharp .net controls"
+            ]
+        },
+        {
+            "Title:": "",
+            "SubTitle": "This Page",
+            "Description": "",
+            "image": "img/html5.webp",
+            "tags": [
+                "Vue",
+                "HTML",
+                "Javascript",
+                "SASS",
+                "JQuery",
+                "JSON",
+                "GitHub Pages"
+            ]
+        }
+    ],
+    "highlights": [
+        {"a": "2-time company representative for MMAC 'Be the Spark Tour'"},
+        {"a": "Participant at  Microsoft chat bot Hack-a-thon, 2017"},
+        {"a": "On multiple committees for outreach, wellness, and event planning"},
+        {"a": "Developer lead on team for nearly 6 years"},
+        {"a": "Adjunct Instructor for 2 semesters at ITT Technical Institute"},
+        {"a": "Owasp top 10 trained. Maintained PCI complience"},
+        {"a": "Hackathon: Using AI and AWS to flag fraud transactions."},
+        {"a": "Hackathon: keyword and sentiment analysis tool for consumer reviews."},
+        {"a": "Hackathon: Automation of rates and pricing based on competitor and historical pricing."},
+        {"a": "Hackathon: Natural language platform for conducting transactions."}
+    ],
+    "Experence": [
+        {
+            "name": "Backend",
+            "size": "12",
+            "items": [
+                {
+                    "title": "C#",
+                    "img": "./img/csharp.webp",
+                    "level": 3,
+                    "link": "https://en.wikipedia.org/wiki/C_Sharp_(programming_language)"
+                },
+                {
+                    "title": "VB.Net",
+                    "img": "./img/vb.webp",
+                    "level": 3,
+                    "link": "https://en.wikipedia.org/wiki/Visual_Basic_.NET"
+                },
+                {
+                    "title": "T-Sql and stored procs",
+                    "img": "./img/tsql.webp",
+                    "level": 2,
+                    "link": "https://en.wikipedia.org/wiki/Transact-SQL"
+                },
+                {
+                    "title": "Python",
+                    "img": "./img/python.webp",
+                    "level": 1,
+                    "link": "https://www.python.org/about/"
+                },
+                {
+                    "title": "Node.JS",
+                    "img": "./img/node.webp",
+                    "level": 1,
+                    "link": "https://nodejs.org/en/about/"
+                }
+            ]
+        },
+        {
+            "name": "Database",
+            "size": "6",
+            "items": [
+                {
+                    "title": "SQL Server",
+                    "img": "./img/sqlserver.webp",
+                    "level": 2,
+                    "link": "https://en.wikipedia.org/wiki/Microsoft_SQL_Server"
+                },
+                {
+                    "title": "Sqlite",
+                    "img": "./img/sqlite.webp",
+                    "level": 1,
+                    "link": "https://www.sqlite.org/index.html"
+                },
+                {
+                    "title": "LiteDB",
+                    "img": "./img/litedb.webp",
+                    "level": 1,
+                    "link": "https://www.litedb.org/"
+                }
+            ]
+        },
+        {
+            "name": "UI Frameworks",
+            "size": "6",
+            "items": [
+                {
+                    "title": "ASP.Net",
+                    "img": "./img/aspnet.webp",
+                    "level": 2,
+                    "link": "https://dotnet.microsoft.com/apps/aspnet"
+                },
+                {
+                    "title": "Angular",
+                    "img": "./img/Angular.webp",
+                    "level": 1,
+                    "link": "https://angular.io/"
+                },
+                {
+                    "title": "Vue",
+                    "img": "./img/vue.webp",
+                    "level": 1,
+                    "link": "https://vuejs.org/"
+                }
+            ]
+        },
+        {
+            "name": "Frontend / UI",
+            "size": "12",
+            "items": [
+                {
+                    "title": "HTML 5",
+                    "img": "./img/html5.webp",
+                    "level": 2,
+                    "link": "https://en.wikipedia.org/wiki/HTML"
+                },
+                {
+                    "title": "JavaScript",
+                    "img": "./img/javascript.webp",
+                    "level": 2,
+                    "link": "https://en.wikipedia.org/wiki/JavaScript"
+                },
+                {
+                    "title": "jQuery",
+                    "img": "./img/jquery.webp",
+                    "level": 1,
+                    "link": "https://jquery.com/"
+                },
+                {
+                    "title": "Blazor Pages",
+                    "img": "./img/blazor.webp",
+                    "level": 1,
+                    "link": "https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor"
+                },
+                {
+                    "title": "CSS",
+                    "img": "./img/css3.webp",
+                    "level": 1,
+                    "link": "https://en.wikipedia.org/wiki/Cascading_Style_Sheets"
+                },
+                {
+                    "title": "SASS",
+                    "img": "./img/sass.webp",
+                    "level": 1,
+                    "link": "https://sass-lang.com/"
+                }
+            ]
+        },
+        {
+            "name": "Concepts",
+            "size": "12",
+            "items": [
+                {
+                    "title": "MVC",
+                    "img": "./img/mvc.webp",
+                    "level": 2,
+                    "link": "https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller"
+                },
+                {
+                    "title": "Agile",
+                    "img": "./img/agile.webp",
+                    "level": 2,
+                    "link": "https://en.wikipedia.org/wiki/Agile_software_development"
+                },
+                {
+                    "title": "WCF",
+                    "img": "./img/wcf.webp",
+                    "level": 2,
+                    "link": "https://docs.microsoft.com/en-us/dotnet/framework/wcf/whats-wcf"
+                },
+                {
+                    "title": "Rest Services",
+                    "img": "./img/rest.webp",
+                    "level": 2,
+                    "link": "https://en.wikipedia.org/wiki/Representational_state_transfer"
+                },
+                {
+                    "title": "MS Cognitive Services",
+                    "img": "./img/cognitive.webp",
+                    "level": 1,
+                    "link": "https://azure.microsoft.com/en-us/services/cognitive-services/"
+                },
+                {
+                    "title": "Slack API",
+                    "img": "./img/slack.webp",
+                    "level": 1,
+                    "link": "https://api.slack.com/"
+                }
+            ]
+        },
+        {
+            "name": "Version Control",
+            "size": "4",
+            "items": [
+                {
+                    "title": "TFS",
+                    "img": "./img/TFS.webp",
+                    "level": 2,
+                    "link": "https://azure.microsoft.com/en-us/services/devops/server/"
+                },
+                {
+                    "title": "Azure DevOps",
+                    "img": "./img/Octocat.webp",
+                    "level": 2,
+                    "link": "https://en.wikipedia.org/wiki/GitHub"
+                }
+            ]
+        },
+        {
+            "name": "Tools",
+            "size": "8",
+            "items": [
+                {
+                    "title": "Visual Studio",
+                    "img": "./img/visualstudio.webp",
+                    "level": 2,
+                    "link": "https://visualstudio.microsoft.com/vs/"
+                },
+                {
+                    "title": "VS Code",
+                    "img": "./img/vscode.webp",
+                    "level": 2,
+                    "link": "https://code.visualstudio.com/"
+                },
+                {
+                    "title": "Git",
+                    "img": "./img/Git.webp",
+                    "level": 2,
+                    "link": "https://git-scm.com/"
+                },
+                {
+                    "title": "XCode",
+                    "img": "./img/xcode.webp",
+                    "level": 1,
+                    "link": "https://developer.apple.com/xcode/"
+                }
+            ]
+        }
+    ],
+    "School": [
+        {
+            "name": "University of Wisconsin - Milwaukee",
+            "timeworked": "September 2002 - May 2006",
+            "img": "./img/uwm.webp.png",
+            "title": "Bachelors in Business Administration",
+            "summary": "Management Information Systems"
+        }
+    ],
+    "Work": [
+        {
+            "name": "Brady Corporation",
+            "timeworked": "August 2020 - Present",
+            "title": "Senior Software Engineer",
+            "img": "./img/brady.webp.png",
+            "summary": "Primary focus is on the ecommerce platform. This entails a full stack development platform, including SASS Stylesheets, Javascript and Javasript frameworks, MVC, Sitecore controls, Test Driven Development, and light DevOps. Other items I have focused on includes Docker Containerization of tools, and optimizing and creating one click 'Dev environments as code' setup scripts for onboarding and rebuilding of machines."
+        },
+        {
+            "name": "Trisept Solutions",
+            "timeworked": "April 2014 - July 2020",
+            "title": "Software Analyst (Mid/Snr Engineer Eq)",
+            "img": "./img/Trisept Solutions.webp.png",
+            "summary": "For 3 years was the development lead for the product support area of the company. My current role is focused on the backend system (Avail, packaging, booking) engine of the system. This is a Full-stack position. Other tasks I've also taken on include writing setup materials/documentation, consulted in system analysis tasks on system performance and monitoring, and mentored both new developers and junior developers in our system."
+        },
+        {
+            "name": "Blue7 Solutions",
+            "timeworked": "January 2012 - April 2014",
+            "title": "Software Engineer",
+            "img": "./img/Blue7 Solutions.webp.png",
+            "summary": "Worked with Trisept Solutions as there Development lead for the Product Support team, which involves knowledge of Trisept's entire system, debugging and resolving issues in the code base, and managing Blue 7's company offshore resources in Product Support when needed. I also worked as a consultant for Trisept Solutions in the dynamic packaging engine as a full stack developer."
+        },
+        {
+            "name": "Trisept Solutions",
+            "timeworked": "May 2006 - December 2011",
+            "title": "Software Developer",
+            "img": "./img/Trisept Solutions.webp.png",
+            "summary": "Developed on and maintained the companies dynamic packaging engine which bundled vacation packages together based on preset rules, and there booking engine which then booked the vacation packages. Became a knowledge expert on the companies custom backend entry systems. Technologies that interacted with at a given time included, C#, VB.net, SQL, XML, javascript and ASP.net"
+        },
+        {
+            "name": "ITT Tech",
+            "timeworked": "Summer, 2008 and 2010",
+            "title": "Adjunct Instructor",
+            "img": "./img/ITT Technical Institute.webp.png",
+            "summary": "I taught 2 courses during my time at ITT Tech. The first was Introduction to Programming and the second, Introduction to Computers. These courses helped me develop my managerial approach outlook, as I learned from it that it is best to guide people to the answer, then to just give them the answer. It also honed my skills of admin tasks, time management, and how to manage multiple people at the same time."
+        }
+    ],
+    "Hobbies": [
+        {"a": "Tech, including gaming, PC building, Micro PCs like the Raspberry Pi"},
+        {"a": "Sports including the Brewers, Packers, Bucks"},
+        {"a": "Live music and venues"},
+        {"a": "Recently started riding a bicycle through state trails"},
+        {"a": "I have been collecting memorabilia and autographs since I was a kid."}
+    ],
+    "volunteer": [
+        {"a": "Has worked at both the Schlitz Audubon and Urban Ecology Center helping plant trees"},
+        {"a": "Running Folding@home to help battle Covid-19"},
+        {"a": "Has run some kind of computer nearly non stop since 2014 for research through World Community Grid"},
+        {"a": "Attend a number of charity events throughout the year when I can."},
+        {"a": "Managed a number of fundraisers at work, including a food drive and a cancer fundraiser."}
+    ]
+}

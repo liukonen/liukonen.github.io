@@ -1,80 +1,18 @@
 body, html {
   height: 100%;
   margin: 0;
-}
-
-.jumbotron {
-  border-radius: 10px;
-  background: url("../img/jumbotron.webp");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  color: white !important;
-  height: 340px;
-  background-size: cover;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: #000;
+  scroll-behavior: smooth;
 }
 
 .invert {
-  -webkit-filter: invert(100%);
-          filter: invert(100%);
-}
-
-.page-scroll {
-  height: 5000px;
-}
-
-.btn-outline-danger {
-  color: white;
-  border-color: white;
-  border-radius: 0px;
-  font-weight: 100;
-  margin-top: 20px;
-}
-
-.lead {
-  font-family: raleway;
-  font-weight: 100;
-  margin-top: -10px;
-}
-
-.bd-placeholder-img {
-  font-size: 1.125rem;
-  text-anchor: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-@media (min-width: 768px) {
-  .bd-placeholder-img-lg {
-    font-size: 3.5rem;
-  }
+  filter: invert(100%);
 }
 
 .user_img {
   height: 90px;
   width: 90px;
-}
-
-.featurette-image {
-  opacity: 20%;
-}
-
-.Invert {
-  -webkit-filter: invert(100%);
-          filter: invert(100%);
-}
-
-.content {
-  display: none;
-}
-
-body, html {
-  height: 100%;
-  margin: 0;
-  font: 400 15px/1.8 "Lato", sans-serif;
-  color: #000;
-  scroll-behavior: smooth;
 }
 
 .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-end, .bgimg-4 {
@@ -113,33 +51,30 @@ body, html {
   min-height: 450px;
 }
 
-.bgimg-2.lazy {
+.bgimg-end {
+  background-image: url("../img/me_outfield_MillerPark-lb.jpg");
+  min-height: 100%;
+}
+
+.bgimg-2.lazy, .bgimg-3.lazy, .bgimg-4.lazy, .bgimg-end.lazy {
   background-image: none;
   background-color: #000000;
+}
+
+.bgimg-2.lazy {
   height: 500px;
 }
 
 .bgimg-3.lazy {
-  background-image: none;
-  background-color: #000000;
   height: 400px;
 }
 
 .bgimg-4.lazy {
-  background-image: none;
-  background-color: #000000;
   height: 450px;
 }
 
 .bgimg-end.lazy {
-  background-image: none;
-  background-color: #000000;
   height: 100%;
-}
-
-.bgimg-end {
-  background-image: url("../img/me_outfield_MillerPark-lb.jpg");
-  min-height: 100%;
 }
 
 .caption, .caption2 {
@@ -208,7 +143,6 @@ h3 {
 }
 
 .progress-bar {
-  -webkit-transition: none !important;
   transition: none !important;
 }
 
@@ -236,12 +170,8 @@ h3 {
 }
 
 .card-horizontal {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
 .ImgRoundCorner {
@@ -255,7 +185,37 @@ h3 {
   color: #f7f7f7;
 }
 
-.container .jumbotron {
-  border-radius: 0 !important;
+.btn-outline-danger {
+  color: white;
+  border-color: white;
+  border-radius: 0px;
+  font-weight: 100;
+  margin-top: 20px;
+}
+
+.lead {
+  font-family: raleway;
+  font-weight: 100;
+  margin-top: -10px;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.featurette-image {
+  opacity: 20%;
+}
+
+.content {
+  display: none;
 }
 /*# sourceMappingURL=about.css.map */
