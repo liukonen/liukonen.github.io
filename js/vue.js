@@ -196,7 +196,7 @@ blogs = new Vue({
     , GetItems() {
       let M = Array.from(this.BlogItems);
       if (this.BlogItems.length > 3) {
-        M = array.from(this.BlogItems).slice(0, 3);
+        M = M.slice(0, 3);
       }
       var objArr = M.map(function (idx, i) {
         return {
@@ -286,7 +286,7 @@ const bgObserver = new IntersectionObserver((entries, imgObserver) => {
     }
   });
 
-}, { threshold: 1, rootMargin: "0px 0px 300px 0px" });
+}, { threshold: 0});
 document.querySelectorAll(".lazy").forEach(item => bgObserver.observe(item));
 
 /*region fader */
@@ -328,3 +328,6 @@ const navObserver = new IntersectionObserver((entries, navObserver) => {
   });
 }, { rootMargin: "-50px 0px 0px 0px" });
 navObserver.observe(document.querySelector(".bgimg-1"));
+
+$('body').scrollspy({ target: '.navbar' });
+$('.navbar-toggler').click(function() {console.log("hit"); header.classList.add("bg-dark"); header.classList.add("transition");});
