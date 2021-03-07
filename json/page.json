@@ -1,11 +1,25 @@
 {
-    "menu":
-    [
-        {"name":"Projects", "value":"#app"}
-        ,{"name": "Career", "value": "#career2"}
-        ,{"name": "Education", "value": "#edu"}
-        ,{"name": "Knowledge", "value": "#Knowledge"}
-        ,{"name": "About", "value": "#about"}
+    "menu": [
+        {
+            "name": "Projects",
+            "value": "#app"
+        },
+        {
+            "name": "Career",
+            "value": "#career2"
+        },
+        {
+            "name": "Education",
+            "value": "#edu"
+        },
+        {
+            "name": "Knowledge",
+            "value": "#Knowledge"
+        },
+        {
+            "name": "About",
+            "value": "#about"
+        }
     ],
     "welcome": "My name is Luke Liukonen, and I am a Senior Software Engineer, educator, and tech enthusiast based out of the Metro Milwaukee Wisconsin area. Let's be honest though, that's only a small sliver of who I am. I've been in development for over 14 years professionally, spending most of my time in the travel space. My main focus is backend development, however, I have transitioned to more of a full stack developer. I have  been fascinated with the direction technology could take us, and was a huge fan of how we would interact with them in the future. To this day, I like to consider myself a technologist, reading up on current trends, and what progress we are making in the field.",
     "projects": [
@@ -322,34 +336,39 @@
                 "GeckFX .net controls",
                 "CEFSharp .net controls"
             ]
-        },
-        {
-            "Title:": "",
-            "SubTitle": "This Page",
-            "Description": "",
-            "image": "img/html5.webp",
-            "tags": [
-                "Vue",
-                "HTML",
-                "Javascript",
-                "SASS",
-                "JQuery",
-                "JSON",
-                "GitHub Pages"
-            ]
         }
     ],
     "highlights": [
-        {"a": "2-time company representative for MMAC 'Be the Spark Tour'"},
-        {"a": "Participant at  Microsoft chat bot Hack-a-thon, 2017"},
-        {"a": "On multiple committees for outreach, wellness, and event planning"},
-        {"a": "Developer lead on team for nearly 6 years"},
-        {"a": "Adjunct Instructor for 2 semesters at ITT Technical Institute"},
-        {"a": "Owasp top 10 trained. Maintained PCI complience"},
-        {"a": "Hackathon: Using AI and AWS to flag fraud transactions."},
-        {"a": "Hackathon: keyword and sentiment analysis tool for consumer reviews."},
-        {"a": "Hackathon: Automation of rates and pricing based on competitor and historical pricing."},
-        {"a": "Hackathon: Natural language platform for conducting transactions."}
+        {
+            "a": "2-time company representative for MMAC 'Be the Spark Tour'"
+        },
+        {
+            "a": "Participant at  Microsoft chat bot Hack-a-thon, 2017"
+        },
+        {
+            "a": "On multiple committees for outreach, wellness, and event planning"
+        },
+        {
+            "a": "Developer lead on team for nearly 6 years"
+        },
+        {
+            "a": "Adjunct Instructor for 2 semesters at ITT Technical Institute"
+        },
+        {
+            "a": "Owasp top 10 trained. Maintained PCI complience"
+        },
+        {
+            "a": "Hackathon: Using AI and AWS to flag fraud transactions."
+        },
+        {
+            "a": "Hackathon: keyword and sentiment analysis tool for consumer reviews."
+        },
+        {
+            "a": "Hackathon: Automation of rates and pricing based on competitor and historical pricing."
+        },
+        {
+            "a": "Hackathon: Natural language platform for conducting transactions."
+        }
     ],
     "Experence": [
         {
@@ -616,17 +635,37 @@
         }
     ],
     "Hobbies": [
-        {"a": "Tech, including gaming, PC building, Micro PCs like the Raspberry Pi"},
-        {"a": "Sports including the Brewers, Packers, Bucks"},
-        {"a": "Live music and venues"},
-        {"a": "Recently started riding a bicycle through state trails"},
-        {"a": "I have been collecting memorabilia and autographs since I was a kid."}
+        {
+            "a": "Tech, including gaming, PC building, Micro PCs like the Raspberry Pi"
+        },
+        {
+            "a": "Sports including the Brewers, Packers, Bucks"
+        },
+        {
+            "a": "Live music and venues"
+        },
+        {
+            "a": "Recently started riding a bicycle through state trails"
+        },
+        {
+            "a": "I have been collecting memorabilia and autographs since I was a kid."
+        }
     ],
     "volunteer": [
-        {"a": "Has worked at both the Schlitz Audubon and Urban Ecology Center helping plant trees"},
-        {"a": "Running Folding@home to help battle Covid-19"},
-        {"a": "Has run some kind of computer nearly non stop since 2014 for research through World Community Grid"},
-        {"a": "Attend a number of charity events throughout the year when I can."},
-        {"a": "Managed a number of fundraisers at work, including a food drive and a cancer fundraiser."}
+        {
+            "a": "Has worked at both the Schlitz Audubon and Urban Ecology Center helping plant trees"
+        },
+        {
+            "a": "Running Folding@home to help battle Covid-19"
+        },
+        {
+            "a": "Has run some kind of computer nearly non stop since 2014 for research through World Community Grid"
+        },
+        {
+            "a": "Attend a number of charity events throughout the year when I can."
+        },
+        {
+            "a": "Managed a number of fundraisers at work, including a food drive and a cancer fundraiser."
+        }
     ]
 }
