@@ -109,9 +109,7 @@ Vue.component("Knowledge", {
   template: `
 
    <div class="col2 mr-5 text-center lateloadfadeIn">
-    <a v-bind:href="item.link" target="blank" v-bind:alt="item.title">
-       <img v-bind:data-src="item.img" v-bind:title="item.title" width="100px" height="100px" style="display:none;" />
-    </a>
+     <img v-bind:data-src="item.img" v-bind:title="item.title" v-bind:alt="item.title" width="100px" height="100px" style="display:none;" />
     <p>{{item.title}}</p>
     <p>
        <span v-bind:class="GetClass(item)">{{GetName(item)}}</span>
@@ -164,9 +162,9 @@ Vue.component("Thought", {
   <li v-for="item2 in item.items" class="list-group-item d-flex justify-content-between align-items-center">
 
   <div class="image-parent">
-  <a v-bind:href="item2.link" target="blank" v-bind:alt="item2.title">
-  <img v-lazy="item2.img" width="32px" height="32px">
-  </a>
+  
+  <img v-lazy="item2.img" v-bind:alt="item2.title" width="32px" height="32px">
+  
   </div>
   {{item2.title}}
   <span v-bind:class="GetPill(item2)">{{GetName(item2)}}</span>
@@ -214,7 +212,7 @@ Vue.component("Project", {
   <div class="col mb-4 hoverItem d-flex align-items-stretch">
    <div class="card shadow">
     <div>
-     <img v-lazy="GetImage(project.image)"  style="height:250px;" class="card-img-top himg" v-bind:alt="project.Title"/>
+     <img v-lazy="GetImage(project.image)" v-bind:alt="project.Title" style="height:250px;" class="card-img-top himg" v-bind:alt="project.Title"/>
     </div>
     <div class="card-body">
      <h5 class="card-title">{{project.Title}}</h5>
