@@ -394,107 +394,18 @@
                     "link": "https://en.wikipedia.org/wiki/Transact-SQL"
                 },
                 {
-                    "title": "Python",
-                    "img": "./img/python.webp",
-                    "level": 1,
-                    "link": "https://www.python.org/about/"
-                },
-                {
                     "title": "Node.JS",
                     "img": "./img/node.webp",
                     "level": 1,
                     "link": "https://nodejs.org/en/about/"
+                },
+                {
+                    "title": "Python",
+                    "img": "./img/python.webp",
+                    "level": 1,
+                    "link": "https://www.python.org/about/"
                 }
-            ]
-        },
-        {
-            "name": "Database",
-            "size": "6",
-            "items": [
-                {
-                    "title": "SQL Server",
-                    "img": "./img/sqlserver.webp",
-                    "level": 2,
-                    "link": "https://en.wikipedia.org/wiki/Microsoft_SQL_Server"
-                },
-                {
-                    "title": "Sqlite",
-                    "img": "./img/sqlite.webp",
-                    "level": 1,
-                    "link": "https://www.sqlite.org/index.html"
-                },
-                {
-                    "title": "LiteDB",
-                    "img": "./img/litedb.webp",
-                    "level": 1,
-                    "link": "https://www.litedb.org/"
-                }
-            ]
-        },
-        {
-            "name": "UI Frameworks",
-            "size": "6",
-            "items": [
-                {
-                    "title": "ASP.Net",
-                    "img": "./img/aspnet.webp",
-                    "level": 2,
-                    "link": "https://dotnet.microsoft.com/apps/aspnet"
-                },
-                {
-                    "title": "Angular",
-                    "img": "./img/Angular.webp",
-                    "level": 1,
-                    "link": "https://angular.io/"
-                },
-                {
-                    "title": "Vue",
-                    "img": "./img/vue.webp",
-                    "level": 1,
-                    "link": "https://vuejs.org/"
-                }
-            ]
-        },
-        {
-            "name": "Frontend / UI",
-            "size": "12",
-            "items": [
-                {
-                    "title": "HTML 5",
-                    "img": "./img/html5.webp",
-                    "level": 2,
-                    "link": "https://en.wikipedia.org/wiki/HTML"
-                },
-                {
-                    "title": "JavaScript",
-                    "img": "./img/javascript.webp",
-                    "level": 2,
-                    "link": "https://en.wikipedia.org/wiki/JavaScript"
-                },
-                {
-                    "title": "jQuery",
-                    "img": "./img/jquery.webp",
-                    "level": 1,
-                    "link": "https://jquery.com/"
-                },
-                {
-                    "title": "Blazor Pages",
-                    "img": "./img/blazor.webp",
-                    "level": 1,
-                    "link": "https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor"
-                },
-                {
-                    "title": "CSS",
-                    "img": "./img/css3.webp",
-                    "level": 1,
-                    "link": "https://en.wikipedia.org/wiki/Cascading_Style_Sheets"
-                },
-                {
-                    "title": "SASS",
-                    "img": "./img/sass.webp",
-                    "level": 1,
-                    "link": "https://sass-lang.com/"
-                }
+
             ]
         },
         {
@@ -539,6 +450,99 @@
                 }
             ]
         },
+        {
+            "name": "Frontend / UI",
+            "size": "12",
+            "items": [
+                {
+                    "title": "HTML 5",
+                    "img": "./img/html5.webp",
+                    "level": 2,
+                    "link": "https://en.wikipedia.org/wiki/HTML"
+                },
+                {
+                    "title": "JavaScript",
+                    "img": "./img/javascript.webp",
+                    "level": 2,
+                    "link": "https://en.wikipedia.org/wiki/JavaScript"
+                },
+                {
+                    "title": "jQuery",
+                    "img": "./img/jquery.webp",
+                    "level": 2,
+                    "link": "https://jquery.com/"
+                },
+                {
+                    "title": "SASS",
+                    "img": "./img/sass.webp",
+                    "level": 2,
+                    "link": "https://sass-lang.com/"
+                },
+                {
+                    "title": "CSS",
+                    "img": "./img/css3.webp",
+                    "level": 2,
+                    "link": "https://en.wikipedia.org/wiki/Cascading_Style_Sheets"
+                },
+                {
+                    "title": "Blazor Pages",
+                    "img": "./img/blazor.webp",
+                    "level": 1,
+                    "link": "https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor"
+                }
+                
+            ]
+        },
+        {
+            "name": "Database",
+            "size": "6",
+            "items": [
+                {
+                    "title": "SQL Server",
+                    "img": "./img/sqlserver.webp",
+                    "level": 2,
+                    "link": "https://en.wikipedia.org/wiki/Microsoft_SQL_Server"
+                },
+                {
+                    "title": "Sqlite",
+                    "img": "./img/sqlite.webp",
+                    "level": 1,
+                    "link": "https://www.sqlite.org/index.html"
+                },
+                {
+                    "title": "LiteDB",
+                    "img": "./img/litedb.webp",
+                    "level": 1,
+                    "link": "https://www.litedb.org/"
+                }
+            ]
+        },
+        {
+            "name": "UI Frameworks",
+            "size": "6",
+            "items": [
+                {
+                    "title": "ASP.Net",
+                    "img": "./img/aspnet.webp",
+                    "level": 2,
+                    "link": "https://dotnet.microsoft.com/apps/aspnet"
+                },
+                {
+                    "title": "Angular (js)",
+                    "img": "./img/Angular.webp",
+                    "level": 2,
+                    "link": "https://angular.io/"
+                },
+                {
+                    "title": "Vue",
+                    "img": "./img/vue.webp",
+                    "level": 1,
+                    "link": "https://vuejs.org/"
+                }
+            ]
+        },
+
+
         {
             "name": "Version Control",
             "size": "4",

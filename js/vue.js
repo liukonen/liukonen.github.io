@@ -107,6 +107,7 @@ Vue.component("Knowledge", {
     },
   },
   template: `
+
    <div class="col2 mr-5 text-center lateloadfadeIn">
     <a v-bind:href="item.link" target="blank" v-bind:alt="item.title">
        <img v-bind:data-src="item.img" v-bind:title="item.title" width="100px" height="100px" style="display:none;" />
@@ -137,16 +138,42 @@ Vue.component("Thought", {
     getClass: function (size) {
       return "card shadow col-md-" + size + " mt-5";
     },
+    GetPill: function (item) {
+      switch (item.level) {
+        case 3:
+        case 2:
+          return "badge badge-pill badge-primary bg-purple";//badge badge-primary badge-pill
+        default:
+          return "badge badge-pill badge-info";
+      }
+    },
+    GetName: function (item) {
+      switch (item.level) {
+        case 3:
+        case 2:
+          return "Pro";
+        default:
+          return "Hobby";
+      }
+    }
   },
   template: `  
-  <div :class="getClass(item.size)">
-   <div class="card-header bg-transparent"><h2 class="h4">{{item.name}}</h2></div>
-   <div class="card-body">
-    <div class="row justify-content-md-center">
-     <Knowledge v-for="item2 in item.items" v-bind:item="item2"></Knowledge>
-    </div>   
-   </div>
-  </div>`,
+  <div class="col-md-4">
+  <ul class="list-group shadow ml-2 mt-4">
+  <li class="list-group-item list-group-item-dark">{{item.name}}</li>
+  <li v-for="item2 in item.items" class="list-group-item d-flex justify-content-between align-items-center">
+
+  <div class="image-parent">
+  <a v-bind:href="item2.link" target="blank" v-bind:alt="item2.title">
+  <img v-lazy="item2.img" width="32px" height="32px">
+  </a>
+  </div>
+  {{item2.title}}
+  <span v-bind:class="GetPill(item2)">{{GetName(item2)}}</span>
+  </li>
+  </ul>
+  </div>
+`,
 });
 
 Vue.component("Project", {
