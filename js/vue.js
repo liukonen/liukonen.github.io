@@ -84,39 +84,6 @@ Vue.component("alist", {
   `,
 });
 
-Vue.component("Knowledge", {
-  props: ["item"],
-  methods: {
-    GetClass: function (item) {
-      switch (item.level) {
-        case 3:
-        case 2:
-          return "badge badge-pill badge-primary bg-purple";
-        default:
-          return "badge badge-pill badge-info";
-      }
-    },
-    GetName: function (item) {
-      switch (item.level) {
-        case 3:
-        case 2:
-          return "Professional";
-        default:
-          return "Hobbyist";
-      }
-    },
-  },
-  template: `
-
-   <div class="col2 mr-5 text-center lateloadfadeIn">
-     <img v-bind:data-src="item.img" v-bind:title="item.title" v-bind:alt="item.title" width="100px" height="100px" style="display:none;" />
-    <p>{{item.title}}</p>
-    <p>
-       <span v-bind:class="GetClass(item)">{{GetName(item)}}</span>
-    </p>
-  </div>`,
-});
-
 Vue.component("Work", {
   props: ["job"],
   template: `  
@@ -140,7 +107,7 @@ Vue.component("Thought", {
       switch (item.level) {
         case 3:
         case 2:
-          return "badge badge-pill badge-primary bg-purple";//badge badge-primary badge-pill
+          return "badge badge-pill badge-primary bg-purple";
         default:
           return "badge badge-pill badge-info";
       }
@@ -160,11 +127,8 @@ Vue.component("Thought", {
   <ul class="list-group shadow ml-2 mt-4">
   <li class="list-group-item list-group-item-dark">{{item.name}}</li>
   <li v-for="item2 in item.items" class="list-group-item d-flex justify-content-between align-items-center">
-
   <div class="image-parent">
-  
   <img v-lazy="item2.img" v-bind:alt="item2.title" width="32px" height="32px">
-  
   </div>
   {{item2.title}}
   <span v-bind:class="GetPill(item2)">{{GetName(item2)}}</span>
@@ -216,11 +180,18 @@ Vue.component("Project", {
     </div>
     <div class="card-body">
      <h5 class="card-title">{{project.Title}}</h5>
-     <p class="card-text">{{project.SubTitle}}<button class="btn btn-link text-dark" onclick="ExpandText(this)">[+]</button></p>
+     <p class="card-text">
+        {{project.SubTitle}}
+        <button aria-label="expand" class="btn btn-link text-dark" onclick="ExpandText(this)">
+          <i class="bi bi-question-square-fill"></i>
+        </button>
+     </p>
      <div class="content">{{project.Description}}</div>
-     <p><a v-for="button in project.buttons" v-bind:class="DetermButtonColor(button.type)" v-bind:href="button.url" target="_blank">{{button.type}}</a></p>
-     <p>Learnings</p>
-     <div>
+     <p><a v-for="button in project.buttons" v-bind:class="DetermButtonColor(button.type)" v-bind:href="button.url" target="_blank" rel="noreferrer">{{button.type}}</a></p>
+     <p>Learnings 
+     <button aria-label="expand" class="btn btn-link text-dark" onclick="expandlearning(this)"><i class="bi bi-arrow-right-circle"></i></button>
+     </p>
+     <div class="content" style="display:none">
       <span v-for="tag in project.tags" class="badge badge-light font-weight-light">{{tag}}</span></p>
      </div>
     </div>
@@ -421,17 +392,18 @@ document
 
 function ExpandText(me) {
   var content = me.parentElement.nextElementSibling;
-  ExpandContent(me, content);
+  ExpandContent(me, content, '<i class="bi bi-question-square-fill"></i>', "<i class='bi bi-arrows-angle-contract'></i>");
 }
+function expandlearning(item){expand(item, '<i class="bi bi-arrow-right-circle"></i>', '<i class="bi bi-arrow-left-circle"></i>');}
 
-function ExpandContent(item, content) {
-  if (content.style.display === "block") {
-    item.innerHTML = "[+]";
-    content.style.display = "none";
-  } else {
-    item.innerHTML = "[-]";
-    content.style.display = "block";
-  }
+function expand(item, displayClosed, displayOpen) { ExpandContent(item, item.parentElement.nextElementSibling,  displayClosed, displayOpen);}
+
+function ExpandContent(item, content, displayClosed, displayOpen)
+{
+  console.log(item, content);
+let vis = content.style.display == "block";
+item.innerHTML = vis ? displayClosed : displayOpen;
+content.style.display  = vis ? "none" : "block";
 }
 
 /*region transparent Navbar */
@@ -454,7 +426,6 @@ navObserver.observe(document.querySelector(".bgimg-1"));
 
 $("body").scrollspy({ target: ".navbar" });
 $(".navbar-toggler").click(function () {
-  console.log("hit");
   header.classList.add("bg-dark");
   header.classList.add("transition");
 });
