@@ -85,6 +85,48 @@ Vue.component("alist", {
 });
 
 Vue.component("Work", {
+  props: {
+    work: {type:Array}
+  },
+  data () {
+    return {
+      summary:''
+    }
+  },
+  methods:{
+say: function(value){alert(value);},
+    setItem : function(value)
+    {
+      this.summary = value;
+    },
+    dtbind: function(value){return '#' + value.replaceAll(" ", "");},
+    dtId: function(value){return value.replaceAll(" ", "");}
+  },
+
+  template: `
+<div id="accordion" class="col-12">
+<div class="card" v-for="job in work">
+
+<div class="card-header">
+    <button class="btn btn-link" data-toggle="collapse" :data-target="dtbind(job.timeworked)"
+     aria-expanded="true" aria-controls="collapseOne" :aria-label="job.name">
+     <img v-lazy="job.img" class="rounded shadow mx-2" :alt-text="job.name" width="32px" height="32px" />
+      <b>{{job.name}}</b> {{job.timeworked}}
+    </button>
+</div>
+
+<div :id="dtId(job.timeworked)" class="collapse" data-parent="#accordion">
+  <div class="card-body">
+    {{job.summary}}
+  </div>
+</div>
+</div>
+</div>
+
+`,
+});
+
+Vue.component("School", {
   props: ["job"],
   template: `  
     <div class="row justify-content-md-center">
@@ -176,7 +218,7 @@ Vue.component("Project", {
   <div class="col mb-4 hoverItem d-flex align-items-stretch">
    <div class="card shadow">
     <div>
-     <img v-lazy="GetImage(project.image)" v-bind:alt="project.Title" style="height:250px;" class="card-img-top himg" v-bind:alt="project.Title"/>
+     <img v-lazy="GetImage(project.image)" style="height:250px;" class="card-img-top himg" v-bind:alt="project.Title"/>
     </div>
     <div class="card-body">
      <h5 class="card-title">{{project.Title}}</h5>

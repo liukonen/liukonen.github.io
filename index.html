@@ -114,7 +114,7 @@
         <div class="container anchor" id="career2">
             <h3 class="text-center">Career So far</h3>
             <div id="career2">
-                <work v-for="job in this.Work" :job="job"></work>
+                <work  :work="this.Work"></work>
                 <br />
                 <div>
                     <h3 class="text-center mt-5">Current Overall Highlights</h3>
@@ -124,7 +124,7 @@
         </div>
         <div class="container anchor" id="edu">
             <h3 class="text-center mt-5">Education</h3>
-            <work v-for="edu in this.school" :job="edu"></work>
+            <School v-for="edu in this.school" :job="edu"></School>
         </div>
     </div>
     <div class="bgimg-4 lazy"></div>
