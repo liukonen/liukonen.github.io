@@ -108,7 +108,7 @@ say: function(value){alert(value);},
 <div class="card" v-for="job in work">
 
 <div class="card-header">
-    <button class="btn btn-link" data-toggle="collapse" :data-target="dtbind(job.timeworked)"
+    <button class="btn btn-link" style="color:black" data-toggle="collapse" :data-target="dtbind(job.timeworked)"
      aria-expanded="true" aria-controls="collapseOne" :aria-label="job.name">
      <img v-lazy="job.img" class="rounded shadow mx-2" :alt-text="job.name" width="32px" height="32px" />
       <b>{{job.name}}</b> {{job.timeworked}}
