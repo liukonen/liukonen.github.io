@@ -396,7 +396,7 @@
                 {
                     "title": "Node.JS",
                     "img": "./img/32/node.webp",
-                    "level": 1,
+                    "level": 2,
                     "link": "https://nodejs.org/en/about/"
                 },
                 {
@@ -609,9 +609,10 @@
     ],
     "Work": [
         {
-            "name": "Soon to be listed",
+            "name": "Northwestner Mutual",
             "timeworked":"April 2021 - Present",
-            "img": "./img/200/200px-TBD-W.webp.png",
+            "title": "Software Engineer",
+            "img": "./img/200/NM.webp.png",
             "summary": ""
         },
         {
