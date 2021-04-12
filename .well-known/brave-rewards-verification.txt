@@ -1,4 +1,0 @@
-This is a Brave Rewards publisher verification file.
-
-Domain: liukonen.dev
-Token: 5e6a3fa3bcf894201604a62851927f942d6cdbce7f200520b3440cf6a7a6da90
