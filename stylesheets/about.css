@@ -7,7 +7,8 @@ body, html {
 }
 
 .invert {
-  filter: invert(100%);
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
 }
 
 .user_img {
@@ -143,6 +144,7 @@ h3 {
 }
 
 .progress-bar {
+  -webkit-transition: none !important;
   transition: none !important;
 }
 
@@ -170,8 +172,12 @@ h3 {
 }
 
 .card-horizontal {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex: 1 1 auto;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
 }
 
 .ImgRoundCorner {
@@ -202,6 +208,9 @@ h3 {
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
 }
 

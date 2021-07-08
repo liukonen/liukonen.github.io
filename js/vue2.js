@@ -74,12 +74,12 @@ Vue.component("alist", {
   },
   methods: {
     GetStyle(number) {
-      return number == 1 ? "list-group text-dark shadow" : "list-group";
+      return number == 1 ? "list-group text-dark shadow clearGlass" : "list-group clearGlass";
     },
   },
   template: `
   <ul :class="GetStyle(styles)">
-   <li v-for="item in list" class="list-group-item list-group-item-secondary">{{item.a}}</li>
+   <li v-for="item in list" class="list-group-item pane">{{item.a}}</li>
   </ul>
   `,
 });
@@ -104,10 +104,10 @@ say: function(value){alert(value);},
   },
 
   template: `
-<div id="accordion" class="col-12">
-<div class="card" v-for="job in work">
+<div id="accordion" class="col-12 ClearGlass">
+<div class="card whiteGlass" v-for="job in work">
 
-<div class="card-header">
+<div class="card-header ">
     <button class="btn btn-link" style="color:black" data-toggle="collapse" :data-target="dtbind(job.timeworked)"
      aria-expanded="true" aria-controls="collapseOne" :aria-label="job.name">
      <img v-lazy="job.img" class="rounded shadow mx-2" :alt-text="job.name" width="32px" height="32px" />
@@ -129,7 +129,7 @@ say: function(value){alert(value);},
 Vue.component("School", {
   props: ["job"],
   template: `  
-    <div class="row justify-content-md-center">
+    <div class="row justify-content-md-center ">
      <div class="col-md-2 mt-3"><img class="ImgRoundCorner border-right shadow" v-lazy="job.img" v-bind:alt="job.name"></img></div>  
      <div class="col-md-6 mt-3 offset-md-1">
       <h4 class="card-title">{{job.name}}</h4>
@@ -149,9 +149,9 @@ Vue.component("Thought", {
       switch (item.level) {
         case 3:
         case 2:
-          return "badge badge-pill badge-primary bg-purple";
+          return "badge badge-pill bg-primary bg-purple";
         default:
-          return "badge badge-pill badge-info";
+          return "badge badge-pill bg-success";
       }
     },
     GetName: function (item) {
@@ -166,9 +166,9 @@ Vue.component("Thought", {
   },
   template: `  
   <div class="col-md-4">
-  <ul class="list-group shadow ml-2 mt-4">
+  <ul class="list-group shadow ml-2 mt-4 whiteGlass">
   <li class="list-group-item list-group-item-dark">{{item.name}}</li>
-  <li v-for="item2 in item.items" class="list-group-item d-flex justify-content-between align-items-center">
+  <li v-for="item2 in item.items" class="list-group-item pane d-flex justify-content-between align-items-center">
   <div class="image-parent">
   <img v-lazy="item2.img" v-bind:alt="item2.title" width="32px" height="32px">
   </div>
@@ -216,9 +216,9 @@ Vue.component("Project", {
   },
   template: `
   <div class="col mb-4 hoverItem d-flex align-items-stretch">
-   <div class="card shadow">
+   <div class="card shadow whiteGlass">
     <div>
-     <img v-lazy="GetImage(project.image)" style="height:250px;" class="card-img-top himg" v-bind:alt="project.Title"/>
+     <img v-lazy="GetImage(project.image)" class="card-img-top himg rImage250" v-bind:alt="project.Title"/>
     </div>
     <div class="card-body">
      <h5 class="card-title">{{project.Title}}</h5>
@@ -252,7 +252,13 @@ career = new Vue({
     Work: pageObject.Work,
     WepPSupport: SupportsWebp,
     highlights: pageObject.highlights,
-    school: pageObject.School,
+  },
+});
+
+career = new Vue({
+  el: "#edu",
+  data: {
+    school: pageObject.School
   },
 });
 
@@ -449,25 +455,47 @@ content.style.display  = vis ? "none" : "block";
 }
 
 /*region transparent Navbar */
-const header = document.querySelector("nav");
-const navObserver = new IntersectionObserver(
-  (entries, navObserver) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) {
-        header.classList.add("bg-dark");
-        header.classList.add("transition");
-      } else {
-        header.classList.remove("bg-dark");
-        header.classList.remove("transition");
-      }
-    });
-  },
-  { rootMargin: "-50px 0px 0px 0px" }
-);
-navObserver.observe(document.querySelector(".bgimg-1"));
+// const header = document.querySelector("nav");
+// const navObserver = new IntersectionObserver(
+//   (entries, navObserver) => {
+//     entries.forEach((entry) => {
+//       if (!entry.isIntersecting) {
+//         header.classList.add("bg-dark");
+//         header.classList.add("transition");
+//       } else {
+//         header.classList.remove("bg-dark");
+//         header.classList.remove("transition");
+//       }
+//     });
+//   },
+//   { rootMargin: "-50px 0px 0px 0px" }
+// );
+//navObserver.observe(document.querySelector(".bgimg-1"));
 
-$("body").scrollspy({ target: ".navbar" });
+// $("body").scrollspy({ target: ".navbar" });
 $(".navbar-toggler").click(function () {
   header.classList.add("bg-dark");
   header.classList.add("transition");
 });
+
+// var wts = document.createElement('script');
+// wts.async = true;
+// wts.src = 'https://wts.one/log7.js';
+// document.head.appendChild(wts);
+// wts.onload = function () {wtslog7(1983157, 4);};
+
+var video = document.getElementById("myVideo");
+// Get the button
+var btn = document.getElementById("playPauseIcon");
+
+// Pause and play the video, and change the button text
+function playPause() {
+  if (video.paused) {
+    video.play();
+    btn.className = "bi bi-pause-fill";
+  } else {
+    video.pause();
+    btn.className= "bi bi-play-fill";
+  }
+}
+

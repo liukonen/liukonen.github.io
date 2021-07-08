@@ -21,7 +21,7 @@
             "value": "#about"
         }
     ],
-    "welcome": "My name is Luke Liukonen, and I am a Senior Software Engineer, educator, and tech enthusiast based out of the Metro Milwaukee Wisconsin area. Let's be honest though, that's only a small sliver of who I am. I've been in development for over 14 years professionally, spending most of my time in the travel space. My main focus is backend development, however, I have transitioned to more of a full stack developer. I have  been fascinated with the direction technology could take us, and was a huge fan of how we would interact with them in the future. To this day, I like to consider myself a technologist, reading up on current trends, and what progress we are making in the field.",
+    "welcome": "My name is Luke Liukonen, and I am a Software Engineer, educator, and tech enthusiast based out of the Metro Milwaukee Wisconsin area. Let's be honest though, that's only a small sliver of who I am. I've been in development for over 15 years professionally. My focus has been mainly on backend development, however, I have worked as a full-stack developer. I have been fascinated with the direction technology could take us, and was a huge fan of how we would interact with it in the future. To this day, I like to consider myself a technologist, reading up on current trends, and what progress we are making in the field.",
     "projects": [
         {
             "Title": "Html Text Editor",
@@ -401,7 +401,7 @@
                 },
                 {
                     "title": "Java",
-                    "img": "./img/32/java.webp",
+                    "img": "./img/32/Java.webp",
                     "level": 2,
                     "link": "https://java.com"
                 }
