@@ -478,11 +478,11 @@ $(".navbar-toggler").click(function () {
   header.classList.add("transition");
 });
 
-// var wts = document.createElement('script');
-// wts.async = true;
-// wts.src = 'https://wts.one/log7.js';
-// document.head.appendChild(wts);
-// wts.onload = function () {wtslog7(1983157, 4);};
+ var wts = document.createElement('script');
+ wts.async = true;
+ wts.src = 'https://wts.one/log7.js';
+ document.head.appendChild(wts);
+ wts.onload = function () {wtslog7(1983157, 4);};
 
 var video = document.getElementById("myVideo");
 // Get the button
