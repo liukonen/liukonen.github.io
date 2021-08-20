@@ -104,25 +104,20 @@ say: function(value){alert(value);},
   },
 
   template: `
-<div id="accordion" class="col-12 ClearGlass">
+<div id="accordion" class="col-12 ClearGlass" id="workitemsList">
 <div class="card whiteGlass" v-for="job in work">
-
-<div class="card-header ">
-    <button class="btn btn-link" style="color:black" data-toggle="collapse" :data-target="dtbind(job.timeworked)"
-     aria-expanded="true" aria-controls="collapseOne" :aria-label="job.name">
-     <img v-lazy="job.img" class="rounded shadow mx-2" :alt-text="job.name" width="32px" height="32px" />
+  <div class="accordion-item card-header">
+      <button class="accordion-button collapsed btn btn-link" style="color:black" type="button" data-bs-toggle="collapse"
+       :data-bs-target="dtbind(job.timeworked)" aria-expanded="false" :aria-label="job.name" :aria-controls="dtbind(job.timeworked)">
+      <img v-lazy="job.img" class="rounded shadow mx-2" :alt-text="job.name" width="32px" height="32px" />
       <b>{{job.name}}</b> {{job.timeworked}}
-    </button>
-</div>
-
-<div :id="dtId(job.timeworked)" class="collapse" data-parent="#accordion">
-  <div class="card-body">
-    {{job.summary}}
+      </button>
+    <div :id="dtId(job.timeworked)" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#workitemsList">
+      <div class="accordion-body card-body">
+      <p>{{job.summary}}</p> 
+      </div>
+    </div>
   </div>
-</div>
-</div>
-</div>
-
 `,
 });
 

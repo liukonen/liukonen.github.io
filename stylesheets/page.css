@@ -87,6 +87,12 @@ h3 {
   transition: none !important;
 }
 
+.ImgRoundCorner {
+  border-radius: 25px;
+  width: 178px;
+  height: 178px;
+}
+
 @media (min-width: 768px) {
   .bd-placeholder-img-lg {
     font-size: 3.5rem;
