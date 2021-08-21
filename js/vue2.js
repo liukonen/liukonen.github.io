@@ -144,9 +144,9 @@ Vue.component("Thought", {
       switch (item.level) {
         case 3:
         case 2:
-          return "badge badge-pill bg-primary bg-purple";
+          return "badge badge-pill bg-primary bg-purple text-white";
         default:
-          return "badge badge-pill bg-success";
+          return "badge badge-pill bg-success text-white";
       }
     },
     GetName: function (item) {
