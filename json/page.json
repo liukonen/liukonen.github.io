@@ -340,34 +340,19 @@
     ],
     "highlights": [
         {
-            "a": "2-time company representative for MMAC 'Be the Spark Tour'"
-        },
+            "a": "Multi-year, multi-company hackathon award winner. Using technologies such as AI Modeling, Cognitive Services, and Chatbots."
+        }
         {
-            "a": "Participant at  Microsoft chat bot Hack-a-thon, 2017"
+            "a": "2-time company representative for MMAC 'Be the Spark Tour'"
         },
         {
             "a": "On multiple committees for outreach, wellness, and event planning"
         },
         {
-            "a": "Developer lead on team for nearly 6 years"
-        },
-        {
-            "a": "Adjunct Instructor for 2 semesters at ITT Technical Institute"
-        },
-        {
             "a": "Owasp top 10 trained. Maintained PCI complience"
         },
         {
-            "a": "Hackathon: Using AI and AWS to flag fraud transactions."
-        },
-        {
-            "a": "Hackathon: keyword and sentiment analysis tool for consumer reviews."
-        },
-        {
-            "a": "Hackathon: Automation of rates and pricing based on competitor and historical pricing."
-        },
-        {
-            "a": "Hackathon: Natural language platform for conducting transactions."
+            "a": "Lead Developer team for nearly 6 years"
         }
     ],
     "Experence": [
@@ -548,7 +533,7 @@
                     "link": "https://en.wikipedia.org/wiki/GitHub"
                 },
                 {
-                    "title": "Github",
+                    "title": "GitLab / Github",
                     "img": "./img/32/Octocat.webp",
                     "level": 2,
                     "link": "https://en.wikipedia.org/wiki/GitHub"
