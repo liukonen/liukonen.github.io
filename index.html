@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,30 +8,42 @@
   <meta name="author" content="Luke Liukonen">
   <meta name="msapplication-config" content="/img/favicons/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
-  <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; script-src 'self' wts.one app.wts2.one cdn.jsdelivr.net 'unsafe-inline' 'unsafe-eval'; style-src 'self' cdn.jsdelivr.net 'unsafe-inline'; img-src 'self' wts.one data:; font-src 'self' cdn.jsdelivr.net; connect-src 'self' dev.to; media-src 'self'; object-src 'none'; child-src; frame-src; form-action;  base-uri; manifest-src 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self';
+    script-src 'self' wts.one app.wts2.one cdn.jsdelivr.net cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';
+    style-src 'self' cdn.jsdelivr.net cdnjs.cloudflare.com 'unsafe-inline';
+    img-src 'self' wts.one data:;
+    font-src 'self' cdn.jsdelivr.net cdnjs.cloudflare.com;
+    connect-src 'self' dev.to;
+    media-src 'self';
+    object-src 'none';
+    child-src;
+    frame-src; 
+    form-action;  
+    base-uri; 
+    manifest-src 'self';">
   <title>Luke Liukonen - Dev -</title>
-
   <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png" sizes="180x180">
   <link rel="icon" href="/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
   <link rel="icon" href="/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
   <link rel="manifest" href="/img/favicons/manifest.json">
   <link rel="mask-icon" href="/img/favicons/safari-pinned-tab.svg" color="#ffffff">
   <link rel="icon" href="/img/favicons/favicon.ico">
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-  integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css"
+    integrity="sha512-GQGU0fMMi238uA+a/bdWJfpUGKUkBdgfFdgBm72SUQ6BeyWjoY/ton0tEjH+OSH9iP4Dfh+7HM0I9f5eR0L/4w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css"
+    integrity="sha512-1fPmaHba3v4A7PaUsComSM4TBsrrRGs+/fv0vrzafQ+Rw+siILTiJa0NtFfvGeyY5E182SDTaF5PqP+XOHgJag=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="stylesheets/page.min.css">
 </head>
 
 <body>
-  <!-- The video -->
-   <video autoplay muted loop id="myVideo">
-        <source src="./video/typing.mp4" type="video/mp4">
-    </video> 
+  <video muted loop id="myVideo">
+    <source src="./video/typing.mp4" type="video/mp4">
+  </video>
 
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" data-toggle="collapse" data-target="#toggle">
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark RoundedBottom" data-toggle="collapse" data-target="#toggle">
     <a class="navbar-brand" href="index.html" aria-label="welcome"><img class="invert"
         src="/img/favicons/favicon-32x32.png" alt="logo" /></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#toggle" aria-controls=""
@@ -48,7 +59,6 @@
     </div>
   </nav>
 
-
   <main role="main" class="container">
     <div class="container glass">
       <div class="row">
@@ -60,10 +70,10 @@
           <div class="d-none d-sm-block">
             <p>Software Engineer / Former Instructor / Tech enthusiast</p>
           </div>
-          <button class="btn btn-dark" id="myBtn" onclick="playPause()">background <i  id="playPauseIcon" class="bi bi-pause-fill"></i></button>
+          <button class="btn btn-dark" id="myBtn" onclick="playPause()">background <i id="playPauseIcon"
+              class="bi bi-play-fill"></i></button>
         </div>
         <div class="col-md-3">
-
           <div class="btn-group-vertical">
             <a target="_blank" rel="noreferrer" class="btn btn-secondary" href="https://github.com/liukonen"
               role="button" aria-label="Github">
@@ -88,11 +98,9 @@
               <b class="d-none d-sm-inline">
                 DEV Community</b>
             </a>
-            
           </div>
         </div>
       </div>
-
     </div>
 
     <div id="Blogs" class="container glass">
@@ -101,7 +109,6 @@
         <div v-for="article in GetItems()">
           <div class="col mb-4 hoverItem">
             <div class="card shadow whiteGlass">
-
               <div><img v-lazy="getImg(article.index)" class="card-img-top himg rImage250" v-bind:alt="article.title" />
               </div>
               <div class="card-body">
@@ -116,7 +123,8 @@
       </div>
       <div class="row">
         <h5>Want more, check out my feed on DEV Community,
-          <a href="https://dev.to/liukonen" rel="noreferrer" target="_blank" alt="dev to">Dev.To/Liukonen</a>
+          <a class="btn btn-light" href="https://dev.to/liukonen" rel="noreferrer" target="_blank" alt="dev to"><i
+              class="bi bi-file-code-fill"></i>Dev.To/Liukonen</a>
         </h5>
       </div>
     </div>
@@ -135,10 +143,10 @@
       <h3 class="text-center h3 tshadow mt-5">Career So far</h3>
       <div id="career2" class="mt-5">
         <work :work="this.Work"></work>
-
         <br />
         <div>
           <h3 class="text-center mt-5 tshadow">Current Overall Highlights</h3>
+
           <alist :list="this.highlights" :styles="1"></alist>
         </div>
       </div>
@@ -170,7 +178,6 @@
 
       <div class="container glass">
         <div class="row">
-
           <div class="col-md-6">
             <h1 class="h3 tshadow">Interests</h1>
             <alist :list="this.Hobbies"></alist>
@@ -188,8 +195,9 @@
         <i class="bi bi-github"></i>
         GitHub
       </a>
-      <a target="_blank" class="btn btn-primary bg-lnkdin" href="https://www.linkedin.com/in/lukeliukonen/" role="button"
-        rel="noreferrer" aria-label="LinkedIn" data-toggle="tooltip" data-placement="top" title="LinkedIn">
+      <a target="_blank" class="btn btn-primary bg-lnkdin" href="https://www.linkedin.com/in/lukeliukonen/"
+        role="button" rel="noreferrer" aria-label="LinkedIn" data-toggle="tooltip" data-placement="top"
+        title="LinkedIn">
         <i class="bi bi-linkedin"></i>
         LinkedIn</a>
       <a class="btn btn-danger" href="mailto:liukonen@gmail.com?subject=GitHub_Home_Page" role="button" rel="noreferrer"
@@ -201,12 +209,11 @@
         aria-label="dev To">
         <i class="bi bi-file-code-fill"></i>
         DEV Community</a>
-
       <br />
     </div>
     <br />
     <br />
-    <div class="glass">&copy; 2021 Luke Liukonen
+    <div class="glass">&copy; 2022 Luke Liukonen
       <i>* this page, its contents, are opinions of my own, and represent no one else</i>
       <p>Please see <a href="https://github.com/liukonen/liukonen.github.io/blob/master/terms.md"
           alt="terms of service link">Terms of service</a> for not just this page, but all apps
@@ -214,28 +221,16 @@
         within the domain of my page</p>
     </div>
   </main>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>-->
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"  
-  integrity="sha256-kXTEJcRFN330VirZFl6gj9+UM6gIKW195fYZeR3xDhc=" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"
+    integrity="sha256-kXTEJcRFN330VirZFl6gj9+UM6gIKW195fYZeR3xDhc=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue-lazyload@1.3.3/vue-lazyload.js"
     integrity="sha256-j284gtJGvdW5xUD9p/9WIqbqwRRxqVipWRLSb2ecpQ4=" crossorigin="anonymous"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-    integrity="sha256-XDbijJp72GS2c+Ij234ZNJIyJ1Nv+9+HH1i28JuayMk=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"
+    integrity="sha512-OvBgP9A2JBgiRad/mM36mkzXSXaJE9BEIENnVEmeZdITvwT09xnxLtT4twkCa8m/loMbPHsvPl0T8lRGVBwjlQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="js/vue2.js"></script>
-  <!--Begin Web-Stat code v 7.0-->
-  <span id="wts1983157"></span>
-  <!-- 
-    <noscript>
-        <a href="https://www.web-stat.com"><img src="https://wts.one/7/4/1983157.png" alt="Web-Stat web statistics"></a>
-    </noscript> -->
-  <!-- End Web-Stat code v 7.0 -->
-  <script>
-    // Get the video
-
-  </script>
 </body>
-
 </html>

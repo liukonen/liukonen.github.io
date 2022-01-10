@@ -102,4 +102,8 @@ h3 {
 .content {
   display: none;
 }
+
+.RoundedBottom {
+  border-radius: 0 0 15px 15px;
+}
 /*# sourceMappingURL=page.css.map */

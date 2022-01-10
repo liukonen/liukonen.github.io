@@ -74,7 +74,7 @@ Vue.component("alist", {
   },
   methods: {
     GetStyle(number) {
-      return number == 1 ? "list-group text-dark shadow clearGlass" : "list-group clearGlass";
+      return number == 1 ? "list-group text-dark shadow whiteGlass" : "list-group whiteGlass";
     },
   },
   template: `
@@ -86,21 +86,20 @@ Vue.component("alist", {
 
 Vue.component("Work", {
   props: {
-    work: {type:Array}
+    work: { type: Array }
   },
-  data () {
+  data() {
     return {
-      summary:''
+      summary: ''
     }
   },
-  methods:{
-say: function(value){alert(value);},
-    setItem : function(value)
-    {
+  methods: {
+    say: function (value) { alert(value); },
+    setItem: function (value) {
       this.summary = value;
     },
-    dtbind: function(value){return '#' + value.replaceAll(" ", "");},
-    dtId: function(value){return value.replaceAll(" ", "");}
+    dtbind: function (value) { return '#' + value.replaceAll(" ", ""); },
+    dtId: function (value) { return value.replaceAll(" ", ""); }
   },
 
   template: `
@@ -375,7 +374,7 @@ document.querySelectorAll(".lateloadfadeIn").forEach((entry) => {
   lateLoadFadeInObserver.observe(entry);
 });
 
-/*region Lazy Load */
+
 function preloadImg(img) {
   let src = img.getAttribute("data-src");
   if (src) {
@@ -416,7 +415,7 @@ const bgObserver = new IntersectionObserver(
 );
 document.querySelectorAll(".lazy").forEach((item) => bgObserver.observe(item));
 
-/*region fader */
+
 const faderObsever = new IntersectionObserver(
   (entries, faderObsever) => {
     entries.forEach((entry) => {
@@ -431,66 +430,38 @@ const faderObsever = new IntersectionObserver(
 document
   .querySelectorAll(".fade-in")
   .forEach((item) => faderObsever.observe(item));
-/*end region fader */
+
 
 function ExpandText(me) {
   var content = me.parentElement.nextElementSibling;
   ExpandContent(me, content, '<i class="bi bi-question-square-fill"></i>', "<i class='bi bi-arrows-angle-contract'></i>");
 }
-function expandlearning(item){expand(item, '<i class="bi bi-arrow-right-circle"></i>', '<i class="bi bi-arrow-left-circle"></i>');}
+function expandlearning(item) { expand(item, '<i class="bi bi-arrow-right-circle"></i>', '<i class="bi bi-arrow-left-circle"></i>'); }
 
-function expand(item, displayClosed, displayOpen) { ExpandContent(item, item.parentElement.nextElementSibling,  displayClosed, displayOpen);}
+function expand(item, displayClosed, displayOpen) { ExpandContent(item, item.parentElement.nextElementSibling, displayClosed, displayOpen); }
 
-function ExpandContent(item, content, displayClosed, displayOpen)
-{
+function ExpandContent(item, content, displayClosed, displayOpen) {
   console.log(item, content);
-let vis = content.style.display == "block";
-item.innerHTML = vis ? displayClosed : displayOpen;
-content.style.display  = vis ? "none" : "block";
+  let vis = content.style.display == "block";
+  item.innerHTML = vis ? displayClosed : displayOpen;
+  content.style.display = vis ? "none" : "block";
 }
 
-/*region transparent Navbar */
-// const header = document.querySelector("nav");
-// const navObserver = new IntersectionObserver(
-//   (entries, navObserver) => {
-//     entries.forEach((entry) => {
-//       if (!entry.isIntersecting) {
-//         header.classList.add("bg-dark");
-//         header.classList.add("transition");
-//       } else {
-//         header.classList.remove("bg-dark");
-//         header.classList.remove("transition");
-//       }
-//     });
-//   },
-//   { rootMargin: "-50px 0px 0px 0px" }
-// );
-//navObserver.observe(document.querySelector(".bgimg-1"));
-
-// $("body").scrollspy({ target: ".navbar" });
 $(".navbar-toggler").click(function () {
   header.classList.add("bg-dark");
   header.classList.add("transition");
 });
 
- var wts = document.createElement('script');
- wts.async = true;
- wts.src = 'https://wts.one/log7.js';
- document.head.appendChild(wts);
- wts.onload = function () {wtslog7(1983157, 4);};
 
 var video = document.getElementById("myVideo");
-// Get the button
 var btn = document.getElementById("playPauseIcon");
 
-// Pause and play the video, and change the button text
 function playPause() {
   if (video.paused) {
     video.play();
     btn.className = "bi bi-pause-fill";
   } else {
     video.pause();
-    btn.className= "bi bi-play-fill";
+    btn.className = "bi bi-play-fill";
   }
 }
-
