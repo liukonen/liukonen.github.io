@@ -1,6 +1,5 @@
 {
-    "menu": [
-        {
+    "menu": [{
             "name": "Projects",
             "value": "#app"
         },
@@ -22,14 +21,12 @@
         }
     ],
     "welcome": "My name is Luke Liukonen, and I am a Software Engineer, educator, and tech enthusiast based out of the Metro Milwaukee Wisconsin area. Let's be honest though, that's only a small sliver of who I am. I've been in development for over 15 years professionally. My focus has been mainly on backend development, however, I have worked as a full-stack developer. I have been fascinated with the direction technology could take us, and was a huge fan of how we would interact with it in the future. To this day, I like to consider myself a technologist, reading up on current trends, and what progress we are making in the field.",
-    "projects": [
-        {
+    "projects": [{
             "Title": "Html Text Editor",
             "SubTitle": "manipulate and batch text files in your browser",
             "image": "img/card/htmledit.webp",
             "Description": "a more advanced text editor developed from the need to have mini applications do custom work. This came from multiple smaller programs I'd have to quickly write up to change string data that was given to me. It evolved from console and winform applciations into a single web page based app. It's evolved to now a PWA application that can load files from your desktop and save them either in browser cache, or locally as a download.",
-            "buttons": [
-                {
+            "buttons": [{
                     "type": "Website",
                     "url": "https://liukonen.github.io/htmlTextEditor/"
                 },
@@ -50,8 +47,7 @@
             "SubTitle": "A simple game, that can help teach.",
             "Description": "In 2003 or 04 (while in school) I wrote this in Visual basic 6 and used Microsoft Agents as driving forces for Input and output. who would fly around the screen and play tic tac toe, using simple math equations. I found the original source code, and re wrote it in .net.  and since they were all based on the same source, consolidate the logic to one program, with options to switch math types (divide, multiply, add, and subtract) Since I have some time off, I was able to rewrite this using Javascript and HTML, and bring back Agents and text to speach over the browser.",
             "image": "img/card/ttm.webp",
-            "buttons": [
-                {
+            "buttons": [{
                     "type": "Website",
                     "url": "https://liukonen.github.io/tictacmath/"
                 },
@@ -81,8 +77,7 @@
             "SubTitle": "A Rivescript based Javascript chatbot.",
             "Description": "This is a client-server model chatbot. First Website is the bot in Vue.js. The Second is a rewrite in Angular. A REST based Bot writen in Rivescript, built in Node.JS and hosted on Heroku. Server has API calls to NOAA and Duck Duck go for dynamic responses based on questions asked. And a client, built in Vue.JS, and hosted on github pages. Around 2002, 2003, I was interested in taking the chat bot out out of the standard container. I had an AIML source code project, which I tied with an MS agent, and TTS, with speach recognition, and I was talking to a bot, and it was responding. Few years later, and the AIM code cant connect, so I found AIML and the Alice project. 2016 hits, and at work, Im asked to present for MMAC Be The Spark tour, where my project, Sarra, tied her with Alice (and updated some of the scripts) as well as Microsoft cognitive services and presented a vocal chat bot that could detect and translate on the fly. Desided to take the AIML code and migrate it to RiveScript and make a bot out of it.",
             "image": "img/card/chat.webp",
-            "buttons": [
-                {
+            "buttons": [{
                     "type": "Website",
                     "url": "https://liukonen.dev/RiverScript-Angular-Edition/"
                 },
@@ -113,8 +108,7 @@
             "SubTitle": "Not Another Text Search.",
             "Description": "Nats is a command-line based search engine for text files on your hard drive. It uses multithreading, indexes (including windows), and an optional cached index for faster lookups (using a Lite DB locally hosted database, similar to Mongo DB). It was written to find items in source code easily, even if they were not included in a project. It was originally written in .net core, and I have made GUI editions for Windows, Mac, and GTK, which runs on Linux, Mac, and Windows. Icon for mac and windows provided by material.io, and is Apache license version 2.0.",
             "image": "img/card/nats.webp",
-            "buttons": [
-                {
+            "buttons": [{
                     "type": "Release",
                     "url": "https://github.com/liukonen/nats/releases"
                 },
@@ -142,8 +136,7 @@
             "SubTitle": "a remake of DJAkbar's cloudy-a project",
             "Description": "Owning raspberry pi pcs, I wanted to try my hand at a lamp that could also tell you the weather. I found DJAkbars project, but found that it was too relient on operation timing and also had some issues calling the service (only called once). Refactored the code and upgraded it to python verion 3.",
             "image": "img/card/cp.webp",
-            "buttons": [
-                {
+            "buttons": [{
                     "type": "Release",
                     "url": "https://github.com/liukonen/cloudy-pie/releases"
                 },
@@ -171,8 +164,7 @@
             "SubTitle": "Wallpaper based on outside conditions",
             "Description": "This was a project I wrote years ago. I had it working for a while, and then lost my source code. The original app only used weather, and pulled the data from Yahoo. The new verison will have multiple sources to pick from (in case one goes down), and have the ability to have different wallpapers also by time of day.",
             "image": "img/card/weatherwallpaper.webp",
-            "buttons": [
-                {
+            "buttons": [{
                     "type": "Release",
                     "url": "https://github.com/liukonen/WeatherWallpaper/releases"
                 },
@@ -202,8 +194,7 @@
             "SubTitle": "Something simple to tell you the weather, on nearly any desktop enviroment",
             "Description": "This idea goes way back to my college days. I liked weathebug, but did not like the adware and spyware it was littered with. App is now compiled using GTK, so it runs on Mac, Linux and PC! Code for this is based on weatherwallpaper, and the engine behind can be changed just like weatherwallpaper.",
             "image": "img/card/weather.webp",
-            "buttons": [
-                {
+            "buttons": [{
                     "type": "Release",
                     "url": "https://github.com/liukonen/SimpleWeatherTray/releases"
                 },
@@ -225,8 +216,7 @@
             "SubTitle": "Different wallpaper for different times of day",
             "Description": "Simmilar to Weather Wallpaper, only without the need of external calls, this app will change your wallpaper throughout the day like Mac OS Mojave +.",
             "image": "img/card/dchanger.webp",
-            "buttons": [
-                {
+            "buttons": [{
                     "type": "Release",
                     "url": "https://github.com/liukonen/DesertChanger/releases"
                 },
@@ -252,12 +242,10 @@
             "SubTitle": "Download your favorite audio or video podcasts through RSS",
             "Description": "written when RSS was still a major thing. I still pull video and audio podcasts using this app. App was more recently rewritten to support the .net core framework and has been confirmed to work on linux. ",
             "image": "img/card/podcast.webp",
-            "buttons": [
-                {
-                    "type": "Source",
-                    "url": "https://github.com/liukonen/Podload"
-                }
-            ],
+            "buttons": [{
+                "type": "Source",
+                "url": "https://github.com/liukonen/Podload"
+            }],
             "tags": [
                 "Mono Development",
                 "Parallel programming design practices",
@@ -273,8 +261,7 @@
             "SubTitle": "useful tool with robocopy, to see what will move",
             "Description": "This program was created out of a need to see what changes could happen if I ran a robocopy command between 2 directories. I was hoping at first that robocopy (command line application built into windows) had this functionality built in. While there a number of different ways to compare files, I chose to use the LastModifided timestamp of the file for distinction. ",
             "image": "img/card/cmd.webp",
-            "buttons": [
-                {
+            "buttons": [{
                     "type": "Release",
                     "url": "https://github.com/liukonen/Dif/releases"
                 },
@@ -293,8 +280,7 @@
             "SubTitle": "Keep more then 1 item in your clipboard",
             "Description": "reason: I wanted an application that I could use that kept an in memory cache of mutiple clipboard items. That way if I accidently copied over some data I was working on, I could go back to the original version. Its a lightweight clipboard 'manager' that implements items like, encrpytion, in memory compression, keeping state on reboots or restarts, and being able to save files, right from the clipboard.",
             "image": "img/card/clip.webp",
-            "buttons": [
-                {
+            "buttons": [{
                     "type": "Release",
                     "url": "https://github.com/liukonen/Clipboard-/releases"
                 },
@@ -320,12 +306,10 @@
             "SubTitle": "a simple site-specific browser generator and browser",
             "Description": "When I first got into the web, I always thought that there would be a time web pages would be full blown apps. Unfortunitly, projects like Mozilla Prism. Once that was discontinued. I worked on my own until Chomr had there own, in shortcuts. But even that is going away. I love the idea of Pepperments Ice SSB app, and attempted to make my own. Since Windows <> Linux though, Im dependent on Nuget updates, so I dont make release of the project, and leave it up to developers to get latest and compile it themselves.",
             "image": "img/card/winfrost.webp",
-            "buttons": [
-                {
-                    "type": "Source",
-                    "url": "https://github.com/liukonen/WinFrost"
-                }
-            ],
+            "buttons": [{
+                "type": "Source",
+                "url": "https://github.com/liukonen/WinFrost"
+            }],
             "tags": [
                 "Managed Extensibility Framework",
                 "Common Interfaces",
@@ -338,8 +322,7 @@
             ]
         }
     ],
-    "highlights": [
-        {
+    "highlights": [{
             "a": "Multi-year, multi-company hackathon award winner. Using technologies such as AI Modeling, Cognitive Services, and Chatbots."
         },
         {
@@ -355,12 +338,10 @@
             "a": "Lead Developer team for nearly 6 years"
         }
     ],
-    "Experence": [
-        {
+    "Experence": [{
             "name": "Backend",
             "size": "12",
-            "items": [
-                {
+            "items": [{
                     "title": "C#",
                     "img": "./img/32/csharp.webp",
                     "level": 3,
@@ -390,14 +371,12 @@
                     "level": 2,
                     "link": "https://java.com"
                 }
-
             ]
         },
         {
             "name": "Concepts",
             "size": "12",
-            "items": [
-                {
+            "items": [{
                     "title": "MVC",
                     "img": "./img/32/mvc.webp",
                     "level": 2,
@@ -426,8 +405,7 @@
         {
             "name": "Frontend / UI",
             "size": "12",
-            "items": [
-                {
+            "items": [{
                     "title": "HTML 5",
                     "img": "./img/32/html5.webp",
                     "level": 2,
@@ -463,14 +441,12 @@
                     "level": 1,
                     "link": "https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor"
                 }
-                
             ]
         },
         {
             "name": "Database",
             "size": "6",
-            "items": [
-                {
+            "items": [{
                     "title": "SQL Server",
                     "img": "./img/32/sqlserver.webp",
                     "level": 2,
@@ -493,8 +469,7 @@
         {
             "name": "UI Frameworks",
             "size": "6",
-            "items": [
-                {
+            "items": [{
                     "title": "ASP.Net",
                     "img": "./img/32/aspnet.webp",
                     "level": 2,
@@ -514,13 +489,10 @@
                 }
             ]
         },
-
-
         {
             "name": "Version Control",
             "size": "4",
-            "items": [
-                {
+            "items": [{
                     "title": "TFS",
                     "img": "./img/32/TFS.webp",
                     "level": 2,
@@ -543,8 +515,7 @@
         {
             "name": "Tools",
             "size": "8",
-            "items": [
-                {
+            "items": [{
                     "title": "Visual Studio",
                     "img": "./img/32/visualstudio.webp",
                     "level": 2,
@@ -571,19 +542,16 @@
             ]
         }
     ],
-    "School": [
-        {
-            "name": "University of Wisconsin - Milwaukee",
-            "timeworked": "September 2002 - May 2006",
-            "img": "./img/200/uwm.webp.png",
-            "title": "Bachelors in Business Administration",
-            "summary": "Management Information Systems"
-        }
-    ],
-"Work": [
-        {
+    "School": [{
+        "name": "University of Wisconsin - Milwaukee",
+        "timeworked": "September 2002 - May 2006",
+        "img": "./img/200/uwm.webp.png",
+        "title": "Bachelors in Business Administration",
+        "summary": "Management Information Systems"
+    }],
+    "Work": [{
             "name": "Northwestern Mutual",
-            "timeworked":"April 2021 - Present",
+            "timeworked": "April 2021 - Present",
             "title": "Software Engineer",
             "img": "./img/200/NM.webp.png",
             "summary": "Working in the Java / Springboot world as a Backend / Services developer."
@@ -622,9 +590,9 @@
             "title": "Adjunct Instructor",
             "img": "./img/200/ITT Technical Institute.webp.png",
             "summary": "I taught two courses during my time at ITT Tech. The first was Introduction to Programming and the second, Introduction to Computers. These courses helped me develop my managerial approach outlook, as I learned from it that it is best to guide people to the answer, then to just give them the answer. It also honed my skills of admin tasks, time management, and how to manage multiple people at the same time."
-        }],
-    "Hobbies": [
-        {
+        }
+    ],
+    "Hobbies": [{
             "a": "Tech, including gaming, PC building, Micro PCs like the Raspberry Pi"
         },
         {
@@ -640,8 +608,7 @@
             "a": "I have been collecting memorabilia and autographs since I was a kid."
         }
     ],
-    "volunteer": [
-        {
+    "volunteer": [{
             "a": "Has worked at both the Schlitz Audubon and Urban Ecology Center helping plant trees"
         },
         {
