@@ -20,7 +20,7 @@
             "value": "#about"
         }
     ],
-    "welcome": "My name is Luke Liukonen, and I am a Software Engineer, educator, and tech enthusiast based out of the Metro Milwaukee Wisconsin area. Let's be honest though, that's only a small sliver of who I am. I've been in development for over 15 years professionally. My focus has been mainly on backend development, however, I have worked as a full-stack developer. I have been fascinated with the direction technology could take us, and was a huge fan of how we would interact with it in the future. To this day, I like to consider myself a technologist, reading up on current trends, and what progress we are making in the field.",
+    "welcome": "My name is Luke Liukonen, and I am a Software Engineer, educator, and tech enthusiast based out of the Metro Milwaukee Wisconsin area. Let's be honest though, that's only a small sliver of who I am. I've been in development for over 15 years professionally. My focus has been mainly on backend development, however, I have worked as a full-stack Engineer. I have been fascinated with the direction technology could take us, and was a huge fan of how we would interact with it in the future. To this day, I like to consider myself a technologist, reading up on current trends, and what progress we are making in the field.",
     "projects": [{
             "Title": "Html Text Editor",
             "SubTitle": "manipulate and batch text files in your browser",
@@ -335,7 +335,7 @@
             "a": "Owasp top 10 trained. Maintained PCI complience"
         },
         {
-            "a": "Lead Developer team for nearly 6 years"
+            "a": "Lead Software Engineer team for nearly 6 years"
         }
     ],
     "Experence": [{
@@ -348,6 +348,11 @@
                     "link": "https://en.wikipedia.org/wiki/C_Sharp_(programming_language)"
                 },
                 {
+                    "title": "Java / Springboot",
+                    "img": "./img/32/Java.webp",
+                    "level": 2,
+                    "link": "https://java.com"
+                }, {
                     "title": "VB.Net",
                     "img": "./img/32/vb.webp",
                     "level": 3,
@@ -364,12 +369,6 @@
                     "img": "./img/32/node.webp",
                     "level": 2,
                     "link": "https://nodejs.org/en/about/"
-                },
-                {
-                    "title": "Java",
-                    "img": "./img/32/Java.webp",
-                    "level": 2,
-                    "link": "https://java.com"
                 }
             ]
         },
@@ -377,6 +376,12 @@
             "name": "Concepts",
             "size": "12",
             "items": [{
+                    "title": "Rest Services",
+                    "img": "./img/32/rest.webp",
+                    "level": 2,
+                    "link": "https://en.wikipedia.org/wiki/Representational_state_transfer"
+                },
+                {
                     "title": "MVC",
                     "img": "./img/32/mvc.webp",
                     "level": 2,
@@ -393,13 +398,8 @@
                     "img": "./img/32/wcf.webp",
                     "level": 2,
                     "link": "https://docs.microsoft.com/en-us/dotnet/framework/wcf/whats-wcf"
-                },
-                {
-                    "title": "Rest Services",
-                    "img": "./img/32/rest.webp",
-                    "level": 2,
-                    "link": "https://en.wikipedia.org/wiki/Representational_state_transfer"
                 }
+
             ]
         },
         {
@@ -424,16 +424,10 @@
                     "link": "https://jquery.com/"
                 },
                 {
-                    "title": "SASS",
+                    "title": "SASS / CSS",
                     "img": "./img/32/sass.webp",
                     "level": 2,
                     "link": "https://sass-lang.com/"
-                },
-                {
-                    "title": "CSS",
-                    "img": "./img/32/css3.webp",
-                    "level": 2,
-                    "link": "https://en.wikipedia.org/wiki/Cascading_Style_Sheets"
                 },
                 {
                     "title": "Blazor Pages",
@@ -532,12 +526,6 @@
                     "img": "./img/32/Git.webp",
                     "level": 2,
                     "link": "https://git-scm.com/"
-                },
-                {
-                    "title": "XCode",
-                    "img": "./img/32/xcode.webp",
-                    "level": 1,
-                    "link": "https://developer.apple.com/xcode/"
                 }
             ]
         }
@@ -554,7 +542,7 @@
             "timeworked": "April 2021 - Present",
             "title": "Software Engineer",
             "img": "./img/200/NM.webp.png",
-            "summary": "Working in the Java / Springboot world as a Backend / Services developer."
+            "summary": "Working in the Java / Springboot world as a Backend / Services Engineer."
         },
         {
             "name": "Brady Corporation",
