@@ -28,9 +28,9 @@
     <link rel="manifest" href="/img/favicons/site.webmanifest" />
     <link rel="mask-icon" href="/img/favicons/safari-pinned-tab.svg" color="#ffffff" />
     <link rel="icon" href="/img/favicons/favicon.ico" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/css/bootstrap.min.css" integrity="sha512-XWTTruHZEYJsxV3W/lSXG1n3Q39YIWOstqvmFsdNEEQfHoZ6vm6E9GK2OrF6DSJSpIbRbi+Nn0WDPID9O7xB2Q==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css" integrity="sha512-5PV92qsds/16vyYIJo3T/As4m2d8b6oWYfoqV+vtizRB6KhF1F9kYzWzQmsO6T3z3QG2Xdhrx7FQ+5R1LiQdUA==" crossorigin="anonymous"
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css" integrity="sha512-YFENbnqHbCRmJt5d+9lHimyEMt8LKSNTMLSaHjvsclnZGICeY/0KYEeiHwD1Ux4Tcao0h60tdcMv+0GljvWyHg==" crossorigin="anonymous"
         referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="stylesheets/page.min.css" />
 </head>
@@ -39,17 +39,20 @@
     <video muted loop id="myVideo">
       <source src="./video/typing.mp4" type="video/mp4" />
     </video>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark RoundedBottom" data-toggle="collapse" data-target="#toggle">
-        <a class="navbar-brand" href="index.html" aria-label="welcome"><img style="padding-left: 12px;" src="/img/favicons/favicon-32x32.png" alt="logo" /></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#toggle" aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-        <div class="collapse navbar-collapse" id="toggle">
-            <ul class="navbar-nav" id="navItem">
-                <li v-for="navItem in this.MenuItems" v-bind:class="validatePath(navItem.value)">
-                    <a class="nav-link" v-bind:href="navItem.value">{{navItem.name}}</a>
-                </li>
-            </ul>
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark RoundedBottom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" aria-label="welcome"><img style="padding-left: 12px;" src="/img/favicons/favicon-32x32.png" alt="logo" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navItem">
+                    <li v-for="navItem in this.MenuItems" v-bind:class="validatePath(navItem.value)">
+                        <a class="nav-link" v-bind:href="navItem.value">{{navItem.name}}</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
     <main role="main" class="container">
@@ -196,7 +199,7 @@
         <br />
         <br />
         <div class="glass">
-            &copy; 2022 Luke Liukonen
+            &copy; 2023 Luke Liukonen
             <i>* this page, its contents, are opinions of my own, and represent no one else</i>
             <p>
                 Please see
@@ -204,10 +207,10 @@
             </p>
         </div>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.min.js" integrity="sha256-rjpmUiJ6gyRPZ2rJkp3soGVAnXC0xotw7s61nf7BqMY=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.7.14/vue.min.js" integrity="sha512-BAMfk70VjqBkBIyo9UTRLl3TBJ3M0c6uyy2VMUrq370bWs7kchLNN9j1WiJQus9JAJVqcriIUX859JOm12LWtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue-lazyload@1.3.3/vue-lazyload.js" integrity="sha256-j284gtJGvdW5xUD9p/9WIqbqwRRxqVipWRLSb2ecpQ4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/js/bootstrap.min.js" integrity="sha512-8Y8eGK92dzouwpROIppwr+0kPauu0qqtnzZZNEF8Pat5tuRNJxJXCkbQfJ0HlUG3y1HB3z18CSKmUo7i2zcPpg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js" integrity="sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/vue2.js"></script>
 </body>
 
