@@ -22,48 +22,27 @@ function getFile(fileUrl) {
     return temp;
 }
 
+
 $(window).on("load", function() {
-    console.log("hit");
-    switch (SupportsWebp) {
-        case 1:
-        case 0:
-            break;
-        default:
-            let elem = document.createElement("canvas");
-            if (!!(elem.getContext && elem.getContext("2d")) &&
-                elem.toDataURL("image/webp").indexOf("data:image/webp") == 0
-            ) {
-                SupportsWebp = 1;
-            } else {
-                SupportsWebp = 0;
-            }
+    if (SupportsWebp == 2) {
+        try {
+            const elem = document.createElement('canvas');
+            SupportsWebp = !!(elem.getContext && elem.getContext('2d')) && elem.toDataURL('image/webp').indexOf('data:image/webp') === 0 ? 1 : 0;
+        } catch (e) {
+            SupportsWebp = 0;
+        }
     }
-    if (SupportsWebp == 0) {
-        console.log("WEBP Images NOT Supported");
-        let imgs = $("img").toArray();
-        imgs.forEach((img) => {
-            var src = $(img).attr("src");
-            if (
-                typeof src !== typeof undefined &&
-                src !== false &&
-                src != "" &&
-                src.substring(src.length - 4) == "webp"
-            ) {
-                $(img).attr("src", src + ".png");
-            }
-        });
-        $(".bgimg-1").css("background-image", "url('../img/jumbotron.webp.png')");
-    } else {
-        console.log("WEBP Images Supported");
+    if (!SupportsWebp) {
+        $("img[src$='webp']").attr("src", (i, src) => `${src}.png`);
+        $(".bgimg-1").css("background-image", "url('../img/jumbotron.webp.png')")
     }
+    console.log((SupportsWebp) ? "WEBP Supported" : "WEBP Not Supported")
 });
 
-if (
-    navigator.appName.indexOf("Internet Explorer") != -1 ||
-    navigator.userAgent.match(/Trident.*rv[ :]*11\./)
-) {
+if (/Trident.*rv[ :]*11./.test(navigator.userAgent) || navigator.appName.indexOf("Internet Explorer") !== -1) {
     window.location = "ie.html";
 }
+
 
 /*Vue Components*/
 Vue.component("alist", {
@@ -139,22 +118,11 @@ Vue.component("Thought", {
             return "card shadow col-md-" + size + " mt-5";
         },
         GetPill: function(item) {
-            switch (item.level) {
-                case 3:
-                case 2:
-                    return "badge badge-pill bg-primary bg-purple text-white";
-                default:
-                    return "badge badge-pill bg-success text-white";
-            }
+
+            return item.level > 1 ? "badge badge-pill bg-primary bg-purple text-white" : "badge badge-pill bg-success text-white";
         },
         GetName: function(item) {
-            switch (item.level) {
-                case 3:
-                case 2:
-                    return "Pro";
-                default:
-                    return "Hobby";
-            }
+            return item.level > 1 ? "Pro" : "Hobby";
         }
     },
     template: `  
@@ -177,33 +145,15 @@ Vue.component("Project", {
     props: ["project"],
     methods: {
         GetImage(img) {
-            this.WebPSupport = SupportsWebp;
-            switch (this.WebPSupport) {
-                case 1:
-                    return img;
-                case 0:
-                    return img + ".png";
-                default:
-                    let elem = document.createElement("canvas");
-                    if (!!(elem.getContext && elem.getContext("2d")) &&
-                        elem.toDataURL("image/webp").indexOf("data:image/webp") == 0
-                    ) {
-                        SupportsWebp = 1;
-                        return img;
-                    } else {
-                        SupportsWebp = 0;
-                        return img + "png";
-                    }
-            }
+            return (SupportsWebp) ? img : img + ".png";
         },
         DetermButtonColor(ItemType) {
-            if (ItemType.toLowerCase() == "website") {
-                return "btn btn-success shadow ml-2";
-            }
-            if (ItemType.toLowerCase() == "release") {
-                return "btn btn-primary shadow ml-2";
-            }
-            return "btn btn-secondary shadow ml-2";
+            const type = ItemType.toLowerCase();
+            const colors = {
+                "website": "btn btn-success shadow ml-2",
+                "release": "btn btn-primary shadow ml-2",
+            };
+            return colors[type] || "btn btn-secondary shadow ml-2";
         },
     },
     template: `
@@ -258,12 +208,8 @@ Nav = new Vue({
     el: "#navItem",
     methods: {
         validatePath(path) {
-            let current = location.pathname.substring(1).toLowerCase();
-            if (current == "") {
-                current = "index.html";
-            }
-            if (path == current) return "active";
-            return "";
+            const current = location.pathname.substring(1).toLowerCase() || "index.html";
+            return (path === current) ? "active" : "";
         },
     },
     data: { MenuItems: pageObject.menu },
@@ -273,40 +219,17 @@ blogs = new Vue({
     el: "#Blogs",
     methods: {
         getImg(index) {
-            let img = "./img/blog/blog" + index + ".webp";
-            this.WebPSupport = SupportsWebp;
-            switch (this.WebPSupport) {
-                case 1:
-                    return img;
-                case 0:
-                    return img + ".png";
-                default:
-                    let elem = document.createElement("canvas");
-                    if (!!(elem.getContext && elem.getContext("2d")) &&
-                        elem.toDataURL("image/webp").indexOf("data:image/webp") == 0
-                    ) {
-                        SupportsWebp = 1;
-                        return img;
-                    } else {
-                        SupportsWebp = 0;
-                        return img + "png";
-                    }
-            }
+            const img = "./img/blog/blog" + index + ".webp";
+            if (!SupportsWebp) return img + ".png";
+            return img;
         },
         GetItems() {
-            let M = Array.from(this.BlogItems);
-            if (this.BlogItems.length > 3) {
-                M = M.slice(0, 3);
-            }
-            var objArr = M.map(function(idx, i) {
-                return {
-                    title: idx.querySelector("title").innerHTML,
-                    link: idx.querySelector("link").innerHTML,
-                    timestamp: idx.querySelector("pubDate").innerHTML,
-                    index: i,
-                };
-            });
-            return objArr;
+            return Array.from(this.BlogItems).slice(0, 3).map((idx, i) => ({
+                title: idx.querySelector("title").innerHTML,
+                link: idx.querySelector("link").innerHTML,
+                timestamp: idx.querySelector("pubDate").innerHTML,
+                index: i,
+            }));
         },
     },
     data: {
@@ -351,57 +274,41 @@ vm.$Lazyload.$on(
 
 /**Vanilla JS */
 
-const lateLoadFadeInObserver = new IntersectionObserver(
-    (entries, lateLoadFadeInObserver) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                lateLoadFadeInObserver.unobserve(entry.target);
-                let I = $(entry.target);
-                let img = I.find("img");
-                let dsrc = img.attr("data-src");
-                img.attr("src", SupportsWebp != 1 ? dsrc + ".png" : dsrc);
-                img.fadeIn("slow");
-            }
-        });
-    }, { threshold: 1, rootMargin: "0px 0px 0px 0px" }
-);
+const lateLoadFadeInObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const { target } = entry;
+            $(target).find("img").attr("src", `${$(target).find("img").attr("data-src")}.${SupportsWebp !== 1 ? "png" : ""}`).fadeIn("slow");
+            lateLoadFadeInObserver.unobserve(target);
+        }
+    });
+}, { threshold: 1, rootMargin: "0px" });
+
 document.querySelectorAll(".lateloadfadeIn").forEach((entry) => {
     lateLoadFadeInObserver.observe(entry);
 });
 
-
 function preloadImg(img) {
-    let src = img.getAttribute("data-src");
+    const src = img.getAttribute("data-src");
     if (src) {
-        if (SupportsWebp != 1) {
-            img.src = src + ".png";
-        } else {
-            img.src = src;
-        }
+        img.src = SupportsWebp != 1 ? src + ".png" : src;
     }
 }
 
-const imgObserver = new IntersectionObserver(
-    (entries, imgObserver) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                preloadImg(entry.target);
-                imgObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 1, rootMargin: "0px 0px 300px 0px" }
-);
+const imgObserver = new IntersectionObserver((entries, imgObserver) => {
+    entries.forEach(entry => entry.isIntersecting && (preloadImg(entry.target), imgObserver.unobserve(entry.target)));
+}, { threshold: 1, rootMargin: "0px 0px 300px 0px" });
+
 document.querySelectorAll(".featurette-image").forEach((img) => {
     imgObserver.observe(img);
 });
 
 const bgObserver = new IntersectionObserver(
-    (entries, imgObserver) => {
+    (entries, bgObserver) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                var image = entry.target;
-                image.classList.remove("lazy");
-                imgObserver.unobserve(entry.target);
+                entry.target.classList.remove("lazy");
+                bgObserver.unobserve(entry.target);
             }
         });
     }, { threshold: 0 }
@@ -434,27 +341,13 @@ function expandlearning(item) { expand(item, '<i class="bi bi-arrow-right-circle
 function expand(item, displayClosed, displayOpen) { ExpandContent(item, item.parentElement.nextElementSibling, displayClosed, displayOpen); }
 
 function ExpandContent(item, content, displayClosed, displayOpen) {
-    console.log(item, content);
     let vis = content.style.display == "block";
     item.innerHTML = vis ? displayClosed : displayOpen;
     content.style.display = vis ? "none" : "block";
 }
-
-// $(".navbar-toggler").click(function() {
-//     header.classList.add("bg-dark");
-//     header.classList.add("transition");
-// });
-
-
 var video = document.getElementById("myVideo");
 var btn = document.getElementById("playPauseIcon");
 
 function playPause() {
-    if (video.paused) {
-        video.play();
-        btn.className = "bi bi-pause-fill";
-    } else {
-        video.pause();
-        btn.className = "bi bi-play-fill";
-    }
+    video.paused ? (video.play(), btn.className = "bi bi-pause-fill") : (video.pause(), btn.className = "bi bi-play-fill");
 }
