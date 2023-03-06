@@ -533,7 +533,7 @@
     "School": [{
         "name": "University of Wisconsin - Milwaukee",
         "timeworked": "September 2002 - May 2006",
-        "img": "./img/200/uwm.webp.png",
+        "img": "./img/200/uwm.webp",
         "title": "Bachelors in Business Administration",
         "summary": "Management Information Systems"
     }],
@@ -541,42 +541,42 @@
             "name": "Northwestern Mutual",
             "timeworked": "April 2021 - Present",
             "title": "Software Engineer",
-            "img": "./img/200/NM.webp.png",
+            "img": "./img/200/NM.webp",
             "summary": "Working in the Java / Springboot world as a Backend / Services Engineer."
         },
         {
             "name": "Brady Corporation",
             "timeworked": "August 2020 - April 2021",
             "title": "Senior Software Engineer",
-            "img": "./img/200/brady.webp.png",
+            "img": "./img/200/brady.webp",
             "summary": "Primary focus is on the e-commerce platform. This entails a full-stack development platform, including SASS Stylesheets, Javascript and Javascript frameworks, MVC, Sitecore controls, Test Driven Development, and light DevOps. Other items I have focused on includes Docker Containerization of tools, and optimizing and creating one-click 'Dev environments as code' setup scripts for onboarding and rebuilding of machines."
         },
         {
             "name": "Trisept Solutions",
             "timeworked": "April 2014 - July 2020",
             "title": "Software Analyst (Mid/Snr Engineer Eq)",
-            "img": "./img/200/Trisept Solutions.webp.png",
+            "img": "./img/200/Trisept Solutions.webp",
             "summary": "For 3 years was the development lead for the product support area of the company. My current role is focused on the backend system (Avail, packaging, booking) engine of the system. This is a Full-stack position. Other tasks I've also taken on include writing setup materials/documentation, consulted in system analysis tasks on system performance and monitoring, and mentored both new developers and junior developers in our system."
         },
         {
             "name": "Blue7 Solutions",
             "timeworked": "January 2012 - April 2014",
             "title": "Software Engineer",
-            "img": "./img/200/Blue7 Solutions.webp.png",
+            "img": "./img/200/Blue7 Solutions.webp",
             "summary": "Worked with Trisept Solutions as their Development lead for the Product Support team, which involves knowledge of Trisept's entire system, debugging and resolving issues in the code base, and managing Blue 7's company offshore resources in Product Support when needed. I also worked as a consultant for Trisept Solutions in the dynamic packaging engine as a full stack developer."
         },
         {
             "name": "Trisept Solutions",
             "timeworked": "May 2006 - December 2011",
             "title": "Software Developer",
-            "img": "./img/200/Trisept Solutions.webp.png",
+            "img": "./img/200/Trisept Solutions.webp",
             "summary": "Developed on and maintained the company dynamic packaging engine which bundled vacation packages together based on preset rules, and there booking engine which then booked the vacation packages. Became a knowledge expert on the companies custom backend entry systems. Technologies that interacted with at a given time included, C#, VB.net, SQL, XML, javascript, and ASP.net"
         },
         {
             "name": "ITT Tech",
             "timeworked": "Summer 2008 and 2010",
             "title": "Adjunct Instructor",
-            "img": "./img/200/ITT Technical Institute.webp.png",
+            "img": "./img/200/ITT Technical Institute.webp",
             "summary": "I taught two courses during my time at ITT Tech. The first was Introduction to Programming and the second, Introduction to Computers. These courses helped me develop my managerial approach outlook, as I learned from it that it is best to guide people to the answer, then to just give them the answer. It also honed my skills of admin tasks, time management, and how to manage multiple people at the same time."
         }
     ],

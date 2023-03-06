@@ -39,17 +39,18 @@
     <video muted loop id="myVideo">
       <source src="./video/typing.mp4" type="video/mp4" />
     </video>
-
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark RoundedBottom">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#" aria-label="welcome"><img style="padding-left: 12px" src="/img/favicons/favicon-32x32.png" alt="logo" /></a>
+            <a class="navbar-brand" href="#" aria-label="welcome">
+                <img src="/img/favicons/favicon-32x32.png" alt="logo" style="padding-left: 12px;">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+            <span class="navbar-toggler-icon"></span>
+          </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navItem">
-                    <li v-for="navItem in this.MenuItems" v-bind:class="validatePath(navItem.value)">
-                        <a class="nav-link" v-bind:href="navItem.value">{{navItem.name}}</a>
+                    <li v-for="navItem in MenuItems" :class="validatePath(navItem.value)">
+                        <a class="nav-link" :href="navItem.value">{{ navItem.name }}</a>
                     </li>
                 </ul>
             </div>
@@ -60,32 +61,26 @@
             <div class="row">
                 <div class="col-md-9">
                     <h1 class="display-3 tshadow">
-                        <img src="img/90/me-bw.webp" class="rounded-circle user_img" alt="Luke Liukonen" /> Hello world!
+                        <img src="img/90/me-bw.webp" class="rounded-circle user_img" alt="Luke Liukonen"> Hello world!
                     </h1>
-                    <div class="d-none d-sm-block">
-                        <p>Software Engineer / Former Instructor / Tech enthusiast</p>
-                    </div>
+                    <p class="d-none d-sm-block">Software Engineer / Former Instructor / Tech enthusiast</p>
                     <button class="btn btn-dark" id="myBtn" onclick="playPause()">
-              background <i id="playPauseIcon" class="bi bi-play-fill"></i>
-            </button>
+                        background <i id="playPauseIcon" class="bi bi-play-fill"></i>
+                      </button>
                 </div>
                 <div class="col-md-3">
                     <div class="btn-group-vertical">
                         <a target="_blank" rel="noreferrer" class="btn btn-secondary" href="https://github.com/liukonen" role="button" aria-label="Github">
-                            <i class="bi bi-github"></i>
-                            <b class="d-none d-sm-inline">GitHub</b>
+                            <i class="bi bi-github"></i> <span class="d-none d-sm-inline">GitHub</span>
                         </a>
                         <a target="_blank" rel="noreferrer" class="btn btn-primary bg-lnkdin" href="https://www.linkedin.com/in/lukeliukonen/" role="button" aria-label="LinkedIn">
-                            <i class="bi bi-linkedin"></i>
-                            <b class="d-none d-sm-inline"> LinkedIn</b>
+                            <i class="bi bi-linkedin"></i> <span class="d-none d-sm-inline">LinkedIn</span>
                         </a>
                         <a class="btn btn-danger" rel="noreferrer" href="mailto:liukonen@gmail.com?subject=GitHub_Home_Page" role="button" aria-label="email">
-                            <i class="bi bi-envelope-fill"></i>
-                            <b class="d-none d-sm-inline"> email</b>
+                            <i class="bi bi-envelope-fill"></i> <span class="d-none d-sm-inline">email</span>
                         </a>
                         <a target="_blank" rel="noreferrer" class="btn btn-light" href="https://dev.to/liukonen" role="button" aria-label="dev To">
-                            <i class="bi bi-file-code-fill"></i>
-                            <b class="d-none d-sm-inline"> DEV Community</b>
+                            <i class="bi bi-file-code-fill"></i> <span class="d-none d-sm-inline">DEV Community</span>
                         </a>
                     </div>
                 </div>
@@ -94,55 +89,40 @@
         <div id="Blogs" class="container glass">
             <h3 class="text-center h3 mt-5 tshadow">Recent Articles / Blogs</h3>
             <div class="row row-cols-1 row-cols-md-3 mt-5">
-                <div v-for="article in GetItems()">
-                    <div class="col mb-4 hoverItem">
-                        <div class="card shadow whiteGlass">
-                            <div>
-                                <img :src="getImg(article.index)" class="card-img-top himg rImage250" v-bind:alt="article.title" />
-                            </div>
-                            <div class="card-body">
-                                <h5>
-                                    <a :href="article.link" rel="noreferrer" target="_blank">{{article.title}}</a>
-                                </h5>
-                                <p class="card-text">
-                                    {{article.timestamp.substring(0, article.timestamp.length -9)}}
-                                </p>
-                            </div>
+                <div v-for="article in GetItems()" class="col mb-4 hoverItem">
+                    <div class="card shadow whiteGlass">
+                        <img :src="getImg(article.index)" class="card-img-top himg rImage250" :alt="article.title" />
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a :href="article.link" rel="noreferrer" target="_blank">{{ article.title }}</a>
+                            </h5>
+                            <p class="card-text">{{ article.timestamp.substring(0, article.timestamp.length - 9) }}</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <h5>
-                    Want more, check out my feed on DEV Community,
+                <h5>Want more? Check out my feed on DEV Community:
                     <a class="btn btn-light" href="https://dev.to/liukonen" rel="noreferrer" target="_blank" alt="dev to"><i class="bi bi-file-code-fill"></i>Dev.To/Liukonen</a>
                 </h5>
             </div>
         </div>
-        <div class="container glass">
-            <div class="container" id="app">
-                <h3 class="text-center h3 tshadow mt-5">Open Source Projects</h3>
-                <div>
-                    <div class="row row-cols-1 row-cols-md-3 mt-5">
-                        <Project v-for="product in this.Products" :project="product"></Project>
-                    </div>
-                </div>
+
+        <div class="container glass" id="app">
+            <h3 class="text-center h3 tshadow mt-5">Open Source Projects</h3>
+            <div class="row row-cols-1 row-cols-md-3 mt-5">
+                <Project v-for="product in Products" :project="product"></Project>
             </div>
         </div>
-
         <div class="container-fluid glass" id="career">
             <h3 class="text-center h3 tshadow mt-5">Career So far</h3>
             <div id="career2" class="mt-5">
-                <work :work="this.Work"></work>
+                <work :work="Work"></work>
                 <br />
-                <div>
-                    <h3 class="text-center mt-5 tshadow">Current Overall Highlights</h3>
-
-                    <alist :list="this.highlights" :styles="1"></alist>
-                </div>
+                <h3 class="text-center mt-5 tshadow">Current Overall Highlights</h3>
+                <alist :list="highlights" :styles="1"></alist>
             </div>
         </div>
-
         <div class="container glass" id="edu">
             <h3 class="text-center h3 mt-5 tshadow">Education</h3>
             <School v-for="edu in this.school" :job="edu"></School>
@@ -158,51 +138,37 @@
                 </div>
             </div>
         </div>
-
         <div id="about">
             <div class="container glass">
                 <div class="container">
                     <div id="welcome" class="container">
                         <h3 class="h3 text-center tshadow">Welcome</h3>
-                        <div>{{this.item}}</div>
+                        <div>{{item}}</div>
                     </div>
                 </div>
             </div>
-
             <div class="container glass">
                 <div class="row">
                     <div class="col-md-6">
                         <h1 class="h3 tshadow">Interests</h1>
-                        <alist :list="this.Hobbies" :styles="0"></alist>
+                        <alist :list="Hobbies" :styles="0"></alist>
                     </div>
-                    <div class=" col-md-6 ">
-                        <h1 class="h3 tshadow ">Volunteer</h1>
-                        <alist :list="this.Vol " :styles="0 "></alist>
+                    <div class="col-md-6">
+                        <h1 class="h3 tshadow">Volunteer</h1>
+                        <alist :list="Vol" :styles="0"></alist>
                     </div>
                 </div>
             </div>
         </div>
-        <div class=" glass " style="text-align: center; align-content: center ">
-            <a target="_blank " class="btn btn-secondary " href="https://github.com/liukonen " role="button " rel="noreferrer " aria-label="Github " data-toggle="tooltip " data-placement="top " title="GitHub ">
-                <i class="bi bi-github "></i> GitHub
-            </a>
-            <a target="_blank " class="btn btn-primary bg-lnkdin " href="https://www.linkedin.com/in/lukeliukonen/ " role="button " rel="noreferrer " aria-label="LinkedIn " data-toggle="tooltip " data-placement="top " title="LinkedIn ">
-                <i class="bi bi-linkedin "></i> LinkedIn
-            </a>
-            <a class="btn btn-danger " href="mailto:liukonen@gmail.com?subject=GitHub_Home_Page " role="button " rel="noreferrer " aria-label="email " data-toggle="tooltip " data-placement="top " title="email ">
-                <i class="bi bi-envelope-fill "> Email</i>
-            </a>
-            <a target="_blank " class="btn btn-light " href="https://dev.to/liukonen " role="button " rel="noreferrer " aria-label="dev To ">
-                <i class="bi bi-file-code-fill "></i> DEV Community</a>
-            <br />
+        <div class="glass" style="text-align: center; align-content: center">
+            <a target="_blank" class="btn btn-secondary" href="https://github.com/liukonen" role="button" rel="noreferrer" aria-label="Github" data-toggle="tooltip" data-placement="top" title="GitHub"><i class="bi bi-github"></i> GitHub</a>
+            <a target="_blank" class="btn btn-primary bg-lnkdin" href="https://www.linkedin.com/in/lukeliukonen/" role="button" rel="noreferrer" aria-label="LinkedIn" data-toggle="tooltip" data-placement="top" title="LinkedIn"><i class="bi bi-linkedin"></i> LinkedIn</a>
+            <a class="btn btn-danger" href="mailto:liukonen@gmail.com?subject=GitHub_Home_Page" role="button" rel="noreferrer" aria-label="email" data-toggle="tooltip" data-placement="top" title="email"><i class="bi bi-envelope-fill"> Email</i></a>
+            <a target="_blank" class="btn btn-light" href="https://dev.to/liukonen" role="button" rel="noreferrer" aria-label="dev To"><i class="bi bi-file-code-fill"></i> DEV Community</a>
         </div>
-        <br />
-        <br />
-        <div class="glass ">
-            &copy; 2023 Luke Liukonen
-            <i>* this page, its contents, are opinions of my own, and represent no one else</i>
-            <p> Please see
-                <a href="https://github.com/liukonen/liukonen.github.io/blob/master/terms.md " alt="terms of service link ">Terms of service</a> for not just this page, but all apps associated within the domain of my page</p>
+        <br /><br />
+        <div class="glass">&copy; 2023 Luke Liukonen <i>* this page, its contents, are opinions of my own, and represent no one else</i>
+            <p> Please see <a href="https://github.com/liukonen/liukonen.github.io/blob/master/terms.md" alt="terms of service link">Terms of service</a> for not just this page, but all apps associated within the domain of my page</p>
         </div>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.47/vue.global.prod.min.js" integrity="sha512-Wn/yBJ4RQtrSFtq1z61/DM40a7VGN8wnyg8oVhWSZAZchTO9zS/l8Kw6bk32CYjS5VgProK4ujLRMqxEE/bUPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

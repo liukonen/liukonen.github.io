@@ -31,7 +31,7 @@ $(window).on("load", function() {
         $("img[src$='webp']").attr("src", (i, src) => `${src}.png`);
         $(".bgimg-1").css("background-image", "url('../img/jumbotron.webp.png')")
     }
-    console.log((SupportsWebp) ? "WEBP Supported" : "WEBP Not Supported")
+    console.log(SupportsWebp ? "WEBP Supported" : "WEBP Not Supported")
 });
 
 //IF Internet Exploder, go to generic IE page
@@ -71,41 +71,37 @@ const Work = {
         dtId: function(value) { return value.replaceAll(" ", ""); }
     },
     template: `
-    <div class="accordion ClearGlass" id="workitemsList">
-    <div class="card whiteGlass" v-for="(job, index) in work" :key="job.id">
-      <div class="accordion-item card-header whiteGlass">
-        <div class="accordion-header" :id="index + '_header'">
-        <button class="accordion-button collapsed btn whiteGlass" type="button" data-bs-toggle="collapse" :data-bs-target="'#Colapse_' + index">
-        <img :data-src="job.img" :alt-text="job.name" class="lzy rounded shadow mx-2" style="width: 32px" />  
-        <b>{{ job.name }}</b> {{ job.timeworked }}
-        </button>
+        <div class="accordion ClearGlass" id="workitemsList">
+          <div class="card whiteGlass" v-for="(job, index) in work" :key="job.id">
+            <div class="accordion-item card-header whiteGlass">
+              <div class="accordion-header" :id="index + '_header'">
+                <button class="accordion-button collapsed btn whiteGlass" type="button" data-bs-toggle="collapse" :data-bs-target="'#Colapse_' + index">
+                  <img :data-src="job.img" :alt="job.name" class="lzy rounded shadow mx-2" style="width: 32px" />  
+                  <b>{{ job.name }}</b> {{ job.timeworked }}
+                </button>
+              </div>
+              <div :id="'Colapse_' + index" class="accordion-collapse collapse" data-bs-parent="#workitemsList">
+                <p>{{ job.summary }}</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div :id="'Colapse_' + index" class="accordion-collapse collapse" data-bs-parent="#workitemsList">
-          <p>{{job.summary}}</p>
-        </div>
-      </div>
-    </div>
-    </div>
     `,
 }
 
 const school = {
     props: ["job"],
     template: `
-    <div class="row justify-content-md-center">
-      <div class="col-md-2 mt-3">
-        <img :data-src="job.img" class="lzy ImgRoundCorner border-right shadow" :alt="job.name" />
-      </div>
-      <div class="col-md-6 mt-3 offset-md-1">
-        <h4 class="card-title"> 
-          {{job.name}} 
-        </h4> 
-        <h5>{{job.title}},{{job.timeworked}}</h5>
-        <p class="card-text">
-          {{job.summary}}
-        </p>
-      </div>
-    </div>
+        <div class="row justify-content-md-center">
+          <div class="col-md-2 mt-3">
+            <img :data-src="job.img" class="lzy ImgRoundCorner border-right shadow" :alt="job.name" />
+          </div>
+          <div class="col-md-6 mt-3 offset-md-1">
+            <h4 class="card-title">{{ job.name }}</h4>
+            <h5>{{ job.title }}, {{ job.timeworked }}</h5>
+            <p class="card-text">{{ job.summary }}</p>
+          </div>
+        </div>
 `,
 }
 
@@ -123,20 +119,18 @@ const thought = {
         }
     },
     template: `
-    <div class="col-md-4">
-        <ul class="list-group shadow ml-2 mt-4 whiteGlass">
-            <li class="list-group-item list-group-item-dark">
-                {{item.name}} 
-            </li>
-            <li v-for="item2 in item.items" class="list-group-item pane d-flex justify-content-between align-items-center">
-                <div class="image-parent">
-                    <img class="lzy" :data-src="item2.img" :alt="item2.title" style="width: 32px">
-                </div>
-                {{item2.title}}
-                <span :class="GetPill(item2)">{{GetName(item2)}}</span>
-            </li> 
-        </ul>
-    </div>
+            <div class="col-md-4">
+                <ul class="list-group shadow ml-2 mt-4 whiteGlass">
+                    <li class="list-group-item list-group-item-dark">{{ item.name }}</li>
+                    <li v-for="item2 in item.items" class="list-group-item pane d-flex justify-content-between align-items-center">
+                        <div class="image-parent">
+                            <img class="lzy" :data-src="item2.img" :alt="item2.title" style="width: 32px">
+                        </div>
+                        {{ item2.title }}
+                        <span :class="GetPill(item2)">{{ GetName(item2) }}</span>
+                    </li>
+                </ul>
+            </div>
         `
 }
 
@@ -157,40 +151,36 @@ const Project = {
     },
     template: ` 
             <div class="col mb-4 hoverItem d-flex align-items-stretch">
-                <div class="card shadow whiteGlass">
-                    <div>
-                        <img :data-src="GetImage(project.image)" class="lzy card-img-top himg rImage250" :alt="project.Title" />
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            {{ project.Title}}
-                        </h5>
-                        <p class="card-text">
-                            {{project.SubTitle}}
-                            <button aria-label="expand" class="btn btn-link text-dark" onclick="ExpandText(this)">
-                                <i class = "bi bi-question-square-fill"></i>
-                            </button>
-                        </p>
-                        <div class="content">
-                            {{project.Description}} 
-                        </div> 
-                        <p> 
-                            <a v-for="button in project.buttons" :class = "DetermButtonColor(button.type)" :href="button.url" target = "_blank" rel="noreferrer">
-                                {{button.type}}
-                            </a>
-                        </p>
-                        <p>Learnings 
-                            <button aria-label="expand" class="btn btn-link text-dark" onclick="expandlearning(this)">
-                                <i class="bi bi-arrow-right-circle"></i>
-                            </button >
-                        </p> 
-                        <div class="content" style="display:none">
-                            <span v-for = "tag in project.tags" class="badge badge-light font-weight-light">
-                                {{tag}}
-                            </span>
-                        </div> 
-                    </div >
-                </div> 
+              <div class="card shadow whiteGlass">
+                <div>
+                  <img :data-src="GetImage(project.image)" class="lzy card-img-top himg rImage250" :alt="project.Title" />
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">{{ project.Title }}</h5>
+                  <p class="card-text">
+                    {{ project.SubTitle }}
+                    <button aria-label="expand" class="btn btn-link text-dark" @click="ExpandText()">
+                      <i class="bi bi-question-square-fill"></i>
+                    </button>
+                  </p>
+                  <div class="content">{{ project.Description }}</div>
+                  <p>
+                    <a v-for="button in project.buttons" :class="DetermButtonColor(button.type)" :href="button.url" target="_blank" rel="noreferrer">
+                      {{ button.type }}
+                    </a>
+                  </p>
+                  <p>Learnings
+                    <button aria-label="expand" class="btn btn-link text-dark" @click="expandLearning()">
+                      <i class="bi bi-arrow-right-circle"></i>
+                    </button>
+                  </p>
+                  <div class="content" style="display: none">
+                    <span v-for="tag in project.tags" class="badge badge-light font-weight-light">
+                      {{ tag }}
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
  `
 }
@@ -287,17 +277,18 @@ const About = Vue.createApp({
 })
 
 /* vue mouts */
-Nav.mount("#navItem")
-blogs.mount("#Blogs")
-vm.mount("#app")
-carrerVue.mount('#career')
-eduView.mount("#edu")
-backend.mount("#vbackend")
-About.mount("#about")
+Nav.mount("#navItem");
+blogs.mount("#Blogs");
+vm.mount("#app");
+carrerVue.mount('#career');
+eduView.mount("#edu");
+backend.mount("#vbackend");
+About.mount("#about");
 
 /**Vanilla JS */
 /// Lazy Load w/o extentions
 function preloadImg(img) {
+    console.log(SupportsWebp)
     return (SupportsWebp != 1) ? img + ".png" : img;
 }
 const images = document.querySelectorAll('.lzy')
