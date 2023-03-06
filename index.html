@@ -9,10 +9,10 @@
     <meta name="msapplication-config" content="/img/favicons/browserconfig.xml" />
     <meta name="theme-color" content="#ffffff" />
     <meta http-equiv="Content-Security-Policy" content="default-src 'self';
-    script-src 'self' wts.one app.wts2.one cdn.jsdelivr.net cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';
-    style-src 'self' cdn.jsdelivr.net cdnjs.cloudflare.com 'unsafe-inline';
+    script-src 'self' wts.one app.wts2.one cdn.jsdelivr.net cdnjs.cloudflare.com unpkg.com 'unsafe-inline' 'unsafe-eval';
+    style-src 'self' cdn.jsdelivr.net unpkg.com cdnjs.cloudflare.com 'unsafe-inline';
     img-src 'self' wts.one data:;
-    font-src 'self' cdn.jsdelivr.net cdnjs.cloudflare.com;
+    font-src 'self' cdn.jsdelivr.net cdnjs.cloudflare.com data:;
     connect-src 'self' dev.to;
     media-src 'self';
     object-src 'none';
@@ -98,7 +98,7 @@
                     <div class="col mb-4 hoverItem">
                         <div class="card shadow whiteGlass">
                             <div>
-                                <img v-lazy="getImg(article.index)" class="card-img-top himg rImage250" v-bind:alt="article.title" />
+                                <img :src="getImg(article.index)" class="card-img-top himg rImage250" v-bind:alt="article.title" />
                             </div>
                             <div class="card-body">
                                 <h5>
@@ -173,43 +173,43 @@
                 <div class="row">
                     <div class="col-md-6">
                         <h1 class="h3 tshadow">Interests</h1>
-                        <alist :list="this.Hobbies"></alist>
+                        <alist :list="this.Hobbies" :styles="0"></alist>
                     </div>
-                    <div class="col-md-6">
-                        <h1 class="h3 tshadow">Volunteer</h1>
-                        <alist :list="this.Vol"></alist>
+                    <div class=" col-md-6 ">
+                        <h1 class="h3 tshadow ">Volunteer</h1>
+                        <alist :list="this.Vol " :styles="0 "></alist>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="glass" style="text-align: center; align-content: center">
-            <a target="_blank" class="btn btn-secondary" href="https://github.com/liukonen" role="button" rel="noreferrer" aria-label="Github" data-toggle="tooltip" data-placement="top" title="GitHub">
-                <i class="bi bi-github"></i> GitHub
+        <div class=" glass " style="text-align: center; align-content: center ">
+            <a target="_blank " class="btn btn-secondary " href="https://github.com/liukonen " role="button " rel="noreferrer " aria-label="Github " data-toggle="tooltip " data-placement="top " title="GitHub ">
+                <i class="bi bi-github "></i> GitHub
             </a>
-            <a target="_blank" class="btn btn-primary bg-lnkdin" href="https://www.linkedin.com/in/lukeliukonen/" role="button" rel="noreferrer" aria-label="LinkedIn" data-toggle="tooltip" data-placement="top" title="LinkedIn">
-                <i class="bi bi-linkedin"></i> LinkedIn
+            <a target="_blank " class="btn btn-primary bg-lnkdin " href="https://www.linkedin.com/in/lukeliukonen/ " role="button " rel="noreferrer " aria-label="LinkedIn " data-toggle="tooltip " data-placement="top " title="LinkedIn ">
+                <i class="bi bi-linkedin "></i> LinkedIn
             </a>
-            <a class="btn btn-danger" href="mailto:liukonen@gmail.com?subject=GitHub_Home_Page" role="button" rel="noreferrer" aria-label="email" data-toggle="tooltip" data-placement="top" title="email">
-                <i class="bi bi-envelope-fill"> Email</i>
+            <a class="btn btn-danger " href="mailto:liukonen@gmail.com?subject=GitHub_Home_Page " role="button " rel="noreferrer " aria-label="email " data-toggle="tooltip " data-placement="top " title="email ">
+                <i class="bi bi-envelope-fill "> Email</i>
             </a>
-            <a target="_blank" class="btn btn-light" href="https://dev.to/liukonen" role="button" rel="noreferrer" aria-label="dev To">
-                <i class="bi bi-file-code-fill"></i> DEV Community</a>
+            <a target="_blank " class="btn btn-light " href="https://dev.to/liukonen " role="button " rel="noreferrer " aria-label="dev To ">
+                <i class="bi bi-file-code-fill "></i> DEV Community</a>
             <br />
         </div>
         <br />
         <br />
-        <div class="glass">
+        <div class="glass ">
             &copy; 2023 Luke Liukonen
             <i>* this page, its contents, are opinions of my own, and represent no one else</i>
             <p> Please see
-                <a href="https://github.com/liukonen/liukonen.github.io/blob/master/terms.md" alt="terms of service link">Terms of service</a> for not just this page, but all apps associated within the domain of my page</p>
+                <a href="https://github.com/liukonen/liukonen.github.io/blob/master/terms.md " alt="terms of service link ">Terms of service</a> for not just this page, but all apps associated within the domain of my page</p>
         </div>
     </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.7.14/vue.min.js" integrity="sha512-BAMfk70VjqBkBIyo9UTRLl3TBJ3M0c6uyy2VMUrq370bWs7kchLNN9j1WiJQus9JAJVqcriIUX859JOm12LWtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue-lazyload@1.3.3/vue-lazyload.js" integrity="sha256-j284gtJGvdW5xUD9p/9WIqbqwRRxqVipWRLSb2ecpQ4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js" integrity="sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="js/vue2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.47/vue.global.prod.min.js" integrity="sha512-Wn/yBJ4RQtrSFtq1z61/DM40a7VGN8wnyg8oVhWSZAZchTO9zS/l8Kw6bk32CYjS5VgProK4ujLRMqxEE/bUPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js "></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js " integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin=" anonymous " referrerpolicy="no-referrer "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js " integrity="sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A==" crossorigin="anonymous" referrerpolicy="no-referrer "></script>
+    <script src="js/vue3.js "></script>
 </body>
 
 </html>
