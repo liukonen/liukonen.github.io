@@ -1,4 +1,12 @@
+const elem = document.createElement('canvas');
 var SupportsWebp = 2; // 2- not set, 1, true, 0, false
+try {
+    SupportsWebp = !!(elem.getContext && elem.getContext('2d')) && elem.toDataURL('image/webp').indexOf('data:image/webp') === 0 ? 1 : 0;
+} catch (e) {
+    SupportsWebp = 0;
+    console.log("Error trying to find if browsers supports WebP Images. Falling back to PNG")
+}
+
 var pageObject = JSON.parse(getFile("./json/page.json"));
 
 function getFile(fileUrl) {
@@ -19,17 +27,8 @@ function getFile(fileUrl) {
 
 
 $(window).on("load", function() {
-    if (SupportsWebp == 2) {
-        try {
-            const elem = document.createElement('canvas');
-            SupportsWebp = !!(elem.getContext && elem.getContext('2d')) && elem.toDataURL('image/webp').indexOf('data:image/webp') === 0 ? 1 : 0;
-        } catch (e) {
-            SupportsWebp = 0;
-        }
-    }
     if (!SupportsWebp) {
         $("img[src$='webp']").attr("src", (i, src) => `${src}.png`);
-        $(".bgimg-1").css("background-image", "url('../img/jumbotron.webp.png')")
     }
     console.log(SupportsWebp ? "WEBP Supported" : "WEBP Not Supported")
 });
@@ -288,7 +287,6 @@ About.mount("#about");
 /**Vanilla JS */
 /// Lazy Load w/o extentions
 function preloadImg(img) {
-    console.log(SupportsWebp)
     return (SupportsWebp != 1) ? img + ".png" : img;
 }
 const images = document.querySelectorAll('.lzy')
