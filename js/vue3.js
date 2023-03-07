@@ -146,7 +146,7 @@ const Project = {
                 "release": "btn btn-primary shadow ml-2",
             };
             return colors[type] || "btn btn-secondary shadow ml-2";
-        },
+        }
     },
     template: ` 
             <div class="col mb-4 hoverItem d-flex align-items-stretch">
@@ -158,7 +158,7 @@ const Project = {
                   <h5 class="card-title">{{ project.Title }}</h5>
                   <p class="card-text">
                     {{ project.SubTitle }}
-                    <button aria-label="expand" class="btn btn-link text-dark" @click="ExpandText()">
+                    <button aria-label="expand" class="btn btn-link text-dark" onclick="ExpandText(this)">
                       <i class="bi bi-question-square-fill"></i>
                     </button>
                   </p>
@@ -169,7 +169,7 @@ const Project = {
                     </a>
                   </p>
                   <p>Learnings
-                    <button aria-label="expand" class="btn btn-link text-dark" @click="expandLearning()">
+                    <button aria-label="expand" class="btn btn-link text-dark" onclick="expandlearning(this)">
                       <i class="bi bi-arrow-right-circle"></i>
                     </button>
                   </p>
