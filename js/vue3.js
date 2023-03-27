@@ -76,11 +76,11 @@ const Work = {
               <div class="accordion-header" :id="index + '_header'">
                 <button class="accordion-button collapsed btn whiteGlass" type="button" data-bs-toggle="collapse" :data-bs-target="'#Colapse_' + index">
                   <img :data-src="job.img" :alt="job.name" class="lzy rounded shadow mx-2" style="width: 32px" />  
-                  <b>{{ job.name }}</b> {{ job.timeworked }}
+                  <b>{{ job.name }}</b> - {{ job.timeworked }}
                 </button>
               </div>
               <div :id="'Colapse_' + index" class="accordion-collapse collapse" data-bs-parent="#workitemsList">
-                <p>{{ job.summary }}</p>
+                <div class="whiteGlass col-md-6 p-4"><p>{{ job.summary }}</p></div>
               </div>
             </div>
           </div>

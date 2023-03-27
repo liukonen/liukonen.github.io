@@ -20,12 +20,12 @@
             "value": "#about"
         }
     ],
-    "welcome": "My name is Luke Liukonen, and I am a Software Engineer, educator, and tech enthusiast based out of the Metro Milwaukee Wisconsin area. Let's be honest though, that's only a small sliver of who I am. I've been in development for over 15 years professionally. My focus has been mainly on backend development, however, I have worked as a full-stack Engineer. I have been fascinated with the direction technology could take us, and was a huge fan of how we would interact with it in the future. To this day, I like to consider myself a technologist, reading up on current trends, and what progress we are making in the field.",
+    "welcome": "Hi, I'm Luke Liukonen, a software engineer, educator, and technology enthusiast based in the Metro Milwaukee Wisconsin area. With over 15 years of professional development experience since 2006, my expertise lies in backend development, although I have also worked as a full-stack engineer. My passion for technology drives me to stay up-to-date with current trends and advancements in the field. As a lifelong learner, I am always exploring new ways to innovate and solve complex problems. Feel free to browse around and learn more about my work.",
     "projects": [{
             "Title": "Html Text Editor",
             "SubTitle": "manipulate and batch text files in your browser",
             "image": "img/card/htmledit.webp",
-            "Description": "a more advanced text editor developed from the need to have mini applications do custom work. This came from multiple smaller programs I'd have to quickly write up to change string data that was given to me. It evolved from console and winform applciations into a single web page based app. It's evolved to now a PWA application that can load files from your desktop and save them either in browser cache, or locally as a download.",
+            "Description": "I developed an advanced text editor for custom work. It started as console and winform applications, then evolved into a single web-based app, and now it's a PWA. It can load files from your desktop and save them in the browser cache or as a download.",
             "buttons": [{
                     "type": "Website",
                     "url": "https://liukonen.github.io/htmlTextEditor/"
@@ -45,7 +45,7 @@
         {
             "Title": "Tic Tac Math",
             "SubTitle": "A simple game, that can help teach.",
-            "Description": "In 2003 or 04 (while in school) I wrote this in Visual basic 6 and used Microsoft Agents as driving forces for Input and output. who would fly around the screen and play tic tac toe, using simple math equations. I found the original source code, and re wrote it in .net.  and since they were all based on the same source, consolidate the logic to one program, with options to switch math types (divide, multiply, add, and subtract) Since I have some time off, I was able to rewrite this using Javascript and HTML, and bring back Agents and text to speach over the browser.",
+            "Description": "Back in school around 2003 or 04, I developed a Tic Tac Toe game using Visual Basic 6 and Microsoft Agents for input and output. Recently, I found the original source code and rewrote it in .NET, consolidating the logic into a single program with options to switch math types (divide, multiply, add, and subtract). As a side project during some time off, I converted the game to JavaScript and HTML, and brought back the Agents and text-to-speech functionality through the browser.",
             "image": "img/card/ttm.webp",
             "buttons": [{
                     "type": "Website",
@@ -75,7 +75,7 @@
         {
             "Title": "RiverScriptBot",
             "SubTitle": "A Rivescript based Javascript chatbot.",
-            "Description": "This is a client-server model chatbot. First Website is the bot in Vue.js. The Second is a rewrite in Angular. A REST based Bot writen in Rivescript, built in Node.JS and hosted on Heroku. Server has API calls to NOAA and Duck Duck go for dynamic responses based on questions asked. And a client, built in Vue.JS, and hosted on github pages. Around 2002, 2003, I was interested in taking the chat bot out out of the standard container. I had an AIML source code project, which I tied with an MS agent, and TTS, with speach recognition, and I was talking to a bot, and it was responding. Few years later, and the AIM code cant connect, so I found AIML and the Alice project. 2016 hits, and at work, Im asked to present for MMAC Be The Spark tour, where my project, Sarra, tied her with Alice (and updated some of the scripts) as well as Microsoft cognitive services and presented a vocal chat bot that could detect and translate on the fly. Desided to take the AIML code and migrate it to RiveScript and make a bot out of it.",
+            "Description": "I have created several chatbots over the years, including one in Vue.js and another in Angular, as well as a REST-based bot using Rivescript and Node.js. My interest in chatbots began in the early 2000s when I worked on an AIML project that used MS Agent, TTS, and speech recognition. Later, I worked with the Alice project and presented a version of my project at the MMAC Be The Spark tour, which utilized Microsoft cognitive services and a vocal chatbot capable of detecting and translating on the fly. I recently migrated the AIML code to RiveScript to create this chatbot.",
             "image": "img/card/chat.webp",
             "buttons": [{
                     "type": "Website",
@@ -106,7 +106,7 @@
         {
             "Title": "NATS",
             "SubTitle": "Not Another Text Search.",
-            "Description": "Nats is a command-line based search engine for text files on your hard drive. It uses multithreading, indexes (including windows), and an optional cached index for faster lookups (using a Lite DB locally hosted database, similar to Mongo DB). It was written to find items in source code easily, even if they were not included in a project. It was originally written in .net core, and I have made GUI editions for Windows, Mac, and GTK, which runs on Linux, Mac, and Windows. Icon for mac and windows provided by material.io, and is Apache license version 2.0.",
+            "Description": "Nats is a command-line search engine for text files with multithreading, indexing, and a cached option for faster lookups. Originally written in .net core, it now has GUI editions for Windows, Mac, and GTK running on multiple platforms. Icon for mac and windows provided by material.io, and is Apache license version 2.0.",
             "image": "img/card/nats.webp",
             "buttons": [{
                     "type": "Release",
@@ -134,7 +134,7 @@
         {
             "Title": "CloudyPie",
             "SubTitle": "a remake of DJAkbar's cloudy-a project",
-            "Description": "Owning raspberry pi pcs, I wanted to try my hand at a lamp that could also tell you the weather. I found DJAkbars project, but found that it was too relient on operation timing and also had some issues calling the service (only called once). Refactored the code and upgraded it to python verion 3.",
+            "Description": "Refactored and upgraded a Python-based lamp project for Raspberry Pi that displays weather information, originally created by DJAkbars, to improve operation timing and service calling, and migrate to Python 3.",
             "image": "img/card/cp.webp",
             "buttons": [{
                     "type": "Release",
@@ -162,7 +162,7 @@
         {
             "Title": "WeatherWallpaper",
             "SubTitle": "Wallpaper based on outside conditions",
-            "Description": "This was a project I wrote years ago. I had it working for a while, and then lost my source code. The original app only used weather, and pulled the data from Yahoo. The new verison will have multiple sources to pick from (in case one goes down), and have the ability to have different wallpapers also by time of day.",
+            "Description": "I developed a weather app using Yahoo as the source for data, but lost the source code. I rewrote the app to include multiple data sources in case of outages, and added the ability to display different wallpapers based on time of day.",
             "image": "img/card/weatherwallpaper.webp",
             "buttons": [{
                     "type": "Release",
@@ -192,7 +192,7 @@
         {
             "Title": "Simple Weather Tray",
             "SubTitle": "Something simple to tell you the weather, on nearly any desktop enviroment",
-            "Description": "This idea goes way back to my college days. I liked weathebug, but did not like the adware and spyware it was littered with. App is now compiled using GTK, so it runs on Mac, Linux and PC! Code for this is based on weatherwallpaper, and the engine behind can be changed just like weatherwallpaper.",
+            "Description": "The app is a weather tool that runs on Mac, Linux, and PC and is based on weatherwallpaper. The code is compiled using GTK and allows the user to change the engine behind it. The idea for this app goes back to the developer's college days when they disliked the adware and spyware associated with Weathebug.",
             "image": "img/card/weather.webp",
             "buttons": [{
                     "type": "Release",
@@ -214,7 +214,7 @@
         {
             "Title": "Desert Changer",
             "SubTitle": "Different wallpaper for different times of day",
-            "Description": "Simmilar to Weather Wallpaper, only without the need of external calls, this app will change your wallpaper throughout the day like Mac OS Mojave +.",
+            "Description": "For Windows, This app changes your wallpaper throughout the day without the need for external calls, similar to Mac OS Mojave.",
             "image": "img/card/dchanger.webp",
             "buttons": [{
                     "type": "Release",
@@ -240,7 +240,7 @@
         {
             "Title": "PodLoad",
             "SubTitle": "Download your favorite audio or video podcasts through RSS",
-            "Description": "written when RSS was still a major thing. I still pull video and audio podcasts using this app. App was more recently rewritten to support the .net core framework and has been confirmed to work on linux. ",
+            "Description": "a .NET application designed for pulling video and audio podcasts via RSS feeds. It has been rewritten to support the .NET core framework and works on Linux as well.",
             "image": "img/card/podcast.webp",
             "buttons": [{
                 "type": "Source",
@@ -259,7 +259,7 @@
         {
             "Title": "Dif",
             "SubTitle": "useful tool with robocopy, to see what will move",
-            "Description": "This program was created out of a need to see what changes could happen if I ran a robocopy command between 2 directories. I was hoping at first that robocopy (command line application built into windows) had this functionality built in. While there a number of different ways to compare files, I chose to use the LastModifided timestamp of the file for distinction. ",
+            "Description": "This program helps you see what files have changed when you copy them from one folder to another. It goes off LastUpdated timestamps of the files",
             "image": "img/card/cmd.webp",
             "buttons": [{
                     "type": "Release",
@@ -278,7 +278,7 @@
         {
             "Title": "Clipboard++",
             "SubTitle": "Keep more then 1 item in your clipboard",
-            "Description": "reason: I wanted an application that I could use that kept an in memory cache of mutiple clipboard items. That way if I accidently copied over some data I was working on, I could go back to the original version. Its a lightweight clipboard 'manager' that implements items like, encrpytion, in memory compression, keeping state on reboots or restarts, and being able to save files, right from the clipboard.",
+            "Description": " Its purpose is to provide an application that can maintain an in-memory cache of multiple clipboard items. This is useful in case accidental copying over data occurs, as users can go back to the original version. Clipboard++ is a lightweight clipboard manager that offers various features such as encryption, in-memory compression, the ability to retain its state after reboots or restarts, and the option to save files directly from the clipboard.",
             "image": "img/card/clip.webp",
             "buttons": [{
                     "type": "Release",
@@ -304,7 +304,7 @@
         {
             "Title": "WinFrost",
             "SubTitle": "a simple site-specific browser generator and browser",
-            "Description": "When I first got into the web, I always thought that there would be a time web pages would be full blown apps. Unfortunitly, projects like Mozilla Prism. Once that was discontinued. I worked on my own until Chomr had there own, in shortcuts. But even that is going away. I love the idea of Pepperments Ice SSB app, and attempted to make my own. Since Windows <> Linux though, Im dependent on Nuget updates, so I dont make release of the project, and leave it up to developers to get latest and compile it themselves.",
+            "Description": "WinFrost is a web application that aims to provide users with the ability to access web pages as full-blown apps. The project was born out of a desire to see web pages become more like applications. Unfortunately, other projects like Mozilla Prism have been discontinued, leaving a void in the market. While Chrome has its own solution through shortcuts, that feature is also going away. WinFrost is inspired by Pepperment's Ice SSB app and is currently only available for Windows. Due to its dependence on Nuget updates, the project is not released as a standalone application, and developers are encouraged to compile the latest version themselves.",
             "image": "img/card/winfrost.webp",
             "buttons": [{
                 "type": "Source",
@@ -392,12 +392,6 @@
                     "img": "./img/32/agile.webp",
                     "level": 2,
                     "link": "https://en.wikipedia.org/wiki/Agile_software_development"
-                },
-                {
-                    "title": "WCF",
-                    "img": "./img/32/wcf.webp",
-                    "level": 2,
-                    "link": "https://docs.microsoft.com/en-us/dotnet/framework/wcf/whats-wcf"
                 }
 
             ]
@@ -447,16 +441,16 @@
                     "link": "https://en.wikipedia.org/wiki/Microsoft_SQL_Server"
                 },
                 {
-                    "title": "Sqlite",
-                    "img": "./img/32/sqlite.webp",
+                    "title": "Redis",
+                    "img": "./img/32/redis.webp",
                     "level": 1,
-                    "link": "https://www.sqlite.org/index.html"
+                    "link": "https://redis.io/"
                 },
                 {
-                    "title": "LiteDB",
-                    "img": "./img/32/litedb.webp",
+                    "title": "Mongo DB / rational DB's",
+                    "img": "./img/32/Mongodb.webp",
                     "level": 1,
-                    "link": "https://www.litedb.org/"
+                    "link": "https://www.mongodb.com/"
                 }
             ]
         },
@@ -493,13 +487,13 @@
                     "link": "https://azure.microsoft.com/en-us/services/devops/server/"
                 },
                 {
-                    "title": "Azure DevOps",
+                    "title": "GitLab / Github",
                     "img": "./img/32/Octocat.webp",
                     "level": 2,
                     "link": "https://en.wikipedia.org/wiki/GitHub"
                 },
                 {
-                    "title": "GitLab / Github",
+                    "title": "Azure DevOps",
                     "img": "./img/32/Octocat.webp",
                     "level": 2,
                     "link": "https://en.wikipedia.org/wiki/GitHub"
@@ -532,7 +526,7 @@
     ],
     "School": [{
         "name": "University of Wisconsin - Milwaukee",
-        "timeworked": "September 2002 - May 2006",
+        "timeworked": "2006",
         "img": "./img/200/uwm.webp",
         "title": "Bachelors in Business Administration",
         "summary": "Management Information Systems"
@@ -542,42 +536,42 @@
             "timeworked": "April 2021 - Present",
             "title": "Software Engineer",
             "img": "./img/200/NM.webp",
-            "summary": "Working in the Java / Springboot world as a Backend / Services Engineer."
+            "summary": "Throughout my current role here, I have gained valuable experience working with Java frameworks such as Spring, Drools, and Flowable as a Backend/Services Engineer. I continue to refine my skills in these technologies, and others, and am always seeking new ways to apply them in order to deliver exceptional solutions."
         },
         {
             "name": "Brady Corporation",
             "timeworked": "August 2020 - April 2021",
             "title": "Senior Software Engineer",
             "img": "./img/200/brady.webp",
-            "summary": "Primary focus is on the e-commerce platform. This entails a full-stack development platform, including SASS Stylesheets, Javascript and Javascript frameworks, MVC, Sitecore controls, Test Driven Development, and light DevOps. Other items I have focused on includes Docker Containerization of tools, and optimizing and creating one-click 'Dev environments as code' setup scripts for onboarding and rebuilding of machines."
+            "summary": "At Brady, I primarily focused on the e-commerce platform where I worked as a full-stack developer. This involved utilizing a wide range of tools and technologies, including SASS Stylesheets, JavaScript and JavaScript frameworks, MVC, Sitecore controls, and Test Driven Development. In addition to my core responsibilities, I also gained experience with Docker containerization of tools and created one-click 'Dev environments as code' setup scripts, which were instrumental in streamlining the onboarding and rebuilding of machines. Throughout my time at Brady, I remained committed to optimizing our development process and improving the overall efficiency of our team"
         },
         {
             "name": "Trisept Solutions",
             "timeworked": "April 2014 - July 2020",
             "title": "Software Analyst (Mid/Snr Engineer Eq)",
             "img": "./img/200/Trisept Solutions.webp",
-            "summary": "For 3 years was the development lead for the product support area of the company. My current role is focused on the backend system (Avail, packaging, booking) engine of the system. This is a Full-stack position. Other tasks I've also taken on include writing setup materials/documentation, consulted in system analysis tasks on system performance and monitoring, and mentored both new developers and junior developers in our system."
+            "summary": "As the Development Lead for the Product Support area at Trisept Solutions, I played a critical role for 3 years in driving the development of our backend system, which included the Avail, packaging, and booking engine. This was a full-stack position that required me to utilize a range of tools and technologies. In addition to my primary responsibilities, I also contributed to writing setup materials/documentation, consulted on system performance and monitoring during system analysis tasks, and mentored new and junior developers within our team. My passion for delivering innovative solutions and streamlining development processes was integral to the success of our team."
         },
         {
             "name": "Blue7 Solutions",
             "timeworked": "January 2012 - April 2014",
             "title": "Software Engineer",
             "img": "./img/200/Blue7 Solutions.webp",
-            "summary": "Worked with Trisept Solutions as their Development lead for the Product Support team, which involves knowledge of Trisept's entire system, debugging and resolving issues in the code base, and managing Blue 7's company offshore resources in Product Support when needed. I also worked as a consultant for Trisept Solutions in the dynamic packaging engine as a full stack developer."
+            "summary": "At Blue7 Solutions, I worked closely with Trisept Solutions as a Consultant Development Lead for the Product Support team, which required in-depth knowledge of Trisept's entire system. My responsibilities included debugging and resolving issues within the codebase and managing Blue 7's offshore resources for Product Support as needed. In addition to my work for the Product Support team, I also served as a consultant for Trisept Solutions in the dynamic packaging engine as a full-stack developer. I took pride in my ability to collaborate with cross-functional teams and deliver high-quality solutions, which proved to be critical to the success of both Blue7 Solutions and Trisept Solutions"
         },
         {
             "name": "Trisept Solutions",
             "timeworked": "May 2006 - December 2011",
             "title": "Software Developer",
             "img": "./img/200/Trisept Solutions.webp",
-            "summary": "Developed on and maintained the company dynamic packaging engine which bundled vacation packages together based on preset rules, and there booking engine which then booked the vacation packages. Became a knowledge expert on the companies custom backend entry systems. Technologies that interacted with at a given time included, C#, VB.net, SQL, XML, javascript, and ASP.net"
+            "summary": "At Trisept Solutions, I was part of a team responsible for developing and maintaining the company's dynamic packaging engine, which bundled vacation packages based on preset rules, as well as their booking engine, which facilitated the booking of these packages. During my time there, I became a knowledge expert on the company's custom backend entry systems. As part of my role, I worked with a variety of technologies, including C#, VB.net, SQL, XML, JavaScript, and ASP.net, among others. Collaborating with cross-functional teams was essential to the success of the projects."
         },
         {
             "name": "ITT Tech",
             "timeworked": "Summer 2008 and 2010",
             "title": "Adjunct Instructor",
             "img": "./img/200/ITT Technical Institute.webp",
-            "summary": "I taught two courses during my time at ITT Tech. The first was Introduction to Programming and the second, Introduction to Computers. These courses helped me develop my managerial approach outlook, as I learned from it that it is best to guide people to the answer, then to just give them the answer. It also honed my skills of admin tasks, time management, and how to manage multiple people at the same time."
+            "summary": "As a Summer Instructor at ITT Technical Institute, I had the opportunity to teach two courses: Introduction to Programming and Introduction to Computers. These experiences helped me develop a managerial approach, as I learned that it is often best to guide people to the answer rather than simply giving it to them. I honed my skills in administrative tasks, time management, and managing multiple people at once, all of which were essential to the success of the courses. Overall, my time at ITT Tech allowed me to develop my teaching skills and provided valuable insights into effective leadership and management."
         }
     ],
     "Hobbies": [{
@@ -596,11 +590,10 @@
             "a": "I have been collecting memorabilia and autographs since I was a kid."
         }
     ],
-    "volunteer": [{
-            "a": "Has worked at both the Schlitz Audubon and Urban Ecology Center helping plant trees"
-        },
+    "volunteer": [
+        { "a": "Particpated in Hour of Code, teaching Middle School and High School students how to program" },
         {
-            "a": "Running Folding@home to help battle Covid-19"
+            "a": "Has worked at both the Schlitz Audubon and Urban Ecology Center helping plant trees"
         },
         {
             "a": "Has run some kind of computer nearly non stop since 2014 for research through World Community Grid"
@@ -609,7 +602,7 @@
             "a": "Attend a number of charity events throughout the year when I can."
         },
         {
-            "a": "Managed a number of fundraisers at work, including a food drive and a cancer fundraiser."
+            "a": "Managed a number of work fundraisers, including a food drive and a cancer fundraiser."
         }
     ]
 }
