@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Personal Homepage for Luke Liukonen">
@@ -17,72 +18,72 @@
     <link rel="icon" href="/img/favicons/favicon.ico">
     <meta name="msapplication-config" content="/img/favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
-  </head>
-  <body>
-    
+</head>
+
+<body>
+
     <nav class="navbar transparent navbar-expand-md navbar-dark fixed-top">
-      <a class="navbar-brand" href="index.html" aria-label="welcome"><img src="/img/favicons/favicon-32x32.png" class="invert" alt="logo" /></a>
+        <a class="navbar-brand" href="index.html" aria-label="welcome"><img src="/img/favicons/favicon-32x32.png" class="invert" alt="logo" /></a>
         <ul class="navbar-nav" id="navItem">
             <li v-for="navItem in this.MenuItems" v-bind:class="validatePath(navItem.value)">
-              <a class="nav-link" v-bind:href="navItem.value">{{navItem.name}}</a>
+                <a class="nav-link" v-bind:href="navItem.value">{{navItem.name}}</a>
             </li>
-        </ul>  
+        </ul>
     </nav>
     <main>
-      <div class="jumbotron">
-        <div class="container text-light">
-          <h1 class="display-3">
-            <img src="img/me-bw.webp" class="rounded-circle user_img" alt="Luke Liukonen" /> Hello, world!</h1>
-          <div class="d-none d-sm-block">
-            <p>Developer / Former Instructor / Tech enthusiast</p>
-          <p>Welcome to my personal page.</p>
-        </div>
-          <a target="_blank" class="btn btn-secondary" href="https://github.com/liukonen" role="button" aria-label="Github"><i class="fab fa-github-alt"></i> <b class="d-none d-sm-inline">GitHub</b></a>
-          <a target="_blank" class="btn btn-info" href="https://www.linkedin.com/in/lukeliukonen/" role="button" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i><b class="d-none d-sm-inline"> LinkedIn</b></a>
-          <a class="btn btn-danger" href="mailto:liukonen@gmail.com?subject=GitHub_Home_Page" role="button" aria-label="email"><i class="far fa-envelope"></i><b class="d-none d-sm-inline"> email</b></a>
-        </div>
-      </div>
-      <div class="container" id="mainContainer">
-        <h2 class="h3 bold">Open Source Projects</h2>
-          <!-- START THE FEATURETTES -->
-          <hr class="featurette-divider">
-          <div id="app">
-            
-            <div class="row row-cols-1 row-cols-md-3">
-              <div v-for="product in this.Products">
-
-              <div class="col mb-4 hoverItem">
-                <div class="card shadow">
-                  <div class="">
-                  <img v-lazy="GetImage(product.image)"  style="height:250px;"
-                   class="card-img-top himg" v-bind:alt="product.Title"/>
-
-
-                  </div>
-                  <div class="card-body">
-                    <h5 class="card-title">{{product.Title}}</h5>
-                    <p class="card-text">{{product.SubTitle}}<button class="btn btn-link text-dark" onclick="ExpandText(this)">[+]</button></p>
-<div class="content">
-  {{product.Description}}
-</div>
-                    <p><a v-for="button in product.buttons" v-bind:class="DetermButtonColor(button.type)" v-bind:href="button.url" target="_blank">{{button.type}}</a></p>
-                    <!--<p>{{product.Description}}</p>-->
-                    <p>Learnings</p>
-                    <div>
-                      <span v-for="tag in product.tags" class="badge badge-light font-weight-lighter">{{tag}}</span></p>
-                    </div>
-                  </div>
+        <div class="jumbotron">
+            <div class="container text-light">
+                <h1 class="display-3">
+                    <img src="img/me-bw.webp" class="rounded-circle user_img" alt="Luke Liukonen" /> Hello, world!</h1>
+                <div class="d-none d-sm-block">
+                    <p>Developer / Former Instructor / Tech enthusiast</p>
+                    <p>Welcome to my personal page.</p>
                 </div>
-              </div>
-             
+                <a target="_blank" class="btn btn-secondary" href="https://github.com/liukonen" role="button" aria-label="Github"><i class="fab fa-github-alt"></i> <b class="d-none d-sm-inline">GitHub</b></a>
+                <a target="_blank" class="btn btn-info" href="https://www.linkedin.com/in/lukeliukonen/" role="button" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i><b class="d-none d-sm-inline"> LinkedIn</b></a>
+                <a class="btn btn-danger" href="mailto:liukonen@gmail.com?subject=GitHub_Home_Page" role="button" aria-label="email"><i class="far fa-envelope"></i><b class="d-none d-sm-inline"> email</b></a>
+            </div>
+        </div>
+        <div class="container" id="mainContainer">
+            <h2 class="h3 bold">Open Source Projects</h2>
+            <!-- START THE FEATURETTES -->
+            <hr class="featurette-divider">
+            <div id="app">
+
+                <div class="row row-cols-1 row-cols-md-3">
+                    <div v-for="product in this.Products">
+
+                        <div class="col mb-4 hoverItem">
+                            <div class="card shadow">
+                                <div class="">
+                                    <img v-lazy="GetImage(product.image)" style="height:250px;" class="card-img-top himg" v-bind:alt="product.Title" />
+
+
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">{{product.Title}}</h5>
+                                    <p class="card-text">{{product.SubTitle}}<button class="btn btn-link text-dark" onclick="ExpandText(this)">[+]</button></p>
+                                    <div class="content">
+                                        {{product.Description}}
+                                    </div>
+                                    <p><a v-for="button in product.buttons" v-bind:class="DetermButtonColor(button.type)" v-bind:href="button.url" target="_blank">{{button.type}}</a></p>
+                                    <!--<p>{{product.Description}}</p>-->
+                                    <p>Learnings</p>
+                                    <div>
+                                        <span v-for="tag in product.tags" class="badge badge-light font-weight-lighter">{{tag}}</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
 
             </div>
-            </div>
-
-
-              
-          </div>
-<!--
+            <!--
               <div class="row featurette">
               <div v-bind:class="GetClass(0)">
                 <h3 class="featurette-heading h2">{{product.Title}}</h3><P></P>
@@ -104,14 +105,15 @@
             </div>
             <hr class="featurette-divider">
             </div>-->
-          </div>
-     </div><!-- /.container -->
+        </div>
+        </div>
+        <!-- /.container -->
     </main>
     <footer class="container">
-      <p>© Luke Liukonen 2020</p>
+        <p>© Luke Liukonen 2020</p>
     </footer>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js " integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin=" anonymous " referrerpolicy="no-referrer "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.bundle.min.js" integrity="sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A==" crossorigin="anonymous"></script>
     <script src="./lib/js/modernizr.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
@@ -119,8 +121,17 @@
     <script src="./js/base.js"></script>
     <script src="./js/index.vue.js"></script>
     <!--Begin Web-Stat code v 7.0-->
-    <span id="wts1983157"></span><script>var wts=document.createElement('script');wts.async=true;wts.src='https://wts.one/log7.js';document.head.appendChild(wts);wts.onload = function(){ wtslog7(1983157,4); };
+    <span id="wts1983157"></span>
+    <script>
+        var wts = document.createElement('script');
+        wts.async = true;
+        wts.src = 'https://wts.one/log7.js';
+        document.head.appendChild(wts);
+        wts.onload = function() {
+            wtslog7(1983157, 4);
+        };
     </script><noscript><a href="https://www.web-stat.com"><img src="https://wts.one/7/4/1983157.png" alt="Web-Stat web statistics"></a></noscript>
     <!-- End Web-Stat code v 7.0 -->
-  </body>
+</body>
+
 </html>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -17,105 +18,109 @@
     <link rel="icon" href="/img/favicons/favicon.ico">
     <meta name="msapplication-config" content="/img/favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
-  </head>
-  <body>
+</head>
+
+<body>
     <nav class="navbar transparent navbar-expand-md navbar-dark fixed-top">
-      <a class="navbar-brand" href="index.html" aria-label="welcome"><img src="/img/favicons/favicon-32x32.png" style="filter: invert(100%);" alt="logo" /></a>
+        <a class="navbar-brand" href="index.html" aria-label="welcome"><img src="/img/favicons/favicon-32x32.png" style="filter: invert(100%);" alt="logo" /></a>
         <ul class="navbar-nav" id="navItem">
             <li v-for="navItem in this.MenuItems" v-bind:class="validatePath(navItem.value)">
-              <a class="nav-link" v-bind:href="navItem.value">{{navItem.name}}</a>
+                <a class="nav-link" v-bind:href="navItem.value">{{navItem.name}}</a>
             </li>
-        </ul>  
+        </ul>
     </nav>
     <main>
-      <div class="jumbotron text-white bg-dark">
-        <div class="col-md-10 px-0">
-          <h1 class="display-4 font-italic" id="JtHead">The 2020 Furlough Logs</h1>
-          <p class="lead my-3" id="JtBody"></p>       
+        <div class="jumbotron text-white bg-dark">
+            <div class="col-md-10 px-0">
+                <h1 class="display-4 font-italic" id="JtHead">The 2020 Furlough Logs</h1>
+                <p class="lead my-3" id="JtBody"></p>
+            </div>
         </div>
-      </div>
-      <div class="container" id="mainContainer">
-          <div class="row">
-            <h2>week</h2>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-            <div class="col-mb-6 input-group">
-              <a id="prev" class="btn btn-outline-secondary" onclick="adjustNavs(0)"><i class="fas fa-angle-left"></i></a>
-              <ul class="nav nav-tabs" id="ulNav">                
-              </ul>
-              <script id="templateNav" type="text/x-jQuery-tmpl">
-                <li class="nav-item">
-                   <a class="nav-link" id="btn-${RmName(Name)}" onclick="PopulateWeek('${Link}', '${Name}')">${RmName(Name)}</a>
-                </li>
-              </script>
-              <a class="btn btn-outline-secondary" id="next" onclick="adjustNavs(1)"><i class="fas fa-angle-right"></i></a>
-              </div>
+        <div class="container" id="mainContainer">
+            <div class="row">
+                <h2>week</h2>
             </div>
-            <div class="col-md-6">
-            <div class="input-group col-mb-6 shadow">
-              <input type="text" name="search" id="search" aria-label="Search"  placeholder="Search" list="searchresults" autocomplete="off"  class="form-control" onselect="SearchFind2()"/>
-              <datalist id="searchresults"></datalist>  
-              <div class="input-group-append">
-                <a class="btn btn-primary text-white" onclick="SearchFind2()"><i class="fa fa-search" aria-hidden="true"></i></a>
-              </div>
-            </div>          
-          </div>
-          </div>
-          <hr class="featurette-divider">
-          <div class="row">
-            <div class="col-md-2">
-
-              <h2 class="h3">Top keywords</h2>
-              <ul class="list-group shadow " id="ulKeywords">
-              </ul>
-              <script id="tempKeywordList" type="text/x-jQuery-tmpl">
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                  <a onclick="SearchFind('${keyword}')" >${keyword}</a>
-                  <span class="badge badge-primary badge-pill">${count}</span>
-                </li>
-              </script>
-            </div>
-            <div class="col">
-              <div id="PlaceHolderItem" class="row mb-2"></div>
-              <script id="dTemp" type="text/x-jQuery-tmpl">
-                <div class="col-md-12">
-                  <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow h-md-250 position-relative">
-                    <div class="col-md-12 p-4 d-flex flex-column position-static">
-                      <a href="${Link}" target="_blank"><h3 class="mb-0">${Name}</h3></a>
-                      <div class="mb-1 text-muted">${CalcDate(ItemNumber, ActiveWeek).toDateString()}</div>
-                      <p class="card-text mb-auto"><div class="EItem" data-src="${Link}|${Name}"></div></p>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="col-mb-6 input-group">
+                        <a id="prev" class="btn btn-outline-secondary" onclick="adjustNavs(0)"><i class="fas fa-angle-left"></i></a>
+                        <ul class="nav nav-tabs" id="ulNav">
+                        </ul>
+                        <script id="templateNav" type="text/x-jQuery-tmpl">
+                            <li class="nav-item">
+                                <a class="nav-link" id="btn-${RmName(Name)}" onclick="PopulateWeek('${Link}', '${Name}')">${RmName(Name)}</a>
+                            </li>
+                        </script>
+                        <a class="btn btn-outline-secondary" id="next" onclick="adjustNavs(1)"><i class="fas fa-angle-right"></i></a>
                     </div>
-                  </div>
                 </div>
-            </script>
+                <div class="col-md-6">
+                    <div class="input-group col-mb-6 shadow">
+                        <input type="text" name="search" id="search" aria-label="Search" placeholder="Search" list="searchresults" autocomplete="off" class="form-control" onselect="SearchFind2()" />
+                        <datalist id="searchresults"></datalist>
+                        <div class="input-group-append">
+                            <a class="btn btn-primary text-white" onclick="SearchFind2()"><i class="fa fa-search" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-      </div>
+            <hr class="featurette-divider">
+            <div class="row">
+                <div class="col-md-2">
+
+                    <h2 class="h3">Top keywords</h2>
+                    <ul class="list-group shadow " id="ulKeywords">
+                    </ul>
+                    <script id="tempKeywordList" type="text/x-jQuery-tmpl">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <a onclick="SearchFind('${keyword}')">${keyword}</a>
+                            <span class="badge badge-primary badge-pill">${count}</span>
+                        </li>
+                    </script>
+                </div>
+                <div class="col">
+                    <div id="PlaceHolderItem" class="row mb-2"></div>
+                    <script id="dTemp" type="text/x-jQuery-tmpl">
+                        <div class="col-md-12">
+                            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow h-md-250 position-relative">
+                                <div class="col-md-12 p-4 d-flex flex-column position-static">
+                                    <a href="${Link}" target="_blank">
+                                        <h3 class="mb-0">${Name}</h3>
+                                    </a>
+                                    <div class="mb-1 text-muted">${CalcDate(ItemNumber, ActiveWeek).toDateString()}</div>
+                                    <p class="card-text mb-auto">
+                                        <div class="EItem" data-src="${Link}|${Name}"></div>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </script>
+                </div>
+            </div>
+        </div>
     </main>
-    <div class="modal fade dynamicModal" id="dynamicModal" data-backdrop="static" tabindex="-1" role="dialog"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog  modal-lg modal-dialog-scrollable" role="document">
-      <div class="modal-content text-white bg-dark">
-        <div class="modal-header">
-          <h1 class="h5 modal-title" id="staticBackdropLabel">Modal title</h1>
-          <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+    <div class="modal fade dynamicModal" id="dynamicModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-lg modal-dialog-scrollable" role="document">
+            <div class="modal-content text-white bg-dark">
+                <div class="modal-header">
+                    <h1 class="h5 modal-title" id="staticBackdropLabel">Modal title</h1>
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
+                </div>
+                <div class="modal-body" id="DynamicContent"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a class="btn btn-primary" href="#" id="aSite" target="_blank">Original</a>
+                </div>
+            </div>
         </div>
-        <div class="modal-body" id="DynamicContent"></div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <a class="btn btn-primary" href="#" id="aSite" target="_blank">Original</a>
-          </div>
-        </div>
-      </div>
     </div>
     <footer class="container">
-      <p>© Luke Liukonen 2020</p>
-      *this page, its contents, are opinions of my own, and represent no one else
+        <p>© Luke Liukonen 2020</p>
+        *this page, its contents, are opinions of my own, and represent no one else
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js " integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin=" anonymous " referrerpolicy="no-referrer "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.bundle.min.js" integrity="sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js" integrity="sha512-LhccdVNGe2QMEfI3x4DVV3ckMRe36TfydKss6mJpdHjNFiV07dFpS2xzeZedptKZrwxfICJpez09iNioiSZ3hA==" crossorigin="anonymous"></script>
     <script src="./lib/js/modernizr.min.js"></script>
@@ -123,5 +128,6 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
     <script src="js/base.js"></script>
     <script src="js/diary.js"></script>
-  </body>
+</body>
+
 </html>

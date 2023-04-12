@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="about page for Luke Liukonen. Software Developer, Former Instructor, Tech enthusiast">
@@ -19,52 +20,55 @@
     <link rel="stylesheet" href="stylesheets/about.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" />
 
-  </head>
-  <body data-gr-c-s-loaded="true">
+</head>
+
+<body data-gr-c-s-loaded="true">
     <nav class="navbar transparent navbar-expand-md navbar-dark fixed-top">
-      <a class="navbar-brand Invert" href="index.html" aria-label="welcome"><img src="/img/favicons/favicon-32x32.png" alt="logo" /></a>
+        <a class="navbar-brand Invert" href="index.html" aria-label="welcome"><img src="/img/favicons/favicon-32x32.png" alt="logo" /></a>
         <ul class="navbar-nav" id="navItem">
             <li v-for="navItem in this.MenuItems" v-bind:class="validatePath(navItem.value)">
-              <a class="nav-link" v-bind:href="navItem.value">{{navItem.name}}</a>
+                <a class="nav-link" v-bind:href="navItem.value">{{navItem.name}}</a>
             </li>
-        </ul>  
+        </ul>
     </nav>
     <div class="jumbotron">
-      <div class="container text-light">
-        <h1 class="display-3">
-          <img src="img/me-bw.webp" class="rounded-circle user_img" alt="Luke Liukonen" /> Hello, world!</h1>
-        <div class="d-none d-sm-block">
-          <p>Developer / Former Instructor / Tech enthusiast</p>
-        <p>Welcome to my personal page.</p>
-      </div>
-        <a target="_blank" class="btn btn-secondary" href="https://github.com/liukonen" role="button" aria-label="Github"><i class="fab fa-github-alt"></i> <b class="d-none d-sm-inline">GitHub</b></a>
-        <a target="_blank" class="btn btn-info" href="https://www.linkedin.com/in/lukeliukonen/" role="button" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i><b class="d-none d-sm-inline"> LinkedIn</b></a>
-        <a class="btn btn-danger" href="mailto:liukonen@gmail.com?subject=GitHub_Home_Page" role="button" aria-label="email"><i class="far fa-envelope"></i><b class="d-none d-sm-inline"> email</b></a>
-      </div>
+        <div class="container text-light">
+            <h1 class="display-3">
+                <img src="img/me-bw.webp" class="rounded-circle user_img" alt="Luke Liukonen" /> Hello, world!</h1>
+            <div class="d-none d-sm-block">
+                <p>Developer / Former Instructor / Tech enthusiast</p>
+                <p>Welcome to my personal page.</p>
+            </div>
+            <a target="_blank" class="btn btn-secondary" href="https://github.com/liukonen" role="button" aria-label="Github"><i class="fab fa-github-alt"></i> <b class="d-none d-sm-inline">GitHub</b></a>
+            <a target="_blank" class="btn btn-info" href="https://www.linkedin.com/in/lukeliukonen/" role="button" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i><b class="d-none d-sm-inline"> LinkedIn</b></a>
+            <a class="btn btn-danger" href="mailto:liukonen@gmail.com?subject=GitHub_Home_Page" role="button" aria-label="email"><i class="far fa-envelope"></i><b class="d-none d-sm-inline"> email</b></a>
+        </div>
     </div>
 
     <div class="container-fluid lightFormat">
-      <div class="container">
-      <h3 class="text-center">Welcome</h3>
-        <div id="welcome">{{this.item}}</div>
-      </div>
+        <div class="container">
+            <h3 class="text-center">Welcome</h3>
+            <div id="welcome">{{this.item}}</div>
+        </div>
     </div>
 
     <div class="aboutFormat container-fluid" id="career">
-      <div class="container">
-      <h3 class="text-center">Career So far</h3>
-  
-      <div v-for="job in this.Work" class="row">
-        <work v-bind:job="job"></work>
-      </div>
-      <br />
-      <h3 class="text-center mt-5">Current Overall Highlights</h3>
-      <ul class="list-group text-dark shadow" v-for="item in this.highlights">
-        <li class="list-group-item">{{item.a}}</li>
-      </ul>
-      <h3 class="text-center mt-5">Education</h3>
-      <div v-for="edu in this.school" class="row"><work v-bind:job="edu"></work></div>
-    </div>
+        <div class="container">
+            <h3 class="text-center">Career So far</h3>
+
+            <div v-for="job in this.Work" class="row">
+                <work v-bind:job="job"></work>
+            </div>
+            <br />
+            <h3 class="text-center mt-5">Current Overall Highlights</h3>
+            <ul class="list-group text-dark shadow" v-for="item in this.highlights">
+                <li class="list-group-item">{{item.a}}</li>
+            </ul>
+            <h3 class="text-center mt-5">Education</h3>
+            <div v-for="edu in this.school" class="row">
+                <work v-bind:job="edu"></work>
+            </div>
+        </div>
     </div>
 
     <div class="bgimg-2">
@@ -75,101 +79,116 @@
 
     </div>
     <div class="container-fluid lightFormat">
-      <div class="container">
-      <h3 class="text-center">Systems / Ideas I've worked with</h3>
+        <div class="container">
+            <h3 class="text-center">Systems / Ideas I've worked with</h3>
 
 
 
-      <div class="row text-dark" id="vbackend">
-        <div class="card shadow col-md-12">
-          <div class="card-header bg-transparent"><h2 class="h4">Backend</h2></div>
-          <div class="card-body">
-            <div class="row justify-content-md-center">
-                <Knowledge v-for="item in this.Ex.Backend" v-bind:item="item"></Knowledge>
-            </div>   
-          </div>
-        </div>
- 
-        <div class="card shadow col-md-6 mt-5">
-          <div class="card-header bg-transparent"><h2 class="h4">Database</h2></div>
-          <div class="card-body">
-            <div class="row justify-content-md-center">
-            <Knowledge v-for="item in this.Ex.Database" v-bind:item="item"></Knowledge>
+            <div class="row text-dark" id="vbackend">
+                <div class="card shadow col-md-12">
+                    <div class="card-header bg-transparent">
+                        <h2 class="h4">Backend</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="row justify-content-md-center">
+                            <Knowledge v-for="item in this.Ex.Backend" v-bind:item="item"></Knowledge>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow col-md-6 mt-5">
+                    <div class="card-header bg-transparent">
+                        <h2 class="h4">Database</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="row justify-content-md-center">
+                            <Knowledge v-for="item in this.Ex.Database" v-bind:item="item"></Knowledge>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow col-md-6 mt-5">
+                    <div class="card-header bg-transparent">
+                        <h2 class="h4">UI Frameworks</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="row justify-content-md-center">
+                            <Knowledge v-for="item in this.Ex.UIFrameworks" v-bind:item="item"></Knowledge>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow col-md-12 mt-5">
+                    <div class="card-header bg-transparent">
+                        <h2 class="h4">Frontend / UI</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="row justify-content-md-center">
+                            <Knowledge v-for="item in this.Ex.UI" v-bind:item="item"></Knowledge>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow col-md-12 mt-5">
+                    <div class="card-header bg-transparent">
+                        <h2 class="h4">Concepts</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="row justify-content-md-center">
+                            <Knowledge v-for="item in this.Ex.Frameworks" v-bind:item="item"></Knowledge>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow col-md-4 mt-5">
+                    <div class="card-header bg-transparent">
+                        <h2 class="h4">Version Control</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="row justify-content-md-center">
+                            <Knowledge v-for="item in this.Ex.VersionControl" v-bind:item="item"></Knowledge>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow col-md-8 mt-5">
+                    <div class="card-header bg-transparent">
+                        <h2 class="h4">Tools</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="row justify-content-md-center">
+                            <Knowledge v-for="item in this.Ex.Tools" v-bind:item="item"></Knowledge>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
+    </div>
 
-        <div class="card shadow col-md-6 mt-5">
-          <div class="card-header bg-transparent"><h2 class="h4">UI Frameworks</h2></div>
-          <div class="card-body">
-            <div class="row justify-content-md-center">
-              <Knowledge v-for="item in this.Ex.UIFrameworks" v-bind:item="item"></Knowledge>
-              </div> 
-          </div>
-        </div>
-
-        <div class="card shadow col-md-12 mt-5">
-          <div class="card-header bg-transparent"><h2 class="h4">Frontend / UI</h2></div>
-          <div class="card-body">
-            <div class="row justify-content-md-center">
-              <Knowledge v-for="item in this.Ex.UI" v-bind:item="item"></Knowledge>
-              </div> 
-          </div>
-        </div>
-        
-        <div class="card shadow col-md-12 mt-5">
-          <div class="card-header bg-transparent"><h2 class="h4">Concepts</h2></div>
-          <div class="card-body">
-            <div class="row justify-content-md-center">
-              <Knowledge v-for="item in this.Ex.Frameworks" v-bind:item="item"></Knowledge>
-              </div>  
-          </div>
-        </div>
-
-        <div class="card shadow col-md-4 mt-5">
-          <div class="card-header bg-transparent"><h2 class="h4">Version Control</h2></div>
-          <div class="card-body">
-            <div class="row justify-content-md-center">
-              <Knowledge v-for="item in this.Ex.VersionControl" v-bind:item="item"></Knowledge>
-              </div> 
-          </div>
-        </div>
-      
-        <div class="card shadow col-md-8 mt-5">
-          <div class="card-header bg-transparent"><h2 class="h4">Tools</h2></div>
-          <div class="card-body">
-            <div class="row justify-content-md-center">
-              <Knowledge v-for="item in this.Ex.Tools" v-bind:item="item"></Knowledge>
-              </div> 
-          </div>
-        </div>
-      </div>
-    </div></div>
-    
     <div class="bgimg-3">
     </div>
     <div class="position-relative" id="about">
-      <div class="container-fluid aboutFormat">
-        <div class="row justify-content-center">
-          <div class="col-lg-4">
-            <h1 class="h3">Interests</h1>
-            <ul class="list-group" id="interests">
-              <li v-for="item in this.Hobbies" class="list-group-item list-group-item-secondary">{{item.a}}</li>
-            </ul>
-          </div>
-          <div class="col-lg-4">
-            <h1 class="h3">Volunteer</h1>
-            <ul class="list-group" id="interests">
-              <li v-for="item in this.Vol" class="list-group-item list-group-item-secondary">{{item.a}}</li>
-            </ul>
-          </div>
+        <div class="container-fluid aboutFormat">
+            <div class="row justify-content-center">
+                <div class="col-lg-4">
+                    <h1 class="h3">Interests</h1>
+                    <ul class="list-group" id="interests">
+                        <li v-for="item in this.Hobbies" class="list-group-item list-group-item-secondary">{{item.a}}</li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h1 class="h3">Volunteer</h1>
+                    <ul class="list-group" id="interests">
+                        <li v-for="item in this.Vol" class="list-group-item list-group-item-secondary">{{item.a}}</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>    
     </div>
 
     <div class="bgimg-end">
-      <div class="caption">
-        <span class="border">    
+        <div class="caption">
+            <span class="border">    
           <a target="_blank" class="btn btn-secondary" href="https://github.com/liukonen" role="button" aria-label="Github" data-toggle="tooltip" data-placement="top" title="GitHub">
             <i class="fab fa-github-alt fa-2x"></i>
           </a>
@@ -179,18 +198,19 @@
             <i class="far fa-envelope fa-2x"></i></a>
             <br />
      </span>
-        <br />
-        <br />
-        <div class="alert alert-dark">&copy; 2020 Luke Liukonen
-          <i>* this page, its contents, are opinions of my own, and represent no one else</i> 
-        </div> 
-      </div>
+            <br />
+            <br />
+            <div class="alert alert-dark">&copy; 2020 Luke Liukonen
+                <i>* this page, its contents, are opinions of my own, and represent no one else</i>
+            </div>
+        </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js " integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin=" anonymous " referrerpolicy="no-referrer "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.bundle.min.js" integrity="sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js" integrity="sha512-QJsj3afWlCpnQ60XzzYE8Jb3IgHIK1BcGZox9rUSmRRq3Ocz9vQ1yR80eX2/b9jfx/UuT5zYWNdrM8Te/eCMhQ==" crossorigin="anonymous"></script>
     <script src="js/base.js"></script>
     <script src="js/about.vue.js"></script>
-  </body>
+</body>
+
 </html>
