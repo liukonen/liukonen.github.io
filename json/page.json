@@ -328,7 +328,7 @@
             "image": "img/card/cmd.webp",
             "buttons": [{
                     "type": "Release",
-                    "url": "https://github.com/liukonen/choco-outdated/releasess"
+                    "url": "https://github.com/liukonen/choco-outdated/releases"
                 },
                 {
                     "type": "Source",
