@@ -320,6 +320,26 @@
                 "GeckFX .net controls",
                 "CEFSharp .net controls"
             ]
+        },
+        {
+            "Title": "choco-outdated",
+            "SubTitle": "a quick update command line tool for checking if updates are needed",
+            "Description": "This program does something similar to chocos outdated command, however it is written in GoLang, uses go Goroutines for quick processing, and channels for quick UI output to the console. This was written after the release of v2 of the Choco command line tool, as the outdated command runs much slower then the v1 version.",
+            "image": "img/card/cmd.webp",
+            "buttons": [{
+                    "type": "Release",
+                    "url": "https://github.com/liukonen/choco-outdated/releasess"
+                },
+                {
+                    "type": "Source",
+                    "url": "https://github.com/liukonen/choco-outdated"
+                }
+            ],
+            "tags": [
+                "Parallel tasks",
+                "File enumeration",
+                "GoLang"
+            ]
         }
     ],
     "highlights": [{
