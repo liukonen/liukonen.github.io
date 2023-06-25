@@ -340,6 +340,26 @@
                 "File enumeration",
                 "GoLang"
             ]
+        },
+                {
+            "Title": "Gpsd API",
+            "SubTitle": " A python based app to expose gpspipe as a rest API",
+            "Description": "This is a Flask application that interacts with a GPS device using the gpspipe command-line tool to retrieve GPS data and check the device's connection status.",
+            "image": "img/card/timeserver.webp",
+            "buttons": [{
+                    "type": "Release",
+                    "url": "https://github.com/liukonen/gpsdApi"
+                },
+                {
+                    "type": "Source",
+                    "url": "https://github.com/liukonen/gpsdApi"
+                }
+            ],
+            "tags": [
+                "Parallel tasks",
+                "File enumeration",
+                "GoLang"
+            ]
         }
     ],
     "highlights": [{
