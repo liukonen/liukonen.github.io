@@ -1,43 +1,22 @@
-const elem = document.createElement('canvas');
-var SupportsWebp = 2; // 2- not set, 1, true, 0, false
-try {
-    SupportsWebp = !!(elem.getContext && elem.getContext('2d')) && elem.toDataURL('image/webp').indexOf('data:image/webp') === 0 ? 1 : 0;
-} catch (e) {
-    SupportsWebp = 0;
-    console.log("Error trying to find if browsers supports WebP Images. Falling back to PNG")
-}
-
-var pageObject = JSON.parse(getFile("./json/page.json"));
-
-function getFile(fileUrl) {
-    let temp;
-    $.ajax({
-        url: fileUrl,
-        dataType: "text",
-        async: false,
-        error: (jqXHR, textStatus, error) => {
-            window.alert(error);
-        },
-        success: (data, textStatus, jqXHR) => {
-            temp = data;
-        },
-    });
-    return temp;
-}
-
-
-$(window).on("load", function() {
-    if (!SupportsWebp) {
-        $("img[src$='webp']").attr("src", (i, src) => `${src}.png`);
-    }
-    console.log(SupportsWebp ? "WEBP Supported" : "WEBP Not Supported")
-});
-
 //IF Internet Exploder, go to generic IE page
-if (/Trident.*rv[ :]*11./.test(navigator.userAgent) || navigator.appName.indexOf("Internet Explorer") !== -1) {
+if (navigator.userAgentData?.brands?.some(brand => brand.brand === 'Internet Explorer')) {
     window.location = "ie.html";
 }
 
+var SupportsWebp = true; // 2- not set, 1, true, 0, false
+const elem = document.createElement('canvas');
+try {
+    SupportsWebp = (elem.getContext && elem.getContext('2d')) && elem.toDataURL('image/webp').indexOf('data:image/webp') === 0
+}
+catch { SupportsWebp = false }
+console.log(SupportsWebp ? "WEBP Supported" : "WEBP Not Supported")
+
+
+window.addEventListener('load', function () {
+    if (!SupportsWebp) {
+        $("img[src$='webp']").attr("src", (i, src) => { (src.endsWith("webp")) ? src : `${src}.png` })
+    }
+})
 
 /*vue3 components */
 const alist = {
@@ -58,38 +37,32 @@ const alist = {
 };
 
 const Work = {
-    props: {
-        work: { type: Array }
+    props: ["job"],
+    mounted() {
+        const images = Array.from(this.$el.querySelectorAll('.lzy'));
+        lazyLoadImages(images);
     },
-    methods: {
-        say: function(value) { alert(value); },
-        setItem: function(value) {
-            this.summary = value;
-        },
-        dtbind: function(value) { return '#' + value.replaceAll(" ", ""); },
-        dtId: function(value) { return value.replaceAll(" ", ""); }
-    },
+
     template: `
-        <div class="accordion ClearGlass" id="workitemsList">
-          <div class="card whiteGlass" v-for="(job, index) in work" :key="job.id">
-            <div class="accordion-item card-header whiteGlass">
-              <div class="accordion-header" :id="index + '_header'">
-                <button class="accordion-button collapsed btn whiteGlass" type="button" data-bs-toggle="collapse" :data-bs-target="'#Colapse_' + index">
-                  <img :data-src="job.img" :alt="job.name" class="lzy rounded shadow mx-2" style="width: 32px" />  
-                  <b>{{ job.name }}</b> - {{ job.timeworked }}
-                </button>
-              </div>
-              <div :id="'Colapse_' + index" class="accordion-collapse collapse" data-bs-parent="#workitemsList">
-                <div class="whiteGlass col-md-6 p-4"><p>{{ job.summary }}</p></div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="row justify-content-md-center whiteGlass">
+    <div class="col-md-2 mt-3">
+      <img :data-src="job.img" class="lzy ImgRoundCorner border-right shadow" :alt="job.name" />
+    </div>
+    <div class="col-md-6 mt-3 offset-md-1">
+      <h4 class="card-title">{{ job.name }}</h4>
+      <h5>{{ job.title }}, {{ job.timeworked }}</h5>
+      <p class="card-text">{{ job.summary }}</p>
+    </div>
+  </div>
     `,
 }
 
 const school = {
     props: ["job"],
+    mounted() {
+        const images = Array.from(this.$el.querySelectorAll('.lzy'));
+        lazyLoadImages(images);
+    },
     template: `
         <div class="row justify-content-md-center">
           <div class="col-md-2 mt-3">
@@ -106,6 +79,10 @@ const school = {
 
 const thought = {
     props: ["item"],
+    mounted() {
+        const images = Array.from(this.$el.querySelectorAll('.lzy'));
+        lazyLoadImages(images);
+    },
     methods: {
         getClass: function(size) {
             return "card shadow col-md-" + size + " mt-5";
@@ -135,6 +112,10 @@ const thought = {
 
 const Project = {
     props: ["project"],
+    mounted() {
+        const images = Array.from(this.$el.querySelectorAll('.lzy'));
+        lazyLoadImages(images);
+    },
     methods: {
         GetImage(img) {
             return (SupportsWebp) ? img : img + ".png";
@@ -183,18 +164,58 @@ const Project = {
             </div>
  `
 }
+//SHARED
+let sharedJsonDataPromise = null;
+
+function loadJsonData() {
+    if (sharedJsonDataPromise) {
+        return sharedJsonDataPromise;
+    }
+
+    sharedJsonDataPromise = new Promise(async (resolve, reject) => {
+        try {
+            console.log("call to API")
+            const response = await fetch('./json/page.json');
+            if (!response.ok) {
+                throw new Error('Failed to fetch JSON data');
+            }
+            const jsonData = await response.json();
+            resolve(jsonData);
+        } catch (error) {
+            reject(error);
+        }
+    });
+
+    return sharedJsonDataPromise;
+}
 
 /* Vues */
+
+//Vue Menu
 const Nav = Vue.createApp({
+    data() {
+        return {
+            jsonData: null
+        }
+    },
+    async created() {
+        this.jsonData = await loadJsonData()
+    },
     methods: {
         validatePath(path) {
-            const current = location.pathname.substring(1).toLowerCase() || "index.html";
-            return (path === current) ? "active" : "";
+            const current = location.pathname.substring(1).toLowerCase() || 'index.html'
+            return path === current ? 'active' : ''
         }
     },
     setup() {
-        const MenuItems = pageObject.menu;
-        return { MenuItems };
+        const jsonData = Vue.reactive({})
+        Vue.watchEffect(async () => {
+            jsonData.value = await loadJsonData()
+        })
+
+        const MenuItems = Vue.computed(() => jsonData.value && jsonData.value.menu)
+
+        return { MenuItems }
     }
 })
 
@@ -228,82 +249,149 @@ const blogs = Vue.createApp({
 })
 
 const vm = Vue.createApp({
+    data() {
+        return {
+            jsonData: null
+        }
+    },
+    async created() {
+        this.jsonData = await loadJsonData()
+    },
     components: { Project },
     setup() {
-        const Products = pageObject.projects;
+        const jsonData = Vue.reactive({}) 
+        Vue.watchEffect(async () => {
+            jsonData.value = await loadJsonData()
+        })
+
+        const Products = Vue.computed(() => jsonData.value && jsonData.value.projects)
         const WebPSupport = SupportsWebp;
         return { Products, WebPSupport }
     }
 })
 
-const carrerVue = Vue.createApp({
+const careerVue = Vue.createApp({ 
+    data() {
+        return {
+            jsonData: null
+        }
+    },
+    async created() {
+        this.jsonData = await loadJsonData()
+    },
     components: { Work, alist },
     setup() {
-        const Work = pageObject.Work;
+        const jsonData = Vue.reactive({})
+        Vue.watchEffect(async () => {
+            jsonData.value = await loadJsonData()
+        })
+
+        const Work = Vue.computed(() => jsonData.value && jsonData.value.Work) 
+        console.log(Work)
         const WepPSupport = SupportsWebp;
-        const highlights = pageObject.highlights;
+        const highlights = Vue.computed(() => jsonData.value && jsonData.value.highlights) 
         return { Work, WepPSupport, highlights }
     }
 })
 
 const eduView = Vue.createApp({
+    data() {
+        return {
+            jsonData: null
+        }
+    },
+    async created() {
+        this.jsonData = await loadJsonData()
+    },
     components: { school },
     setup() {
-        const school = pageObject.School;
+        const jsonData = Vue.reactive({}) 
+        Vue.watchEffect(async () => {
+            jsonData.value = await loadJsonData()
+        })
+
+        const school = Vue.computed(() => jsonData.value && jsonData.value.School) 
         return { school }
     }
-});
+})
 
 
 const backend = Vue.createApp({
+    data() {
+        return {
+            jsonData: null
+        }
+    },
+    async created() {
+        this.jsonData = await loadJsonData()
+    },
     components: { thought },
     setup() {
-        const Ex = pageObject.Experence;
+        const jsonData = Vue.reactive({})
+        Vue.watchEffect(async () => {
+            jsonData.value = await loadJsonData()
+        })
+        const Ex = Vue.computed(() => jsonData.value && jsonData.value.Experence)
         const WepPSupport = SupportsWebp;
 
         return { Ex, WepPSupport }
     }
-});
+})
 
 const About = Vue.createApp({
+    data() {
+        return {
+            jsonData: null
+        }
+    },
+    async created() {
+        this.jsonData = await loadJsonData()
+    },
     components: { alist },
     setup() {
-        const item = pageObject.welcome;
-        const Hobbies = pageObject.Hobbies;
-        const Vol = pageObject.volunteer;
+        const jsonData = Vue.reactive({}) 
+        Vue.watchEffect(async () => {
+            jsonData.value = await loadJsonData()
+        })
+
+        const item = Vue.computed(() => jsonData.value && jsonData.value.welcome)
+        const Hobbies = Vue.computed(() => jsonData.value && jsonData.value.Hobbies)
+        const Vol = Vue.computed(() => jsonData.value && jsonData.value.volunteer)
         return { item, Hobbies, Vol }
     }
 })
 
-/* vue mouts */
-Nav.mount("#navItem");
-blogs.mount("#Blogs");
-vm.mount("#app");
-carrerVue.mount('#career');
-eduView.mount("#edu");
-backend.mount("#vbackend");
-About.mount("#about");
+/* vue mounts */
+Nav.mount("#navItem")
+blogs.mount("#Blogs")
+vm.mount("#app")
+careerVue.mount('#career')
+eduView.mount("#edu")
+backend.mount("#vbackend")
+About.mount("#about")
 
 /**Vanilla JS */
 /// Lazy Load w/o extentions
 function preloadImg(img) {
-    return (SupportsWebp != 1) ? img + ".png" : img;
+    return (!SupportsWebp) ? img + ".png" : img
 }
-const images = document.querySelectorAll('.lzy')
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const target = entry.target;
-            target.setAttribute('src', preloadImg(target.dataset.src));
-            $(target).fadeIn("slow");
-            observer.unobserve(target);
-        }
+
+
+function lazyLoadImages(images) {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const target = entry.target
+                target.setAttribute('src', preloadImg(target.dataset.src))
+                $(target).fadeIn("slow")
+                observer.unobserve(target)
+            }
+        })
+    }, {
+        threshold: 0.5
     })
-}, {
-    threshold: 0.5
-});
-images.forEach(image => observer.observe(image))
-    ///End Lazy Load
+    images.forEach((image) => observer.observe(image))
+}
 
 ///Expand Text functionality
 function ExpandText(me) {
@@ -316,14 +404,14 @@ function expandlearning(item) { expand(item, '<i class="bi bi-arrow-right-circle
 function expand(item, displayClosed, displayOpen) { ExpandContent(item, item.parentElement.nextElementSibling, displayClosed, displayOpen); }
 
 function ExpandContent(item, content, displayClosed, displayOpen) {
-    let vis = content.style.display == "block";
-    item.innerHTML = vis ? displayClosed : displayOpen;
-    content.style.display = vis ? "none" : "block";
+    let vis = content.style.display === "block"
+    item.innerHTML = vis ? displayClosed : displayOpen
+    content.style.display = vis ? "none" : "block"
 }
-var video = document.getElementById("myVideo");
-var btn = document.getElementById("playPauseIcon");
+var video = document.getElementById("myVideo")
+var btn = document.getElementById("playPauseIcon")
 ///END EXPAND TEXT
 
 function playPause() {
-    video.paused ? (video.play(), btn.className = "bi bi-pause-fill") : (video.pause(), btn.className = "bi bi-play-fill");
+    video.paused ? (video.play(), btn.className = "bi bi-pause-fill") : (video.pause(), btn.className = "bi bi-play-fill")
 }
