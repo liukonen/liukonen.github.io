@@ -78,17 +78,17 @@
         },
         {
             "Title": "RiverScriptBot",
-            "SubTitle": "A Rivescript based Javascript chatbot.",
+            "SubTitle": "A Svelte UI and NodeJS Rivescript server chatbot.",
             "Description": "I have created several chatbots over the years, including one in Vue.js and another in Angular, as well as a REST-based bot using Rivescript and Node.js. My interest in chatbots began in the early 2000s when I worked on an AIML project that used MS Agent, TTS, and speech recognition. Later, I worked with the Alice project and presented a version of my project at the MMAC Be The Spark tour, which utilized Microsoft cognitive services and a vocal chatbot capable of detecting and translating on the fly. I recently migrated the AIML code to RiveScript to create this chatbot.",
             "image": "img/card/chat.webp",
             "buttons": [
                 {
                     "type": "Website",
-                    "url": "https://liukonen.dev/RiverScript-Angular-Edition/"
+                    "url": "https://liukonen.dev/chat-ui/"
                 },
                 {
-                    "type": "Angular Source",
-                    "url": "https://github.com/liukonen/RiverScript-Angular-Edition/"
+                    "type": "Svelte Source",
+                    "url": "https://github.com/liukonen/chat-ui"
                 },
                 {
                     "type": "Server Source",
@@ -96,13 +96,10 @@
                 }
             ],
             "tags": [
-                "Angular",
+                "Svelte",
                 "Progressive Web Apps (PWA)",
-                "JavaScript",
-                "JQuery",
                 "Node.JS",
                 "SASS",
-                "Heroku",
                 "API REST calls",
                 "CI/CD",
                 "RiveScript"
