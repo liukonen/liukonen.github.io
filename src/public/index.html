@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="about page for Luke Liukonen. Software Developer, Former Instructor, Tech enthusiast" />
+    <meta name="author" content="Luke Liukonen" />
+    <meta name="msapplication-config" content="/img/favicons/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self';
+    script-src 'self' wts.one app.wts2.one cdn.jsdelivr.net cdnjs.cloudflare.com unpkg.com 'unsafe-inline' 'unsafe-eval';
+    style-src 'self' cdn.jsdelivr.net unpkg.com cdnjs.cloudflare.com 'unsafe-inline';
+    img-src 'self' wts.one data:;
+    font-src 'self' cdn.jsdelivr.net cdnjs.cloudflare.com data:;
+    connect-src 'self' dev.to;
+    media-src 'self';
+    object-src 'none';
+    child-src;
+    frame-src; 
+    form-action;  
+    base-uri; 
+    manifest-src 'self';" />
+    <title>Luke Liukonen - Dev</title>
+    <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png" sizes="180x180" />
+    <link rel="icon" href="/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png" />
+    <link rel="manifest" href="/img/favicons/site.webmanifest" />
+    <link rel="mask-icon" href="/img/favicons/safari-pinned-tab.svg" color="#ffffff" />
+    <link rel="icon" href="/img/favicons/favicon.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" integrity="sha512-t4GWSVZO1eC8BM339Xd7Uphw5s17a86tIZIj8qRxhnKub6WoyhnrxeCIMeAqBPgdZGlCcG2PrZjMc+Wr78+5Xg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" integrity="sha512-ZnR2wlLbSbr8/c9AgLg3jQPAattCUImNsae6NHYnS9KrIwRdcY9DxFotXhNAKIKbAXlRnujIqUWoXXwqyFOeIQ==" crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="stylesheets/page.min.css" />
+</head>
+
+<body>
+
+
+        <div class="container glass" id="app">
+            <h3 class="text-center h3 tshadow mt-5">Open Source Projects</h3>
+            <div class="row row-cols-1 row-cols-md-3 mt-5">
+                <Project v-for="product in Products" :project="product"></Project>
+            </div>
+        </div>
+        <div class="container-fluid glass" id="career">
+            <h3 class="text-center h3 tshadow mt-5">Career So far</h3>
+            <div id="career2" class="mt-5">
+                <work v-for="job in this.Work" :job="job"></work>
+                <br />
+                <h3 class="text-center mt-5 tshadow">Current Overall Highlights</h3>
+                <alist :list="highlights" :styles="1"></alist>
+            </div>
+        </div>
+        <div class="container glass" id="edu">
+            <h3 class="text-center h3 mt-5 tshadow">Education</h3>
+            <School v-for="edu in this.school" :job="edu"></School>
+        </div>
+        <div class="position-relative"></div>
+        <div class="container glass">
+            <div class="container" id="Knowledge">
+                <h3 class="text-center h3 tshadow mt-5">
+                    Systems / Ideas I've worked with
+                </h3>
+                <div class="row text-dark mt-5" id="vbackend">
+                    <Thought v-for="item in this.Ex" v-bind:item="item"></Thought>
+                </div>
+            </div>
+        </div>
+        <div id="about">
+            <div class="container glass">
+                <div class="container">
+                    <div id="welcome" class="container">
+                        <h3 class="h3 text-center tshadow">Welcome</h3>
+                        <div>{{item}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="container glass">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1 class="h3 tshadow">Interests</h1>
+                        <alist :list="Hobbies" :styles="0"></alist>
+                    </div>
+                    <div class="col-md-6">
+                        <h1 class="h3 tshadow">Volunteer</h1>
+                        <alist :list="Vol" :styles="0"></alist>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="glass" style="text-align: center; align-content: center">
+            <a target="_blank" class="btn btn-secondary" href="https://github.com/liukonen" role="button" rel="noreferrer" aria-label="Github" data-toggle="tooltip" data-placement="top" title="GitHub"><i class="bi bi-github"></i> GitHub</a>
+            <a target="_blank" class="btn btn-primary bg-lnkdin" href="https://www.linkedin.com/in/lukeliukonen/" role="button" rel="noreferrer" aria-label="LinkedIn" data-toggle="tooltip" data-placement="top" title="LinkedIn"><i class="bi bi-linkedin"></i> LinkedIn</a>
+            <a class="btn btn-danger" href="mailto:liukonen@gmail.com?subject=GitHub_Home_Page" role="button" rel="noreferrer" aria-label="email" data-toggle="tooltip" data-placement="top" title="email"><i class="bi bi-envelope-fill"> Email</i></a>
+            <a target="_blank" class="btn btn-light" href="https://dev.to/liukonen" role="button" rel="noreferrer" aria-label="dev To"><i class="bi bi-file-code-fill"></i> DEV Community</a>
+        </div>
+        <br /><br />
+        <div class="glass">&copy; 2023 Luke Liukonen <i>* this page, its contents, are opinions of my own, and represent no one else</i>
+            <p> Please see <a href="https://github.com/liukonen/liukonen.github.io/blob/master/terms.md" alt="terms of service link">Terms of service</a> for not just this page, but all apps associated within the domain of my page</p>
+        </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.3.4/vue.global.prod.min.js" integrity="sha512-39BSQXI5q1XlvVhLfFRidKG8KM6Tr6VS/XSnNo6N/A0ZXexHCeoUI/s+ulujQy3UREjoLNrMnFat8VI0mMugWA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js " integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin=" anonymous " referrerpolicy="no-referrer "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js " integrity="sha512-VK2zcvntEufaimc+efOYi622VN5ZacdnufnmX7zIhCPmjhKnOi9ZDMtg1/ug5l183f19gG1/cBstPO4D8N/Img==" crossorigin="anonymous" referrerpolicy="no-referrer "></script>
+    <script src="js/vue3.js "></script>
+</body>
+
+</html>
