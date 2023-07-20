@@ -1,0 +1,49 @@
+body,html
+  height:100%
+  margin:0
+
+.lead
+  font-family:raleway
+  font-weight:100
+  margin-top:-10px
+
+@media (min-width: 768px)
+  .bd-placeholder-img-lg
+    font-size:3.5rem
+
+.content
+  display:none
+
+$color-left: #69afe9
+$color-right: #7aa2c2
+
+.gradient-card 
+  background: linear-gradient(to right, $color-left, $color-right)
+
+.transparent-list 
+  background-color: transparent
+
+.custom-transparent-list
+  background-color: transparent
+
+// .list-group 
+//   &.custom-transparent-list 
+//     background-color: transparent
+//     .list-group-item 
+//       &.custom-transparent-item 
+//         background-color: transparent
+
+.list-group 
+  &.custom-transparent-list 
+    background-color: transparent
+    border: 0
+    .list-group-item 
+      &.custom-transparent-item 
+        background-color: transparent
+        border: 0
+        border-bottom: 1px solid #fff
+        color: white
+        a 
+          color: white
+        .fas 
+          color: white

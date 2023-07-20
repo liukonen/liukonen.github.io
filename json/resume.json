@@ -1,12 +1,12 @@
 {
 	"basics": {
 		"name": "Luke Liukonen",
-		"picture": "https://liukonen.github.io/img/me-bw.webp",
+		"picture": "me.jpg",
 		"label": "Software Analyst | Mid to Senior level Software Engineer |  Trisept Solutions",
-		"headline": ".net Full Stack Software Developer / Analyst  since 2006 |\r\nInstructor, ITT Tech (2008, 2010) \r\n| BBA Management Information Systems",
+		"headline": "Full Stack Engineer, with a focus on backend development.",
 		"summary": "Developing powerful and dynamic applications, using some of the latest technologies, that are stable, reliable and productive.",
 		"website": "https://liukonen.github.io/",
-		"blog": null,
+		"blog": "dev.to/liukonen",
 		"yearsOfExperience": 14,
 		"id": "2efdea59-3fcd-4153-a84d-9a182d40ce1d",
 		"username": "liukonen",
@@ -15,10 +15,7 @@
 		"region": "Milwaukee Wi",
 		"location": {},
 		"phone": "414 810-6465",
-		"followers": 2,
-		"following": 3,
 		"profiles": [
-
 			{
 				"network": "GitHub",
 				"username": "liukonen",
@@ -28,15 +25,27 @@
 				"network": "LinkedIn",
 				"url": "https://www.linkedin.com/in/lukeliukonen",
 				"username": "lukeliukonen"
+			},
+			{
+				"network": "dev.to",
+				"url": "https://dev.to/liukonen",
+				"username": "liukonen"
 			}
 		]
 	},
 	"skills": [
 		{
+			"name": "Java",
+			"level": "Expert",
+			"rating": 5,
+			"yearsOfExperience": 3,
+			"keywords": []
+		},
+		{
 			"name": "C#",
 			"level": "Expert",
 			"rating": 5,
-			"yearsOfExperience": 14,
+			"yearsOfExperience": 15,
 			"keywords": []
 		},
 		{
@@ -47,24 +56,10 @@
 			"keywords": []
 		},
 		{
-			"name": "ASP.Net",
+			"name": "Microsoft SQL Server",
 			"level": "Advanced",
 			"rating": 4,
 			"yearsOfExperience": 14,
-			"keywords": []
-		},
-		{
-			"name": "Microsoft SQL Server (Design and Development)",
-			"level": "Advanced",
-			"rating": 4,
-			"yearsOfExperience": 14,
-			"keywords": []
-		},
-		{
-			"name": "Windows Communication Foundation services",
-			"level": "Intermediate",
-			"rating": 3,
-			"yearsOfExperience": 13,
 			"keywords": []
 		},
 		{
@@ -89,21 +84,7 @@
 			"keywords": []
 		},
 		{
-			"name": "OWASP top 10 Cert, and PCI compliance trained",
-			"level": "Intermediate",
-			"rating": 3,
-			"yearsOfExperience": 7,
-			"keywords": []
-		},
-		{
-			"name": "N-Tier software architecture design",
-			"level": "Intermediate",
-			"rating": 3,
-			"yearsOfExperience": 14,
-			"keywords": []
-		},
-		{
-			"name": "Javascript and Jquery",
+			"name": "Javascript",
 			"level": "Intermediate",
 			"rating": 3,
 			"yearsOfExperience": 14,
@@ -117,108 +98,86 @@
 			"keywords": []
 		}
 	],
-	"projects": [
-		{
-			"name": "nats",
-			"displayName": "nats",
-			"summary": "Not Another Text Scanner",
-			"website": "",
-			"githubUrl": "https://github.com/liukonen/nats",
-			"primaryLanguage": "C#",
-			"languages": [
-				"Smalltalk",
-				"C#"
-			],
-			"libraries": [],
-			"images": [],
-			"videos": []
-		},
-		{
-			"name": "riverscriptbot",
-			"displayName": "RiverScriptBot",
-			"summary": "A riverscript based Javascript chatbot",
-			"website": "",
-			"githubUrl": "https://github.com/liukonen/RiverScriptBot",
-			"primaryLanguage": "",
-			"languages": [],
-			"libraries": [],
-			"images": [],
-			"videos": []
-		},
-		{
-			"name": "tictacmath",
-			"displayName": "tictacmath",
-			"summary": "Tic tac math is a tic tac toe game that involves playing against the PC and math equations",
-			"website": "",
-			"githubUrl": "https://github.com/liukonen/tictacmath",
-			"primaryLanguage": "Visual Basic .NET",
-			"languages": [
-				"Visual Basic .NET"
-			],
-			"libraries": [],
-			"images": [],
-			"videos": []
-		},
-		{
-			"name": "weatherwallpaper",
-			"displayName": "WeatherWallpaper",
-			"summary": "Changes your wallpaper based on the weather conditions outside",
-			"website": "",
-			"githubUrl": "https://github.com/liukonen/WeatherWallpaper",
-			"primaryLanguage": "C#",
-			"languages": [
-				"Smalltalk",
-				"C#",
-				"Visual Basic"
-			],
-			"libraries": [],
-			"images": [],
-			"videos": []
-		},
-		{
-			"name": "htmltexteditor",
-			"displayName": "htmlTextEditor",
-			"summary": "a more advanced text editor developed from the need to have mini applications do custom work",
-			"website": "",
-			"githubUrl": "https://github.com/liukonen/htmlTextEditor",
-			"primaryLanguage": "JavaScript",
-			"languages": [
-				"HTML",
-				"JavaScript"
-			],
-			"libraries": [],
-			"images": [],
-			"videos": []
-		}
-	],
 	"work": [
 		{
-			"company": "Trisept Solutions",
-			"position": "Application Software Analyst (Mid to Senior level Software Engineer equiv)",
-			"website": "http://triseptsolutions.com",
-			"location": "Milwaukee WI",
-			"summary": "First 3 years were maintaining and being the development lead for the product support area of the company. Current roll is working on a team focused the backend system (Avail, packaging, booking) engine of the system. This is a Full stack position. Other tasks I've also taken on include writing setup materials / documentation, consulted in system analysis tasks on system performance and monitoring, and mentored both new developers, and junior developers in our system.",
+			"company": "Northwestern Mutual",
+			"position": "Software Engineer",
+			"website": "https://www.northwesternmutual.com/",
+			"location": "Milwaukee, Wi",
+			"summary": "As a Software Engineer at Northwestern Mutual, I have been actively engaged in Java-based projects, focusing primarily on Backend/Services development. Leveraging my expertise, I've contributed to the successful implementation of solutions utilizing Java frameworks like Spring, Drools, and Flowable. Over the past 2 years and 4 months, I have continuously honed my skills in these technologies and remained enthusiastic about exploring innovative applications to deliver exceptional results.",
 			"isCurrentRole": true,
-			"startDate": "2014-04-01",
+			"startDate": "2021-04-01",
 			"endDate": "",
 			"start": {
-				"year": 2014,
+				"year": 2021,
 				"month": 4
 			},
 			"end": {},
 			"highlights": [
-				"2014 - 2017 lead developer for the break-fix team. This involves knowledge of Trisept's entire system, debugging and resolving issues in the code base, and assisting in managing the company's off shore resources when needed.",
-				"2014-2019 - Active in a number of sub committees involving boosting company moral and wellness initiatives",
-				"2017, and 2018 \"COSBE be the spark\" Trisept representative: Helped organize Trisept presentation and vision. Demonstrated what roles and responsibilities Developers have, and showcased 2 custom applications that students could interact with involving real-time voice translation with AI",
-				"2017, Worked with Microsoft's Chicago offices and representatives, focusing on Azure deployment, bot technologies, cognitive services , and natural language processing including involvement in a hands on learning session Hackathon in developing a custom chat-bot."
+				"Proficient in Java development with a focus on Backend/Services engineering.",
+				"Extensive experience working with Spring, Drools, and Flowable frameworks.",
+				"Consistently seeking opportunities to enhance my skillset and stay up-to-date with the latest technologies",
+				"Proven track record of delivering high-quality solutions in a dynamic work environment."
+			]
+		},
+		{
+			"company": "Brady Corporation",
+			"position": "Senior Software Engineer",
+			"website": "https://www.bradyid.com/",
+			"location": "Milwaukee, Wi",
+			"summary": "As a Senior Software Engineer at Brady Corporation, I played a crucial role in the development of their e-commerce platform. Serving as a full-stack developer, I adeptly utilized a diverse set of tools and technologies, including SASS Stylesheets, JavaScript, and various JavaScript frameworks. Employing the principles of MVC (Model-View-Controller) and Test Driven Development (TDD), I contributed to the creation of robust and efficient solutions. Additionally, I gained valuable experience in Docker containerization, which led to the successful implementation of one-click 'Dev environments as code' setup scripts. These scripts significantly streamlined the onboarding process and machine rebuilding, positively impacting the team's productivity. Throughout my 9-month tenure at Brady, I remained dedicated to optimizing the development process and enhancing the overall efficiency of our team.",
+			"isCurrentRole": false,
+			"startDate": "2020-09-01",
+			"endDate": "2021-04-01",
+			"start": {
+				"year": 2020,
+				"month": 9
+			},
+			"end": {
+				"year": 2021,
+				"month": 4
+			},
+			"highlights": [
+				"Proficient in full-stack development, focusing on the e-commerce domain.",
+				"Skilled in utilizing SASS Stylesheets, JavaScript, and various JavaScript frameworks.",
+				"Demonstrated expertise in applying MVC and Test Driven Development methodologies.",
+				"Experience with Docker containerization, leading to efficient one-click 'Dev environments as code' setup.",
+				"Strong commitment to process optimization and team productivity improvements."
+			]
+		},
+		{
+			"company": "Trisept Solutions",
+			"position": "Application Software Analyst (Mid to Senior level Software Engineer)",
+			"website": "http://triseptsolutions.com",
+			"location": "Milwaukee WI",
+			"summary": "As a Software Engineer (Application Software Analyst) at Trisept Solutions, I served as a Software Engineer with a variety of functions, driving backend system development, mentoring team members, and providing valuable insights on system performance. Previously, I excelled as the lead developer for the break-fix team, resolving issues across the entire system. Actively involved in sub-committees, I focused on enhancing company morale and wellness initiatives. I represented Trisept as a speaker at 'COSBE be the spark,' showcasing custom AI-powered applications. Additionally, I collaborated with Microsoft, gaining expertise in Azure deployment, bot technologies, and cognitive services through a hands-on hackathon. My passion for innovation and process improvement contributed to the success of our team.",
+			"isCurrentRole": false,
+			"startDate": "2014-04-01",
+			"endDate": "2020-07-01",
+			"start": {
+				"year": 2014,
+				"month": 4
+			},
+			"end": {
+				"year": 2020,
+				"month": 7
+			},
+			"highlights": [
+				"Demonstrated leadership as the Development Lead for the Product Support area, driving backend system development.",
+				"Proficient in full-stack development, utilizing a diverse range of tools and technologies.",
+				"Proven ability in providing setup materials/documentation and offering valuable insights on system performance and monitoring.",
+				"Effective mentorship of new and junior developers, fostering growth and skill development within the team.",
+				"Actively involved in sub-committees, contributing to company morale and wellness initiatives.",
+				"Engaged in public speaking, representing Trisept and showcasing innovative applications at 'COSBE be the spark.'",
+				"Collaborated with Microsoft, focusing on Azure deployment, bot technologies, and cognitive services, culminating in a custom chatbot development."
 			]
 		},
 		{
 			"company": "Blue7 Solutions",
 			"position": "Software Engineer",
 			"website": "",
-			"location": "Milwaukee Wi",
-			"summary": "Blue7 Solutions LLC, a Joint Venture between Blue Star Infotech America Inc. and Trisept Solutions, leverages the extensive technology and solutions experience of both companies to solve business problems of modern day enterprises and software product companies. Half of my role was working with Trisept solutions to develop and maintain the companies dynamic packaging engine which bundled vacation packages together based on preset rules, and there booking engine which then booked the vacation packages. The second half of my role was to be the Development lead for the Product Support team, which involves knowledge of Trisept's entire system, debugging and resolving issues in the code base, and managing the company's off shore resources when needed.",
+			"location": "Milwaukee Wi (No longer in operation)",
+			"summary": "As a Software Engineer at Blue7 Solutions, I held dual roles, serving as a Consultant Development Lead for the Product Support team and a full-stack developer for Trisept Solutions' dynamic packaging engine. In my capacity as a Consultant Development Lead, I collaborated closely with Trisept Solutions and Blue7 Solutions' offshore resources, proficiently debugging and resolving code-related issues throughout Trisept's entire system. Beyond my technical contributions, I actively participated in Blue7 Solutions' wellness and event planning team, organizing events, engaging in community outreach, and promoting the company's initiatives. As a consultant, I effectively managed project hours and ensured adherence to hourly constraints. My experience at Blue7 Solutions was enriching, allowing me to cultivate diverse skills, from technical expertise to cross-functional collaboration and project management.",
 			"isCurrentRole": false,
 			"startDate": "2012-01-01",
 			"endDate": "2014-04-01",
@@ -231,9 +190,11 @@
 				"month": 4
 			},
 			"highlights": [
-				"Lead Developer and Engineer on Product Support team",
-				"participated in the companies wellness and event planing team, which focused on organizing events, participating in community outreach and promoting the company.",
-				"Consulting role. Had to maintain hours and keep projects within thresholds of hourly constraints"
+				"Held dual roles as a Consultant Development Lead for the Product Support team and a full-stack developer for Trisept Solutions' dynamic packaging engine.",
+				"Collaborated closely with Trisept Solutions and Blue7 Solutions' offshore resources to debug and resolve issues, demonstrating in-depth knowledge of Trisept's entire system.",
+				"Actively contributed to Blue7 Solutions' wellness and event planning team, organizing events, participating in community outreach, and promoting company initiatives.",
+				"Proficiently managed project hours and maintained project deliverables within hourly constraints.",
+				"Developed a diverse skill set, encompassing technical expertise, cross-functional collaboration, and project management."
 			]
 		},
 		{
@@ -241,7 +202,7 @@
 			"position": "Software Developer",
 			"website": "http://triseptsolutions.com",
 			"location": "Milwaukee Wi",
-			"summary": "Developed and maintained the companies dynamic packaging engine which bundled vacation packages together based on preset rules, and there booking engine which then booked the vacation packages.\nTechnologies that interacted with at a given time included, C#, VB.net, SQL, XML, javascript and ASP.net",
+			"summary": "As a Software Developer at Trisept Solutions from May 2006 to Dec 2011, I played a vital role in developing and maintaining the dynamic packaging and booking engines. Utilizing technologies like C#, VB.net, SQL, XML, JavaScript, and ASP.net, I contributed to the development of 'Solutions by Trisept' web interface and WCF services on the .NET framework. Additionally, I led the migration from the 2.0 to 4.0 .NET framework and upgraded solutions to Visual Studio 2010. I collaborated with offshore teams, developed Windows Services, and ensured code adherence to industry security standards, including OWASP Top 10 certification for PCI compliance. My experience equipped me with a profound understanding of software development lifecycles and strong collaboration skills, contributing to the success of development projects.",
 			"isCurrentRole": false,
 			"startDate": "2006-05-01",
 			"endDate": "2012-01-01",
@@ -254,13 +215,15 @@
 				"month": 1
 			},
 			"highlights": [
-				"Lead Developer for companies vendor and supplier based web interface, \"Solutions by Trisept\".",
-				"Developed WCF services built on the .net framework.",
-				"Technical lead on migration from the 2.0 .Net framework to 4.0, and upgrading solutions to Visual studio 2010.",
-				"Worked with offshore development team.",
-				"Developed one off Windows Services.",
-				"OWASP Top 10 certified for PCI compliance.",
-				"Investigated new technologies to implement and integrate into existing code-bases."
+				"Contributed significantly to the development and maintenance of Trisept Solutions' dynamic packaging and booking engines.",
+				"Proficiently utilized technologies such as C#, VB.net, SQL, XML, JavaScript, and ASP.net in software development.",
+				"Played a key role in the maintenance of 'Solutions by Trisept' web interface and the development of WCF services on the .NET framework.",
+				"Led the technical migration from the 2.0 to 4.0 .NET framework.",
+				"Collaborated effectively with offshore development teams to enhance project outcomes.",
+				"Developed one-off Windows Services to meet specific project requirements.",
+				"Ensured adherence to industry security standards, securing OWASP Top 10 certification for PCI compliance.",
+				"Demonstrated a comprehensive understanding of software development lifecycles.",
+				"Strong team player, contributing to the success of various development projects."
 			]
 		},
 		{
@@ -268,7 +231,7 @@
 			"position": "Adjunct Instructor",
 			"website": "",
 			"location": "Greenfield Wi",
-			"summary": "taught an overview of the computing field and computer technology trends with emphasis on terminology and concepts related to PC hardware and software components and their functions from a hands-on approach. Entry-level hands-on skills as well as theory in handling PC hardware were taught.",
+			"summary": "As an Adjunct Instructor at ITT Technical Institute, I taught an overview course in the computing field and computer technology trends, with a focus on PC hardware and software components and their functions. Utilizing a hands-on approach, I facilitated both entry-level practical skills and theoretical understanding of PC hardware, presenting the course material concisely and encouraging students to apply their knowledge in real-world scenarios. I conducted interactive and detailed lessons, demonstrating hardware repair methods and troubleshooting techniques to provide students with practical experience in the subject matter.",
 			"isCurrentRole": false,
 			"startDate": "2010-05-01",
 			"endDate": "2010-09-01",
@@ -281,12 +244,16 @@
 				"month": 9
 			},
 			"highlights": [
-				"Presented course material in a concise manner that encouraged applied knowledge of theory to real world settings.\n\t\t",
-				"Demonstrated hardware repair methods and troubleshooting through interactive detailed lessons.",
-				"Administered and corrected examinations and home work assignments.",
-				"Maintained and kept office hours outside of normal work hours.",
-				"Class ranged from 20-30 students",
-				"Reported info directly to the Dean of the department."
+				"Instructed an overview course in the computing field and computer technology trends.",
+				"Emphasized terminology and concepts related to PC hardware and software components.",
+				"Utilized a hands-on approach to teach entry-level skills and theory in PC hardware handling.",
+				"Encouraged students to apply theoretical knowledge to real-world settings.",
+				"Demonstrated hardware repair methods and troubleshooting through interactive lessons.",
+				"Administered and corrected examinations and homework assignments.",
+				"Provided academic support to students through office hours outside of normal work hours.",
+				"Successfully managed class sizes ranging from 20 to 30 students.",
+				"Developed strong instructional and presentation skills.",
+				"Acquired expertise in demonstrating hardware repair methods and troubleshooting techniques."
 			]
 		},
 		{
@@ -294,7 +261,7 @@
 			"position": "Adjunct Instructor",
 			"website": "",
 			"location": "Greenfield Wi",
-			"summary": "The course served as a foundation for understanding the logical function and process of computer programming in a given language environment. Basic computer programming knowledge and skills in logic and syntax were covered. Coding convention and procedures were discussed relevant to the given programming language environment.",
+			"summary": "As an Adjunct Instructor at ITT Technical Institute, I taught a foundational computer programming course, focusing on logical functions and processes within a specific language environment. The curriculum covered essential knowledge and skills in logic, syntax, and coding conventions relevant to the programming language. Encouraging practical application, I presented the material concisely to help students bridge theoretical concepts with real-world scenarios.",
 			"isCurrentRole": false,
 			"startDate": "2008-05-01",
 			"endDate": "2008-09-01",
@@ -307,11 +274,16 @@
 				"month": 9
 			},
 			"highlights": [
-				"Presented course material in a concise manner that encouraged applied knowledge of theory to real world settings.",
-				"Administered and corrected examinations and home work assignments.",
-				"Maintained and kept office hours outside of normal work hours.",
-				"Class ranged from 20-30 students.",
-				"reported info directly to the Dean of the department."
+				"Instructed a foundational computer programming course at ITT Technical Institute.",
+				"Covered logical functions and processes within a specific language environment.",
+				"Emphasized essential knowledge and skills in logic, syntax, and coding conventions.",
+				"Encouraged students to apply theoretical knowledge practically.",
+				"Administered and corrected examinations and homework assignments.",
+				"Provided academic support to students through office hours outside normal work hours.",
+				"Successfully managed class sizes ranging from 20 to 30 students.",
+				"Developed strong leadership and communication skills.",
+				"Provided effective feedback to students on assignments and course progress.",
+				"Reported directly to the Dean of the department."
 			]
 		},
 		{
@@ -319,7 +291,7 @@
 			"position": "Teaching Assistant ",
 			"website": "https://UWM.EDU",
 			"location": "Milwaukee WI",
-			"summary": "TA - BusAdm 531 Web Application Development - Marc Haines\n\nDeveloping n-tier systems with Web Services and the Internet, using visual languages such as Visual Basic Script and C# and the SOAP and XML protocols",
+			"summary": "As a Teaching Assistant at the University of Wisconsin Milwaukee, I supported the Web Application Development course (BusAdm 531) under Marc Haines. In this role, I graded papers and provided academic support to students, offering assistance with the course material and addressing any issues they encountered during the class. My guidance aimed to help students excel in the course, and this experience honed my communication skills and ability to provide valuable feedback.",
 			"isCurrentRole": false,
 			"startDate": "2006-01-01",
 			"endDate": "2006-05-01",
@@ -331,7 +303,14 @@
 				"year": 2006,
 				"month": 5
 			},
-			"highlights": []
+			"highlights": [
+				"Served as a Teaching Assistant for BusAdm 531 Web Application Development at the University of Wisconsin Milwaukee.",
+				"Responsible for grading papers and providing academic support to students.",
+				"Assisted students with course material and addressed any issues they faced during the class.",
+				"Offered guidance to help students succeed in the course.",
+				"Developed strong communication skills through interactions with students.",
+				"Gained proficiency in providing effective feedback to aid students' academic progress."
+			]
 		}
 	],
 	"publications": [],

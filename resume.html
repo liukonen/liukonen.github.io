@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="Luke Liukonen">
     <title>Luke Liukonen</title>
-    <link href="./css/index.min.css" rel="stylesheet" />
+    <link href="./css/resume.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" integrity="sha512-t4GWSVZO1eC8BM339Xd7Uphw5s17a86tIZIj8qRxhnKub6WoyhnrxeCIMeAqBPgdZGlCcG2PrZjMc+Wr78+5Xg==" crossorigin="anonymous" referrerpolicy="no-referrer" /><link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png" sizes="180x180">
     <link rel="icon" href="/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
@@ -23,89 +23,27 @@
 <body class="bg-light">
 
     <main role="main" class="container">
-        <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-dark rounded shadow-sm" id="HeaderItem">
-            <!--Header Template (fill out Name and Image dynamicly)-->
-            <script id="headerTemp" type="text/x-handlebars-template">
-                <img src="img/original/{{picture}}" width="50" height="50" style="filter:grayscale(100%)" />
-                <div class="lh-100">
-                    <h1 class="mb-0 text-white lh-100"> {{name}}</h1>
-                </div>
-            </script>
+        <div class="d-flex align-items-center p-3 my-3 text-white-50 gradient-card rounded shadow-sm" id="HeaderItem">
         </div>
         <div class="row">
             <div class="col-md-4">
                 <div class="my-3 p-3 bg-white rounded shadow-sm" id="BasicItems">
-                    <h1 class=" h6 border-bottom border-gray pb-2 mb-0">Basics</h1>
-                    <!--Basic Info Template-->
-                    <script id="basicsTemp" type="text/x-handlebars-template">
-                        <div>
-                            <ul class="list-group">
-                                <li class="list-group-item"><i class="fas fa-mobile-alt"></i> Telephone - <a href="tel:${phone}">{{phone}}</a></li>
-                                <li class="list-group-item"><i class="fas fa-envelope-square"></i> Email - <a href="mailto:${email}">{{email}}</a></li>
-                                <li class="list-group-item"><i class="fas fa-map-marker-alt"></i> Region - {{region}}</li>
-                                {{#profiles}}
-                                <li class="list-group-item"><i class="{{socialMediaIcon network}}"></i> {{network}} - <a href="{{url}}" target="_blank">{{username}}</a></li>
-                                {{/profiles}}
-                            </ul>
-                        </div>
-                    </script>
                 </div>
                 <div class="my-3 p-3 bg-white rounded shadow-sm" id="">
                     <h1 class=" h6 border-bottom border-gray pb-2 mb-0">Skills</h1>
                     <ul id="SkillItems" class="list-group">
                         <!--Skills Template (fills out uL item)-->
-                        <script id="skillsTemp" type="text/x-handlebars-template">
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-
-                                <!-- <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{name}}</div>
-                                  </div> -->
-
-                                <div><img src="/img/original/{{ImageHelper name}}.webp" height="16" width="16" alt="{{name}} image" /> {{ImageHelper name}} {{name}}</div>
-                                <span class="badge badge-dark badge-pill" title="{{level}} [${yearsOfExperience} years experence]">{{level}}</span>
-                            </li>
-                        </script>
                     </ul>
                 </div>
                 <div class="my-3 p-3 bg-white rounded shadow-sm" id="EduItems">
                     <h1 class=" h6 border-bottom border-gray pb-2 mb-0">Education</h1>
-                    <!--Education Template-->
-                    <script id="eduTemp" type="text/x-handlebars-template">
-                        <div>
-                            <img src="img/original/{{institution}}.webp" width="32" height="32" alt="{{institution}}" class="left"><br />
-                            <span class="lead">{{area}}</span><br/>
-                            <span class="text-muted">{{studyType}}</span><br/>
-                            <span class="lead">{{institution}}</span><br/>
-                            <span class="text-muted">{{parseWorkDate startDate}} - {{parseWorkDate endDate}}</span>
-                        </div>
-                    </script>
                 </div>
             </div>
             <div class="col">
-                <div class="my-3 p-3 bg-white rounded shadow-sm">
-                    <h1 class=" h6 border-bottom border-gray pb-2 mb-0">Summary</h1>
-                    <div id="summaryItem"></div>
-                </div>
                 <div class="my-3 p-3 bg-white rounded shadow-sm" id="ExperenceItems">
-                    <h1 class=" h6 border-bottom border-gray pb-2 mb-0">Professional Experience</h1>
+                    <h2 class=" h2 border-bottom border-gray pb-2 mb-0">Professional Experience</h1>
                     <!--Work Experence Template-->
-                    <script id="experenceTemp" type="text/x-handlebars-template">
-                        <div class="media text-muted pt-3 lh-125 border-bottom border-gray">
-                            <img class="" width="32" height="32" src="img/original/{{company}}.webp" alt="{{company}}" />
-                            <div class="col">
-                                <strong class="d-block">{{company}}</strong> - {{location}}<br />
-                                <small class="text-muted">{{position}} - {{parseWorkDate startDate}} - {{parseWorkDate endDate}}</small>
-                                <p class="media-body pb-3 mb-0"> {{summary}}
-                                    <ul>
-                                        {{#highlights}}
-                                        <li>{{.}}</li>
-                                        {{/highlights}}
-                                    </ul>
 
-                                </p>
-                            </div>
-                        </div>
-                    </script>
                 </div>
             </div>
         </div>
@@ -136,8 +74,7 @@
             </div>
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="js/resume.js"></script>
+    <script src="js/resume.min.js"></script>
 
 </body>
 

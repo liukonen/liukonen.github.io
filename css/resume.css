@@ -1,0 +1,42 @@
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.lead {
+  font-weight: 100;
+  margin-top: -10px;
+}
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+.gradient-card {
+  background: linear-gradient(to right, #69afe9, #7aa2c2);
+}
+
+.transparent-list {
+  background-color: transparent;
+}
+
+.custom-transparent-list {
+  background-color: transparent;
+}
+
+.list-group.custom-transparent-list {
+  background-color: transparent;
+  border: 0;
+}
+.list-group.custom-transparent-list .list-group-item.custom-transparent-item {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid #fff;
+  color: white;
+}
+.list-group.custom-transparent-list .list-group-item.custom-transparent-item a {
+  color: white;
+}
+.list-group.custom-transparent-list .list-group-item.custom-transparent-item .fas {
+  color: white;
+}/*# sourceMappingURL=resume.css.map */
