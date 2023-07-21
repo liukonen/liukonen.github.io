@@ -35,67 +35,340 @@
 	},
 	"skills": [
 		{
-			"name": "Java",
 			"level": "Expert",
 			"rating": 5,
+			"yearsOfExperience":15,
+			"keywords": [],
+			"name": "C#"
+		},
+		{
+			"level": "Advanced",
+			"rating": 4,
 			"yearsOfExperience": 3,
-			"keywords": []
+			"keywords": [],
+			"name": "Java"
 		},
 		{
-			"name": "C#",
-			"level": "Expert",
-			"rating": 5,
-			"yearsOfExperience": 15,
-			"keywords": []
+			"level": "Advanced",
+			"rating": 4,
+			"yearsOfExperience": 10,
+			"keywords": [],
+			"name": "Node.js / JavaScript"
 		},
 		{
-			"name": "VB.Net",
-			"level": "Expert",
-			"rating": 5,
-			"yearsOfExperience": 14,
-			"keywords": []
-		},
-		{
-			"name": "Microsoft SQL Server",
 			"level": "Advanced",
 			"rating": 4,
 			"yearsOfExperience": 14,
-			"keywords": []
+			"keywords": [],
+			"name": "SQL"
 		},
 		{
-			"name": "Microsoft Cognitive and AI services",
+			"level": "Expert",
+			"rating": 5,
+			"yearsOfExperience": 15,
+			"keywords": [],
+			"name": ".NET"
+		},
+		{
 			"level": "Intermediate",
 			"rating": 3,
-			"yearsOfExperience": 4,
-			"keywords": []
+			"yearsOfExperience": 6,
+			"keywords": [],
+			"name": "AI Learning Modals"
 		},
 		{
-			"name": "Chat Bots and the MS Bot Framework",
-			"level": "Intermediate",
-			"rating": 3,
-			"yearsOfExperience": 4,
-			"keywords": []
-		},
-		{
-			"name": "Agile - Scrum and Kanban",
-			"level": "Intermediate",
-			"rating": 3,
-			"yearsOfExperience": 3,
-			"keywords": []
-		},
-		{
-			"name": "Javascript",
 			"level": "Intermediate",
 			"rating": 3,
 			"yearsOfExperience": 14,
-			"keywords": []
+			"keywords": [],
+			"name": "ASP.NET"
 		},
 		{
-			"name": "Python",
-			"level": "Beginner",
-			"rating": 2,
+			"level": "Advanced",
+			"rating": 4,
+			"yearsOfExperience": 14,
+			"keywords": [],
+			"name": "Agile Methodologies"
+		},
+		{
+			"level": "Intermediate",
+			"rating": 3,
+			"yearsOfExperience": 3,
+			"keywords": [],
+			"name": "Angular"
+		},
+		{
+			"level": "Intermediate",
+			"rating": 3,
+			"yearsOfExperience": 4,
+			"keywords": [],
+			"name": "Cascading Style Sheets (CSS)"
+		},
+		{
+			"level": "Advanced",
+			"rating": 4,
+			"yearsOfExperience": 5,
+			"keywords": [],
+			"name": "Containerization"
+		},
+		{
+			"level": "Advanced",
+			"rating": 4,
+			"yearsOfExperience": 14,
+			"keywords": [],
+			"name": "Database Design"
+		},
+		{
+			"level": "Advanced",
+			"rating": 4,
+			"yearsOfExperience": 14,
+			"keywords": [],
+			"name": "Databases"
+		},
+		{
+			"level": "Advanced",
+			"rating": 4,
+			"yearsOfExperience": 5,
+			"keywords": [],
+			"name": "Docker"
+		},
+		{
+			"level": "Intermediate",
+			"rating": 3,
+			"yearsOfExperience": 3,
+			"keywords": [],
+			"name": "Entity Framework"
+		},
+		{
+			"level": "Advanced",
+			"rating": 4,
+			"yearsOfExperience": 5,
+			"keywords": [],
+			"name": "Git"
+		},
+		{
+			"level": "Intermediate",
+			"rating": 3,
+			"yearsOfExperience": 2,
+			"keywords": [],
+			"name": "GoLang"
+		},
+		{
+			"level": "Advanced",
+			"rating": 4,
+			"yearsOfExperience": 14,
+			"keywords": [],
+			"name": "html"
+		},
+		{
+			"level": "Intermediate",
+			"rating": 3,
+			"yearsOfExperience": 14,
+			"keywords": [],
+			"name": "jQuery"
+		},
+		{
+			"level": "Advanced",
+			"rating": 4,
+			"yearsOfExperience": 14,
+			"keywords": [],
+			"name": "JSON"
+		},
+		{
+			"level": "Intermediate",
+			"rating": 3,
+			"yearsOfExperience": 5,
+			"keywords": [],
+			"name": "Microsoft Bot Framework"
+		},
+		{
+			"level": "Advanced",
+			"rating": 4,
+			"yearsOfExperience": 14,
+			"keywords": [],
+			"name": "Microsoft SQL Server"
+		},
+		{
+			"level": "Advanced",
+			"rating": 4,
+			"yearsOfExperience": 14,
+			"keywords": [],
+			"name": "Microsoft Visual Studio Code"
+		},
+		{
+			"level": "Advanced",
+			"rating": 4,
+			"yearsOfExperience": 14,
+			"keywords": [],
+			"name": "OWASP"
+		},
+		{
+			"level": "Advanced",
+			"rating": 4,
+			"yearsOfExperience": 15,
+			"keywords": [],
+			"name": "Object-Oriented Programming (OOP)"
+		},
+		{
+			"level": "Intermediate",
+			"rating": 3,
+			"yearsOfExperience": 14,
+			"keywords": [],
+			"name": "PCI Compliance"
+		},
+		{
+			"level": "Expert",
+			"rating": 5,
+			"yearsOfExperience": 15,
+			"keywords": [],
+			"name": "Programming"
+		},
+		{
+			"level": "Intermediate",
+			"rating": 3,
+			"yearsOfExperience": 3,
+			"keywords": [],
+			"name": "Pub/Sub design"
+		},
+		{
+			"level": "Intermediate",
+			"rating": 3,
+			"yearsOfExperience": 2,
+			"keywords": [],
+			"name": "React"
+		},
+		{
+			"level": "Intermediate",
+			"rating": 3,
 			"yearsOfExperience": 1,
-			"keywords": []
+			"keywords": [],
+			"name": "SASS"
+		},
+		{
+			"level": "Advanced",
+			"rating": 4,
+			"yearsOfExperience": 14,
+			"keywords": [],
+			"name": "SOAP"
+		},
+		{
+			"level": "Advanced",
+			"rating": 4,
+			"yearsOfExperience": 14,
+			"keywords": [],
+			"name": "SQL Server Management Studio"
+		},
+		{
+			"level": "Advanced",
+			"rating": 4,
+			"yearsOfExperience": 14,
+			"keywords": [],
+			"name": "Service-Oriented Architecture (SOA)"
+		},
+		{
+			"level": "Advanced",
+			"rating": 4,
+			"yearsOfExperience": 14,
+			"keywords": [],
+			"name": "Software Architecture"
+		},
+		{
+			"level": "Advanced",
+			"rating": 4,
+			"yearsOfExperience": 14,
+			"keywords": [],
+			"name": "Software Development Life Cycle (SDLC)"
+		},
+		{
+			"level": "Intermediate",
+			"rating": 3,
+			"yearsOfExperience": 4,
+			"keywords": [],
+			"name": "Software Documentation"
+		},
+		{
+			"level": "Advanced",
+			"rating": 4,
+			"yearsOfExperience": 3,
+			"keywords": [],
+			"name": "Spring Boot"
+		},
+		{
+			"level": "Intermediate",
+			"rating": 3,
+			"yearsOfExperience": 1,
+			"keywords": [],
+			"name": "Svelte"
+		},
+		{
+			"level": "Intermediate",
+			"rating": 3,
+			"yearsOfExperience": 6,
+			"keywords": [],
+			"name": "System Monitoring"
+		},
+		{
+			"level": "Advanced",
+			"rating": 4,
+			"yearsOfExperience": 15,
+			"keywords": [],
+			"name": "Troubleshooting"
+		},
+		{
+			"level": "Intermediate",
+			"rating": 3,
+			"yearsOfExperience": 3,
+			"keywords": [],
+			"name": "Typescript"
+		},
+		{
+			"level": "Expert",
+			"rating": 5,
+			"yearsOfExperience": 14,
+			"keywords": [],
+			"name": "Visual Basic .NET (VB.NET)"
+		},
+		{
+			"level": "Advanced",
+			"rating": 4,
+			"yearsOfExperience": 14,
+			"keywords": [],
+			"name": "Visual Studio"
+		},
+		{
+			"level": "Intermediate",
+			"rating": 3,
+			"yearsOfExperience": 3,
+			"keywords": [],
+			"name": "Vue.js"
+		},
+		{
+			"level": "Advanced",
+			"rating": 4,
+			"yearsOfExperience": 14,
+			"keywords": [],
+			"name": "WCF Services"
+		},
+		{
+			"level": "Advanced",
+			"rating": 4,
+			"yearsOfExperience": 14,
+			"keywords": [],
+			"name": "Web Services API"
+		},
+		{
+			"level": "Advanced",
+			"rating": 4,
+			"yearsOfExperience": 14,
+			"keywords": [],
+			"name": "Windows Communication Foundation (WCF)"
+		},
+		{
+			"level": "Expert",
+			"rating": 5,
+			"yearsOfExperience": 14,
+			"keywords": [],
+			"name": "XML"
 		}
 	],
 	"work": [
@@ -131,7 +404,7 @@
 			"endDate": "2021-04-01",
 			"start": {
 				"year": 2020,
-				"month": 9
+				"month": 8
 			},
 			"end": {
 				"year": 2021,
@@ -147,7 +420,7 @@
 		},
 		{
 			"company": "Trisept Solutions",
-			"position": "Application Software Analyst (Mid to Senior level Software Engineer)",
+			"position": "App Software Analyst (Mid to Senior Software Engineer)",
 			"website": "http://triseptsolutions.com",
 			"location": "Milwaukee WI",
 			"summary": "As a Software Engineer (Application Software Analyst) at Trisept Solutions, I served as a Software Engineer with a variety of functions, driving backend system development, mentoring team members, and providing valuable insights on system performance. Previously, I excelled as the lead developer for the break-fix team, resolving issues across the entire system. Actively involved in sub-committees, I focused on enhancing company morale and wellness initiatives. I represented Trisept as a speaker at 'COSBE be the spark,' showcasing custom AI-powered applications. Additionally, I collaborated with Microsoft, gaining expertise in Azure deployment, bot technologies, and cognitive services through a hands-on hackathon. My passion for innovation and process improvement contributed to the success of our team.",

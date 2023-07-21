@@ -3,7 +3,8 @@ var month = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", 
 function generateResume() {
   getFile("./json/resume.json").then(items => {
     BuildExperence(items["work"]),
-      BuildSkills(items["skills"]),
+      //BuildSkills(items["skills"]),
+      renderSkillsLists(items["skills"])
       BuildHeader(items["basics"]),
       BuildEdu(items["education"]),
       BuildBasic(items["basics"])
@@ -64,7 +65,7 @@ function buildprofiles(listItems) {
 
 function BuildHeader(basicItem) {
   var template = basicItem => `
-  <div class="lh-100"><h1 class="mb-0 text-white lh-100"> ${basicItem.name}</h1><p>
+  <div class="lh-100"><h1 class="mb-0 text-white lh-100 display-1"> ${basicItem.name}</h1><p>
   ${basicItem.headline}</p></div>`
   document.getElementById("HeaderItem").innerHTML = template(basicItem)
 }
@@ -82,6 +83,45 @@ function BuildEdu(eduItems) {
   eduItems.forEach(edu => { strings.push(temp(edu)) })
   document.getElementById("EduItems").insertAdjacentHTML('beforeend', strings.join(""))
 }
+
+// Function to render the skills lists
+function renderSkillsLists(skills) {
+  const topSkillsContainer = document.getElementById('SkillItems');
+  const otherSkillsContainer = document.getElementById('otherSkillsList');
+
+  // Create the HTML for top skills list group
+  const topSkillsHtml = skills.slice(0, 4).map(skill => `
+    <li class="list-group-item custom-transparent-item">
+      <h3 class="h5">${skill.name}</h3>
+      <div class="custom-progress" id="customProgressBar">
+      <div class="progress-bar" style="width: ${getProgressBarWidth(skill.rating)}%"></div>
+      <div class="progress-dot" style="left: calc(${getProgressBarWidth(skill.rating)}% - 5px"></div>
+    </div>
+
+      </li>
+  `).join('');
+
+  // Append the top skills list to the container
+  topSkillsContainer.innerHTML = topSkillsHtml;
+
+  // Create the HTML for other skills using the provided template
+  const otherSkillsHtml = skills.slice(4).map(skill => `
+    
+  <span class="badge line text-white custom-pill"> ${skill.name}</span>
+    
+  `).join('');
+
+  // Append the other skills list to the container
+  otherSkillsContainer.innerHTML = `
+    <h4 class="card-title">Other Skills</h4>
+    ${otherSkillsHtml}
+  `;
+}
+
+function getProgressBarWidth(rating) {
+  return rating * 20 || 50;
+}
+
 
 function BuildSkills(skillsItems) {
   let listItems = []
@@ -115,21 +155,62 @@ function BuildExperence(experenceItems) {
   let items = []
   let temp = d => `
   <div class="media text-muted pt-3 lh-125 border-bottom border-gray">
-     <img class="" width="32" height="32" src="img/original/${d.company}.webp" alt="${d.company}" />
-     <div class="col">
-         <strong class="d-block">${d.company}</strong> - ${d.location}<br />
-
-         <p class="media-body pb-3 mb-0"> ${d.summary}
-             <ul>${generateHighlightlist(d.highlights)}</ul>
-         </p>
-     </div>
- </div>
+  <div class="container">
+  <div class="row">
+    <div class="col-md-9">
+    <h2 class="h4">
+    ${d.position} @ <span class="text-muted">${d.company}</span></h2>
+    </div>
+    <div class="col-md-3 text-right">
+    ${d.location}
+    <img class="" width="32" height="32" src="img/original/${d.company}.webp" alt="${d.company}" />
+    </div>
+  </div>
+  <div class="row">
+    <span class="lead"> <span class="text-primary">${parseWorkDate(d.startDate)} - ${parseWorkDate(d.endDate)}</span> ${calculateDuration(d.start, d.end)}
+  </div>
+  <div class="row">
+  <div class="col">
+  <p class="media-body pb-3 mb-0"> ${d.summary}
+  <ul>${generateHighlightlist(d.highlights)}</ul>
+  </p>
+  </div>
+  </div>
+</div>   
+  </div>
   `
   experenceItems.forEach(ex => {
     items.push(temp(ex))
   })
   document.getElementById("ExperenceItems").insertAdjacentHTML('beforeend', items.join(""))
   //document.getElementById("ExperenceItems").innerHTML = items.join("")
+}
+
+function calculateDuration(start, end) {
+  const today = new Date();
+  const startDate = new Date(start.year, start.month - 1);
+  console.log(end)
+  const endDate = end.year ? new Date(end.year, end.month - 1) : today;
+
+  let yearDiff = endDate.getFullYear() - startDate.getFullYear();
+  let monthDiff = endDate.getMonth() - startDate.getMonth();
+
+  if (monthDiff < 0) {
+    yearDiff--;
+    monthDiff += 12;
+  }
+
+  if (yearDiff === 0) {
+    return `${monthDiff} ${monthDiff === 1 ? 'month' : 'months'}`;
+  } else {
+    const yearLabel = yearDiff === 1 ? 'year' : 'years';
+    const monthLabel = monthDiff === 1 ? 'month' : 'months';
+    if (monthDiff === 0) {
+      return `${yearDiff} ${yearLabel}`;
+    } else {
+      return `${yearDiff} ${yearLabel} ${monthDiff} ${monthLabel}`;
+    }
+  }
 }
 
 function generateHighlightlist(highlights) {
@@ -179,7 +260,6 @@ function getFile(fileUrl) {
 }
 
 function parseWorkDate(strDate) {
-  console.log(strDate)
   if (strDate.length > 0) {
     let S = strDate.split("-");
     return month[parseInt(S[1])] + " " + S[0];
