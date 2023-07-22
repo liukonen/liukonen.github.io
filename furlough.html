@@ -38,11 +38,6 @@
                         <a id="prev" class="btn btn-outline-secondary" onclick="adjustNavs(0)"><i class="fas fa-angle-left"></i></a>
                         <ul class="nav nav-tabs" id="ulNav">
                         </ul>
-                        <script id="templateNav" type="text/x-jQuery-tmpl">
-                            <li class="nav-item">
-                                <a class="nav-link" id="btn-${RmName(Name)}" onclick="PopulateWeek('${Link}', '${Name}')">${RmName(Name)}</a>
-                            </li>
-                        </script>
                         <a class="btn btn-outline-secondary" id="next" onclick="adjustNavs(1)"><i class="fas fa-angle-right"></i></a>
                     </div>
                 </div>
@@ -63,30 +58,10 @@
                     <h2 class="h3">Top keywords</h2>
                     <ul class="list-group shadow " id="ulKeywords">
                     </ul>
-                    <script id="tempKeywordList" type="text/x-jQuery-tmpl">
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            <a onclick="SearchFind('${keyword}')">${keyword}</a>
-                            <span class="badge badge-primary badge-pill">${count}</span>
-                        </li>
-                    </script>
+
                 </div>
                 <div class="col">
                     <div id="PlaceHolderItem" class="row mb-2"></div>
-                    <script id="dTemp" type="text/x-jQuery-tmpl">
-                        <div class="col-md-12">
-                            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow h-md-250 position-relative">
-                                <div class="col-md-12 p-4 d-flex flex-column position-static">
-                                    <a href="${Link}" target="_blank">
-                                        <h3 class="mb-0">${Name}</h3>
-                                    </a>
-                                    <div class="mb-1 text-muted">${CalcDate(ItemNumber, ActiveWeek).toDateString()}</div>
-                                    <p class="card-text mb-auto">
-                                        <div class="EItem" data-src="${Link}|${Name}"></div>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </script>
                 </div>
             </div>
         </div>
@@ -109,16 +84,12 @@
         </div>
     </div>
     <footer class="container">
-        <p>© Luke Liukonen 2020</p>
+        <p>© Luke Liukonen 2020 - <span id="year"></span></p>
         *this page, its contents, are opinions of my own, and represent no one else
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js " integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin=" anonymous " referrerpolicy="no-referrer "></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js" integrity="sha512-VK2zcvntEufaimc+efOYi622VN5ZacdnufnmX7zIhCPmjhKnOi9ZDMtg1/ug5l183f19gG1/cBstPO4D8N/Img==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js" integrity="sha512-LhccdVNGe2QMEfI3x4DVV3ckMRe36TfydKss6mJpdHjNFiV07dFpS2xzeZedptKZrwxfICJpez09iNioiSZ3hA==" crossorigin="anonymous"></script>
-    <script src="./lib/js/modernizr.min.js"></script>
-    <script src="./lib/js/jquery.tmpl.js"></script>
-    <script src="js/base.js"></script>
-    <script src="js/diary.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/5.1.1/marked.min.js" integrity="sha512-geNSPsVaubOv19D7VZY9lJH7MNdRkIq84doaoubf6zknjXsyBQ77XQbqiHX89Mg3e+67E16huocEGUlR4Pgjtg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/diary.min.js"></script> 
 </body>
 
 </html>
