@@ -153,5 +153,5 @@ function getFile(fileUrl) {
 function parseWorkDate(strDate) {
   return strDate.length > 0 ? `${month[parseInt(strDate.split("-")[1])]} ${strDate.split("-")[0]}` : "Present";
 }
-
+document.getElementById("year").innerHTML = new Date().getFullYear()
 generateResume()
