@@ -41,22 +41,22 @@ let temp;
 if(navigator.appName.indexOf("Internet Explorer")!=-1 || navigator.userAgent.match(/Trident.*rv[ :]*11\./)){ window.location = "ie.html"; }
 
 
-var Nav = new Vue({
-  el: '#navItem',
+// var Nav = new Vue({
+//   el: '#navItem',
 
-  methods: {
+//   methods: {
 
-    validatePath(path){
-      let current = location.pathname.substring(1).toLowerCase();
-      if (current == "") {current = "index.html";}
-      if (path == current) return "active";
-      return "";
-    }
-  },
-	data: {
-      MenuItems: [],
-    },
-  async created(){
-    await fetch("./json/header.json").then(response => response.json()).then(json =>{this.MenuItems = json.menu;});
-  }
-});
+//     validatePath(path){
+//       let current = location.pathname.substring(1).toLowerCase();
+//       if (current == "") {current = "index.html";}
+//       if (path == current) return "active";
+//       return "";
+//     }
+//   },
+// 	data: {
+//       MenuItems: [],
+//     },
+//   async created(){
+//     await fetch("./json/page.json").then(response => response.json()).then(json =>{this.MenuItems = json.menu;});
+//   }
+// });

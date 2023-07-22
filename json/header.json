@@ -1,8 +1,0 @@
-{"menu":
-    [
-        {"name":"Projects", "value":"#app"}
-        ,{"name": "Career", "value": "#career"}
-        ,{"name": "Education", "value": "#edu"}
-        ,{"name": "Knowledge", "value": "#Knowledge"}
-        ,{"name": "About", "value": "#about"}
-    ]}

@@ -2,7 +2,7 @@ var liWeeks;
 var ActiveWeek = 0;
 var MaxWeek = 0;
 var lastName; var LastLink;
-const MagicDate = new Date(2020,02,29);
+const MagicDate = new Date(2020,2,29);
 const search = document.querySelector('#search');
 const results = document.querySelector('#searchresults');
 const SearchItems = JSON.parse( getFile("https://liukonen.dev/furlough/keywords.json"));

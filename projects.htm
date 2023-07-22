@@ -21,20 +21,11 @@
 </head>
 
 <body>
-
-    <nav class="navbar transparent navbar-expand-md navbar-dark fixed-top">
-        <a class="navbar-brand" href="index.html" aria-label="welcome"><img src="/img/favicons/favicon-32x32.png" class="invert" alt="logo" /></a>
-        <ul class="navbar-nav" id="navItem">
-            <li v-for="navItem in this.MenuItems" v-bind:class="validatePath(navItem.value)">
-                <a class="nav-link" v-bind:href="navItem.value">{{navItem.name}}</a>
-            </li>
-        </ul>
-    </nav>
     <main>
         <div class="jumbotron">
             <div class="container text-light">
                 <h1 class="display-3">
-                    <img src="img/me-bw.webp" class="rounded-circle user_img" alt="Luke Liukonen" /> Hello, world!</h1>
+                    <img src="img/original/me-bw.webp" class="rounded-circle user_img" alt="Luke Liukonen" /> Hello, world!</h1>
                 <div class="d-none d-sm-block">
                     <p>Developer / Former Instructor / Tech enthusiast</p>
                     <p>Welcome to my personal page.</p>
@@ -56,7 +47,7 @@
                         <div class="col mb-4 hoverItem">
                             <div class="card shadow">
                                 <div class="">
-                                    <img v-lazy="GetImage(product.image)" style="height:250px;" class="card-img-top himg" v-bind:alt="product.Title" />
+                                    <img :src="GetImage(product.image)" style="height:250px;" class="card-img-top himg" v-bind:alt="product.Title" />
 
 
                                 </div>
@@ -70,7 +61,7 @@
                                     <!--<p>{{product.Description}}</p>-->
                                     <p>Learnings</p>
                                     <div>
-                                        <span v-for="tag in product.tags" class="badge badge-light font-weight-lighter">{{tag}}</span></p>
+                                        <span v-for="tag in product.tags" class="badge text-dark">{{tag}}</span></p>
                                     </div>
                                 </div>
                             </div>
@@ -79,32 +70,8 @@
 
                     </div>
                 </div>
-
-
-
             </div>
-            <!--
-              <div class="row featurette">
-              <div v-bind:class="GetClass(0)">
-                <h3 class="featurette-heading h2">{{product.Title}}</h3><P></P>
-                <img class="featurette-image img-fluid mx-auto shadow rounded-lg" v-lazy="GetImage(product.image)" v-on:once="log()" v-bind:alt="product.Title">
-                <p>Learnings: <span v-for="tag in product.tags" class="badge badge-light font-weight-lighter">{{tag}}</span>
 
-              </div>
-              <div v-bind:class="GetClass(1)">
-                
-                  <h4 class="text-muted"> {{product.SubTitle}}</h4>
-                <br />
-                <p><a v-for="button in product.buttons" v-bind:class="DetermButtonColor(button.type)" v-bind:href="button.url" target="_blank">{{button.type}}</a></p>
-                <p class="lead">{{product.Description}}</p>
-
-                <p></p>
-                
-                </p>
-              </div>
-            </div>
-            <hr class="featurette-divider">
-            </div>-->
         </div>
         </div>
         <!-- /.container -->

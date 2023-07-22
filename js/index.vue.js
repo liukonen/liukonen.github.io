@@ -11,7 +11,7 @@ vm = new Vue({
       WebPSupport : 2
     },
     async created(){
-        await fetch("./json/content.json").then(response => response.json()).then(json =>{this.Products = json.items;});
+        await fetch("./json/page.json").then(response => response.json()).then(json =>{this.Products = json.projects;});
     },
 	methods: {
 		 GetClass(index, valueType) {
