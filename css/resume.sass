@@ -1,3 +1,13 @@
+$color-left: #69afe9
+$color-right: #7aa2c2
+$white: #fff
+$progressBarHeight: 5px
+$progressBarRadius: 3px
+$progressDotSize: 10px
+$progressDotShadowSize: 30px
+$progressDotGlowSize: 15px
+$progressOffWhite: #ccc
+  
 body,html
   height:100%
   margin:0
@@ -13,9 +23,6 @@ body,html
 
 .content
   display: none
-
-$color-left: #69afe9
-$color-right: #7aa2c2
 
 .gradient-card 
   background: linear-gradient(to right, $color-left, $color-right)
@@ -45,30 +52,23 @@ $color-right: #7aa2c2
       &.custom-transparent-item 
         background-color: transparent
         border: 0
-        border-bottom: 1px solid #fff
-        color: white
+        border-bottom: 1px solid $white
+        color: $white
         a 
-          color: white
+          color: $white
         .fas 
-          color: white
-
-// Variables
-$progressBarHeight: 5px
-$progressBarRadius: 3px
-$progressDotSize: 10px
-$progressDotShadowSize: 30px
-$progressDotGlowSize: 15px
+          color: $white
 
 // Custom progress bar styles
 .custom-progress 
   position: relative
   width: 100% // Set the desired width of the progress bar
   height: $progressBarHeight
-  background-color: #ccc // Set the background color of the progress bar
-  border-radius: $progressBarRadius // Set the border radius of the progress bar
+  background-color: $progressOffWhite 
+  border-radius: $progressBarRadius 
 
   .progress-bar 
-    background-color: white
+    background-color: $white
     height: 100%
     border-radius: $progressBarRadius
     width: 50% // Set the initial progress value using JavaScript
@@ -96,8 +96,13 @@ $progressDotGlowSize: 15px
   padding: 0.375rem 0.75rem
   font-size: 1rem
   line-height: 1.5
-  color: #FFF
+  color: $white
   background-color: transparent
-  //border: 2px solid #fff //* Black outline */
-  //border-radius: 50px //* Round pill shape */
-  //box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) //* Shadow effect */
+
+.card.bg-transparent 
+  background-color: transparent
+  border: none
+
+.text-PageBlue
+  color: #7aa2c2
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2)

@@ -1,249 +1,140 @@
-var month = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+const month = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
 function generateResume() {
   getFile("./json/resume.json").then(items => {
     BuildExperence(items["work"]),
-      //BuildSkills(items["skills"]),
-      renderSkillsLists(items["skills"])
-      BuildHeader(items["basics"]),
-      BuildEdu(items["education"]),
-      BuildBasic(items["basics"])
+    renderSkillsLists(items["skills"])
+    BuildHeader(items["basics"]),
+    BuildEdu(items["education"]),
+    BuildBasic(items["basics"])
   })
 }
 
 function BuildBasic(basicItem) {
-  const template = item => `
-   <div class="card text-white gradient-card">
-    <img class="card-img-top" src="img/original/${item.picture}" alt="me">
-    <div class="card-body">
-      ${item.summary}
-      <ul class="list-group custom-transparent-list text-white mt-2">
-        <li class="list-group-item d-flex justify-content-between align-items-start  custom-transparent-item">
-          <div class="ms-2 me-auto">
-            <div class="fw-bold"><a href="tel:${item.phone}">${item.phone}</a></div>
-            Cellular
-          </div>
-          <i class="fa-solid fa-2x fa-phone"></i>      
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-start  custom-transparent-item">
+  const template = item => `<div class="card text-white gradient-card">
+  <img class="card-img-top" src="img/original/${item.picture}" alt="me" />
+  <div class="card-body">${item.summary}
+    <ul class="list-group custom-transparent-list text-white mt-2">
+      <li class="list-group-item d-flex justify-content-between align-items-start  custom-transparent-item">
         <div class="ms-2 me-auto">
-          <div class="fw-bold"><a href="mailto:${item.email}">${item.email}</a></div>
-          personal
-        </div>
-        <i class="fa-solid fa-2x fa-envelope"></i>      
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-start  custom-transparent-item">
-        <div class="ms-2 me-auto">
-          <div class="fw-bold">${item.region}</div>
-          region I live in
-        </div>
-        <i class="fa-solid fa-2x fa-house"></i>      
-        </li>
-             ${buildprofiles(item.profiles)}
-      </ul>
-    <div>
-  </div>`
-  let response = template(basicItem)
-  document.getElementById("BasicItems").innerHTML = response
+          <div class="fw-bold"><a href="tel:${item.phone}">${item.phone}</a></div>Cellular</div>
+        <i class="fa-solid fa-2x fa-phone"></i>      
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-start  custom-transparent-item">
+      <div class="ms-2 me-auto">
+        <div class="fw-bold"><a href="mailto:${item.email}">${item.email}</a></div>personal</div>
+      <i class="fa-solid fa-2x fa-envelope"></i>      
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-start  custom-transparent-item">
+      <div class="ms-2 me-auto"><div class="fw-bold">${item.region}</div>region I live in</div>
+      <i class="fa-solid fa-2x fa-house"></i>
+      </li>
+      ${buildprofiles(item.profiles)}
+    </ul>
+  <div>
+</div>`
+  singleBind(template, basicItem, "BasicItems")
 }
 
 function buildprofiles(listItems) {
-  let str = []
   const template = item => `
-  <li class="list-group-item d-flex justify-content-between align-items-start  custom-transparent-item">
+  <li class="list-group-item d-flex justify-content-between align-items-start custom-transparent-item">
     <div class="ms-2 me-auto">
       <div class="fw-bold"><a href="${item.url}" target="_blank">@${item.username}</a></div>
       ${item.network}
     </div>
     <i class="${socialMediaIcon(item.network)} fa-2x"></i>      
   </li>`
-  listItems.forEach(element => {
-    str.push(template(element))
-  })
-  return str.join("")
+  return templateArrayToString(template, listItems)
 }
 
 function BuildHeader(basicItem) {
-  var template = basicItem => `
-  <div class="lh-100"><h1 class="mb-0 text-white lh-100 display-1"> ${basicItem.name}</h1><p>
-  ${basicItem.headline}</p></div>`
-  document.getElementById("HeaderItem").innerHTML = template(basicItem)
+  const template = basicItem => `<div class="lh-100"><h1 class="mb-0 text-white lh-100 display-1"> ${basicItem.name}</h1><p class="h2">${basicItem.headline}</p></div>`
+  singleBind(template, basicItem, "HeaderItem")
 }
 
 function BuildEdu(eduItems) {
-  let strings = []
-  const temp = data => `
-  <div>
-    <img src="img/original/${data.institution}.webp" width="32" height="32" alt="${data.institution}" class="left"><br />
-    <span class="lead">${data.area}</span><br/>
-    <span class="text-muted">${data.studyType}</span><br/>
-    <span class="lead">${data.institution}</span><br/>
-    <span class="text-muted">${parseWorkDate(data.startDate)} - ${parseWorkDate(data.endDate)}</span>
-  </div>`
-  eduItems.forEach(edu => { strings.push(temp(edu)) })
-  document.getElementById("EduItems").insertAdjacentHTML('beforeend', strings.join(""))
+  const temp = data => `<div>
+  <div class="card mb-3 bg-transparent">
+    <div class="row g-0 transparent-list">
+      <div class="col-md-8 transparent-list">
+        <div class="card-body transparent-list">
+          <h5 class="card-title transparent-list text-white">${data.studyType} @ The ${data.institution}</h5>
+        </div>
+      </div>
+      <div class="col-md-4 transparent-list">
+        <img src="img/original/${data.institution}.webp" class="img-fluid rounded-end" alt="${data.institution}">
+      </div>
+    </div>
+    <div class="row g-0 transparent-list">
+      <p class="card-text transparent-list text-white">Major: ${data.area}</p>
+      <p class="card-text transparent-list text-white"><small class="text-white">${parseWorkDate(data.startDate)} - ${parseWorkDate(data.endDate)}</small></p>
+    </div>
+  </div>
+</div>`
+  innerBind(temp, eduItems, "EduItems")
 }
 
 // Function to render the skills lists
 function renderSkillsLists(skills) {
-  const topSkillsContainer = document.getElementById('SkillItems');
-  const otherSkillsContainer = document.getElementById('otherSkillsList');
-
-  // Create the HTML for top skills list group
-  const topSkillsHtml = skills.slice(0, 4).map(skill => `
-    <li class="list-group-item custom-transparent-item">
-      <h3 class="h5">${skill.name}</h3>
-      <div class="custom-progress" id="customProgressBar">
-      <div class="progress-bar" style="width: ${getProgressBarWidth(skill.rating)}%"></div>
-      <div class="progress-dot" style="left: calc(${getProgressBarWidth(skill.rating)}% - 5px"></div>
-    </div>
-
-      </li>
-  `).join('');
-
-  // Append the top skills list to the container
-  topSkillsContainer.innerHTML = topSkillsHtml;
-
-  // Create the HTML for other skills using the provided template
-  const otherSkillsHtml = skills.slice(4).map(skill => `
-    
-  <span class="badge line text-white custom-pill"> ${skill.name}</span>
-    
-  `).join('');
-
-  // Append the other skills list to the container
-  otherSkillsContainer.innerHTML = `
-    <h4 class="card-title">Other Skills</h4>
-    ${otherSkillsHtml}
-  `;
-}
-
-function getProgressBarWidth(rating) {
-  return rating * 20 || 50;
-}
-
-
-function BuildSkills(skillsItems) {
-  let listItems = []
-  const temp = d => `
-<li class="list-group-item d-flex justify-content-between align-items-center">
-<!-- <div class="progress">
-    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">${d.name}</div>
-  </div> -->
-<div><img src="/img/original/${ImageHelper(d.name)}.webp" height="16" width="16" alt="${d.name} image" />${d.name}</div>
-<span class="badge badge-dark badge-pill" title="${d.level} [${d.yearsOfExperience} years experence]">${d.level}</span>
+  const topTemplate = skill => `<li class="list-group-item custom-transparent-item">
+  <h3 class="h5">${skill.name}</h3>
+  <div class="custom-progress" id="customProgressBar">
+    <div class="progress-bar" style="width: ${getProgressBarWidth(skill.rating)}%"></div>
+    <div class="progress-dot" style="left: calc(${getProgressBarWidth(skill.rating)}% - 5px"></div>
+  </div>
 </li>`
-  skillsItems.forEach(element => {
-    listItems.push(temp(element))
-  });
-  document.getElementById("SkillItems").innerHTML = listItems.join("")
+  innerBind(topTemplate, skills.slice(0, 4), "SkillItems")
+  const otherSkillsTemplate = skill => `<span class="badge line text-white custom-pill"> ${skill.name}</span>`
+  document.getElementById("otherSkillsList").innerHTML = `<h4 class="card-title">Other Skills</h4>${templateArrayToString(otherSkillsTemplate, skills.slice(4))}`
+
 }
 
-function listBind(ObjectTag, SourceTag, ObjectsToBind) {
-  let source = document.getElementById(SourceTag).innerHTML
-  let temp = Handlebars.compile(source)
-  let MainContainer = document.getElementById(ObjectTag)
-  if (ObjectsToBind != null) {
-    ObjectsToBind.forEach((item) => {
-      let html = temp(item)
-      MainContainer.insertAdjacentHTML('beforeend', html)
-    })
-  }
-}
+const getProgressBarWidth = (rating) => rating * 20 || 50
+const singleBind = (template, data, elementName) => document.getElementById(elementName).innerHTML = template(data)
+const innerBind = (template, dataArray, elementName) => document.getElementById(elementName).insertAdjacentHTML('beforeend', dataArray.map(item => template(item)).join(''))
+const templateArrayToString = (template, dataArray) => dataArray.map(item => template(item)).join("");
+
 
 function BuildExperence(experenceItems) {
-  let items = []
-  let temp = d => `
-  <div class="media text-muted pt-3 lh-125 border-bottom border-gray">
+  let temp = d => `<div class="media text-muted pt-3 lh-125 border-bottom border-gray">
   <div class="container">
-  <div class="row">
-    <div class="col-md-9">
-    <h2 class="h4">
-    ${d.position} @ <span class="text-muted">${d.company}</span></h2>
-    </div>
-    <div class="col-md-3 text-right">
-    ${d.location}
-    <img class="" width="32" height="32" src="img/original/${d.company}.webp" alt="${d.company}" />
-    </div>
-  </div>
-  <div class="row">
-    <span class="lead"> <span class="text-primary">${parseWorkDate(d.startDate)} - ${parseWorkDate(d.endDate)}</span> ${calculateDuration(d.start, d.end)}
-  </div>
-  <div class="row">
-  <div class="col">
-  <p class="media-body pb-3 mb-0"> ${d.summary}
-  <ul>${generateHighlightlist(d.highlights)}</ul>
-  </p>
-  </div>
-  </div>
-</div>   
-  </div>
-  `
-  experenceItems.forEach(ex => {
-    items.push(temp(ex))
-  })
-  document.getElementById("ExperenceItems").insertAdjacentHTML('beforeend', items.join(""))
-  //document.getElementById("ExperenceItems").innerHTML = items.join("")
+    <div class="row text-PageBlue"><h2 class="h4">${d.position} @ ${d.company}</h2></div>
+    <div class="row"><span class="lead"> <span class="text-PageBlue">${parseWorkDate(d.startDate)} - ${parseWorkDate(d.endDate)}</span> ${calculateDuration(d.start, d.end)} - ${d.location}</div>
+    <div class="row"><div class="col"><p class="media-body pb-3 mb-0"> ${d.summary}<ul>${generateHighlightlist(d.highlights)}</ul></p></div></div>
+  </div>   
+</div>`
+  innerBind(temp, experenceItems, "ExperenceItems")
+
 }
 
 function calculateDuration(start, end) {
-  const today = new Date();
-  const startDate = new Date(start.year, start.month - 1);
-  console.log(end)
-  const endDate = end.year ? new Date(end.year, end.month - 1) : today;
+  const startDate = new Date(start.year, start.month - 1)
+  const endDate = end?.year ? new Date(end.year, end.month - 1) : new Date()
+  const diffInMonths = (endDate.getFullYear() - startDate.getFullYear()) * 12 + endDate.getMonth() - startDate.getMonth() + 1
+  const yearDiff = Math.floor(diffInMonths / 12)
+  const monthDiff = diffInMonths % 12
+  const yearLabel = yearDiff === 1 ? 'year' : 'years'
+  const monthLabel = monthDiff === 1 ? 'month' : 'months'
 
-  let yearDiff = endDate.getFullYear() - startDate.getFullYear();
-  let monthDiff = endDate.getMonth() - startDate.getMonth();
-
-  if (monthDiff < 0) {
-    yearDiff--;
-    monthDiff += 12;
-  }
-
-  if (yearDiff === 0) {
-    return `${monthDiff} ${monthDiff === 1 ? 'month' : 'months'}`;
-  } else {
-    const yearLabel = yearDiff === 1 ? 'year' : 'years';
-    const monthLabel = monthDiff === 1 ? 'month' : 'months';
-    if (monthDiff === 0) {
-      return `${yearDiff} ${yearLabel}`;
-    } else {
-      return `${yearDiff} ${yearLabel} ${monthDiff} ${monthLabel}`;
-    }
-  }
+  if (yearDiff === 0) return `${monthDiff} ${monthLabel}`
+  else if (monthDiff === 0) return `${yearDiff} ${yearLabel}`
+  return `${yearDiff} ${yearLabel} ${monthDiff} ${monthLabel}`
 }
 
 function generateHighlightlist(highlights) {
   let temp = d => `<li>${d}</li>`
-  let response = []
-  highlights.forEach(highlight => {
-    response.push(temp(highlight))
-  })
-  return response.join("")
+  return templateArrayToString(temp, highlights)
 }
 
 function socialMediaIcon(media) {
-  switch (media) {
-    case "GitHub": return "fab fa-github-square";
-    case "LinkedIn": return "fab fa-linkedin";
-    case "Facebook": return "fab fa-facebook-square";
-    default: return "far fa-user";
-  }
-}
-
-function ImageHelper(media) {
-  let lType = media.toLowerCase();
-  if (lType == "c#") return "csharp"
-  if (lType == "vb.net") return "vb"
-  if (lType == "asp.net") return "ASP"
-  if (lType == "python") return "python"
-  if (lType.indexOf("scrum") > 0) return "scrum"
-  if (lType.indexOf("jquery") > 0) return "javascript"
-  if (lType.indexOf("sql") > 0) return "db"
-  if (lType.indexOf("cognitive") > 0) return "bot"
-  if (lType.indexOf("bot") > 0) return "bot"
-  return "check";
-
+  const iconMap = {
+    "GitHub": "fab fa-github-square",
+    "LinkedIn": "fab fa-linkedin",
+    "Facebook": "fab fa-facebook-square",
+    "dev.to": "fa-brands fa-dev",
+  };
+  return iconMap[media] || "far fa-user";
 }
 
 function getFile(fileUrl) {
@@ -260,11 +151,7 @@ function getFile(fileUrl) {
 }
 
 function parseWorkDate(strDate) {
-  if (strDate.length > 0) {
-    let S = strDate.split("-");
-    return month[parseInt(S[1])] + " " + S[0];
-  } else {
-    return "Present";
-  }
+  return strDate.length > 0 ? `${month[parseInt(strDate.split("-")[1])]} ${strDate.split("-")[0]}` : "Present";
 }
+
 generateResume()
