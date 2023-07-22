@@ -12,7 +12,7 @@ function generateResume() {
 
 function BuildBasic(basicItem) {
   const template = item => `<div class="card text-white gradient-card">
-  <img class="card-img-top" src="img/original/${item.picture}" alt="me" />
+  <div class="no-print"><img class="card-img-top" src="img/original/${item.picture}" alt="me" /></div>
   <div class="card-body">${item.summary}
     <ul class="list-group custom-transparent-list text-white mt-2">
       <li class="list-group-item d-flex justify-content-between align-items-start  custom-transparent-item">
@@ -62,7 +62,7 @@ function BuildEdu(eduItems) {
           <h5 class="card-title transparent-list text-white">${data.studyType} @ The ${data.institution}</h5>
         </div>
       </div>
-      <div class="col-md-4 transparent-list">
+      <div class="col-md-4 transparent-list no-print">
         <img src="img/original/${data.institution}.webp" class="img-fluid rounded-end" alt="${data.institution}">
       </div>
     </div>
