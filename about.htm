@@ -23,7 +23,7 @@
 </head>
 
 <body data-gr-c-s-loaded="true">
-    <div class="jumbotron" style="background-color: black">
+    <div class="jumbotron">
         <div class="container text-light ">
             <h1 class="display-3">
                 <img src="img/original/me-bw.webp" class="rounded-circle user_img" alt="Luke Liukonen" /> Hello, world!</h1>
@@ -40,7 +40,7 @@
     <div class="container-fluid lightFormat">
         <div class="container">
             <h3 class="text-center">Welcome</h3>
-            <div id="welcome">{{this.item}}</div>
+            <div id="welcome"></div>
         </div>
     </div>
 
@@ -48,18 +48,12 @@
         <div class="container">
             <h3 class="text-center">Career So far</h3>
 
-            <div v-for="job in this.Work" class="row">
-                <work v-bind:job="job"></work>
-            </div>
+            <div id="work" class="row"></div>   
             <br />
             <h3 class="text-center mt-5">Current Overall Highlights</h3>
-            <ul class="list-group text-dark shadow" v-for="item in this.highlights">
-                <li class="list-group-item">{{item.a}}</li>
-            </ul>
+            <ul class="list-group text-dark shadow" id="highlights"></ul>
             <h3 class="text-center mt-5">Education</h3>
-            <div v-for="edu in this.school" class="row">
-                <work v-bind:job="edu"></work>
-            </div>
+            <div id="school" class="row"></div>
         </div>
     </div>
 
@@ -74,15 +68,6 @@
         <div class="container">
             <h3 class="text-center">Systems / Ideas I've worked with</h3>           
             <div class="row text-dark" id="vbackend">
-
-                <div class="card shadow col-md-3 mt-5" v-for="exp in this.Ex">
-                    <div class="card-header bg-transparent">
-                    <h2 class="h4">{{exp.name}}</h2>
-                    <div class="row justify-content-md-center">
-                        <Knowledge v-for="item in exp.items" v-bind:item="item"></Knowledge>
-                    </div> 
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -92,18 +77,8 @@
     <div class="position-relative" id="about">
         <div class="container-fluid aboutFormat">
             <div class="row justify-content-center">
-                <div class="col-lg-4">
-                    <h1 class="h3">Interests</h1>
-                    <ul class="list-group" id="interests">
-                        <li v-for="item in this.Hobbies" class="list-group-item list-group-item-secondary">{{item.a}}</li>
-                    </ul>
-                </div>
-                <div class="col-lg-4">
-                    <h1 class="h3">Volunteer</h1>
-                    <ul class="list-group" id="interests">
-                        <li v-for="item in this.Vol" class="list-group-item list-group-item-secondary">{{item.a}}</li>
-                    </ul>
-                </div>
+                <div class="col-lg-4"><h1 class="h3">Interests</h1><ul class="list-group" id="interests"></ul></div>
+                <div class="col-lg-4"><h1 class="h3">Volunteer</h1><ul class="list-group" id="Volunteer"></ul></div>
             </div>
         </div>
     </div>
@@ -129,10 +104,7 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js " integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin=" anonymous " referrerpolicy="no-referrer "></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js" integrity="sha512-VK2zcvntEufaimc+efOYi622VN5ZacdnufnmX7zIhCPmjhKnOi9ZDMtg1/ug5l183f19gG1/cBstPO4D8N/Img==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js" integrity="sha512-QJsj3afWlCpnQ60XzzYE8Jb3IgHIK1BcGZox9rUSmRRq3Ocz9vQ1yR80eX2/b9jfx/UuT5zYWNdrM8Te/eCMhQ==" crossorigin="anonymous"></script>
-    <script src="js/base.js"></script>
-    <script src="js/about.vue.js"></script>
+    <script src="js/about.min.js"></script>
 </body>
 
 </html>

@@ -7,8 +7,7 @@ body, html {
 }
 
 .invert {
-  -webkit-filter: invert(100%);
-          filter: invert(100%);
+  filter: invert(100%);
 }
 
 .user_img {
@@ -24,6 +23,10 @@ body, html {
   background-size: cover;
 }
 
+.jumbotron {
+  background: url("../img/jumbotron.webp") no-repeat center center;
+}
+
 .bgimg-1 {
   background-image: url("../img/jumbotron.webp");
   min-height: 350px;
@@ -32,7 +35,7 @@ body, html {
   margin-bottom: 2rem;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  color: white !important;
+  color: white;
   background-size: cover;
 }
 
@@ -78,14 +81,13 @@ body, html {
   height: 100%;
 }
 
-.caption, .caption2 {
+.caption2, .caption {
   position: absolute;
   left: 0;
   width: 100%;
   color: #000;
 }
-
-.caption span.border, .caption2 span.border {
+.caption2 span.border, .caption span.border {
   background-color: #111;
   color: #fff;
   padding: 18px;
@@ -99,12 +101,10 @@ body, html {
 }
 
 .clearBoarder {
-  background-color: transparent !important;
-  color: #fff !important;
+  color: #fff;
   padding: 18px;
   letter-spacing: 5px;
 }
-
 .caption2 {
   top: 80%;
 }
@@ -121,13 +121,12 @@ h3 {
     background-attachment: scroll;
   }
 }
-
 .anchor {
   padding-top: 120px;
 }
 
 .bg-purple {
-  background-color: purple !important;
+  background-color: purple;
 }
 
 .NoDot {
@@ -144,8 +143,7 @@ h3 {
 }
 
 .progress-bar {
-  -webkit-transition: none !important;
-  transition: none !important;
+  transition: none;
 }
 
 .aboutFormat {
@@ -166,18 +164,14 @@ h3 {
 }
 
 .proBorder {
-  background-color: transparent !important;
+  background-color: transparent;
   font-size: 25px;
   color: #f7f7f7;
 }
 
 .card-horizontal {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
 .ImgRoundCorner {
@@ -190,7 +184,6 @@ h3 {
   font-size: 25px;
   color: #f7f7f7;
 }
-
 .btn-outline-danger {
   color: white;
   border-color: white;
@@ -210,7 +203,6 @@ h3 {
   text-anchor: middle;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -219,12 +211,10 @@ h3 {
     font-size: 3.5rem;
   }
 }
-
 .featurette-image {
   opacity: 20%;
 }
 
 .content {
   display: none;
-}
-/*# sourceMappingURL=about.css.map */
+}/*# sourceMappingURL=about.css.map */

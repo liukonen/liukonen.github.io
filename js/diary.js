@@ -44,8 +44,6 @@ const itemTemplate = d =>`<div class="col-md-12">
 </div>`
 
 const innerBind = (template, dataArray, elementName) => document.getElementById(elementName).insertAdjacentHTML('beforeend', dataArray.map(item => template(item)).join(''))
-const itemBind = (template, dataArray,activeWeek,elementName) => document.getElementById(elementName).insertAdjacentHTML('beforeend', dataArray.map(item => template(item,activeWeek)).join(''))
-
 
 const addDays = (date, days) => new Date(date.getTime() + days * 24 * 60 * 60 * 1000)
 const ReplaceAll = (fullText, replaceText, replaceWith) => fullText.replace(new RegExp(replaceText, "igm"), replaceWith)
@@ -60,11 +58,6 @@ const searchResults = document.getElementById('searchresults')
 
 generateNavs()
 GenerateKeywords()
-
-
-
-
-
 
 //NEW REWORKED CODE GOES BELOW THIS LINE
 
