@@ -9,11 +9,11 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^2.4.3",
-    "sass": "^1.64.1",
-    "svelte": "^4.1.1",
+    "@sveltejs/vite-plugin-svelte": "^2.4.5",
+    "sass": "^1.66.1",
+    "svelte": "^4.2.0",
     "svelte-collapsible": "^0.2.2",
     "svelte-lazy": "^1.2.1",
-    "vite": "^4.4.7"
+    "vite": "^4.4.9"
   }
 }
