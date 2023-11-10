@@ -12,7 +12,7 @@
     "@sveltejs/vite-plugin-svelte": "^2.4.6",
     "sass": "^1.67.0",
     "svelte": "^4.2.0",
-    "svelte-collapsible": "^0.2.2",
+    "svelte-collapsible": "^0.3.0",
     "svelte-lazy": "^1.2.1",
     "vite": "^4.4.9"
   }
