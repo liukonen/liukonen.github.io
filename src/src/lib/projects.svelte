@@ -26,7 +26,7 @@
     <div class="col mb-4 hoverItem d-flex align-items-stretch">
         <div class="card shadow whiteGlass">
           <div>
-            <Lazy>
+            <Lazy keep="true">
             <img src="{project.image}" class="lzy card-img-top himg rImage250" alt="{project.Title}" />
         </Lazy>  
         </div>

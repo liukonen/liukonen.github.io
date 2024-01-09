@@ -8,7 +8,7 @@
   {#each items as school}
     <div class="row justify-content-md-center">
       <div class="col-md-2 mt-3">
-        <Lazy>
+        <Lazy keep="true">
           <img src={school.img} class="lzy ImgRoundCorner border-right shadow" alt={school.name} />
         </Lazy>
       </div>

@@ -6,7 +6,7 @@
 {#each items as jobLocation}
   <div class="row justify-content-md-center whiteGlass">
     <div class="col-md-2 mt-3">
-      <Lazy>
+      <Lazy keep="true">
         <img
           src={jobLocation.img}
           class="lzy ImgRoundCorner border-right shadow"

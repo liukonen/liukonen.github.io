@@ -29,7 +29,7 @@
               <li
                 class="list-group-item pane d-flex justify-content-between align-items-center">
                 <div class="image-parent">
-                  <Lazy>
+                  <Lazy keep="true">
                     <img src={item.img} alt={item.title} style="width: 32px" />
                   </Lazy>
                 </div>

@@ -27,7 +27,7 @@
         console.log("blog items pulled from cache")
         
       }else{
-      fetch("https://dev.to/feed/liukonen")
+      fetch("https://bot.liukonen.dev/devto")
         .then((response) => response.text())
         .then((str) => new window.DOMParser().parseFromString(str, "text/xml"))
         .then((data) => {
