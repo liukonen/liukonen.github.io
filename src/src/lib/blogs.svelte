@@ -10,15 +10,15 @@
   }
 
   function GetItems(BlogItems) {
-    return Array.from(BlogItems)
-      .slice(0, 3)
-      .map((idx, i) => ({
-        title: idx.querySelector("title").innerHTML,
-        link: idx.querySelector("link").innerHTML,
-        timestamp: idx.querySelector("pubDate").innerHTML,
-        index: i
-      }))
-  }
+  return Array.from(BlogItems)
+    .slice(0, 3)
+    .map((idx, i) => ({
+      title: idx.title,
+      link: idx.link,
+      timestamp: idx.published,
+      index: i
+    }));
+}
 
   onMount(async () => {
     try {
@@ -27,11 +27,13 @@
         console.log("blog items pulled from cache")
         
       }else{
-      fetch("https://bot.liukonen.dev/devto")
-        .then((response) => response.text())
-        .then((str) => new window.DOMParser().parseFromString(str, "text/xml"))
+        
+      fetch("./json/feeds.json")
+        .then((response) => {
+          return response.json()
+        })
         .then((data) => {
-          Items = GetItems(data.querySelectorAll("item"));
+          Items = GetItems(data.items)
           sessionStorage.setItem("dev.liukonen.blogstore", JSON.stringify(Items))
           console.log(Items)
         });
@@ -40,6 +42,7 @@
     }
   
   })
+
 </script>
 
 <div id="Blogs" class="container glass">
