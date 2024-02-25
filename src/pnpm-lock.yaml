@@ -19,7 +19,7 @@ devDependencies:
     version: 0.3.0
   svelte-lazy:
     specifier: ^1.2.5
-    version: 1.2.5(svelte@4.2.12)
+    version: 1.2.7(svelte@4.2.12)
   vite:
     specifier: ^5.0.12
     version: 5.0.12(sass@1.69.5)
@@ -705,8 +705,8 @@ packages:
       svelte: 4.2.12
     dev: true
 
-  /svelte-lazy@1.2.5(svelte@4.2.12):
-    resolution: {integrity: sha512-iVRG7DtMNzSBi00YiIIjszM6HRIB1aixh6K2IXRvKI7y+9wl0qdaApR4VauDHNKIBP/xQqUoX6jsC2+QLit4sA==}
+  /svelte-lazy@1.2.7(svelte@4.2.12):
+    resolution: {integrity: sha512-TvOP22pNsSKlCRsQIZ9mv1IAaEhSZFhezzhMO/kYuKUvX9VQALJvWHV5MOymn/pjeTeVuT4lE9g9y40uf0bNSw==}
     peerDependencies:
       svelte: ^3.0.0 || ^4.0.0
     dependencies:
