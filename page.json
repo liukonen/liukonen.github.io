@@ -564,6 +564,13 @@
                     "link": "https://angular.io/"
                 },
                 {
+                    "title": "React",
+                    "img": "./img/32/react.webp",
+                    "level": 2,
+                    "link": "https://react.dev/"
+
+                },
+                {
                     "title": "Vue",
                     "img": "./img/32/vue.webp",
                     "level": 1,
