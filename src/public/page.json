@@ -106,6 +106,26 @@
             ]
         },
         {
+            "Title": "Flag Fairway",
+            "SubTitle": "A self hosted internal facing configuration mananger",
+            "Description": "Trying a number of feature flag products, I found that there was a lot of bloat when it came to both performance, size, and message structure, so I decided to write up a simple REST CRUD app to be able to manage and configure feature flags within my own applications internally.",
+            "image": "img/card/flagfairway.webp",
+            "buttons": [
+                {
+                    "type": "Source",
+                    "url": "https://github.com/liukonen/FlagFairway"
+                }
+            ],
+            "tags": [
+                "svelte",
+                "Go",
+                "SASS",
+                "Key Value stores",
+                "Embedded Database",
+                "Docker"
+            ]
+        },
+        {
             "Title": "NATS",
             "SubTitle": "Not Another Text Search.",
             "Description": "Nats is a command-line search engine for text files with multithreading, indexing, and a cached option for faster lookups. Originally written in .net core, it now has GUI editions for Windows, Mac, and GTK running on multiple platforms. Icon for mac and windows provided by material.io, and is Apache license version 2.0.",
