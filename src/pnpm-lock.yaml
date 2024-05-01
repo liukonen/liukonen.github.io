@@ -10,7 +10,7 @@ devDependencies:
     version: 3.1.0(svelte@4.2.15)(vite@5.2.10)
   sass:
     specifier: ^1.75.0
-    version: 1.75.0
+    version: 1.76.0
   svelte:
     specifier: ^4.2.15
     version: 4.2.15
@@ -22,7 +22,7 @@ devDependencies:
     version: 1.2.7(svelte@4.2.15)
   vite:
     specifier: ^5.2.10
-    version: 5.2.10(sass@1.75.0)
+    version: 5.2.10(sass@1.76.0)
 
 packages:
 
@@ -410,7 +410,7 @@ packages:
       '@sveltejs/vite-plugin-svelte': 3.1.0(svelte@4.2.15)(vite@5.2.10)
       debug: 4.3.4
       svelte: 4.2.15
-      vite: 5.2.10(sass@1.75.0)
+      vite: 5.2.10(sass@1.76.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -429,7 +429,7 @@ packages:
       magic-string: 0.30.10
       svelte: 4.2.15
       svelte-hmr: 0.16.0(svelte@4.2.15)
-      vite: 5.2.10(sass@1.75.0)
+      vite: 5.2.10(sass@1.76.0)
       vitefu: 0.2.5(vite@5.2.10)
     transitivePeerDependencies:
       - supports-color
@@ -718,8 +718,8 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /sass@1.75.0:
-    resolution: {integrity: sha512-ShMYi3WkrDWxExyxSZPst4/okE9ts46xZmJDSawJQrnte7M1V9fScVB+uNXOVKRBt0PggHOwoZcn8mYX4trnBw==}
+  /sass@1.76.0:
+    resolution: {integrity: sha512-nc3LeqvF2FNW5xGF1zxZifdW3ffIz5aBb7I7tSvOoNu7z1RQ6pFt9MBuiPtjgaI62YWrM/txjWlOCFiGtf2xpw==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
@@ -787,7 +787,7 @@ packages:
       is-number: 7.0.0
     dev: true
 
-  /vite@5.2.10(sass@1.75.0):
+  /vite@5.2.10(sass@1.76.0):
     resolution: {integrity: sha512-PAzgUZbP7msvQvqdSD+ErD5qGnSFiGOoWmV5yAKUEI0kdhjbH6nMWVyZQC/hSc4aXwc0oJ9aEdIiF9Oje0JFCw==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -818,7 +818,7 @@ packages:
       esbuild: 0.20.2
       postcss: 8.4.38
       rollup: 4.16.4
-      sass: 1.75.0
+      sass: 1.76.0
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
@@ -831,5 +831,5 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 5.2.10(sass@1.75.0)
+      vite: 5.2.10(sass@1.76.0)
     dev: true
