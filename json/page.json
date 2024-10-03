@@ -25,7 +25,7 @@
     "projects": [
         {
             "Title": "Html Text Editor",
-            "SubTitle": "manipulate and batch text files in your browser",
+            "SubTitle": "Manipulate and batch text files in your browser",
             "image": "img/card/htmledit.webp",
             "Description": "I developed an advanced text editor for custom work. It started as console and winform applications, then evolved into a single web-based app, and now it's a PWA. It can load files from your desktop and save them in the browser cache or as a download.",
             "buttons": [
@@ -47,7 +47,7 @@
         },
         {
             "Title": "Tic Tac Math",
-            "SubTitle": "A simple game, that can help teach.",
+            "SubTitle": "A simple math tic tac toe game",
             "Description": "Back in school around 2003 or 04, I developed a Tic Tac Toe game using Visual Basic 6 and Microsoft Agents for input and output. Recently, I found the original source code and rewrote it in .NET, consolidating the logic into a single program with options to switch math types (divide, multiply, add, and subtract). As a side project during some time off, I converted the game to JavaScript and HTML, and brought back the Agents and text-to-speech functionality through the browser.",
             "image": "img/card/ttm.webp",
             "buttons": [
@@ -109,7 +109,7 @@
             "Title": "Flag Fairway",
             "SubTitle": "A self hosted internal facing configuration mananger",
             "Description": "Trying a number of feature flag products, I found that there was a lot of bloat when it came to both performance, size, and message structure, so I decided to write up a simple REST CRUD app to be able to manage and configure feature flags within my own applications internally.",
-            "image": "img/card/flagfairway.webp",
+            "image": "https://liukonen.dev/img/card/flagfairway.webp",
             "buttons": [
                 {
                     "type": "Source",

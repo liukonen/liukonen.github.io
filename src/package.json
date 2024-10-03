@@ -13,7 +13,7 @@
     "sass": "^1.75.0",
     "svelte": "^4.2.15",
     "svelte-collapsible": "^0.3.0",
-    "svelte-lazy": "^1.2.7",
+    "svelte-lazy": "^1.2.9",
     "vite": "^5.4.6"
   }
 }

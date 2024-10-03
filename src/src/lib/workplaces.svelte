@@ -4,7 +4,7 @@
 </script>
 
 {#each items as jobLocation}
-  <div class="row justify-content-md-center whiteGlass">
+  <div class="row justify-content-md-center whiteGlass mt-3">
     <div class="col-md-2 mt-3">
       <Lazy keep="true">
         <img

@@ -25,7 +25,7 @@
     "projects": [
         {
             "Title": "Html Text Editor",
-            "SubTitle": "manipulate and batch text files in your browser",
+            "SubTitle": "Manipulate and batch text files in your browser",
             "image": "img/card/htmledit.webp",
             "Description": "I developed an advanced text editor for custom work. It started as console and winform applications, then evolved into a single web-based app, and now it's a PWA. It can load files from your desktop and save them in the browser cache or as a download.",
             "buttons": [
@@ -47,7 +47,7 @@
         },
         {
             "Title": "Tic Tac Math",
-            "SubTitle": "A simple game, that can help teach.",
+            "SubTitle": "A simple math tic tac toe game.",
             "Description": "Back in school around 2003 or 04, I developed a Tic Tac Toe game using Visual Basic 6 and Microsoft Agents for input and output. Recently, I found the original source code and rewrote it in .NET, consolidating the logic into a single program with options to switch math types (divide, multiply, add, and subtract). As a side project during some time off, I converted the game to JavaScript and HTML, and brought back the Agents and text-to-speech functionality through the browser.",
             "image": "img/card/ttm.webp",
             "buttons": [
@@ -156,7 +156,7 @@
         },
         {
             "Title": "CloudyPie",
-            "SubTitle": "a remake of DJAkbar's cloudy-a project",
+            "SubTitle": "A rewrite of DJAkbar's cloudy-a project",
             "Description": "Refactored and upgraded a Python-based lamp project for Raspberry Pi that displays weather information, originally created by DJAkbars, to improve operation timing and service calling, and migrate to Python 3.",
             "image": "img/card/cp.webp",
             "buttons": [
@@ -287,7 +287,7 @@
         },
         {
             "Title": "Dif",
-            "SubTitle": "useful tool with robocopy, to see what will move",
+            "SubTitle": "Compares files between folders. Build originally as a robocopy utility.",
             "Description": "This program helps you see what files have changed when you copy them from one folder to another. It goes off LastUpdated timestamps of the files",
             "image": "img/card/cmd.webp",
             "buttons": [
