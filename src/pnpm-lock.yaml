@@ -10,7 +10,7 @@ devDependencies:
     version: 3.1.2(svelte@4.2.19)(vite@5.4.9)
   sass:
     specifier: ^1.75.0
-    version: 1.80.1
+    version: 1.80.2
   svelte:
     specifier: ^4.2.15
     version: 4.2.19
@@ -22,7 +22,7 @@ devDependencies:
     version: 1.2.9(rollup@4.24.0)(svelte@4.2.19)
   vite:
     specifier: ^5.4.6
-    version: 5.4.9(sass@1.80.1)
+    version: 5.4.9(sass@1.80.2)
 
 packages:
 
@@ -573,7 +573,7 @@ packages:
       '@sveltejs/vite-plugin-svelte': 3.1.2(svelte@4.2.19)(vite@5.4.9)
       debug: 4.3.7
       svelte: 4.2.19
-      vite: 5.4.9(sass@1.80.1)
+      vite: 5.4.9(sass@1.80.2)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -592,7 +592,7 @@ packages:
       magic-string: 0.30.11
       svelte: 4.2.19
       svelte-hmr: 0.16.0(svelte@4.2.19)
-      vite: 5.4.9(sass@1.80.1)
+      vite: 5.4.9(sass@1.80.2)
       vitefu: 0.2.5(vite@5.4.9)
     transitivePeerDependencies:
       - supports-color
@@ -903,8 +903,8 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /sass@1.80.1:
-    resolution: {integrity: sha512-9lBwDZ7j3y/1DKj5Ec249EVGo5CVpwnzIyIj+cqlCjKkApLnzsJ/l9SnV4YnORvW9dQwQN+gQvh/mFZ8CnDs7Q==}
+  /sass@1.80.2:
+    resolution: {integrity: sha512-9wXY8cGBlUmoUoT+vwOZOFCiS+naiWVjqlreN9ar9PudXbGwlMTFwCR5K9kB4dFumJ6ib98wZyAObJKsWf1nAA==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
@@ -982,7 +982,7 @@ packages:
       is-number: 7.0.0
     dev: true
 
-  /vite@5.4.9(sass@1.80.1):
+  /vite@5.4.9(sass@1.80.2):
     resolution: {integrity: sha512-20OVpJHh0PAM0oSOELa5GaZNWeDjcAvQjGXy2Uyr+Tp+/D2/Hdz6NLgpJLsarPTA2QJ6v8mX2P1ZfbsSKvdMkg==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -1016,7 +1016,7 @@ packages:
       esbuild: 0.21.5
       postcss: 8.4.47
       rollup: 4.24.0
-      sass: 1.80.1
+      sass: 1.80.2
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
@@ -1029,5 +1029,5 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 5.4.9(sass@1.80.1)
+      vite: 5.4.9(sass@1.80.2)
     dev: true
