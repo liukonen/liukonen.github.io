@@ -7,19 +7,19 @@ settings:
 devDependencies:
   '@sveltejs/vite-plugin-svelte':
     specifier: ^4.0.0
-    version: 4.0.0(svelte@5.0.0)(vite@5.4.9)
+    version: 4.0.0(svelte@5.0.2)(vite@5.4.9)
   sass:
     specifier: ^1.75.0
     version: 1.80.3
   svelte:
     specifier: ^5.0.0
-    version: 5.0.0
+    version: 5.0.2
   svelte-collapsible:
     specifier: ^0.3.0
     version: 0.3.0
   svelte-lazy:
     specifier: ^1.2.9
-    version: 1.2.9(rollup@4.24.0)(svelte@5.0.0)
+    version: 1.2.9(rollup@4.24.0)(svelte@5.0.2)
   vite:
     specifier: ^5.4.6
     version: 5.4.9(sass@1.80.3)
@@ -562,7 +562,7 @@ packages:
     dev: true
     optional: true
 
-  /@sveltejs/vite-plugin-svelte-inspector@3.0.0(@sveltejs/vite-plugin-svelte@4.0.0)(svelte@5.0.0)(vite@5.4.9):
+  /@sveltejs/vite-plugin-svelte-inspector@3.0.0(@sveltejs/vite-plugin-svelte@4.0.0)(svelte@5.0.2)(vite@5.4.9):
     resolution: {integrity: sha512-hBxSYW/66989cq9dN248omD/ziskSdIV1NqfuueuAI1z6jGcg14k9Zd98pDIEnoA6wC9kWUGuQ6adzBbWwQyRg==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22}
     peerDependencies:
@@ -570,27 +570,27 @@ packages:
       svelte: ^5.0.0-next.96 || ^5.0.0
       vite: ^5.0.0
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 4.0.0(svelte@5.0.0)(vite@5.4.9)
+      '@sveltejs/vite-plugin-svelte': 4.0.0(svelte@5.0.2)(vite@5.4.9)
       debug: 4.3.7
-      svelte: 5.0.0
+      svelte: 5.0.2
       vite: 5.4.9(sass@1.80.3)
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@sveltejs/vite-plugin-svelte@4.0.0(svelte@5.0.0)(vite@5.4.9):
+  /@sveltejs/vite-plugin-svelte@4.0.0(svelte@5.0.2)(vite@5.4.9):
     resolution: {integrity: sha512-kpVJwF+gNiMEsoHaw+FJL76IYiwBikkxYU83+BpqQLdVMff19KeRKLd2wisS8niNBMJ2omv5gG+iGDDwd8jzag==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22}
     peerDependencies:
       svelte: ^5.0.0-next.96 || ^5.0.0
       vite: ^5.0.0
     dependencies:
-      '@sveltejs/vite-plugin-svelte-inspector': 3.0.0(@sveltejs/vite-plugin-svelte@4.0.0)(svelte@5.0.0)(vite@5.4.9)
+      '@sveltejs/vite-plugin-svelte-inspector': 3.0.0(@sveltejs/vite-plugin-svelte@4.0.0)(svelte@5.0.2)(vite@5.4.9)
       debug: 4.3.7
       deepmerge: 4.3.1
       kleur: 4.1.5
       magic-string: 0.30.12
-      svelte: 5.0.0
+      svelte: 5.0.2
       vite: 5.4.9(sass@1.80.3)
       vitefu: 1.0.3(vite@5.4.9)
     transitivePeerDependencies:
@@ -605,16 +605,16 @@ packages:
     resolution: {integrity: sha512-60BCwRFOZCQhDncwQdxxeOEEkbc5dIMccYLwbxsS4TUNeVECQ/pBJ0j09mrHOl/JJvpRPGwO9SvE4nR2Nb/a4Q==}
     dev: true
 
-  /acorn-typescript@1.4.13(acorn@8.12.1):
+  /acorn-typescript@1.4.13(acorn@8.13.0):
     resolution: {integrity: sha512-xsc9Xv0xlVfwp2o7sQ+GCQ1PgbkdcpWdTzrwXxO3xDMTAywVS3oXVOcOHuRjAPkS4P9b+yc/qNF15460v+jp4Q==}
     peerDependencies:
       acorn: '>=8.9.0'
     dependencies:
-      acorn: 8.12.1
+      acorn: 8.13.0
     dev: true
 
-  /acorn@8.12.1:
-    resolution: {integrity: sha512-tcpGyI9zbizT9JbV6oYE477V6mTlXvvi0T0G3SNIYE2apm/G5huBa1+K89VGeovbg+jycCrfhl3ADxErOuO6Jg==}
+  /acorn@8.13.0:
+    resolution: {integrity: sha512-8zSiw54Oxrdym50NlZ9sUusyO1Z1ZchgRLWRaK6c86XJFClyCgFKetdowBg5bKxyp/u+CDBJG4Mpp0m3HLZl9w==}
     engines: {node: '>=0.4.0'}
     hasBin: true
     dev: true
@@ -916,27 +916,27 @@ packages:
       svelte-collapse: 0.1.3
     dev: true
 
-  /svelte-lazy@1.2.9(rollup@4.24.0)(svelte@5.0.0):
+  /svelte-lazy@1.2.9(rollup@4.24.0)(svelte@5.0.2):
     resolution: {integrity: sha512-GjGKbPN/0yDq7vVSFik/ADPtloGXDRMk9Fvy+8nBEK4MSkQTnqMvN4MpSk5+cr4MAvSf0UOM5Wuo6l2hF8tAXw==}
     peerDependencies:
       svelte: ^3.0.0 || ^4.0.0
     dependencies:
       '@rollup/plugin-node-resolve': 15.3.0(rollup@4.24.0)
       rollup-plugin-css-only: 4.5.2(rollup@4.24.0)
-      svelte: 5.0.0
+      svelte: 5.0.2
     transitivePeerDependencies:
       - rollup
     dev: true
 
-  /svelte@5.0.0:
-    resolution: {integrity: sha512-jv2IvTtakG58DqZMo6fY3T6HFmGV4iDQH2lSUyfmCEYaoa+aCNcF+9rERbdDvT4XDF0nQBg6TEoJn0dirED8VQ==}
+  /svelte@5.0.2:
+    resolution: {integrity: sha512-TIqp5kjyTMa45L0McUvVfjuvlF/hyxVolyAc9APY3/FeF5aqYpt+Y1PckPQ7DlsDkthxNeq2+ystop8GlIV3kw==}
     engines: {node: '>=18'}
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@jridgewell/sourcemap-codec': 1.5.0
       '@types/estree': 1.0.6
-      acorn: 8.12.1
-      acorn-typescript: 1.4.13(acorn@8.12.1)
+      acorn: 8.13.0
+      acorn-typescript: 1.4.13(acorn@8.13.0)
       aria-query: 5.3.2
       axobject-query: 4.1.0
       esm-env: 1.0.0
