@@ -10,7 +10,7 @@ devDependencies:
     version: 4.0.0(svelte@5.1.15)(vite@5.4.11)
   sass:
     specifier: ^1.75.0
-    version: 1.80.6
+    version: 1.80.7
   svelte:
     specifier: ^5.0.0
     version: 5.1.15
@@ -22,7 +22,7 @@ devDependencies:
     version: 1.2.10(svelte@5.1.15)
   vite:
     specifier: ^5.4.6
-    version: 5.4.11(sass@1.80.6)
+    version: 5.4.11(sass@1.80.7)
 
 packages:
 
@@ -569,7 +569,7 @@ packages:
       '@sveltejs/vite-plugin-svelte': 4.0.0(svelte@5.1.15)(vite@5.4.11)
       debug: 4.3.7
       svelte: 5.1.15
-      vite: 5.4.11(sass@1.80.6)
+      vite: 5.4.11(sass@1.80.7)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -587,7 +587,7 @@ packages:
       kleur: 4.1.5
       magic-string: 0.30.12
       svelte: 5.1.15
-      vite: 5.4.11(sass@1.80.6)
+      vite: 5.4.11(sass@1.80.7)
       vitefu: 1.0.3(vite@5.4.11)
     transitivePeerDependencies:
       - supports-color
@@ -721,8 +721,8 @@ packages:
     dev: true
     optional: true
 
-  /immutable@4.3.7:
-    resolution: {integrity: sha512-1hqclzwYwjRDFLjcFxOM5AYkkG0rpFPpr1RLPMEuGczoS7YA8gLhy8SWXYRAA/XwfEHpfo3cw5JGioS32fnMRw==}
+  /immutable@5.0.2:
+    resolution: {integrity: sha512-1NU7hWZDkV7hJ4PJ9dur9gTNQ4ePNPN4k9/0YhwjzykTi/+3Q5pF93YU5QoVj8BuOnhLgaY8gs0U2pj4kSYVcw==}
     dev: true
 
   /is-extglob@2.1.1:
@@ -848,13 +848,13 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /sass@1.80.6:
-    resolution: {integrity: sha512-ccZgdHNiBF1NHBsWvacvT5rju3y1d/Eu+8Ex6c21nHp2lZGLBEtuwc415QfiI1PJa1TpCo3iXwwSRjRpn2Ckjg==}
+  /sass@1.80.7:
+    resolution: {integrity: sha512-MVWvN0u5meytrSjsU7AWsbhoXi1sc58zADXFllfZzbsBT1GHjjar6JwBINYPRrkx/zqnQ6uqbQuHgE95O+C+eQ==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
       chokidar: 4.0.1
-      immutable: 4.3.7
+      immutable: 5.0.2
       source-map-js: 1.2.1
     optionalDependencies:
       '@parcel/watcher': 2.5.0
@@ -911,7 +911,7 @@ packages:
     dev: true
     optional: true
 
-  /vite@5.4.11(sass@1.80.6):
+  /vite@5.4.11(sass@1.80.7):
     resolution: {integrity: sha512-c7jFQRklXua0mTzneGW9QVyxFjUgwcihC4bXEtujIo2ouWCe1Ajt/amn2PCxYnhYfd5k09JX3SB7OYWFKYqj8Q==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -945,7 +945,7 @@ packages:
       esbuild: 0.21.5
       postcss: 8.4.48
       rollup: 4.25.0
-      sass: 1.80.6
+      sass: 1.80.7
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
@@ -958,7 +958,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 5.4.11(sass@1.80.6)
+      vite: 5.4.11(sass@1.80.7)
     dev: true
 
   /zimmerframe@1.1.2:
