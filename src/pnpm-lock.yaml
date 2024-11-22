@@ -16,7 +16,7 @@ devDependencies:
     version: 5.2.7
   svelte-collapsible:
     specifier: ^0.3.0
-    version: 0.3.0
+    version: 0.3.1
   svelte-lazy:
     specifier: ^1.2.9
     version: 1.2.10(svelte@5.2.7)
@@ -871,14 +871,14 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /svelte-collapse@0.1.3:
-    resolution: {integrity: sha512-L4viXdS713o1yh56ozTkvQAL3Vf4jphuvTcEarGs+R7/kyZxdRLh28JdWf++hKQsT+8hJU3fgnZclAUMHRbnnA==}
+  /svelte-collapse@0.1.4:
+    resolution: {integrity: sha512-l3/p6TkZ8/4O28nT8LMlwFJUkKNMBSoI2YK1FhPCnqPtH9RAYs9ZAFtRdy5W/Rb/f2p8RIPuMqMF0YfJ9fhQLw==}
     dev: true
 
-  /svelte-collapsible@0.3.0:
-    resolution: {integrity: sha512-dLiVnNhuckqGt17tG63y4WoCaPiHJT86qjlFftmrP3Bel4WB0ehG/sf55AEJDZDrsC35ZjrWeYBVJEETwMWcFw==}
+  /svelte-collapsible@0.3.1:
+    resolution: {integrity: sha512-jwV9pAlv5JvBthoN1hxXA2KH3rFgoQGIpyXO3mIgMOoke4xId0S8LcaxlMuwGT3vtv6rAAF5EGYMMKHeqHlyYA==}
     dependencies:
-      svelte-collapse: 0.1.3
+      svelte-collapse: 0.1.4
     dev: true
 
   /svelte-lazy@1.2.10(svelte@5.2.7):
