@@ -14,6 +14,6 @@
     "svelte": "^5.0.0",
     "svelte-collapsible": "^0.3.0",
     "svelte-lazy": "^1.2.9",
-    "vite": "^5.4.6"
+    "vite": "^6.0.0"
   }
 }
