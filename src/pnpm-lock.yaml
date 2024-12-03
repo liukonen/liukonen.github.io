@@ -10,7 +10,7 @@ devDependencies:
     version: 5.0.1(svelte@5.5.2)(vite@6.0.2)
   sass:
     specifier: ^1.75.0
-    version: 1.81.0
+    version: 1.81.1
   svelte:
     specifier: ^5.0.0
     version: 5.5.2
@@ -22,7 +22,7 @@ devDependencies:
     version: 1.2.11(svelte@5.5.2)
   vite:
     specifier: ^6.0.0
-    version: 6.0.2(sass@1.81.0)
+    version: 6.0.2(sass@1.81.1)
 
 packages:
 
@@ -578,7 +578,7 @@ packages:
       '@sveltejs/vite-plugin-svelte': 5.0.1(svelte@5.5.2)(vite@6.0.2)
       debug: 4.3.7
       svelte: 5.5.2
-      vite: 6.0.2(sass@1.81.0)
+      vite: 6.0.2(sass@1.81.1)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -596,7 +596,7 @@ packages:
       kleur: 4.1.5
       magic-string: 0.30.14
       svelte: 5.5.2
-      vite: 6.0.2(sass@1.81.0)
+      vite: 6.0.2(sass@1.81.1)
       vitefu: 1.0.4(vite@6.0.2)
     transitivePeerDependencies:
       - supports-color
@@ -731,8 +731,8 @@ packages:
     dev: true
     optional: true
 
-  /immutable@5.0.2:
-    resolution: {integrity: sha512-1NU7hWZDkV7hJ4PJ9dur9gTNQ4ePNPN4k9/0YhwjzykTi/+3Q5pF93YU5QoVj8BuOnhLgaY8gs0U2pj4kSYVcw==}
+  /immutable@5.0.3:
+    resolution: {integrity: sha512-P8IdPQHq3lA1xVeBRi5VPqUm5HDgKnx0Ru51wZz5mjxHr5n3RWhjIpOFU7ybkUxfB+5IToy+OLaHYDBIWsv+uw==}
     dev: true
 
   /is-extglob@2.1.1:
@@ -858,13 +858,13 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /sass@1.81.0:
-    resolution: {integrity: sha512-Q4fOxRfhmv3sqCLoGfvrC9pRV8btc0UtqL9mN6Yrv6Qi9ScL55CVH1vlPP863ISLEEMNLLuu9P+enCeGHlnzhA==}
+  /sass@1.81.1:
+    resolution: {integrity: sha512-VNLgf4FC5yFyKwAumAAwwNh8X4SevlVREq3Y8aDZIkm0lI/zO1feycMXQ4hn+eB6FVhRbleSQ1Yb/q8juSldTA==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
       chokidar: 4.0.1
-      immutable: 5.0.2
+      immutable: 5.0.3
       source-map-js: 1.2.1
     optionalDependencies:
       '@parcel/watcher': 2.5.0
@@ -921,7 +921,7 @@ packages:
     dev: true
     optional: true
 
-  /vite@6.0.2(sass@1.81.0):
+  /vite@6.0.2(sass@1.81.1):
     resolution: {integrity: sha512-XdQ+VsY2tJpBsKGs0wf3U/+azx8BBpYRHFAyKm5VeEZNOJZRB63q7Sc8Iup3k0TrN3KO6QgyzFf+opSbfY1y0g==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
@@ -964,7 +964,7 @@ packages:
       esbuild: 0.24.0
       postcss: 8.4.49
       rollup: 4.28.0
-      sass: 1.81.0
+      sass: 1.81.1
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
@@ -977,7 +977,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 6.0.2(sass@1.81.0)
+      vite: 6.0.2(sass@1.81.1)
     dev: true
 
   /zimmerframe@1.1.2:
