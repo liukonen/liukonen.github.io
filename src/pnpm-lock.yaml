@@ -10,7 +10,7 @@ devDependencies:
     version: 5.1.0(svelte@5.33.18)(vite@6.3.5)
   sass:
     specifier: ^1.75.0
-    version: 1.89.1
+    version: 1.89.2
   svelte:
     specifier: ^5.0.0
     version: 5.33.18
@@ -22,7 +22,7 @@ devDependencies:
     version: 1.2.11(svelte@5.33.18)
   vite:
     specifier: ^6.0.0
-    version: 6.3.5(sass@1.89.1)
+    version: 6.3.5(sass@1.89.2)
 
 packages:
 
@@ -611,7 +611,7 @@ packages:
       '@sveltejs/vite-plugin-svelte': 5.1.0(svelte@5.33.18)(vite@6.3.5)
       debug: 4.4.1
       svelte: 5.33.18
-      vite: 6.3.5(sass@1.89.1)
+      vite: 6.3.5(sass@1.89.2)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -629,7 +629,7 @@ packages:
       kleur: 4.1.5
       magic-string: 0.30.17
       svelte: 5.33.18
-      vite: 6.3.5(sass@1.89.1)
+      vite: 6.3.5(sass@1.89.2)
       vitefu: 1.0.6(vite@6.3.5)
     transitivePeerDependencies:
       - supports-color
@@ -910,8 +910,8 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /sass@1.89.1:
-    resolution: {integrity: sha512-eMLLkl+qz7tx/0cJ9wI+w09GQ2zodTkcE/aVfywwdlRcI3EO19xGnbmJwg/JMIm+5MxVJ6outddLZ4Von4E++Q==}
+  /sass@1.89.2:
+    resolution: {integrity: sha512-xCmtksBKd/jdJ9Bt9p7nPKiuqrlBMBuuGkQlkhZjjQk3Ty48lv93k5Dq6OPkKt4XwxDJ7tvlfrTa1MPA9bf+QA==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
@@ -982,7 +982,7 @@ packages:
     dev: true
     optional: true
 
-  /vite@6.3.5(sass@1.89.1):
+  /vite@6.3.5(sass@1.89.2):
     resolution: {integrity: sha512-cZn6NDFE7wdTpINgs++ZJ4N49W2vRp8LCKrn3Ob1kYNtOo21vfDoaV5GzBfLU4MovSAB8uNRm4jgzVQZ+mBzPQ==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
@@ -1027,7 +1027,7 @@ packages:
       picomatch: 4.0.2
       postcss: 8.5.3
       rollup: 4.40.1
-      sass: 1.89.1
+      sass: 1.89.2
       tinyglobby: 0.2.13
     optionalDependencies:
       fsevents: 2.3.3
@@ -1041,7 +1041,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 6.3.5(sass@1.89.1)
+      vite: 6.3.5(sass@1.89.2)
     dev: true
 
   /zimmerframe@1.1.2:
