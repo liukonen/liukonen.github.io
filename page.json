@@ -430,8 +430,14 @@
                 {
                     "title": "Java / Springboot",
                     "img": "./img/32/Java.webp",
-                    "level": 2,
+                    "level": 3,
                     "link": "https://java.com"
+                },
+                {
+                    "title": "Node.JS",
+                    "img": "./img/32/node.webp",
+                    "level": 2,
+                    "link": "https://nodejs.org/en/about/"
                 },
                 {
                     "title": "VB.Net",
@@ -446,22 +452,16 @@
                     "link": "https://en.wikipedia.org/wiki/Transact-SQL"
                 },
                 {
-                    "title": "Node.JS",
-                    "img": "./img/32/node.webp",
-                    "level": 2,
-                    "link": "https://nodejs.org/en/about/"
+                    "title": "Python",
+                    "img": "./img/32/python.webp",
+                    "level": 1,
+                    "link": "https://www.python.org/"
                 },
                 {
                     "title": "GoLang",
                     "img": "./img/32/go.webp",
                     "level": 1,
                     "link": "https://go.dev/"
-                },
-                {
-                    "title": "Python",
-                    "img": "./img/32/python.webp",
-                    "level": 1,
-                    "link": "https://www.python.org/"
                 }
             ]
         },
@@ -470,11 +470,17 @@
             "size": "12",
             "items": [
                 {
-                    "title": "Rest Services",
+                    "title": "Rest",
                     "img": "./img/32/rest.webp",
                     "level": 2,
                     "link": "https://en.wikipedia.org/wiki/Representational_state_transfer"
                 },
+            {
+                    "title": "Pub Sub (Kafka / MQ)",
+                    "img": "./img/32/rest.webp",
+                    "level": 2,
+                    "link": "https://en.wikipedia.org/wiki/Representational_state_transfer"
+                },  
                 {
                     "title": "MVC",
                     "img": "./img/32/mvc.webp",
@@ -488,7 +494,7 @@
                     "link": "https://en.wikipedia.org/wiki/Agile_software_development"
                 },
                 {
-                    "title" : "Containerization (Docker / Kubernetes)",
+                    "title" : "Containerization",
                     "img":"./img/32/k8s.webp",
                     "level": 2,
                     "link":"https://kubernetes.io/"
@@ -500,10 +506,34 @@
                     "link":"https://resources.github.com/ci-cd/"
                 },
                 {
-                    "title" : "Test and Behavor Driven Development",
+                    "title" : "TDD / BDD",
                     "img":"./img/32/agile.webp",
                     "level": 2,
                     "link":"https://en.wikipedia.org/wiki/Behavior-driven_development"
+                }
+            ]
+        },
+                {
+            "name": "UI Frameworks",
+            "size": "6",
+            "items": [
+                {
+                    "title": "React",
+                    "img": "./img/32/react.webp",
+                    "level": 2,
+                    "link": "https://react.dev/"
+                },
+                {
+                    "title": "ASP.Net",
+                    "img": "./img/32/aspnet.webp",
+                    "level": 2,
+                    "link": "https://dotnet.microsoft.com/apps/aspnet"
+                },
+                {
+                    "title": "Angular (js)",
+                    "img": "./img/32/Angular.webp",
+                    "level": 2,
+                    "link": "https://angular.io/"
                 }
             ]
         },
@@ -534,12 +564,6 @@
                     "img": "./img/32/sass.webp",
                     "level": 2,
                     "link": "https://sass-lang.com/"
-                },
-                {
-                    "title": "Blazor Pages",
-                    "img": "./img/32/blazor.webp",
-                    "level": 1,
-                    "link": "https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor"
                 }
             ]
         },
@@ -548,13 +572,13 @@
             "size": "6",
             "items": [
                 {
-                    "title": "SQL (MSSQL / Postgres / MySQL)",
+                    "title": "MS-SQL / Postgres / MySQL",
                     "img": "./img/32/sqlserver.webp",
                     "level": 2,
                     "link": "https://en.wikipedia.org/wiki/Microsoft_SQL_Server"
                 },
                 {
-                    "title": "Redis",
+                    "title": "Redis / Keyval",
                     "img": "./img/32/redis.webp",
                     "level": 1,
                     "link": "https://redis.io/"
@@ -567,30 +591,7 @@
                 }
             ]
         },
-        {
-            "name": "UI Frameworks",
-            "size": "6",
-            "items": [
-                {
-                    "title": "ASP.Net",
-                    "img": "./img/32/aspnet.webp",
-                    "level": 2,
-                    "link": "https://dotnet.microsoft.com/apps/aspnet"
-                },
-                {
-                    "title": "Angular (js)",
-                    "img": "./img/32/Angular.webp",
-                    "level": 2,
-                    "link": "https://angular.io/"
-                },
-                {
-                    "title": "Vue",
-                    "img": "./img/32/vue.webp",
-                    "level": 1,
-                    "link": "https://vuejs.org/"
-                }
-            ]
-        },
+
         {
             "name": "Version Control",
             "size": "4",
@@ -602,16 +603,10 @@
                     "link": "https://azure.microsoft.com/en-us/services/devops/server/"
                 },
                 {
-                    "title": "GitLab / Github",
+                    "title": "Git",
                     "img": "./img/32/Octocat.webp",
                     "level": 2,
-                    "link": "https://en.wikipedia.org/wiki/GitHub"
-                },
-                {
-                    "title": "Azure DevOps",
-                    "img": "./img/32/Octocat.webp",
-                    "level": 2,
-                    "link": "https://en.wikipedia.org/wiki/GitHub"
+                    "link": "https://en.wikipedia.org/wiki/Git"
                 }
             ]
         },
@@ -630,12 +625,6 @@
                     "img": "./img/32/vscode.webp",
                     "level": 2,
                     "link": "https://code.visualstudio.com/"
-                },
-                {
-                    "title": "Git",
-                    "img": "./img/32/Git.webp",
-                    "level": 2,
-                    "link": "https://git-scm.com/"
                 }
             ]
         }

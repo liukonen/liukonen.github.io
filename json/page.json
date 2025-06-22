@@ -434,6 +434,13 @@
                     "link": "https://java.com"
                 },
                 {
+                    "title": "Node.JS",
+                    "img": "./img/32/node.webp",
+                    "level": 2,
+                    "link": "https://nodejs.org/en/about/"
+                },
+                
+                {
                     "title": "VB.Net",
                     "img": "./img/32/vb.webp",
                     "level": 3,
@@ -444,12 +451,6 @@
                     "img": "./img/32/tsql.webp",
                     "level": 2,
                     "link": "https://en.wikipedia.org/wiki/Transact-SQL"
-                },
-                {
-                    "title": "Node.JS",
-                    "img": "./img/32/node.webp",
-                    "level": 2,
-                    "link": "https://nodejs.org/en/about/"
                 },
                 {
                     "title": "GoLang",
@@ -504,6 +505,30 @@
                     "img":"./img/32/agile.webp",
                     "level": 2,
                     "link":"https://en.wikipedia.org/wiki/Behavior-driven_development"
+                }
+            ]
+        },
+   {
+            "name": "UI Frameworks",
+            "size": "6",
+            "items": [
+                {
+                    "title": "ASP.Net",
+                    "img": "./img/32/aspnet.webp",
+                    "level": 2,
+                    "link": "https://dotnet.microsoft.com/apps/aspnet"
+                },
+                {
+                    "title": "Angular (js)",
+                    "img": "./img/32/Angular.webp",
+                    "level": 2,
+                    "link": "https://angular.io/"
+                },
+                {
+                    "title": "Vue",
+                    "img": "./img/32/vue.webp",
+                    "level": 1,
+                    "link": "https://vuejs.org/"
                 }
             ]
         },
@@ -567,30 +592,7 @@
                 }
             ]
         },
-        {
-            "name": "UI Frameworks",
-            "size": "6",
-            "items": [
-                {
-                    "title": "ASP.Net",
-                    "img": "./img/32/aspnet.webp",
-                    "level": 2,
-                    "link": "https://dotnet.microsoft.com/apps/aspnet"
-                },
-                {
-                    "title": "Angular (js)",
-                    "img": "./img/32/Angular.webp",
-                    "level": 2,
-                    "link": "https://angular.io/"
-                },
-                {
-                    "title": "Vue",
-                    "img": "./img/32/vue.webp",
-                    "level": 1,
-                    "link": "https://vuejs.org/"
-                }
-            ]
-        },
+     
         {
             "name": "Version Control",
             "size": "4",

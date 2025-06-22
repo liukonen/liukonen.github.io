@@ -1,19 +1,16 @@
 {
-  "name": "homepage",
-  "private": true,
-  "version": "0.0.0",
+  "name": "my-spa",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "node esbuild.config.mjs"
+  },
+  "dependencies": {
+    "preact": "^10.26.9"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^5.0.0",
-    "sass": "^1.75.0",
-    "svelte": "^5.0.0",
-    "svelte-collapsible": "^0.3.0",
-    "svelte-lazy": "^1.2.9",
-    "vite": "^6.0.0"
+    "esbuild": "^0.25.5",
+    "esbuild-sass-plugin": "^3.3.1",
+    "sass": "^1.89.2",
+    "typescript": "^5.8.3"
   }
 }
