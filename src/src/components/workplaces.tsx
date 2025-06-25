@@ -56,7 +56,7 @@ const Workplaces: FunctionalComponent<WorkplacesProps> = ({ items }) => {
     <>
       {items.map((jobLocation, index) => (
         <div
-          className="row justify-content-md-center glass mt-3"
+          className="row justify-content-md-center mt-3"
           key={index}
         >
           <div className="col-md-2 mt-3">
@@ -67,11 +67,13 @@ const Workplaces: FunctionalComponent<WorkplacesProps> = ({ items }) => {
             />
           </div>
           <div className="col-md-6 mt-3 offset-md-1">
+            <div class="whiteGlassCardElement">
             <h4 className="card-title">{jobLocation.name}</h4>
             <h5>
               {jobLocation.title}, {jobLocation.timeworked}
             </h5>
-            <p className="card-text">{jobLocation.summary}</p>
+            <p>{jobLocation.summary}</p>
+          </div>
           </div>
         </div>
       ))}

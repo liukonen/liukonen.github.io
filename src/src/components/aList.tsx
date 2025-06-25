@@ -8,15 +8,17 @@ interface aListProps {
 const AList: FunctionalComponent<aListProps> = ({ listItems, listStyle }) => {
   const getStyle =
     listStyle === "1"
-      ? 'list-group text-dark shadow whiteGlass'
-      : 'list-group whiteGlass';
+      ? 'list-group text-dark shadow whiteGlassList'
+      : 'list-group whiteGlassList';
 
   return (
-    <ul class={getStyle}>
-      {listItems.map(({ a }) => (
-        <li class="list-group-item pane">{a}</li>
-      ))}
-    </ul>
+    <div class="container whiteGlassCardElement">
+     <ul class="paneList">
+       {listItems.map(({ a }) => (
+         <li class="pane">{a}</li>
+       ))}
+     </ul>
+     </div>
   )
 }
 

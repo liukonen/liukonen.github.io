@@ -71,7 +71,7 @@ const Blogs: FunctionalComponent = () => {
                   className="rImage250 d-block w-100 white-overlay"
                   alt={article.title}
                 />
-                <div className="carousel-caption d-none d-md-block whiteGlass text-dark">
+                <div className="carousel-caption d-none d-md-block whiterGlass text-dark">
                   <h5>{article.title}</h5>
                   <p>{article.timestamp.slice(0, -9)}</p>
                   <a

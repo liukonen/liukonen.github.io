@@ -53,7 +53,7 @@ const App = () => {
         <>
           <Navbar menuItems={jsonPayload.menu} />
           <main>
-            <div class="container glass">
+            <div class="container blackGlass">
               <div class="row">
                 <div class="col-md-9">
                   <h1 class="display-3 tshadow">

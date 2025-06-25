@@ -21,7 +21,7 @@
             "value": "#about"
         }
     ],
-    "welcome": "Hi, I'm Luke Liukonen, a software engineer, educator, and technology enthusiast based in the Metro Milwaukee Wisconsin area. With over 15 years of professional development experience since 2006, my expertise lies in backend development, although I have also worked as a full-stack engineer. My passion for technology drives me to stay up-to-date with current trends and advancements in the field. As a lifelong learner, I am always exploring new ways to innovate and solve complex problems. Feel free to browse around and learn more about my work.",
+    "welcome": "Hi, I’m Luke Liukonen — a software engineer, educator, and all-around tech enthusiast based in the Metro Milwaukee area. I’ve been building software professionally since 2006, with nearly 20 years of hands-on experience. My main focus is backend development, but I’ve worn many hats over the years as a full-stack engineer. I love solving tough problems, learning new things, and staying on top of where tech is headed. Whether I’m working on complex systems or mentoring others, I’m always looking for ways to make an impact. Feel free to take a look around",
     "projects": [
         {
             "Title": "Html Text Editor",
@@ -396,28 +396,17 @@
         }
     ],
     "highlights": [
-        {
-            "a": "Multi-year, multi-company hackathon award winner. Using technologies such as AI Modeling, Cognitive Services, and Chatbots."
-        },
-        {
-            "a": "2-time company representative for MMAC 'Be the Spark Tour'"
-        },
-        {
-            "a": "Multi Year Hour of code representative"
-        },
-        {
-            "a": "On multiple committees for outreach, wellness, and event planning"
-        },
-        {
-            "a": "Owasp top 10 trained. Maintained PCI complience"
-        },
-        {
-            "a": "Lead Software Engineer on team for nearly 6 years"
-        }
+
+{ "a": "Multi-year, multi-company hackathon award winner, leveraging AI modeling, cognitive services, and chatbot technologies to create innovative solutions."},
+{ "a": "Twice selected as a company representative for the Milwaukee Makerspace & Arts Center (MMAC) “Be the Spark” Tour, promoting STEM engagement."},
+{ "a": "Multi-year participant and representative for Hour of Code initiatives, inspiring others to explore coding and technology."},
+{ "a": "Active contributor on multiple internal committees focused on outreach, employee wellness, and event planning."},
+{ "a": "Experienced in maintaining HIPAA compliance, ensuring the security and privacy of sensitive data in all software development processes."},
+{ "a": "Took on lead responsibilities for nearly six years by managing a break/fix product support team and mentoring two engineers, guiding technical efforts and team growth."}
     ],
     "Experence": [
         {
-            "name": "Backend",
+            "name": "Backend Languages",
             "size": "12",
             "items": [
                 {
@@ -465,54 +454,6 @@
             ]
         },
         {
-            "name": "Concepts",
-            "size": "12",
-            "items": [
-                {
-                    "title": "Rest",
-                    "img": "./img/32/rest.webp",
-                    "level": 2,
-                    "link": "https://en.wikipedia.org/wiki/Representational_state_transfer"
-                },
-            {
-                    "title": "Pub Sub (Kafka / MQ)",
-                    "img": "./img/32/rest.webp",
-                    "level": 2,
-                    "link": "https://en.wikipedia.org/wiki/Representational_state_transfer"
-                },  
-                {
-                    "title": "MVC",
-                    "img": "./img/32/mvc.webp",
-                    "level": 2,
-                    "link": "https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller"
-                },
-                {
-                    "title": "Agile",
-                    "img": "./img/32/agile.webp",
-                    "level": 2,
-                    "link": "https://en.wikipedia.org/wiki/Agile_software_development"
-                },
-                {
-                    "title" : "Containerization",
-                    "img":"./img/32/k8s.webp",
-                    "level": 2,
-                    "link":"https://kubernetes.io/"
-                },
-                {
-                    "title" : "CI/CD",
-                    "img":"./img/32/agile.webp",
-                    "level": 2,
-                    "link":"https://resources.github.com/ci-cd/"
-                },
-                {
-                    "title" : "TDD / BDD",
-                    "img":"./img/32/agile.webp",
-                    "level": 2,
-                    "link":"https://en.wikipedia.org/wiki/Behavior-driven_development"
-                }
-            ]
-        },
-                {
             "name": "UI Frameworks",
             "size": "6",
             "items": [
@@ -533,6 +474,18 @@
                     "img": "./img/32/Angular.webp",
                     "level": 2,
                     "link": "https://angular.io/"
+                },
+                {
+                    "title": "jQuery",
+                    "img": "./img/32/jquery.webp",
+                    "level": 2,
+                    "link": "https://jquery.com/"
+                },
+                {
+                    "title": "HandleBars and Mustache",
+                    "img": "./img/32/handlebars.webp",
+                    "level": 2,
+                    "link": "https://handlebarsjs.com/"
                 }
             ]
         },
@@ -553,16 +506,64 @@
                     "link": "https://en.wikipedia.org/wiki/JavaScript"
                 },
                 {
-                    "title": "jQuery",
-                    "img": "./img/32/jquery.webp",
-                    "level": 2,
-                    "link": "https://jquery.com/"
-                },
-                {
                     "title": "SASS / CSS",
                     "img": "./img/32/sass.webp",
                     "level": 2,
                     "link": "https://sass-lang.com/"
+                }
+            ]
+        },
+        {
+            "name": "Concepts",
+            "size": "12",
+            "items": [
+                {
+                    "title": "Rest",
+                    "img": "./img/32/rest.webp",
+                    "level": 2,
+                    "link": "https://en.wikipedia.org/wiki/Representational_state_transfer"
+                },
+                {
+                    "title": "GraphQL",
+                    "img": "./img/32/graphql.webp",
+                    "level": 2,
+                    "link": "https://graphql.org/"
+                },
+                {
+                    "title": "Pub Sub (Kafka / MQ)",
+                    "img": "./img/32/rest.webp",
+                    "level": 2,
+                    "link": "https://en.wikipedia.org/wiki/Representational_state_transfer"
+                },
+                {
+                    "title": "MVC",
+                    "img": "./img/32/mvc.webp",
+                    "level": 2,
+                    "link": "https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller"
+                },
+                {
+                    "title": "Agile",
+                    "img": "./img/32/agile.webp",
+                    "level": 2,
+                    "link": "https://en.wikipedia.org/wiki/Agile_software_development"
+                },
+                {
+                    "title": "Containerization",
+                    "img": "./img/32/k8s.webp",
+                    "level": 2,
+                    "link": "https://kubernetes.io/"
+                },
+                {
+                    "title": "CI/CD",
+                    "img": "./img/32/agile.webp",
+                    "level": 2,
+                    "link": "https://resources.github.com/ci-cd/"
+                },
+                {
+                    "title": "TDD / BDD",
+                    "img": "./img/32/agile.webp",
+                    "level": 2,
+                    "link": "https://en.wikipedia.org/wiki/Behavior-driven_development"
                 }
             ]
         },
@@ -590,7 +591,36 @@
                 }
             ]
         },
-
+        {
+            "name": "Transport Meta Languages",
+            "size": "6",
+            "items": [
+                {
+                    "title": "JSON",
+                    "img": "./img/32/json.webp",
+                    "level": 2,
+                    "link": "https://en.wikipedia.org/wiki/JSON"
+                },
+                {
+                    "title": "XML",
+                    "img": "./img/32/xml.webp",
+                    "level": 2,
+                    "link": "https://en.wikipedia.org/wiki/XML"
+                },
+                {
+                    "title": "YAML",
+                    "img": "./img/32/yaml.webp",
+                    "level": 1,
+                    "link": "https://yaml.org/"
+                },
+                {
+                    "title": "Message Pack",
+                    "img": "./img/32/msgpack.webp",
+                    "level": 1,
+                    "link": "https://msgpack.org/"
+                }
+            ]
+        },
         {
             "name": "Version Control",
             "size": "4",
@@ -610,20 +640,62 @@
             ]
         },
         {
+            "name": "AI tooling and Services",
+            "size": "12",
+            "items": [
+                {
+                    "title": "Prompt Engineering",
+                    "img": "./img/32/prompt.webp",
+                    "level": 2,
+                    "link": "https://en.wikipedia.org/wiki/Prompt_engineering"
+                },
+                {
+                    "title": "RAG",
+                    "img": "./img/32/rag.webp",
+                    "level": 2,
+                    "link": "https://en.wikipedia.org/wiki/Retrieval-augmented_generation"
+                },
+                {
+                    "title": "ML Training",
+                    "img": "./img/32/ml.webp",
+                    "level": 2,
+                    "link": "https://en.wikipedia.org/wiki/Machine_learning"
+                },
+                {
+                    "title": "Natural Language Processing",
+                    "img": "./img/32/nlp.webp",
+                    "level": 2,
+                    "link": "https://en.wikipedia.org/wiki/Natural_language_processing"
+                },
+                {
+                    "title": "Self Hosting LLMs",
+                    "img": "./img/32/llm.webp",
+                    "level": 2,
+                    "link": "https://en.wikipedia.org/wiki/Large_language_model"
+                },
+                {
+                    "title": "Cognitive Services",
+                    "img": "./img/32/cognitive.webp",
+                    "level": 2,
+                    "link": "https://azure.microsoft.com/en-us/services/cognitive-services/"
+                }
+            ]
+        },
+        {
             "name": "Tools",
             "size": "8",
             "items": [
-                {
-                    "title": "Visual Studio",
-                    "img": "./img/32/visualstudio.webp",
-                    "level": 2,
-                    "link": "https://visualstudio.microsoft.com/vs/"
-                },
                 {
                     "title": "VS Code",
                     "img": "./img/32/vscode.webp",
                     "level": 2,
                     "link": "https://code.visualstudio.com/"
+                },
+                {
+                    "title": "Visual Studio",
+                    "img": "./img/32/visualstudio.webp",
+                    "level": 2,
+                    "link": "https://visualstudio.microsoft.com/vs/"
                 }
             ]
         }
@@ -643,7 +715,7 @@
             "timeworked": "April 2021 - Present",
             "title": "Software Engineer",
             "img": "./img/200/NM.webp",
-            "summary": "In my current role at Northwestern Mutual, I serve as a Backend/Services Engineer, specializing in Java frameworks like Spring, Drools, and Flowable. I continually refine my skills in these technologies and actively seek new ways to apply them in order to deliver exceptional solutions. Beyond my core responsibilities, I have taken on additional roles to enhance the overall effectiveness of my team. I represent my team in the Monitoring Best Practices Committee, where I contribute to the development and implementation of effective monitoring practices. Additionally, I am actively involved in the 'Testing Best Practices' initiative, participating in relevant training sessions to ensure our team adheres to industry-leading testing standards."
+            "summary": "I’m a Full-Stack Software Engineer at Northwestern Mutual, building reliable, well-structured software across backend services and frontend applications using Java, Node.js, React, JavaScript, and TypeScript. I focus on writing clean, maintainable code that supports long-term growth and performance. Outside of development, I’ve helped improve CI/CD processes and contributed to team-wide efforts around testing and development standards. I’ve mentored an intern, supported newer engineers, and currently help guide peers through self-paced training programs by offering technical support, hosting office hours, and assisting with challenges along the way."
         },
         {
             "name": "Brady Corporation",

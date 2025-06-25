@@ -32,8 +32,8 @@ const ProjectsComponent: FunctionalComponent<ProjectsProps> = ({ Projects }) => 
     <div class="container glass" id="app">
       <h3 class="text-center h3 tshadow mt-5">Open Source Projects</h3>
       {Projects.map((project, index) => (
-        <div class="card glass" key={index}>
-          <div class="card-header d-flex justify-content-between align-items-center whiteGlass">
+        <div class="card whiteGlassCard" key={index}>
+          <div class="card-header d-flex justify-content-between align-items-center clearGlass">
             <h4>
               {project.SubTitle} - {project.Title}
             </h4>

@@ -5,6 +5,7 @@ interface Item {
   img: string
   title: string
   level: number
+  link: string
 }
 
 interface Category {
@@ -61,43 +62,42 @@ const getPill = (item: Item) =>
 const getName = (item: Item) => (item.level > 1 ? 'Pro' : 'Hobby')
 
 const KnowledgeGrid: FunctionalComponent<KnowledgeGridProps> = ({ items }) => {
-  return (
+    return (
     <div className="container glass">
       <div className="container" id="Knowledge">
         <h3 className="text-center h3 tshadow mt-5">
           Systems / Ideas I've worked with
         </h3>
-        <div className="row text-dark mt-5" id="vbackend">
+        <div className="list-group shadow mt-5 whiteGlassCardWithLinks">
           {items.map((category, idx) => (
-            <div className="col-md-4" key={idx}>
-              <ul className="list-group shadow ml-2 mt-4 whiteGlass">
-                <li className="list-group-item list-group-item-dark">
-                  {category.name}
-                </li>
-
+            <div
+              className="d-flex justify-content-between align-items-center py-2"
+              key={idx}
+            >
+              <span className="font-weight-bold"><h6>{category.name}</h6></span>
+              <span>
                 {category.items.map((item, i) => (
-                  <li
-                    className="list-group-item pane d-flex justify-content-between align-items-center"
-                    key={i}
-                  >
-                    <div className="image-parent">
-                      <LazyImage
-                        src={item.img}
-                        alt={item.title}
-                        style={{ width: '32px' }}
-                      />
-                    </div>
-                    {item.title}
-                    
-                  </li>
+                  <span key={i} className="em">
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mx-1"
+                    >
+                      <em>
+                      {item.title}</em>
+                      </a>
+                    {i < category.items.length - 1 && ', '}
+                  </span>
                 ))}
-              </ul>
+              </span>
             </div>
           ))}
         </div>
       </div>
     </div>
   )
+
 }
 
 export default KnowledgeGrid
