@@ -111,6 +111,10 @@
             "image": "img/card/flagfairway.webp",
             "buttons": [
                 {
+                    "type": "Release",
+                    "url": "https://github.com/liukonen/FlagFairway/pkgs/container/flagfairway"
+                },
+                {
                     "type": "Source",
                     "url": "https://github.com/liukonen/FlagFairway"
                 }

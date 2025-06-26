@@ -66,7 +66,7 @@ const Workplaces: FunctionalComponent<WorkplacesProps> = ({ items }) => {
               className="lzy ImgRoundCorner border-right shadow"
             />
           </div>
-          <div className="col-md-6 mt-3 offset-md-1">
+          <div className="col-md-9 mt-3 offset-md-1">
             <div class="whiteGlassCardElement">
             <h4 className="card-title">{jobLocation.name}</h4>
             <h5>

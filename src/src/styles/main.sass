@@ -10,11 +10,11 @@ $glass50 : rgba(255, 255, 255, 0.5)
 $glass70 : rgba(255, 255, 255, 0.7)
 $glass90 : rgba(255, 255, 255, 0.9)
 $LinkedInBlue : #0077B5
-
+   
 body, html
     height: 100%
     margin: 0
-    font: 400 15px/1.8 "Lato", sans-serif
+    font: 400 1rem/1.8 "Lato", sans-serif
     color: $black
     scroll-behavior: smooth
     background-color: $black
@@ -23,8 +23,8 @@ body, html
   filter: invert(100%)
 
 .user_img 
-  height: 90px
-  width: 90px
+  height: 5.625rem
+  width: 5.625rem
 
 #myVideo 
   position: fixed 
@@ -34,12 +34,11 @@ body, html
   min-height: 100% 
 
 .tshadow 
-    text-shadow: 2px 1px $shadow
+    text-shadow: 0.125rem 0.0625rem $shadow
 
 .pane 
-    text-align: center
     text-align: justify
-    padding: 15px 15px
+    padding: 1rem 1rem
     position: relative
 
 .paneList 
@@ -48,24 +47,21 @@ body, html
     text-align: center    
 
 .glass 
-    @extend .baseGlass
-    color: #fff
-    padding-top: 30px
+    @extend %baseGlassWithMargin
+    color: $white
+    padding-top: 2rem
     background: linear-gradient(to right bottom, $glass1, $glass5)
-    // Want to add a drop shadow on each control like mac os has
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2)
 
 .whiteGlassCardElement
-    @extend .baseGlass
-    color: #000
+    @extend %baseGlass
+    color: $black
     box-shadow: 0 0 1rem 0 rgba(255, 255, 255, 0.8)
     background: linear-gradient(to right bottom, $glass90, $glass70)
-
+    
 .whiteGlassCard
     @extend .whiteGlassCardElement
-    padding: 30px 30px
-    padding-top: 30px
-    margin-top: 70px !important
+    margin-top: 4.375rem !important
 
 .whiteGlassCardWithLinks
     @extend .whiteGlassCardElement
@@ -73,45 +69,49 @@ body, html
         color: #25566d !important
 
 .whiteGlass 
+    @extend  %rounded
     background: linear-gradient(to right bottom, $glass70, $glass50)
-    border-radius: 1rem
+    
 
 .whiterGlass
+    @extend  %rounded
     background: linear-gradient(to right bottom, $glass90, $glass70)
-    border-radius: 1rem
     
 .whiteGlassList
     @extend .whiteGlass
     border: none !important
 
 .eduGlass
-    @extend .baseGlass
-    color: #fff
+    @extend %baseGlassWithMargin
+    color: $white
     background: linear-gradient(to right bottom, rgba(0, 0, 0, 0.6), rgba(250, 191, 038, 0.4))
 
 .blackGlass
-    @extend .baseGlass
-    color: #fff
+    @extend %baseGlassWithMargin
+    color: $white
     background: linear-gradient(to right bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6))
 
-.baseGlass
-    text-align: center
-    padding: 30px 30px
-    margin-top: 70px !important
+%baseGlass
+    padding: 2rem 2rem
     text-align: justify
     position: relative
     border-radius: 2rem
     backdrop-filter: blur(2em)
 
-.clearGlass
+%baseGlassWithMargin
+    @extend %baseGlass
+    margin-top: 4.375rem !important
+
+%rounded
     border-radius: 1rem
+
+.clearGlass
+    @extend  %rounded
     background: linear-gradient(to right bottom, $glass1, $glass5)
     
 =Background($img, $height)
     background-image: url($img)
     min-height: $height
-
-
 
 %captionExtend
     position: absolute
@@ -121,22 +121,23 @@ body, html
     span.border
         background-color: #111
         color: $white
-        padding: 18px
-        font-size: 25px
-        letter-spacing: 10px
+        padding: 1.125rem
+        font-size: 1.5rem
+        letter-spacing: 0.625rem
 
 .rImage250
-    height: 250px
-    border-radius: 1rem
+    @extend %rounded
+    height: 15.625rem
 
 h3 
-    letter-spacing: 5px
+    letter-spacing: 0.3125rem
     text-transform: uppercase
-    font: 20px "Lato", sans-serif
+    font: 1.25rem "Lato", sans-serif
     color: #111
   
 .bg-purple 
     background-color: purple !important
+
 .bg-lnkdin
     background-color: $LinkedInBlue
     border-color: $LinkedInBlue
@@ -146,15 +147,16 @@ h3
     transition: none !important
 
 .ImgRoundCorner
-  border-radius: 25px
-  width: 178px
-  height: 178px
+  border-radius: 1.5rem
+  width: 11.125rem
+  height: 11.125rem
 
-@media (min-width: 768px)
+@media (min-width: 48rem)
     .bd-placeholder-img-lg 
         font-size: 3.5rem
+
 .content
   display: none
 
 .RoundedBottom
-  border-radius: 0 0 15px 15px
+  border-radius: 0 0 1rem 1rem

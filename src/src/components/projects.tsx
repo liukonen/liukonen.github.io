@@ -27,6 +27,13 @@ const determButtonColor = (itemType: string) => {
   return colors[type] || "btn btn-secondary shadow ml-2"
 }
 
+const buttonIcon = (itemType: string) => {
+const type = itemType.toLowerCase()
+if (type === "website") return "bi bi-box-arrow-up-right"
+if (type === "release") return "bi bi-box-seam"
+return "bi bi-file-code"
+}
+
 const ProjectsComponent: FunctionalComponent<ProjectsProps> = ({ Projects }) => {
   return (
     <div class="container glass" id="app">
@@ -46,7 +53,7 @@ const ProjectsComponent: FunctionalComponent<ProjectsProps> = ({ Projects }) => 
                     target="_blank"
                     rel="noreferrer"
                   >
-                    {button.type}
+                    <i class={buttonIcon(button.type)}></i> {button.type}
                   </a>
                 ))}
               </div>
