@@ -4,7 +4,7 @@ const FooterB: FunctionalComponent = () => {
   const year = new Date().getFullYear()
 
   return (
-    <div className="glass container">
+    <div className="container">
       &copy; 2020 - {year} Luke Liukonen
       <i>
         {' '}

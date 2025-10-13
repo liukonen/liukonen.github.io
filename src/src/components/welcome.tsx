@@ -6,7 +6,7 @@ interface WelcomeProps {
 
 const Welcome: FunctionalComponent<WelcomeProps> = ({ greating }) => {
   return (
-    <div className="container blackGlass">
+    <div className="container">
       <div className="container">
         <div id="welcome" className="container">
           <h3 className="h3 text-center tshadow">Welcome</h3>

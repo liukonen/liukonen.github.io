@@ -63,12 +63,12 @@ const getName = (item: Item) => (item.level > 1 ? 'Pro' : 'Hobby')
 
 const KnowledgeGrid: FunctionalComponent<KnowledgeGridProps> = ({ items }) => {
     return (
-    <div className="container glass">
+    <div className="container">
       <div className="container" id="Knowledge">
         <h3 className="text-center h3 tshadow mt-5">
           Systems / Ideas I've worked with
         </h3>
-        <div className="list-group shadow mt-5 whiteGlassCardWithLinks">
+        <div className="list-group shadow mt-5">
           {items.map((category, idx) => (
             <div
               className="d-flex justify-content-between align-items-center py-2"
@@ -78,15 +78,8 @@ const KnowledgeGrid: FunctionalComponent<KnowledgeGridProps> = ({ items }) => {
               <span>
                 {category.items.map((item, i) => (
                   <span key={i} className="em">
-                    <a
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mx-1"
-                    >
                       <em>
                       {item.title}</em>
-                      </a>
                     {i < category.items.length - 1 && ', '}
                   </span>
                 ))}

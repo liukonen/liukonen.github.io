@@ -1,87 +1,74 @@
-import { FunctionalComponent } from "preact"
+import { FunctionalComponent } from "preact";
 
 interface Button {
-  type: string
-  url: string
+  type: string;
+  url: string;
 }
 
 interface Project {
-  SubTitle: string
-  Title: string
-  buttons: Button[]
-  image: string
-  Description: string
-  tags: string[]
+  SubTitle: string;
+  Title: string;
+  buttons: Button[];
+  image: string;
+  Description: string;
+  tags: string[];
 }
 
 interface ProjectsProps {
-  Projects: Project[]
+  Projects: Project[];
 }
 
 const determButtonColor = (itemType: string) => {
-  const type = itemType.toLowerCase()
+  const type = itemType.toLowerCase();
   const colors: Record<string, string> = {
     website: "btn btn-success shadow ml-2",
-    release: "btn btn-primary shadow ml-2",
-  }
-  return colors[type] || "btn btn-secondary shadow ml-2"
-}
+    release: "btn btn-primary shadow ml-2"
+  };
+  return colors[type] || "btn btn-secondary shadow ml-2";
+};
 
 const buttonIcon = (itemType: string) => {
-const type = itemType.toLowerCase()
-if (type === "website") return "bi bi-box-arrow-up-right"
-if (type === "release") return "bi bi-box-seam"
-return "bi bi-file-code"
-}
+  const type = itemType.toLowerCase();
+  if (type === "website") return "bi bi-box-arrow-up-right";
+  if (type === "release") return "bi bi-box-seam";
+  return "bi bi-file-code";
+};
 
-const ProjectsComponent: FunctionalComponent<ProjectsProps> = ({ Projects }) => {
+const ProjectsComponent: FunctionalComponent<ProjectsProps> = ({
+  Projects
+}) => {
   return (
-    <div class="container glass" id="app">
+    <div class="container">
       <h3 class="text-center h3 tshadow mt-5">Open Source Projects</h3>
-      {Projects.map((project, index) => (
-        <div class="card whiteGlassCard" key={index}>
-          <div class="card-header d-flex justify-content-between align-items-center clearGlass">
-            <h4>
-              {project.SubTitle} - {project.Title}
-            </h4>
-            <div>
-              <div class="btn-group" role="group" aria-label="Basic example">
-                {project.buttons.map((button) => (
-                  <a
-                    class={determButtonColor(button.type)}
-                    href={button.url}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <i class={buttonIcon(button.type)}></i> {button.type}
-                  </a>
-                ))}
-              </div>
-            </div>
+      {Projects.map(project =>
+        <div class="row mt-5">
+          <div class="col-md-2">
+            <img
+              src={project.image}
+              class="lzy img-fluid rounded"
+              alt={project.Title}
+            />
           </div>
-          <div class="row g-0">
-            <div class="col-md-2">
-              <img
-                src={project.image}
-                class="lzy img-fluid rounded-start"
-                alt={project.Title}
-              />
-            </div>
-            <div class="col-md-10">
-              <div class="card-body">
-                <p class="card-text">{project.Description}</p>
-                <p class="card-text">
-                  <small class="text-body-secondary">
-                    keywords: {project.tags.join(", ")}
-                  </small>
-                </p>
+          <div class="col-md-9">
+            <h1 class="display-3 tshadow">
+              <h4>
+                {project.SubTitle}
+              </h4>
+            </h1>
+            <p class="d-none d-sm-block">
+              <div>
+                {project.buttons.map(button =>
+                  <a class="p-3" href={button.url} target="_blank" rel="noreferrer">
+                    <i class={buttonIcon(button.type)} /> {button.type}
+                  </a>
+                )}
               </div>
-            </div>
+            </p>
           </div>
         </div>
-      ))}
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default ProjectsComponent
+export default ProjectsComponent;
