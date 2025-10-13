@@ -59,20 +59,19 @@ const Workplaces: FunctionalComponent<WorkplacesProps> = ({ items }) => {
           className="row justify-content-md-center mt-3"
           key={index}
         >
-          <div className="col-md-2 mt-3">
+          <div className="col-md-2 mt-1">
             <LazyImage
               src={jobLocation.img}
               alt={jobLocation.name}
               className="lzy ImgRoundCorner border-right shadow"
             />
           </div>
-          <div className="col-md-9 mt-3 offset-md-1">
-            <div class="whiteGlassCardElement">
+          <div className="col-md-9 mt-1">
+            <div class="">
             <h4 className="card-title">{jobLocation.name}</h4>
             <h5>
               {jobLocation.title}, {jobLocation.timeworked}
             </h5>
-            <p>{jobLocation.summary}</p>
           </div>
           </div>
         </div>

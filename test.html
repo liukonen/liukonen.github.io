@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Career Git Tree</title>
+<style>
+body {
+  font-family: system-ui, sans-serif;
+  background: #fafafa;
+  padding: 2rem;
+}
+
+.timeline {
+  position: relative;
+  border-left: 3px solid #ccc;
+  margin-left: 2rem;
+  padding-left: 2rem;
+}
+
+.branch {
+  position: relative;
+  margin-left: 2rem;
+  border-left: 2px dashed #aaa;
+  padding-left: 1.5rem;
+}
+
+.commit-node {
+  width: 14px;
+  height: 14px;
+  background: #007bff;
+  border-radius: 50%;
+  position: absolute;
+  left: -8px;
+  top: 5px;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px #007bff;
+}
+
+.commit {
+  position: relative;
+  margin: 1.5rem 0;
+}
+
+.commit .label {
+  margin-left: 1.5rem;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.branch-label {
+  font-weight: bold;
+  color: #444;
+  margin-top: 0.5rem;
+}
+
+.merge-line {
+  border-left: 2px solid #007bff;
+  height: 2rem;
+  margin-left: -2rem;
+}
+</style>
+</head>
+<body>
+
+<h2>Career Path (Git Tree Style)</h2>
+
+<div class="timeline">
+
+  <div class="commit">
+    <div class="commit-node"></div>
+    <div class="label">🎓 Graduate UWM (2006)</div>
+  </div>
+
+  <div class="branch">
+    <div class="branch-label">Start: Trisept Solutions</div>
+
+    <div class="commit">
+      <div class="commit-node"></div>
+      <div class="label">Start: May 2006 – Software Developer</div>
+    </div>
+
+    <div class="branch">
+      <div class="branch-label">ITT Technical Institute</div>
+      <div class="commit">
+        <div class="commit-node"></div>
+        <div class="label">Summer 2008 – Adjunct Instructor</div>
+      </div>
+      <div class="commit">
+        <div class="commit-node"></div>
+        <div class="label">Summer 2010 – Adjunct Instructor</div>
+      </div>
+    </div>
+
+    <div class="commit">
+      <div class="commit-node"></div>
+      <div class="label">End: Dec 2011</div>
+    </div>
+
+    <div class="branch">
+      <div class="branch-label">Blue7 Solutions</div>
+      <div class="commit">
+        <div class="commit-node"></div>
+        <div class="label">Start: Jan 2012 – Software Engineer</div>
+      </div>
+      <div class="commit">
+        <div class="commit-node"></div>
+        <div class="label">End: Apr 2014 – Joint venture concluded: moved back into Trisept</div>
+      </div>
+    </div>
+
+    <div class="commit">
+      <div class="commit-node"></div>
+      <div class="label">Trisept Solutions – Software Analyst (May 2006 – Jul 2020)</div>
+    </div>
+  </div>
+
+  <div class="commit">
+    <div class="commit-node"></div>
+    <div class="label">Brady Corporation – Sr. Software Engineer (Aug 2020 – Apr 2021)</div>
+  </div>
+
+  <div class="commit">
+    <div class="commit-node"></div>
+    <div class="label">Northwestern Mutual – Full Stack Engineer (Apr 2021 – Present)</div>
+  </div>
+
+</div>
+
+</body>
+</html>

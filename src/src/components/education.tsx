@@ -52,7 +52,7 @@ const LazyImage: FunctionalComponent<{
 
 const Education: FunctionalComponent<EducationProps> = ({ items }) => {
   return (
-    <div className="container eduGlass" id="edu">
+    <div className="container" id="edu">
       <h3 className="text-center h3 mt-5 tshadow">Education</h3>
       {items.map((school, index) => (
         <div className="row justify-content-md-center" key={index}>
