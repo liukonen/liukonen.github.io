@@ -426,7 +426,7 @@
                     "link": "https://java.com"
                 },
                 {
-                    "title": "Spring", "img": "./img/original/spring.webp", "level": 2, "link": "https://spring.io/"
+                    "title": "Spring", "img": "./img/original/Spring.webp", "level": 2, "link": "https://spring.io/"
                 },
                 {
                     "title": "Node",
@@ -472,7 +472,7 @@
             "items": [
                 {
                     "title": "React",
-                    "img": "./img/original/react.webp",
+                    "img": "./img/original/React.webp",
                     "level": 2,
                     "link": "https://react.dev/"
                 },
@@ -496,7 +496,7 @@
                 },
                 {
                     "title": "HandleBars",
-                    "img": "./img/original/handlebars.webp",
+                    "img": "./img/original/Handlebars.webp",
                     "level": 2,
                     "link": "https://handlebarsjs.com/"
                 }
@@ -538,7 +538,7 @@
                 },
                 {
                     "title": "GraphQL",
-                    "img": "./img/original/graphql.webp",
+                    "img": "./img/original/GraphQL.webp",
                     "level": 2,
                     "link": "https://graphql.org/"
                 },
@@ -550,7 +550,7 @@
                 },
                 {
                     "title": "Containers",
-                    "img": "./img/original/docker.webp",
+                    "img": "./img/original/Docker.webp",
                     "level": 2,
                     "link": "https://kubernetes.io/"
                 }
@@ -574,7 +574,7 @@
                 },
                 {
                     "title": "Document",
-                    "img": "./img/original/Mongodb.webp",
+                    "img": "./img/original/MongoDB.webp",
                     "level": 1,
                     "link": "https://www.mongodb.com/"
                 }
@@ -604,31 +604,31 @@
             "items": [
                 {
                     "title": "Prompting",
-                    "img": "./img/original/ai.webp",
+                    "img": "./img/original/AI.webp",
                     "level": 2,
                     "link": "https://en.wikipedia.org/wiki/Prompt_engineering"
                 },
                 {
                     "title": "RAG",
-                    "img": "./img/original/ai.webp",
+                    "img": "./img/original/AI.webp",
                     "level": 1,
                     "link": "https://en.wikipedia.org/wiki/Retrieval-augmented_generation"
                 },
                 {
                     "title": "ML",
-                    "img": "./img/original/ai.webp",
+                    "img": "./img/original/AI.webp",
                     "level": 1,
                     "link": "https://en.wikipedia.org/wiki/Machine_learning"
                 },
                 {
                     "title": "NAP",
-                    "img": "./img/original/ai.webp",
+                    "img": "./img/original/AI.webp",
                     "level": 1,
                     "link": "https://en.wikipedia.org/wiki/Natural_language_processing"
                 },
                 {
                     "title": "LLM Hosting",
-                    "img": "./img/original/ai.webp",
+                    "img": "./img/original/AI.webp",
                     "level": 1,
                     "link": "https://en.wikipedia.org/wiki/Large_language_model"
                 },
