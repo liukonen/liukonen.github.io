@@ -68,25 +68,20 @@ const KnowledgeGrid: FunctionalComponent<KnowledgeGridProps> = ({ items }) => {
         <h3 className="text-center h3 tshadow mt-5">
           Systems / Ideas I've worked with
         </h3>
-        <div className="list-group shadow mt-5">
+        <div className="row justify-content-center g-4 mt-4">
           {items.map((category, idx) => (
-            <div
-              className="d-flex justify-content-between align-items-center py-2"
-              key={idx}
-            >
-              <span className="font-weight-bold"><h6>{category.name}</h6></span>
-              <span>
-                {category.items.map((item, i) => (
-                  <span key={i} className="em">
-                      <em>
-                      {item.title}</em>
-                    {i < category.items.length - 1 && ', '}
-                  </span>
-                ))}
-              </span>
-            </div>
+            category.items.map((item, idx) =>(
+               <div className="col-6 col-sm-4 col-md-3 col-lg-2 d-flex justify-content-center" key={item.title}>
+
+                <div 
+                className={`skill-card  flex-fill ${item.level >= 2 ? 'gold' : 'silver'} d-flex flex-column align-items-center justify-content-center text-cente`}>
+                <LazyImage src={item.img} alt={item.title} />
+                <p>{item.title}</p>
+            </div></div>
+            ))
           ))}
         </div>
+        <p>Gold - Worked with professionally for years. Silver, worked with as a hobby or not professionally.</p>
       </div>
     </div>
   )
