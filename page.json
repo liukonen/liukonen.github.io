@@ -415,43 +415,52 @@
             "items": [
                 {
                     "title": "C#",
-                    "img": "./img/32/csharp.webp",
+                    "img": "./img/original/csharp.webp",
                     "level": 3,
                     "link": "https://en.wikipedia.org/wiki/C_Sharp_(programming_language)"
                 },
                 {
-                    "title": "Java / Springboot",
-                    "img": "./img/32/Java.webp",
+                    "title": "Java",
+                    "img": "./img/original/Java.webp",
                     "level": 3,
                     "link": "https://java.com"
                 },
                 {
-                    "title": "Node.JS",
-                    "img": "./img/32/node.webp",
+                    "title": "Spring", "img": "./img/original/spring.webp", "level": 2, "link": "https://spring.io/"
+                },
+                {
+                    "title": "Node",
+                    "img": "./img/original/node.webp",
                     "level": 2,
                     "link": "https://nodejs.org/en/about/"
                 },
                 {
+                    "title": "TypeScript",
+                    "img": "./img/original/ts.webp",
+                    "level": 2,
+                    "link": "https://www.typescriptlang.org/"
+                },
+                {
                     "title": "VB.Net",
-                    "img": "./img/32/vb.webp",
+                    "img": "./img/original/vb.webp",
                     "level": 3,
                     "link": "https://en.wikipedia.org/wiki/Visual_Basic_.NET"
                 },
                 {
-                    "title": "T-Sql and stored procs",
-                    "img": "./img/32/tsql.webp",
+                    "title": "SQL",
+                    "img": "./img/original/tsql.webp",
                     "level": 2,
                     "link": "https://en.wikipedia.org/wiki/Transact-SQL"
                 },
                 {
                     "title": "Python",
-                    "img": "./img/32/python.webp",
+                    "img": "./img/original/python.webp",
                     "level": 1,
                     "link": "https://www.python.org/"
                 },
                 {
                     "title": "GoLang",
-                    "img": "./img/32/go.webp",
+                    "img": "./img/original/go.webp",
                     "level": 1,
                     "link": "https://go.dev/"
                 }
@@ -463,31 +472,31 @@
             "items": [
                 {
                     "title": "React",
-                    "img": "./img/32/react.webp",
+                    "img": "./img/original/react.webp",
                     "level": 2,
                     "link": "https://react.dev/"
                 },
                 {
                     "title": "ASP.Net",
-                    "img": "./img/32/aspnet.webp",
+                    "img": "./img/original/aspnet.webp",
                     "level": 2,
                     "link": "https://dotnet.microsoft.com/apps/aspnet"
                 },
                 {
-                    "title": "Angular (js)",
-                    "img": "./img/32/Angular.webp",
+                    "title": "Angular",
+                    "img": "./img/original/Angular.webp",
                     "level": 2,
                     "link": "https://angular.io/"
                 },
                 {
                     "title": "jQuery",
-                    "img": "./img/32/jquery.webp",
+                    "img": "./img/original/jquery.webp",
                     "level": 2,
                     "link": "https://jquery.com/"
                 },
                 {
-                    "title": "HandleBars and Mustache",
-                    "img": "./img/32/handlebars.webp",
+                    "title": "HandleBars",
+                    "img": "./img/original/handlebars.webp",
                     "level": 2,
                     "link": "https://handlebarsjs.com/"
                 }
@@ -499,19 +508,19 @@
             "items": [
                 {
                     "title": "HTML 5",
-                    "img": "./img/32/html5.webp",
+                    "img": "./img/original/html5.webp",
                     "level": 2,
                     "link": "https://en.wikipedia.org/wiki/HTML"
                 },
                 {
                     "title": "JavaScript",
-                    "img": "./img/32/javascript.webp",
+                    "img": "./img/original/javascript.webp",
                     "level": 2,
                     "link": "https://en.wikipedia.org/wiki/JavaScript"
                 },
                 {
-                    "title": "SASS / CSS",
-                    "img": "./img/32/sass.webp",
+                    "title": "SASS",
+                    "img": "./img/original/sass.webp",
                     "level": 2,
                     "link": "https://sass-lang.com/"
                 }
@@ -523,51 +532,27 @@
             "items": [
                 {
                     "title": "Rest",
-                    "img": "./img/32/rest.webp",
+                    "img": "./img/original/rest.webp",
                     "level": 2,
                     "link": "https://en.wikipedia.org/wiki/Representational_state_transfer"
                 },
                 {
                     "title": "GraphQL",
-                    "img": "./img/32/graphql.webp",
+                    "img": "./img/original/graphql.webp",
                     "level": 2,
                     "link": "https://graphql.org/"
                 },
                 {
-                    "title": "Pub Sub (Kafka / MQ)",
-                    "img": "./img/32/rest.webp",
+                    "title": "Pub Sub",
+                    "img": "./img/original/rest.webp",
                     "level": 2,
                     "link": "https://en.wikipedia.org/wiki/Representational_state_transfer"
                 },
                 {
-                    "title": "MVC",
-                    "img": "./img/32/mvc.webp",
-                    "level": 2,
-                    "link": "https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller"
-                },
-                {
-                    "title": "Agile",
-                    "img": "./img/32/agile.webp",
-                    "level": 2,
-                    "link": "https://en.wikipedia.org/wiki/Agile_software_development"
-                },
-                {
-                    "title": "Containerization",
-                    "img": "./img/32/k8s.webp",
+                    "title": "Containers",
+                    "img": "./img/original/docker.webp",
                     "level": 2,
                     "link": "https://kubernetes.io/"
-                },
-                {
-                    "title": "CI/CD",
-                    "img": "./img/32/agile.webp",
-                    "level": 2,
-                    "link": "https://resources.github.com/ci-cd/"
-                },
-                {
-                    "title": "TDD / BDD",
-                    "img": "./img/32/agile.webp",
-                    "level": 2,
-                    "link": "https://en.wikipedia.org/wiki/Behavior-driven_development"
                 }
             ]
         },
@@ -576,52 +561,22 @@
             "size": "6",
             "items": [
                 {
-                    "title": "MS-SQL / Postgres / MySQL",
-                    "img": "./img/32/sqlserver.webp",
+                    "title": "Rational",
+                    "img": "./img/original/sqlserver.webp",
                     "level": 2,
                     "link": "https://en.wikipedia.org/wiki/Microsoft_SQL_Server"
                 },
                 {
-                    "title": "Redis / Keyval",
-                    "img": "./img/32/redis.webp",
+                    "title": "Redis",
+                    "img": "./img/original/redis.webp",
                     "level": 1,
                     "link": "https://redis.io/"
                 },
                 {
-                    "title": "Mongo DB / rational DB's",
-                    "img": "./img/32/Mongodb.webp",
+                    "title": "Document",
+                    "img": "./img/original/Mongodb.webp",
                     "level": 1,
                     "link": "https://www.mongodb.com/"
-                }
-            ]
-        },
-        {
-            "name": "Transport Meta Languages",
-            "size": "6",
-            "items": [
-                {
-                    "title": "JSON",
-                    "img": "./img/32/json.webp",
-                    "level": 2,
-                    "link": "https://en.wikipedia.org/wiki/JSON"
-                },
-                {
-                    "title": "XML",
-                    "img": "./img/32/xml.webp",
-                    "level": 2,
-                    "link": "https://en.wikipedia.org/wiki/XML"
-                },
-                {
-                    "title": "YAML",
-                    "img": "./img/32/yaml.webp",
-                    "level": 1,
-                    "link": "https://yaml.org/"
-                },
-                {
-                    "title": "Message Pack",
-                    "img": "./img/32/msgpack.webp",
-                    "level": 1,
-                    "link": "https://msgpack.org/"
                 }
             ]
         },
@@ -631,13 +586,13 @@
             "items": [
                 {
                     "title": "TFS",
-                    "img": "./img/32/TFS.webp",
+                    "img": "./img/original/TFS.webp",
                     "level": 2,
                     "link": "https://azure.microsoft.com/en-us/services/devops/server/"
                 },
                 {
                     "title": "Git",
-                    "img": "./img/32/Octocat.webp",
+                    "img": "./img/original/Octocat.webp",
                     "level": 2,
                     "link": "https://en.wikipedia.org/wiki/Git"
                 }
@@ -648,58 +603,40 @@
             "size": "12",
             "items": [
                 {
-                    "title": "Prompt Engineering",
-                    "img": "./img/32/prompt.webp",
+                    "title": "Prompting",
+                    "img": "./img/original/ai.webp",
                     "level": 2,
                     "link": "https://en.wikipedia.org/wiki/Prompt_engineering"
                 },
                 {
                     "title": "RAG",
-                    "img": "./img/32/rag.webp",
-                    "level": 2,
+                    "img": "./img/original/ai.webp",
+                    "level": 1,
                     "link": "https://en.wikipedia.org/wiki/Retrieval-augmented_generation"
                 },
                 {
-                    "title": "ML Training",
-                    "img": "./img/32/ml.webp",
-                    "level": 2,
+                    "title": "ML",
+                    "img": "./img/original/ai.webp",
+                    "level": 1,
                     "link": "https://en.wikipedia.org/wiki/Machine_learning"
                 },
                 {
-                    "title": "Natural Language Processing",
-                    "img": "./img/32/nlp.webp",
-                    "level": 2,
+                    "title": "NAP",
+                    "img": "./img/original/ai.webp",
+                    "level": 1,
                     "link": "https://en.wikipedia.org/wiki/Natural_language_processing"
                 },
                 {
-                    "title": "Self Hosting LLMs",
-                    "img": "./img/32/llm.webp",
-                    "level": 2,
+                    "title": "LLM Hosting",
+                    "img": "./img/original/ai.webp",
+                    "level": 1,
                     "link": "https://en.wikipedia.org/wiki/Large_language_model"
                 },
                 {
-                    "title": "Cognitive Services",
-                    "img": "./img/32/cognitive.webp",
+                    "title": "Cognitive",
+                    "img": "./img/original/cognitive.webp",
                     "level": 2,
                     "link": "https://azure.microsoft.com/en-us/services/cognitive-services/"
-                }
-            ]
-        },
-        {
-            "name": "Tools",
-            "size": "8",
-            "items": [
-                {
-                    "title": "VS Code",
-                    "img": "./img/32/vscode.webp",
-                    "level": 2,
-                    "link": "https://code.visualstudio.com/"
-                },
-                {
-                    "title": "Visual Studio",
-                    "img": "./img/32/visualstudio.webp",
-                    "level": 2,
-                    "link": "https://visualstudio.microsoft.com/vs/"
                 }
             ]
         }

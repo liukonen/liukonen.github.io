@@ -42,20 +42,20 @@ const ProjectsComponent: FunctionalComponent<ProjectsProps> = ({
       <h3 class="text-center h3 tshadow mt-5">Open Source Projects</h3>
       {Projects.map(project =>
         <div class="row mt-5">
-          <div class="col-md-2">
+          <div class="col-2">
             <img
               src={project.image}
               class="lzy img-fluid rounded"
               alt={project.Title}
             />
           </div>
-          <div class="col-md-9">
+          <div class="col-9">
             <h1 class="display-3 tshadow">
               <h4>
                 {project.SubTitle}
               </h4>
             </h1>
-            <p class="d-none d-sm-block">
+            <p class="d-sm-block">
               <div>
                 {project.buttons.map(button =>
                   <a class="p-3" href={button.url} target="_blank" rel="noreferrer">

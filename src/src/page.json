@@ -423,43 +423,43 @@
             "items": [
                 {
                     "title": "C#",
-                    "img": "./img/32/csharp.webp",
+                    "img": "./img/original/csharp.webp",
                     "level": 3,
                     "link": "https://en.wikipedia.org/wiki/C_Sharp_(programming_language)"
                 },
                 {
                     "title": "Java / Springboot",
-                    "img": "./img/32/Java.webp",
+                    "img": "./img/original/Java.webp",
                     "level": 2,
                     "link": "https://java.com"
                 },
                 {
                     "title": "VB.Net",
-                    "img": "./img/32/vb.webp",
+                    "img": "./img/original/vb.webp",
                     "level": 3,
                     "link": "https://en.wikipedia.org/wiki/Visual_Basic_.NET"
                 },
                 {
                     "title": "T-Sql and stored procs",
-                    "img": "./img/32/tsql.webp",
+                    "img": "./img/original/tsql.webp",
                     "level": 2,
                     "link": "https://en.wikipedia.org/wiki/Transact-SQL"
                 },
                 {
                     "title": "Node.JS",
-                    "img": "./img/32/node.webp",
+                    "img": "./img/original/node.webp",
                     "level": 2,
                     "link": "https://nodejs.org/en/about/"
                 },
                 {
                     "title": "GoLang",
-                    "img": "./img/32/go.webp",
+                    "img": "./img/original/go.webp",
                     "level": 1,
                     "link": "https://go.dev/"
                 },
                 {
                     "title": "Python",
-                    "img": "./img/32/python.webp",
+                    "img": "./img/original/python.webp",
                     "level": 1,
                     "link": "https://www.python.org/"
                 }
@@ -471,37 +471,37 @@
             "items": [
                 {
                     "title": "Rest Services",
-                    "img": "./img/32/rest.webp",
+                    "img": "./img/original/rest.webp",
                     "level": 2,
                     "link": "https://en.wikipedia.org/wiki/Representational_state_transfer"
                 },
                 {
                     "title": "MVC",
-                    "img": "./img/32/mvc.webp",
+                    "img": "./img/original/mvc.webp",
                     "level": 2,
                     "link": "https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller"
                 },
                 {
                     "title": "Agile",
-                    "img": "./img/32/agile.webp",
+                    "img": "./img/original/agile.webp",
                     "level": 2,
                     "link": "https://en.wikipedia.org/wiki/Agile_software_development"
                 },
                 {
                     "title" : "Containerization (Docker / Kubernetes)",
-                    "img":"./img/32/k8s.webp",
+                    "img":"./img/original/k8s.webp",
                     "level": 2,
                     "link":"https://kubernetes.io/"
                 },
                 {
                     "title" : "CI/CD",
-                    "img":"./img/32/agile.webp",
+                    "img":"./img/original/agile.webp",
                     "level": 2,
                     "link":"https://resources.github.com/ci-cd/"
                 },
                 {
                     "title" : "Test and Behavor Driven Development",
-                    "img":"./img/32/agile.webp",
+                    "img":"./img/original/agile.webp",
                     "level": 2,
                     "link":"https://en.wikipedia.org/wiki/Behavior-driven_development"
                 }
@@ -513,31 +513,31 @@
             "items": [
                 {
                     "title": "HTML 5",
-                    "img": "./img/32/html5.webp",
+                    "img": "./img/original/html5.webp",
                     "level": 2,
                     "link": "https://en.wikipedia.org/wiki/HTML"
                 },
                 {
                     "title": "JavaScript",
-                    "img": "./img/32/javascript.webp",
+                    "img": "./img/original/javascript.webp",
                     "level": 2,
                     "link": "https://en.wikipedia.org/wiki/JavaScript"
                 },
                 {
                     "title": "jQuery",
-                    "img": "./img/32/jquery.webp",
+                    "img": "./img/original/jquery.webp",
                     "level": 2,
                     "link": "https://jquery.com/"
                 },
                 {
                     "title": "SASS / CSS",
-                    "img": "./img/32/sass.webp",
+                    "img": "./img/original/sass.webp",
                     "level": 2,
                     "link": "https://sass-lang.com/"
                 },
                 {
                     "title": "Blazor Pages",
-                    "img": "./img/32/blazor.webp",
+                    "img": "./img/original/blazor.webp",
                     "level": 1,
                     "link": "https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor"
                 }
@@ -549,19 +549,19 @@
             "items": [
                 {
                     "title": "Rational DBs (MSSQL / Postgres / MySQL)",
-                    "img": "./img/32/sqlserver.webp",
+                    "img": "./img/original/sqlserver.webp",
                     "level": 2,
                     "link": "https://en.wikipedia.org/wiki/Microsoft_SQL_Server"
                 },
                 {
                     "title": "Redis",
-                    "img": "./img/32/redis.webp",
+                    "img": "./img/original/redis.webp",
                     "level": 1,
                     "link": "https://redis.io/"
                 },
                 {
                     "title": "NoSql (MongoDB)",
-                    "img": "./img/32/Mongodb.webp",
+                    "img": "./img/original/Mongodb.webp",
                     "level": 1,
                     "link": "https://www.mongodb.com/"
                 }
@@ -573,19 +573,19 @@
             "items": [
                 {
                     "title": "ASP.Net",
-                    "img": "./img/32/aspnet.webp",
+                    "img": "./img/original/aspnet.webp",
                     "level": 2,
                     "link": "https://dotnet.microsoft.com/apps/aspnet"
                 },
                 {
                     "title": "Angular (js)",
-                    "img": "./img/32/Angular.webp",
+                    "img": "./img/original/Angular.webp",
                     "level": 2,
                     "link": "https://angular.io/"
                 },
                 {
                     "title": "Vue",
-                    "img": "./img/32/vue.webp",
+                    "img": "./img/original/vue.webp",
                     "level": 1,
                     "link": "https://vuejs.org/"
                 }
@@ -597,19 +597,19 @@
             "items": [
                 {
                     "title": "TFS",
-                    "img": "./img/32/TFS.webp",
+                    "img": "./img/original/TFS.webp",
                     "level": 2,
                     "link": "https://azure.microsoft.com/en-us/services/devops/server/"
                 },
                 {
                     "title": "GitLab / Github",
-                    "img": "./img/32/Octocat.webp",
+                    "img": "./img/original/Octocat.webp",
                     "level": 2,
                     "link": "https://en.wikipedia.org/wiki/GitHub"
                 },
                 {
                     "title": "Azure DevOps",
-                    "img": "./img/32/Octocat.webp",
+                    "img": "./img/original/Octocat.webp",
                     "level": 2,
                     "link": "https://en.wikipedia.org/wiki/GitHub"
                 }
@@ -621,19 +621,19 @@
             "items": [
                 {
                     "title": "Visual Studio",
-                    "img": "./img/32/visualstudio.webp",
+                    "img": "./img/original/visualstudio.webp",
                     "level": 2,
                     "link": "https://visualstudio.microsoft.com/vs/"
                 },
                 {
                     "title": "VS Code",
-                    "img": "./img/32/vscode.webp",
+                    "img": "./img/original/vscode.webp",
                     "level": 2,
                     "link": "https://code.visualstudio.com/"
                 },
                 {
                     "title": "Git",
-                    "img": "./img/32/Git.webp",
+                    "img": "./img/original/Git.webp",
                     "level": 2,
                     "link": "https://git-scm.com/"
                 }

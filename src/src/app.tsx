@@ -2,13 +2,12 @@ import { h } from "preact";
 import { useEffect, useState } from "preact/hooks";
 
 import Education from "./components/education"
-import Navbar from "./components/navbar";
 import Blogs from "./components/blogs";
 import Projects from "./components/projects";
 import Career from "./components/career";
 import KnowledgeGrid from "./components/knowledgeGrid";
 import About from "./components/about";
-import FooterA from "./components/footera";
+
 import FooterB from "./components/footerb";
 import './styles/main.sass';
 
@@ -48,10 +47,10 @@ const App = () => {
                     />{" "}
                     Hello world!
                   </h1>
-                  <p class="d-none d-sm-block">
+                  <p class="d-sm-block">
                     Software Engineer / Former Instructor / Tech enthusiast
                   </p>
-                  <p class="d-none d-sm-block">
+                  <p class="d-sm-block">
                     <div>  
                     <a class="p-3" href="https://github.com/liukonen" target="_blank"><i class="bi bi-github"></i> GitHub</a>
                     <a class="p-3" href="https://www.linkedin.com/in/lukeliukonen/" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a>
