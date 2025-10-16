@@ -130,7 +130,7 @@
         },
         {
             "Title": "NATS",
-            "SubTitle": "Not Another Text Search.",
+            "SubTitle": "a utility to search text files quickly",
             "Description": "Nats is a command-line search engine for text files with multithreading, indexing, and a cached option for faster lookups. Originally written in .net core, it now has GUI editions for Windows, Mac, and GTK running on multiple platforms. Icon for mac and windows provided by material.io, and is Apache license version 2.0.",
             "image": "img/card/nats.webp",
             "buttons": [
@@ -188,7 +188,7 @@
         },
         {
             "Title": "WeatherWallpaper",
-            "SubTitle": "Wallpaper based on outside conditions",
+            "SubTitle": "Changes wallpaper based on weather and time of day for Windows",
             "Description": "I developed a weather app using Yahoo as the source for data, but lost the source code. I rewrote the app to include multiple data sources in case of outages, and added the ability to display different wallpapers based on time of day.",
             "image": "img/card/weatherwallpaper.webp",
             "buttons": [
@@ -219,7 +219,7 @@
         },
         {
             "Title": "Simple Weather Tray",
-            "SubTitle": "Something simple to tell you the weather, on nearly any desktop enviroment",
+            "SubTitle": "lightweight weather tray app for Mac, Linux, and Windows",
             "Description": "The app is a weather tool that runs on Mac, Linux, and PC and is based on weatherwallpaper. The code is compiled using GTK and allows the user to change the engine behind it. The idea for this app goes back to the developer's college days when they disliked the adware and spyware associated with Weathebug.",
             "image": "img/card/weather.webp",
             "buttons": [
@@ -242,7 +242,7 @@
         },
         {
             "Title": "Desert Changer",
-            "SubTitle": "Different wallpaper for different times of day",
+            "SubTitle": "Time based wallpaper changer for Windows",
             "Description": "For Windows, This app changes your wallpaper throughout the day without the need for external calls, similar to Mac OS Mojave.",
             "image": "img/card/dchanger.webp",
             "buttons": [
@@ -269,7 +269,7 @@
         },
         {
             "Title": "PodLoad",
-            "SubTitle": "Download your favorite audio or video podcasts through RSS",
+            "SubTitle": "Rss Feed based podcast downloader",
             "Description": "a .NET application designed for pulling video and audio podcasts via RSS feeds. It has been rewritten to support the .NET core framework and works on Linux as well.",
             "image": "img/card/podcast.webp",
             "buttons": [
@@ -290,7 +290,7 @@
         },
         {
             "Title": "Dif",
-            "SubTitle": "Compares files between folders. Build originally as a robocopy utility.",
+            "SubTitle": "Compares files between folders.",
             "Description": "This program helps you see what files have changed when you copy them from one folder to another. It goes off LastUpdated timestamps of the files",
             "image": "img/card/cmd.webp",
             "buttons": [
@@ -310,7 +310,7 @@
         },
         {
             "Title": "Clipboard++",
-            "SubTitle": "Keep more then 1 item in your clipboard",
+            "SubTitle": "Multi item clipboard manager for Windows",
             "Description": " Its purpose is to provide an application that can maintain an in-memory cache of multiple clipboard items. This is useful in case accidental copying over data occurs, as users can go back to the original version. Clipboard++ is a lightweight clipboard manager that offers various features such as encryption, in-memory compression, the ability to retain its state after reboots or restarts, and the option to save files directly from the clipboard.",
             "image": "img/card/clip.webp",
             "buttons": [
@@ -359,7 +359,7 @@
         },
         {
             "Title": "choco-outdated",
-            "SubTitle": "a quick update command line tool for checking if updates are needed",
+            "SubTitle": "a utility to check for outdated chocolatey packages",
             "Description": "This program does something similar to chocos outdated command, however it is written in GoLang, uses go Goroutines for quick processing, and channels for quick UI output to the console. This was written after the release of v2 of the Choco command line tool, as the outdated command runs much slower then the v1 version.",
             "image": "img/card/cmd.webp",
             "buttons": [
@@ -621,7 +621,7 @@
                     "link": "https://en.wikipedia.org/wiki/Machine_learning"
                 },
                 {
-                    "title": "NAP",
+                    "title": "NLP",
                     "img": "./img/original/AI.webp",
                     "level": 1,
                     "link": "https://en.wikipedia.org/wiki/Natural_language_processing"
