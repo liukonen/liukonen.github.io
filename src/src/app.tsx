@@ -48,7 +48,7 @@ const App = () => {
                     Hello world!
                   </h1>
                   <p class="d-sm-block">
-                    Software Engineer / Former Instructor / Tech enthusiast
+                    Software Engineer / Instructor / Tech enthusiast
                   </p>
                   <p class="d-sm-block">
                     <div>  
@@ -60,8 +60,6 @@ const App = () => {
                   </p>
                 </div>
 
-                <div class="col-md-3">
-                </div>
               </div>
             </div>
             <About
@@ -69,14 +67,15 @@ const App = () => {
               InterestItems={jsonPayload.Hobbies}
               VolunteerItems={jsonPayload.volunteer}
             />
+                        <KnowledgeGrid items={jsonPayload.Experence} />
             <Blogs />
             <Projects Projects={jsonPayload.projects} />
             <Career work={jsonPayload.Work} highlights={jsonPayload.highlights} />
             <Education items={jsonPayload.School} />
-            <KnowledgeGrid items={jsonPayload.Experence} />
+
             <br />
             <br />
-            <FooterB />
+            <section class="pb-5"><FooterB /></section>
           </main>
       )}
     </>

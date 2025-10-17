@@ -53,6 +53,11 @@ a
     padding: 0            
     text-align: center    
 
+.section 
+    font: 1rem "Inter","Lato", sans-serif
+    //letter-spacing: 0.3125rem
+    margin-top: 4.375rem !important
+
 .glass 
     @extend %baseGlassWithMargin
     color: $white
@@ -109,6 +114,8 @@ a
     @extend %baseGlass
     margin-top: 4.375rem !important
 
+
+
 %rounded
     border-radius: 1rem
 
@@ -139,7 +146,7 @@ a
 h3 
     letter-spacing: 0.3125rem
     text-transform: uppercase
-    font: 1.25rem "Lato", sans-serif
+    font: 1.25rem "Inter","Lato", sans-serif
     color: #6e5607ff
     
   
@@ -233,4 +240,22 @@ h3
 
 .skill-card.silver:hover img 
   transform: scale(1.05) rotate(2deg)
- 
+
+
+$spotlight-color: rgba(255, 215, 150, 0.1)
+$spotlight-radius: 250px
+$transition-speed: 0.2s
+
+body
+  &::before
+    content: ''
+    position: fixed
+    top: 0
+    left: 0
+    width: 250vw
+    height: 250vh
+    pointer-events: none
+    z-index: 9999
+    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), $spotlight-color 0%, transparent $spotlight-radius)
+    transition: background $transition-speed ease
+    mix-blend-mode: lighten

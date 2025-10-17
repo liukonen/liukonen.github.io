@@ -18,7 +18,8 @@ const LazyImage: FunctionalComponent<{
   src: string
   alt: string
   className?: string
-}> = ({ src, alt, className }) => {
+  title?: string
+}> = ({ src, alt, className, title }) => {
   const imgRef = useRef<HTMLImageElement | null>(null)
   const [visible, setVisible] = useState(false)
 
@@ -47,36 +48,30 @@ const LazyImage: FunctionalComponent<{
       alt={alt}
       className={className}
       loading="lazy"
+      title={title}
     />
   )
 }
 
 const Workplaces: FunctionalComponent<WorkplacesProps> = ({ items }) => {
   return (
-    <>
-      {items.map((jobLocation, index) => (
-        <div
+    <div class="container">
+    <div
           className="row justify-content-md-center mt-3"
-          key={index}
-        >
+    >
+      {items.map((jobLocation) => (
+        
           <div className="col-md-2 mt-1">
             <LazyImage
               src={jobLocation.img}
               alt={jobLocation.name}
+              title={jobLocation.name + ' ' + jobLocation.timeworked}
               className="lzy ImgRoundCorner border-right shadow"
             />
           </div>
-          <div className="col-md-9 mt-1">
-            <div class="">
-            <h4 className="card-title">{jobLocation.name}</h4>
-            <h5>
-              {jobLocation.title}, {jobLocation.timeworked}
-            </h5>
-          </div>
-          </div>
-        </div>
       ))}
-    </>
+        </div>
+        </div>
   )
 }
 

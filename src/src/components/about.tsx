@@ -11,7 +11,7 @@ interface AboutProps {
 
 const About: FunctionalComponent<AboutProps> = ({ greating, InterestItems, VolunteerItems }) => {
   return (
-    <div id="about">
+    <div id="about" class="section">
       <Welcome greating={greating} />
     </div>
   )
