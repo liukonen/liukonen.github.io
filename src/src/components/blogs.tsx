@@ -21,7 +21,7 @@ const Blogs: FunctionalComponent = () => {
     blogItems.slice(0, 3).map((item, i) => ({
       title: item.title,
       link: item.link,
-      timestamp: item.published,
+      timestamp: item.published.slice(0, -9),
       index: i
     }));
 
@@ -46,16 +46,20 @@ const Blogs: FunctionalComponent = () => {
     }
   }, []);
 
-  return (
-    <div id="Blogs" className="container">
-      <h3 className="text-center h3 mt-5 tshadow">Recent Articles / Blogs</h3>
 
+
+  return (
+    <div id="Blogs" className="container section">
+      <h3 className="text-center h3 mt-1 tshadow">Recent Articles / Blogs</h3>
+
+    <div class="row justify-content-md-center">
       {items?.map(article => (
-        <figure key={article.id}>
+        <div class="col-md-3 border rounded-4 overflow-hidden p-3 m-3 skill-card gold">
+        <figure key={article.index}>
           <blockquote class="blockquote">
             <p>
               <a
-                href={`${encodeURIComponent(article.link)}`} 
+                href={article.link}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -64,32 +68,36 @@ const Blogs: FunctionalComponent = () => {
             </p>
           </blockquote>
           <figcaption class="blockquote-footer">
-            {article.timestamp && article.timestamp.slice(0, -9)} 
+            { article.timestamp } 
           </figcaption>
         </figure>
+        </div>
       ))}
+    </div>
 
-
-      {/* Optional: Inline style can be moved to CSS */}
-      <style>
-        {`
-          .white-overlay {
-            position: relative;
-          }
-          .white-overlay::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 255, 255, 0.6);
-            pointer-events: none;
-          }
-        `}
-      </style>
     </div>
   );
 };
 
 export default Blogs;
+
+
+//
+  //    {/* Optional: Inline style can be moved to CSS */}
+  //    <style>
+  //      {`
+  //        .white-overlay {
+  //          position: relative;
+  //        }
+  //        .white-overlay::after {
+  //          content: '';
+  //          position: absolute;
+  //          top: 0;
+  //          left: 0;
+  //          width: 100%;
+  //          height: 100%;
+  //          background-color: rgba(255, 255, 255, 0.6);
+  //          pointer-events: none;
+  //        }
+  //      `}
+  //    </style>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description"
+    content="about page for Luke Liukonen. Software Developer, Former Instructor, Tech enthusiast" />
+  <meta name="author" content="Luke Liukonen" />
+  <meta name="msapplication-config" content="/img/favicons/browserconfig.xml" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self';
+  script-src 'self' 'unsafe-inline' 'unsafe-eval';
+  style-src 'self' cdn.jsdelivr.net cdnjs.cloudflare.com 'unsafe-inline' https://fonts.googleapis.com;
+  img-src 'self' wts.one data:;
+  font-src 'self' cdn.jsdelivr.net cdnjs.cloudflare.com https://fonts.gstatic.com data:;
+  connect-src 'self' dev.to;
+  media-src 'self';
+  object-src 'none';
+  child-src;
+  frame-src; 
+  form-action;  
+  base-uri; 
+  manifest-src 'self';" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css"
+    integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css"
+    integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Luke Liukonen - dev</title>
+  <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png" sizes="180x180" />
+  <link rel="icon" href="/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png" />
+  <link rel="manifest" href="/img/favicons/site.webmanifest" />
+  <link rel="mask-icon" href="/img/favicons/safari-pinned-tab.svg" color="#ffffff" />
+  <link rel="icon" href="/img/favicons/favicon.ico" />
+  <link rel="stylesheet" href="./index.css" />
+  <link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap' rel='stylesheet' />
+  <style>
+    html,
+    body {
+      /* Use a repeating pattern instead of a single fixed image */
+      background: url(./img/background.webp) repeat;
+      background-size: auto;
+      /* removes the 'fixed' effect */
+      background-color: #000;
+      /* fallback color behind the texture */
+      margin: 0;
+      padding: 0;
+    }
+
+    header h1 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      /* medium weight for readability */
+      font-size: 3rem;
+
+      /* Gold gradient text */
+      background: linear-gradient(45deg, #FFB700, #FFD700);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      /* Subtle shadow for legibility over texture */
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+
+      transition: all 0.3s ease;
+      /* smooth hover effects */
+    }
+
+    /* Optional hover effect for metallic feel */
+    header h1:hover {
+      background: linear-gradient(45deg, #FFD700, #FFEA00);
+      text-shadow: 0 3px 6px rgba(0, 0, 0, 0.7);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app"></div>
+   <script type="module" src="/src/index.tsx"></script>
+</body>
+
+</html>

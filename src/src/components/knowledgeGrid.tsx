@@ -1,91 +1,175 @@
-import { FunctionalComponent, JSX } from 'preact'
-import { useEffect, useRef, useState } from 'preact/hooks'
+import { FunctionalComponent, JSX } from "preact";
+import { useEffect, useRef, useState } from "preact/hooks";
 
 interface Item {
-  img: string
-  title: string
-  level: number
-  link: string
+  img: string;
+  title: string;
+  level: number;
+  link: string;
 }
 
 interface Category {
-  name: string
-  items: Item[]
+  name: string;
+  items: Item[];
 }
 
 interface KnowledgeGridProps {
-  items: Category[]
+  items: Category[];
 }
 
 const LazyImage: FunctionalComponent<{
-  src: string
-  alt: string
-  style?: JSX.CSSProperties
+  src: string;
+  alt: string;
+  style?: JSX.CSSProperties;
 }> = ({ src, alt, style }) => {
-  const imgRef = useRef<HTMLImageElement | null>(null)
-  const [visible, setVisible] = useState(false)
+  const imgRef = useRef<HTMLImageElement | null>(null);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setVisible(true)
-          observer.disconnect()
+          setVisible(true);
+          observer.disconnect();
         }
       },
       { threshold: 0.1 }
-    )
+    );
 
-    if (imgRef.current) {
-      observer.observe(imgRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
+    if (imgRef.current) observer.observe(imgRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <img
       ref={imgRef}
-      src={visible ? src : ''}
+      src={visible ? src : ""}
       alt={alt}
-      style={style}
+      style={{ width: 80, height: 80, objectFit: "contain", ...style }}
       loading="lazy"
     />
-  )
-}
+  );
+};
 
-const getPill = (item: Item) =>
-  item.level > 1
-    ? 'badge badge-pill bg-primary bg-purple text-white'
-    : 'badge badge-pill bg-success text-white'
-
-const getName = (item: Item) => (item.level > 1 ? 'Pro' : 'Hobby')
+const getCardColor = (level: number) =>
+  level >= 2 ? "border-warning" : "border-secondary";
 
 const KnowledgeGrid: FunctionalComponent<KnowledgeGridProps> = ({ items }) => {
-    return (
-    <div className="container">
-      <div className="container" id="Knowledge">
-        <h3 className="text-center h3 tshadow mt-5">
-          Systems / Ideas I've worked with
-        </h3>
-        <div className="row justify-content-center g-4 mt-4">
-          {items.map((category, idx) => (
-            category.items.map((item, idx) =>(
-               <div className="col-6 col-sm-4 col-md-3 col-lg-2 d-flex justify-content-center" key={item.title}>
+  const trackRef = useRef<HTMLDivElement | null>(null);
+  const posRef = useRef(0);
+  const [paused, setPaused] = useState(false);
 
-                <div 
-                className={`skill-card  flex-fill ${item.level >= 2 ? 'gold' : 'silver'} d-flex flex-column align-items-center justify-content-center text-cente`}>
+  const allItems = items.flatMap(c => c.items);
+  const cutItems = allItems.slice(3);
+  const loopedItems = cutItems.concat(cutItems); // duplicate for seamless scroll
+
+  useEffect(
+    () => {
+      const track = trackRef.current;
+      if (!track) return;
+
+      let animationFrame: number;
+      const speed = 2; // pixels per frame, adjust as needed
+
+      const step = () => {
+        if (!paused) {
+          posRef.current += speed;
+          // Total scrollable width of the first set
+          const width = track.scrollWidth / 2;
+          if (posRef.current >= width) posRef.current = 0;
+          track.style.transform = `translateX(${-posRef.current}px)`;
+        }
+        animationFrame = requestAnimationFrame(step);
+      };
+
+      animationFrame = requestAnimationFrame(step);
+      return () => cancelAnimationFrame(animationFrame);
+    },
+    [loopedItems, paused]
+  );
+  const topItems = allItems.slice(0, 3);
+
+  return (
+    <div className="container my-5">
+      <h3 className="text-center h3 tshadow mb-4">
+        Systems / Ideas I've worked with
+      </h3>
+
+
+          <h4>Daily Drivers</h4>
+          <div
+            className="row p-3 gap-3"
+          >
+            {topItems.map(item =>
+              <div
+                key={item.title}
+                className={`col skill-card flex-fill ${item.level >= 2
+                  ? "gold"
+                  : "silver"} d-flex flex-column align-items-center justify-content-center text-center`}
+                style={{
+                  minWidth: "120px",
+                  maxWidth: "160px",
+                  flex: "1 1 auto"
+                }}
+              >
                 <LazyImage src={item.img} alt={item.title} />
-                <p>{item.title}</p>
-            </div></div>
-            ))
-          ))}
-        </div>
-        <p>Gold - Worked with professionally for years. Silver, worked with as a hobby or not professionally.</p>
-      </div>
+                <p>
+                  {item.title}
+                </p>
+              </div>
+            )}
+          </div>
+
+
+          <h4>Other Tech I work with</h4>
+          <div
+            className="carousel-wrapper border rounded-4 overflow-hidden p-3"
+            style={{ borderWidth: 3 }}
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
+          >
+            <div
+              ref={trackRef}
+              className="row flex-nowrap g-4"
+              style={{
+                willChange: "transform",
+                display: "flex",
+                flexWrap: "nowrap"
+              }}
+            >
+              {loopedItems.map((item, idx) =>
+                <div
+                  key={idx}
+                  className="col-6 col-sm-4 col-md-3 col-lg-2 d-flex justify-content-center"
+                >
+                  <div
+                    className={`flex-fill d-flex flex-column align-items-center justify-content-center text-center p-3 border rounded ${getCardColor(
+                      item.level
+                    )}`}
+                  >
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <LazyImage src={item.img} alt={item.title} />
+                    </a>
+                    <p className="mt-2 mb-0 small">
+                      {item.title}
+                    </p>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+  
+
+      <p className="text-center mt-3 small">
+        <strong>Gold</strong> = Worked with professionally for years.{" "}
+        <strong>Silver</strong> = Hobby / side experience.
+      </p>
     </div>
-  )
+  );
+};
 
-}
-
-export default KnowledgeGrid
+export default KnowledgeGrid;

@@ -40,8 +40,11 @@ const ProjectsComponent: FunctionalComponent<ProjectsProps> = ({
   return (
     <div class="container">
       <h3 class="text-center h3 tshadow mt-5">Open Source Projects</h3>
+  <div class="row mt-5 row-cols-1 row-cols-md-2">
+      
       {Projects.map(project =>
-        <div class="row mt-5">
+          <div class="col-md-6">
+            <div class="row">
           <div class="col-2">
             <img
               src={project.image}
@@ -49,7 +52,7 @@ const ProjectsComponent: FunctionalComponent<ProjectsProps> = ({
               alt={project.Title}
             />
           </div>
-          <div class="col-9">
+          <div class="col-8">
             <h1 class="display-3 tshadow">
               <h4>
                 {project.SubTitle}
@@ -65,8 +68,11 @@ const ProjectsComponent: FunctionalComponent<ProjectsProps> = ({
               </div>
             </p>
           </div>
-        </div>
+          </div>
+          </div>
       )}
+        </div>
+      
     </div>
   );
 };
