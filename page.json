@@ -432,6 +432,12 @@
                     "link": "https://www.typescriptlang.org/"
                 },
                 {
+                    "title": "React",
+                    "img": "./img/original/React.webp",
+                    "level": 2,
+                    "link": "https://react.dev/"
+                },
+                {
                     "title": "Spring", "img": "./img/original/Spring.webp", "level": 2, "link": "https://spring.io/"
                 },
                 {
@@ -470,12 +476,6 @@
             "name": "UI Frameworks",
             "size": "6",
             "items": [
-                {
-                    "title": "React",
-                    "img": "./img/original/React.webp",
-                    "level": 2,
-                    "link": "https://react.dev/"
-                },
                 {
                     "title": "ASP.Net",
                     "img": "./img/original/aspnet.webp",
@@ -635,7 +635,7 @@
                 {
                     "title": "Cognitive",
                     "img": "./img/original/cognitive.webp",
-                    "level": 2,
+                    "level": 1,
                     "link": "https://azure.microsoft.com/en-us/services/cognitive-services/"
                 }
             ]
@@ -655,7 +655,7 @@
             "name": "University of Wisconsin System",
             "timeworked":  "January 2006 - May 2006",
             "title": "Teaching Assistant",
-            "img": "./img/original/uw.webp",
+            "img": "./img/200/uw.webp",
             "summary": "As a Teaching Assistant at the University of Wisconsin - Milwaukee, I assisted professors in managing and grading assignments, providing support to students, and facilitating classroom activities. This role allowed me to develop strong communication and organizational skills while gaining valuable experience in an academic setting."
         },
         {

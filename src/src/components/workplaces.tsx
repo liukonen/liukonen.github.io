@@ -55,24 +55,24 @@ const LazyImage: FunctionalComponent<{
 
 const Workplaces: FunctionalComponent<WorkplacesProps> = ({ items }) => {
   return (
-    <div class="container">
-    <div
-          className="row justify-content-md-center mt-3"
-    >
-      {items.map((jobLocation) => (
-        
-          <div className="col-md-2 mt-1">
+    <div className="container">
+      <div className="row justify-content-center align-items-center text-center mt-3">
+        {items.map((jobLocation) => (
+          <div
+            key={jobLocation.name}
+            className="col-4 col-sm-3 col-md-2 mt-2 mb-2 d-flex justify-content-center"
+          >
             <LazyImage
               src={jobLocation.img}
               alt={jobLocation.name}
-              title={jobLocation.name + ' ' + jobLocation.timeworked}
-              className="lzy ImgRoundCorner border-right shadow"
+              title={`${jobLocation.name} ${jobLocation.timeworked}`}
+              className="img-fluid rounded shadow"
             />
           </div>
-      ))}
-        </div>
-        </div>
-  )
-}
+        ))}
+      </div>
+    </div>
+  );
+};
 
-export default Workplaces
+export default Workplaces;

@@ -14,8 +14,8 @@ const List: FunctionalComponent<ListProps> = ({ listItems, listStyle }) => {
 
   return (
     <ul className={getStyle}>
-      {listItems.map((item, index) => (
-        <li className="list-group-item pane" key={index}>
+      {listItems.map((item) => (
+        <li className="list-group-item pane">
           {item}
         </li>
       ))}

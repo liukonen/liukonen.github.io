@@ -1,34 +1,33 @@
-import { h } from "preact";
-import { useEffect, useState } from "preact/hooks";
+import { useEffect, useState } from "preact/hooks"
 
 import Education from "./components/education"
-import Blogs from "./components/blogs";
-import Projects from "./components/projects";
-import Career from "./components/career";
-import KnowledgeGrid from "./components/knowledgeGrid";
-import About from "./components/about";
+import Blogs from "./components/blogs"
+import Projects from "./components/projects"
+import Career from "./components/career"
+import KnowledgeGrid from "./components/knowledgeGrid"
+import About from "./components/about"
 
-import FooterB from "./components/footerb";
-import './styles/main.sass';
+import FooterB from "./components/footerb"
+import './styles/main.sass'
 
 const App = () => {
-  const [jsonPayload, setJsonPayload] = useState<any>(null);
+  const [jsonPayload, setJsonPayload] = useState<any>(null)
 
 
   useEffect(() => {
     const loadData = async () => {
       try {
-          const response = await fetch("./page.json");
-          const text = await response.text();
-          sessionStorage.setItem("dev.liukonen.pageData", text);
-          setJsonPayload(JSON.parse(text));
-          console.log("PageData items pulled live");
+          const response = await fetch("./page.json")
+          const text = await response.text()
+          sessionStorage.setItem("dev.liukonen.pageData", text)
+          setJsonPayload(JSON.parse(text))
+          console.log("PageData items pulled live")
       } catch (error) {
-        console.error("Error loading JSON:", error);
+        console.error("Error loading JSON:", error)
       }
-    };
-    loadData();
-  }, []);
+    }
+    loadData()
+  }, [])
 
   return (
     <>
@@ -39,13 +38,13 @@ const App = () => {
             <div class="container">
               <div class="row">
                 <div class="col-md-9">
-                  <h1 class="display-3 tshadow">
+                  <h1 class="display-3">
                     <img
                       src="./img/favicons/apple-touch-icon.png"
                       class="rounded-circle user_img"
                       alt="Luke Liukonen"
                     />{" "}
-                    Hello world!
+                    Luke Liukonen
                   </h1>
                   <p class="d-sm-block">
                     Software Engineer / Instructor / Tech enthusiast
@@ -62,15 +61,11 @@ const App = () => {
 
               </div>
             </div>
-            <About
-              greating={jsonPayload.welcome}
-              InterestItems={jsonPayload.Hobbies}
-              VolunteerItems={jsonPayload.volunteer}
-            />
-                        <KnowledgeGrid items={jsonPayload.Experence} />
+            <About greating={jsonPayload.welcome} />
+            <KnowledgeGrid items={jsonPayload.Experence} />
             <Blogs />
             <Projects Projects={jsonPayload.projects} />
-            <Career work={jsonPayload.Work} highlights={jsonPayload.highlights} />
+            <Career work={jsonPayload.Work} />
             <Education items={jsonPayload.School} />
 
             <br />
@@ -79,7 +74,7 @@ const App = () => {
           </main>
       )}
     </>
-  );
-};
+  )
+}
 
-export default App;
+export default App
