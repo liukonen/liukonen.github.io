@@ -40,10 +40,10 @@ const ProjectsComponent: FunctionalComponent<ProjectsProps> = ({
   return (
     <div class="container">
       <h3 class="text-center h3 tshadow mt-5">Open Source Projects</h3>
-  <div class="row mt-5 row-cols-1 row-cols-md-2">
+  <div class="row mt-5 row-cols-1 row-cols-md-2 justify-content-md-center">
       
       {Projects.map(project =>
-          <div class="col-md-5 border rounded-4 overflow-hidden skill-card gold  m-4">
+          <div class="col-md-5 rounded-4 overflow-hidden skill-card gold  m-4">
             <div class="row">
           <div class="col-2">
             <img

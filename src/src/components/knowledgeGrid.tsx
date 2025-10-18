@@ -89,76 +89,71 @@ const KnowledgeGrid: FunctionalComponent<KnowledgeGridProps> = ({ items }) => {
     [loopedItems, paused]
   )
 
-
   return (
     <div className="container my-5">
       <h3 className="text-center h3 tshadow mb-4">
         Systems / Ideas I've worked with
       </h3>
 
-
-          <h4>Daily Drivers</h4>
+      <h4>Daily Drivers</h4>
+      <div className="row p-3 gap-3">
+        {topItems.map(item =>
           <div
-            className="row p-3 gap-3"
+            key={item.title}
+            className={`col skill-card flex-fill ${item.level >= 2
+              ? "gold"
+              : "silver"} d-flex flex-column align-items-center justify-content-center text-center`}
+            style={{
+              minWidth: "120px",
+              maxWidth: "160px",
+              flex: "1 1 auto"
+            }}
           >
-            {topItems.map(item =>
+            <a href={item.link} target="_blank">
+              <LazyImage src={item.img} alt={item.title} />
+            </a>
+            <p>
+              {item.title}
+            </p>
+          </div>
+        )}
+      </div>
+
+      <h4>Other Tech I work with</h4>
+      <div class="carousel-wrapper border rounded-4 overflow-hidden p-3">
+        <div
+          ref={trackRef}
+          className="row flex-nowrap g-4"
+          style={{
+            willChange: "transform",
+            display: "flex",
+            flexWrap: "nowrap"
+          }}
+        >
+          {loopedItems.map((item, idx) =>
+            <div className="col-6 col-sm-4 col-md-3 col-lg-2 d-flex justify-content-center">
               <div
-                key={item.title}
-                className={`col skill-card flex-fill ${item.level >= 2
-                  ? "gold"
-                  : "silver"} d-flex flex-column align-items-center justify-content-center text-center`}
-                style={{
-                  minWidth: "120px",
-                  maxWidth: "160px",
-                  flex: "1 1 auto"
-                }}
+                className={`flex-fill d-flex flex-column align-items-center justify-content-center text-center p-3 border rounded ${getCardColor(
+                  item.level
+                )}`}
               >
-                <LazyImage src={item.img} alt={item.title} />
-                <p>
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onMouseEnter={() => setPaused(true)}
+                  onMouseLeave={() => setPaused(false)}
+                >
+                  <LazyImage src={item.img} alt={item.title} />
+                </a>
+                <p className="mt-2 mb-0 small">
                   {item.title}
                 </p>
               </div>
-            )}
-          </div>
-
-
-          <h4>Other Tech I work with</h4>
-          <div class="carousel-wrapper border rounded-4 overflow-hidden p-3">
-            <div
-              ref={trackRef}
-              className="row flex-nowrap g-4"
-              style={{
-                willChange: "transform",
-                display: "flex",
-                flexWrap: "nowrap"
-              }}
-            >
-              {loopedItems.map((item, idx) =>
-                <div
-                  className="col-6 col-sm-4 col-md-3 col-lg-2 d-flex justify-content-center"
-                >
-                  <div
-                    className={`flex-fill d-flex flex-column align-items-center justify-content-center text-center p-3 border rounded ${getCardColor(
-                      item.level
-                    )}`}
-                  >
-                    <a
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                       onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}
-                    >
-                      <LazyImage src={item.img} alt={item.title} />
-                    </a>
-                    <p className="mt-2 mb-0 small">
-                      {item.title}
-                    </p>
-                  </div>
-                </div>
-              )}
             </div>
-          </div>
-  
+          )}
+        </div>
+      </div>
 
       <p className="text-center mt-3 small">
         <strong>Gold</strong> = Worked with professionally for years.{" "}
