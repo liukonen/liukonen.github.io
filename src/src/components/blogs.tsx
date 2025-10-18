@@ -54,7 +54,7 @@ const Blogs: FunctionalComponent = () => {
 
     <div class="row justify-content-md-center">
       {items?.map(article => (
-        <div class="col-md-3 border rounded-4 overflow-hidden p-3 m-3 skill-card gold">
+        <div class="col-md-3 overflow-hidden p-3 m-3 skill-card gold">
         <figure key={article.index}>
           <blockquote class="blockquote">
             <p>
