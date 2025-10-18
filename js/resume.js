@@ -2,10 +2,10 @@ const month = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep"
 
 function generateResume() {
   getFile("./json/resume.json").then(items => {
-    BuildExperence(items["work"]),
+    BuildExperence(items["work"])
     renderSkillsLists(items["skills"])
-    BuildHeader(items["basics"]),
-    BuildEdu(items["education"]),
+    BuildHeader(items["basics"])
+    BuildEdu(items["education"])
     BuildBasic(items["basics"])
   })
 }
@@ -146,12 +146,12 @@ function getFile(fileUrl) {
       return response.json();
     })
     .catch(error => {
-      window.alert(error);
+      globalThis.alert(error);
     });
 }
 
 function parseWorkDate(strDate) {
-  return strDate.length > 0 ? `${month[parseInt(strDate.split("-")[1])]} ${strDate.split("-")[0]}` : "Present";
+  return strDate.length > 0 ? `${month[Number.parseInt(strDate.split("-")[1])]} ${strDate.split("-")[0]}` : "Present";
 }
 document.getElementById("year").innerHTML = new Date().getFullYear()
 generateResume()

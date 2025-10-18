@@ -45,7 +45,7 @@ function DetermButtonColor(ItemType){
 }
 
   function ExpandText(me){
-    var content = me.parentElement.nextElementSibling;
+    const content = me.parentElement.nextElementSibling;
     const isContentVisible = content.style.display === "block";
     me.innerHTML = isContentVisible ? "[+]" : "[-]";
     content.style.display = isContentVisible ? "none" : "block";
@@ -61,7 +61,7 @@ function DetermButtonColor(ItemType){
         return response.json();
       })
       .catch(error => {
-        window.alert(error);
+        globalThis.alert(error);
       });
   }
   document.getElementById("year").innerHTML = new Date().getFullYear()
