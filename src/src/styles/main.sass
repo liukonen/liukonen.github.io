@@ -1,28 +1,35 @@
 $black : #000
 $white : #fff
-$shadow : rgb(97, 94, 94)
-$glass1: rgba(255, 255, 255, 0.01)
-$glass5: rgba(255, 255, 255, 0.05)
-$glass10 : rgba(255, 255, 255, 0.1)
-$glass20 : rgba(255, 255, 255, 0.2)
-$glass30 : rgba(255, 255, 255, 0.3)
-$glass50 : rgba(255, 255, 255, 0.5)
-$glass70 : rgba(255, 255, 255, 0.7)
-$glass90 : rgba(255, 255, 255, 0.9)
+$shadow : rgb(102, 89, 69)
 $gold: #f8be25
 
 $LinkedInBlue : #0077B5
-   
-body, html
-    height: 100%
-    margin: 0
-    font: 400 1rem/1.8 "Inter","Lato", sans-serif
-    color: $white
-    scroll-behavior: smooth
-    background-color: $black
+$spotlight-color: rgba(255, 215, 150, 0.1)
+$spotlight-radius: 250px
+$transition-speed: 0.2s
 
-.invert
-  filter: invert(100%)
+body, html
+  color: $white
+  background-color:  $black
+  background: url(/img/background.webp) repeat
+  background-size: auto
+  height: 100%
+  margin: 0
+  padding: 0
+  font: 400 1rem/1.8 "Inter","Lato", sans-serif
+  scroll-behavior: smooth
+  &::before
+    content: ''
+    position: fixed
+    top: 0
+    left: 0
+    width: 250vw
+    height: 250vh
+    pointer-events: none
+    z-index: 9999
+    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), $spotlight-color 0%, transparent $spotlight-radius)
+    transition: background $transition-speed ease
+    mix-blend-mode: lighten
 
 a 
   color: $gold
@@ -32,13 +39,6 @@ a
 .user_img 
   height: 5.625rem
   width: 5.625rem
-
-#myVideo 
-  position: fixed 
-  right: 0 
-  bottom: 0 
-  min-width: 100% 
-  min-height: 100% 
 
 .tshadow 
     text-shadow: 0.125rem 0.0625rem $shadow
@@ -58,50 +58,6 @@ a
     //letter-spacing: 0.3125rem
     margin-top: 4.375rem !important
 
-.glass 
-    @extend %baseGlassWithMargin
-    color: $white
-    padding-top: 2rem
-    background: linear-gradient(to right bottom, $glass1, $glass5)
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2)
-
-.whiteGlassCardElement
-    @extend %baseGlass
-    color: $black
-    box-shadow: 0 0 1rem 0 rgba(255, 255, 255, 0.8)
-    background: linear-gradient(to right bottom, $glass90, $glass70)
-    
-.whiteGlassCard
-    @extend .whiteGlassCardElement
-    margin-top: 4.375rem !important
-
-.whiteGlassCardWithLinks
-    @extend .whiteGlassCardElement
-    a, a:visited
-        color: #25566d !important
-
-.whiteGlass 
-    @extend  %rounded
-    background: linear-gradient(to right bottom, $glass70, $glass50)
-    
-
-.whiterGlass
-    @extend  %rounded
-    background: linear-gradient(to right bottom, $glass90, $glass70)
-    
-.whiteGlassList
-    @extend .whiteGlass
-    border: none !important
-
-.eduGlass
-    @extend %baseGlassWithMargin
-    color: $white
-    background: linear-gradient(to right bottom, rgba(0, 0, 0, 0.6), rgba(250, 191, 038, 0.4))
-
-.blackGlass
-    @extend %baseGlassWithMargin
-    color: $white
-    background: linear-gradient(to right bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6))
 
 %baseGlass
     padding: 2rem 2rem
@@ -119,14 +75,6 @@ a
 %rounded
     border-radius: 1rem
 
-.clearGlass
-    @extend  %rounded
-    background: linear-gradient(to right bottom, $glass1, $glass5)
-    
-=Background($img, $height)
-    background-image: url($img)
-    min-height: $height
-
 %captionExtend
     position: absolute
     left: 0
@@ -139,56 +87,31 @@ a
         font-size: 1.5rem
         letter-spacing: 0.625rem
 
-.rImage250
-    @extend %rounded
-    height: 15.625rem
+h1
+  font-family: "Caveat", cursive
+  color: $gold
 
 h3 
     letter-spacing: 0.3125rem
     text-transform: uppercase
     font: 1.25rem "Inter","Lato", sans-serif
     color: #6e5607ff
-    
-  
-.bg-purple 
-    background-color: purple !important
 
-.bg-lnkdin
-    background-color: $LinkedInBlue
-    border-color: $LinkedInBlue
-
-.progress-bar 
-    -webkit-transition: none !important
-    transition: none !important
 
 .ImgRoundCorner
   border-radius: 1.5rem
   width: 11.125rem
   height: 11.125rem
 
-@media (min-width: 48rem)
-    .bd-placeholder-img-lg 
-        font-size: 3.5rem
 
 .content
   display: none
 
 .RoundedBottom
   border-radius: 0 0 1rem 1rem
-
-
-.skills-grid 
-  display: grid
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr))
-  gap: 1.5rem
-  max-width: 700px
-  width: 100%
-  padding: 2rem
  
-
 .skill-card 
   position: relative
-  background-color: #141414
   border-radius: 1rem
   padding: 1.25rem
   text-align: center
@@ -242,20 +165,6 @@ h3
   transform: scale(1.05) rotate(2deg)
 
 
-$spotlight-color: rgba(255, 215, 150, 0.1)
-$spotlight-radius: 250px
-$transition-speed: 0.2s
 
-body
-  &::before
-    content: ''
-    position: fixed
-    top: 0
-    left: 0
-    width: 250vw
-    height: 250vh
-    pointer-events: none
-    z-index: 9999
-    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), $spotlight-color 0%, transparent $spotlight-radius)
-    transition: background $transition-speed ease
-    mix-blend-mode: lighten
+
+

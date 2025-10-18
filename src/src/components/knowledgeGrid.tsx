@@ -1,44 +1,44 @@
-import { FunctionalComponent, JSX } from "preact";
-import { useEffect, useRef, useState } from "preact/hooks";
+import { FunctionalComponent, JSX } from "preact"
+import { useEffect, useRef, useState } from "preact/hooks"
 
 interface Item {
-  img: string;
-  title: string;
-  level: number;
-  link: string;
+  img: string
+  title: string
+  level: number
+  link: string
 }
 
 interface Category {
-  name: string;
-  items: Item[];
+  name: string
+  items: Item[]
 }
 
 interface KnowledgeGridProps {
-  items: Category[];
+  items: Category[]
 }
 
 const LazyImage: FunctionalComponent<{
-  src: string;
-  alt: string;
-  style?: JSX.CSSProperties;
+  src: string
+  alt: string
+  style?: JSX.CSSProperties
 }> = ({ src, alt, style }) => {
-  const imgRef = useRef<HTMLImageElement | null>(null);
-  const [visible, setVisible] = useState(false);
+  const imgRef = useRef<HTMLImageElement | null>(null)
+  const [visible, setVisible] = useState(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setVisible(true);
-          observer.disconnect();
+          setVisible(true)
+          observer.disconnect()
         }
       },
       { threshold: 0.1 }
-    );
+    )
 
-    if (imgRef.current) observer.observe(imgRef.current);
-    return () => observer.disconnect();
-  }, []);
+    if (imgRef.current) observer.observe(imgRef.current)
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <img
@@ -48,46 +48,47 @@ const LazyImage: FunctionalComponent<{
       style={{ width: 80, height: 80, objectFit: "contain", ...style }}
       loading="lazy"
     />
-  );
-};
+  )
+}
 
 const getCardColor = (level: number) =>
-  level >= 2 ? "border-warning" : "border-secondary";
+  level >= 2 ? "border-warning" : "border-secondary"
 
 const KnowledgeGrid: FunctionalComponent<KnowledgeGridProps> = ({ items }) => {
-  const trackRef = useRef<HTMLDivElement | null>(null);
-  const posRef = useRef(0);
-  const [paused, setPaused] = useState(false);
+  const trackRef = useRef<HTMLDivElement | null>(null)
+  const posRef = useRef(0)
+  const [paused, setPaused] = useState(false)
 
-  const allItems = items.flatMap(c => c.items);
-  const cutItems = allItems.slice(3);
-  const loopedItems = cutItems.concat(cutItems); // duplicate for seamless scroll
+  const allItems = items.flatMap(c => c.items)
+  const cutItems = allItems.slice(4)
+  const loopedItems = cutItems.concat(cutItems) // duplicate for seamless scroll
+  const topItems = allItems.slice(0, 4)
 
   useEffect(
     () => {
-      const track = trackRef.current;
-      if (!track) return;
+      const track = trackRef.current
+      if (!track) return
 
-      let animationFrame: number;
-      const speed = 2; // pixels per frame, adjust as needed
+      let animationFrame: number
+      const speed = 2 // pixels per frame, adjust as needed
 
       const step = () => {
         if (!paused) {
-          posRef.current += speed;
+          posRef.current += speed
           // Total scrollable width of the first set
-          const width = track.scrollWidth / 2;
-          if (posRef.current >= width) posRef.current = 0;
-          track.style.transform = `translateX(${-posRef.current}px)`;
+          const width = track.scrollWidth / 2
+          if (posRef.current >= width) posRef.current = 0
+          track.style.transform = `translateX(${-posRef.current}px)`
         }
-        animationFrame = requestAnimationFrame(step);
-      };
+        animationFrame = requestAnimationFrame(step)
+      }
 
-      animationFrame = requestAnimationFrame(step);
-      return () => cancelAnimationFrame(animationFrame);
+      animationFrame = requestAnimationFrame(step)
+      return () => cancelAnimationFrame(animationFrame)
     },
     [loopedItems, paused]
-  );
-  const topItems = allItems.slice(0, 3);
+  )
+
 
   return (
     <div className="container my-5">
@@ -122,12 +123,7 @@ const KnowledgeGrid: FunctionalComponent<KnowledgeGridProps> = ({ items }) => {
 
 
           <h4>Other Tech I work with</h4>
-          <div
-            className="carousel-wrapper border rounded-4 overflow-hidden p-3"
-            style={{ borderWidth: 3 }}
-            onMouseEnter={() => setPaused(true)}
-            onMouseLeave={() => setPaused(false)}
-          >
+          <div class="carousel-wrapper border rounded-4 overflow-hidden p-3">
             <div
               ref={trackRef}
               className="row flex-nowrap g-4"
@@ -139,7 +135,6 @@ const KnowledgeGrid: FunctionalComponent<KnowledgeGridProps> = ({ items }) => {
             >
               {loopedItems.map((item, idx) =>
                 <div
-                  key={idx}
                   className="col-6 col-sm-4 col-md-3 col-lg-2 d-flex justify-content-center"
                 >
                   <div
@@ -151,6 +146,7 @@ const KnowledgeGrid: FunctionalComponent<KnowledgeGridProps> = ({ items }) => {
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
+                       onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}
                     >
                       <LazyImage src={item.img} alt={item.title} />
                     </a>
@@ -169,7 +165,7 @@ const KnowledgeGrid: FunctionalComponent<KnowledgeGridProps> = ({ items }) => {
         <strong>Silver</strong> = Hobby / side experience.
       </p>
     </div>
-  );
-};
+  )
+}
 
-export default KnowledgeGrid;
+export default KnowledgeGrid

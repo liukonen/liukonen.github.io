@@ -1,19 +1,17 @@
-import { FunctionalComponent } from 'preact';
-import { useEffect, useRef } from 'preact/hooks';
-import Workplaces from './workplaces';
-
+import { FunctionalComponent } from 'preact'
+import { useEffect, useRef } from 'preact/hooks'
+import Workplaces from './workplaces'
 import { createGitgraph, templateExtend } from '../lib/gitgraph-esm.js' 
 
 interface CareerProps {
-  work: any[]; // Replace 'any' with your proper type
-  highlights: any[];
+  work: any[] 
 }
 
-const Career: FunctionalComponent<CareerProps> = ({ work, highlights }) => {
-  const graphContainerRef = useRef<HTMLDivElement>(null);
+const Career: FunctionalComponent<CareerProps> = ({ work }) => {
+  const graphContainerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (!graphContainerRef.current) return;
+    if (!graphContainerRef.current) return
 
     // Initialize Gitgraph
     const gitgraph = createGitgraph(graphContainerRef.current, {
@@ -35,38 +33,38 @@ const Career: FunctionalComponent<CareerProps> = ({ work, highlights }) => {
           dot: { size: 6 },
         },
       }),
-    });
+    })
 
-    const time = gitgraph.branch("Time");
+    const time = gitgraph.branch("Time")
      time.commit("2002")
-    const uwm = time.branch({ name: "UWM", from: "2002" });
-    uwm.commit("Start: University of Wisconsin Milwaukee").tag("2002-2006");
+    const uwm = time.branch({ name: "UWM", from: "2002" })
+    uwm.commit("Start: University of Wisconsin Milwaukee").tag("2002-2006")
     uwm.commit("2004")
-    const uwmTa = uwm.branch({ name: "University Of Wisconsin System", from: uwm });
-    uwmTa.commit("TA (eb Services)").tag("Spring 2006");
-    uwm.merge(uwmTa, "TA Experience Completed").tag("2006");
-    time.merge(uwm, "Graduated - Bachelors in Business Administration").tag("2006");
-    const Trisept = time.branch({ name: "Trisept Solutions", from: "2006" });
-    Trisept.commit("Trisept Solutions").tag("2006 - 2020");
-    time.commit("2008");
-    const ITTOne = time.branch({ name: "ITT Technical Institute", from: "2008" });
-    ITTOne.commit("Adjunct Instructor -Intro to Computers Summer 2008");
-    Trisept.commit("2010");
-    ITTOne.commit("Adjunct Instructor -Intro to Programming Summer 2010");
-    time.merge(ITTOne, "Completed Adjunct Teaching");
+    const uwmTa = uwm.branch({ name: "University Of Wisconsin System", from: uwm })
+    uwmTa.commit("TA (eb Services)").tag("Spring 2006")
+    uwm.merge(uwmTa, "TA Experience Completed").tag("2006")
+    time.merge(uwm, "Graduated - Bachelors in Business Administration").tag("2006")
+    const Trisept = time.branch({ name: "Trisept Solutions", from: "2006" })
+    Trisept.commit("Trisept Solutions").tag("2006 - 2020")
+    time.commit("2008")
+    const ITTOne = time.branch({ name: "ITT Technical Institute", from: "2008" })
+    ITTOne.commit("Adjunct Instructor -Intro to Computers Summer 2008")
+    Trisept.commit("2010")
+    ITTOne.commit("Adjunct Instructor -Intro to Programming Summer 2010")
+    time.merge(ITTOne, "Completed Adjunct Teaching")
 
-    Trisept.commit("2012");
+    Trisept.commit("2012")
     const blue7 = Trisept.branch({ name: "Blue7 Solutions", from: Trisept })
     blue7.commit("Start: Blue 7 Solutions - Software Engineer")
 
-    blue7.commit("2014");
+    blue7.commit("2014")
     Trisept.merge(blue7, "Joint venture concluded").tag("2014")
-    Trisept.commit("2016");
-    Trisept.commit("2018");
+    Trisept.commit("2016")
+    Trisept.commit("2018")
     Trisept.commit("2020")
 
     time.merge(Trisept, "Furloughed from Trisept")
-    const Brady = time.branch({ name: "Brady Corporation" });
+    const Brady = time.branch({ name: "Brady Corporation" })
     Brady.commit("Start: Brady Corporation - Senior Software Engineer")
     Brady.commit("2021")
     time.merge(Brady, "Left Brady")
@@ -77,7 +75,7 @@ const Career: FunctionalComponent<CareerProps> = ({ work, highlights }) => {
     NM.commit("2024")
     NM.commit("2025")
     time.commit("Now")
-  }, []);
+  }, [])
 
   return (
     <div className="container" id="career">
@@ -92,7 +90,7 @@ const Career: FunctionalComponent<CareerProps> = ({ work, highlights }) => {
         <br />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Career;
+export default Career

@@ -1,38 +1,38 @@
-import { FunctionalComponent } from "preact";
+import { FunctionalComponent } from "preact"
 
 interface Button {
-  type: string;
-  url: string;
+  type: string
+  url: string
 }
 
 interface Project {
-  SubTitle: string;
-  Title: string;
-  buttons: Button[];
-  image: string;
-  Description: string;
-  tags: string[];
+  SubTitle: string
+  Title: string
+  buttons: Button[]
+  image: string
+  Description: string
+  tags: string[]
 }
 
 interface ProjectsProps {
-  Projects: Project[];
+  Projects: Project[]
 }
 
 const determButtonColor = (itemType: string) => {
-  const type = itemType.toLowerCase();
+  const type = itemType.toLowerCase()
   const colors: Record<string, string> = {
     website: "btn btn-success shadow ml-2",
     release: "btn btn-primary shadow ml-2"
-  };
-  return colors[type] || "btn btn-secondary shadow ml-2";
-};
+  }
+  return colors[type] || "btn btn-secondary shadow ml-2"
+}
 
 const buttonIcon = (itemType: string) => {
-  const type = itemType.toLowerCase();
-  if (type === "website") return "bi bi-box-arrow-up-right";
-  if (type === "release") return "bi bi-box-seam";
-  return "bi bi-file-code";
-};
+  const type = itemType.toLowerCase()
+  if (type === "website") return "bi bi-globe"
+  if (type === "release") return "bi bi-box-seam"
+  return "bi bi bi-github"
+}
 
 const ProjectsComponent: FunctionalComponent<ProjectsProps> = ({
   Projects
@@ -43,7 +43,7 @@ const ProjectsComponent: FunctionalComponent<ProjectsProps> = ({
   <div class="row mt-5 row-cols-1 row-cols-md-2">
       
       {Projects.map(project =>
-          <div class="col-md-6">
+          <div class="col-md-5 border rounded-4 overflow-hidden skill-card gold  m-4">
             <div class="row">
           <div class="col-2">
             <img
@@ -53,11 +53,9 @@ const ProjectsComponent: FunctionalComponent<ProjectsProps> = ({
             />
           </div>
           <div class="col-8">
-            <h1 class="display-3 tshadow">
               <h4>
                 {project.SubTitle}
               </h4>
-            </h1>
             <p class="d-sm-block">
               <div>
                 {project.buttons.map(button =>
@@ -74,7 +72,7 @@ const ProjectsComponent: FunctionalComponent<ProjectsProps> = ({
         </div>
       
     </div>
-  );
-};
+  )
+}
 
-export default ProjectsComponent;
+export default ProjectsComponent

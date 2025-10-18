@@ -9,7 +9,7 @@ const Welcome: FunctionalComponent<WelcomeProps> = ({ greating }) => {
     <div className="container">
       <div className="container">
         <div id="welcome" className="container">
-          <h3 className="h3 text-center tshadow">Welcome</h3>
+          <h2 className="text-center tshadow">Hello world!</h2>
           <div>{greating}</div>
         </div>
       </div>
