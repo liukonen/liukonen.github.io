@@ -31,9 +31,7 @@ const App = () => {
 
   return (
     <>
-      {jsonPayload && (
-
-          
+      {jsonPayload && (         
           <main>
             <div class="container">
               <div class="row">
@@ -47,7 +45,7 @@ const App = () => {
                     Luke Liukonen
                   </h1>
                   <p class="d-sm-block">
-                    Software Engineer / Instructor / Tech enthusiast
+                    Software Engineer / Instructor / Tech and A.I. enthusiast
                   </p>
                   <p class="d-sm-block">
                     <div>  
