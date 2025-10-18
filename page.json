@@ -624,13 +624,13 @@
                 },
                 {
                     "title": "Jenkins",
-                    "img": "./img/original/Jenkins.webp",
+                    "img": "./img/original/jenkins.webp",
                     "level": 1,
                     "link": "https://jenkins.io/"
                 },
                 {
                     "title": "Ansible",
-                    "img": "./img/original/Ansible.webp",
+                    "img": "./img/original/ansible.webp",
                     "level": 1,
                     "link": "https://www.ansible.com/"
                 }
