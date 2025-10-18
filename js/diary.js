@@ -121,7 +121,7 @@ function FakeNewName(name) {
 }
 
 function SetActive(activeWeek) {
-  for (const item of ActiveWeek) {
+  for (const item of activeWeek) {
     document.querySelector("#btn-" + item.ItemNumber).classList.toggle("active", item.ItemNumber === activeWeek)
   }
   const prevButton = document.querySelector("#prev")
