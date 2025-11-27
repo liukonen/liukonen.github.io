@@ -712,6 +712,7 @@
             "timeworked": "January 2006 - May 2006",
             "title": "Teaching Assistant",
             "img": "./img/200/uw.webp",
+            "link": "https://www.wisconsin.edu/",
             "summary": "As a Teaching Assistant at the University of Wisconsin - Milwaukee, I assisted professors in managing and grading assignments, providing support to students, and facilitating classroom activities. This role allowed me to develop strong communication and organizational skills while gaining valuable experience in an academic setting."
         },
         {
@@ -719,6 +720,7 @@
             "timeworked": "May 2006 - July 2020",
             "title": "Software Analyst (Mid to Senior Engineer equivalent)",
             "img": "./img/200/777.webp",
+            "link": "https://www.triseptsolutions.com/",
             "summary": "As the Development Lead for the Product Support area at Trisept Solutions, I played a critical role for 3 years in driving the development of our backend system, which included the Avail, packaging, and booking engine. This was a full-stack position that required me to utilize a range of tools and technologies. In addition to my primary responsibilities, I also contributed to writing setup materials/documentation, consulted on system performance and monitoring during system analysis tasks, and mentored new and junior developers within our team. My passion for delivering innovative solutions and streamlining development processes was integral to the success of our team."
         },
         {
@@ -726,6 +728,7 @@
             "timeworked": "Summer 2008 and 2010",
             "title": "Adjunct Instructor",
             "img": "./img/200/ITT-t.webp",
+            "link": "https://en.wikipedia.org/wiki/ITT_Technical_Institute",
             "summary": "As a Summer Instructor at ITT Technical Institute, I had the opportunity to teach two courses: Introduction to Programming and Introduction to Computers. These experiences helped me develop a managerial approach, as I learned that it is often best to guide people to the answer rather than simply giving it to them. I honed my skills in administrative tasks, time management, and managing multiple people at once, all of which were essential to the success of the courses. Overall, my time at ITT Tech allowed me to develop my teaching skills and provided valuable insights into effective leadership and management."
         },
         {
@@ -733,6 +736,7 @@
             "timeworked": "January 2012 - April 2014",
             "title": "Software Engineer",
             "img": "./img/200/Blue7-t.webp",
+            "link": "https://web.archive.org/web/20141219042731/http://www.blue7solutions.com/",
             "summary": "At Blue7 Solutions, I worked closely with Trisept Solutions as a Consultant Development Lead for the Product Support team, which required in-depth knowledge of Trisept's entire system. My responsibilities included debugging and resolving issues within the codebase and managing Blue 7's offshore resources for Product Support as needed. In addition to my work for the Product Support team, I also served as a consultant for Trisept Solutions in the dynamic packaging engine as a full-stack developer. I took pride in my ability to collaborate with cross-functional teams and deliver high-quality solutions, which proved to be critical to the success of both Blue7 Solutions and Trisept Solutions"
         },
         {
@@ -740,6 +744,7 @@
             "timeworked": "August 2020 - April 2021",
             "title": "Senior Software Engineer",
             "img": "./img/200/brady-t.webp",
+            "link": "https://www.bradyid.com/",
             "summary": "At Brady, I primarily focused on the e-commerce platform where I worked as a full-stack developer. This involved utilizing a wide range of tools and technologies, including SASS Stylesheets, JavaScript and JavaScript frameworks, MVC, Sitecore controls, and Test Driven Development. In addition to my core responsibilities, I also gained experience with Docker containerization of tools and created one-click 'Dev environments as code' setup scripts, which were instrumental in streamlining the onboarding and rebuilding of machines. Throughout my time at Brady, I remained committed to optimizing our development process and improving the overall efficiency of our team"
         },
         {
@@ -747,6 +752,7 @@
             "timeworked": "April 2021 - Present",
             "title": "Software Engineer",
             "img": "./img/200/NM-t.webp",
+            "link": "https://www.northwesternmutual.com/",
             "summary": "I’m a Full-Stack Software Engineer at Northwestern Mutual, building reliable, well-structured software across backend services and frontend applications using Java, Node.js, React, JavaScript, and TypeScript. I focus on writing clean, maintainable code that supports long-term growth and performance. Outside of development, I’ve helped improve CI/CD processes and contributed to team-wide efforts around testing and development standards. I’ve mentored an intern, supported newer engineers, and currently help guide peers through self-paced training programs by offering technical support, hosting office hours, and assisting with challenges along the way."
         }
     ],

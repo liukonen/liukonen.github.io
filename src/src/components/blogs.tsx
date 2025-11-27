@@ -52,29 +52,30 @@ const Blogs: FunctionalComponent = () => {
     <div id="Blogs" className="container section">
       <h3 className="text-center h3 mt-1 tshadow">Recent Articles / Blogs</h3>
 
-    <div class="row justify-content-md-center">
-      {items?.map(article => (
-        <div class="col-md-3 overflow-hidden p-3 m-3 skill-card gold">
-        <figure key={article.index}>
-          <blockquote class="blockquote">
-            <p>
-
-                {article.title} - 
-              <a
-                href={article.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              > <i class="bi bi-globe"></i> Read Article
-              </a>
-            </p>
-          </blockquote>
-          <figcaption class="blockquote-footer">
-            { article.timestamp } 
-          </figcaption>
-        </figure>
-        </div>
-      ))}
-    </div>
+      <div class="row mt-4 g-4 justify-content-center">
+        {items?.map(article => (
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="overflow-hidden skill-card gold h-100">
+              <figure key={article.index} class="mb-0">
+                <blockquote class="blockquote p-3">
+                  <p>
+                    {article.title} - 
+                    <a
+                      href={article.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    > <i class="bi bi-globe"></i> Read Article
+                    </a>
+                  </p>
+                </blockquote>
+                <figcaption class="blockquote-footer p-3 pt-0">
+                  { article.timestamp } 
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        ))}
+      </div>
 
     </div>
   )

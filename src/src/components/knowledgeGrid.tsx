@@ -94,19 +94,17 @@ const KnowledgeGrid: FunctionalComponent<KnowledgeGridProps> = ({ items }) => {
       <h3 className="text-center h3 tshadow mb-4">
         Systems / Ideas I've worked with
       </h3>
-
-      <h4>Daily Drivers</h4>
-      <div className="row p-3 gap-3">
+      <div className="row p-3 justify-content-center gap-3">
         {topItems.map(item =>
           <div
             key={item.title}
-            className={`col skill-card flex-fill ${item.level >= 2
+            className={`col skill-card ${item.level >= 2
               ? "gold"
               : "silver"} d-flex flex-column align-items-center justify-content-center text-center`}
             style={{
-              minWidth: "120px",
+              minWidth: "140px",
               maxWidth: "160px",
-              flex: "1 1 auto"
+              flex: "0 1 auto"
             }}
           >
             <a href={item.link} target="_blank">
@@ -156,8 +154,8 @@ const KnowledgeGrid: FunctionalComponent<KnowledgeGridProps> = ({ items }) => {
       </div>
 
       <p className="text-center mt-3 small">
-        <strong>Gold</strong> = Worked with professionally for years.{" "}
-        <strong>Silver</strong> = Hobby / side experience.
+        <span className="text-gold">Gold</span> = Worked with professionally for years.{" "}
+        <span className="text-silver">Silver</span> = Hobby / side experience.
       </p>
     </div>
   )
