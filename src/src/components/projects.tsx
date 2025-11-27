@@ -40,36 +40,39 @@ const ProjectsComponent: FunctionalComponent<ProjectsProps> = ({
   return (
     <div class="container">
       <h3 class="text-center h3 tshadow mt-5">Open Source Projects</h3>
-  <div class="row mt-5 row-cols-1 row-cols-md-2 justify-content-md-center">
+      <div class="row mt-5 g-4 justify-content-center">
       
-      {Projects.map(project =>
-          <div class="col-md-5 rounded-4 overflow-hidden skill-card gold  m-4">
-            <div class="row">
-          <div class="col-2">
-            <img
-              src={project.image}
-              class="lzy img-fluid rounded"
-              alt={project.Title}
-            />
-          </div>
-          <div class="col-8">
-              <h4>
-                {project.SubTitle}
-              </h4>
-            <p class="d-sm-block">
-              <div>
-                {project.buttons.map(button =>
-                  <a class="p-3" href={button.url} target="_blank" rel="noreferrer">
-                    <i class={buttonIcon(button.type)} /> {button.type}
-                  </a>
-                )}
+        {Projects.map(project =>
+          <div class="col-12 col-md-6 col-lg-5">
+            <div class="rounded-4 overflow-hidden skill-card gold h-100">
+              <div class="row g-0 h-100">
+                <div class="col-5 p-3">
+                  <img
+                    src={project.image}
+                    class="lzy img-fluid rounded w-100"
+                    alt={project.Title}
+                    style="object-fit: cover; height: 100%; width: 100%;"
+                  />
+                </div>
+                <div class="col-7 p-3">
+                  <h4>
+                    {project.SubTitle}
+                  </h4>
+                  <p class="d-sm-block">
+                    <div>
+                      {project.buttons.map(button =>
+                        <a class="p-2" href={button.url} target="_blank" rel="noreferrer">
+                          <i class={buttonIcon(button.type)} /> {button.type}
+                        </a>
+                      )}
+                    </div>
+                  </p>
+                </div>
               </div>
-            </p>
+            </div>
           </div>
-          </div>
-          </div>
-      )}
-        </div>
+        )}
+      </div>
       
     </div>
   )

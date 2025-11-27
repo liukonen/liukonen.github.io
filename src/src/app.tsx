@@ -33,30 +33,28 @@ const App = () => {
     <>
       {jsonPayload && (         
           <main>
-            <div class="container">
-              <div class="row">
-                <div class="col-md-9">
-                  <h1 class="display-3">
+            <div class="container text-center header-section">
+              <div class="row justify-content-center">
+                <div class="col-md-8">
+                  <h1 class="display-2 mb-4 d-flex align-items-center justify-content-center gap-3">
                     <img
                       src="./img/favicons/apple-touch-icon.png"
                       class="rounded-circle user_img"
                       alt="Luke Liukonen"
-                    />{" "}
+                      style="height: 4rem; width: 4rem;"
+                    />
                     Luke Liukonen
                   </h1>
-                  <p class="d-sm-block">
+                  <p class="lead mb-4">
                     Software Engineer / Instructor / Tech and A.I. enthusiast
                   </p>
-                  <p class="d-sm-block">
-                    <div>  
-                    <a class="p-3" href="https://github.com/liukonen" target="_blank"><i class="bi bi-github"></i> GitHub</a>
-                    <a class="p-3" href="https://www.linkedin.com/in/lukeliukonen/" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a>
-                    <a class="p-3" href="mailto:liukonen@gmail.com?subject=GitHub_Home_Page"><i class="bi bi-envelope"></i> email</a>
-                    <a class="p-3" href="https://dev.to/liukonen" target="_blank"><i class="bi bi-code-slash"></i> dev.to</a>
-                    </div>
-                  </p>
+                  <div class="social-links mb-4">  
+                    <a class="px-3" href="https://github.com/liukonen" target="_blank"><i class="bi bi-github"></i> GitHub</a>
+                    <a class="px-3" href="https://www.linkedin.com/in/lukeliukonen/" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a>
+                    <a class="px-3" href="mailto:liukonen@gmail.com?subject=GitHub_Home_Page"><i class="bi bi-envelope"></i> email</a>
+                    <a class="px-3" href="https://dev.to/liukonen" target="_blank"><i class="bi bi-code-slash"></i> dev.to</a>
+                  </div>
                 </div>
-
               </div>
             </div>
             <About greating={jsonPayload.welcome} />

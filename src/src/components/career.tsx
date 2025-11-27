@@ -81,10 +81,10 @@ const Career: FunctionalComponent<CareerProps> = ({ work }) => {
     <div className="container" id="career">
       <h3 className="text-center h3 tshadow mt-5">Career So Far</h3>
       <Workplaces items={work} />
-      <div id="career2" className="mt-5">
+      <div id="career2" className="mt-5 overflow-hidden">
         <div
           ref={graphContainerRef}
-          style={{ width: '100%'  }}
+          style={{ width: '100%', overflow: 'auto' }}
         />
 
         <br />

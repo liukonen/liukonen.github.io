@@ -657,28 +657,34 @@
             "timeworked": "April 2021 - Present",
             "title": "Software Engineer",
             "img": "./img/200/NM.webp",
-            "summary": "In my current role at Northwestern Mutual, I serve as a Backend/Services Engineer, specializing in Java frameworks like Spring, Drools, and Flowable. I continually refine my skills in these technologies and actively seek new ways to apply them in order to deliver exceptional solutions. Beyond my core responsibilities, I have taken on additional roles to enhance the overall effectiveness of my team. I represent my team in the Monitoring Best Practices Committee, where I contribute to the development and implementation of effective monitoring practices. Additionally, I am actively involved in the 'Testing Best Practices' initiative, participating in relevant training sessions to ensure our team adheres to industry-leading testing standards."
+            "summary": "In my current role at Northwestern Mutual, I serve as a Backend/Services Engineer, specializing in Java frameworks like Spring, Drools, and Flowable. I continually refine my skills in these technologies and actively seek new ways to apply them in order to deliver exceptional solutions. Beyond my core responsibilities, I have taken on additional roles to enhance the overall effectiveness of my team. I represent my team in the Monitoring Best Practices Committee, where I contribute to the development and implementation of effective monitoring practices. Additionally, I am actively involved in the 'Testing Best Practices' initiative, participating in relevant training sessions to ensure our team adheres to industry-leading testing standards.",
+            "link": "https://www.northwesternmutual.com/"
+        
         },
         {
             "name": "Brady Corporation",
             "timeworked": "August 2020 - April 2021",
             "title": "Senior Software Engineer",
             "img": "./img/200/brady.webp",
-            "summary": "At Brady, I primarily focused on the e-commerce platform where I worked as a full-stack developer. This involved utilizing a wide range of tools and technologies, including SASS Stylesheets, JavaScript and JavaScript frameworks, MVC, Sitecore controls, and Test Driven Development. In addition to my core responsibilities, I also gained experience with Docker containerization of tools and created one-click 'Dev environments as code' setup scripts, which were instrumental in streamlining the onboarding and rebuilding of machines. Throughout my time at Brady, I remained committed to optimizing our development process and improving the overall efficiency of our team"
+            "summary": "At Brady, I primarily focused on the e-commerce platform where I worked as a full-stack developer. This involved utilizing a wide range of tools and technologies, including SASS Stylesheets, JavaScript and JavaScript frameworks, MVC, Sitecore controls, and Test Driven Development. In addition to my core responsibilities, I also gained experience with Docker containerization of tools and created one-click 'Dev environments as code' setup scripts, which were instrumental in streamlining the onboarding and rebuilding of machines. Throughout my time at Brady, I remained committed to optimizing our development process and improving the overall efficiency of our team",
+            "link": "https://www.bradyid.com/"
         },
         {
             "name": "Trisept Solutions",
             "timeworked": "April 2014 - July 2020",
             "title": "Software Analyst (Mid to Senior Engineer equivalent)",
             "img": "./img/200/777.webp",
-            "summary": "As the Development Lead for the Product Support area at Trisept Solutions, I played a critical role for 3 years in driving the development of our backend system, which included the Avail, packaging, and booking engine. This was a full-stack position that required me to utilize a range of tools and technologies. In addition to my primary responsibilities, I also contributed to writing setup materials/documentation, consulted on system performance and monitoring during system analysis tasks, and mentored new and junior developers within our team. My passion for delivering innovative solutions and streamlining development processes was integral to the success of our team."
+            "summary": "As the Development Lead for the Product Support area at Trisept Solutions, I played a critical role for 3 years in driving the development of our backend system, which included the Avail, packaging, and booking engine. This was a full-stack position that required me to utilize a range of tools and technologies. In addition to my primary responsibilities, I also contributed to writing setup materials/documentation, consulted on system performance and monitoring during system analysis tasks, and mentored new and junior developers within our team. My passion for delivering innovative solutions and streamlining development processes was integral to the success of our team.",
+            "link": "https://www.triseptsolutions.com/"
+
         },
         {
             "name": "Blue7 Solutions",
             "timeworked": "January 2012 - April 2014",
             "title": "Software Engineer",
             "img": "./img/200/Blue7 Solutions.webp",
-            "summary": "At Blue7 Solutions, I worked closely with Trisept Solutions as a Consultant Development Lead for the Product Support team, which required in-depth knowledge of Trisept's entire system. My responsibilities included debugging and resolving issues within the codebase and managing Blue 7's offshore resources for Product Support as needed. In addition to my work for the Product Support team, I also served as a consultant for Trisept Solutions in the dynamic packaging engine as a full-stack developer. I took pride in my ability to collaborate with cross-functional teams and deliver high-quality solutions, which proved to be critical to the success of both Blue7 Solutions and Trisept Solutions"
+            "summary": "At Blue7 Solutions, I worked closely with Trisept Solutions as a Consultant Development Lead for the Product Support team, which required in-depth knowledge of Trisept's entire system. My responsibilities included debugging and resolving issues within the codebase and managing Blue 7's offshore resources for Product Support as needed. In addition to my work for the Product Support team, I also served as a consultant for Trisept Solutions in the dynamic packaging engine as a full-stack developer. I took pride in my ability to collaborate with cross-functional teams and deliver high-quality solutions, which proved to be critical to the success of both Blue7 Solutions and Trisept Solutions",
+            "link": "https://web.archive.org/web/20141219042731/http://www.blue7solutions.com/"
         },
         {
             "name": "Trisept Solutions",

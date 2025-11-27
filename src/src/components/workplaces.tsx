@@ -7,6 +7,7 @@ interface JobLocation {
   title: string
   timeworked: string
   summary: string
+  link?: string
 }
 
 interface WorkplacesProps {
@@ -62,12 +63,23 @@ const Workplaces: FunctionalComponent<WorkplacesProps> = ({ items }) => {
             key={jobLocation.name}
             className="col-4 col-sm-3 col-md-2 mt-2 mb-2 d-flex justify-content-center"
           >
-            <LazyImage
-              src={jobLocation.img}
-              alt={jobLocation.name}
-              title={`${jobLocation.name} ${jobLocation.timeworked}`}
-              className="img-fluid rounded shadow"
-            />
+            {jobLocation.link ? (
+              <a href={jobLocation.link} target="_blank" rel="noreferrer">
+                <LazyImage
+                  src={jobLocation.img}
+                  alt={jobLocation.name}
+                  title={`${jobLocation.name} ${jobLocation.timeworked}`}
+                  className="img-fluid rounded shadow"
+                />
+              </a>
+            ) : (
+              <LazyImage
+                src={jobLocation.img}
+                alt={jobLocation.name}
+                title={`${jobLocation.name} ${jobLocation.timeworked}`}
+                className="img-fluid rounded shadow"
+              />
+            )}
           </div>
         ))}
       </div>
