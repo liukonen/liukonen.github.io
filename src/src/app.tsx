@@ -29,10 +29,11 @@ const App = () => {
     loadData()
   }, [])
 
+
   return (
     <>
       {jsonPayload && (         
-          <main>
+          <main class="glass-card">
             <div class="container text-center header-section">
               <div class="row justify-content-center">
                 <div class="col-md-8">
@@ -51,8 +52,8 @@ const App = () => {
                   <div class="social-links mb-4">  
                     <a class="px-3" href="https://github.com/liukonen" target="_blank"><i class="bi bi-github"></i> GitHub</a>
                     <a class="px-3" href="https://www.linkedin.com/in/lukeliukonen/" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a>
-                    <a class="px-3" href="mailto:liukonen@gmail.com?subject=GitHub_Home_Page"><i class="bi bi-envelope"></i> email</a>
-                    <a class="px-3" href="https://dev.to/liukonen" target="_blank"><i class="bi bi-code-slash"></i> dev.to</a>
+                    <a class="px-3" href="mailto:luke@liukonen.dev?subject=GitHub_Home_Page"><i class="bi bi-envelope"></i> email</a>
+                   <a class="px-3" href="https://dev.to/liukonen" target="_blank"><i class="bi bi-code-slash"></i> dev.to</a>
                   </div>
                 </div>
               </div>
@@ -67,7 +68,7 @@ const App = () => {
             <br />
             <br />
             <section class="pb-5"><FooterB /></section>
-          </main>
+           </main>
       )}
     </>
   )
