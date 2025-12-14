@@ -20,8 +20,9 @@ interface KnowledgeGridProps {
 const LazyImage: FunctionalComponent<{
   src: string
   alt: string
+  preloadSrc?: string
   style?: JSX.CSSProperties
-}> = ({ src, alt, style }) => {
+}> = ({ src, alt, preloadSrc, style }) => {
   const imgRef = useRef<HTMLImageElement | null>(null)
   const [visible, setVisible] = useState(false)
 
@@ -36,8 +37,32 @@ const LazyImage: FunctionalComponent<{
       { threshold: 0.1 }
     )
 
-    if (imgRef.current) observer.observe(imgRef.current)
-    return () => observer.disconnect()
+    // Preload the `preloadSrc` a bit before the image comes into view so carousel feels smooth
+    let preloadObserver: IntersectionObserver | null = null
+    let preloaded = false
+    if (preloadSrc) {
+      preloadObserver = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting && !preloaded) {
+            preloaded = true
+            // Create an off-screen image to trigger the browser to fetch it
+            const img = new Image()
+            img.src = preloadSrc
+            // Disconnect after preloading
+            preloadObserver && preloadObserver.disconnect()
+          }
+        },
+        { rootMargin: "300px", threshold: 0 }
+      )
+    }
+    if (imgRef.current) {
+      observer.observe(imgRef.current)
+      preloadObserver && preloadObserver.observe(imgRef.current)
+    }
+    return () => {
+      observer.disconnect()
+      preloadObserver && preloadObserver.disconnect()
+    }
   }, [])
 
   return (
@@ -142,7 +167,7 @@ const KnowledgeGrid: FunctionalComponent<KnowledgeGridProps> = ({ items }) => {
                   onMouseEnter={() => setPaused(true)}
                   onMouseLeave={() => setPaused(false)}
                 >
-                  <LazyImage src={item.img} alt={item.title} />
+                  <LazyImage src={item.img} alt={item.title} preloadSrc={loopedItems[(idx + 1) % loopedItems.length].img} />
                 </a>
                 <p className="mt-2 mb-0 small">
                   {item.title}
