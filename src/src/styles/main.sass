@@ -70,7 +70,6 @@ a
     @extend %baseGlass
     margin-top: 4.375rem !important
 
-
 .glass-card
   @extend %baseGlassWithMargin
   background-color: rgba(0,0,0,0.45)
@@ -91,8 +90,6 @@ a
   .glass-card
     padding: 1.25rem 1rem
     margin-top: 1rem !important
-
-
 
 %rounded
     border-radius: 1rem
@@ -211,51 +208,6 @@ h3
   color: #C0C0C0
   font-weight: bold
 
-/* Contact modal overlay */
-.modal-overlay
-  position: fixed
-  inset: 0
-  display: flex
-  align-items: center
-  justify-content: center
-  z-index: 10001
-  background: rgba(0,0,0,0.55)
-
-.modal-dialog
-  @extend %baseGlass
-  width: auto
-  max-width: 640px
-  margin: 1.5rem
-  padding: 1.25rem 1.5rem
-  position: relative
-  border-radius: 0.75rem
-  background-color: rgba(10, 10, 10, 0.7)
-  box-shadow: 0 10px 40px rgba(0,0,0,0.6)
-
-.modal-dialog.modal-dialog-centered
-  /* If overlay flex centering isn't supported, fallback to translate-centering */
-  margin: auto
-  position: fixed
-  top: 50%
-  left: 50%
-  transform: translate(-50%, -50%)
-  align-self: center
-
-.modal-title
-  font-size: 1.125rem
-  margin-bottom: 0.5rem
-
-.modal-close
-  position: absolute
-  top: 0.5rem
-  right: 0.5rem
-  font-size: 1.5rem
-  line-height: 1
-  background: none
-  border: none
-  color: $white
-  cursor: pointer
-  padding: 0.25rem
 
 .contact-form .form-label
   display: block
@@ -270,12 +222,6 @@ h3
   padding: 0.5rem
   border-radius: 0.4rem
   color: $white
-
-.modal-actions
-  display: flex
-  justify-content: flex-end
-  gap: 0.5rem
-  margin-top: 1rem
 
 .btn-reset
   background: none
@@ -299,7 +245,6 @@ h3
   padding: 0.5rem 0.75rem
   border-radius: 0.5rem
 
-/* Toast notification */
 .toast-notification
   position: absolute
   left: 50%
@@ -322,6 +267,15 @@ h3
   opacity: 1
   bottom: -1rem
 
+.modal.show
+  display: block !important
+
+.input-group-text
+  background-color: transparent !important
+  color: $gold !important
+  border: 1px solid $gold
 
 
+.modal-backdrop.show 
+  opacity: 0.9 !important
 

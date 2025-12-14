@@ -6,13 +6,13 @@ import Projects from "./components/projects"
 import Career from "./components/career"
 import KnowledgeGrid from "./components/knowledgeGrid"
 import About from "./components/about"
-
+import { Modal } from "./components/modal";
 import FooterB from "./components/footerb"
 import './styles/main.sass'
 
 const App = () => {
   const [jsonPayload, setJsonPayload] = useState<any>(null)
-
+  const [open, setOpen] = useState<boolean>(false)
 
   useEffect(() => {
     const loadData = async () => {
@@ -28,8 +28,6 @@ const App = () => {
     }
     loadData()
   }, [])
-
-
   return (
     <>
       {jsonPayload && (         
@@ -52,8 +50,11 @@ const App = () => {
                   <div class="social-links mb-4">  
                     <a class="px-3" href="https://github.com/liukonen" target="_blank"><i class="bi bi-github"></i> GitHub</a>
                     <a class="px-3" href="https://www.linkedin.com/in/lukeliukonen/" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a>
-                    <a class="px-3" href="mailto:luke@liukonen.dev?subject=GitHub_Home_Page"><i class="bi bi-envelope"></i> email</a>
-                   <a class="px-3" href="https://dev.to/liukonen" target="_blank"><i class="bi bi-code-slash"></i> dev.to</a>
+                    <a class="px-3" href="https://dev.to/liukonen" target="_blank"><i class="bi bi-code-slash"></i> dev.to</a>
+
+                  </div>
+                  <div class="mb-4">
+                    <button class="btn btn-primary px-3" onClick={() => setOpen(true)}><i class="bi bi-chat-right-dots-fill"></i> Contact</button>
                   </div>
                 </div>
               </div>
@@ -67,9 +68,12 @@ const App = () => {
 
             <br />
             <br />
+
             <section class="pb-5"><FooterB /></section>
            </main>
+           
       )}
+      <Modal open={open} onClose={() => setOpen(false)} />
     </>
   )
 }
