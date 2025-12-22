@@ -271,11 +271,73 @@ h3
   display: block !important
 
 .input-group-text
-  background-color: transparent !important
-  color: $gold !important
-  border: 1px solid $gold
+  background-color: #f6f6f7 !important
+  color: #374151 !important
+  border: 1px solid #e6e6e6
+
+.form-control:focus
+  border-color: $gold
+  box-shadow: 0 0 0 0.18rem rgba($gold, 0.12)
+  outline: none
+  background: #fff
 
 
-.modal-backdrop.show 
-  opacity: 0.9 !important
+.modal-backdrop.show
+  background: rgba(0,0,0,0.6) !important
+  opacity: 1 !important
+
+
+// Email-style modal tweaks
+.email-modal
+  background: #ffffff
+  color: #111
+  border-radius: 0.75rem
+  overflow: hidden
+
+.shadow-email
+  box-shadow: 0 10px 40px rgba(9,10,11,0.15)
+
+.email-modal-header
+  padding: 1rem 1.25rem
+  border-bottom: 1px solid #eee
+  background: linear-gradient(90deg, rgba(248,190,37,0.06), rgba(248,190,37,0.02))
+
+.email-icon
+  font-size: 1.2rem
+  color: $gold
+
+.form-control
+  background: #fcfcfb
+  border: 1px solid #e6e6e6
+  color: #111
+  border-radius: .5rem
+
+.btn-send
+  background: $gold
+  color: #111
+  border-radius: 9999px
+  padding: .5rem 1rem
+  border: none
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12)
+
+.btn-close
+  filter: none
+
+.email-input
+  background: transparent
+  border: none
+  border-bottom: 1px dashed #e6e6e6
+  padding: 0 .25rem
+  min-width: 12rem
+  color: #111
+  font-size: .9rem
+
+.email-input:focus
+  border-bottom-color: $gold
+  outline: none
+  box-shadow: none
+
+.form-control::placeholder
+  color: #9ca3af
+  opacity: 1
 
