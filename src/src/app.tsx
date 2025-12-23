@@ -45,7 +45,7 @@ const App = () => {
                     Luke Liukonen
                   </h1>
                   <p class="lead mb-4">
-                    Software Engineer / Instructor / Tech and A.I. enthusiast
+                    <h2>Software Engineer / Instructor / Tech and A.I. enthusiast</h2>
                   </p>
                   <div class="social-links mb-4">  
                     <a class="px-3" href="https://github.com/liukonen" target="_blank"><i class="bi bi-github"></i> GitHub</a>
