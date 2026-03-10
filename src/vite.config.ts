@@ -1,16 +1,16 @@
 // vite.config.ts
 import { defineConfig } from 'vite';
 import preact from '@preact/preset-vite';
-import commonjs from '@rollup/plugin-commonjs';
+//import commonjs from '@rollup/plugin-commonjs';
 
 // Equivalent to your esbuild settings
 export default defineConfig(({ mode }) => ({
   plugins: [preact(),
-            commonjs({
-      include: [/node_modules/],
-      transformMixedEsModules: true,
-      requireReturnsDefault: 'auto', // <-- forces default import compatibility
-    }),
+     //       commonjs({
+     // include: [/node_modules/],
+     // transformMixedEsModules: true,
+     // requireReturnsDefault: 'auto', // <-- forces default import compatibility
+    //}),
 
   ],
   build: {
