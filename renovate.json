@@ -1,17 +1,39 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:base"
-  ],
+
+  "extends": ["config:base"],
+
+  "automerge": true,
+  "automergeType": "pr",
+  "automergeStrategy": "squash",
+
+  "commitMessagePrefix": "chore",
+  "commitMessageTopic": "deps",
+
+  "schedule": ["before 5am on monday"],
+
   "packageRules": [
     {
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "automerge": true
+      "description": "Preact ecosystem (core framework)",
+      "matchPackagePatterns": ["^preact", "^@preact"],
+      "groupName": "preact ecosystem",
+      "automerge": false
     },
     {
+      "description": "Dev tooling (vite, eslint, typescript, etc.)",
       "matchDepTypes": ["devDependencies"],
-      "automerge": true
+      "groupName": "dev tooling"
+    },
+    {
+      "description": "Safe non-breaking updates",
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "groupName": "other dependencies"
+    },
+    {
+      "description": "Major updates require review",
+      "matchUpdateTypes": ["major"],
+      "groupName": "major dependencies",
+      "automerge": false
     }
-  ],
-  "platformAutomerge": true
+  ]
 }

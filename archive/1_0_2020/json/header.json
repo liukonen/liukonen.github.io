@@ -1,0 +1,5 @@
+{"menu":
+    [
+        {"name":"Home", "value":"index.html"}
+        ,{"name": "About", "value": "about.htm"}
+    ]}
