@@ -1,22 +1,453 @@
-$black : #000
-$white : #f5f5f5 
-$shadow : rgb(102, 89, 69)
-$gold: #f8be25
+// --- SYSTEMS VARIABLES ---
+// CRITICAL CONTRAST FIX: We are brightening these to ensure legibility on the dark base
+$bg-deep: #0f1115
+$bg-surface: #1a1d23 // The Bench
+$text-main: #f8fafc // Brightened (almost white) for titles/legibility
+$text-muted: #cbd5e1 // Brightened (light grey) for descriptions
+$gold-accent: #d4af37 // Brass/Gold highlights
+$brass-muted: #a8936d // Weathered gold
+$font-main: 'Inter', sans-serif
+$font-mono: 'JetBrains Mono', monospace
+
+// --- THE BRIDGE ---
+// This makes these variables available to your TSX style props
+:root
+  --bg-deep: #{$bg-deep}
+  --bg-surface: #{$bg-surface}
+  --text-main: #{$text-main}
+  --text-muted: #{$text-muted}
+  --gold-accent: #{$gold-accent}
+  --brass-muted: #{$brass-muted}
+
+// --- GLOBAL RESET & BASE ---
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+html
+  scroll-behavior: smooth
+
+body
+  background-color: $bg-deep
+  color: $text-main
+  font-family: $font-main
+  // The global drafting paper grid
+  background-image: radial-gradient($bg-surface 1px, transparent 1px)
+  background-size: 30px 30px
+  line-height: 1.6
+  overflow-x: hidden
+
+
+
+// --- LAYOUT ENGINE ---
+.app-shell
+  display: flex
+  max-width: 1400px
+  margin: 0 auto
+  min-height: 100vh
+
+// --- STICKY SIDEBAR (THE CONSTANT) ---
+.sidebar
+  width: 380px
+  height: 100vh
+  position: sticky
+  top: 0
+  padding: 60px 50px
+  display: flex
+  flex-direction: column
+  border-right: 1px solid rgba(255, 255, 255, 0.05)
+  ul
+    list-style: none // This removes the bullet/dot
+    padding: 0       // Removes the default left indent
+    margin: 0
+
+    li
+      margin-bottom: 12px // Gives your "Career" and other links breathing room
+      display: flex
+      align-items: center
+  .brand-logo
+    font-family: $font-mono
+    color: $gold-accent
+    font-weight: 700
+    margin-bottom: 30px
+    font-size: 1.1rem
+
+  .profile-img
+    width: 140px
+    height: 140px
+    border-radius: 4px
+    border: 1px solid $gold-accent
+    padding: 5px
+    background: $bg-surface
+    margin-bottom: 30px
+    object-fit: cover
+
+  h1
+    font-size: 1.8rem
+    letter-spacing: -1px
+    line-height: 1.1
+
+  .subtitle
+    color: $gold-accent
+    font-family: $font-mono
+    font-size: 0.75rem
+    margin-top: 8px
+    text-transform: uppercase
+    letter-spacing: 1px
+
+// --- NAVIGATION ---
+.nav-links
+  list-style: none
+  margin-top: 50px
+  font-family: $font-mono
+  @media (max-width: 1100px)
+    display: none // Entirely removes the links from the layout
+  li
+    margin: 22px 0
+  a
+    text-decoration: none
+    color: $text-muted // Now bright grey
+    font-size: 0.75rem
+    letter-spacing: 3px
+    text-transform: uppercase
+    display: flex
+    align-items: center
+    transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1)
+    cursor: pointer
+
+    .line
+      width: 25px
+      height: 1px
+      background: $text-muted
+      margin-right: 15px
+      transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1)
+
+    &:hover, &.active
+      color: $gold-accent
+      .line
+        width: 55px
+        background: $gold-accent
+
+.social-links
+  margin-top: auto
+  display: flex
+  gap: 15px
+  font-family: $font-mono
+  font-size: 1.8rem
+
+  a
+    color: $text-muted
+    text-decoration: none
+    transition: 0.3s
+    &:hover
+      color: $gold-accent
+
+// --- CONTENT CORE ---
+.content-area
+  flex: 1
+  padding: 80px
+  position: relative
+
+// --- ANIMATION: SCHEMATIC REVEAL ---
+.page-layer
+  animation: schematicReveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards
+  opacity: 0
+  transform: translateY(20px)
+
+@keyframes schematicReveal
+  to
+    opacity: 1
+    transform: translateY(0)
+
+// --- COMPONENTS ---
+.breadcrumb
+  font-family: $font-mono
+  font-size: 0.8rem
+  color: $brass-muted
+  margin-bottom: 45px
+  
+  a
+    color: inherit
+    text-decoration: none
+    &:hover
+      color: $gold-accent
+
+  .sep
+    margin: 0 10px
+    opacity: 0.5
+
+.section-label
+  font-family: $font-mono
+  color: $gold-accent
+  letter-spacing: 5px
+  font-size: 0.7rem
+  margin-bottom: 35px
+  display: block
+  text-transform: uppercase
+
+// --- BENTO GRID & THE UPDATED BLUEPRINT CARD ---
+.grid-2
+  display: grid
+  grid-template-columns: 1fr 1fr
+  gap: 24px
+
+.card
+  background: $bg-surface
+  padding: 35px
+  border-radius: 4px
+  border: 1px solid rgba(255, 255, 255, 0.03)
+  cursor: pointer
+  display: flex
+  flex-direction: column
+  position: relative // Required for pseudo-element positioning
+  overflow: hidden // Keeps the fadded pattern inside the card
+
+  // THE ICON SYSTEM: Adds depth and theme with a blueprint pattern background image
+  // This uses a generic technical circuit design which acts as a visual identifier
+  &::before
+    content: ''
+    position: absolute
+    bottom: -40px
+    right: -40px
+    width: 200px
+    height: 200px
+    background-color: lighten($gold-accent, 20%)
+    opacity: 0.03 // Keep it extremely subtle for now
+    transition: 0.4s ease
+    pointer-events: none
+    // Generic circuit SVG diagram encoded as a background mask for theme
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M11 21H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h8m2 0h8c1.1 0 2 .9 2 2v16c0 1.1-.9 2-2 2h-8m-2-4v2M3 13h2M3 9h2m2 8h2m2 0H7m0 0V7m0 10v2M19 17v-2m-2 2h2m-2-4v2m-2-2h2m0-4V7m2 2h-2m2 0v2M19 13v-2m-2 2h2'/%3E%3C/svg%3E")
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M11 21H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h8m2 0h8c1.1 0 2 .9 2 2v16c0 1.1-.9 2-2 2h-8m-2-4v2M3 13h2M3 9h2m2 8h2m2 0H7m0 0V7m0 10v2M19 17v-2m-2 2h2m-2-4v2m-2-2h2m0-4V7m2 2h-2m2 0v2M19 13v-2m-2 2h2'/%3E%3C/svg%3E")
+    -webkit-mask-size: cover
+    mask-size: cover
+
+  h4
+    margin-bottom: 12px
+    font-size: 1.25rem
+    font-weight: 600
+    color: $text-main // Confirmed bright for title
+    position: relative // Keep above fadded blueprint
+    z-index: 2
+
+  p
+    font-size: 0.95rem
+    color: $text-muted // Now much brighter grey for legibility
+    line-height: 1.7
+    flex-grow: 1
+    position: relative // Keep above fadded blueprint
+    z-index: 2
+
+  // The HOVER State: rewarding interaction with a depth change and a brighter blueprint
+  &:hover
+    transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1)
+    transform: translateY(-5px)
+    border-color: rgba($gold-accent, 0.3)
+    background-color: lighten($bg-surface, 1.5%)
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4)
+
+    // Make icon brighter on hover so the card looks 'active'
+    &::before
+      opacity: 0.1
+      transform: scale(1.1)
+
+// --- PROFESSIONAL ERAS ---
+.era
+  display: flex
+  gap: 40px
+  margin-bottom: 45px
+
+  .era-year
+    font-family: $font-mono
+    color: $brass-muted
+    font-size: 0.85rem
+    min-width: 110px
+    padding-top: 5px
+
+  .era-info
+    h4
+      font-size: 1.15rem
+      color: $text-main
+    p
+      color: $text-muted
+      font-size: 0.95rem
+      margin-top: 5px
+
+// --- FORMS & BUTTONS ---
+.contact-form
+  max-width: 650px
+
+  input, textarea
+    width: 100%
+    background: $bg-surface
+    border: 1px solid rgba(255, 255, 255, 0.06)
+    padding: 18px
+    color: $text-main
+    font-family: $font-main
+    margin-bottom: 20px
+    border-radius: 4px
+    outline: none
+    transition: 0.3s
+    &:focus
+      border-color: $gold-accent
+
+.btn
+  background: transparent
+  border: 1px solid $gold-accent
+  color: $gold-accent
+  padding: 14px 35px
+  font-family: $font-mono
+  font-size: 0.8rem
+  letter-spacing: 2px
+  text-transform: uppercase
+  cursor: pointer
+  transition: 0.3s
+  position: relative // Keep navigation simple for now
+  z-index: 2
+  &:hover
+    background: $gold-accent
+    color: $bg-deep
+
+// --- TA GS FIX: Contrast ---
+.tag
+  border: 1px solid rgba($gold-accent, 0.15) // Use gold accent for subtle branding
+  color: $text-main // Confirmed bright for visibility
+  padding: 4px 12px
+  font-size: 0.65rem
+  font-family: $font-mono
+  margin-right: 8px
+  margin-top: 15px
+  border-radius: 2px
+  display: inline-block
+  position: relative // Keep above fadded blueprint
+  z-index: 2
+  background-color: rgba($bg-deep, 0.3) // Added slight depth
+
+// --- FOOTER ---
+footer
+  border-top: 1px solid rgba(255, 255, 255, 0.05)
+  padding: 50px 0
+  margin-top: 100px
+  color: $brass-muted
+  font-family: $font-mono
+  font-size: 0.75rem
+  letter-spacing: 1px
+
+// --- RESPONSIVE ADAPTATION ---
+@media (max-width: 1100px)
+  .app-shell
+    flex-direction: column
+  
+  .sidebar
+    width: 100%
+    height: auto
+    position: relative
+    border-right: none
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05)
+    padding: 50px 30px
+
+  .content-area
+    padding: 50px 30px
+
+  .grid-2
+    grid-template-columns: 1fr
+
+  .era
+    flex-direction: column
+    gap: 10px
+
+.detail-view
+  max-width: 900px
+
+.era-header
+  margin-bottom: 60px
+  
+  .brand-box
+    display: flex
+    align-items: center
+    gap: 30px
+    margin-bottom: 40px
+
+    .company-logo-large
+      width: 80px
+      height: 80px
+      border-radius: 8px
+      filter: grayscale(1) brightness(0.8) // Keeps it within the dark theme
+      border: 1px solid rgba(255, 255, 255, 0.1)
+      padding: 10px
+      background: #fff // Small white pop for the logo itself
+
+    .external-link
+      font-family: $font-mono
+      font-size: 0.8rem
+      color: $gold-accent
+      text-decoration: none
+      &:hover
+        text-decoration: underline
+
+.meta-strip
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))
+  gap: 20px
+  padding: 25px
+  background: $bg-surface
+  border: 1px solid rgba(255, 255, 255, 0.05)
+  border-radius: 4px
+
+  .meta-item
+    label
+      display: block
+      font-family: $font-mono
+      font-size: 0.6rem
+      color: $brass-muted
+      margin-bottom: 5px
+    span
+      font-weight: 600
+      font-size: 0.9rem
+
+.long-form-text
+  white-space: pre-wrap // Respects the line breaks from your old site
+  color: $text-muted
+  line-height: 1.8
+  font-size: 1.05rem
+  margin-top: 20px
+
+// 1. Global smooth scrolling for any internal anchors
+html
+  scroll-behavior: smooth
+
+// 2. The "App Shell" feel
+.content-area
+  height: 100vh
+  overflow-y: auto
+  overflow-x: hidden
+  // This ensures the smooth behavior applies to the div itself
+  scroll-behavior: smooth 
+  // Transitions the opacity when the route changes
+  animation: viewFadeIn 0.3s ease-out
+
+@keyframes viewFadeIn
+  from
+    opacity: 0
+    transform: translateY(4px) // Very subtle "slide up"
+  to
+    opacity: 1
+    transform: translateY(0)
+
+// 3. Optional: Hide scrollbars for that "ultra-clean" look 
+// while keeping functionality
+.content-area::-webkit-scrollbar
+  width: 6px
+
+.content-area::-webkit-scrollbar-thumb
+  background: rgba(212, 175, 55, 0.2) // Subtle gold hint
+  border-radius: 10px
 
 $spotlight-color: rgba(255, 215, 150, 0.1)
 $spotlight-radius: 250px
 $transition-speed: 0.2s
 
 body, html
-  color: $white
-  background-color:  $black
-  background-image: url(/img/background.webp)
-  background-repeat: repeat
-  background-size: auto
-  height: 100%
-  margin: 0
-  padding: 0
-  font: 400 1rem/1.8 "Inter","Lato", sans-serif
   scroll-behavior: smooth
   &::before
     content: ''
@@ -31,313 +462,171 @@ body, html
     transition: background $transition-speed ease
     mix-blend-mode: lighten
 
-a 
-  color: $gold
-  font-weight: bold
-  
+.description-container
+  margin-top: 20px
+  max-width: 75ch // Optimization for readability (Characters per line)
 
-.user_img 
-  height: 5.625rem
-  width: 5.625rem
+  .era-paragraph
+    color: var(--text-muted)
+    line-height: 1.8
+    font-size: 1.05rem
+    margin-bottom: 1.5rem // Vertical rhythm
+    
+    // Optional: Add a subtle gold accent to the first paragraph
+    &:first-of-type
+      color: var(--text-main)
+      font-size: 1.1rem
+      font-weight: 500
 
-.tshadow 
-    text-shadow: 0.125rem 0.0625rem $shadow
-
-.pane 
-    text-align: justify
-    padding: 1rem 1rem
-    position: relative
-
-.paneList 
-    list-style-type: none 
-    padding: 0            
-    text-align: center    
-
-.section 
-    font: 1rem "Inter","Lato", sans-serif
-    //letter-spacing: 0.3125rem
-    margin-top: 4.375rem !important
-
-
-%baseGlass
-    padding: 2rem 2rem
-    text-align: justify
-    position: relative
-    border-radius: 2rem
-    backdrop-filter: blur(2em)
-
-%baseGlassWithMargin
-    @extend %baseGlass
-    margin-top: 4.375rem !important
-
-.glass-card
-  @extend %baseGlassWithMargin
-  background-color: rgba(0,0,0,0.45)
-  -webkit-backdrop-filter: blur(8px) saturate(120%)
-  backdrop-filter: blur(8px) saturate(120%)
-  border: 1px solid rgba(255, 255, 255, 0.06)
-  box-shadow: 0 8px 30px $gold 
-  margin-left: auto
-  margin-right: auto
-  max-width: 1100px
-  padding: 2.5rem 2rem
-  overflow: hidden
-  // make sure content doesn't bleed out
-  border-radius: 1.5rem
-
-/* small screens: reduce padding so it fits nicely */
-@media (max-width: 720px)
-  .glass-card
-    padding: 1.25rem 1rem
-    margin-top: 1rem !important
-
-%rounded
-    border-radius: 1rem
-
-%captionExtend
-    position: absolute
-    left: 0
-    width: 100%
-    color: $black
-    span.border
-        background-color: #111
-        color: $white
-        padding: 1.125rem
-        font-size: 1.5rem
-        letter-spacing: 0.625rem
-
-h1
-  font-family: "Caveat", cursive
-  color: $gold
-  letter-spacing: 0.125rem
-
-h3 
-    letter-spacing: 0.3125rem
-    text-transform: uppercase
-    font: 1.25rem "Inter","Lato", sans-serif
-    color: #6e5607ff
-
-.welcome-text
-  font-size: 1.25rem
-  line-height: 2
-  margin-top: 1.5rem
-  margin-bottom: 2rem
-
-.header-section
-  padding-top: 2rem
-  padding-bottom: 2rem
-
-.social-links
+.tech-footer
+  margin-top: 40px
+  padding-top: 20px
+  border-top: 1px solid rgba(255, 255, 255, 0.05)
   display: flex
+  gap: 10px
   flex-wrap: wrap
-  justify-content: center
-  gap: 1rem
+
+// --- HOME PAGE (MINIMAL) ---
+.mini-article-row
+  display: flex
+  align-items: center
+  gap: 15px
+  padding: 12px 0
+  text-decoration: none
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03)
+  color: var(--text-muted)
+  transition: color 0.2s
+
+  &:hover
+    color: var(--gold-accent)
+    .article-arrow
+      transform: translateX(5px)
+
+  .article-date-mono
+    font-family: var(--font-mono)
+    font-size: 0.8rem
+    color: var(--brass-muted)
+    min-width: 60px
+
+  .article-title-truncate
+    flex: 1
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+    font-size: 0.95rem
+
+// --- ARTICLES PAGE (VERBOSE) ---
+.full-article-grid
+  display: grid
+  gap: 30px
+  margin-top: 40px
+
+.verbose-article-card
+  padding-bottom: 30px
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05)
+
+  h3
+    margin: 10px 0
+    font-size: 1.4rem
+    color: var(--text-main)
+    &:hover
+      color: var(--gold-accent)
+
+  p
+    color: var(--text-muted)
+    line-height: 1.6
+    font-size: 1rem
+
+  .card-meta
+    font-family: var(--font-mono)
+    font-size: 0.75rem
+    color: var(--brass-muted)
+    text-transform: uppercase
 
 
-.ImgRoundCorner
-  border-radius: 1.5rem
-  width: 11.125rem
-  height: 11.125rem
 
+// Variables
+$gold-accent: #d4af37
+$gold-glow: rgba(212, 175, 55, 0.2)
+$text-main: #e0e0e0
+$transition-speed: 0.15s
 
-.content
-  display: none
-
-.RoundedBottom
-  border-radius: 0 0 1rem 1rem
- 
-.skill-card 
+.interactive-link
   position: relative
-  border-radius: 1rem
-  padding: 1.25rem
-  text-align: center
-  transition: all 0.3s ease
-  //box-shadow: 0 2px 8px rgba(0,0,0,0.4)
-  overflow: hidden
+  display: inline-flex // Helps with vertical alignment in rows
+  flex-direction: column
+  align-items: center
+  color: $text-main
+  text-decoration: none
+  transition: color $transition-speed ease, transform $transition-speed ease
+  font-weight: 400
 
-/* Reusable border generator */
-.skill-card::before 
-  content: ""
-  position: absolute
-  inset: 0
-  border-radius: 1rem
-  padding: 2px
-  background: var(--border-gradient)
-  -webkit-mask: linear-gradient($black 0 0) content-box, linear-gradient($black 0 0)
-  -webkit-mask-composite: xor
-          mask-composite: exclude
-  pointer-events: none
+  // The Invisible "Spacer" Strategy
+  // We use a pseudo-element to "hold the space" for the bold version
+  &::before
+    display: block
+    content: attr(data-text)
+    font-weight: 700
+    height: 0
+    overflow: hidden
+    visibility: hidden
+    user-select: none
 
-/* Gold variant */
-.skill-card.gold 
-  --border-gradient: linear-gradient(90deg, #FFB700, #FFD700)
+  &:hover
+    color: $gold-accent
+    transform: translateY(-3px)
+    font-weight: 700
+    // Optional: very faint glow that works on dark backgrounds
+    text-shadow: 0 0 15 px rgba(212, 175, 55, 0.15)
 
-/* Silver variant */
-.skill-card.silver 
-  --border-gradient: linear-gradient(90deg, #C0C0C0, #848482 )
+  // Underline logic
+  &::after
+    content: ''
+    position: absolute
+    width: 0
+    height: 1px
+    bottom: -2px
+    left: 50%
+    background-color: $gold-accent
+    transition: width 0.3s ease, left 0.3s ease
 
-.skill-card img 
-  width: 64px
-  height: 64px
-  object-fit: contain
-  margin-bottom: 0.75rem
-  transition: transform 0.3s ease
+  &:hover::after
+    width: 100%
+    left: 0
 
-.skill-card p 
-  color: $white
-  font-weight: 500
-  font-size: 1rem
-  margin: 0
-  letter-spacing: 0.02em
+// Row-specific styling
+.mini-article-row
+  @extend .interactive-link
+  flex-direction: row // Override column for your horizontal list
+  justify-content: flex-start
+  gap: 1.5rem
+  padding: 0.8rem 0
 
-.skill-card:hover 
-  transform: translateY(-4px)
-  box-shadow: 0 4px 14px rgba(255, 215, 0, 0.2)
+.project-actions
+  border-top: 1px solid rgba(255, 255, 255, 0.05)
+  padding-top: 20px
 
-.skill-card.gold:hover img 
-  transform: scale(1.05) rotate(-2deg)
-
-.skill-card.silver:hover img 
-  transform: scale(1.05) rotate(2deg)
-
-.text-gold
-  color: #FFD700
-  font-weight: bold
-
-.text-silver
-  color: #C0C0C0
-  font-weight: bold
-
-
-.contact-form .form-label
-  display: block
-  margin-top: 0.75rem
-  margin-bottom: 0.25rem
-  color: #ddd
-
-.form-control
-  width: 100%
-  border: 1px solid rgba(255,255,255,0.06)
-  background: rgba(255,255,255,0.02)
-  padding: 0.5rem
-  border-radius: 0.4rem
-  color: $white
-
-.btn-reset
-  background: none
-  border: none
-  color: $white
-  cursor: pointer
-  padding: 0
-  font-weight: 600
-
-.btn-outline
-  border: 1px solid rgba(255,255,255,0.08)
-  color: $white
-  background: transparent
-  padding: 0.5rem 0.75rem
-  border-radius: 0.5rem
-
-.btn-primary
-  background: $gold
-  border: none
-  color: $black
-  padding: 0.5rem 0.75rem
-  border-radius: 0.5rem
-
-.toast-notification
-  position: absolute
-  left: 50%
-  transform: translateX(-50%)
-  bottom: -3.75rem
-  padding: 0.5rem 1rem
-  border-radius: 0.75rem
-  color: $white
+.action-link
+  color: var(--gold-accent)
+  text-decoration: none
+  font-family: 'JetBrains Mono', monospace // Or your preferred mono font
   font-size: 0.9rem
-  opacity: 0
-  transition: opacity 0.2s ease, bottom 0.2s ease
+  letter-spacing: 1px
+  transition: transform 0.2s ease, filter 0.2s ease
+  display: flex
+  align-items: center
+  gap: 8px
 
-.toast-notification.success
-  background: rgba(16, 185, 129, 0.9)
-  opacity: 1
-  bottom: -1rem
+  &:hover
+    transform: translateY(-2px)
+    filter: brightness(1.2)
+    text-decoration: underline
 
-.toast-notification.error
-  background: rgba(239, 68, 68, 0.9)
-  opacity: 1
-  bottom: -1rem
+  .action-prefix
+    opacity: 0.4
+    color: var(--text-main)
 
-.modal.show
-  display: block !important
-
-.input-group-text
-  background-color: #f6f6f7 !important
-  color: #374151 !important
-  border: 1px solid #e6e6e6
-
-.form-control:focus
-  border-color: $gold
-  box-shadow: 0 0 0 0.18rem rgba($gold, 0.12)
-  outline: none
-  background: #fff
-
-
-.modal-backdrop.show
-  background: rgba(0,0,0,0.6) !important
-  opacity: 1 !important
-
-
-// Email-style modal tweaks
-.email-modal
-  background: #ffffff
-  color: #111
-  border-radius: 0.75rem
-  overflow: hidden
-
-.shadow-email
-  box-shadow: 0 10px 40px rgba(9,10,11,0.15)
-
-.email-modal-header
-  padding: 1rem 1.25rem
-  border-bottom: 1px solid #eee
-  background: linear-gradient(90deg, rgba(248,190,37,0.06), rgba(248,190,37,0.02))
-
-.email-icon
-  font-size: 1.2rem
-  color: $gold
-
-.form-control
-  background: #fcfcfb
-  border: 1px solid #e6e6e6
-  color: #111
-  border-radius: .5rem
-
-.btn-send
-  background: $gold
-  color: #111
-  border-radius: 9999px
-  padding: .5rem 1rem
-  border: none
-  box-shadow: 0 4px 12px rgba(0,0,0,0.12)
-
-.btn-close
-  filter: none
-
-.email-input
-  background: transparent
-  border: none
-  border-bottom: 1px dashed #e6e6e6
-  padding: 0 .25rem
-  min-width: 12rem
-  color: #111
-  font-size: .9rem
-
-.email-input:focus
-  border-bottom-color: $gold
-  outline: none
-  box-shadow: none
-
-.form-control::placeholder
-  color: #9ca3af
-  opacity: 1
-
+.hero-intro
+  h1
+    letter-spacing: -0.02em
+    line-height: 1.1

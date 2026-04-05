@@ -1,81 +1,65 @@
-import { useEffect, useState } from "preact/hooks"
+import { h } from 'preact';
+import { useState, useEffect } from 'preact/hooks';
+import Sidebar from './components/Sidebar';
+import Home from './pages/Home';
+import Labs from './pages/Labs';
+import LabDetail from './pages/LabDetail';
+import Archive from './pages/Archive';
+import Contact from './pages/Contact';
+import EraDetail from './pages/EraDetail';
+import Era from './pages/Era';
+import Articles from './pages/Articles';
+import Showcase from './pages/showcase';
 
-import Education from "./components/education"
-import Blogs from "./components/blogs"
-import Projects from "./components/projects"
-import Career from "./components/career"
-import KnowledgeGrid from "./components/knowledgeGrid"
-import About from "./components/about"
-import { Modal } from "./components/modal";
-import FooterB from "./components/footerb"
-import './styles/main.sass'
+export default function App() {
+  const [route, setRoute] = useState(window.location.hash || '#/');
 
-const App = () => {
-  const [jsonPayload, setJsonPayload] = useState<any>(null)
-  const [open, setOpen] = useState<boolean>(false)
+
+   const renderContent = () => {
+     if (route === '#/') return <Home />
+     if (route === '#/THE_LAB_PROJECTS') return <Labs />
+     if (route === '#/TECH_SHOWCASE') return <Showcase />
+     if (route === '#/ARCHIVE') return <Archive />
+     if (route === '#/ERA') return <Era />
+     if (route === '#/ARTICLES') return <Articles />
+     if (route.startsWith('#/THE_LAB_PROJECTS/')) {
+       const id = route.split('/').pop()
+       return <LabDetail id={id} />
+     }
+     if (route.startsWith("#/ERA/")) {
+       const id = route.split('/').pop()
+       return <EraDetail id={id} />
+     }
+     if (route === '#/CONTACT') return <Contact />;
+     return <Home />;
+   };
 
   useEffect(() => {
-    const loadData = async () => {
-      try {
-          const response = await fetch("./page.json")
-          const text = await response.text()
-          sessionStorage.setItem("dev.liukonen.pageData", text)
-          setJsonPayload(JSON.parse(text))
-          console.log("PageData items pulled live")
-      } catch (error) {
-        console.error("Error loading JSON:", error)
+    const handleHash = () => {
+      const newRoute = window.location.hash || '#/';
+      setRoute(newRoute);
+
+      // --- THE FIX ---
+      // Reset the main window
+      window.scrollTo(0, 0);
+
+      // Reset the specific content area (since you have a sidebar layout)
+      const contentArea = document.querySelector('.content-area');
+      if (contentArea) {
+        contentArea.scrollTo(0, 0);
       }
-    }
-    loadData()
-  }, [])
+    };
+
+    window.addEventListener('hashchange', handleHash);
+    return () => window.removeEventListener('hashchange', handleHash);
+  }, []);
+
   return (
-    <>
-      {jsonPayload && (         
-          <main class="glass-card">
-            <div class="container text-center header-section">
-              <div class="row justify-content-center">
-                <div class="col-md-8">
-                  <h1 class="display-2 mb-4 d-flex align-items-center justify-content-center gap-3">
-                    <img
-                      src="./img/favicons/apple-touch-icon.png"
-                      class="rounded-circle user_img"
-                      alt="Luke Liukonen"
-                      style="height: 4rem; width: 4rem;"
-                    />
-                    Luke Liukonen
-                  </h1>
-                  <p class="lead mb-4">
-                    <h2>Software Engineer / Instructor / Tech and A.I. enthusiast</h2>
-                  </p>
-                  <div class="social-links mb-4">  
-                    <a class="px-3" href="https://github.com/liukonen" target="_blank"><i class="bi bi-github"></i> GitHub</a>
-                    <a class="px-3" href="https://www.linkedin.com/in/lukeliukonen/" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a>
-                    <a class="px-3" href="https://dev.to/liukonen" target="_blank"><i class="bi bi-code-slash"></i> dev.to</a>
-
-                  </div>
-                  <div class="mb-4">
-                    <button class="btn btn-primary px-3" onClick={() => setOpen(true)}><i class="bi bi-chat-right-dots-fill"></i> Contact</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <About greating={jsonPayload.welcome} />
-            <KnowledgeGrid items={jsonPayload.Experence} />
-            <Blogs />
-            <Projects Projects={jsonPayload.projects} />
-            <Career work={jsonPayload.Work} />
-            <Education items={jsonPayload.School} />
-
-            <br />
-            <br />
-
-            <section class="pb-5"><FooterB /></section>
-           </main>
-           
-      )}
-      <Modal open={open} onClose={() => setOpen(false)} />
-    </>
-  )
+    <div className="app-shell">
+      <Sidebar currentRoute={route} />
+      <main className="content-area">
+        {renderContent()}
+      </main>
+    </div>
+  );
 }
-
-export default App

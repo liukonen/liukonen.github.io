@@ -400,13 +400,24 @@
         }
     ],
     "highlights": [
-
-{ "a": "Multi-year, multi-company hackathon award winner, leveraging AI modeling, cognitive services, and chatbot technologies to create innovative solutions."},
-{ "a": "Twice selected as a company representative for the Milwaukee Makerspace & Arts Center (MMAC) “Be the Spark” Tour, promoting STEM engagement."},
-{ "a": "Multi-year participant and representative for Hour of Code initiatives, inspiring others to explore coding and technology."},
-{ "a": "Active contributor on multiple internal committees focused on outreach, employee wellness, and event planning."},
-{ "a": "Experienced in maintaining HIPAA compliance, ensuring the security and privacy of sensitive data in all software development processes."},
-{ "a": "Took on lead responsibilities for nearly six years by managing a break/fix product support team and mentoring two engineers, guiding technical efforts and team growth."}
+        {
+            "a": "Multi-year, multi-company hackathon award winner, leveraging AI modeling, cognitive services, and chatbot technologies to create innovative solutions."
+        },
+        {
+            "a": "Twice selected as a company representative for the Milwaukee Makerspace & Arts Center (MMAC) “Be the Spark” Tour, promoting STEM engagement."
+        },
+        {
+            "a": "Multi-year participant and representative for Hour of Code initiatives, inspiring others to explore coding and technology."
+        },
+        {
+            "a": "Active contributor on multiple internal committees focused on outreach, employee wellness, and event planning."
+        },
+        {
+            "a": "Experienced in maintaining HIPAA compliance, ensuring the security and privacy of sensitive data in all software development processes."
+        },
+        {
+            "a": "Took on lead responsibilities for nearly six years by managing a break/fix product support team and mentoring two engineers, guiding technical efforts and team growth."
+        }
     ],
     "Experence": [
         {
@@ -432,7 +443,10 @@
                     "link": "https://www.typescriptlang.org/"
                 },
                 {
-                    "title": "Spring", "img": "./img/original/Spring.webp", "level": 2, "link": "https://spring.io/"
+                    "title": "Spring",
+                    "img": "./img/original/Spring.webp",
+                    "level": 2,
+                    "link": "https://spring.io/"
                 },
                 {
                     "title": "Node",
@@ -653,7 +667,7 @@
     "Work": [
         {
             "name": "University of Wisconsin System",
-            "timeworked":  "January 2006 - May 2006",
+            "timeworked": "January 2006 - May 2006",
             "title": "Teaching Assistant",
             "img": "./img/original/uw.webp",
             "summary": "As a Teaching Assistant at the University of Wisconsin - Milwaukee, I assisted professors in managing and grading assignments, providing support to students, and facilitating classroom activities. This role allowed me to develop strong communication and organizational skills while gaining valuable experience in an academic setting."
