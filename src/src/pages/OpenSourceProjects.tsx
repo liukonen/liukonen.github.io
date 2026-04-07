@@ -1,6 +1,6 @@
 import portfolioData from '../data/portfolio.json';
 
-export default function Labs() {
+export default function OpenSourceProjects() {
   // Extracting all lab projects from the JSON object
   const labEntries = Object.entries(portfolioData.labs);
 
@@ -26,7 +26,7 @@ export default function Labs() {
           <div 
             key={id} 
             className="card" 
-            onClick={() => window.location.hash = `#/THE_LAB_PROJECTS/${id}`}
+            onClick={() => window.location.hash = `#/OPEN_SOURCE_PROJECTS/${id}`}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
               <span style={{ fontFamily: 'JetBrains Mono', fontSize: '0.65rem', color: 'var(--brass-muted)' }}>

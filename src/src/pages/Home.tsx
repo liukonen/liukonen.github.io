@@ -49,18 +49,18 @@ export default function Home() {
         <HomeArticles />
           <div style={{ marginTop: '10px' }}>
           <a href={'#/ARTICLES'} style={{ textDecoration: 'none' }} className="section-label interactive-link">
-            <span class="bi bi-box-arrow-up-right">View More</span> 
+            <span class="bi bi-arrow-right-circle">View More</span> 
           </a>
         </div>
       </section>
 
-      {/* --- FEATURED LABS SECTION --- */}
+      {/* --- FEATURED OPEN_SOURCE_PROJECTS SECTION --- */}
       <section id="featured-labs"  style={{ marginBottom: '100px' }}>
         <span className="section-label"> ~/ OPEN_SOURCE_PROJECTS</span>
         <div className="grid-2">
           {/* We take the first 2 projects from the labs object */}
           {Object.entries(labs).slice(0, 4).map(([id, project]) => (
-            <a href={`#/THE_LAB_PROJECTS/${id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+            <a href={`#/OPEN_SOURCE_PROJECTS/${id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
             <div className="card" key={id}>
               <span style={{ fontFamily: 'JetBrains Mono', fontSize: '0.6rem', color: 'var(--brass-muted)' }}>
                 // PROJ_{id.toUpperCase()}
@@ -77,8 +77,8 @@ export default function Home() {
           ))}
           </div>
         <div style={{ marginTop: '10px' }}>
-          <a href={'#/THE_LAB_PROJECTS'} style={{ textDecoration: 'none' }} className="section-label interactive-link">
-            <span class="bi bi-box-arrow-up-right">View More</span> 
+          <a href={'#/OPEN_SOURCE_PROJECTS'} style={{ textDecoration: 'none' }} className="section-label interactive-link">
+            <span class="bi bi-arrow-right-circle">View More</span>
           </a>
         </div>
       </section>
@@ -91,7 +91,7 @@ export default function Home() {
         ))}
         <div style={{ marginTop: '10px' }}>
           <a href={'#/ERA'} style={{ textDecoration: 'none' }} className="section-label interactive-link">
-            <span class="bi bi-box-arrow-up-right">View More</span> 
+            <span class="bi bi-arrow-right-circle">View More</span> 
           </a>
         </div>
       </section>

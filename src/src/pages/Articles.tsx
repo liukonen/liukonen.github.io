@@ -38,11 +38,13 @@ export default function Articles() {
                   year: '2-digit' 
                 })} • {article.reading_time_minutes} min read
               </div>
-              <a href={article.url} target="_blank" style="text-decoration: none"><h3>{article.title}</h3></a>
+              <a href={article.url} target="_blank" style="text-decoration: none"><h3><span class="bi bi-box-arrow-up-right"></span> {article.title}</h3></a>
+
               <p>{article.description}</p>
               <div className="tag-cloud">
                 {article.tag_list.map(tag => <span key={tag} className="tag">#{tag}</span>)}
               </div>
+
             </div>
           ))}
         </div>

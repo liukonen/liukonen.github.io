@@ -15,7 +15,9 @@ export default function LabDetail({ id }: Props) {
   return (
     <div className="page-layer">
       <nav className="breadcrumb">
-        <a href="#/THE_LAB_PROJECTS">~/root/the_lab_projects</a>
+        <a href="#/">~/root </a>
+        <span className="sep">/</span>
+        <a href="#/OPEN_SOURCE_PROJECTS">OPEN_SOURCE_PROJECTS</a>
         <span className="sep">/</span>
         <span className="current">{id}</span>
       </nav>
@@ -59,7 +61,7 @@ export default function LabDetail({ id }: Props) {
       <button 
         className="btn" 
         style={{ marginTop: '60px' }} 
-        onClick={() => window.location.hash = '#/THE_LAB_PROJECTS'}
+        onClick={() => window.location.hash = '#/OPEN_SOURCE_PROJECTS'}
       >
         ← RETURN_TO_LAB
       </button>

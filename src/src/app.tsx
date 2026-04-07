@@ -2,7 +2,7 @@ import { h } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
 import Sidebar from './components/Sidebar';
 import Home from './pages/Home';
-import Labs from './pages/Labs';
+import OpenSourceProjects from './pages/OpenSourceProjects';
 import LabDetail from './pages/LabDetail';
 import Archive from './pages/Archive';
 import Contact from './pages/Contact';
@@ -17,12 +17,12 @@ export default function App() {
 
    const renderContent = () => {
      if (route === '#/') return <Home />
-     if (route === '#/THE_LAB_PROJECTS') return <Labs />
+     if (route === '#/OPEN_SOURCE_PROJECTS') return <OpenSourceProjects />
      if (route === '#/TECH_SHOWCASE') return <Showcase />
      if (route === '#/ARCHIVE') return <Archive />
      if (route === '#/ERA') return <Era />
      if (route === '#/ARTICLES') return <Articles />
-     if (route.startsWith('#/THE_LAB_PROJECTS/')) {
+     if (route.startsWith('#/OPEN_SOURCE_PROJECTS/')) {
        const id = route.split('/').pop()
        return <LabDetail id={id} />
      }
@@ -37,17 +37,17 @@ export default function App() {
   useEffect(() => {
     const handleHash = () => {
       const newRoute = window.location.hash || '#/';
-      setRoute(newRoute);
-
-      // --- THE FIX ---
-      // Reset the main window
-      window.scrollTo(0, 0);
+      
+      // Scroll to top with instant behavior (no visible travel)
+      window.scrollTo({ top: 0, behavior: 'instant' });
 
       // Reset the specific content area (since you have a sidebar layout)
       const contentArea = document.querySelector('.content-area');
       if (contentArea) {
-        contentArea.scrollTo(0, 0);
+        contentArea.scrollTo({ top: 0, behavior: 'instant' });
       }
+
+      setRoute(newRoute);
     };
 
     window.addEventListener('hashchange', handleHash);
@@ -57,7 +57,7 @@ export default function App() {
   return (
     <div className="app-shell">
       <Sidebar currentRoute={route} />
-      <main className="content-area">
+      <main className="content-area page-transition" key={route}>
         {renderContent()}
       </main>
     </div>

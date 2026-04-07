@@ -35,7 +35,7 @@ export default function Labs() {
             </span>
           </div>
           
-          <h4 style={{ marginTop: '15px' }}>{project.title}</h4>
+          <h4 style={{ marginTop: '15px' }}><span class="bi bi-box-arrow-up-right"></span> {project.title}</h4>
           <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginTop: '8px' }}>
             {project.description}
           </p>

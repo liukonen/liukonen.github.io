@@ -26,7 +26,7 @@ $font-mono: 'JetBrains Mono', monospace
   box-sizing: border-box
 
 html
-  scroll-behavior: smooth
+  scrollbar-gutter: stable
 
 body
   background-color: $bg-deep
@@ -160,6 +160,20 @@ body
     opacity: 1
     transform: translateY(0)
 
+// --- ANIMATION: PAGE TRANSITION (FADE & RISE) ---
+.page-transition
+  animation: fadeAndRise 0.4s cubic-bezier(0.23, 1, 0.32, 1) forwards
+
+@keyframes fadeAndRise
+  from
+    opacity: 0
+    transform: translateY(15px)
+    filter: blur(4px)
+  to
+    opacity: 1
+    transform: translateY(0)
+    filter: blur(0)
+
 // --- COMPONENTS ---
 .breadcrumb
   font-family: $font-mono
@@ -212,7 +226,9 @@ body
     right: -40px
     width: 200px
     height: 200px
-    background-color: lighten($gold-accent, 20%)
+    background-color: color-mix($gold-accent, white 10%) 
+    //background-color: lighten($gold-accent, 20%)
+    
     opacity: 0.03 // Keep it extremely subtle for now
     transition: 0.4s ease
     pointer-events: none
@@ -243,7 +259,8 @@ body
     transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1)
     transform: translateY(-5px)
     border-color: rgba($gold-accent, 0.3)
-    background-color: lighten($bg-surface, 1.5%)
+    background-color: color-mix($bg-surface, white 1.5%)
+    //background-color: lighten($bg-surface, 1.5%)
     box-shadow: 0 10px 40px rgba(0,0,0,0.4)
 
     // Make icon brighter on hover so the card looks 'active'
@@ -272,6 +289,48 @@ body
       color: $text-muted
       font-size: 0.95rem
       margin-top: 5px
+
+// --- THEATRICAL ERA CONTAINER (STAGGERED REVEAL) ---
+.era-container
+  overflow-x: hidden
+  width: 100%
+
+  // Staggered H1 reveal (enters at 0.2s)
+  h1
+    animation: theatricalReveal 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards
+    animation-delay: 0.2s
+    opacity: 0
+    transform: translateX(100%) translateY(20px)
+    filter: blur(4px)
+    will-change: transform, opacity, filter
+
+  // Staggered paragraph reveal (enters at 0.4s)
+  p
+    animation: theatricalReveal 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards
+    animation-delay: 0.4s
+    opacity: 0
+    transform: translateX(100%) translateY(20px)
+    filter: blur(4px)
+    will-change: transform, opacity, filter
+
+  // Staggered card/project reveal (enters at 0.6s)
+  .card, [class*="card"], .project, [class*="project"]
+    animation: theatricalReveal 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards
+    animation-delay: 0.6s
+    opacity: 0
+    transform: translateX(100%) translateY(20px)
+    filter: blur(4px)
+    will-change: transform, opacity, filter
+
+@keyframes theatricalReveal
+  from
+    opacity: 0
+    transform: translateX(100%) translateY(20px)
+    filter: blur(4px)
+  to
+    opacity: 1
+    transform: translateX(0) translateY(0)
+    filter: blur(0)
 
 // --- FORMS & BUTTONS ---
 .contact-form

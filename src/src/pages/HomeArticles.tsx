@@ -26,9 +26,8 @@ export default function HomeArticles() {
               })}
             </span>
             <span className="article-title-truncate">
-              {article.title}
+              <span class="bi bi-box-arrow-up-right"></span> {article.title}
             </span>
-            <span className="article-arrow">→</span>
           </a>
         )}
       </div>

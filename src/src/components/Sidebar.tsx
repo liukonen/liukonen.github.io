@@ -19,7 +19,7 @@ export default function Sidebar({ currentRoute }) {
           <li><a href="#/" className={currentRoute === '#/' ? 'active' : ''}><span className="line"></span>/ HOME</a></li>
           <li><a href="#/TECH_SHOWCASE" className={isActive('SHOWCASE')}><span className="line"></span>/ SHOWCASE</a></li>
           <li><a href="#/ARTICLES" className={isActive('CONTENT')}><span className="line"></span>/ WRITEUPS</a></li>
-          <li><a href="#/THE_LAB_PROJECTS" className={isActive('THE_LAB')}><span className="line"></span>/ OPEN_SOURCE</a></li>
+          <li><a href="#/OPEN_SOURCE_PROJECTS" className={isActive('THE_LAB')}><span className="line"></span>/ OPEN_SOURCE</a></li>
           <li><a href="#/ERA" className={isActive('ERA')}><span className="line"></span>/ CAREER</a></li>
           <li><a href="#/CONTACT" className={isActive('CONTACT')}><span className="line"></span>/ CONTACT</a></li>
           <li><a href="#/ARCHIVE" className={isActive('ARCHIVE')}><span className="line"></span>/ WAYBACK</a></li>
