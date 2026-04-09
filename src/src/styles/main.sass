@@ -689,3 +689,211 @@ $transition-speed: 0.15s
   h1
     letter-spacing: -0.02em
     line-height: 1.1
+
+.case-study-view
+  max-width: 900px
+  margin: 0 auto
+  padding: 2rem
+  line-height: 1.6
+  color: #e0e0e0
+
+  .study-header
+    border-bottom: 1px dashed #444
+    margin-bottom: 2.5rem
+    padding-bottom: 1.5rem
+
+    h1
+      font-family: 'Fira Code', monospace // Or your preferred mono font
+      color: $gold-accent
+      font-size: 2.2rem
+      margin-top: 0.5rem
+
+  .tech-specs
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+    gap: 1.5rem
+    background: rgba(255, 215, 0, 0.03) // Subtle gold tint
+    border: 1px solid #333
+    padding: 1.5rem
+    margin-bottom: 3rem
+    border-radius: 4px
+
+    .spec
+      font-size: 0.9rem
+      strong
+        color: $gold-accent
+        display: block
+        font-size: 0.75rem
+        letter-spacing: 1px
+        margin-bottom: 0.25rem
+
+  .technical-body
+    h2
+      font-size: 1.5rem
+      border-left: 3px solid $gold-accent
+      padding-left: 1rem
+      margin: 3rem 0 1.5rem
+      color: #fff
+      text-transform: uppercase
+      letter-spacing: 1px
+
+    p
+      margin-bottom: 1.5rem
+      color: #ccc
+
+    ul, ol
+      margin-bottom: 2rem
+      padding-left: 1.5rem
+      li
+        margin-bottom: 0.75rem
+        &::marker
+          color: $gold-accent
+
+    img
+      display: block
+      max-width: 100%
+      height: auto
+      margin: 3rem auto
+      border: 1px solid #444
+      padding: 1rem
+      background: #0d0d0d // Make the SVG pop against the background
+
+    hr
+      border: 0
+      border-top: 1px solid #333
+      margin: 4rem 0
+
+    // Style for the "Context" and "Challenge" sections
+    blockquote
+      border-left: 2px solid #555
+      margin: 2rem 0
+      padding: 1rem 2rem
+      font-style: italic
+      color: #aaa
+
+.showcase-view
+  max-width: 900px
+  margin: 0 auto
+  padding: 2rem
+  line-height: 1.6
+  color: #e0e0e0
+
+  .showcase-header
+    border-bottom: 1px dashed #444
+    margin-bottom: 2.5rem
+    padding-bottom: 1.5rem
+
+    h1
+      font-family: 'Fira Code', monospace
+      color: $gold-accent
+      font-size: 2.2rem
+      margin-top: 0.5rem
+
+  .impact-callout
+    font-family: $font-mono
+    color: $gold-accent
+    font-size: 0.9rem
+    letter-spacing: 2px
+    text-transform: uppercase
+    margin-top: 1rem
+
+  .tech-specs
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+    gap: 1.5rem
+    background: rgba(255, 215, 0, 0.03)
+    border: 1px solid #333
+    padding: 1.5rem
+    margin-bottom: 3rem
+    border-radius: 4px
+
+    .spec
+      font-size: 0.9rem
+      strong
+        color: $gold-accent
+        display: block
+        font-size: 0.75rem
+        letter-spacing: 1px
+        margin-bottom: 0.25rem
+
+  .technical-body
+    h2
+      font-size: 1.5rem
+      border-left: 3px solid $gold-accent
+      padding-left: 1rem
+      margin: 3rem 0 1.5rem
+      color: #fff
+      text-transform: uppercase
+      letter-spacing: 1px
+
+    p
+      margin-bottom: 1.5rem
+      color: #ccc
+
+    ul, ol
+      margin-bottom: 2rem
+      padding-left: 1.5rem
+      li
+        margin-bottom: 0.75rem
+        &::marker
+          color: $gold-accent
+
+    img
+      display: block
+      max-width: 100%
+      height: auto
+      margin: 3rem auto
+      border: 1px solid #444
+      padding: 1rem
+      background: #0d0d0d
+
+    hr
+      border: 0
+      border-top: 1px solid #333
+      margin: 4rem 0
+
+    blockquote
+      border-left: 2px solid #555
+      margin: 2rem 0
+      padding: 1rem 2rem
+      font-style: italic
+      color: #aaa
+
+  .showcase-footer
+    border-top: 1px dashed #444
+    margin-top: 3rem
+    padding-top: 1.5rem
+
+    .return-link
+      color: $gold-accent
+      text-decoration: none
+      font-family: $font-mono
+      font-size: 0.85rem
+      letter-spacing: 1px
+      &:hover
+        text-decoration: underline
+
+.company-header
+  font-family: 'JetBrains Mono'
+  font-size: 1.6rem
+  color: $brass-muted
+
+.company-card
+  h4
+    margin-top: 10px
+  div
+    margin-top: 15px
+
+// .case-study-view
+//   position: relative
+//   &::before
+//     content: ""
+//     position: fixed
+//     top: 0
+//     left: 0
+//     width: 100%
+//     height: 100%
+//     background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02))
+//     background-size: 100% 4px, 3px 100%
+//     pointer-events: none
+//     z-index: 10

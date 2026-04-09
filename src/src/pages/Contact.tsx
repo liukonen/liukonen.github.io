@@ -1,4 +1,6 @@
 import { useState } from "preact/hooks"
+import Breadcrumb from "../components/Breadcrumb"
+import Header from "../components/Header"
 
 export default function Contact() {
   const [email, setEmail] = useState("")
@@ -60,19 +62,11 @@ export default function Contact() {
 
   return (
     <div className="page-layer contact-view">
-      <div className="breadcrumb">
-        <a href="#/">~/root</a> <span className="sep">/</span> contact
-      </div>
-
-      <header className="era-header">
-        <div className="header-text">
-          <h1 className="gold-text">Contact Me</h1>
-          <p className="sub-header">System ready for incoming transmissions.</p>
-          <p className="sub-header">
+      <Breadcrumb path="#/contact" />
+      <Header title="Contact Me" subtitle="System ready for incoming transmissions."></Header>
+      <header className="era-header sub-header">
             While I am not currently looking for new work, I am open to
             networking, collaboration, and general inquiries.
-          </p>
-        </div>
       </header>
 
       <section className="contact-content">

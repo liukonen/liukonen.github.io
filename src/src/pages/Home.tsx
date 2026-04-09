@@ -1,6 +1,9 @@
 import { h } from 'preact';
-import portfolioData from '../data/portfolio.json';
-import  HomeArticles  from './HomeArticles';
+import portfolioData from '../data/portfolio.json'
+import showcaseData from  '../data/showcase.json'
+import  HomeArticles  from './HomeArticles'
+import Tags from '../components/Tags'
+import Breadcrumb from '../components/Breadcrumb';
 
 
 export default function Home() {
@@ -8,9 +11,8 @@ export default function Home() {
 
   return (
     <div className="page-layer">
-      <div className="breadcrumb">~/</div>
-      
-      {/* --- HERO SECTION --- */}
+      <Breadcrumb path="#/" />
+    
       <section id="about" style={{ marginBottom: '80px' }}>
         <p style={{ marginTop: '20px', color: 'var(--text-muted)', fontSize: '1.1rem' }}>
           Hi, I’m Luke. I’m a Software Engineer and Technical Lead with 20 years of experience.
@@ -18,7 +20,7 @@ export default function Home() {
         <p style={{ marginTop: '20px', color: 'var(--text-muted)', fontSize: '1.1rem' }}>
           I specialize in the "invisible" side of tech: the infrastructure, automation, and system design that makes software stable and scalable. I’ve held Senior roles across different tech stacks, but my goal is always the same: translate high-level business goals into a technical reality that actually works.
         </p>
-        <p style={{ marginTop: '20px', color: 'var(--text-muted)', fontSize: '1.1rem' }}>
+        <div style={{ marginTop: '20px', color: 'var(--text-muted)', fontSize: '1.1rem' }}>
           How I add value:
           <ul>
             <li> I design for the long term. I focus on clean architecture and proactive monitoring so systems don't become "technical debt" in two years.</li>
@@ -26,20 +28,28 @@ export default function Home() {
             <li> I lead through mentorship. I believe the best way to scale a system is to scale the people building it. I use my teaching experience to mentor engineers and drive cross-team standards that raise the bar for the entire department.</li>
             <li> I lead with AI. I’m currently driving AI adoption to modernize how we work and build.</li>
           </ul>
-        </p>
+          </div>
         <p style={{ marginTop: '20px', color: 'var(--text-muted)', fontSize: '1.1rem' }}>
           Personal: I’m a Milwaukee native who loves local music and biking. I’m also a big believer in using tech for good—I’ve been contributing computing power to scientific research projects for years.
         </p>
       </section>
 
       {/* --- SHOWCASE  SECTIONS --- */}
-      <section id="showcase" style={{ marginBottom: '100px' }}>
-        <a href={'#/TECH_SHOWCASE'} style={{ textDecoration: 'none' }}>
-          <span className="section-label">~/ SHOWCASE_IN_PROGRESS </span>
-        </a>
-        <p>I’m currently curating a set of case studies that reflect my work in system design, infrastructure, and technical leadership.</p>
-        <p>In the meantime, my Lab projects and writing offer a good view into how I think and build.</p>
-      </section>
+<section className="showcase-grid"  style={{ marginBottom: '100px' }}>
+                  <span className="section-label">
+          ~/ SHOWCASE_PROJECTS
+        </span>
+    {Object.entries(showcaseData).map(([title, item]) => (
+      <div key={item.id} className="card" onClick={() => window.location.hash = `#/TECH_SHOWCASE/${item.id}`}>
+        <span class="">{item.impact}</span>
+      </div>
+    ))}
+    <div style={{ marginTop: '10px' }}>
+       <a href={'#/TECH_SHOWCASE'} style={{ textDecoration: 'none' }} className="section-label interactive-link">
+        <span class="bi bi-arrow-right-circle">View More</span> 
+      </a>
+      </div>
+    </section>
 
       {/* --- WRITEUPS SECTION --- */}
       <section id="writeups" style={{ marginBottom: '100px' }}>
@@ -104,12 +114,11 @@ export default function Home() {
       </section>
       
       <footer>&copy; 2026 {profile.brand} // SYSTEM_READY
-
-      <p>Thanks to Google Gemini and OpenAI Copilot for the assist in content writup, proofreading, 
+      <p>Thanks to Google Gemini, and OpenAI ChatGpt, Microsoft Copilot, and the handful of opensource LLM Modals
+      I used for the assist in content writup, proofreading, 
       and styling. Also thank you to <a href="https://brittanychiang.com/">Brittany Chaing</a> for 
       the inspiration. While I dont know Brittany personally, 
       I drew a lot from the site design and flow! </p>
-
       </footer>
     </div>
   );

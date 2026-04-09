@@ -9,13 +9,16 @@ import Contact from './pages/Contact';
 import EraDetail from './pages/EraDetail';
 import Era from './pages/Era';
 import Articles from './pages/Articles';
-import Showcase from './pages/showcase';
+import Showcase from './pages/showcase'; 
+import { ShowcaseDetail}from './pages/ShowcaseDetail';
+import { CaseStudy } from './pages/case-study';
 
 export default function App() {
   const [route, setRoute] = useState(window.location.hash || '#/');
 
 
    const renderContent = () => {
+    console.log("Current Route:", route); // Debug log to verify current route
      if (route === '#/') return <Home />
      if (route === '#/OPEN_SOURCE_PROJECTS') return <OpenSourceProjects />
      if (route === '#/TECH_SHOWCASE') return <Showcase />
@@ -29,6 +32,15 @@ export default function App() {
      if (route.startsWith("#/ERA/")) {
        const id = route.split('/').pop()
        return <EraDetail id={id} />
+     }
+     if (route.startsWith('#/CASE_STUDY/')) {
+       const id = route.split('/').pop()
+       return <CaseStudy id={id} />
+     }
+     if (route.startsWith('#/TECH_SHOWCASE/')) {
+       const id = route.split('/').pop()
+       console.log("Showcase ID:", id); // Debug log to verify ID extraction
+       return <ShowcaseDetail id={id} />
      }
      if (route === '#/CONTACT') return <Contact />;
      return <Home />;

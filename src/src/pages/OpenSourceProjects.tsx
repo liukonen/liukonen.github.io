@@ -1,4 +1,8 @@
+import FooterCounter from '../components/FooterCounter';
 import portfolioData from '../data/portfolio.json';
+import Header from '../components/Header';
+import Breadcrumb from '../components/Breadcrumb';
+import Tags from '../components/Tags';
 
 export default function OpenSourceProjects() {
   // Extracting all lab projects from the JSON object
@@ -6,21 +10,11 @@ export default function OpenSourceProjects() {
 
   return (
     <div className="page-layer">
-      {/* Navigation Breadcrumb */}
-      <nav className="breadcrumb">
-        <a href="#/">~/root</a>
-        <span style={{ margin: '0 10px', color: 'var(--brass-muted)' }}>/</span>
-        <span style={{ color: 'var(--gold-accent)' }}>OPEN_SOURCE_PROJECTS</span>
-      </nav>
-
-      <header style={{ marginBottom: '60px' }}>
-        <h1 style={{ fontSize: '3rem', fontWeight: '600' }}>Open Source Projects</h1>
-        <p style={{ color: 'var(--text-muted)', marginTop: '10px', maxWidth: '600px' }}>
-          A collection of specialized utilities, hardware monitors, and architectural experiments.
-        </p>
-      </header>
-
-      {/* The Full Bento Grid */}
+      <Breadcrumb path="#/OPEN_SOURCE_PROJECTS" />
+      <Header 
+        title="Open Source Projects" 
+        subtitle="A collection of specialized utilities, hardware monitors, and architectural experiments." 
+      />
       <section className="grid-2">
         {labEntries.map(([id, project]) => (
           <div 
@@ -39,19 +33,17 @@ export default function OpenSourceProjects() {
               {project.description}
             </p>
             <div style={{ marginTop: '20px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-              {project.tech.slice(0,3).map(t => (
-                <span key={t} className="tag" style={{ fontSize: '0.6rem' }}>{t}</span>
-              ))}
+
+
+            <Tags tags={project.tech.slice(0,3)} />
+
             </div>
           </div>
         ))}
       </section>
 
-      <footer style={{ marginTop: '100px', opacity: 0.5 }}>
-        <p style={{ fontFamily: 'JetBrains Mono', fontSize: '0.7rem' }}>
-          END_OF_LIST // TOTAL_ENTRIES: {labEntries.length}
-        </p>
-      </footer>
+    <FooterCounter count={labEntries.length} />
+
     </div>
   );
 }

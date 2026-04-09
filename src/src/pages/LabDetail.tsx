@@ -1,5 +1,7 @@
 import { h } from 'preact';
 import portfolioData from '../data/portfolio.json';
+import Tags from '../components/Tags';
+import Breadcrumb from '../components/Breadcrumb';
 
 interface Props {
   id: string;
@@ -14,22 +16,14 @@ export default function LabDetail({ id }: Props) {
 
   return (
     <div className="page-layer">
-      <nav className="breadcrumb">
-        <a href="#/">~/root </a>
-        <span className="sep">/</span>
-        <a href="#/OPEN_SOURCE_PROJECTS">OPEN_SOURCE_PROJECTS</a>
-        <span className="sep">/</span>
-        <span className="current">{id}</span>
-      </nav>
+      <Breadcrumb path={`#/OPEN_SOURCE_PROJECTS/${id}`} />
 
       <header className="project-header">
         <h1 style={{ fontSize: '3.5rem', color: 'var(--gold-accent)' }}>
           {project.title}
         </h1>
         <div className="tech-stack" style={{ marginTop: '10px' }}>
-          {project.tech.map(t => (
-            <span className="tag" key={t}>{t}</span>
-          ))}
+        <Tags tags={project.tech} />
         </div>
       </header>
 

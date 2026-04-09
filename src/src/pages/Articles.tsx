@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'preact/hooks';
 import { fetchDevArticles, DevArticle } from '../services/devToService';
+import Breadcrumb from '../components/Breadcrumb';
+import FooterCounter from '../components/FooterCounter';
+import Header from '../components/Header';
 
 export default function Articles() {
   const [articles, setArticles] = useState<DevArticle[]>([]);
@@ -16,14 +19,9 @@ export default function Articles() {
 
   return (
     <div className="page-layer articles-view">
-      <div className="breadcrumb">
-        <a href="#/">~/root</a> <span className="sep">/</span> ARTICLES
-      </div>
-      
-      <header className="era-header">
-        <h1 className="gold-text">Writeups, Guides, and Tutorials</h1>
-        <p className="sub-header">Technical documentation and architectural insights from my dev.to <a href="https://dev.to/liukonen" target="_blank">profile</a></p>
-      </header>
+      <Breadcrumb path="#/ARTICLES" />
+
+      <Header title="Writeups, Guides, and Tutorials" subtitle="Technical documentation and architectural insights from my dev.to profile" />
 
       {loading ? (
         <div className="terminal-loader">PULLING_REMOTE_DATA...</div>
@@ -47,7 +45,9 @@ export default function Articles() {
 
             </div>
           ))}
+          <FooterCounter count={articles.length} />
         </div>
+
       )}
     </div>
   );

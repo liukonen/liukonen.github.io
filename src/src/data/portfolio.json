@@ -146,7 +146,7 @@
       "company": "ITT Technical Institute & University of Wisconsin System",
       "title": "Adjunct Instructor / Teaching Assistant",
       "role": "Technical Educator",
-      "logoUrl": "https://liukonen.dev/img/combo.jpg",
+      "logoUrl": "https://liukonen.dev/archive/share/img/combo.jpg",
       "website": "https://www.wisconsin.edu/",
       "description": "Teaching core computer science foundations and technical trade skills.",
       "tech": [
@@ -577,17 +577,17 @@
   ],
   "archive": [
     {
-      "id": "0_2",
+      "id": "0_2_UWM",
       "title": "Reusablity with IFrames",
       "description": "My Softmore and early junior year personal site. Uses IFrames for reusability, and javascript dynamic content."
     },
     {
-      "id": "0_3",
+      "id": "0_3_UWM",
       "title": "Less noise",
       "description": "removed footer, and replaced with a header. Origionally supported pulling my Blog off blogger. MacOs inspired theme."
     },
     {
-      "id": "0_4",
+      "id": "0_4_UWM",
       "title": "last iteration",
       "description": "More tradtional attempt, with a template theme, but harder to maintain. Iframed limited to links page only."
     },
