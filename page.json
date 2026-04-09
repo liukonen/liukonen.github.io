@@ -26,7 +26,7 @@
         {
             "Title": "Html Text Editor",
             "SubTitle": "Manipulate and batch text files in your browser",
-            "image": "archive/share/img/card/htmledit.webp",
+            "image": "img/card/htmledit.webp",
             "Description": "I developed an advanced text editor for custom work. It started as console and winform applications, then evolved into a single web-based app, and now it's a PWA. It can load files from your desktop and save them in the browser cache or as a download.",
             "buttons": [
                 {
@@ -49,7 +49,7 @@
             "Title": "Tic Tac Math",
             "SubTitle": "A simple math tic tac toe game.",
             "Description": "Back in school around 2003 or 04, I developed a Tic Tac Toe game using Visual Basic 6 and Microsoft Agents for input and output. Recently, I found the original source code and rewrote it in .NET, consolidating the logic into a single program with options to switch math types (divide, multiply, add, and subtract). As a side project during some time off, I converted the game to JavaScript and HTML, and brought back the Agents and text-to-speech functionality through the browser.",
-            "image": "archive/share/img/card/ttm.webp",
+            "image": "img/card/ttm.webp",
             "buttons": [
                 {
                     "type": "Website",
@@ -80,7 +80,7 @@
             "Title": "RiverScriptBot",
             "SubTitle": "A UI and NodeJS Rivescript server chatbot.",
             "Description": "I have created several chatbots over the years, including one in Vue.js and another in Angular, as well as a REST-based bot using Rivescript and Node.js. My interest in chatbots began in the early 2000s when I worked on an AIML project that used MS Agent, TTS, and speech recognition. Later, I worked with the Alice project and presented a version of my project at the MMAC Be The Spark tour, which utilized Microsoft cognitive services and a vocal chatbot capable of detecting and translating on the fly. I recently migrated the AIML code to RiveScript to create this chatbot.",
-            "image": "archive/share/img/card/chat.webp",
+            "image": "img/card/chat.webp",
             "buttons": [
                 {
                     "type": "Website",
@@ -108,7 +108,7 @@
             "Title": "Flag Fairway",
             "SubTitle": "A self hosted internal facing configuration mananger",
             "Description": "Trying a number of feature flag products, I found that there was a lot of bloat when it came to both performance, size, and message structure, so I decided to write up a simple REST CRUD app to be able to manage and configure feature flags within my own applications internally.",
-            "image": "archive/share/img/card/flagfairway.webp",
+            "image": "img/card/flagfairway.webp",
             "buttons": [
                 {
                     "type": "Release",
@@ -132,7 +132,7 @@
             "Title": "NATS",
             "SubTitle": "a utility to search text files quickly",
             "Description": "Nats is a command-line search engine for text files with multithreading, indexing, and a cached option for faster lookups. Originally written in .net core, it now has GUI editions for Windows, Mac, and GTK running on multiple platforms. Icon for mac and windows provided by material.io, and is Apache license version 2.0.",
-            "image": "archive/share/img/card/nats.webp",
+            "image": "img/card/nats.webp",
             "buttons": [
                 {
                     "type": "Release",
@@ -161,7 +161,7 @@
             "Title": "CloudyPie",
             "SubTitle": "A rewrite of DJAkbar's cloudy-a project",
             "Description": "Refactored and upgraded a Python-based lamp project for Raspberry Pi that displays weather information, originally created by DJAkbars, to improve operation timing and service calling, and migrate to Python 3.",
-            "image": "archive/share/img/card/cp.webp",
+            "image": "img/card/cp.webp",
             "buttons": [
                 {
                     "type": "Release",
@@ -190,7 +190,7 @@
             "Title": "WeatherWallpaper",
             "SubTitle": "Changes wallpaper based on weather and time of day for Windows",
             "Description": "I developed a weather app using Yahoo as the source for data, but lost the source code. I rewrote the app to include multiple data sources in case of outages, and added the ability to display different wallpapers based on time of day.",
-            "image": "archive/share/img/card/weatherwallpaper.webp",
+            "image": "img/card/weatherwallpaper.webp",
             "buttons": [
                 {
                     "type": "Release",
@@ -221,7 +221,7 @@
             "Title": "Simple Weather Tray",
             "SubTitle": "lightweight weather tray app for Mac, Linux, and Windows",
             "Description": "The app is a weather tool that runs on Mac, Linux, and PC and is based on weatherwallpaper. The code is compiled using GTK and allows the user to change the engine behind it. The idea for this app goes back to the developer's college days when they disliked the adware and spyware associated with Weathebug.",
-            "image": "archive/share/img/card/weather.webp",
+            "image": "img/card/weather.webp",
             "buttons": [
                 {
                     "type": "Release",
@@ -244,7 +244,7 @@
             "Title": "Desert Changer",
             "SubTitle": "Time based wallpaper changer for Windows",
             "Description": "For Windows, This app changes your wallpaper throughout the day without the need for external calls, similar to Mac OS Mojave.",
-            "image": "archive/share/img/card/dchanger.webp",
+            "image": "img/card/dchanger.webp",
             "buttons": [
                 {
                     "type": "Release",
@@ -271,7 +271,7 @@
             "Title": "PodLoad",
             "SubTitle": "Rss Feed based podcast downloader",
             "Description": "a .NET application designed for pulling video and audio podcasts via RSS feeds. It has been rewritten to support the .NET core framework and works on Linux as well.",
-            "image": "archive/share/img/card/podcast.webp",
+            "image": "img/card/podcast.webp",
             "buttons": [
                 {
                     "type": "Source",
@@ -292,7 +292,7 @@
             "Title": "Dif",
             "SubTitle": "Compares files between folders.",
             "Description": "This program helps you see what files have changed when you copy them from one folder to another. It goes off LastUpdated timestamps of the files",
-            "image": "archive/share/img/card/cmd.webp",
+            "image": "img/card/cmd.webp",
             "buttons": [
                 {
                     "type": "Release",
@@ -312,7 +312,7 @@
             "Title": "Clipboard++",
             "SubTitle": "Multi item clipboard manager for Windows",
             "Description": " Its purpose is to provide an application that can maintain an in-memory cache of multiple clipboard items. This is useful in case accidental copying over data occurs, as users can go back to the original version. Clipboard++ is a lightweight clipboard manager that offers various features such as encryption, in-memory compression, the ability to retain its state after reboots or restarts, and the option to save files directly from the clipboard.",
-            "image": "archive/share/img/card/clip.webp",
+            "image": "img/card/clip.webp",
             "buttons": [
                 {
                     "type": "Release",
@@ -339,7 +339,7 @@
             "Title": "WinFrost",
             "SubTitle": "a simple site-specific browser generator and browser",
             "Description": "WinFrost is a web application that aims to provide users with the ability to access web pages as full-blown apps. The project was born out of a desire to see web pages become more like applications. Unfortunately, other projects like Mozilla Prism have been discontinued, leaving a void in the market. While Chrome has its own solution through shortcuts, that feature is also going away. WinFrost is inspired by Pepperment's Ice SSB app and is currently only available for Windows. Due to its dependence on Nuget updates, the project is not released as a standalone application, and developers are encouraged to compile the latest version themselves.",
-            "image": "archive/share/img/card/winfrost.webp",
+            "image": "img/card/winfrost.webp",
             "buttons": [
                 {
                     "type": "Source",
@@ -361,7 +361,7 @@
             "Title": "choco-outdated",
             "SubTitle": "a utility to check for outdated chocolatey packages",
             "Description": "This program does something similar to chocos outdated command, however it is written in GoLang, uses go Goroutines for quick processing, and channels for quick UI output to the console. This was written after the release of v2 of the Choco command line tool, as the outdated command runs much slower then the v1 version.",
-            "image": "archive/share/img/card/cmd.webp",
+            "image": "img/card/cmd.webp",
             "buttons": [
                 {
                     "type": "Release",
@@ -382,7 +382,7 @@
             "Title": "Gpsd API",
             "SubTitle": " A python based app to expose gpspipe as a rest API",
             "Description": "This is a Flask application that interacts with a GPS device using the gpspipe command-line tool to retrieve GPS data and check the device's connection status.",
-            "image": "archive/share/img/card/timeserver.webp",
+            "image": "img/card/timeserver.webp",
             "buttons": [
                 {
                     "type": "Release",
@@ -426,61 +426,55 @@
             "items": [
                 {
                     "title": "C#",
-                    "img": "./archive/share/img/original/csharp.webp",
+                    "img": "./img/original/csharp.webp",
                     "level": 3,
                     "link": "https://en.wikipedia.org/wiki/C_Sharp_(programming_language)"
                 },
                 {
                     "title": "Java",
-                    "img": "./archive/share/img/original/Java.webp",
+                    "img": "./img/original/Java.webp",
                     "level": 3,
                     "link": "https://java.com"
                 },
                 {
                     "title": "TypeScript",
-                    "img": "./archive/share/img/original/ts.webp",
+                    "img": "./img/original/ts.webp",
                     "level": 2,
                     "link": "https://www.typescriptlang.org/"
                 },
                 {
-                    "title": "React",
-                    "img": "./archive/share/img/original/React.webp",
-                    "level": 2,
-                    "link": "https://react.dev/"
-                },
-                {
                     "title": "Spring",
-                    "img": "./archive/share/img/original/Spring.webp",
+                    "img": "./img/original/Spring.webp",
                     "level": 2,
                     "link": "https://spring.io/"
                 },
                 {
                     "title": "Node",
-                    "img": "./archive/share/img/original/node.webp",
+                    "img": "./img/original/node.webp",
                     "level": 2,
                     "link": "https://nodejs.org/en/about/"
                 },
                 {
                     "title": "VB.Net",
-                    "img": "./archive/share/img/original/vb.webp",
+                    "img": "./img/original/vb.webp",
                     "level": 3,
                     "link": "https://en.wikipedia.org/wiki/Visual_Basic_.NET"
                 },
                 {
                     "title": "SQL",
-                    "img": "./archive/share/img/original/tsql.webp",
+                    "img": "./img/original/tsql.webp",
                     "level": 2,
                     "link": "https://en.wikipedia.org/wiki/Transact-SQL"
                 },
                 {
                     "title": "Python",
-                    "img": "./archive/share/img/original/python.webp",
+                    "img": "./img/original/python.webp",
                     "level": 1,
                     "link": "https://www.python.org/"
                 },
                 {
                     "title": "GoLang",
-                    "img": "./archive/share/img/original/go.webp",
+                    "img": "./img/original/go.webp",
                     "level": 1,
                     "link": "https://go.dev/"
                 }
@@ -491,26 +485,32 @@
             "size": "6",
             "items": [
                 {
+                    "title": "React",
+                    "img": "./img/original/React.webp",
+                    "level": 2,
+                    "link": "https://react.dev/"
+                },
+                {
                     "title": "ASP.Net",
-                    "img": "./archive/share/img/original/aspnet.webp",
+                    "img": "./img/original/aspnet.webp",
                     "level": 2,
                     "link": "https://dotnet.microsoft.com/apps/aspnet"
                 },
                 {
                     "title": "Angular",
-                    "img": "./archive/share/img/original/Angular.webp",
+                    "img": "./img/original/Angular.webp",
                     "level": 2,
                     "link": "https://angular.io/"
                 },
                 {
                     "title": "jQuery",
-                    "img": "./archive/share/img/original/jquery.webp",
+                    "img": "./img/original/jquery.webp",
                     "level": 2,
                     "link": "https://jquery.com/"
                 },
                 {
                     "title": "HandleBars",
-                    "img": "./archive/share/img/original/Handlebars.webp",
+                    "img": "./img/original/Handlebars.webp",
                     "level": 2,
                     "link": "https://handlebarsjs.com/"
                 }
@@ -522,19 +522,19 @@
             "items": [
                 {
                     "title": "HTML 5",
-                    "img": "./archive/share/img/original/html5.webp",
+                    "img": "./img/original/html5.webp",
                     "level": 2,
                     "link": "https://en.wikipedia.org/wiki/HTML"
                 },
                 {
                     "title": "JavaScript",
-                    "img": "./archive/share/img/original/javascript.webp",
+                    "img": "./img/original/javascript.webp",
                     "level": 2,
                     "link": "https://en.wikipedia.org/wiki/JavaScript"
                 },
                 {
                     "title": "SASS",
-                    "img": "./archive/share/img/original/sass.webp",
+                    "img": "./img/original/sass.webp",
                     "level": 2,
                     "link": "https://sass-lang.com/"
                 }
@@ -546,27 +546,27 @@
             "items": [
                 {
                     "title": "Rest",
-                    "img": "./archive/share/img/original/rest.webp",
+                    "img": "./img/original/rest.webp",
                     "level": 2,
                     "link": "https://en.wikipedia.org/wiki/Representational_state_transfer"
                 },
                 {
                     "title": "GraphQL",
-                    "img": "./archive/share/img/original/GraphQL.webp",
+                    "img": "./img/original/GraphQL.webp",
                     "level": 2,
                     "link": "https://graphql.org/"
                 },
                 {
                     "title": "Pub Sub",
-                    "img": "./archive/share/img/original/rest.webp",
+                    "img": "./img/original/rest.webp",
                     "level": 2,
                     "link": "https://en.wikipedia.org/wiki/Representational_state_transfer"
                 },
                 {
                     "title": "Containers",
-                    "img": "./archive/share/img/original/Docker.webp",
+                    "img": "./img/original/Docker.webp",
                     "level": 2,
-                    "link": "https://en.wikipedia.org/wiki/Containerization_(computing)"
+                    "link": "https://kubernetes.io/"
                 }
             ]
         },
@@ -576,19 +576,19 @@
             "items": [
                 {
                     "title": "Rational",
-                    "img": "./archive/share/img/original/sqlserver.webp",
+                    "img": "./img/original/sqlserver.webp",
                     "level": 2,
                     "link": "https://en.wikipedia.org/wiki/Microsoft_SQL_Server"
                 },
                 {
                     "title": "Redis",
-                    "img": "./archive/share/img/original/redis.webp",
+                    "img": "./img/original/redis.webp",
                     "level": 1,
                     "link": "https://redis.io/"
                 },
                 {
                     "title": "Document",
-                    "img": "./archive/share/img/original/MongoDB.webp",
+                    "img": "./img/original/MongoDB.webp",
                     "level": 1,
                     "link": "https://www.mongodb.com/"
                 }
@@ -600,57 +600,15 @@
             "items": [
                 {
                     "title": "TFS",
-                    "img": "./archive/share/img/original/TFS.webp",
+                    "img": "./img/original/TFS.webp",
                     "level": 2,
                     "link": "https://azure.microsoft.com/en-us/services/devops/server/"
                 },
                 {
                     "title": "Git",
-                    "img": "./archive/share/img/original/Git.webp",
+                    "img": "./img/original/Octocat.webp",
                     "level": 2,
                     "link": "https://en.wikipedia.org/wiki/Git"
-                }
-            ]
-        },
-        {
-            "name": "DevOps",
-            "size": "4",
-            "items": [
-                {
-                    "title": "Actions",
-                    "img": "./archive/share/img/original/Octocat.webp",
-                    "level": 1,
-                    "link": "https://github.com/features/actions"
-                },
-                {
-                    "title": "Jenkins",
-                    "img": "./archive/share/img/original/jenkins.webp",
-                    "level": 1,
-                    "link": "https://jenkins.io/"
-                },
-                {
-                    "title": "Ansible",
-                    "img": "./archive/share/img/original/ansible.webp",
-                    "level": 1,
-                    "link": "https://www.ansible.com/"
-                }
-            ]
-        },
-        {
-            "name": "shell",
-            "size": "2",
-            "items": [
-                {
-                    "title": "Bash",
-                    "img": "./archive/share/img/original/bash.webp",
-                    "level": 2,
-                    "link": "https://en.wikipedia.org/wiki/Bash_(Unix_shell)"
-                },
-                {
-                    "title": "PowerShell",
-                    "img": "./archive/share/img/original/powershell.webp",
-                    "level": 2,
-                    "link": "https://en.wikipedia.org/wiki/PowerShell"
                 }
             ]
         },
@@ -660,38 +618,38 @@
             "items": [
                 {
                     "title": "Prompting",
-                    "img": "./archive/share/img/original/AI.webp",
+                    "img": "./img/original/AI.webp",
                     "level": 2,
                     "link": "https://en.wikipedia.org/wiki/Prompt_engineering"
                 },
                 {
                     "title": "RAG",
-                    "img": "./archive/share/img/original/AI.webp",
+                    "img": "./img/original/AI.webp",
                     "level": 1,
                     "link": "https://en.wikipedia.org/wiki/Retrieval-augmented_generation"
                 },
                 {
                     "title": "ML",
-                    "img": "./archive/share/img/original/AI.webp",
+                    "img": "./img/original/AI.webp",
                     "level": 1,
                     "link": "https://en.wikipedia.org/wiki/Machine_learning"
                 },
                 {
                     "title": "NLP",
-                    "img": "./archive/share/img/original/AI.webp",
+                    "img": "./img/original/AI.webp",
                     "level": 1,
                     "link": "https://en.wikipedia.org/wiki/Natural_language_processing"
                 },
                 {
                     "title": "LLM Hosting",
-                    "img": "./archive/share/img/original/AI.webp",
+                    "img": "./img/original/AI.webp",
                     "level": 1,
                     "link": "https://en.wikipedia.org/wiki/Large_language_model"
                 },
                 {
                     "title": "Cognitive",
-                    "img": "./archive/share/img/original/cognitive.webp",
-                    "level": 1,
+                    "img": "./img/original/cognitive.webp",
+                    "level": 2,
                     "link": "https://azure.microsoft.com/en-us/services/cognitive-services/"
                 }
             ]
@@ -701,7 +659,7 @@
         {
             "name": "University of Wisconsin - Milwaukee",
             "timeworked": "2006",
-            "img": "./archive/share/img/200/uwm.webp",
+            "img": "./img/200/uwm.webp",
             "title": "Bachelors in Business Administration",
             "summary": "Management Information Systems"
         }
@@ -711,49 +669,50 @@
             "name": "University of Wisconsin System",
             "timeworked": "January 2006 - May 2006",
             "title": "Teaching Assistant",
-            "img": "./archive/share/img/200/uw.webp",
-            "link": "https://www.wisconsin.edu/",
+            "img": "./img/original/uw.webp",
             "summary": "As a Teaching Assistant at the University of Wisconsin - Milwaukee, I assisted professors in managing and grading assignments, providing support to students, and facilitating classroom activities. This role allowed me to develop strong communication and organizational skills while gaining valuable experience in an academic setting."
-        },
-        {
-            "name": "Trisept Solutions",
-            "timeworked": "May 2006 - July 2020",
-            "title": "Software Analyst (Mid to Senior Engineer equivalent)",
-            "img": "./archive/share/img/200/777.webp",
-            "link": "https://www.triseptsolutions.com/",
-            "summary": "As the Development Lead for the Product Support area at Trisept Solutions, I played a critical role for 3 years in driving the development of our backend system, which included the Avail, packaging, and booking engine. This was a full-stack position that required me to utilize a range of tools and technologies. In addition to my primary responsibilities, I also contributed to writing setup materials/documentation, consulted on system performance and monitoring during system analysis tasks, and mentored new and junior developers within our team. My passion for delivering innovative solutions and streamlining development processes was integral to the success of our team."
-        },
-        {
-            "name": "ITT Technical Institute",
-            "timeworked": "Summer 2008 and 2010",
-            "title": "Adjunct Instructor",
-            "img": "./archive/share/img/200/ITT-t.webp",
-            "link": "https://en.wikipedia.org/wiki/ITT_Technical_Institute",
-            "summary": "As a Summer Instructor at ITT Technical Institute, I had the opportunity to teach two courses: Introduction to Programming and Introduction to Computers. These experiences helped me develop a managerial approach, as I learned that it is often best to guide people to the answer rather than simply giving it to them. I honed my skills in administrative tasks, time management, and managing multiple people at once, all of which were essential to the success of the courses. Overall, my time at ITT Tech allowed me to develop my teaching skills and provided valuable insights into effective leadership and management."
-        },
-        {
-            "name": "Blue7 Solutions",
-            "timeworked": "January 2012 - April 2014",
-            "title": "Software Engineer",
-            "img": "./archive/share/img/200/Blue7-t.webp",
-            "link": "https://web.archive.org/web/20141219042731/http://www.blue7solutions.com/",
-            "summary": "At Blue7 Solutions, I worked closely with Trisept Solutions as a Consultant Development Lead for the Product Support team, which required in-depth knowledge of Trisept's entire system. My responsibilities included debugging and resolving issues within the codebase and managing Blue 7's offshore resources for Product Support as needed. In addition to my work for the Product Support team, I also served as a consultant for Trisept Solutions in the dynamic packaging engine as a full-stack developer. I took pride in my ability to collaborate with cross-functional teams and deliver high-quality solutions, which proved to be critical to the success of both Blue7 Solutions and Trisept Solutions"
-        },
-        {
-            "name": "Brady Corporation",
-            "timeworked": "August 2020 - April 2021",
-            "title": "Senior Software Engineer",
-            "img": "./archive/share/img/200/brady-t.webp",
-            "link": "https://www.bradyid.com/",
-            "summary": "At Brady, I primarily focused on the e-commerce platform where I worked as a full-stack developer. This involved utilizing a wide range of tools and technologies, including SASS Stylesheets, JavaScript and JavaScript frameworks, MVC, Sitecore controls, and Test Driven Development. In addition to my core responsibilities, I also gained experience with Docker containerization of tools and created one-click 'Dev environments as code' setup scripts, which were instrumental in streamlining the onboarding and rebuilding of machines. Throughout my time at Brady, I remained committed to optimizing our development process and improving the overall efficiency of our team"
         },
         {
             "name": "Northwestern Mutual",
             "timeworked": "April 2021 - Present",
             "title": "Software Engineer",
-            "img": "../share/img/200/NM-t.webp",
-            "link": "https://www.northwesternmutual.com/",
+            "img": "./img/200/NM.webp",
             "summary": "I’m a Full-Stack Software Engineer at Northwestern Mutual, building reliable, well-structured software across backend services and frontend applications using Java, Node.js, React, JavaScript, and TypeScript. I focus on writing clean, maintainable code that supports long-term growth and performance. Outside of development, I’ve helped improve CI/CD processes and contributed to team-wide efforts around testing and development standards. I’ve mentored an intern, supported newer engineers, and currently help guide peers through self-paced training programs by offering technical support, hosting office hours, and assisting with challenges along the way."
+        },
+        {
+            "name": "Brady Corporation",
+            "timeworked": "August 2020 - April 2021",
+            "title": "Senior Software Engineer",
+            "img": "./img/200/brady.webp",
+            "summary": "At Brady, I primarily focused on the e-commerce platform where I worked as a full-stack developer. This involved utilizing a wide range of tools and technologies, including SASS Stylesheets, JavaScript and JavaScript frameworks, MVC, Sitecore controls, and Test Driven Development. In addition to my core responsibilities, I also gained experience with Docker containerization of tools and created one-click 'Dev environments as code' setup scripts, which were instrumental in streamlining the onboarding and rebuilding of machines. Throughout my time at Brady, I remained committed to optimizing our development process and improving the overall efficiency of our team"
+        },
+        {
+            "name": "Trisept Solutions",
+            "timeworked": "April 2014 - July 2020",
+            "title": "Software Analyst (Mid to Senior Engineer equivalent)",
+            "img": "./img/200/777.webp",
+            "summary": "As the Development Lead for the Product Support area at Trisept Solutions, I played a critical role for 3 years in driving the development of our backend system, which included the Avail, packaging, and booking engine. This was a full-stack position that required me to utilize a range of tools and technologies. In addition to my primary responsibilities, I also contributed to writing setup materials/documentation, consulted on system performance and monitoring during system analysis tasks, and mentored new and junior developers within our team. My passion for delivering innovative solutions and streamlining development processes was integral to the success of our team."
+        },
+        {
+            "name": "Blue7 Solutions",
+            "timeworked": "January 2012 - April 2014",
+            "title": "Software Engineer",
+            "img": "./img/200/Blue7 Solutions.webp",
+            "summary": "At Blue7 Solutions, I worked closely with Trisept Solutions as a Consultant Development Lead for the Product Support team, which required in-depth knowledge of Trisept's entire system. My responsibilities included debugging and resolving issues within the codebase and managing Blue 7's offshore resources for Product Support as needed. In addition to my work for the Product Support team, I also served as a consultant for Trisept Solutions in the dynamic packaging engine as a full-stack developer. I took pride in my ability to collaborate with cross-functional teams and deliver high-quality solutions, which proved to be critical to the success of both Blue7 Solutions and Trisept Solutions"
+        },
+        {
+            "name": "Trisept Solutions",
+            "timeworked": "May 2006 - December 2011",
+            "title": "Software Developer",
+            "img": "./img/200/777.webp",
+            "summary": "At Trisept Solutions, I was part of a team responsible for developing and maintaining the company's dynamic packaging engine, which bundled vacation packages based on preset rules, as well as their booking engine, which facilitated the booking of these packages. During my time there, I became a knowledge expert on the company's custom backend entry systems. As part of my role, I worked with a variety of technologies, including C#, VB.net, SQL, XML, JavaScript, and ASP.net, among others. Collaborating with cross-functional teams was essential to the success of the projects."
+        },
+        {
+            "name": "ITT Technical Institute",
+            "timeworked": "Summer 2008 and 2010",
+            "title": "Adjunct Instructor",
+            "img": "./img/200/ITT Technical Institute.webp",
+            "summary": "As a Summer Instructor at ITT Technical Institute, I had the opportunity to teach two courses: Introduction to Programming and Introduction to Computers. These experiences helped me develop a managerial approach, as I learned that it is often best to guide people to the answer rather than simply giving it to them. I honed my skills in administrative tasks, time management, and managing multiple people at once, all of which were essential to the success of the courses. Overall, my time at ITT Tech allowed me to develop my teaching skills and provided valuable insights into effective leadership and management."
         }
     ],
     "Hobbies": [

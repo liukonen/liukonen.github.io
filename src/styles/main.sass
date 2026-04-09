@@ -1,0 +1,955 @@
+$bg-deep: #0f1115
+$bg-surface: #1a1d23 // The Bench
+$text-main: #f8fafc // Brightened (almost white) for titles/legibility
+$text-muted: #cbd5e1 // Brightened (light grey) for descriptions
+$gold-accent: #d4af37 // Brass/Gold highlights
+$brass-muted: #a8936d // Weathered gold
+$font-main: 'Inter', sans-serif
+$font-mono: 'JetBrains Mono', monospace
+$font-default: 'JetBrains Mono'
+
+// --- THE BRIDGE ---
+// This makes these variables available to your TSX style props
+:root
+  --bg-deep: #{$bg-deep}
+  --bg-surface: #{$bg-surface}
+  --text-main: #{$text-main}
+  --text-muted: #{$text-muted}
+  --gold-accent: #{$gold-accent}
+  --brass-muted: #{$brass-muted}
+
+// --- GLOBAL RESET & BASE ---
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+html
+  scrollbar-gutter: stable
+
+body
+  background-color: $bg-deep
+  color: $text-main
+  font-family: $font-main
+  // The global drafting paper grid
+  background-image: radial-gradient($bg-surface 1px, transparent 1px)
+  background-size: 30px 30px
+  line-height: 1.6
+  overflow-x: hidden
+
+
+
+// --- LAYOUT ENGINE ---
+.app-shell
+  display: flex
+  max-width: 1400px
+  margin: 0 auto
+  min-height: 100vh
+
+// --- STICKY SIDEBAR (THE CONSTANT) ---
+.sidebar
+  width: 380px
+  height: 100vh
+  position: sticky
+  top: 0
+  padding: 60px 50px
+  display: flex
+  flex-direction: column
+  border-right: 1px solid rgba(255, 255, 255, 0.05)
+  ul
+    list-style: none // This removes the bullet/dot
+    padding: 0       // Removes the default left indent
+    margin: 0
+
+    li
+      margin-bottom: 12px // Gives your "Career" and other links breathing room
+      display: flex
+      align-items: center
+  .brand-logo
+    font-family: $font-mono
+    color: $gold-accent
+    font-weight: 700
+    margin-bottom: 30px
+    font-size: 1.1rem
+
+  .profile-img
+    width: 140px
+    height: 140px
+    border-radius: 4px
+    border: 1px solid $gold-accent
+    padding: 5px
+    background: $bg-surface
+    margin-bottom: 30px
+    object-fit: cover
+
+  h1
+    font-size: 1.8rem
+    letter-spacing: -1px
+    line-height: 1.1
+
+  .subtitle
+    color: $gold-accent
+    font-family: $font-mono
+    font-size: 0.75rem
+    margin-top: 8px
+    text-transform: uppercase
+    letter-spacing: 1px
+
+// --- NAVIGATION ---
+.nav-links
+  @extend .top-buffer-10
+  list-style: none
+  font-family: $font-mono
+  @media (max-width: 1100px)
+    display: none // Entirely removes the links from the layout
+  li
+    margin: 22px 0
+  a
+    text-decoration: none
+    color: $text-muted // Now bright grey
+    font-size: 0.75rem
+    letter-spacing: 3px
+    text-transform: uppercase
+    display: flex
+    align-items: center
+    transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1)
+    cursor: pointer
+
+    .line
+      width: 25px
+      height: 1px
+      background: $text-muted
+      margin-right: 15px
+      transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1)
+
+    &:hover, &.active
+      color: $gold-accent
+      .line
+        width: 55px
+        background: $gold-accent
+
+.social-links
+  margin-top: auto
+  display: flex
+  gap: 15px
+  font-family: $font-mono
+  font-size: 1.8rem
+
+  a
+    color: $text-muted
+    text-decoration: none
+    transition: 0.3s
+    &:hover
+      color: $gold-accent
+
+// --- CONTENT CORE ---
+.content-area
+  flex: 1
+  padding: 80px
+  position: relative
+
+// --- ANIMATION: SCHEMATIC REVEAL ---
+.page-layer
+  animation: theatricalReveal 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards
+  animation-delay: 0.2s
+  opacity: 0
+  transform: translateX(100%) translateY(20px)
+  filter: blur(4px)
+  will-change: transform, opacity, filter
+
+@keyframes schematicReveal
+  to
+    opacity: 1
+    transform: translateY(0)
+
+// --- ANIMATION: PAGE TRANSITION (FADE & RISE) ---
+.page-transition
+  animation: fadeAndRise 0.4s cubic-bezier(0.23, 1, 0.32, 1) forwards
+
+@keyframes fadeAndRise
+  from
+    opacity: 0
+    transform: translateY(15px)
+    filter: blur(4px)
+  to
+    opacity: 1
+    transform: translateY(0)
+    filter: blur(0)
+
+// --- COMPONENTS ---
+.breadcrumb
+  font-family: $font-mono
+  font-size: 0.8rem
+  color: $brass-muted
+  margin-bottom: 45px
+  
+  a
+    color: inherit
+    text-decoration: none
+    &:hover
+      color: $gold-accent
+
+  .sep
+    margin: 0 10px
+    opacity: 0.5
+.last_Breadcrumb
+  color: $gold-accent
+
+.section-label
+  font-family: $font-mono
+  color: $gold-accent
+  letter-spacing: 5px
+  font-size: 0.7rem
+  margin-bottom: 35px
+  display: block
+  text-transform: uppercase
+
+// --- BENTO GRID & THE UPDATED BLUEPRINT CARD ---
+.grid-2
+  display: grid
+  grid-template-columns: 1fr 1fr
+  gap: 24px
+
+.card
+  background: $bg-surface
+  padding: 35px
+  border-radius: 4px
+  border: 1px solid rgba(255, 255, 255, 0.03)
+  cursor: pointer
+  display: flex
+  flex-direction: column
+  position: relative // Required for pseudo-element positioning
+  overflow: hidden // Keeps the fadded pattern inside the card
+
+  // THE ICON SYSTEM: Adds depth and theme with a blueprint pattern background image
+  // This uses a generic technical circuit design which acts as a visual identifier
+  &::before
+    content: ''
+    position: absolute
+    bottom: -40px
+    right: -40px
+    width: 200px
+    height: 200px
+    background-color: color-mix($gold-accent, white 10%) 
+    //background-color: lighten($gold-accent, 20%)
+    
+    opacity: 0.03 // Keep it extremely subtle for now
+    transition: 0.4s ease
+    pointer-events: none
+    // Generic circuit SVG diagram encoded as a background mask for theme
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M11 21H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h8m2 0h8c1.1 0 2 .9 2 2v16c0 1.1-.9 2-2 2h-8m-2-4v2M3 13h2M3 9h2m2 8h2m2 0H7m0 0V7m0 10v2M19 17v-2m-2 2h2m-2-4v2m-2-2h2m0-4V7m2 2h-2m2 0v2M19 13v-2m-2 2h2'/%3E%3C/svg%3E")
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M11 21H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h8m2 0h8c1.1 0 2 .9 2 2v16c0 1.1-.9 2-2 2h-8m-2-4v2M3 13h2M3 9h2m2 8h2m2 0H7m0 0V7m0 10v2M19 17v-2m-2 2h2m-2-4v2m-2-2h2m0-4V7m2 2h-2m2 0v2M19 13v-2m-2 2h2'/%3E%3C/svg%3E")
+    -webkit-mask-size: cover
+    mask-size: cover
+
+  h4
+    margin-bottom: 12px
+    font-size: 1.25rem
+    font-weight: 600
+    color: $text-main // Confirmed bright for title
+    position: relative // Keep above fadded blueprint
+    z-index: 2
+
+  p
+    font-size: 0.95rem
+    color: $text-muted // Now much brighter grey for legibility
+    line-height: 1.7
+    flex-grow: 1
+    position: relative // Keep above fadded blueprint
+    z-index: 2
+
+  // The HOVER State: rewarding interaction with a depth change and a brighter blueprint
+  &:hover
+    transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1)
+    transform: translateY(-5px)
+    border-color: rgba($gold-accent, 0.3)
+    background-color: color-mix($bg-surface, white 1.5%)
+    //background-color: lighten($bg-surface, 1.5%)
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4)
+
+    // Make icon brighter on hover so the card looks 'active'
+    &::before
+      opacity: 0.1
+      transform: scale(1.1)
+
+// --- PROFESSIONAL ERAS ---
+.era
+  display: flex
+  gap: 40px
+  margin-bottom: 45px
+
+  .era-year
+    font-family: $font-mono
+    color: $brass-muted
+    font-size: 0.85rem
+    min-width: 110px
+    padding-top: 5px
+
+  .era-info
+    h4
+      font-size: 1.15rem
+      color: $text-main
+    p
+      color: $text-muted
+      font-size: 0.95rem
+      margin-top: 5px
+
+// --- THEATRICAL ERA CONTAINER (STAGGERED REVEAL) ---
+.era-container
+  overflow-x: hidden
+  width: 100%
+
+
+@keyframes theatricalReveal
+  from
+    opacity: 0
+    transform: translateX(100%) translateY(20px)
+    filter: blur(4px)
+  to
+    opacity: 1
+    transform: translateX(0) translateY(0)
+    filter: blur(0)
+
+// --- FORMS & BUTTONS ---
+.contact-form
+  max-width: 650px
+
+  input, textarea
+    width: 100%
+    background: $bg-surface
+    border: 1px solid rgba(255, 255, 255, 0.06)
+    padding: 18px
+    color: $text-main
+    font-family: $font-main
+    margin-bottom: 20px
+    border-radius: 4px
+    outline: none
+    transition: 0.3s
+    &:focus
+      border-color: $gold-accent
+
+.btn
+  background: transparent
+  border: 1px solid $gold-accent
+  color: $gold-accent
+  padding: 14px 35px
+  font-family: $font-mono
+  font-size: 0.8rem
+  letter-spacing: 2px
+  text-transform: uppercase
+  cursor: pointer
+  transition: 0.3s
+  position: relative // Keep navigation simple for now
+  z-index: 2
+  &:hover
+    background: $gold-accent
+    color: $bg-deep
+
+.top-buffer-10
+  margin-top: 10px
+.top-buffer-15
+  margin-top: 15px
+.top-buffer-20
+  margin-top: 20px
+.top-buffer-40
+  margin-top: 40px
+
+.tag-wrapper
+  display: flex
+  flex-wrap: wrap
+  margin-top: 20px
+  gap: 8px
+
+.no-decor
+  text-decoration: none
+  color: inherit
+
+// --- TA GS FIX: Contrast ---
+.tag
+  border: 1px solid rgba($gold-accent, 0.15) // Use gold accent for subtle branding
+  color: $text-main // Confirmed bright for visibility
+  padding: 4px 12px
+  font-size: 0.65rem
+  font-family: $font-mono
+  margin-right: 8px
+  margin-top: 15px
+  border-radius: 2px
+  display: inline-block
+  position: relative // Keep above fadded blueprint
+  z-index: 2
+  background-color: rgba($bg-deep, 0.3) // Added slight depth
+
+// --- FOOTER ---
+footer
+  border-top: 1px solid rgba(255, 255, 255, 0.05)
+  padding: 10px 0
+  color: $brass-muted
+  font-family: $font-mono
+  font-size: 0.75rem
+  letter-spacing: 1px
+  opacity: 0.5
+  p
+    font-family: $font-default
+    font-size:  '0.7rem'
+
+header
+  @extend .default-margin
+  h1
+    font-size: 3rem
+    font-weight: 600
+  p
+    @extend .top-buffer-10
+    color: $text-muted
+    max-width: 600px
+
+.showcase-grid
+  margin-bottom: 100px
+
+.default-margin
+  margin-bottom: 60px
+
+
+.detail-view
+  max-width: 900px
+
+.era-header
+  @extend .default-margin
+  
+  .brand-box
+    display: flex
+    align-items: center
+    gap: 30px
+    margin-bottom: 40px
+
+    .company-logo-large
+      width: 80px
+      height: 80px
+      border-radius: 8px
+      filter: grayscale(1) brightness(0.8) // Keeps it within the dark theme
+      border: 1px solid rgba(255, 255, 255, 0.1)
+      padding: 10px
+      background: #fff // Small white pop for the logo itself
+
+    .external-link
+      font-family: $font-mono
+      font-size: 0.8rem
+      color: $gold-accent
+      text-decoration: none
+      &:hover
+        text-decoration: underline
+
+.meta-strip
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))
+  gap: 20px
+  padding: 25px
+  background: $bg-surface
+  border: 1px solid rgba(255, 255, 255, 0.05)
+  border-radius: 4px
+
+  .meta-item
+    label
+      display: block
+      font-family: $font-mono
+      font-size: 0.6rem
+      color: $brass-muted
+      margin-bottom: 5px
+    span
+      font-weight: 600
+      font-size: 0.9rem
+
+.long-form-text
+  white-space: pre-wrap // Respects the line breaks from your old site
+  color: $text-muted
+  line-height: 1.8
+  font-size: 1.05rem
+  margin-top: 20px
+
+// 1. Global smooth scrolling for any internal anchors
+html
+  scroll-behavior: smooth
+
+// 2. The "App Shell" feel
+.content-area
+  height: 100vh
+  overflow-y: auto
+  overflow-x: hidden
+  // This ensures the smooth behavior applies to the div itself
+  scroll-behavior: smooth 
+  // Transitions the opacity when the route changes
+  animation: viewFadeIn 0.3s ease-out
+
+@keyframes viewFadeIn
+  from
+    opacity: 0
+    transform: translateY(4px) // Very subtle "slide up"
+  to
+    opacity: 1
+    transform: translateY(0)
+
+// 3. Optional: Hide scrollbars for that "ultra-clean" look 
+// while keeping functionality
+.content-area::-webkit-scrollbar
+  width: 6px
+
+.content-area::-webkit-scrollbar-thumb
+  background: rgba(212, 175, 55, 0.2) // Subtle gold hint
+  border-radius: 10px
+
+$spotlight-color: rgba(255, 215, 150, 0.1)
+$spotlight-radius: 250px
+$transition-speed: 0.2s
+
+body, html
+  scroll-behavior: smooth
+  &::before
+    content: ''
+    position: fixed
+    top: 0
+    left: 0
+    width: 250vw
+    height: 250vh
+    pointer-events: none
+    z-index: 9999
+    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), $spotlight-color 0%, transparent $spotlight-radius)
+    transition: background $transition-speed ease
+    mix-blend-mode: lighten
+
+.description-container
+  margin-top: 20px
+  max-width: 75ch // Optimization for readability (Characters per line)
+
+  .era-paragraph
+    color: var(--text-muted)
+    line-height: 1.8
+    font-size: 1.05rem
+    margin-bottom: 1.5rem // Vertical rhythm
+    
+    // Optional: Add a subtle gold accent to the first paragraph
+    &:first-of-type
+      color: var(--text-main)
+      font-size: 1.1rem
+      font-weight: 500
+
+.tech-footer
+  margin-top: 40px
+  padding-top: 20px
+  border-top: 1px solid rgba(255, 255, 255, 0.05)
+  display: flex
+  gap: 10px
+  flex-wrap: wrap
+
+// --- HOME PAGE (MINIMAL) ---
+.mini-article-row
+  display: flex
+  align-items: center
+  gap: 15px
+  padding: 12px 0
+  text-decoration: none
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03)
+  color: var(--text-muted)
+  transition: color 0.2s
+
+  &:hover
+    color: var(--gold-accent)
+    .article-arrow
+      transform: translateX(5px)
+
+  .article-date-mono
+    font-family: var(--font-mono)
+    font-size: 0.8rem
+    color: var(--brass-muted)
+    min-width: 60px
+
+  .article-title-truncate
+    flex: 1
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+    font-size: 0.95rem
+
+// --- ARTICLES PAGE (VERBOSE) ---
+.full-article-grid
+  display: grid
+  gap: 30px
+  margin-top: 40px
+
+.verbose-article-card
+  padding-bottom: 30px
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05)
+
+  h3
+    margin: 10px 0
+    font-size: 1.4rem
+    color: var(--text-main)
+    &:hover
+      color: var(--gold-accent)
+
+  p
+    color: var(--text-muted)
+    line-height: 1.6
+    font-size: 1rem
+
+  .card-meta
+    font-family: var(--font-mono)
+    font-size: 0.75rem
+    color: var(--brass-muted)
+    text-transform: uppercase
+
+
+
+// Variables
+$gold-accent: #d4af37
+$gold-glow: rgba(212, 175, 55, 0.2)
+$text-main: #e0e0e0
+$transition-speed: 0.15s
+
+.interactive-link
+  position: relative
+  display: inline-flex // Helps with vertical alignment in rows
+  flex-direction: column
+  align-items: center
+  color: $text-main
+  text-decoration: none
+  transition: color $transition-speed ease, transform $transition-speed ease
+  font-weight: 400
+
+  // The Invisible "Spacer" Strategy
+  // We use a pseudo-element to "hold the space" for the bold version
+  &::before
+    display: block
+    content: attr(data-text)
+    font-weight: 700
+    height: 0
+    overflow: hidden
+    visibility: hidden
+    user-select: none
+
+  &:hover
+    color: $gold-accent
+    transform: translateY(-3px)
+    font-weight: 700
+    // Optional: very faint glow that works on dark backgrounds
+    text-shadow: 0 0 15 px rgba(212, 175, 55, 0.15)
+
+  // Underline logic
+  &::after
+    content: ''
+    position: absolute
+    width: 0
+    height: 1px
+    bottom: -2px
+    left: 50%
+    background-color: $gold-accent
+    transition: width 0.3s ease, left 0.3s ease
+
+  &:hover::after
+    width: 100%
+    left: 0
+
+// Row-specific styling
+.mini-article-row
+  @extend .interactive-link
+  flex-direction: row // Override column for your horizontal list
+  justify-content: flex-start
+  gap: 1.5rem
+  padding: 0.8rem 0
+
+.project-actions
+  border-top: 1px solid rgba(255, 255, 255, 0.05)
+  padding-top: 20px
+
+.action-link
+  color: var(--gold-accent)
+  text-decoration: none
+  font-family: $font-default
+  font-size: 0.9rem
+  letter-spacing: 1px
+  transition: transform 0.2s ease, filter 0.2s ease
+  display: flex
+  align-items: center
+  gap: 8px
+
+  &:hover
+    transform: translateY(-2px)
+    filter: brightness(1.2)
+    text-decoration: underline
+
+  .action-prefix
+    opacity: 0.4
+    color: var(--text-main)
+
+.hero-intro
+  h1
+    letter-spacing: -0.02em
+    line-height: 1.1
+
+.case-study-view, .showcase-view
+  max-width: 900px
+  margin: 0 auto
+  padding: 2rem
+  line-height: 1.6
+  color: #e0e0e0
+  .study-header, .showcase-header
+    border-bottom: 1px dashed #444
+    margin-bottom: 2.5rem
+    padding-bottom: 1.5rem
+    h1
+      font-family: 'Fira Code', monospace
+      color: $gold-accent
+      font-size: 2.5rem
+      padding-bottom: 1.5rem
+  .tech-specs
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+    gap: 1.5rem
+    background: rgba(255, 215, 0, 0.03)
+    border: 1px solid #333
+    padding: 1.5rem
+    margin-bottom: 3rem
+    border-radius: 4px
+
+    .spec
+      font-size: 0.9rem
+      strong
+        color: $gold-accent
+        display: block
+        font-size: 0.75rem
+        letter-spacing: 1px
+        margin-bottom: 0.25rem
+
+  .technical-body
+    h2
+      font-size: 1.5rem
+      border-left: 3px solid $gold-accent
+      padding-left: 1rem
+      margin: 3rem 0 1.5rem
+      color: #fff
+      text-transform: uppercase
+      letter-spacing: 1px
+    p
+      margin-bottom: 1.5rem
+      color: #ccc
+    ul, ol
+      margin-bottom: 2rem
+      padding-left: 1.5rem
+      li
+        margin-bottom: 0.75rem
+        &::marker
+          color: $gold-accent
+    img
+      display: block
+      max-width: 100%
+      height: auto
+      margin: 3rem auto
+      border: 1px solid #444
+      padding: 1rem
+      background: #0d0d0d
+    hr
+      border: 0
+      border-top: 1px solid #333
+      margin: 4rem 0
+    blockquote
+      border-left: 2px solid #555
+      margin: 2rem 0
+      padding: 1rem 2rem
+      font-style: italic
+      color: #aaa
+  .showcase-footer
+    border-top: 1px dashed #444
+    margin-top: 3rem
+    padding-top: 1.5rem
+    .return-link
+      color: $gold-accent
+      text-decoration: none
+      font-family: $font-mono
+      font-size: 0.85rem
+      letter-spacing: 1px
+      &:hover
+        text-decoration: underline
+
+
+.golden-header
+  font-family: $font-default
+  font-size: 1.6rem
+  color: $brass-muted
+
+.small-header
+  font-family: $font-default
+  font-size: 0.6rem
+  color: $brass-muted
+
+.company-card
+  h4
+    @extend .top-buffer-10
+  div
+    margin-top: 15px
+
+
+.tooltip-trigger 
+  position: relative
+  border-bottom: 1px dashed var(--accent-color, #00d4ff)
+  cursor: help
+  color: inherit
+  text-decoration: none
+
+
+.tooltip-trigger::after 
+  content: attr(data-tooltip)
+  position: absolute
+  bottom: 150%
+  left: 50%
+  transform: translateX(-50%) translateY(10px)
+  width: 260px
+  padding: 12px
+  background-color: #1a1a1a
+  color: #eee
+  font-size: 0.85rem
+  line-height: 1.4
+  border-radius: 6px
+  border: 1px solid #333
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5)
+  opacity: 0
+  pointer-events: none
+  transition: opacity 0.2s ease, transform 0.2s ease
+  z-index: 100
+
+.tooltip-trigger:hover::after 
+  opacity: 1
+  transform: translateX(-50%) translateY(0)
+
+.tooltip-trigger::before 
+  content: ''
+  position: absolute
+  bottom: 130%
+  left: 50%
+  transform: translateX(-50%)
+  border: 6px solid transparent
+  border-top-color: #1a1a1a
+  opacity: 0
+  transition: opacity 0.2s ease
+  z-index: 101
+
+.tooltip-trigger:hover::before 
+  opacity: 1
+
+#about
+  margin-bottom: 80px
+  p, div
+   margin-top: 20px
+   color: $text-muted
+   font-size: 1.1rem   
+
+.about-me-format
+  margin-top: 20px
+  color: $text-muted
+  font-size: 1.1rem
+  
+.archive
+  .archive-header
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+  .archive-id
+    font-family: $font-default
+    font-size: 0.65rem
+    color: $brass-muted
+  h4
+    margin-top: 15px
+  p
+    font-size: 0.9rem
+    color: $text-muted
+    margin-top: 8px
+
+
+  /* 1. MOBILE DEFAULT (Top Bar Mode) */
+.nav-container 
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  z-index: 1000
+  background: #0a0a0a
+  border-bottom: 1px solid #333
+.content-area
+  padding-top: 60px
+
+.mobile-top-bar 
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 1rem
+
+
+.brand 
+  color: var(--gold, #d4af37)
+  font-weight: bold
+  font-family: monospace
+
+
+.hamburger 
+  background: none
+  border: none
+  color: $gold-accent
+  font-family: monospace
+  font-size: 1.2rem
+  cursor: pointer
+
+.nav-links 
+  display: none
+  flex-direction: column
+  padding: 1rem
+  background: #0f0f0f
+
+.brand-logo
+  visibility: hidden
+
+
+.nav-links.show 
+  display: flex
+
+.social-links
+  margin-top: 20px
+
+
+@media (min-width: 1100px) 
+  .nav-container
+    visibility: hidden
+  
+
+  .mobile-top-bar 
+    display: none
+  
+
+  .nav-links 
+    display: flex !important
+    background: transparent
+
+  .brand-logo
+    visibility: visible
+
+  .social-links
+    margin-top: auto
+  
+// --- RESPONSIVE ADAPTATION ---
+@media (max-width: 1100px)
+  .app-shell
+    flex-direction: column
+  
+  .sidebar
+    width: 100%
+    height: auto
+    position: relative
+    border-right: none
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05)
+    padding: 50px 30px
+
+  .content-area
+    padding: 50px 30px
+
+  .grid-2
+    grid-template-columns: 1fr
+
+  .era
+    flex-direction: column
+    gap: 10px

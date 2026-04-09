@@ -1,36 +1,33 @@
 {
-
   "name": "liukonen.dev",
   "type": "module",
-
   "scripts": {
-    "dev": "vite src",
-    "build": "vite build src",
-    "preview": "vite preview src",
-    "deploy": "vite build src && shx rm -f ./index.html && shx rm -rf ./assets && shx cp -r src/dist/* ./",
-    "build:content": "node ./src/scripts/compile-content.cjs",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "build:content": "node ./scripts/compile-content.cjs",
     "prepare": "husky install"
-
   },
-
-
   "dependencies": {
     "preact": "^10.26.9"
   },
   "devDependencies": {
-    
     "@commitlint/cli": "^20.5.0",
     "@commitlint/config-conventional": "^20.5.0",
-    "husky": "^9.1.7",
-    
-    "@mermaid-js/mermaid-cli": "^10.9.1",
+    "@iconify-json/bi": "^1.2.7",
+    "@mermaid-js/mermaid-cli": "^11.12.0",
     "@preact/preset-vite": "^2.10.2",
+    "@svgr/core": "^8.1.0",
+    "@svgr/plugin-jsx": "^8.1.0",
     "front-matter": "^4.0.2",
-    "marked": "^17.0.6",
+    "husky": "^9.1.7",
+    "marked": "18.0.0",
     "pako": "^2.1.0",
     "sass": "^1.93.2",
     "shx": "^0.4.0",
+    "terser": "^5.46.1",
     "typescript": "^6.0.0",
+    "unplugin-icons": "^23.0.1",
     "vite": "^8.0.0"
   },
   "overrides": {

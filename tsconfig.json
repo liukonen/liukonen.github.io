@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    
+    "noEmit": true,
+    "allowImportingTsExtensions": true, 
+
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
+    
+     "types": ["vite/client", "unplugin-icons/types/preact"],
+     "skipLibCheck": true
+  },
+  "include": ["src", "vite.config.ts"]
+}

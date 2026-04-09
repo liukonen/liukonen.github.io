@@ -1,0 +1,656 @@
+{
+  "profile": {
+    "name": "Luke Liukonen",
+    "title": "Systems Architect // AI Champion",
+    "brand": "Luke Liukonen",
+    "location": "Menomonee Falls, WI"
+  },
+  "eras": [
+    {
+      "id": "NM",
+      "year": "2021 — PRES",
+      "logoUrl": "https://liukonen.dev/archive/share/img/200/NM.webp",
+      "company": "Northwestern Mutual",
+      "website": "https://www.northwesternmutual.com/",
+      "role": "Software Engineer / AI Champion / Testing Champion",
+      "title": "Software Engineer",
+      "description": "Architecting the transition toward secure, departmental AI adoption and LLM auditing.",
+      "long_description": [
+        "I am currently driving a department-wide modernization initiative, architecting scalable backend services in Java/Spring and Node.js while evolving our frontend architecture through high-performance, reusable React components.",
+        "As a lead for AI adoption and prompt engineering, I integrate AI-assisted development workflows into our SDLC. By helping establish best practices for generative tools, I have accelerated delivery cycles and introduced innovative automated solutions to complex engineering bottlenecks.",
+        "My role extends across the following specialized domains:",
+        "- Observability & Reliability: Served as a Subject Matter Expert (SME) for system monitoring, where I defined critical SLA metrics and implemented monitoring frameworks that significantly improved operational visibility and service uptime.",
+        "- Test Automation: Act as the Playwright SME, establishing robust automation patterns and end-to-end testing standards that have measurably increased release stability.",
+        "- Technical Mentorship: Lead cross-functional training in React, Node, and Spring. By standardizing engineering practices and facilitating knowledge-sharing sessions, I’ve helped teams improve velocity and maintain a higher baseline for code quality."
+      ],
+      "tech": [
+        "Java",
+        "Node",
+        "React",
+        "CICD",
+        "Playwright",
+        "AWS",
+        "Kubernetes",
+        "LLM Tools"
+      ]
+    },
+    {
+      "id": "BRADY",
+      "year": "2020 — 2021",
+      "company": "Brady Corporation",
+      "logoUrl": "https://liukonen.dev/archive/share/img/200/brady.webp",
+      "website": "https://www.bradyid.com/",
+      "title": "Senior Software Engineer",
+      "role": "Senior Software Engineer",
+      "description": "Optimizing enterprise systems for global resilience and legacy modernization.",
+      "tech": [
+        "C#",
+        "Angular",
+        "T-SQL",
+        "Docker",
+        "CDM",
+        "CICD",
+        "Selenium"
+      ],
+      "long_description": [
+        "As a Senior Full-Stack Engineer at Brady, I drove technical initiatives for the e-commerce platform. My work spanned the full application lifecycle, utilizing SASS, JavaScript, MVC, and Sitecore, while championing Test-Driven Development (TDD) to maintain high standards for code quality and system stability.",
+        "To improve organizational efficiency, I spearheaded the containerization of our internal toolset. I designed and deployed 'Dev Environment as Code' setup scripts using Docker, which enabled one-click environment provisioning. This initiative streamlined the onboarding process and eliminated configuration drift across the engineering team.",
+        "I also led the architectural design for a major search platform migration. To mitigate risk, I engineered a bridge architecture that ensured full backward compatibility with the legacy platform while facilitating a phased integration of the new system. This approach allowed for a seamless transition with zero impact on the existing user experience."
+      ]
+    },
+    {
+      "id": "TRISEPT_SNR",
+      "year": "2014 — 2020",
+      "company": "Trisept Solutions (Hyatt)",
+      "title": "Software Engineer III",
+      "role": "Acting Technical Lead / Department Trainer / Systems Engineering",
+      "logoUrl": "https://liukonen.dev/archive/share/img/200/777.webp",
+      "website": "https://www.triseptsolutions.com/",
+      "description": "Functional lead for department-wide technical initiatives. Designed and maintained enterprise logging systems and high-availability travel APIs.",
+      "tech": [
+        "C#",
+        "VB.NET",
+        "ASP.NET",
+        "T-SQL",
+        "XML",
+        "Javascript",
+        "WCF"
+      ],
+      "long_description": [
+        "During my tenure at Trisept Solutions, I served as the Lead Developer for the Product Support division, overseeing the architecture and stability of the core backend engine (Availability, Packaging, and Booking). In this high-impact role, I balanced full-stack feature development with high-level system analysis, performance consulting, and the mentorship of junior engineering talent.",
+        "Key Initiatives & Technical Leadership:",
+        "- Platform Reliability: Led the 'Break-Fix' engineering team for three years, serving as the primary lead for debugging and resolving critical issues across the entire enterprise ecosystem. This role required deep system knowledge and the ability to manage offshore resources to maintain 24/7 service stability.",
+        "- Emerging Tech & R&D: Collaborated directly with Microsoft's Chicago architecture team to spearhead initiatives in Cognitive Services, and Natural Language Processing (NLP). This partnership culminated in a high-intensity hackathon where I prototyped custom bot technologies and AI-driven communication tools.",
+        "- Public Technical Advocacy: Represented the organization as a featured speaker at 'COSBE Be the Spark.' I designed and presented interactive demonstrations of custom applications featuring real-time AI voice translation, bridging the gap between complex engineering concepts and public engagement.",
+        "- Strategic Documentation: Authored comprehensive system documentation and setup guides that standardized the onboarding process and reduced technical debt across the Product Support area."
+      ]
+    },
+    {
+      "id": "BLUE7",
+      "year": "2012 — 2014",
+      "company": "Blue 7 Solutions (JV)",
+      "title": "Software Engineer & Consultant",
+      "role": "System Integration / Technical Consulting",
+      "description": "Strategic consultant within the Blue 7 joint ventureship, bridging technical requirements between partner organizations.",
+      "tech": [
+        "C#",
+        "VB.NET",
+        "ASP.NET",
+        "T-SQL",
+        "XML",
+        "Javascript",
+        "WCF"
+      ],
+      "logoUrl": "https://liukonen.dev/archive/share/img/200/Blue7-t.webp",
+      "website": "https://web.archive.org/web/20141219042731/http://www.blue7solutions.com/",
+      "long_description": [
+        "During the strategic joint venture between Trisept Solutions and BlueStar Infotech (now Infogain), I served in a dual capacity as a Consultant Development Lead and Full-Stack Engineer. I was responsible for the technical integrity of the Dynamic Packaging Engine, a mission-critical system requiring deep full-stack expertise and architectural oversight.",
+        "Key Professional Contributions:",
+        "- Cross-Organizational Technical Lead: Acted as the primary technical bridge between Trisept and Blue7’s offshore engineering teams. I leveraged an in-depth understanding of the legacy ecosystem to lead the debugging, resolution, and optimization of complex codebases across distributed teams.",
+        "- Project & Resource Management: Managed engineering efforts within strict consultancy frameworks, maintaining high-performance standards while operating within rigorous hourly thresholds and project constraints.",
+        "- Full-Stack Engineering: Developed and maintained core features for the high-traffic dynamic packaging engine, ensuring seamless integration between frontend user experience and backend logic.",
+        "- Corporate Advocacy & Culture: Contributed to the Joint Venture's growth by participating in the Wellness and Event Planning team, driving community outreach initiatives and internal engagement programs to build a unified company culture during the transition."
+      ]
+    },
+    {
+      "id": "TRISEPT",
+      "year": "2006 — 2012",
+      "company": "Trisept Solutions (Hyatt)",
+      "title": "Software Developer I - II",
+      "role": "Full-Stack Dev / API Implementation / SME for Data Entry System",
+      "logoUrl": "https://liukonen.dev/archive/share/img/200/777.webp",
+      "website": "https://www.triseptsolutions.com/",
+      "description": "Developed foundational backend services for enterprise travel platforms, scaling from junior to intermediate responsibilities.",
+      "tech": [
+        "C#",
+        "VB.NET",
+        "ASP.NET",
+        "T-SQL",
+        "XML",
+        "Javascript",
+        "WCF"
+      ],
+      "long_description": [
+        "As a core member of the engineering team, I was responsible for the development and optimization of the Dynamic Packaging Engine—a complex rules-based system for bundling high-volume vacation packages—and the accompanying Booking Engine.",
+        "Technical Milestones & Security:",
+        "- Framework Modernization: Served as a technical lead for the enterprise-wide migration from .NET 2.0 to 4.0, including the upgrade of legacy solutions to Visual Studio 2010. This initiative was critical for maintaining performance and developer productivity.",
+        "- Security & Compliance: Instrumental in bringing the codebase up to industry security standards. I implemented updates to meet OWASP Top 10 requirements, ensuring the platform achieved and maintained PCI Compliance for secure payment processing.",
+        "- Web & Service Architecture: Contributed to the development of 'Solutions by Trisept,' an internal facing web interface, and engineered WCF Services built on the .NET framework to handle cross-system communication.",
+        "- Distributed Systems: Developed specialized Windows Services for background processing and collaborated with offshore teams to maintain a consistent development lifecycle across the stack.",
+        ""
+      ]
+    },
+    {
+      "id": "EDU",
+      "year": "2002, 2008, 2010",
+      "company": "ITT Technical Institute & University of Wisconsin System",
+      "title": "Adjunct Instructor / Teaching Assistant",
+      "role": "Technical Educator",
+      "logoUrl": "https://liukonen.dev/archive/share/img/combo.jpg",
+      "website": "https://www.wisconsin.edu/",
+      "description": "Teaching core computer science foundations and technical trade skills.",
+      "tech": [
+        "C#",
+        "VB.NET",
+        "Java",
+        "XML",
+        "Data Structures",
+        "Computer Architecture",
+        "Message Protocols",
+        "JSON",
+        "Hardware",
+        "Systems Analysis"
+      ],
+      "long_description": [
+        "Before transitioning into senior engineering, I spent several years developing the next generation of technical talent. This experience was foundational in honing my ability to translate complex architectural concepts into accessible, actionable guidance—a skill I leverage today when leading department-wide AI adoption and engineering modernization.",
+        "Software Engineering Instruction: Facilitated foundational courses on computer programming logic, syntax, and coding conventions. I managed classrooms of 20–30 students, balancing theoretical lectures with hands-on labs to ensure students could apply logic to real-world development environments.",
+        "Systems & Hardware Education: Led high-level overviews of computing trends and PC hardware architecture. I designed interactive lessons on hardware troubleshooting and repair methods, bridging the gap between abstract theory and practical implementation.",
+        "Web Application Development Support: Served as a Teaching Assistant for Web Application Development at UW-Milwaukee, providing direct academic support, code reviews, and technical guidance to students building modern web solutions.",
+        "Academic Leadership: Reported directly to Department Deans to manage curriculum delivery, examination standards, and student performance metrics. I maintained an open-door policy for technical mentorship, fostering a culture of continuous learning and problem-solving."
+      ]
+    }
+  ],
+  "labs": {
+    "Html_Text_Editor": {
+      "title": "Html Text Editor",
+      "description": "Manipulate and batch text files in your browser",
+      "image": "img/card/htmledit.webp",
+      "long_description": "I developed an advanced text editor for custom work. It started as console and winform applications, then evolved into a single web-based app, and now it's a PWA. It can load files from your desktop and save them in the browser cache or as a download.",
+      "buttons": [
+        {
+          "type": "Website",
+          "url": "https://liukonen.github.io/htmlTextEditor/"
+        },
+        {
+          "type": "Source",
+          "url": "https://github.com/liukonen/htmlTextEditor"
+        }
+      ],
+      "tech": [
+        "Functional Programming",
+        "Local and Web storage",
+        "Client side File reader",
+        "Javascript"
+      ]
+    },
+    "WeatherWallpaper": {
+      "title": "WeatherWallpaper",
+      "description": "Changes wallpaper based on weather and time of day for Windows",
+      "long_description": "I developed a weather app using Yahoo as the source for data, but lost the source code. I rewrote the app to include multiple data sources in case of outages, and added the ability to display different wallpapers based on time of day.",
+      "image": "img/card/weatherwallpaper.webp",
+      "buttons": [
+        {
+          "type": "Release",
+          "url": "https://github.com/liukonen/WeatherWallpaper/releases"
+        },
+        {
+          "type": "Source",
+          "url": "https://github.com/liukonen/WeatherWallpaper"
+        }
+      ],
+      "tech": [
+        "Managed Extensibility Framework",
+        "REST API's",
+        "Notification Icon",
+        "Low Level DLL calls",
+        "Interface design",
+        "Memory Caching",
+        "WCF / Web Services",
+        "Cryptography",
+        "Configuration Management",
+        "NuGet Package Management",
+        "Remote Error Logging and management",
+        "ZipArchiveEntry compression",
+        ".net GeoCoordinate objects"
+      ]
+    },
+    "Tic_Tac_Math": {
+      "title": "Tic Tac Math",
+      "description": "A simple math tic tac toe game.",
+      "long_description": "Back in school around 2003 or 04, I developed a Tic Tac Toe game using Visual Basic 6 and Microsoft Agents for input and output. Recently, I found the original source code and rewrote it in .NET, consolidating the logic into a single program with options to switch math types (divide, multiply, add, and subtract). As a side project during some time off, I converted the game to JavaScript and HTML, and brought back the Agents and text-to-speech functionality through the browser.",
+      "image": "img/card/ttm.webp",
+      "buttons": [
+        {
+          "type": "Website",
+          "url": "https://liukonen.github.io/tictacmath/"
+        },
+        {
+          "type": "Release",
+          "url": "https://github.com/liukonen/tictacmath/releases"
+        },
+        {
+          "type": "Source",
+          "url": "https://github.com/liukonen/tictacmath"
+        }
+      ],
+      "tech": [
+        "Javascript",
+        "Jquery",
+        "Browser TTS",
+        "Progressive Web Apps (PWA)",
+        "MS Agents (discontinued)",
+        "Microsoft TTS",
+        "Visual Basic 6",
+        "Visual Basic .net",
+        "Installers (nullsoft and Microsoft One Click Installer)"
+      ]
+    },
+    "RiverScriptBot": {
+      "title": "RiverScriptBot",
+      "description": "A UI and NodeJS Rivescript server chatbot.",
+      "long_description": "I have created several chatbots over the years, including one in Vue.js and another in Angular, as well as a REST-based bot using Rivescript and Node.js. My interest in chatbots began in the early 2000s when I worked on an AIML project that used MS Agent, TTS, and speech recognition. Later, I worked with the Alice project and presented a version of my project at the MMAC Be The Spark tour, which utilized Microsoft cognitive services and a vocal chatbot capable of detecting and translating on the fly. I recently migrated the AIML code to RiveScript to create this chatbot.",
+      "image": "img/card/chat.webp",
+      "buttons": [
+        {
+          "type": "Website",
+          "url": "https://liukonen.dev/chat-ui/"
+        },
+        {
+          "type": "Source",
+          "url": "https://github.com/liukonen/chat-ui"
+        },
+        {
+          "type": "Source",
+          "url": "https://github.com/liukonen/RiverScriptBackend"
+        }
+      ],
+      "tech": [
+        "React",
+        "Node.JS",
+        "SASS",
+        "API REST calls",
+        "CI/CD",
+        "RiveScript"
+      ]
+    },
+    "Flag_Fairway": {
+      "title": "Flag Fairway",
+      "description": "A self hosted internal facing configuration mananger",
+      "long_description": "Trying a number of feature flag products, I found that there was a lot of bloat when it came to both performance, size, and message structure, so I decided to write up a simple REST CRUD app to be able to manage and configure feature flags within my own applications internally.",
+      "image": "img/card/flagfairway.webp",
+      "buttons": [
+        {
+          "type": "Release",
+          "url": "https://github.com/liukonen/FlagFairway/pkgs/container/flagfairway"
+        },
+        {
+          "type": "Source",
+          "url": "https://github.com/liukonen/FlagFairway"
+        }
+      ],
+      "tech": [
+        "svelte",
+        "Go",
+        "SASS",
+        "Key Value stores",
+        "Embedded Database",
+        "Docker"
+      ]
+    },
+    "NATS": {
+      "title": "NATS",
+      "description": "a utility to search text files quickly",
+      "long_description": "Nats is a command-line search engine for text files with multithreading, indexing, and a cached option for faster lookups. Originally written in .net core, it now has GUI editions for Windows, Mac, and GTK running on multiple platforms. Icon for mac and windows provided by material.io, and is Apache license version 2.0.",
+      "image": "img/card/nats.webp",
+      "buttons": [
+        {
+          "type": "Release",
+          "url": "https://github.com/liukonen/nats/releases"
+        },
+        {
+          "type": "Source",
+          "url": "https://github.com/liukonen/nats"
+        }
+      ],
+      "tech": [
+        "LiteDB",
+        " Singleton",
+        " Factory Pattern",
+        " Parallel Library",
+        " Sqlite",
+        " String Hashing",
+        " Cocoa (Mac OS) Development",
+        " XCode",
+        " GTK#",
+        " .Net Standard",
+        " Cross Platform Development"
+      ]
+    },
+    "CloudyPie": {
+      "title": "CloudyPie",
+      "description": "A rewrite of DJAkbar's cloudy-a project",
+      "long_description": "Refactored and upgraded a Python-based lamp project for Raspberry Pi that displays weather information, originally created by DJAkbars, to improve operation timing and service calling, and migrate to Python 3.",
+      "image": "img/card/cp.webp",
+      "buttons": [
+        {
+          "type": "Release",
+          "url": "https://github.com/liukonen/cloudy-pie/releases"
+        },
+        {
+          "type": "Source",
+          "url": "https://github.com/liukonen/cloudy-pie"
+        }
+      ],
+      "tech": [
+        "Python",
+        "JSON ",
+        "API",
+        "linux (debian)",
+        "ssh",
+        "apache",
+        "html",
+        "bootstrap",
+        "css",
+        "Pigpio",
+        "basic shell scripting"
+      ]
+    },
+    "Simple_Weather_Tray": {
+      "title": "Simple Weather Tray",
+      "description": "lightweight weather tray app for Mac, Linux, and Windows",
+      "long_description": "The app is a weather tool that runs on Mac, Linux, and PC and is based on weatherwallpaper. The code is compiled using GTK and allows the user to change the engine behind it. The idea for this app goes back to the developer's college days when they disliked the adware and spyware associated with Weathebug.",
+      "image": "img/card/weather.webp",
+      "buttons": [
+        {
+          "type": "Release",
+          "url": "https://github.com/liukonen/SimpleWeatherTray/releases"
+        },
+        {
+          "type": "Source",
+          "url": "https://github.com/liukonen/SimpleWeatherTray"
+        }
+      ],
+      "tech": [
+        "REST API's",
+        ".Net Standard",
+        ".Net Core",
+        "GTK#",
+        "Cross Platform Development and Testing"
+      ]
+    },
+    "Desert_Changer": {
+      "title": "Desert Changer",
+      "description": "Time based wallpaper changer for Windows",
+      "long_description": "For Windows, This app changes your wallpaper throughout the day without the need for external calls, similar to Mac OS Mojave.",
+      "image": "img/card/dchanger.webp",
+      "buttons": [
+        {
+          "type": "Release",
+          "url": "https://github.com/liukonen/DesertChanger/releases"
+        },
+        {
+          "type": "Source",
+          "url": "https://github.com/liukonen/DesertChanger"
+        }
+      ],
+      "tech": [
+        "Cryptography",
+        "notification objects",
+        "win-form objects",
+        "dialog menus",
+        "CSV parsing",
+        "GeoLocation objects",
+        "Linq",
+        "event handlers",
+        "mutex"
+      ]
+    },
+    "PodLoad": {
+      "title": "PodLoad",
+      "description": "Rss Feed based podcast downloader",
+      "long_description": "a .NET application designed for pulling video and audio podcasts via RSS feeds. It has been rewritten to support the .NET core framework and works on Linux as well.",
+      "image": "img/card/podcast.webp",
+      "buttons": [
+        {
+          "type": "Source",
+          "url": "https://github.com/liukonen/Podload"
+        }
+      ],
+      "tech": [
+        "Mono Development",
+        "Parallel programming design practices",
+        "System Task Library",
+        "Basic file transfer over the network",
+        "XML",
+        "Linq",
+        "Compression"
+      ]
+    },
+    "Dif": {
+      "title": "Dif",
+      "description": "Compares files between folders.",
+      "long_description": "This program helps you see what files have changed when you copy them from one folder to another. It goes off LastUpdated timestamps of the files",
+      "image": "img/card/cmd.webp",
+      "buttons": [
+        {
+          "type": "Release",
+          "url": "https://github.com/liukonen/Dif/releases"
+        },
+        {
+          "type": "Source",
+          "url": "https://github.com/liukonen/Dif"
+        }
+      ],
+      "tech": [
+        "Parallel tasks",
+        "File enumeration"
+      ]
+    },
+    "Clipboard++": {
+      "title": "Clipboard++",
+      "description": "Multi item clipboard manager for Windows",
+      "long_description": " Its purpose is to provide an application that can maintain an in-memory cache of multiple clipboard items. This is useful in case accidental copying over data occurs, as users can go back to the original version. Clipboard++ is a lightweight clipboard manager that offers various features such as encryption, in-memory compression, the ability to retain its state after reboots or restarts, and the option to save files directly from the clipboard.",
+      "image": "img/card/clip.webp",
+      "buttons": [
+        {
+          "type": "Release",
+          "url": "https://github.com/liukonen/Clipboard-/releases"
+        },
+        {
+          "type": "Source",
+          "url": "https://github.com/liukonen/Clipboard-"
+        }
+      ],
+      "tech": [
+        "In Memory image formating",
+        "Message Pack (https://msgpack.org) ",
+        "sha1 hashing",
+        "binary serialization",
+        "winform development",
+        "notification icon development",
+        "System Cryptography Namespace",
+        "Data Encryption ",
+        "Microsofts Data Protection API"
+      ]
+    },
+    "WinFrost": {
+      "title": "WinFrost",
+      "description": "a simple site-specific browser generator and browser",
+      "long_description": "WinFrost is a web application that aims to provide users with the ability to access web pages as full-blown apps. The project was born out of a desire to see web pages become more like applications. Unfortunately, other projects like Mozilla Prism have been discontinued, leaving a void in the market. While Chrome has its own solution through shortcuts, that feature is also going away. WinFrost is inspired by Pepperment's Ice SSB app and is currently only available for Windows. Due to its dependence on Nuget updates, the project is not released as a standalone application, and developers are encouraged to compile the latest version themselves.",
+      "image": "img/card/winfrost.webp",
+      "buttons": [
+        {
+          "type": "Source",
+          "url": "https://github.com/liukonen/WinFrost"
+        }
+      ],
+      "tech": [
+        "Managed Extensibility Framework",
+        "Common Interfaces",
+        "HTTP request / response",
+        "configuration management",
+        "nuget",
+        "HTML parsing",
+        "GeckFX .net controls",
+        "CEFSharp .net controls"
+      ]
+    },
+    "choco-outdated": {
+      "title": "choco-outdated",
+      "description": "a utility to check for outdated chocolatey packages",
+      "long_description": "This program does something similar to chocos outdated command, however it is written in GoLang, uses go Goroutines for quick processing, and channels for quick UI output to the console. This was written after the release of v2 of the Choco command line tool, as the outdated command runs much slower then the v1 version.",
+      "image": "img/card/cmd.webp",
+      "buttons": [
+        {
+          "type": "Release",
+          "url": "https://github.com/liukonen/choco-outdated/releases"
+        },
+        {
+          "type": "Source",
+          "url": "https://github.com/liukonen/choco-outdated"
+        }
+      ],
+      "tech": [
+        "Parallel tasks",
+        "File enumeration",
+        "GoLang"
+      ]
+    },
+    "gpsdApi": {
+      "title": "Gpsd API",
+      "description": " A python based app to expose gpspipe as a rest API",
+      "long_description": "This is a Flask application that interacts with a GPS device using the gpspipe command-line tool to retrieve GPS data and check the device's connection status.",
+      "image": "img/card/timeserver.webp",
+      "buttons": [
+        {
+          "type": "Release",
+          "url": "https://github.com/liukonen/gpsdApi"
+        },
+        {
+          "type": "Source",
+          "url": "https://github.com/liukonen/gpsdApi"
+        }
+      ],
+      "tech": [
+        "Python",
+        "Javascript"
+      ]
+    }
+  },
+  "showcases": [
+    {
+      "id": "ai-gateway",
+      "title": "Enterprise AI Gateway",
+      "category": "STRATEGY",
+      "description": "Designing secure architectural perimeters for local-first LLM deployment."
+    },
+    {
+      "id": "api-refactor",
+      "title": "Legacy API Modernization",
+      "category": "ARCHITECTURE",
+      "description": "Re-engineering monolithic travel-tech infrastructure into scalable micro-utilities."
+    }
+  ],
+  "blog": [
+    {
+      "id": "ai-champion-post",
+      "date": "APR 2026",
+      "title": "The Pragmatic AI Champion",
+      "excerpt": "Vetting local LLMs without leaking company IP or compromising data sovereignty."
+    },
+    {
+      "id": "woodshop-logic",
+      "date": "MAR 2026",
+      "title": "Woodshop & Digital Logic",
+      "excerpt": "How the precision of physical joinery informs the architecture of scalable systems."
+    }
+  ],
+  "archive": [
+    {
+      "id": "0_2",
+      "title": "UWM - Reusablity with IFrames",
+      "description": "My Softmore and early junior year personal site. Uses IFrames for reusability, and javascript dynamic content."
+    },
+    {
+      "id": "0_3",
+      "title": "UWM - Less noise",
+      "description": "removed footer, and replaced with a header. Origionally supported pulling my Blog off blogger. MacOs inspired theme."
+    },
+    {
+      "id": "0_4",
+      "title": "UWM - last iteration",
+      "description": "More tradtional attempt, with a template theme, but harder to maintain. Iframed limited to links page only."
+    },
+    {
+      "id": "1_0_2020",
+      "title": "V1",
+      "description": "First iteration of the current site, built first with a template libary then with Vue 2.0 amd bootstrap. Content seperated in a JSON file and pulled"
+    },
+    {
+      "id": "1_1_2021",
+      "title": "V1.1",
+      "description": "Changed elements of UI, and removed large background panels."
+    },
+    {
+      "id": "2_0_2021",
+      "title": "V2",
+      "description": "Migrated to Vue3. Full redisign of the site, colors, and layout, including an optional video background."
+    },
+    {
+      "id": "2_1_2023",
+      "title": "V2.1",
+      "description": "Full transition to a compiled based UI, Svelte"
+    },
+    {
+      "id": "2_2_2024",
+      "title": "2.2",
+      "description": "Transition to a much darker theme, and migrated CSS to SASS."
+    },
+    {
+      "id": "3_0_2025",
+      "title": "V3",
+      "description": "Full rewrite in Preact due to Svelete builds acting up and number of merges. New theme, and layout, with a focus on simplicity and readability."
+    },
+    {
+      "id": "3_1_2025",
+      "title": "V3.1",
+      "description": "Added a glow effect and proper background for better readability."
+    }
+  ],
+  "sidebar": [
+    {
+      "id": "SHOWCASE",
+      "path": "#/TECH_SHOWCASE"
+    },
+    {
+      "id": "WRITEUPS",
+      "path": "#/ARTICLES"
+    },
+    {
+      "id": "OPEN_SOURCE",
+      "path": "#/OPEN_SOURCE_PROJECTS"
+    },
+    {
+      "id": "CAREER",
+      "path": "#/ERA"
+    },
+    {
+      "id": "CONTACT",
+      "path": "#/CONTACT"
+    },
+    {
+      "id": "ARCHIVE",
+      "path": "#/ARCHIVE"
+    }
+  ]
+}

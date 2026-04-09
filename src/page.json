@@ -21,7 +21,7 @@
             "value": "#about"
         }
     ],
-    "welcome": "Hi, I’m Luke Liukonen — a software engineer, educator, and all-around tech enthusiast based in the Metro Milwaukee area. I’ve been building software professionally since 2006, with nearly 20 years of hands-on experience. My main focus is backend development, but I’ve worn many hats over the years as a full-stack engineer. I love solving tough problems, learning new things, and staying on top of where tech is headed. Whether I’m working on complex systems or mentoring others, I’m always looking for ways to make an impact. Feel free to take a look around",
+    "welcome": "Hi, I'm Luke Liukonen, a software engineer, educator, and technology enthusiast based in the Metro Milwaukee Wisconsin area. With over 15 years of professional development experience since 2006, my expertise lies in backend development, although I have also worked as a full-stack engineer. My passion for technology drives me to stay up-to-date with current trends and advancements in the field. As a lifelong learner, I am always exploring new ways to innovate and solve complex problems. Feel free to browse around and learn more about my work.",
     "projects": [
         {
             "Title": "Html Text Editor",
@@ -78,7 +78,7 @@
         },
         {
             "Title": "RiverScriptBot",
-            "SubTitle": "A UI and NodeJS Rivescript server chatbot.",
+            "SubTitle": "A Svelte UI and NodeJS Rivescript server chatbot.",
             "Description": "I have created several chatbots over the years, including one in Vue.js and another in Angular, as well as a REST-based bot using Rivescript and Node.js. My interest in chatbots began in the early 2000s when I worked on an AIML project that used MS Agent, TTS, and speech recognition. Later, I worked with the Alice project and presented a version of my project at the MMAC Be The Spark tour, which utilized Microsoft cognitive services and a vocal chatbot capable of detecting and translating on the fly. I recently migrated the AIML code to RiveScript to create this chatbot.",
             "image": "img/card/chat.webp",
             "buttons": [
@@ -87,16 +87,17 @@
                     "url": "https://liukonen.dev/chat-ui/"
                 },
                 {
-                    "type": "Source",
+                    "type": "Svelte Source",
                     "url": "https://github.com/liukonen/chat-ui"
                 },
                 {
-                    "type": "Source",
+                    "type": "Server Source",
                     "url": "https://github.com/liukonen/RiverScriptBackend"
                 }
             ],
             "tags": [
-                "React",
+                "Svelte",
+                "Progressive Web Apps (PWA)",
                 "Node.JS",
                 "SASS",
                 "API REST calls",
@@ -110,10 +111,6 @@
             "Description": "Trying a number of feature flag products, I found that there was a lot of bloat when it came to both performance, size, and message structure, so I decided to write up a simple REST CRUD app to be able to manage and configure feature flags within my own applications internally.",
             "image": "img/card/flagfairway.webp",
             "buttons": [
-                {
-                    "type": "Release",
-                    "url": "https://github.com/liukonen/FlagFairway/pkgs/container/flagfairway"
-                },
                 {
                     "type": "Source",
                     "url": "https://github.com/liukonen/FlagFairway"
@@ -130,7 +127,7 @@
         },
         {
             "Title": "NATS",
-            "SubTitle": "a utility to search text files quickly",
+            "SubTitle": "Not Another Text Search.",
             "Description": "Nats is a command-line search engine for text files with multithreading, indexing, and a cached option for faster lookups. Originally written in .net core, it now has GUI editions for Windows, Mac, and GTK running on multiple platforms. Icon for mac and windows provided by material.io, and is Apache license version 2.0.",
             "image": "img/card/nats.webp",
             "buttons": [
@@ -188,7 +185,7 @@
         },
         {
             "Title": "WeatherWallpaper",
-            "SubTitle": "Changes wallpaper based on weather and time of day for Windows",
+            "SubTitle": "Wallpaper based on outside conditions",
             "Description": "I developed a weather app using Yahoo as the source for data, but lost the source code. I rewrote the app to include multiple data sources in case of outages, and added the ability to display different wallpapers based on time of day.",
             "image": "img/card/weatherwallpaper.webp",
             "buttons": [
@@ -219,7 +216,7 @@
         },
         {
             "Title": "Simple Weather Tray",
-            "SubTitle": "lightweight weather tray app for Mac, Linux, and Windows",
+            "SubTitle": "Something simple to tell you the weather, on nearly any desktop enviroment",
             "Description": "The app is a weather tool that runs on Mac, Linux, and PC and is based on weatherwallpaper. The code is compiled using GTK and allows the user to change the engine behind it. The idea for this app goes back to the developer's college days when they disliked the adware and spyware associated with Weathebug.",
             "image": "img/card/weather.webp",
             "buttons": [
@@ -242,7 +239,7 @@
         },
         {
             "Title": "Desert Changer",
-            "SubTitle": "Time based wallpaper changer for Windows",
+            "SubTitle": "Different wallpaper for different times of day",
             "Description": "For Windows, This app changes your wallpaper throughout the day without the need for external calls, similar to Mac OS Mojave.",
             "image": "img/card/dchanger.webp",
             "buttons": [
@@ -269,7 +266,7 @@
         },
         {
             "Title": "PodLoad",
-            "SubTitle": "Rss Feed based podcast downloader",
+            "SubTitle": "Download your favorite audio or video podcasts through RSS",
             "Description": "a .NET application designed for pulling video and audio podcasts via RSS feeds. It has been rewritten to support the .NET core framework and works on Linux as well.",
             "image": "img/card/podcast.webp",
             "buttons": [
@@ -290,7 +287,7 @@
         },
         {
             "Title": "Dif",
-            "SubTitle": "Compares files between folders.",
+            "SubTitle": "Compares files between folders. Build originally as a robocopy utility.",
             "Description": "This program helps you see what files have changed when you copy them from one folder to another. It goes off LastUpdated timestamps of the files",
             "image": "img/card/cmd.webp",
             "buttons": [
@@ -310,7 +307,7 @@
         },
         {
             "Title": "Clipboard++",
-            "SubTitle": "Multi item clipboard manager for Windows",
+            "SubTitle": "Keep more then 1 item in your clipboard",
             "Description": " Its purpose is to provide an application that can maintain an in-memory cache of multiple clipboard items. This is useful in case accidental copying over data occurs, as users can go back to the original version. Clipboard++ is a lightweight clipboard manager that offers various features such as encryption, in-memory compression, the ability to retain its state after reboots or restarts, and the option to save files directly from the clipboard.",
             "image": "img/card/clip.webp",
             "buttons": [
@@ -359,7 +356,7 @@
         },
         {
             "Title": "choco-outdated",
-            "SubTitle": "a utility to check for outdated chocolatey packages",
+            "SubTitle": "a quick update command line tool for checking if updates are needed",
             "Description": "This program does something similar to chocos outdated command, however it is written in GoLang, uses go Goroutines for quick processing, and channels for quick UI output to the console. This was written after the release of v2 of the Choco command line tool, as the outdated command runs much slower then the v1 version.",
             "image": "img/card/cmd.webp",
             "buttons": [
@@ -401,27 +398,27 @@
     ],
     "highlights": [
         {
-            "a": "Multi-year, multi-company hackathon award winner, leveraging AI modeling, cognitive services, and chatbot technologies to create innovative solutions."
+            "a": "Multi-year, multi-company hackathon award winner. Using technologies such as AI Modeling, Cognitive Services, and Chatbots."
         },
         {
-            "a": "Twice selected as a company representative for the Milwaukee Makerspace & Arts Center (MMAC) “Be the Spark” Tour, promoting STEM engagement."
+            "a": "2-time company representative for MMAC 'Be the Spark Tour'"
         },
         {
-            "a": "Multi-year participant and representative for Hour of Code initiatives, inspiring others to explore coding and technology."
+            "a": "Multi Year Hour of code representative"
         },
         {
-            "a": "Active contributor on multiple internal committees focused on outreach, employee wellness, and event planning."
+            "a": "On multiple committees for outreach, wellness, and event planning"
         },
         {
-            "a": "Experienced in maintaining HIPAA compliance, ensuring the security and privacy of sensitive data in all software development processes."
+            "a": "Owasp top 10 trained. Maintained PCI complience"
         },
         {
-            "a": "Took on lead responsibilities for nearly six years by managing a break/fix product support team and mentoring two engineers, guiding technical efforts and team growth."
+            "a": "Lead Software Engineer on team for nearly 6 years"
         }
     ],
     "Experence": [
         {
-            "name": "Backend Languages",
+            "name": "Backend",
             "size": "12",
             "items": [
                 {
@@ -431,28 +428,10 @@
                     "link": "https://en.wikipedia.org/wiki/C_Sharp_(programming_language)"
                 },
                 {
-                    "title": "Java",
+                    "title": "Java / Springboot",
                     "img": "./img/original/Java.webp",
-                    "level": 3,
+                    "level": 2,
                     "link": "https://java.com"
-                },
-                {
-                    "title": "TypeScript",
-                    "img": "./img/original/ts.webp",
-                    "level": 2,
-                    "link": "https://www.typescriptlang.org/"
-                },
-                {
-                    "title": "Spring",
-                    "img": "./img/original/Spring.webp",
-                    "level": 2,
-                    "link": "https://spring.io/"
-                },
-                {
-                    "title": "Node",
-                    "img": "./img/original/node.webp",
-                    "level": 2,
-                    "link": "https://nodejs.org/en/about/"
                 },
                 {
                     "title": "VB.Net",
@@ -461,58 +440,70 @@
                     "link": "https://en.wikipedia.org/wiki/Visual_Basic_.NET"
                 },
                 {
-                    "title": "SQL",
+                    "title": "T-Sql and stored procs",
                     "img": "./img/original/tsql.webp",
                     "level": 2,
                     "link": "https://en.wikipedia.org/wiki/Transact-SQL"
                 },
                 {
-                    "title": "Python",
-                    "img": "./img/original/python.webp",
-                    "level": 1,
-                    "link": "https://www.python.org/"
+                    "title": "Node.JS",
+                    "img": "./img/original/node.webp",
+                    "level": 2,
+                    "link": "https://nodejs.org/en/about/"
                 },
                 {
                     "title": "GoLang",
                     "img": "./img/original/go.webp",
                     "level": 1,
                     "link": "https://go.dev/"
+                },
+                {
+                    "title": "Python",
+                    "img": "./img/original/python.webp",
+                    "level": 1,
+                    "link": "https://www.python.org/"
                 }
             ]
         },
         {
-            "name": "UI Frameworks",
-            "size": "6",
+            "name": "Concepts",
+            "size": "12",
             "items": [
                 {
-                    "title": "React",
-                    "img": "./img/original/React.webp",
+                    "title": "Rest Services",
+                    "img": "./img/original/rest.webp",
                     "level": 2,
-                    "link": "https://react.dev/"
+                    "link": "https://en.wikipedia.org/wiki/Representational_state_transfer"
                 },
                 {
-                    "title": "ASP.Net",
-                    "img": "./img/original/aspnet.webp",
+                    "title": "MVC",
+                    "img": "./img/original/mvc.webp",
                     "level": 2,
-                    "link": "https://dotnet.microsoft.com/apps/aspnet"
+                    "link": "https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller"
                 },
                 {
-                    "title": "Angular",
-                    "img": "./img/original/Angular.webp",
+                    "title": "Agile",
+                    "img": "./img/original/agile.webp",
                     "level": 2,
-                    "link": "https://angular.io/"
+                    "link": "https://en.wikipedia.org/wiki/Agile_software_development"
                 },
                 {
-                    "title": "jQuery",
-                    "img": "./img/original/jquery.webp",
+                    "title" : "Containerization (Docker / Kubernetes)",
+                    "img":"./img/original/k8s.webp",
                     "level": 2,
-                    "link": "https://jquery.com/"
+                    "link":"https://kubernetes.io/"
                 },
                 {
-                    "title": "HandleBars",
-                    "img": "./img/original/Handlebars.webp",
+                    "title" : "CI/CD",
+                    "img":"./img/original/agile.webp",
                     "level": 2,
-                    "link": "https://handlebarsjs.com/"
+                    "link":"https://resources.github.com/ci-cd/"
+                },
+                {
+                    "title" : "Test and Behavor Driven Development",
+                    "img":"./img/original/agile.webp",
+                    "level": 2,
+                    "link":"https://en.wikipedia.org/wiki/Behavior-driven_development"
                 }
             ]
         },
@@ -533,40 +524,22 @@
                     "link": "https://en.wikipedia.org/wiki/JavaScript"
                 },
                 {
-                    "title": "SASS",
+                    "title": "jQuery",
+                    "img": "./img/original/jquery.webp",
+                    "level": 2,
+                    "link": "https://jquery.com/"
+                },
+                {
+                    "title": "SASS / CSS",
                     "img": "./img/original/sass.webp",
                     "level": 2,
                     "link": "https://sass-lang.com/"
-                }
-            ]
-        },
-        {
-            "name": "Concepts",
-            "size": "12",
-            "items": [
-                {
-                    "title": "Rest",
-                    "img": "./img/original/rest.webp",
-                    "level": 2,
-                    "link": "https://en.wikipedia.org/wiki/Representational_state_transfer"
                 },
                 {
-                    "title": "GraphQL",
-                    "img": "./img/original/GraphQL.webp",
-                    "level": 2,
-                    "link": "https://graphql.org/"
-                },
-                {
-                    "title": "Pub Sub",
-                    "img": "./img/original/rest.webp",
-                    "level": 2,
-                    "link": "https://en.wikipedia.org/wiki/Representational_state_transfer"
-                },
-                {
-                    "title": "Containers",
-                    "img": "./img/original/Docker.webp",
-                    "level": 2,
-                    "link": "https://kubernetes.io/"
+                    "title": "Blazor Pages",
+                    "img": "./img/original/blazor.webp",
+                    "level": 1,
+                    "link": "https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor"
                 }
             ]
         },
@@ -575,7 +548,7 @@
             "size": "6",
             "items": [
                 {
-                    "title": "Rational",
+                    "title": "Rational DBs (MSSQL / Postgres / MySQL)",
                     "img": "./img/original/sqlserver.webp",
                     "level": 2,
                     "link": "https://en.wikipedia.org/wiki/Microsoft_SQL_Server"
@@ -587,10 +560,34 @@
                     "link": "https://redis.io/"
                 },
                 {
-                    "title": "Document",
-                    "img": "./img/original/MongoDB.webp",
+                    "title": "NoSql (MongoDB)",
+                    "img": "./img/original/Mongodb.webp",
                     "level": 1,
                     "link": "https://www.mongodb.com/"
+                }
+            ]
+        },
+        {
+            "name": "UI Frameworks",
+            "size": "6",
+            "items": [
+                {
+                    "title": "ASP.Net",
+                    "img": "./img/original/aspnet.webp",
+                    "level": 2,
+                    "link": "https://dotnet.microsoft.com/apps/aspnet"
+                },
+                {
+                    "title": "Angular (js)",
+                    "img": "./img/original/Angular.webp",
+                    "level": 2,
+                    "link": "https://angular.io/"
+                },
+                {
+                    "title": "Vue",
+                    "img": "./img/original/vue.webp",
+                    "level": 1,
+                    "link": "https://vuejs.org/"
                 }
             ]
         },
@@ -605,52 +602,40 @@
                     "link": "https://azure.microsoft.com/en-us/services/devops/server/"
                 },
                 {
-                    "title": "Git",
+                    "title": "GitLab / Github",
                     "img": "./img/original/Octocat.webp",
                     "level": 2,
-                    "link": "https://en.wikipedia.org/wiki/Git"
+                    "link": "https://en.wikipedia.org/wiki/GitHub"
+                },
+                {
+                    "title": "Azure DevOps",
+                    "img": "./img/original/Octocat.webp",
+                    "level": 2,
+                    "link": "https://en.wikipedia.org/wiki/GitHub"
                 }
             ]
         },
         {
-            "name": "AI tooling and Services",
-            "size": "12",
+            "name": "Tools",
+            "size": "8",
             "items": [
                 {
-                    "title": "Prompting",
-                    "img": "./img/original/AI.webp",
+                    "title": "Visual Studio",
+                    "img": "./img/original/visualstudio.webp",
                     "level": 2,
-                    "link": "https://en.wikipedia.org/wiki/Prompt_engineering"
+                    "link": "https://visualstudio.microsoft.com/vs/"
                 },
                 {
-                    "title": "RAG",
-                    "img": "./img/original/AI.webp",
-                    "level": 1,
-                    "link": "https://en.wikipedia.org/wiki/Retrieval-augmented_generation"
-                },
-                {
-                    "title": "ML",
-                    "img": "./img/original/AI.webp",
-                    "level": 1,
-                    "link": "https://en.wikipedia.org/wiki/Machine_learning"
-                },
-                {
-                    "title": "NLP",
-                    "img": "./img/original/AI.webp",
-                    "level": 1,
-                    "link": "https://en.wikipedia.org/wiki/Natural_language_processing"
-                },
-                {
-                    "title": "LLM Hosting",
-                    "img": "./img/original/AI.webp",
-                    "level": 1,
-                    "link": "https://en.wikipedia.org/wiki/Large_language_model"
-                },
-                {
-                    "title": "Cognitive",
-                    "img": "./img/original/cognitive.webp",
+                    "title": "VS Code",
+                    "img": "./img/original/vscode.webp",
                     "level": 2,
-                    "link": "https://azure.microsoft.com/en-us/services/cognitive-services/"
+                    "link": "https://code.visualstudio.com/"
+                },
+                {
+                    "title": "Git",
+                    "img": "./img/original/Git.webp",
+                    "level": 2,
+                    "link": "https://git-scm.com/"
                 }
             ]
         }
@@ -666,18 +651,11 @@
     ],
     "Work": [
         {
-            "name": "University of Wisconsin System",
-            "timeworked": "January 2006 - May 2006",
-            "title": "Teaching Assistant",
-            "img": "./img/original/uw.webp",
-            "summary": "As a Teaching Assistant at the University of Wisconsin - Milwaukee, I assisted professors in managing and grading assignments, providing support to students, and facilitating classroom activities. This role allowed me to develop strong communication and organizational skills while gaining valuable experience in an academic setting."
-        },
-        {
             "name": "Northwestern Mutual",
             "timeworked": "April 2021 - Present",
             "title": "Software Engineer",
             "img": "./img/200/NM.webp",
-            "summary": "I’m a Full-Stack Software Engineer at Northwestern Mutual, building reliable, well-structured software across backend services and frontend applications using Java, Node.js, React, JavaScript, and TypeScript. I focus on writing clean, maintainable code that supports long-term growth and performance. Outside of development, I’ve helped improve CI/CD processes and contributed to team-wide efforts around testing and development standards. I’ve mentored an intern, supported newer engineers, and currently help guide peers through self-paced training programs by offering technical support, hosting office hours, and assisting with challenges along the way."
+            "summary": "In my current role at Northwestern Mutual, I serve as a Backend/Services Engineer, specializing in Java frameworks like Spring, Drools, and Flowable. I continually refine my skills in these technologies and actively seek new ways to apply them in order to deliver exceptional solutions. Beyond my core responsibilities, I have taken on additional roles to enhance the overall effectiveness of my team. I represent my team in the Monitoring Best Practices Committee, where I contribute to the development and implementation of effective monitoring practices. Additionally, I am actively involved in the 'Testing Best Practices' initiative, participating in relevant training sessions to ensure our team adheres to industry-leading testing standards."
         },
         {
             "name": "Brady Corporation",
