@@ -1,20 +1,20 @@
 import portfolioData from '../data/portfolio.json'
 import aboutData from '../data/about.json'
 import footerData from '../data/footer.json'
-import Breadcrumb from '../components/Breadcrumb';
-import CareerSection from '../components/CareerSection';
-import OpenSourceSection from '../components/OpenSourceSection';
-import ArticlesSection from '../components/ArticlesSection';
-import ShowcaseSection from '../components/ShowcaseSection';
+import Breadcrumb from '../components/Breadcrumb'
+import CareerSection from '../components/CareerSection'
+import OpenSourceSection from '../components/OpenSourceSection'
+import ArticlesSection from '../components/ArticlesSection'
+import ShowcaseSection from '../components/ShowcaseSection'
 
 export default function Home() {
-  const { profile, eras, labs } = portfolioData;
+  const { profile, eras, labs } = portfolioData
   return (
     <div className="page-layer">
       <Breadcrumb path="#/" />
     
 
-      <section id="about" dangerouslySetInnerHTML={{ __html: aboutData.content }}></section>
+      <section id="about" className={"markdown-engine"} dangerouslySetInnerHTML={{ __html: aboutData.content }}></section>
 
       {/* --- SHOWCASE  SECTIONS --- */}
       <ShowcaseSection />
@@ -30,8 +30,8 @@ export default function Home() {
       </section>
       
       <footer>&copy; 2026 {profile.brand} // Liukonen.dev
-      <section id="footer" dangerouslySetInnerHTML={{ __html: footerData.content }}></section>
+      <section className={"markdown-engine "} id="footer" dangerouslySetInnerHTML={{ __html: footerData.content }}></section>
       </footer>
     </div>
-  );
+  )
 }

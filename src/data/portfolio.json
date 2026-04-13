@@ -173,7 +173,7 @@
   "labs": {
     "Html_Text_Editor": {
       "title": "Html Text Editor",
-      "description": "Manipulate and batch text files in your browser",
+      "description": "A consolidated, browser-based toolkit providing a unified interface for common text transformations, code formatting, and data manipulation.",
       "image": "img/card/htmledit.webp",
       "long_description": "I developed an advanced text editor for custom work. It started as console and winform applications, then evolved into a single web-based app, and now it's a PWA. It can load files from your desktop and save them in the browser cache or as a download.",
       "buttons": [
@@ -187,15 +187,18 @@
         }
       ],
       "tech": [
-        "Functional Programming",
-        "Local and Web storage",
-        "Client side File reader",
-        "Javascript"
-      ]
+        "PWA",
+        "Javascript",
+        "Text Manipulation",
+        "Bootstrap",
+        "Brewoser Utilitiy"
+      ],
+      "repo": "htmlTextEditor",
+      "branch": "master"
     },
     "WeatherWallpaper": {
       "title": "WeatherWallpaper",
-      "description": "Changes wallpaper based on weather and time of day for Windows",
+      "description": "Dynamic wallpaper daemon that responds to weather conditions and time of day, with multi-source weather resilience and extensible plugin architecture.",
       "long_description": "I developed a weather app using Yahoo as the source for data, but lost the source code. I rewrote the app to include multiple data sources in case of outages, and added the ability to display different wallpapers based on time of day.",
       "image": "img/card/weatherwallpaper.webp",
       "buttons": [
@@ -209,24 +212,19 @@
         }
       ],
       "tech": [
-        "Managed Extensibility Framework",
-        "REST API's",
+        "C#",
+        "Winforms",
+        "MEF Plugin Architecture",
+        "REST APIs",
         "Notification Icon",
-        "Low Level DLL calls",
-        "Interface design",
-        "Memory Caching",
-        "WCF / Web Services",
-        "Cryptography",
-        "Configuration Management",
-        "NuGet Package Management",
-        "Remote Error Logging and management",
-        "ZipArchiveEntry compression",
-        ".net GeoCoordinate objects"
-      ]
+        "Direct DLL calls"
+      ],
+      "repo": "WeatherWallpaper",
+      "branch": "main"
     },
     "Tic_Tac_Math": {
       "title": "Tic Tac Math",
-      "description": "A simple math tic tac toe game.",
+      "description": "A simple math tic tac toe game to teach children basic math.",
       "long_description": "Back in school around 2003 or 04, I developed a Tic Tac Toe game using Visual Basic 6 and Microsoft Agents for input and output. Recently, I found the original source code and rewrote it in .NET, consolidating the logic into a single program with options to switch math types (divide, multiply, add, and subtract). As a side project during some time off, I converted the game to JavaScript and HTML, and brought back the Agents and text-to-speech functionality through the browser.",
       "image": "img/card/ttm.webp",
       "buttons": [
@@ -253,7 +251,9 @@
         "Visual Basic 6",
         "Visual Basic .net",
         "Installers (nullsoft and Microsoft One Click Installer)"
-      ]
+      ],
+      "repo": "tictacmath",
+      "branch": "master"
     },
     "RiverScriptBot": {
       "title": "RiverScriptBot",
@@ -281,7 +281,9 @@
         "API REST calls",
         "CI/CD",
         "RiveScript"
-      ]
+      ],
+      "repo": "RiverScriptBackend",
+      "branch": "Main"
     },
     "Flag_Fairway": {
       "title": "Flag Fairway",
@@ -305,36 +307,9 @@
         "Key Value stores",
         "Embedded Database",
         "Docker"
-      ]
-    },
-    "NATS": {
-      "title": "NATS",
-      "description": "a utility to search text files quickly",
-      "long_description": "Nats is a command-line search engine for text files with multithreading, indexing, and a cached option for faster lookups. Originally written in .net core, it now has GUI editions for Windows, Mac, and GTK running on multiple platforms. Icon for mac and windows provided by material.io, and is Apache license version 2.0.",
-      "image": "img/card/nats.webp",
-      "buttons": [
-        {
-          "type": "Release",
-          "url": "https://github.com/liukonen/nats/releases"
-        },
-        {
-          "type": "Source",
-          "url": "https://github.com/liukonen/nats"
-        }
       ],
-      "tech": [
-        "LiteDB",
-        " Singleton",
-        " Factory Pattern",
-        " Parallel Library",
-        " Sqlite",
-        " String Hashing",
-        " Cocoa (Mac OS) Development",
-        " XCode",
-        " GTK#",
-        " .Net Standard",
-        " Cross Platform Development"
-      ]
+      "repo": "FlagFairway",
+      "branch": "main"
     },
     "CloudyPie": {
       "title": "CloudyPie",
@@ -363,7 +338,9 @@
         "css",
         "Pigpio",
         "basic shell scripting"
-      ]
+      ],
+      "repo": "cloudy-pie",
+      "branch": "main"
     },
     "Simple_Weather_Tray": {
       "title": "Simple Weather Tray",
@@ -386,7 +363,9 @@
         ".Net Core",
         "GTK#",
         "Cross Platform Development and Testing"
-      ]
+      ],
+      "repo": "SimpleWeatherTray",
+      "branch": "main"
     },
     "Desert_Changer": {
       "title": "Desert Changer",
@@ -413,7 +392,9 @@
         "Linq",
         "event handlers",
         "mutex"
-      ]
+      ],
+      "repo": "DesertChanger",
+      "branch": "master"
     },
     "PodLoad": {
       "title": "PodLoad",
@@ -434,7 +415,9 @@
         "XML",
         "Linq",
         "Compression"
-      ]
+      ],
+      "repo": "Podload",
+      "branch": "master"
     },
     "Dif": {
       "title": "Dif",
@@ -454,7 +437,9 @@
       "tech": [
         "Parallel tasks",
         "File enumeration"
-      ]
+      ],
+      "repo": "Dif",
+      "branch": "main"
     },
     "Clipboard++": {
       "title": "Clipboard++",
@@ -481,7 +466,9 @@
         "System Cryptography Namespace",
         "Data Encryption ",
         "Microsofts Data Protection API"
-      ]
+      ],
+      "repo": "Clipboard-",
+      "branch": "master"
     },
     "WinFrost": {
       "title": "WinFrost",
@@ -503,7 +490,9 @@
         "HTML parsing",
         "GeckFX .net controls",
         "CEFSharp .net controls"
-      ]
+      ],
+      "repo": "WinFrost",
+      "branch": "main"
     },
     "choco-outdated": {
       "title": "choco-outdated",
@@ -524,7 +513,9 @@
         "Parallel tasks",
         "File enumeration",
         "GoLang"
-      ]
+      ],
+      "repo": "choco-outdated",
+      "branch": "main"
     },
     "gpsdApi": {
       "title": "Gpsd API",
@@ -544,7 +535,9 @@
       "tech": [
         "Python",
         "Javascript"
-      ]
+      ],
+      "repo": "gpsdApi",
+      "branch": "main"
     }
   },
   "showcases": [

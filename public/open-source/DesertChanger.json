@@ -1,0 +1,4 @@
+{
+  "content": "<p>Inspired by Mac  OS mojave. Changes your wallpaper based on Night vs Day</p>\n<h1>credits</h1>\n<p>Special thanks to</p>\n<ul>\n<li>Jean Meeus for equations from Astronomical Algorithms,</li>\n<li>Schuyler Erle <a href=\"mailto:schuyler@geocoder.us\">schuyler@geocoder.us</a> for the CivicSpace US ZIP Code Database</li>\n<li>Konrad Michalik for the Icon <a href=\"https://github.com/jackd248/weather-iconic\">https://github.com/jackd248/weather-iconic</a></li>\n</ul>\n<h1>Learnings / topics</h1>\n<ul>\n<li>dll import and low level bindings</li>\n<li>Cryptography</li>\n<li>notification objects</li>\n<li>winform objects</li>\n<li>dialog menus</li>\n<li>CSV parsing</li>\n<li>GeoLocation objects</li>\n<li>Linq</li>\n<li>event handlers</li>\n<li>mutex</li>\n</ul>\n",
+  "id": "DesertChanger"
+}

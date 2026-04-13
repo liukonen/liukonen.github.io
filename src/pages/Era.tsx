@@ -1,12 +1,12 @@
-import { h } from 'preact';
-import portfolioData from '../data/portfolio.json';
-import CompanyCard from '../components/CompanyCard';
+import { h } from 'preact'
+import portfolioData from '../data/portfolio.json'
+import CompanyCard from '../components/CompanyCard'
 import FooterCounter from '../components/FooterCounter'
 import Breadcrumb from '../components/Breadcrumb'
 import Header from '../components/Header'
 
 export default function Home() {
-  const { profile, eras, labs } = portfolioData;
+  const { profile, eras, labs } = portfolioData
 
   return (
     <div className="page-layer">
@@ -19,7 +19,7 @@ export default function Home() {
       </section>
       <FooterCounter count={eras.length} />
     </div>
-  );
+  )
 }
 
-const EraEntry = ({ era }) => (<CompanyCard era={era} />);
+const EraEntry = ({ era }) => (<CompanyCard era={era} />)

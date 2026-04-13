@@ -911,6 +911,35 @@ $transition-speed: 0.15s
 .social-links
   margin-top: 20px
 
+.markdown-engine 
+  /* This targets the gold links you wanted */
+  a 
+    color: gold
+    text-decoration: none
+    &:hover 
+      text-decoration: underline
+
+  /* Custom styling for your lists */
+  ul, ol 
+    padding-left: 2rem
+    margin-bottom: 1rem
+    color: #ccc
+
+  /* Highlighting your "Context" headers */
+  h2 
+    color: gold // Making section headers match the link theme
+    font-size: 1.5rem
+    border-bottom: 1px solid #333
+    padding-bottom: 0.5rem
+  
+
+  img 
+    max-width: 100%
+    height: auto
+    border: 1px solid #444
+    border-radius: 4px
+    margin: 1rem 0
+
 
 @media (min-width: 1100px) 
   .nav-container

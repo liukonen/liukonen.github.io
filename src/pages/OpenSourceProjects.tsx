@@ -1,12 +1,12 @@
-import FooterCounter from '../components/FooterCounter';
-import portfolioData from '../data/portfolio.json';
-import Header from '../components/Header';
-import Breadcrumb from '../components/Breadcrumb';
-import Tags from '../components/Tags';
+import FooterCounter from '../components/FooterCounter'
+import portfolioData from '../data/portfolio.json'
+import Header from '../components/Header'
+import Breadcrumb from '../components/Breadcrumb'
+import Tags from '../components/Tags'
 
 export default function OpenSourceProjects() {
   // Extracting all lab projects from the JSON object
-  const labEntries = Object.entries(portfolioData.labs);
+  const labEntries = Object.entries(portfolioData.labs)
 
   return (
     <div className="page-layer">
@@ -42,5 +42,5 @@ export default function OpenSourceProjects() {
     <FooterCounter count={labEntries.length} />
 
     </div>
-  );
+  )
 }

@@ -1,18 +1,29 @@
-import { h } from 'preact';
-import portfolioData from '../data/portfolio.json';
-import Tags from '../components/Tags';
-import Breadcrumb from '../components/Breadcrumb';
-
+import { h } from 'preact'
+import portfolioData from '../data/portfolio.json'
+import Tags from '../components/Tags'
+import Breadcrumb from '../components/Breadcrumb'
+import { useState, useEffect } from 'preact/hooks'
 interface Props {
   id: string;
 }
 
-export default function LabDetail({ id }: Props) {
-  const project = portfolioData.labs[id];
 
+
+
+export default function LabDetail({ id }: Props) {
+  const project = portfolioData.labs[id]
   if (!project) {
-    return <div className="page-layer">Project Not Found</div>;
+    return <div className="page-layer">Project Not Found</div>
   }
+
+  const [projectData, setProjectData] = useState(null)
+
+  useEffect(() => {
+    fetch(`/open-source/${project.repo}.json`).then(r => r.json()).then(setProjectData)
+    window.scrollTo(0, 0)
+  }, [id])
+  if (!projectData) return <div className="loader">// DECRYPTING_TECHNICAL_LOGS...</div>
+
 
   return (
     <div className="page-layer">
@@ -47,7 +58,7 @@ export default function LabDetail({ id }: Props) {
         <p className="top-buffer-20" style={{ fontSize: '1.2rem', lineHeight: '1.8', color: 'var(--text-muted)' }}>
           {project.description}
         </p>
-        <p style={{ marginTop: '20px' }}>{project.long_description}</p>
+        <section className="technical-body markdown-engine" dangerouslySetInnerHTML={{ __html: projectData.content }} />
       </section>
 
       <button 
@@ -58,5 +69,5 @@ export default function LabDetail({ id }: Props) {
         ← RETURN_TO_LAB
       </button>
     </div>
-  );
+  )
 }

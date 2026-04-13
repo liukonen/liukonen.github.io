@@ -1,11 +1,11 @@
-import { h } from "preact";
-import portfolioData from "../data/portfolio.json";
-import Breadcrumb from "../components/Breadcrumb";
+import { h } from "preact"
+import portfolioData from "../data/portfolio.json"
+import Breadcrumb from "../components/Breadcrumb"
 
 export default function EraDetail({ id }: Props) {
-  const era = portfolioData.eras.find(e => e.id === id);
+  const era = portfolioData.eras.find(e => e.id === id)
 
-  if (!era) return <div className="page-layer">Error: Era Not Found</div>;
+  if (!era) return <div className="page-layer">Error: Era Not Found</div>
 
   return (
     <div className="page-layer detail-view" key={id}>
@@ -77,5 +77,5 @@ export default function EraDetail({ id }: Props) {
         </footer>
       </div>
     </div>
-  );
+  )
 }
