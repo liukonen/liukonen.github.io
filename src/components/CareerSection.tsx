@@ -1,7 +1,7 @@
 import MoreFooter  from "./MoreFooter"
 import Tags from "./Tags"
 
-export default function CareerSection({ eras }: any) {
+export default function CareerSection({ eras }: Readonly<any>) {
     return (
       <section id="eras" className="showcase-grid">
         <span className="section-label">~/ RECENT_CAREER</span>

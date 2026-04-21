@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'preact/hooks';
 import Breadcrumb from '../components/Breadcrumb';
 
-export const CaseStudy = ({ id }) => {
+export default function CaseStudy({ id }) {
   const [study, setStudy] = useState(null);
 
   useEffect(() => {

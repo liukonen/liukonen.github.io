@@ -1,11 +1,14 @@
+import { lazy, Suspense } from 'preact/compat'
+
 import portfolioData from '../data/portfolio.json'
 import aboutData from '../data/about.json'
 import footerData from '../data/footer.json'
 import Breadcrumb from '../components/Breadcrumb'
-import CareerSection from '../components/CareerSection'
-import OpenSourceSection from '../components/OpenSourceSection'
-import ArticlesSection from '../components/ArticlesSection'
-import ShowcaseSection from '../components/ShowcaseSection'
+
+const CareerSection = lazy(() => import('../components/CareerSection'))
+const OpenSourceSection = lazy(() => import('../components/OpenSourceSection'))
+const ArticlesSection = lazy(() => import('../components/ArticlesSection')) 
+const ShowcaseSection = lazy(() => import('../components/ShowcaseSection')) 
 
 export default function Home() {
   const { profile, eras, labs } = portfolioData
@@ -17,14 +20,21 @@ export default function Home() {
       <section id="about" className={"markdown-engine"} dangerouslySetInnerHTML={{ __html: aboutData.content }}></section>
 
       {/* --- SHOWCASE  SECTIONS --- */}
-      <ShowcaseSection />
-      <ArticlesSection />
-      <OpenSourceSection repos={labs} />
-      <CareerSection eras={eras} />
-
+      <Suspense fallback={null}>
+        <ShowcaseSection />
+      </Suspense>
+      <Suspense fallback={null}>
+        <ArticlesSection />
+      </Suspense>
+      <Suspense fallback={null}>
+        <OpenSourceSection repos={labs} />
+      </Suspense>
+      <Suspense fallback={null}>
+        <CareerSection eras={eras} />
+      </Suspense>
       {/* --- CONTACT SECTION --- */}
       <section id ="contact" className="showcase-grid">
-            <button className="btn" onClick={() => window.location.hash = '#/CONTACT'}>
+            <button className="btn" onClick={() => location.hash = '#/CONTACT'}>
         GET_IN_TOUCH
       </button>
       </section>

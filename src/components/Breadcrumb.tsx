@@ -2,7 +2,7 @@ type BreadcrumbProps = {
   path: string;
 };
 
-export default function Breadcrumb({ path }: BreadcrumbProps) {
+export default function Breadcrumb({ path }: Readonly<BreadcrumbProps>) {
   // Remove leading "#/" and split
   const parts = path.replace(/^#\//, "").split("/").filter(Boolean);
 

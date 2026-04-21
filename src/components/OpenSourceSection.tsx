@@ -1,6 +1,6 @@
 import MoreFooter from "./MoreFooter"
 
-export default function OpenSourceSection({ repos }: any) {
+export default function OpenSourceSection({ repos }: Readonly<any>) {
     return (
       <section id="featured-labs" className="showcase-grid">
         <span className="section-label"> ~/ OPEN_SOURCE_PROJECTS</span>

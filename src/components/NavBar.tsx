@@ -1,8 +1,10 @@
-import { useState } from 'preact/hooks';
-import portfolioData from '../data/portfolio.json'
+import { useState } from 'preact/hooks'
+import { lazy, Suspense } from 'preact/compat'
 
 export function Navigation() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
+
+  const LazyNavLinks = lazy(() => import('./NavBarLinks'))
 
   return (
     <nav className="nav-container">
@@ -17,14 +19,11 @@ export function Navigation() {
           {isOpen ? '[ x ]' : '[ = ]'}
         </button>
       </div>
-
-      {/* --- LINKS LIST --- */}
-      <div className={`nav-links ${isOpen ? 'show' : ''}`}>
-        <a href="#/" onClick={() => setIsOpen(false)}>— / HOME</a>
-        {portfolioData.sidebar.map((item, index) => (
-          <a href={item.path} onClick={() => setIsOpen(false)} className={'top-buffer-40'}>— / {item.id}</a>
-        ))}
-      </div>
+      {isOpen && (
+        <Suspense fallback={null}>
+          <LazyNavLinks onClose={() => setIsOpen(false)} />
+        </Suspense>
+      )}
     </nav>
-  );
+  )
 }

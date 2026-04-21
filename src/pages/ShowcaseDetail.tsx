@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'preact/hooks';
 import Breadcrumb from '../components/Breadcrumb';
 
-export const ShowcaseDetail = ({ id }) => {
+export default function ShowcaseDetail({ id }) {
+  console.log('ShowcaseDetail', id)
   const [showcase, setShowcase] = useState(null);
 
   useEffect(() => {
@@ -43,4 +44,4 @@ export const ShowcaseDetail = ({ id }) => {
       </footer>
     </article>
   );
-};
+}
