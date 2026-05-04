@@ -494,29 +494,6 @@
       "repo": "WinFrost",
       "branch": "main"
     },
-    "choco-outdated": {
-      "title": "choco-outdated",
-      "description": "a utility to check for outdated chocolatey packages",
-      "long_description": "This program does something similar to chocos outdated command, however it is written in GoLang, uses go Goroutines for quick processing, and channels for quick UI output to the console. This was written after the release of v2 of the Choco command line tool, as the outdated command runs much slower then the v1 version.",
-      "image": "img/card/cmd.webp",
-      "buttons": [
-        {
-          "type": "Release",
-          "url": "https://github.com/liukonen/choco-outdated/releases"
-        },
-        {
-          "type": "Source",
-          "url": "https://github.com/liukonen/choco-outdated"
-        }
-      ],
-      "tech": [
-        "Parallel tasks",
-        "File enumeration",
-        "GoLang"
-      ],
-      "repo": "choco-outdated",
-      "branch": "main"
-    },
     "gpsdApi": {
       "title": "Gpsd API",
       "description": " A python based app to expose gpspipe as a rest API",
