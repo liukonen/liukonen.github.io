@@ -22,7 +22,7 @@ requestIdleCallback(() => {
     }
   });
 
-  console.log(
+  globalThis.console.log(
     `%c~/ liukonen.dev
     -----------------------------------------
     Architecture : Preact (Fully Client-Side)
