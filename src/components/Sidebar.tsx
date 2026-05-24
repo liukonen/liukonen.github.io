@@ -17,7 +17,7 @@ export default function Sidebar({ currentRoute }: Readonly<{ currentRoute: strin
       
       <div className="hero-intro">
         <h1>Luke Liukonen</h1>
-        <p className="subtitle">Senior Software Engineer // Technical Lead :: AI Strategy :: Infrastructure</p>
+        <p className="subtitle">Senior Software Engineer // Technical Lead // AI Strategy // Infrastructure</p>
       </div>
 
       {!isMobileDevice && (

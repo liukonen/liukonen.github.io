@@ -1,3 +1,26 @@
+// --- SELF-HOSTED FONTS ---
+@font-face
+  font-family: 'Cascadia Code'
+  src: url('/fonts/cascadia-code-latin-400-normal.woff2') format('woff2'), url('/fonts/cascadia-code-latin-ext-400-normal.woff2') format('woff2')
+  font-weight: 400
+  font-style: normal
+  font-display: swap
+
+@font-face
+  font-family: 'Cascadia Code'
+  src: url('/fonts/cascadia-code-latin-600-normal.woff2') format('woff2'), url('/fonts/cascadia-code-latin-ext-600-normal.woff2') format('woff2')
+  font-weight: 600
+  font-style: normal
+  font-display: swap
+
+@font-face
+  font-family: 'Cascadia Code'
+  src: url('/fonts/cascadia-code-latin-700-normal.woff2') format('woff2'), url('/fonts/cascadia-code-latin-ext-700-normal.woff2') format('woff2')
+  font-weight: 700
+  font-style: normal
+  font-display: swap
+
+// --- COLOR PALETTE ---
 $bg-deep: #0f1115
 $bg-surface: #1a1d23 // The Bench
 $text-main: #f8fafc // Brightened (almost white) for titles/legibility
@@ -5,8 +28,8 @@ $text-muted: #cbd5e1 // Brightened (light grey) for descriptions
 $gold-accent: #d4af37 // Brass/Gold highlights
 $brass-muted: #a8936d // Weathered gold
 $font-main: 'Inter', sans-serif
-$font-mono: 'JetBrains Mono', monospace
-$font-default: 'JetBrains Mono'
+$font-mono: 'Cascadia Code', 'Cascadia Mono', monospace
+$font-default: 'Cascadia Code'
 
 // --- THE BRIDGE ---
 // This makes these variables available to your TSX style props
@@ -34,7 +57,8 @@ body
   // The global drafting paper grid
   background-image: radial-gradient($bg-surface 1px, transparent 1px)
   background-size: 30px 30px
-  line-height: 1.6
+  line-height: 1.7
+  letter-spacing: 0.015em
   overflow-x: hidden
 
 
@@ -112,7 +136,7 @@ body
     text-transform: uppercase
     display: flex
     align-items: center
-    transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1)
+    transition: 0.15s cubic-bezier(0.16, 1, 0.3, 1)
     cursor: pointer
 
     .line
@@ -120,7 +144,7 @@ body
       height: 1px
       background: $text-muted
       margin-right: 15px
-      transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1)
+      transition: 0.15s cubic-bezier(0.16, 1, 0.3, 1)
 
     &:hover, &.active
       color: $gold-accent
@@ -138,19 +162,19 @@ body
   a
     color: $text-muted
     text-decoration: none
-    transition: 0.3s
+    transition: 0.15s cubic-bezier(0.16, 1, 0.3, 1)
     &:hover
       color: $gold-accent
 
 // --- CONTENT CORE ---
 .content-area
   flex: 1
-  padding: 80px
+  padding: 8rem
   position: relative
 
 // --- ANIMATION: SCHEMATIC REVEAL ---
 .page-layer
-  animation: theatricalReveal 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards
+  animation: theatricalReveal 0.15s cubic-bezier(0.16, 1, 0.3, 1) forwards
   animation-delay: 0.2s
   opacity: 0
   transform: translateX(100%) translateY(20px)
@@ -164,7 +188,7 @@ body
 
 // --- ANIMATION: PAGE TRANSITION (FADE & RISE) ---
 .page-transition
-  animation: fadeAndRise 0.4s cubic-bezier(0.23, 1, 0.32, 1) forwards
+  animation: fadeAndRise 0.15s cubic-bezier(0.16, 1, 0.3, 1) forwards
 
 @keyframes fadeAndRise
   from
@@ -186,6 +210,7 @@ body
   a
     color: inherit
     text-decoration: none
+    transition: color 0.15s cubic-bezier(0.16, 1, 0.3, 1)
     &:hover
       color: $gold-accent
 
@@ -214,7 +239,7 @@ body
   background: $bg-surface
   padding: 35px
   border-radius: 4px
-  border: 1px solid rgba(255, 255, 255, 0.03)
+  border: 1px solid #1e293b
   cursor: pointer
   display: flex
   flex-direction: column
@@ -260,7 +285,7 @@ body
 
   // The HOVER State: rewarding interaction with a depth change and a brighter blueprint
   &:hover
-    transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1)
+    transition: 0.15s cubic-bezier(0.16, 1, 0.3, 1)
     transform: translateY(-5px)
     border-color: rgba($gold-accent, 0.3)
     background-color: color-mix($bg-surface, white 1.5%)
@@ -317,14 +342,14 @@ body
   input, textarea
     width: 100%
     background: $bg-surface
-    border: 1px solid rgba(255, 255, 255, 0.06)
+    border: 1px solid #1e293b
     padding: 18px
     color: $text-main
     font-family: $font-main
     margin-bottom: 20px
     border-radius: 4px
     outline: none
-    transition: 0.3s
+    transition: 0.15s cubic-bezier(0.16, 1, 0.3, 1)
     &:focus
       border-color: $gold-accent
 
@@ -338,7 +363,7 @@ body
   letter-spacing: 2px
   text-transform: uppercase
   cursor: pointer
-  transition: 0.3s
+  transition: 0.15s cubic-bezier(0.16, 1, 0.3, 1)
   position: relative // Keep navigation simple for now
   z-index: 2
   &:hover
@@ -378,6 +403,10 @@ body
   position: relative // Keep above fadded blueprint
   z-index: 2
   background-color: rgba($bg-deep, 0.3) // Added slight depth
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1)
+  &:hover
+    border-color: rgba($gold-accent, 0.4)
+    background-color: rgba($gold-accent, 0.05)
 
 // --- FOOTER ---
 footer
@@ -385,12 +414,12 @@ footer
   padding: 10px 0
   color: $brass-muted
   font-family: $font-mono
-  font-size: 0.75rem
+  font-size: 0.8rem
   letter-spacing: 1px
-  opacity: 0.5
+  opacity: 0.6
   p
     font-family: $font-default
-    font-size:  '0.7rem'
+    font-size: 0.8rem
 
 header
   @extend .default-margin
@@ -406,7 +435,7 @@ header
   margin-bottom: 100px
 
 .default-margin
-  margin-bottom: 60px
+  margin-bottom: 7rem
 
 
 .detail-view
@@ -444,7 +473,7 @@ header
   gap: 20px
   padding: 25px
   background: $bg-surface
-  border: 1px solid rgba(255, 255, 255, 0.05)
+  border: 1px solid #1e293b
   border-radius: 4px
 
   .meta-item
@@ -461,7 +490,8 @@ header
 .long-form-text
   white-space: pre-wrap // Respects the line breaks from your old site
   color: $text-muted
-  line-height: 1.8
+  line-height: 1.7
+  letter-spacing: 0.015em
   font-size: 1.05rem
   margin-top: 20px
 
@@ -495,6 +525,7 @@ html
 .content-area::-webkit-scrollbar-thumb
   background: rgba(212, 175, 55, 0.2) // Subtle gold hint
   border-radius: 10px
+  transition: 0.15s cubic-bezier(0.16, 1, 0.3, 1)
 
 $spotlight-color: rgba(255, 215, 150, 0.1)
 $spotlight-radius: 250px
@@ -521,7 +552,8 @@ body, html
 
   .era-paragraph
     color: var(--text-muted)
-    line-height: 1.8
+    line-height: 1.7
+    letter-spacing: 0.015em
     font-size: 1.05rem
     margin-bottom: 1.5rem // Vertical rhythm
     
@@ -534,10 +566,12 @@ body, html
 .tech-footer
   margin-top: 40px
   padding-top: 20px
-  border-top: 1px solid rgba(255, 255, 255, 0.05)
+  border-top: 1px solid #1e293b
   display: flex
   gap: 10px
   flex-wrap: wrap
+  opacity: 0.45
+  font-size: 0.8rem
 
 // --- HOME PAGE (MINIMAL) ---
 .mini-article-row
@@ -546,15 +580,9 @@ body, html
   gap: 15px
   padding: 12px 0
   text-decoration: none
-  border-bottom: 1px solid rgba(255, 255, 255, 0.03)
+  border-bottom: 1px solid #1e293b
   color: var(--text-muted)
-  transition: color 0.2s
-
-  &:hover
-    color: var(--gold-accent)
-    .article-arrow
-      transform: translateX(5px)
-
+  transition: color 0.15s cubic-bezier(0.16, 1, 0.3, 1)
   .article-date-mono
     font-family: var(--font-mono)
     font-size: 0.8rem
@@ -576,7 +604,7 @@ body, html
 
 .verbose-article-card
   padding-bottom: 30px
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05)
+  border-bottom: 1px solid #1e293b
 
   h3
     margin: 10px 0
@@ -584,10 +612,12 @@ body, html
     color: var(--text-main)
     &:hover
       color: var(--gold-accent)
+      transition: color 0.15s cubic-bezier(0.16, 1, 0.3, 1)
 
   p
     color: var(--text-muted)
-    line-height: 1.6
+    line-height: 1.7
+    letter-spacing: 0.015em
     font-size: 1rem
 
   .card-meta
@@ -923,7 +953,8 @@ $transition-speed: 0.15s
   ul, ol 
     padding-left: 2rem
     margin-bottom: 1rem
-    color: #ccc
+    //color: #ccc
+    color: $text-muted
 
   /* Highlighting your "Context" headers */
   h2 
