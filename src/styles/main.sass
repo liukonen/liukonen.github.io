@@ -61,7 +61,23 @@ body
   letter-spacing: 0.015em
   overflow-x: hidden
 
+// focus styles
+*:focus 
+  outline: none
 
+
+/* 2. Apply the high-end, keyboard-only gold ring */
+*:focus-visible 
+  outline: 2px solid #d4af37 //* Swap with your exact gold hex code */
+  outline-offset: 4px
+  transition: outline-offset 0.1s ease
+
+
+/* 3. Ensure form inputs or text fields still feel natural */
+input:focus-visible,
+textarea:focus-visible 
+  outline-offset: 0px
+  border-color: #d4af37
 
 // --- LAYOUT ENGINE ---
 .app-shell
