@@ -19,9 +19,11 @@
         "I am currently driving a department-wide modernization initiative, architecting scalable backend services in Java/Spring and Node.js while evolving our frontend architecture through high-performance, reusable React components.",
         "As a lead for AI adoption and prompt engineering, I integrate AI-assisted development workflows into our SDLC. By helping establish best practices for generative tools, I have accelerated delivery cycles and introduced innovative automated solutions to complex engineering bottlenecks.",
         "My role extends across the following specialized domains:",
-        "- Observability & Reliability: Served as a Subject Matter Expert (SME) for system monitoring, where I defined critical SLA metrics and implemented monitoring frameworks that significantly improved operational visibility and service uptime.",
-        "- Test Automation: Act as the Playwright SME, establishing robust automation patterns and end-to-end testing standards that have measurably increased release stability.",
-        "- Technical Mentorship: Lead cross-functional training in React, Node, and Spring. By standardizing engineering practices and facilitating knowledge-sharing sessions, I’ve helped teams improve velocity and maintain a higher baseline for code quality."
+        "  * Systems Engineering: Leverage Java, Node, and React to architect secure, high-availability full-stack capabilities across AWS and Kubernetes environments.",
+        "  * Quality Governance: Serve as the organizational Playwright SME, design CI/CD test-defense pipelines, and establish department-wide automation patterns.",
+        "  * AI Implementation: Drive the technical integration strategy for LLM tools, building secure context ingestion pipelines and architectural guardrails.",
+        "  * Observability & Reliability: Served as a Subject Matter Expert (SME) for system monitoring, where I defined critical SLA metrics and implemented monitoring frameworks that significantly improved operational visibility and service uptime.",
+        "  * Technical Mentorship: Lead cross-functional training in React, Node, and Spring. By standardizing engineering practices and facilitating knowledge-sharing sessions, I’ve helped teams improve velocity and maintain a higher baseline for code quality."
       ],
       "tech": [
         "Java",

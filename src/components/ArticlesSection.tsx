@@ -13,6 +13,11 @@ export default function ArticlesSection() {
   return (
     <section id="writeups" className="showcase-grid">
       <span className="section-label">~/ RECENT_WRITEN_ARTICLES</span>
+      <p>
+// Technical spikes, systems research, and engineering explorations.<br />
+// Evaluating sandbox experiments and homelab architectures for enterprise production viability.
+      </p>
+      < br />
       <section className="home-articles-section">
         <div className="mini-article-list">
           {articles.map(article => <ArticleEntry article={article} />)}

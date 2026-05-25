@@ -4,6 +4,12 @@ export default function OpenSourceSection({ repos }: Readonly<any>) {
     return (
       <section id="featured-labs" className="showcase-grid">
         <span className="section-label"> ~/ OPEN_SOURCE_PROJECTS</span>
+        <p>
+
+          // Secondary utilities, legacy tools, and experimental code.  <br />
+          // Focused on local-first execution, minimal dependency footprints, and raw systems craft.
+        </p>
+        <br />
         <div className="grid-2">
           {Object.entries(repos).slice(0, 4).map(([id, project]) => (
             <LabEntry id={id} project={project} />
