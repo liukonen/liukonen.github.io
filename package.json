@@ -7,16 +7,16 @@
     "preview": "vite preview",
     "build:content": "node ./scripts/compile-content.cjs",
     "prepare": "husky install",
+    "tidy": "npx depcheck && npm prune && npm dedupe",
     "extract-fonts": "npm run extract-cascadia && npm run extract-plex",
     "extract-cascadia": "shx cp node_modules/@fontsource/cascadia-code/files/cascadia-code-latin-{200,300,400,500,600,700}-normal.woff2 public/fonts && shx cp node_modules/@fontsource/cascadia-code/files/cascadia-code-latin-ext-{200,300,400,500,600,700}-normal.woff2 public/fonts",
     "extract-plex": "shx cp node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-{200,300,400,500,600,700}-normal.woff2 public/fonts && shx cp node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-ext-{200,300,400,500,600,700}-normal.woff2 public/fonts"
   },
   "dependencies": {
-    "@fontsource/ibm-plex-sans": "^5.2.8",
-    "@ibm/plex": "^6.4.1",
     "preact": "^10.29.2"
   },
   "devDependencies": {
+    "@fontsource/ibm-plex-sans": "^5.2.8",
     "@commitlint/cli": "21.0.2",
     "@commitlint/config-conventional": "21.0.2",
     "@fontsource/cascadia-code": "^5.2.3",
@@ -39,7 +39,7 @@
   "overrides": {
     "lodash": "4.18.1",
     "tar-fs": "3.1.2",
-    "ws": "8.20.0",
+    "ws": "8.20.1",
     "uuid": "14.0.0"
   }
 }
