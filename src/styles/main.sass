@@ -20,6 +20,28 @@
   font-style: normal
   font-display: swap
 
+@font-face
+  font-family: 'IBM Plex Sans'
+  src: url('/fonts/ibm-plex-sans-latin-400-normal.woff2') format('woff2'), url('/fonts/ibm-plex-sans-latin-ext-400-normal.woff2') format('woff2')
+  font-weight: 400
+  font-style: normal
+  font-display: swap
+
+@font-face
+  font-family: 'IBM Plex Sans'
+  src: url('/fonts/ibm-plex-sans-latin-600-normal.woff2') format('woff2'), url('/fonts/ibm-plex-sans-latin-ext-600-normal.woff2') format('woff2')
+  font-weight: 600
+  font-style: normal
+  font-display: swap
+
+@font-face
+  font-family: 'IBM Plex Sans'
+  src: url('/fonts/ibm-plex-sans-latin-400-normal.woff2') format('woff2'), url('/fonts/ibm-plex-sans-latin-ext-400-normal.woff2') format('woff2')
+  font-weight: 400
+  font-style: normal
+  font-display: swap
+
+
 // --- COLOR PALETTE ---
 $bg-deep: #0f1115
 $bg-surface: #1a1d23 // The Bench
@@ -27,7 +49,7 @@ $text-main: #f8fafc // Brightened (almost white) for titles/legibility
 $text-muted: #cbd5e1 // Brightened (light grey) for descriptions
 $gold-accent: #d4af37 // Brass/Gold highlights
 $brass-muted: #a8936d // Weathered gold
-$font-main: 'Inter', sans-serif
+$font-main: 'IBM Plex Sans', sans-serif
 $font-mono: 'Cascadia Code', 'Cascadia Mono', monospace
 $font-default: 'Cascadia Code'
 
@@ -126,6 +148,7 @@ textarea:focus-visible
     font-size: 1.8rem
     letter-spacing: -1px
     line-height: 1.1
+    font-family: $font-mono
 
   .subtitle
     color: $gold-accent
@@ -442,6 +465,7 @@ header
   h1
     font-size: 3rem
     font-weight: 600
+    font-family: $font-mono
   p
     @extend .top-buffer-10
     color: $text-muted
@@ -571,7 +595,7 @@ body, html
     line-height: 1.7
     letter-spacing: 0.015em
     font-size: 1.05rem
-    margin-bottom: 1.5rem // Vertical rhythm
+    margin-bottom: 1.6rem // Vertical rhythm
     
     // Optional: Add a subtle gold accent to the first paragraph
     &:first-of-type
@@ -698,7 +722,7 @@ $transition-speed: 0.15s
   @extend .interactive-link
   flex-direction: row // Override column for your horizontal list
   justify-content: flex-start
-  gap: 1.5rem
+  gap: 1.6rem
   padding: 0.8rem 0
 
 .project-actions
@@ -729,6 +753,7 @@ $transition-speed: 0.15s
   h1
     letter-spacing: -0.02em
     line-height: 1.1
+    font-family: $font-mono
 
 .case-study-view, .showcase-view
   max-width: 900px
@@ -739,19 +764,19 @@ $transition-speed: 0.15s
   .study-header, .showcase-header
     border-bottom: 1px dashed #444
     margin-bottom: 2.5rem
-    padding-bottom: 1.5rem
+    padding-bottom: 1.6rem
     h1
-      font-family: 'Fira Code', monospace
+      font-family: $font-mono
       color: $gold-accent
       font-size: 2.5rem
-      padding-bottom: 1.5rem
+      padding-bottom: 1.6rem
   .tech-specs
     display: grid
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
-    gap: 1.5rem
+    gap: 1.6rem
     background: rgba(255, 215, 0, 0.03)
     border: 1px solid #333
-    padding: 1.5rem
+    padding: 1.6rem
     margin-bottom: 3rem
     border-radius: 4px
 
@@ -763,22 +788,23 @@ $transition-speed: 0.15s
         font-size: 0.75rem
         letter-spacing: 1px
         margin-bottom: 0.25rem
+        font-family: $font-mono
 
   .technical-body
     h2
-      font-size: 1.5rem
+      font-size: 1.6rem
       border-left: 3px solid $gold-accent
       padding-left: 1rem
-      margin: 3rem 0 1.5rem
+      margin: 3rem 0 1.6rem
       color: #fff
       text-transform: uppercase
       letter-spacing: 1px
     p
-      margin-bottom: 1.5rem
+      margin-bottom: 1.6rem
       color: #ccc
     ul, ol
       margin-bottom: 2rem
-      padding-left: 1.5rem
+      padding-left: 1.6rem
       li
         margin-bottom: 0.75rem
         &::marker
@@ -804,7 +830,7 @@ $transition-speed: 0.15s
   .showcase-footer
     border-top: 1px dashed #444
     margin-top: 3rem
-    padding-top: 1.5rem
+    padding-top: 1.6rem
     .return-link
       color: $gold-accent
       text-decoration: none
@@ -975,7 +1001,7 @@ $transition-speed: 0.15s
   /* Highlighting your "Context" headers */
   h2 
     color: gold // Making section headers match the link theme
-    font-size: 1.5rem
+    font-size: 1.6rem
     border-bottom: 1px solid #333
     padding-bottom: 0.5rem
   
@@ -1029,3 +1055,229 @@ $transition-speed: 0.15s
   .era
     flex-direction: column
     gap: 10px
+
+// --- LINK MODAL STYLES ---
+.link-modal-overlay
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background: rgba(0, 0, 0, 0.8)
+  display: flex
+  align-items: center
+  justify-content: center
+  z-index: 2000
+  animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1)
+  backdrop-filter: blur(2px)
+
+@keyframes fadeIn
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+.link-modal-container
+  background: $bg-surface
+  border: 1px solid $gold-accent
+  border-radius: 8px
+  width: 90vw
+  height: 85vh
+  max-width: 1200px
+  max-height: 800px
+  display: flex
+  flex-direction: column
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(212, 175, 55, 0.2)
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1)
+
+@keyframes slideUp
+  from
+    opacity: 0
+    transform: translateY(30px)
+  to
+    opacity: 1
+    transform: translateY(0)
+
+.link-modal-header
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 25px 30px
+  border-bottom: 1px solid rgba($gold-accent, 0.2)
+  flex-shrink: 0
+
+  h3
+    font-size: 1.3rem
+    color: $text-main
+    margin: 0
+    font-weight: 600
+    letter-spacing: -0.5px
+
+.link-modal-title-link
+  flex: 1
+  text-decoration: none
+  color: inherit
+  cursor: pointer
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1)
+
+  h3
+    margin: 0
+    color: $text-main
+    font-size: 1.3rem
+    font-weight: 600
+    letter-spacing: -0.5px
+    transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1)
+
+  &:hover h3
+    color: $gold-accent
+    text-decoration: underline
+
+.link-modal-close
+  background: transparent
+  border: 1px solid rgba($gold-accent, 0.3)
+  color: $gold-accent
+  width: 36px
+  height: 36px
+  border-radius: 4px
+  cursor: pointer
+  font-size: 1.2rem
+  display: flex
+  align-items: center
+  justify-content: center
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1)
+
+  &:hover
+    background: rgba($gold-accent, 0.1)
+    border-color: $gold-accent
+    transform: scale(1.05)
+
+.link-modal-content
+  flex: 1
+  overflow: hidden
+  display: flex
+  background: $bg-deep
+
+  iframe
+    width: 100%
+    height: 100%
+    border: none
+    display: block
+
+.link-modal-body
+  flex: 1
+  overflow-y: auto
+  padding: 30px
+  width: 100%
+  font-size: 1rem
+  line-height: 1.8
+  color: $text-muted
+
+  // Dev.to HTML styling overrides
+  h1, h2, h3, h4, h5, h6
+    color: $text-main
+    margin-top: 1.6em
+    margin-bottom: 0.5em
+    font-weight: 600
+
+  h1
+    font-size: 2rem
+    font-family: $font-mono
+
+  h2
+    font-size: 1.6rem
+    border-bottom: 1px solid rgba($gold-accent, 0.2)
+    padding-bottom: 0.5em
+
+  p
+    margin-bottom: 1em
+    color: $text-muted
+
+  a
+    color: $gold-accent
+    text-decoration: none
+    transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1)
+
+    &:hover
+      text-decoration: underline
+      filter: brightness(1.2)
+
+  code
+    background: rgba($gold-accent, 0.05)
+    border: 1px solid rgba($gold-accent, 0.1)
+    padding: 2px 6px
+    border-radius: 3px
+    font-family: $font-mono
+    font-size: 0.9em
+    color: rgba($gold-accent, 0.8)
+
+  pre
+    background: #0a0a0a
+    border: 1px solid #1e293b
+    border-radius: 4px
+    padding: 15px
+    overflow-x: auto
+    margin: 1em 0
+
+    code
+      background: transparent
+      border: none
+      padding: 0
+      color: $text-muted
+
+  blockquote
+    border-left: 3px solid $gold-accent
+    padding-left: 1em
+    margin-left: 0
+    margin: 1.6em 0
+    opacity: 0.85
+
+  ul, ol
+    margin-left: 1.6em
+    margin-bottom: 1em
+
+    li
+      margin-bottom: 0.5em
+
+  img
+    max-width: 100%
+    height: auto
+    border-radius: 4px
+    margin: 1.6em 0
+    border: 1px solid #1e293b
+
+  table
+    width: 100%
+    border-collapse: collapse
+    margin: 1.6em 0
+
+    th, td
+      padding: 0.75em
+      text-align: left
+      border: 1px solid #1e293b
+
+    th
+      background: rgba($gold-accent, 0.05)
+      color: $text-main
+
+.link-modal-loading
+  display: flex
+  align-items: center
+  justify-content: center
+  height: 100%
+  color: $text-muted
+  font-family: $font-mono
+  animation: pulse 1.6s ease-in-out infinite
+
+@keyframes pulse
+  0%, 100%
+    opacity: 0.6
+  50%
+    opacity: 1
+
+.link-modal-error
+  display: flex
+  align-items: center
+  justify-content: center
+  height: 100%
+  color: #ff6b6b
+  font-size: 1.1rem

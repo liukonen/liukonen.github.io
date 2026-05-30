@@ -12,7 +12,7 @@ export default function Showcase() {
     <div className="showcase-grid">
     {Object.entries(showcaseData).map(([title, item]) => (
       <div key={item.id} className="card" onClick={() => window.location.hash = `#/TECH_SHOWCASE/${item.id}`}>
-        <span style={{ fontFamily: 'JetBrains Mono', fontSize: '0.65rem', color: 'var(--brass-muted)' }}>
+        <span style={{ fontFamily: 'Cascadia Code', fontSize: '0.65rem', color: 'var(--brass-muted)' }}>
           // {title.toUpperCase()}
         </span>
 

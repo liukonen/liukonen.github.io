@@ -23,7 +23,7 @@ export default function OpenSourceProjects() {
             onClick={() => window.location.hash = `#/OPEN_SOURCE_PROJECTS/${id}`}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-              <span style={{ fontFamily: 'JetBrains Mono', fontSize: '0.65rem', color: 'var(--brass-muted)' }}>
+              <span style={{ fontFamily: 'Cascadia Code', fontSize: '0.65rem', color: 'var(--brass-muted)' }}>
                 // {id.toUpperCase()}
               </span>
             </div>

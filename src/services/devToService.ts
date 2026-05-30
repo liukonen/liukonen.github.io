@@ -6,6 +6,7 @@ export interface DevArticle {
   published_at: string
   tag_list: string[]
   reading_time_minutes: number
+  body_html?: string
 }
 
 
@@ -39,5 +40,36 @@ export const fetchDevArticles = async (username: string, count: number = 3): Pro
   } catch (err) {
     console.error("[System] Article sync failed. Falling back to empty set.", err)
     return []
+  }
+}
+
+export const fetchDevArticleContent = async (articleId: number): Promise<string | null> => {
+  const CACHE_KEY = `devto_content_${articleId}`
+  const TTL = 86400000 // 24 hours
+  
+  const cached = localStorage.getItem(CACHE_KEY)
+  if (cached) {
+    const { timestamp, data } = JSON.parse(cached)
+    const isExpired = Date.now() - timestamp > TTL
+    if (!isExpired) {
+      return data
+    }
+  }
+
+  try {
+    const response = await fetch(`https://dev.to/api/articles/${articleId}`)
+    if (!response.ok) throw new Error("Failed to fetch article content")
+    const data = await response.json()
+    const bodyHtml = data.body_html || ''
+    
+    localStorage.setItem(CACHE_KEY, JSON.stringify({
+      timestamp: Date.now(),
+      data: bodyHtml
+    }))
+    
+    return bodyHtml
+  } catch (err) {
+    console.error("[System] Article content fetch failed.", err)
+    return null
   }
 }

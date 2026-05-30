@@ -3,7 +3,8 @@ import { fetchDevArticles, DevArticle } from '../services/devToService';
 import Breadcrumb from '../components/Breadcrumb';
 import FooterCounter from '../components/FooterCounter';
 import Header from '../components/Header';
-
+import LinkModal from '../components/LinkModal';
+import useIsMobile from '../services/isMobile';
 
 import BoxArrowUpRight from '~icons/bi/box-arrow-up-right'
 
@@ -11,6 +12,10 @@ import BoxArrowUpRight from '~icons/bi/box-arrow-up-right'
 export default function Articles() {
   const [articles, setArticles] = useState<DevArticle[]>([]);
   const [loading, setLoading] = useState(true);
+  const [modalArticleId, setModalArticleId] = useState<number | null>(null);
+  const [modalTitle, setModalTitle] = useState<string>('');
+  const [modalUrl, setModalUrl] = useState<string>('');
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     // 1000 is the max limit for a single page on the Dev.to API
@@ -20,6 +25,15 @@ export default function Articles() {
         setLoading(false);
       });
   }, []);
+
+  const handleArticleClick = (e: MouseEvent, article: DevArticle) => {
+    if (!isMobile) {
+      e.preventDefault();
+      setModalArticleId(article.id);
+      setModalTitle(article.title);
+      setModalUrl(article.url);
+    }
+  };
 
   return (
     <div className="page-layer articles-view">
@@ -33,7 +47,14 @@ export default function Articles() {
         <div className="full-article-grid grid-2">
           {articles.map(article => (
             <div key={article.id} className="card verbose-article-card">
-              <a href={article.url} target="_blank" className={"no-decor"}><h3><BoxArrowUpRight /> {article.title}</h3></a>
+              <a 
+                href={article.url} 
+                target={isMobile ? "_blank" : undefined}
+                onClick={(e) => handleArticleClick(e as any, article)}
+                className={"no-decor"}
+              >
+                <h3><BoxArrowUpRight /> {article.title}</h3>
+              </a>
               <p>{article.description}</p>
               <div className="tag-cloud">
                 {article.tag_list.map(tag => <span key={tag} className="tag">#{tag}</span>)}
@@ -51,6 +72,11 @@ export default function Articles() {
         </div>
 
       )}
+
+      <LinkModal articleId={modalArticleId || undefined} onClose={() => {
+        setModalArticleId(null);
+        setModalUrl('');
+      }} title={modalTitle} url={modalUrl} />
     </div>
   );
 }

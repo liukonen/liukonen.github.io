@@ -65,23 +65,22 @@ export default function Contact() {
       <Breadcrumb path="#/contact" />
       <Header title="Contact Me" subtitle="System ready for incoming transmissions."></Header>
       <header className="era-header sub-header">
-            While I am not currently looking for new work, I am open to
-            networking, collaboration, and general inquiries.
+             I am open to networking, collaboration, and general inquiries.
       </header>
 
       <section className="contact-content">
         {/* SUCCESS TOAST */}
         {status === "success" &&
-          <div className="alert alert-success">
-            <span className="alert-icon">✓</span> Message transmitted
+          <div className="alert alert-success" role="status" aria-live="polite">
+            <span className="alert-icon" aria-hidden="true">✓</span> Message transmitted
             successfully. I'll get back to you soon.
           </div>}
 
         {/* ERROR / FALLBACK TOAST */}
         {status === "error" &&
-          <div className="alert alert-danger fallback-alert">
+          <div className="alert alert-danger fallback-alert" id="form-error-message" role="alert">
             <div className="alert-body">
-              <span className="alert-icon">⚠</span>
+              <span className="alert-icon" aria-hidden="true">⚠</span>
               <div>
                 <strong>API Transmission Failed.</strong>
                 <br />
@@ -90,13 +89,13 @@ export default function Contact() {
               </div>
             </div>
             <div className="alert-actions">
-              <a href={mailtoUrl} className="btn btn-primary">
+              <a href={mailtoUrl} className="btn btn-primary" aria-label="Send message via your email application">
                 Send via Email App
               </a>
-              <button onClick={handleCopy} className="btn btn-secondary">
+              <button onClick={handleCopy} className="btn btn-secondary" aria-label="Copy message to clipboard">
                 {copied ? "Copied!" : "Copy Message"}
               </button>
-              <button onClick={resetForm} className="btn btn-text">
+              <button onClick={resetForm} className="btn btn-text" aria-label="Dismiss error message">
                 Dismiss
               </button>
             </div>
@@ -107,12 +106,15 @@ export default function Contact() {
           <form
             action="https://formspree.io/f/xnnewjvy"
             method="POST"
+            aria-label="Connect with Luke Liukonen via email form."
+            aria-describedby={status === "error" ? "form-error-message" : undefined}
             onSubmit={handleSubmit}
             className={`contact-form ${status === "error"
               ? "form-disabled"
               : ""}`}
           >
             <div className="form-group">
+              <label htmlFor="email">Email Address</label>
               <input
                 id="email"
                 name="email"
@@ -122,10 +124,13 @@ export default function Contact() {
                 onInput={e => setEmail((e.target as HTMLInputElement).value)}
                 required
                 disabled={status === "submitting"}
+                aria-required="true"
+                aria-label="Your email address"
               />
             </div>
 
             <div className="form-group">
+              <label htmlFor="message">Message</label>
               <textarea
                 id="message"
                 name="message"
@@ -136,6 +141,8 @@ export default function Contact() {
                   setMessage((e.target as HTMLTextAreaElement).value)}
                 required
                 disabled={status === "submitting"}
+                aria-required="true"
+                aria-label="Your message content"
               />
             </div>
 
@@ -144,6 +151,7 @@ export default function Contact() {
                 type="submit"
                 className="btn btn-submit"
                 disabled={status === "submitting" || status === "error"}
+                aria-label={status === "submitting" ? "Transmitting message" : "Submit contact form"}
               >
                 {status === "submitting" ? "TRANSMITTING..." : "EXECUTE SEND"}
               </button>
