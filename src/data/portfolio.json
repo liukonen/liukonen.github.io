@@ -14,26 +14,24 @@
       "website": "https://www.northwesternmutual.com/",
       "role": "Generative AI Committee / Playwright Testing SME / Observability Guild",
       "title": "Full Stack Software Engineer",
-      "description": "Architecting the transition toward secure, departmental AI adoption and LLM auditing.",
-      "long_description": [
-        "I am currently driving a department-wide modernization initiative, architecting scalable backend services in Java/Spring and Node.js while evolving our frontend architecture through high-performance, reusable React components.",
-        "As a lead for AI adoption and prompt engineering, I integrate AI-assisted development workflows into our SDLC. By helping establish best practices for generative tools, I have accelerated delivery cycles and introduced innovative automated solutions to complex engineering bottlenecks.",
-        "My role extends across the following specialized domains:",
-        "  * Systems Engineering: Leverage Java, Node, and React to architect secure, high-availability full-stack capabilities across AWS and Kubernetes environments.",
-        "  * Quality Governance: Serve as the organizational Playwright SME, design CI/CD test-defense pipelines, and establish department-wide automation patterns.",
-        "  * AI Implementation: Drive the technical integration strategy for LLM tools, building secure context ingestion pipelines and architectural guardrails.",
-        "  * Observability & Reliability: Served as a Subject Matter Expert (SME) for system monitoring, where I defined critical SLA metrics and implemented monitoring frameworks that significantly improved operational visibility and service uptime.",
-        "  * Technical Mentorship: Lead cross-functional training in React, Node, and Spring. By standardizing engineering practices and facilitating knowledge-sharing sessions, I’ve helped teams improve velocity and maintain a higher baseline for code quality."
-      ],
+      "description": "Rebuilding legacy backend systems, writing automated test suites, and building secure internal AI tools.",
       "tech": [
         "Java",
         "Node",
         "React",
-        "CICD",
+        "Flowable",
+        "Drools",
         "Playwright",
         "AWS",
         "Kubernetes",
         "LLM Tools"
+      ],
+      "long_description": [
+        "Core System Modernization: Worked as a key engineer replacing an old, vendor-built Java system with a decoupled case management platform running on a Flowable state engine. Moved complex, aging PowerBuilder logic into standalone Drools rule instances.",
+        "AI Tooling & Automation: Built a custom internal Copilot assistant that handles technical documentation layout across the department, dropping manual engineering README work by 60% to 70%.",
+        "Automated Test Engineering: Designed and shipped a comprehensive integration test suite using Playwright within a single sprint, stopping two major production bugs from making it to release.",
+        "Team Mentorship & Training: Ran cross-functional technical training and knowledge-sharing sessions, mentoring cohorts of 20 to 30 developers to get new hires up to speed and improve team coding standards.",
+        "System Observability: Served as a subject matter expert for monitoring frameworks, setting up critical metric tracking to give teams clear visibility into system uptime and performance bottlenecks."
       ]
     },
     {
@@ -43,21 +41,22 @@
       "logoUrl": "https://liukonen.dev/archive/share/img/200/brady.webp",
       "website": "https://www.bradyid.com/",
       "title": "Senior Software Engineer",
-      "role": "Senior Software Engineer",
-      "description": "Optimizing enterprise systems for global resilience and legacy modernization.",
+      "role": "Senior Full-Stack Engineer / DevOps Initiatives",
+      "description": "Building localized dev environments, designing migration layers, and fixing enterprise e-commerce platforms.",
       "tech": [
         "C#",
         "Angular",
         "T-SQL",
         "Docker",
-        "CDM",
+        "Sitecore",
         "CICD",
         "Selenium"
       ],
       "long_description": [
-        "As a Senior Full-Stack Engineer at Brady, I drove technical initiatives for the e-commerce platform. My work spanned the full application lifecycle, utilizing SASS, JavaScript, MVC, and Sitecore, while championing Test-Driven Development (TDD) to maintain high standards for code quality and system stability.",
-        "To improve organizational efficiency, I spearheaded the containerization of our internal toolset. I designed and deployed 'Dev Environment as Code' setup scripts using Docker, which enabled one-click environment provisioning. This initiative streamlined the onboarding process and eliminated configuration drift across the engineering team.",
-        "I also led the architectural design for a major search platform migration. To mitigate risk, I engineered a bridge architecture that ensured full backward compatibility with the legacy platform while facilitating a phased integration of the new system. This approach allowed for a seamless transition with zero impact on the existing user experience."
+        "Platform Migration Layer: Designed and wrote a custom facade-based bridge architecture for a major e-commerce search migration. Kept full backward compatibility with the old system intact, cutting the estimated timeline by ~50% and allowing a safe, phased rollout.",
+        "DevOps Environment Automation: Owned the move to containerize our internal tools. Wrote Docker environment-as-code setup scripts that completely stopped configuration drift and cut new developer setup times from 2.5 days down to ~4 hours.",
+        "E-commerce Code Cleanup: Cleaned up legacy code paths and resolved 10 to 20 critical production defects across the primary global e-commerce engine using C#, Angular, and Sitecore.",
+        "Pipeline Quality Control: Standardized automated testing in environments without Test-Driven Development by containerizing our Selenium grid builds, saving ~2 hours of pipeline run time and stopping flaky build failures."
       ]
     },
     {
@@ -65,26 +64,25 @@
       "year": "2014 — 2020",
       "company": "Trisept Solutions (Hyatt)",
       "title": "Software Engineer III",
-      "role": "Acting Technical Lead / Department Trainer / Systems Engineering",
+      "role": "Acting Technical Lead / Product Support Break-Fix Lead",
       "logoUrl": "https://liukonen.dev/archive/share/img/200/777.webp",
       "website": "https://www.triseptsolutions.com/",
-      "description": "Functional lead for department-wide technical initiatives. Designed and maintained enterprise logging systems and high-availability travel APIs.",
+      "description": "Managing high-volume transactional engine stability, cross-shore team triage, and emerging AI prototyping.",
       "tech": [
         "C#",
         "VB.NET",
         "ASP.NET",
         "T-SQL",
         "XML",
-        "Javascript",
+        "JavaScript",
         "WCF"
       ],
       "long_description": [
-        "During my tenure at Trisept Solutions, I served as the Lead Developer for the Product Support division, overseeing the architecture and stability of the core backend engine (Availability, Packaging, and Booking). In this high-impact role, I balanced full-stack feature development with high-level system analysis, performance consulting, and the mentorship of junior engineering talent.",
-        "Key Initiatives & Technical Leadership:",
-        "- Platform Reliability: Led the 'Break-Fix' engineering team for three years, serving as the primary lead for debugging and resolving critical issues across the entire enterprise ecosystem. This role required deep system knowledge and the ability to manage offshore resources to maintain 24/7 service stability.",
-        "- Emerging Tech & R&D: Collaborated directly with Microsoft's Chicago architecture team to spearhead initiatives in Cognitive Services, and Natural Language Processing (NLP). This partnership culminated in a high-intensity hackathon where I prototyped custom bot technologies and AI-driven communication tools.",
-        "- Public Technical Advocacy: Represented the organization as a featured speaker at 'COSBE Be the Spark.' I designed and presented interactive demonstrations of custom applications featuring real-time AI voice translation, bridging the gap between complex engineering concepts and public engagement.",
-        "- Strategic Documentation: Authored comprehensive system documentation and setup guides that standardized the onboarding process and reduced technical debt across the Product Support area."
+        "High-Volume Engine Scalability: Oversaw the architectural stability of core backend packaging, booking, and availability engines processing 3,000 to 5,000 daily transactions and 1.5M to 3M availability lookups per day.",
+        "Production Escalation & Triage: Led the dedicated 'Break-Fix' engineering team for three years, directing 2 internal and 4 offshore engineers. Resolved 8 to 20 critical production issues weekly and designed diagnostic tools that drastically reduced time-to-resolution.",
+        "System Performance Tuning: Successfully reduced a critical 5-minute availability engine timeout down to ~2 minutes, preventing thread pool exhaustion and vastly stabilizing system performance during peak traffic windows.",
+        "Emerging Tech & R&D: Collaborated directly with Microsoft's enterprise architecture team to prototype a multi-channel natural language booking engine using SMS, Messenger, LUIS, and internal APIs.",
+        "Technical Enablement & Community: Authored comprehensive architectural sequence flows and data models to standardize onboarding. Represented the firm at COSBE 'Be the Spark' events, presenting custom live-translation AI demos to cohorts of 30 to 40 students."
       ]
     },
     {
@@ -92,26 +90,25 @@
       "year": "2012 — 2014",
       "company": "Blue 7 Solutions (JV)",
       "title": "Software Engineer & Consultant",
-      "role": "System Integration / Technical Consulting",
-      "description": "Strategic consultant within the Blue 7 joint ventureship, bridging technical requirements between partner organizations.",
+      "role": "Consultant Development Lead / Full-Stack Engineer",
+      "description": "Bridging technical gaps and keeping core engines stable during a corporate joint venture.",
       "tech": [
         "C#",
         "VB.NET",
         "ASP.NET",
         "T-SQL",
         "XML",
-        "Javascript",
+        "JavaScript",
         "WCF"
       ],
       "logoUrl": "https://liukonen.dev/archive/share/img/200/Blue7-t.webp",
       "website": "https://web.archive.org/web/20141219042731/http://www.blue7solutions.com/",
+
       "long_description": [
-        "During the strategic joint venture between Trisept Solutions and BlueStar Infotech (now Infogain), I served in a dual capacity as a Consultant Development Lead and Full-Stack Engineer. I was responsible for the technical integrity of the Dynamic Packaging Engine, a mission-critical system requiring deep full-stack expertise and architectural oversight.",
-        "Key Professional Contributions:",
-        "- Cross-Organizational Technical Lead: Acted as the primary technical bridge between Trisept and Blue7’s offshore engineering teams. I leveraged an in-depth understanding of the legacy ecosystem to lead the debugging, resolution, and optimization of complex codebases across distributed teams.",
-        "- Project & Resource Management: Managed engineering efforts within strict consultancy frameworks, maintaining high-performance standards while operating within rigorous hourly thresholds and project constraints.",
-        "- Full-Stack Engineering: Developed and maintained core features for the high-traffic dynamic packaging engine, ensuring seamless integration between frontend user experience and backend logic.",
-        "- Corporate Advocacy & Culture: Contributed to the Joint Venture's growth by participating in the Wellness and Event Planning team, driving community outreach initiatives and internal engagement programs to build a unified company culture during the transition."
+        "Offshore Technical Lead: Served as the main technical point of contact between the US business and the offshore engineering team within Breakfix support. Used my knowledge of the core platform to guide remote developers, review code, and fix complex bugs across teams.",
+        "Engine Maintenance: Handled full-stack development and daily maintenance for the high-traffic Dynamic Packaging Engine, ensuring booking paths stayed online and functional.",
+        "Legacy System Troubleshooting: Dug into undocumented legacy code to find and fix deep architectural issues, keeping remote teams unblocked and moving forward.",
+        "Consultancy Delivery: Delivered production-ready code under strict consulting contracts, making sure technical features were completed on time and within the partner company's budget boundaries."
       ]
     },
     {
@@ -119,27 +116,25 @@
       "year": "2006 — 2012",
       "company": "Trisept Solutions (Hyatt)",
       "title": "Software Developer I - II",
-      "role": "Full-Stack Dev / API Implementation / SME for Data Entry System",
+      "role": "Full-Stack Dev / API Implementation / Subject Expert for Data Entry System",
       "logoUrl": "https://liukonen.dev/archive/share/img/200/777.webp",
       "website": "https://www.triseptsolutions.com/",
-      "description": "Developed foundational backend services for enterprise travel platforms, scaling from junior to intermediate responsibilities.",
+      "description": "Building travel booking logic, running framework upgrades, and fixing codebase security vulnerabilities.",
       "tech": [
         "C#",
         "VB.NET",
         "ASP.NET",
         "T-SQL",
         "XML",
-        "Javascript",
+        "JavaScript",
         "WCF"
       ],
       "long_description": [
-        "As a core member of the engineering team, I was responsible for the development and optimization of the Dynamic Packaging Engine—a complex rules-based system for bundling high-volume vacation packages—and the accompanying Booking Engine.",
-        "Technical Milestones & Security:",
-        "- Framework Modernization: Served as a technical lead for the enterprise-wide migration from .NET 2.0 to 4.0, including the upgrade of legacy solutions to Visual Studio 2010. This initiative was critical for maintaining performance and developer productivity.",
-        "- Security & Compliance: Instrumental in bringing the codebase up to industry security standards. I implemented updates to meet OWASP Top 10 requirements, ensuring the platform achieved and maintained PCI Compliance for secure payment processing.",
-        "- Web & Service Architecture: Contributed to the development of 'Solutions by Trisept,' an internal facing web interface, and engineered WCF Services built on the .NET framework to handle cross-system communication.",
-        "- Distributed Systems: Developed specialized Windows Services for background processing and collaborated with offshore teams to maintain a consistent development lifecycle across the stack.",
-        ""
+        "Core Engine Development: Wrote full-stack code and business rules for the core Dynamic Packaging and Booking engines to bundle and process high-volume vacation packages.",
+        "Framework Upgrades: Ran the technical execution for the company-wide migration from .NET 2.0 to .NET 4.0, which included rebuilding legacy codebases to run smoothly on Visual Studio 2010.",
+        "Security & PCI Compliance: Refactored aging application code to patch security vulnerabilities under the OWASP Top 10 framework, ensuring the core booking platform passed strict PCI compliance audits for credit card processing.",
+        "Service Architecture: Built and maintained WCF services to handle data exchange across different internal systems, and wrote dedicated Windows Services to process heavy background data tasks.",
+        "Distributed Teams: Documented system components and collaborated with remote offshore teams to keep development tasks and bug fixes moving consistently across the codebases."
       ]
     },
     {
@@ -150,7 +145,7 @@
       "role": "Technical Educator",
       "logoUrl": "https://liukonen.dev/archive/share/img/combo.jpg",
       "website": "https://www.wisconsin.edu/",
-      "description": "Teaching core computer science foundations and technical trade skills.",
+      "description": "Teaching core computer science foundations, programming logic, and hardware systems architecture.",
       "tech": [
         "C#",
         "VB.NET",
@@ -160,15 +155,14 @@
         "Computer Architecture",
         "Message Protocols",
         "JSON",
-        "Hardware",
+        "Hardware Troubleshooting",
         "Systems Analysis"
       ],
       "long_description": [
-        "Before transitioning into senior engineering, I spent several years developing the next generation of technical talent. This experience was foundational in honing my ability to translate complex architectural concepts into accessible, actionable guidance—a skill I leverage today when leading department-wide AI adoption and engineering modernization.",
-        "Software Engineering Instruction: Facilitated foundational courses on computer programming logic, syntax, and coding conventions. I managed classrooms of 20–30 students, balancing theoretical lectures with hands-on labs to ensure students could apply logic to real-world development environments.",
-        "Systems & Hardware Education: Led high-level overviews of computing trends and PC hardware architecture. I designed interactive lessons on hardware troubleshooting and repair methods, bridging the gap between abstract theory and practical implementation.",
-        "Web Application Development Support: Served as a Teaching Assistant for Web Application Development at UW-Milwaukee, providing direct academic support, code reviews, and technical guidance to students building modern web solutions.",
-        "Academic Leadership: Reported directly to Department Deans to manage curriculum delivery, examination standards, and student performance metrics. I maintained an open-door policy for technical mentorship, fostering a culture of continuous learning and problem-solving."
+        "Programming Logic Instruction: Taught core courses covering programming logic, syntax, data structures, and coding conventions. Managed classrooms of 20 to 30 students, balancing theoretical lectures with hands-on development labs.",
+        "Systems & Hardware Architecture: Led lectures and practical lab sessions on computer architecture, hardware components, and systems analysis. Designed interactive lessons on hardware troubleshooting, diagnostics, and board-level repair methods.",
+        "Web Development Support: Served as a Teaching Assistant for Web Application Development at UW-Milwaukee, providing direct technical support, code reviews, and debugging assistance to students building web software.",
+        "Curriculum & Delivery Management: Coordinated directly with Department Deans to manage curriculum delivery, grading rubrics, and final examination standards, ensuring all classroom metrics met institutional requirements."
       ]
     }
   ],
