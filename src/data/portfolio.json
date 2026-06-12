@@ -618,5 +618,36 @@
       "id": "ARCHIVE",
       "path": "#/ARCHIVE"
     }
-  ]
+  ],
+  "leadership": {
+    "how": {
+      "text": "How I Lead (Without the politics)",
+      "points":[
+        {"id": "Mentorship", "content": " I’ve mentored engineers across all levels — from interns to senior developers — through code camps, onboarding, and hands‑on technical coaching."},
+        {"id": "Teaching", "content": " I’ve taught university‑level software development and architecture, translating complex systems into clear, practical concepts."},
+        {"id": "Acceleration", "content": ": I build internal tools, automation, and onboarding systems that remove friction and make teams productive faster."},
+        {"id": "Judgment", "content": " I balance rapid exploration with deliberate engineering — knowing when to move fast and when to build for the long term."}
+      ]
+    },
+    "optimize": {
+      "text": "What I optimize for",
+      "items":[
+        "Clarity over confusion.",
+        "Simplicity over complexity.",
+        "Long‑term stability over short‑term hacks.",
+        "Pragmatic solutions over buzzwords.",
+        "Developer experience over bureaucracy.",
+        "Performance and reliability over shortcuts.",
+        "Tech that stands the test of time."
+      ]
+    },
+    "dont": {
+      "text": "What I don't compromise on",
+      "items":[
+        "Engineering clarity over noise and politics.",
+        "Systems that remain stable and maintainable long after I’m gone.",
+        "Developer experience that accelerates teams instead of slowing them down."
+      ]
+    }
+  }
 }
