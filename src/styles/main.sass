@@ -163,6 +163,8 @@ textarea:focus-visible
   flex-direction: column
   padding: 1rem
   background: $bg-deep
+  &.show
+    display: flex
   @media (max-width: 1100px)
     display: none // Entirely removes the links from the layout
   li
@@ -556,7 +558,7 @@ html
 $spotlight-color: rgba(255, 215, 150, 0.1)
 $spotlight-radius: 250px
 
-body, html
+body
   &::before
     content: ''
     position: fixed
@@ -971,27 +973,20 @@ body, html
 @media (min-width: 1100px) 
   .nav-container
     visibility: hidden
-  
-
   .mobile-top-bar 
     display: none
-  
-
   .nav-links 
     display: flex !important
     background: transparent
-
   .brand-logo
     visibility: visible
-
   .social-links
     margin-top: auto
-  
+
 // --- RESPONSIVE ADAPTATION ---
 @media (max-width: 1100px)
   .app-shell
     flex-direction: column
-  
   .sidebar
     width: 100%
     height: auto
@@ -999,16 +994,16 @@ body, html
     border-right: none
     border-bottom: 1px solid rgba(255, 255, 255, 0.05)
     padding: 50px 30px
-
   .content-area
     padding: 50px 30px
-
   .grid-2
     grid-template-columns: 1fr
-
   .era
     flex-direction: column
     gap: 10px
+  body::before
+    content: none !important
+    background: none !important
 
 // --- LINK MODAL STYLES ---
 .link-modal-overlay
