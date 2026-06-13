@@ -627,7 +627,7 @@
   ],
   "leadership": {
     "how": {
-      "text": "How I Lead (Without the politics)",
+      "text": "How I Lead",
       "points":[
         {"id": "Mentorship", "content": " I’ve mentored engineers across all levels — from interns to senior developers — through code camps, onboarding, and hands‑on technical coaching."},
         {"id": "Teaching", "content": " I’ve taught university‑level software development and architecture, translating complex systems into clear, practical concepts."},
@@ -642,7 +642,6 @@
         "Simplicity over complexity.",
         "Long‑term stability over short‑term hacks.",
         "Pragmatic solutions over buzzwords.",
-        "Developer experience over bureaucracy.",
         "Performance and reliability over shortcuts.",
         "Tech that stands the test of time."
       ]

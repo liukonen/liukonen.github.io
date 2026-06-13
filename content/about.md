@@ -9,4 +9,4 @@ How I add value:
 * I lead through mentorship. I believe the best way to scale a system is to scale the people building it. I use my teaching experience to mentor engineers and drive cross-team standards that raise the bar for the entire department.
 * I lead with AI. I’m currently driving AI adoption to modernize how we work and build.
 
-Personal: I’m a Milwaukee native who loves local music and biking. I’m also a big believer in using tech for good—I’ve been contributing computing power to scientific research projects for years.
+Personal: I’m a Milwaukee native who loves local music and sports. I’m also a big believer in using tech for good—I’ve been contributing computing power to scientific research projects for years.
