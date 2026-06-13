@@ -629,29 +629,28 @@
     "how": {
       "text": "How I Lead",
       "points":[
-        {"id": "Mentorship", "content": " I’ve mentored engineers across all levels — from interns to senior developers — through code camps, onboarding, and hands‑on technical coaching."},
-        {"id": "Teaching", "content": " I’ve taught university‑level software development and architecture, translating complex systems into clear, practical concepts."},
-        {"id": "Acceleration", "content": ": I build internal tools, automation, and onboarding systems that remove friction and make teams productive faster."},
-        {"id": "Judgment", "content": " I balance rapid exploration with deliberate engineering — knowing when to move fast and when to build for the long term."}
+        {"id": "Mentorship", "content": "Developing engineers at every level through structured onboarding, targeted coaching, and foundational CS reinforcement that raises the baseline of the entire team."},
+        {"id": "Teaching", "content": "Converting complex architectural patterns, distributed‑systems concepts, and infrastructure tradeoffs into clear, actionable documentation that accelerates team understanding."},
+        {"id": "Acceleration", "content": "Designing internal scaffolding, automation pipelines, and observability frameworks that eliminate friction, reduce cognitive load, and materially increase developer velocity."},
+        {"id": "Judgment", "content": "Balancing rapid exploration with disciplined architectural decision‑making to deliver stable, scalable systems that align with long‑term business objectives."}
       ]
     },
     "optimize": {
-      "text": "What I optimize for",
+      "text": "What I Align With",
       "items":[
-        "Clarity over confusion.",
+        "Operational excellence over accidental complexity.",
         "Simplicity over complexity.",
-        "Long‑term stability over short‑term hacks.",
-        "Pragmatic solutions over buzzwords.",
-        "Performance and reliability over shortcuts.",
-        "Tech that stands the test of time."
+        "Long‑term stability over short‑term shortcuts and technical debt.",
+        "Architectural pragmatism over framework‑driven hype cycles.",
+        "Lean, high‑performance systems that minimize infrastructure cost while maximizing reliability."
       ]
     },
     "dont": {
-      "text": "What I don't compromise on",
+      "text": "What I Ensure",
       "items":[
-        "Engineering clarity over noise and politics.",
-        "Systems that remain stable and maintainable long after I’m gone.",
-        "Developer experience that accelerates teams instead of slowing them down."
+        "Technical clarity and alignment across cross‑functional engineering groups.",
+        "Resilient infrastructure that is self‑documenting, observable, and designed for long‑term maintainability.",
+        "Developer workflows and CI/CD pipelines that accelerate delivery without compromising security, compliance, or reliability."
       ]
     }
   }
