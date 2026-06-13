@@ -6,6 +6,7 @@ export default function CompanyCard({era}: Readonly<any>) {
                 // {era.company.toUpperCase()}
               </span>
               <h4>{era.title}</h4>
+              <p>{era.scope}</p>
               <p>{era.role}</p>
               <div>
                 {era.tech.map(t => (

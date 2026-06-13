@@ -26,9 +26,9 @@ export default function Sidebar({ currentRoute }: Readonly<{ currentRoute: strin
       </Suspense>
       )}
       <div className="social-links">
-        <a href="https://github.com/liukonen" target="_blank"><Github /></a>
-        <a href="https://linkedin.com/in/lukeliukonen" target="_blank"><Linkedin /></a>
-        <a href="https://dev.to/liukonen" target="_blank"><CodeSlash /></a>
+        <a href="https://github.com/liukonen" target="_blank" aria-label="Luke's Github page"><Github /></a>
+        <a href="https://linkedin.com/in/lukeliukonen" target="_blank" aria-label="Luke's LinkedIn page"><Linkedin /></a>
+        <a href="https://dev.to/liukonen" target="_blank" aria-label="Luke's Dev.to page"><CodeSlash /></a>
       </div>
     </aside>
   )

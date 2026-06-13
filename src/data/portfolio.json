@@ -14,6 +14,7 @@
       "website": "https://www.northwesternmutual.com/",
       "role": "Generative AI Committee / Playwright Testing SME / Observability Guild",
       "title": "Full Stack Software Engineer",
+      "scope": "I help guide backend architecture, automation strategy, and platform reliability work, contributing to AI initiatives, test engineering improvements, and observability across teams.",
       "description": "Rebuilding legacy backend systems, writing automated test suites, and building secure internal AI tools.",
       "tech": [
         "Java",
@@ -41,6 +42,7 @@
       "logoUrl": "https://liukonen.dev/archive/share/img/200/brady.webp",
       "website": "https://www.bradyid.com/",
       "title": "Senior Software Engineer",
+      "scope": "I focused on full‑stack development and DevOps improvements, modernizing legacy systems, strengthening CI/CD pipelines, and supporting platform‑level engineering work.",
       "role": "Senior Full-Stack Engineer / DevOps Initiatives",
       "description": "Building localized dev environments, designing migration layers, and fixing enterprise e-commerce platforms.",
       "tech": [
@@ -67,6 +69,7 @@
       "role": "Acting Technical Lead / Product Support Break-Fix Lead",
       "logoUrl": "https://liukonen.dev/archive/share/img/200/777.webp",
       "website": "https://www.triseptsolutions.com/",
+      "scope": "I acted as a technical lead for modernization and production support, handling break‑fix triage, API development, and maintenance of high‑volume enterprise systems.",
       "description": "Managing high-volume transactional engine stability, cross-shore team triage, and emerging AI prototyping.",
       "tech": [
         "C#",
@@ -91,6 +94,7 @@
       "company": "Blue 7 Solutions (JV)",
       "title": "Software Engineer & Consultant",
       "role": "Consultant Development Lead / Full-Stack Engineer",
+      "scope": "I led client‑facing development efforts, delivering full‑stack solutions and supporting multiple enterprise applications across diverse business domains.",
       "description": "Bridging technical gaps and keeping core engines stable during a corporate joint venture.",
       "tech": [
         "C#",
@@ -119,6 +123,7 @@
       "role": "Full-Stack Dev / API Implementation / Subject Expert for Data Entry System",
       "logoUrl": "https://liukonen.dev/archive/share/img/200/777.webp",
       "website": "https://www.triseptsolutions.com/",
+      "scope": "I built and maintained core APIs, implemented business workflows, and served as the subject expert for a critical data‑entry platform used across the organization.",
       "description": "Building travel booking logic, running framework upgrades, and fixing codebase security vulnerabilities.",
       "tech": [
         "C#",
@@ -145,6 +150,7 @@
       "role": "Technical Educator",
       "logoUrl": "https://liukonen.dev/archive/share/img/combo.jpg",
       "website": "https://www.wisconsin.edu/",
+      "scope": "I taught foundational computer science and software engineering concepts, helping early‑career developers build confidence in programming and systems thinking.",
       "description": "Teaching core computer science foundations, programming logic, and hardware systems architecture.",
       "tech": [
         "C#",

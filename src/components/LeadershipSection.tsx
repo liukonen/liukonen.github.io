@@ -33,9 +33,9 @@ export const LeadershipSection = () => {
 
         {/* HOW I LEAD */}
         <article aria-labelledby="lead-how-title">
-          <h3 id="lead-how-title" class="section-label">
+          <h2 id="lead-how-title" class="section-label">
             // {how.text}
-          </h3>
+          </h2>
 
           <ul class="gold-bullets">
             {how.points.map(point => (

@@ -23,6 +23,9 @@ const EraEntry = ({ era } : any) => (
         {era.title}
       </h4>
       <p>
+        {era.scope}
+      </p>
+      <p>
         {era.role}
       </p>
       <Tags tags={era.tech} />

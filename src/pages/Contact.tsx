@@ -63,10 +63,8 @@ export default function Contact() {
   return (
     <div className="page-layer contact-view">
       <Breadcrumb path="#/contact" />
-      <Header title="Contact Me" subtitle="System ready for incoming transmissions."></Header>
-      <header className="era-header sub-header">
-             I am open to networking, collaboration, and general inquiries.
-      </header>
+      <Header title="Contact Me" subtitle="I am open to networking, collaboration, and general inquiries." />
+
 
       <section className="contact-content">
         {/* SUCCESS TOAST */}
