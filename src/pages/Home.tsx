@@ -1,18 +1,18 @@
-import { lazy, Suspense } from "preact/compat";
+import { lazy, Suspense } from "preact/compat"
 
-import portfolioData from "../data/portfolio.json";
-import aboutData from "../data/about.json";
-import footerData from "../data/footer.json";
-import Breadcrumb from "../components/Breadcrumb";
+import portfolioData from "../data/portfolio.json"
+import aboutData from "../data/about.json"
+import footerData from "../data/footer.json"
+import Breadcrumb from "../components/Breadcrumb"
 
-const CareerSection = lazy(() => import("../components/CareerSection"));
-const OpenSourceSection = lazy(() => import("../components/OpenSourceSection"));
-const ArticlesSection = lazy(() => import("../components/ArticlesSection"));
-const ShowcaseSection = lazy(() => import("../components/ShowcaseSection"));
-import { LeadershipSection } from "../components/LeadershipSection";
+const CareerSection = lazy(() => import("../components/CareerSection"))
+const OpenSourceSection = lazy(() => import("../components/OpenSourceSection"))
+const ArticlesSection = lazy(() => import("../components/ArticlesSection"))
+const ShowcaseSection = lazy(() => import("../components/ShowcaseSection"))
+import { LeadershipSection } from "../components/LeadershipSection"
 
 export default function Home() {
-  const { profile, eras, labs } = portfolioData;
+  const { profile, eras, labs } = portfolioData
   return (
     <div className="page-layer">
       <Breadcrumb path="#/" />
@@ -62,5 +62,5 @@ export default function Home() {
         />
       </footer>
     </div>
-  );
+  )
 }

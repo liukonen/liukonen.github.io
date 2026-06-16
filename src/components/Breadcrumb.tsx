@@ -1,15 +1,15 @@
 type BreadcrumbProps = {
-  path: string;
-};
+  path: string
+}
 
 export default function Breadcrumb({ path }: Readonly<BreadcrumbProps>) {
   // Remove leading "#/" and split
-  const parts = path.replace(/^#\//, "").split("/").filter(Boolean);
+  const parts = path.replace(/^#\//, "").split("/").filter(Boolean)
 
   // Build cumulative paths
   const buildPath = (index: number) => {
-    return "#/" + parts.slice(0, index + 1).join("/");
-  };
+    return "#/" + parts.slice(0, index + 1).join("/")
+  }
 
   return (
     <div className="breadcrumb">
@@ -17,7 +17,7 @@ export default function Breadcrumb({ path }: Readonly<BreadcrumbProps>) {
       <a href="#/">~/root</a>
 
       {parts.map((part, i) => {
-        const isLast = i === parts.length - 1;
+        const isLast = i === parts.length - 1
 
         return (
           <span key={i}>
@@ -30,8 +30,8 @@ export default function Breadcrumb({ path }: Readonly<BreadcrumbProps>) {
               <a href={buildPath(i)}>{part}</a>
             )}
           </span>
-        );
+        )
       })}
     </div>
-  );
+  )
 }

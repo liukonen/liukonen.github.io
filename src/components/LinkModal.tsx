@@ -1,49 +1,49 @@
-import { useEffect, useState } from 'preact/hooks';
-import { createPortal } from 'preact/compat';
+import { useEffect, useState } from 'preact/hooks'
+import { createPortal } from 'preact/compat'
 
 interface LinkModalProps {
-  articleId?: number;
-  onClose: () => void;
-  title?: string;
-  url?: string;
-  onContentLoad?: (html: string) => void;
+  articleId?: number
+  onClose: () => void
+  title?: string
+  url?: string
+  onContentLoad?: (html: string) => void
 }
 
 export default function LinkModal({ articleId, onClose, title, url, onContentLoad }: LinkModalProps) {
-  const [content, setContent] = useState<string>('');
-  const [loading, setLoading] = useState(false);
+  const [content, setContent] = useState<string>('')
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
-        onClose();
+        onClose()
       }
-    };
+    }
 
     if (articleId) {
-      document.addEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'hidden';
-      setLoading(true);
+      document.addEventListener('keydown', handleEscape)
+      document.body.style.overflow = 'hidden'
+      setLoading(true)
       
       // Dynamically import the service to fetch content
       import('../services/devToService').then(({ fetchDevArticleContent }) => {
         fetchDevArticleContent(articleId).then((html) => {
           if (html) {
-            setContent(html);
-            onContentLoad?.(html);
+            setContent(html)
+            onContentLoad?.(html)
           }
-          setLoading(false);
-        });
-      });
+          setLoading(false)
+        })
+      })
 
       return () => {
-        document.removeEventListener('keydown', handleEscape);
-        document.body.style.overflow = '';
-      };
+        document.removeEventListener('keydown', handleEscape)
+        document.body.style.overflow = ''
+      }
     }
-  }, [articleId, onClose, onContentLoad]);
+  }, [articleId, onClose, onContentLoad])
 
-  if (!articleId) return null;
+  if (!articleId) return null
 
   const modalContent = (
     <div className="link-modal-overlay" onClick={onClose}>
@@ -78,7 +78,7 @@ export default function LinkModal({ articleId, onClose, title, url, onContentLoa
         </div>
       </div>
     </div>
-  );
+  )
 
-  return createPortal(modalContent, document.body);
+  return createPortal(modalContent, document.body)
 }

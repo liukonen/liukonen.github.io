@@ -18,7 +18,7 @@ const ShowcaseDetail = lazy(() => import('./pages/ShowcaseDetail'))
 const CaseStudy = lazy(() => import('./pages/case-study'))
 
 export default function App() {
-  const [route, setRoute] = useState(location.hash || '#/');
+  const [route, setRoute] = useState(location.hash || '#/')
 
   const routes = {
     '/': Home,

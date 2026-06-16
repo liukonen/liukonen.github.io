@@ -1,15 +1,15 @@
-import { useState, useEffect } from 'preact/hooks';
-import Breadcrumb from '../components/Breadcrumb';
+import { useState, useEffect } from 'preact/hooks'
+import Breadcrumb from '../components/Breadcrumb'
 
 export default function CaseStudy({ id }) {
-  const [study, setStudy] = useState(null);
+  const [study, setStudy] = useState(null)
 
   useEffect(() => {
-    fetch(`/case-studies/${id}.json`).then(r => r.json()).then(setStudy);
-    window.scrollTo(0, 0);
-  }, [id]);
+    fetch(`/case-studies/${id}.json`).then(r => r.json()).then(setStudy)
+    window.scrollTo(0, 0)
+  }, [id])
 
-  if (!study) return <div className="loader">// DECRYPTING_TECHNICAL_LOGS...</div>;
+  if (!study) return <div className="loader">// DECRYPTING_TECHNICAL_LOGS...</div>
 
   return (
     <article className="case-study-view page-layer">
@@ -30,5 +30,5 @@ export default function CaseStudy({ id }) {
         <a href={`#/TECH_SHOWCASE/${id}`} className="return-link btn">// EXIT_TO_SUMMARY</a>
       </footer>
     </article>
-  );
-};
+  )
+}

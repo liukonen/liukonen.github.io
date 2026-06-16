@@ -8,5 +8,5 @@ export default function FooterCounter({count}: Readonly<FooterProps> ) {
     )}
 
 type FooterProps = {
-  count: number;
+  count: number
 }

@@ -1,16 +1,16 @@
-import { useState, useEffect } from 'preact/hooks';
-import Breadcrumb from '../components/Breadcrumb';
+import { useState, useEffect } from 'preact/hooks'
+import Breadcrumb from '../components/Breadcrumb'
 
 export default function ShowcaseDetail({ id }) {
   console.log('ShowcaseDetail', id)
-  const [showcase, setShowcase] = useState(null);
+  const [showcase, setShowcase] = useState(null)
 
   useEffect(() => {
-    fetch(`/showcase/${id}.json`).then(r => r.json()).then(setShowcase);
-    window.scrollTo(0, 0);
-  }, [id]);
+    fetch(`/showcase/${id}.json`).then(r => r.json()).then(setShowcase)
+    window.scrollTo(0, 0)
+  }, [id])
 
-  if (!showcase) return <div className="loader">// DECRYPTING_PROJECT_DATA...</div>;
+  if (!showcase) return <div className="loader">// DECRYPTING_PROJECT_DATA...</div>
 
   return (
     <article className="showcase-view page-layer">
@@ -43,5 +43,5 @@ export default function ShowcaseDetail({ id }) {
         <a href={`#/TECH_SHOWCASE`} className="return-link">// RETURN_TO_GALLERY</a>
       </footer>
     </article>
-  );
+  )
 }

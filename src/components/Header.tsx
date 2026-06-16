@@ -9,6 +9,6 @@ export default function Header({ title, subtitle }: Readonly<HeaderProps>) {
 }
 
 type HeaderProps = {
-    title: string;
-    subtitle?: string;
+    title: string
+    subtitle?: string
 }

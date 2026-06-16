@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="description"
     content="about page for Luke Liukonen. Senior Software Engineer // Technical Lead :: AI Strategy :: Infrastructure" />
   <meta name="author" content="Luke Liukonen" />
   <meta name="theme-color" content="#000" />
-<meta http-equiv="Content-Security-Policy" content="
+  <meta http-equiv="Content-Security-Policy" content="
   default-src 'self';
   script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com;
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
@@ -20,7 +21,7 @@
   form-action 'self' https://formspree.io;
   base-uri 'self';
   manifest-src 'self';
-"/>
+" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
   <title>Luke Liukonen - dev</title>
   <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" sizes="180x180" />
@@ -29,20 +30,43 @@
   <link rel="manifest" href="/favicons/site.webmanifest" />
   <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#ffffff" />
   <link rel="icon" href="/favicons/favicon.ico" />
-<style>
-  html, body {
-    margin: 0;
-    background: #0f1115;
-    color: #d4af37;
-    font-family: 'Cascadia Code', 'Cascadia Mono', monospace, system-ui, sans-serif;
-  }
-</style>
+  <style>
+    html,
+    body {
+      margin: 0;
+      background: #0f1115;
+      color: #d4af37;
+      font-family: 'Cascadia Code', 'Cascadia Mono', monospace, system-ui, sans-serif;
+    }
+  </style>
 </head>
 
 <body>
   <div id="app">
   </div>
-   <script type="module" src="/src/index.tsx" defer></script>
+  <script type="module" src="/src/index.tsx" defer></script>
+  <script>
+    console.log(
+      `%c~/ liukonen.dev\n%c-----------------------------------------\n%cArchitecture : %cPreact (Fully Client-Side)\n%cPhilosophy   : %cHigh-Value, Low-Ego\n%cFocus        : %cStability // Modularity// Performance\n%c-----------------------------------------\n%cPipeline     : %c⚡ [md-ssg] Headless SSG (Local Markdown + Remote GitHub Sync)\n%c             : %c⚡ [tooltip-ast] Build-Time Glossary Tagging\n%c             : %c⚡ [mermaid-sync] SVG Render & Caching\n%c-----------------------------------------\n%cSys_Palette  :%c  %c#0F1012 %c  %c#1A1A1A %c  %c#8C6A32 %c  %c#D4A857 %c  %c#FFDFA9\n%c-----------------------------------------`,
+      'color:#D4A857;font:11px monospace;font-weight:bold;',
+      'color:#8C6A32;font:11px monospace;',
+      'color:#7A7A7A;font:11px monospace;', 'color:#E6E6E6;font:11px monospace;',
+      'color:#7A7A7A;font:11px monospace;', 'color:#E6E6E6;font:11px monospace;',
+      'color:#7A7A7A;font:11px monospace;', 'color:#E6E6E6;font:11px monospace;',
+      'color:#8C6A32;font:11px monospace;',
+      'color:#7A7A7A;font:11px monospace;', 'color:#C7CBD1;font:11px monospace;', // Row 1
+      'color:#7A7A7A;font:11px monospace;', 'color:#C7CBD1;font:11px monospace;', // Row 2
+      'color:#7A7A7A;font:11px monospace;', 'color:#C7CBD1;font:11px monospace;', // Row 3
+      'color:#8C6A32;font:11px monospace;',
+      'color:#7A7A7A;font:11px monospace;',
+      'background:#0F1012;padding:1px 5px;border-radius:2px;', 'color:#C7CBD1;font:10px monospace;',
+      'background:#1A1A1A;padding:1px 5px;border-radius:2px;', 'color:#C7CBD1;font:10px monospace;',
+      'background:#8C6A32;padding:1px 5px;border-radius:2px;', 'color:#C7CBD1;font:10px monospace;',
+      'background:#D4A857;padding:1px 5px;border-radius:2px;', 'color:#C7CBD1;font:10px monospace;',
+      'background:#FFDFA9;padding:1px 5px;border-radius:2px;', 'color:#C7CBD1;font:10px monospace;',
+      'color:#8C6A32;font:11px monospace;'
+    )
+  </script>
 </body>
 
 </html>

@@ -4,7 +4,7 @@ import Tags from '../components/Tags'
 import Breadcrumb from '../components/Breadcrumb'
 import { useState, useEffect } from 'preact/hooks'
 interface Props {
-  id: string;
+  id: string
 }
 
 
