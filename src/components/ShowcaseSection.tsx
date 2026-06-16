@@ -7,11 +7,8 @@ export default function ShowcaseSection() {
       <span className="section-label">
         ~/ SHOWCASE_PROJECTS
       </span>
-      <p>
-// Deep-dives into systems architecture, infrastructure scaling, and performance engineering. <br/>
-// Documenting real-world constraints, design trade-offs, and end-to-end production impact.
-      </p>
       <br />
+      <div class="grid-3">
       {
         Object.entries(showcaseData).splice(0, 3).map(([title, item]) => 
           (
@@ -21,6 +18,7 @@ export default function ShowcaseSection() {
           )
         )
     }
+    </div>
     <MoreFooter path={'#/TECH_SHOWCASE'} />
     </section>
   );

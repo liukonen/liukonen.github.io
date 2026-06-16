@@ -1,3 +1,5 @@
+import { h } from 'preact';
+import { useState } from 'preact/hooks';
 import portfolioData from '../data/portfolio.json'
 
 type LeadershipPoint = {
@@ -23,61 +25,51 @@ type LeadershipData = {
 };
 
 const data = portfolioData as LeadershipData;
-
 export const LeadershipSection = () => {
-  const { how, optimize, dont } = data.leadership;
+  const { how, optimize, dont } = (portfolioData as LeadershipData).leadership;
+  const [activeId, setActiveId] = useState<string | null>(null);
+
+  const sections = [
+    { id: 'how', title: `${how.text}`, content: 
+      <ul class="grid-2">{how.points.map(p => <li class="bento" key={p.id}><strong class="gold-bullet">{p.id}:</strong> {p.content}</li>)}</ul> 
+    },
+    { id: 'opt', title: `${optimize.text}`, content: 
+      <ul class="grid-2">{optimize.items.map((i, idx) => <li class="bento" key={idx}>{i}</li>)}</ul> 
+    },
+    { id: 'dont', title: `${dont.text}`, content: 
+      <ul class="grid-2">{dont.items.map((i, idx) => <li class="bento" key={idx}>{i}</li>)}</ul> 
+    }
+  ];
 
   return (
-    <section id="leadership" aria-labelledby="leadership-title" class="leadership-section">
+    <section id="leadership" class="leadership-section">
       <div class="page-wrapper">
+        
+        {/* The consistent anchor grid */}
+        <div class="grid-3">
+          {sections.map((sec) => (
+            <div 
+              key={sec.id} 
+              class={`card ${activeId === sec.id ? 'active' : ''}`}
+              onClick={() => setActiveId(activeId === sec.id ? null : sec.id)}
+            >
+              <h2 class="section-label interactive-link">{sec.title} ▼</h2>
+            </div>
+          ))}
+        </div>
 
-        {/* HOW I LEAD */}
-        <article aria-labelledby="lead-how-title">
-          <h2 id="lead-how-title" class="section-label">
-            // {how.text}
-          </h2>
-
-          <ul class="gold-bullets">
-            {how.points.map(point => (
-              <li key={point.id}>
-                <strong>{point.id}:</strong>
-                {point.content}
-              </li>
-            ))}
-          </ul>
-        </article>
-
-        <div class="gold-spacer" aria-hidden="true"></div>
-
-        {/* WHAT I OPTIMIZE FOR */}
-        <article aria-labelledby="lead-opt-title">
-          <h3 id="lead-opt-title" class="section-label">
-            // {optimize.text}
-          </h3>
-                
-          <ul class="gold-bullets optimize-list two-col">
-            {optimize.items.map((item, idx) => (
-              <li key={idx}>{item}</li>
-            ))}
-          </ul>
-        </article>
-
-        <div class="gold-spacer" aria-hidden="true"></div>
-
-        {/* WHAT I DON'T COMPROMISE ON */}
-        <article aria-labelledby="lead-dont-title">
-          <h3 id="lead-dont-title" class="section-label">
-            // {dont.text}
-          </h3>
-
-          <ul class="gold-bullets">
-            {dont.items.map((item, idx) => (
-              <li key={idx}>{item}</li>
-            ))}
-          </ul>
-        </article>
+        {/* The consistent expansion viewport with separation wrapper */}
+        <div class={`expansion-viewport ${activeId ? 'is-open' : ''}`}>
+          {activeId && (
+            <div class="expansion-viewport-inner">
+              <div class="expanded-content">
+                {sections.find(s => s.id === activeId)?.content}
+              </div>
+            </div>
+          )}
+        </div>
 
       </div>
     </section>
-  );
-};
+  )
+}

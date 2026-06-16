@@ -14,7 +14,7 @@ export default function ArticlesSection() {
   const isMobile = useIsMobile()
 
   useEffect(() => {
-    fetchDevArticles("liukonen", 3).then(setArticles).catch(console.error)
+    fetchDevArticles("liukonen", 4).then(setArticles).catch(console.error)
   }, [])
 
   const handleArticleClick = (e: MouseEvent, article: DevArticle) => {
@@ -35,7 +35,7 @@ export default function ArticlesSection() {
       </p>
       < br />
       <section className="home-articles-section">
-        <div className="mini-article-list">
+        <div className="mini-article-list grid-2">
           {articles.map(article => <ArticleEntry article={article} onArticleClick={handleArticleClick} isMobile={isMobile} />)}
         </div>
       </section>
@@ -54,7 +54,6 @@ export default function ArticlesSection() {
 }
 
 const ArticleEntry = ({ article, onArticleClick, isMobile }: any) =>
-  <div className="card">
     <a
       href={article.url}
       key={article.id}
@@ -62,6 +61,12 @@ const ArticleEntry = ({ article, onArticleClick, isMobile }: any) =>
       target={isMobile ? "_blank" : undefined}
       onClick={(e) => onArticleClick(e, article)}
     >
+  <div className="card">
+
+      <span><BoxArrowUpRight /></span>
+         {article.title.length > 80 ? article.title.slice(0, 77) + "..." : article.title}
+      
+ 
       <span className="article-date-mono">
         {new Date(article.published_at).toLocaleDateString("en-US", {
           month: "short",
@@ -69,8 +74,5 @@ const ArticleEntry = ({ article, onArticleClick, isMobile }: any) =>
           year: "2-digit"
         })}
       </span>
-      <span className="article-title-truncate">
-        <BoxArrowUpRight /> {article.title}
-      </span>
-    </a>
   </div>
+   </a>

@@ -1,0 +1,57 @@
+<style>
+    /* 3-Column Grid */
+    .bento-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+
+    .card {
+        background: var(--bg-blob);
+        border: 1px solid var(--border-hard);
+        padding: 2rem;
+        cursor: pointer;
+        transition: border-color 0.3s;
+    }
+
+    .card:hover { border-color: var(--accent-gold); }
+
+    /* The expanded content area */
+    .expanded-content {
+        display: none; /* Hidden by default */
+        grid-column: span 3; /* Forces row to span full width */
+        padding: 2rem;
+        background: #181718;
+        border: 1px solid var(--accent-gold);
+        margin-top: -1rem; /* Visual tuck */
+    }
+</style>
+
+<div class="bento-grid">
+    <!-- Item 1 -->
+    <div class="card" onclick="toggleDetails('details1')">
+        <h3>Architecture</h3>
+    </div>
+    <!-- Item 2 -->
+    <div class="card" onclick="toggleDetails('details2')">
+        <h3>Leadership</h3>
+    </div>
+    <!-- Item 3 -->
+    <div class="card" onclick="toggleDetails('details3')">
+        <h3>Strategy</h3>
+    </div>
+
+    <!-- Expansion Areas -->
+    <div id="details1" class="expanded-content">Expanded details for Architecture...</div>
+    <div id="details2" class="expanded-content">Expanded details for Leadership...</div>
+    <div id="details3" class="expanded-content">Expanded details for Strategy...</div>
+</div>
+
+<script>
+    function toggleDetails(id) {
+        // Hide all others
+        document.querySelectorAll('.expanded-content').forEach(el => el.style.display = 'none');
+        // Show selected
+        document.getElementById(id).style.display = 'block';
+    }
+</script>
