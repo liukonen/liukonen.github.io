@@ -627,7 +627,7 @@
   ],
   "leadership": {
     "how": {
-      "text": "How I Lead",
+      "text": "Leadership",
       "points":[
         {"id": "Mentorship", "content": "Developing engineers at every level through structured onboarding, targeted coaching, and foundational CS reinforcement that raises the baseline of the entire team."},
         {"id": "Teaching", "content": "Converting complex architectural patterns, distributed‑systems concepts, and infrastructure tradeoffs into clear, actionable documentation that accelerates team understanding."},
@@ -636,20 +636,20 @@
       ]
     },
     "optimize": {
-      "text": "What I Align With",
+      "text": "Alignment",
       "items":[
         "Operational excellence over accidental complexity.",
-        "Simplicity over complexity.",
         "Long‑term stability over short‑term shortcuts and technical debt.",
         "Architectural pragmatism over framework‑driven hype cycles.",
         "Lean, high‑performance systems that minimize infrastructure cost while maximizing reliability."
       ]
     },
     "dont": {
-      "text": "What I Ensure",
+      "text": "Execution",
       "items":[
         "Technical clarity and alignment across cross‑functional engineering groups.",
         "Resilient infrastructure that is self‑documenting, observable, and designed for long‑term maintainability.",
+        "Comprehensive observability and telemetry frameworks that proactively isolate production issues.",
         "Developer workflows and CI/CD pipelines that accelerate delivery without compromising security, compliance, or reliability."
       ]
     }

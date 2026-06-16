@@ -150,12 +150,18 @@ textarea:focus-visible
   .profile-img
     width: 140px
     height: 140px
-    border-radius: 4px
-    border: 1px solid $gold-accent
-    padding: 5px
+    border-radius: 6px
+    //border: 1px solid $gold-accent
+    //padding: 5px
     background: $bg-surface
     margin-bottom: 30px
     object-fit: cover
+    position: relative
+    display: inline-block
+    //border-radius: 4px
+    //background: var(--bg-blob)
+    box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.1), 8px 12px 30px -10px rgba(212, 175, 55, 0.2), 16px 24px 50px -15px rgba(212, 175, 55, 0.12)
+
 
   h1
     font-size: 1.8rem
@@ -285,6 +291,23 @@ textarea:focus-visible
   grid-template-columns: 1fr 1fr
   gap: 24px
 
+.grid-3 
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  gap: 24px
+
+.bento
+  background: $bg-surface
+  padding: 12px
+
+  border-radius: 4px
+  border: 1px solid $border-subtle
+  cursor: pointer
+  display: flex
+  flex-direction: column
+  position: relative
+  overflow: hidden
+
 .card
   background: $bg-surface
   padding: 35px
@@ -341,6 +364,34 @@ textarea:focus-visible
     &::before
       opacity: 0.1
       transform: scale(1.1)
+
+/* Viewport & Transition Boundary */
+.expansion-viewport 
+  width: 100%
+  transition: all 0.3s ease
+
+.expansion-viewport.is-open 
+  /* Creates a clean, dim divider rule that spans full content width */
+  border-top: 1px solid rgba(68, 66, 67, 0.4) 
+  padding-top: 2.5rem //* Physical distance after the rule line */
+
+
+.expansion-viewport-inner 
+  animation: slideDownFade 0.35s cubic-bezier(0.16, 1, 0.3, 1)
+
+
+
+
+
+@keyframes slideDownFade 
+  from 
+    opacity: 0
+    transform: translateY(12px)
+  
+  to 
+    opacity: 1
+    transform: translateY(0)
+  
 
 // --- PROFESSIONAL ERAS ---
 .era
@@ -424,23 +475,46 @@ textarea:focus-visible
   color: inherit
 
 // --- TA GS FIX: Contrast ---
+// .tag
+//   border: 1px solid $alpha-gold-15 // Use gold accent for subtle branding
+//   color: $text-main // Confirmed bright for visibility
+//   padding: 4px 12px
+//   font-size: 0.65rem
+//   font-family: $font-mono
+//   margin-right: 8px
+//   margin-top: 15px
+//   border-radius: 2px
+//   display: inline-block
+//   position: relative // Keep above fadded blueprint
+//   z-index: 2
+//   background-color: rgba($bg-deep, 0.3) // Added slight depth
+//   transition: all $transition-primary
+//   &:hover
+//     border-color: $alpha-gold-40
+//     background-color: $alpha-gold-05
 .tag
-  border: 1px solid $alpha-gold-15 // Use gold accent for subtle branding
-  color: $text-main // Confirmed bright for visibility
-  padding: 4px 12px
-  font-size: 0.65rem
   font-family: $font-mono
-  margin-right: 8px
-  margin-top: 15px
+  font-size: 0.7rem
+  font-weight: 600
+  text-transform: uppercase
+  letter-spacing: 0.05em
+  padding: 3px 8px
   border-radius: 2px
+  background: rgba($gold-accent, 0.03)
+  border: 1px solid rgba($gold-accent, 0.45)
+  color: #ffdfa9
   display: inline-block
-  position: relative // Keep above fadded blueprint
-  z-index: 2
-  background-color: rgba($bg-deep, 0.3) // Added slight depth
-  transition: all $transition-primary
+  line-height: 1
+  margin-right: 6px
+  margin-bottom: 6px
+  
+  // Smooth, intentional transit path for properties that change
+  transition: background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s cubic-bezier(0.16, 1, 0.3, 1)
+
   &:hover
-    border-color: $alpha-gold-40
-    background-color: $alpha-gold-05
+    background: rgba($gold-accent, 0.12)       // Double the background tint density
+    border-color: rgba($gold-accent, 0.8)     // Hard-flash the border closer to full opacity
+    color: #ffffff                            // Snap text to pure luminescent white
 
 // --- FOOTER ---
 footer
@@ -602,7 +676,7 @@ body
 
 // --- HOME PAGE (MINIMAL) ---
 .mini-article-row
-  display: flex
+  //display: flex
   align-items: center
   gap: 15px
   padding: 12px 0
@@ -615,13 +689,15 @@ body
     font-size: 0.8rem
     color: $brass-muted
     min-width: 60px
+    display: inline
 
   .article-title-truncate
     flex: 1
-    white-space: nowrap
+    //white-space: nowrap
     overflow: hidden
     text-overflow: ellipsis
     font-size: 0.95rem
+    display: inline-flex 
 
 // --- ARTICLES PAGE (VERBOSE) ---
 .full-article-grid
@@ -988,6 +1064,8 @@ body
     padding: 50px 30px
   .grid-2
     grid-template-columns: 1fr
+  .grid-3
+    grid-template-columns: 1fr
   .era
     flex-direction: column
     gap: 10px
@@ -1230,13 +1308,16 @@ body
   // Section headers like: // HOW I LEAD
   .section-label
     font-family: $font-mono
-    color: $gold-accent
+    color: $text-muted
     letter-spacing: 3px
     font-size: 0.8rem
     margin-bottom: 1.8rem
     text-transform: uppercase
     display: block
-
+.gold-bullet
+  color: $gold-accent
+  font-weight: 600
+  margin-right: 4px
   // Gold spacer between sections
 
   // Bullet lists
