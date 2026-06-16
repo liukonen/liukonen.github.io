@@ -475,23 +475,7 @@ textarea:focus-visible
   color: inherit
 
 // --- TA GS FIX: Contrast ---
-// .tag
-//   border: 1px solid $alpha-gold-15 // Use gold accent for subtle branding
-//   color: $text-main // Confirmed bright for visibility
-//   padding: 4px 12px
-//   font-size: 0.65rem
-//   font-family: $font-mono
-//   margin-right: 8px
-//   margin-top: 15px
-//   border-radius: 2px
-//   display: inline-block
-//   position: relative // Keep above fadded blueprint
-//   z-index: 2
-//   background-color: rgba($bg-deep, 0.3) // Added slight depth
-//   transition: all $transition-primary
-//   &:hover
-//     border-color: $alpha-gold-40
-//     background-color: $alpha-gold-05
+
 .tag
   font-family: $font-mono
   font-size: 0.7rem
@@ -1072,6 +1056,30 @@ body
   body::before
     content: none !important
     background: none !important
+  // --- LEADERSHIP SYSTEM SPECIFIC OVERRIDES ---
+  // Force the control wrapper to stack block-level elements cleanly
+  .grid-3.leadership-controls
+    display: flex !important
+    flex-direction: column !important
+    gap: 1rem
+
+  // Force strict indentation under the media block so Sass parses correctly
+  .mobile-expansion-drawer
+    display: block !important
+    visibility: visible !important
+    overflow: visible !important // Prevents grid layout clipping inside the drawer
+    max-height: 0
+    opacity: 0
+    transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease
+    
+    &.is-open
+      max-height: 2000px !important // Blown open safely to contain the entire list height
+      opacity: 1 !important
+      padding: 1.5rem 0
+      margin-bottom: 1rem
+
+  .desktop-only-viewport
+    display: none !important
 
 // --- LINK MODAL STYLES ---
 .link-modal-overlay
@@ -1295,25 +1303,31 @@ body
 // ===============================
 // LEADERSHIP SECTION
 // ===============================
-
 .leadership-section
-  margin-top: 6rem
-  margin-bottom: 8rem
-  color: $text-main
-  .page-wrapper
-    max-width: 900px
-    margin: 0 auto
-  article
-    margin-bottom: 4rem
-  // Section headers like: // HOW I LEAD
-  .section-label
-    font-family: $font-mono
-    color: $text-muted
-    letter-spacing: 3px
-    font-size: 0.8rem
-    margin-bottom: 1.8rem
-    text-transform: uppercase
-    display: block
+  width: 100%
+
+.leadership-node
+  display: flex
+  flex-direction: column
+
+.caret-indicator
+  display: inline-block
+  margin-left: 0.5rem
+  font-size: 0.75rem
+  color: $brass-muted
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1)
+  
+  &.rotated
+    transform: rotate(180deg)
+    color: $gold-accent
+
+// Handle the responsive shifting states
+.mobile-expansion-drawer
+  display: none // Hidden on desktop targets completely
+  width: 100%
+
+.desktop-only-viewport
+  display: block
 .gold-bullet
   color: $gold-accent
   font-weight: 600

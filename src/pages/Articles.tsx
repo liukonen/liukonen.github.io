@@ -1,39 +1,39 @@
-import { useState, useEffect } from 'preact/hooks';
-import { fetchDevArticles, DevArticle } from '../services/devToService';
-import Breadcrumb from '../components/Breadcrumb';
-import FooterCounter from '../components/FooterCounter';
-import Header from '../components/Header';
-import LinkModal from '../components/LinkModal';
-import useIsMobile from '../services/isMobile';
+import { useState, useEffect } from 'preact/hooks'
+import { fetchDevArticles, DevArticle } from '../services/devToService'
+import Breadcrumb from '../components/Breadcrumb'
+import FooterCounter from '../components/FooterCounter'
+import Header from '../components/Header'
+import LinkModal from '../components/LinkModal'
+import useIsMobile from '../services/isMobile'
 
 import BoxArrowUpRight from '~icons/bi/box-arrow-up-right'
 
 
 export default function Articles() {
-  const [articles, setArticles] = useState<DevArticle[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [modalArticleId, setModalArticleId] = useState<number | null>(null);
-  const [modalTitle, setModalTitle] = useState<string>('');
-  const [modalUrl, setModalUrl] = useState<string>('');
-  const isMobile = useIsMobile();
+  const [articles, setArticles] = useState<DevArticle[]>([])
+  const [loading, setLoading] = useState(true)
+  const [modalArticleId, setModalArticleId] = useState<number | null>(null)
+  const [modalTitle, setModalTitle] = useState<string>('')
+  const [modalUrl, setModalUrl] = useState<string>('')
+  const isMobile = useIsMobile()
 
   useEffect(() => {
     // 1000 is the max limit for a single page on the Dev.to API
     fetchDevArticles('liukonen', 30)
       .then(data => {
-        setArticles(data);
-        setLoading(false);
-      });
-  }, []);
+        setArticles(data)
+        setLoading(false)
+      })
+  }, [])
 
   const handleArticleClick = (e: MouseEvent, article: DevArticle) => {
     if (!isMobile) {
-      e.preventDefault();
-      setModalArticleId(article.id);
-      setModalTitle(article.title);
-      setModalUrl(article.url);
+      e.preventDefault()
+      setModalArticleId(article.id)
+      setModalTitle(article.title)
+      setModalUrl(article.url)
     }
-  };
+  }
 
   return (
     <div className="page-layer articles-view">
@@ -74,24 +74,9 @@ export default function Articles() {
       )}
 
       <LinkModal articleId={modalArticleId || undefined} onClose={() => {
-        setModalArticleId(null);
-        setModalUrl('');
+        setModalArticleId(null)
+        setModalUrl('')
       }} title={modalTitle} url={modalUrl} />
     </div>
-  );
+  )
 }
-
-/*
-          <div className="card company-card" key={era.id} onClick={() => window.location.hash = `#/ERA/${era.id}`}>    
-  <span class="golden-header">
-                // {era.company.toUpperCase()}
-              </span>
-              <h4>{era.title}</h4>
-              <p>{era.role}</p>
-              <div>
-                {era.tech.map(t => (
-                  <span key={t} className="tag">{t}</span>
-                ))}
-              </div>
-            </div>
-            */

@@ -1,4 +1,4 @@
-import MoreFooter from "./MoreFooter";
+import MoreFooter from "./MoreFooter"
 import showcaseData from  '../data/showcase.json'
 
 export default function ShowcaseSection() {
@@ -21,5 +21,5 @@ export default function ShowcaseSection() {
     </div>
     <MoreFooter path={'#/TECH_SHOWCASE'} />
     </section>
-  );
+  )
 }

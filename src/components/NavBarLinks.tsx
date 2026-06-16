@@ -1,4 +1,4 @@
-import portfolioData from '../data/portfolio.json';
+import portfolioData from '../data/portfolio.json'
 
 export default function NavLinks({ onClose }: { readonly onClose: () => void }) {
   return (
@@ -10,5 +10,5 @@ export default function NavLinks({ onClose }: { readonly onClose: () => void }) 
         </a>
       ))}
     </div>
-  );
+  )
 }
