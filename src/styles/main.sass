@@ -71,8 +71,8 @@ $alpha-gold-20: 	rgba($gold-accent, 0.2)
 $alpha-gold-30: rgba($gold-accent, 0.3)
 $alpha-gold-40: rgba($gold-accent, 0.4)
 $alpha-gold-code: rgba($gold-accent, 0.8)
-
 $spotlight-color: $alpha-gold-10
+$max-width-content: 1100px
 
 // --- THE BRIDGE ---
 // This makes these variables available to your TSX style props
@@ -187,7 +187,7 @@ textarea:focus-visible
   background: $bg-deep
   &.show
     display: flex
-  @media (max-width: 1100px)
+  @media (max-width: $max-width-content)
     display: none // Entirely removes the links from the layout
   li
     margin: 22px 0
@@ -318,7 +318,7 @@ textarea:focus-visible
   flex-direction: column
   position: relative
   overflow: hidden
-
+  margin-bottom: 3rem
   &::before
     content: ''
     position: absolute
@@ -1020,7 +1020,7 @@ body
     border-radius: 4px
     margin: 1rem 0
 
-@media (min-width: 1100px)
+@media (min-width: $max-width-content)
   .nav-container
     visibility: hidden
   .mobile-top-bar
@@ -1034,7 +1034,7 @@ body
     margin-top: auto
 
 // --- RESPONSIVE ADAPTATION ---
-@media (max-width: 1100px)
+@media (max-width: $max-width-content)
   .app-shell
     flex-direction: column
   .sidebar
@@ -1376,7 +1376,7 @@ body
       margin-bottom: 0.8rem
 
   // Collapse to one column on mobile
-  @media (max-width: 900px)
+  @media (max-width: $max-width-content)
     .two-col
       grid-template-columns: 1fr
 
@@ -1385,3 +1385,112 @@ body
   width: 100%
   background: $gold-accent
   margin: 3rem 0
+
+
+
+/// HERE WE GO
+/// --- PARENT WRAPPER ---
+.header
+  font-family: $font-main
+  font-size: 1.6rem
+  color: $text-main
+  
+
+
+.showcase-main-layout
+  display: grid
+  grid-template-columns: 1fr
+  gap: 2rem
+  align-items: start // THIS KEEPS SIDEBAR PINNED
+  margin-top: 2rem
+
+  @media (min-width: $max-width-content)
+    grid-template-columns: 320px 1fr // Fixed sidebar width + Flexible content
+
+// --- STICKY SIDEBAR (MATCHING YOUR SCREENSHOT) ---
+.specs-blueprint-sidebar
+  background-color: $bg-surface
+  border: 1px solid $border-dark
+  padding: 1.5rem
+  
+  @media (min-width: $max-width-content)
+    //position: sticky
+    top: 2rem
+    //align-self: start
+    z-index: 10
+    max-height: calc(100vh - 4rem)
+    overflow-y: auto
+
+  h3
+    color: $gold-accent
+    font-size: 11px
+    border-bottom: 1px solid $gold-accent
+    padding-bottom: 6px
+    margin-bottom: 1rem
+    text-transform: uppercase
+    letter-spacing: 0.05em
+
+  table
+    width: 100%
+    border-collapse: collapse
+    
+    tr
+      display: flex
+      flex-direction: column // Stack Key on top of Value
+      padding: 12px 0
+      border-bottom: 1px solid $bg-surface
+      
+      &:first-child
+        padding-top: 0
+      &:last-child
+        border-bottom: none
+
+    td
+      padding: 0 // Remove default table padding
+      
+      // Key (Gold)
+      &:first-child
+        color: $gold-accent
+        font-size: 10px
+        font-weight: 700
+        text-transform: uppercase
+        letter-spacing: 0.05em
+        margin-bottom: 4px
+      
+      // Value (White)
+      &:last-child
+        color: $text-main
+        font-size: 14px
+        line-height: 1.4
+
+// --- BENTO GRID (THE FIX) ---
+.bento-showcase-section
+  grid-column: 1 / -1 // Forces this section to span full width
+  margin-top: 2.5rem
+  border-top: 1px solid $bg-surface
+  padding-top: 2.5rem
+
+
+
+
+// --- 1. THE GOLD BOX (Replaces old project-meta-top) ---
+.project-meta-top
+  display: flex
+  flex-direction: column
+  gap: 1.5rem
+  padding: 1.5rem
+  border: 1px solid $border-dark
+  background: $bg-surface
+  margin: 1.5rem 0
+  
+  @media (min-width: $max-width-content)
+    flex-direction: row
+    gap: 3rem
+
+  .meta-item
+    font-size: 14px
+    color: $text-main
+    strong
+      color: $gold-accent // GOLD
+      margin-right: 0.5rem
+      text-transform: uppercase

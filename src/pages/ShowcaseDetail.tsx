@@ -1,47 +1,93 @@
-import { useState, useEffect } from 'preact/hooks'
-import Breadcrumb from '../components/Breadcrumb'
+import { useState, useEffect } from 'preact/hooks';
 
 export default function ShowcaseDetail({ id }) {
-  console.log('ShowcaseDetail', id)
-  const [showcase, setShowcase] = useState(null)
+  const [showcase, setShowcase] = useState(null);
 
   useEffect(() => {
-    fetch(`/showcase/${id}.json`).then(r => r.json()).then(setShowcase)
-    window.scrollTo(0, 0)
-  }, [id])
+    fetch(`/showcase/${id}.json`)
+      .then((r) => r.json())
+      .then(setShowcase)
+      .catch((err) => console.error("Failed to load project data:", err));
+    window.scrollTo(0, 0);
+  }, [id]);
 
-  if (!showcase) return <div className="loader">// DECRYPTING_PROJECT_DATA...</div>
+  if (!showcase) return <div className="loader">// DECRYPTING_PROJECT_DATA...</div>;
 
   return (
     <article className="showcase-view page-layer">
       <header className="showcase-header">
-        <Breadcrumb path={`#/TECH_SHOWCASE/${id}`} />
         <h1>{showcase.title}</h1>
         <div className="impact-callout">RESULT: {showcase.impact}</div>
+        
+        {/* RE-ADDED ROLE & STACK BLOCK */}
+        <div className="project-meta-top">
+          <div className="meta-item"><strong>ROLE:</strong> {showcase.role}</div>
+          <div className="meta-item"><strong>STACK:</strong> {showcase.tech}</div>
+        </div>
       </header>
 
-      <aside className="tech-specs">
-        <div className="spec"><strong>ROLE:</strong> {showcase.role}</div>
-        <div className="spec"><strong>STACK:</strong> {showcase.tech}</div>
-      </aside>
+      <div className="showcase-main-layout">
+        
+        {/* Left Column: Technical Specs Grid */}
+        <aside className="specs-blueprint-sidebar mono">
+          <h3>~/TECHNICAL_SPECS</h3>
+          {showcase.specs && (
+            <table>
+              <tbody>
+                {Object.entries(showcase.specs).map(([key, value]) => (
+                  <tr key={key}>
+                    <td>{key.replace(/_/g, ' ')}</td>
+                    <td>{value}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
+        </aside>
 
-      Want to learn more?
-      <section id ="contact" className={"default-margin"}>
-            <button className="btn top-buffer-10" onClick={() => window.location.hash = '#/CONTACT'}>
-        GET_IN_TOUCH
-      </button>
-      {showcase.hasCaseStudy && (
-        <button id="Case_Study" className="btn top-buffer-10" onClick={() => window.location.hash =`#/CASE_STUDIES/${id}`}>
-        READ_CASE_STUDY
-      </button>
-      )}
-      </section>
+        {/* Right Column: Narrative Content */}
+        <div className="showcase-content-stream">
+          <section 
+            className="technical-body" 
+            dangerouslySetInnerHTML={{ __html: showcase.content }} 
+          />
 
-      <section className="technical-body" dangerouslySetInnerHTML={{ __html: showcase.content }} />
+          <section className="action-section">
+            {showcase.hasCaseStudy && (
+              <button className="btn" onClick={() => window.location.hash = `#/CASE_STUDIES/${id}`}>
+                READ_CASE_STUDY
+              </button>
+            )}
+          </section>
+        </div>
 
-      <footer className="showcase-footer">
-        <a href={`#/TECH_SHOWCASE`} className="return-link">// RETURN_TO_GALLERY</a>
-      </footer>
+        {/* Bento Grid Layer */}
+        {showcase.features && Object.keys(showcase.features).length > 0 && (
+          <section className="bento-showcase-section">
+            <h2 className="section-title">// KEY FEATURES & IMPACT</h2>
+            <div className="grid-2">
+              {Object.entries(showcase.features).map(([title, itemsString], index) => {
+                const formattedTitle = title
+                  .replace(/_/g, ' ')
+                  .replace(/\b\w/g, (char) => char.toUpperCase());
+                
+                const items = itemsString.split(';').map(i => i.trim());
+
+                return (
+                  <div className="bento" key={index}>
+                    <strong className="gold-bullet">{formattedTitle}</strong>
+                    <ul className="">
+                      {items.map((item, i) => (
+                        <li key={i} dangerouslySetInnerHTML={{ __html: item }} />
+                      ))}
+                    </ul>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+        )}
+      </div>
     </article>
-  )
+  );
 }

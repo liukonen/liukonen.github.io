@@ -176,12 +176,54 @@ async function processFiles(type) {
   return results;
 }
 
+async function processCaseStudyFiles(type) {
+  const { src, dest } = DIRS[type];
+  const files = fs.readdirSync(src).filter(f => f.endsWith('.md'));
+  const results = [];
+
+  for (const file of files) {
+    console.log(`Processing ${type} file: ${file}`);
+    const id = file.replace('.md', '');
+    let { data, content } = parseMarkdown(fs.readFileSync(path.join(src, file), 'utf8'))
+    // 1. Process Mermaid blocks
+    const matches = [...content.matchAll(/```mermaid([\s\S]*?)```/g)];
+    for (const m of matches) {
+      const code = m[1].trim();
+      const dHash = getHash(code);
+      const svgName = `${id}-${dHash.slice(0, 8)}.svg`;
+      const svgPath = path.join(dest, svgName);
+      if (cache[id + dHash] !== dHash || !fs.existsSync(svgPath)) {
+        await fetchDiagram(code, svgPath);
+        cache[id + dHash] = dHash;
+      }
+      content = content.replace(m[0], `![Architecture Diagram](./${RELPATHS[type]}/${svgName})`);
+    }
+
+    // 2. Compile Core Narrative Content to HTML
+    const htmlContent = parse(content);
+    const enrichedHtml = enrichProjectContent(htmlContent, data.glossary);
+
+    // 4. Assemble and write the clean JSON artifact
+    const hasStudy = fs.existsSync(path.join(DIRS.studies.src, `${id}.md`));
+    const outputData = {
+      ...data, // This natively injects 'specs' and 'features'
+      id,
+      hasCaseStudy: hasStudy,
+      content: enrichedHtml
+    };
+
+    fs.writeFileSync(path.join(dest, `${id}.json`), JSON.stringify(outputData, null, 2));
+    results.push(outputData);
+  }
+  return results;
+}
+
 async function processRepos() {
   for (const [id, project] of Object.entries(profileJson.labs)) {
     await processRepo(project.repo, project.branch);
   }
   console.log("done with processRepos")
-return true
+  return true
 }
 
 async function processRepo(repo, branch) {
@@ -265,7 +307,7 @@ async function getProjectContentFromUrl(repo, branch, useLowercase = false) {
   return new Promise((resolve, reject) => {
     // 1. Disable the agent to prevent Keep-Alive hangs
     https.get(url, { agent: false }, (res) => {
-      
+
       // 2. Handle 404 Fallback
       if (res.statusCode === 404 && !useLowercase) {
         res.resume(); // CRITICAL: Consume the 404 response to free the socket
@@ -306,7 +348,7 @@ async function getProjectContentFromUrl(repo, branch, useLowercase = false) {
 
 
 async function run() {
-  const showcaseItems = await processFiles('showcase');
+  const showcaseItems = await processCaseStudyFiles('showcase');
   await processFiles('studies');
   await processIndividualFile('about');
   await processIndividualFile('footer');
