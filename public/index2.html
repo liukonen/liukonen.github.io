@@ -1,57 +1,364 @@
-<style>
-    /* 3-Column Grid */
-    .bento-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SearchFacade // Case Study</title>
+  <style>
+    /* SYSTEM CORE RESET & TOKENS */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    :root {
+      --bg-main: #121214;       /* Deep charcoal */
+      --bg-panel: #16161a;      /* Darker component fill */
+      --border-color: #27272a;  /* Rigid, low-contrast border */
+      --text-primary: #e4e4e7;  /* High-readability off-white */
+      --text-muted: #8a8a93;    /* Secondary grey labels */
+      --accent-gold: #d4af37;   /* Executive structural gold */
+      --sidebar-width: 240px;   /* Your primary site nav width */
     }
 
-    .card {
-        background: var(--bg-blob);
-        border: 1px solid var(--border-hard);
-        padding: 2rem;
-        cursor: pointer;
-        transition: border-color 0.3s;
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-primary);
+      font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
     }
 
-    .card:hover { border-color: var(--accent-gold); }
-
-    /* The expanded content area */
-    .expanded-content {
-        display: none; /* Hidden by default */
-        grid-column: span 3; /* Forces row to span full width */
-        padding: 2rem;
-        background: #181718;
-        border: 1px solid var(--accent-gold);
-        margin-top: -1rem; /* Visual tuck */
+    .mono {
+      font-family: "Cascadia Mono", "Courier New", Courier, monospace;
+      letter-spacing: -0.025em;
     }
-</style>
 
-<div class="bento-grid">
-    <!-- Item 1 -->
-    <div class="card" onclick="toggleDetails('details1')">
-        <h3>Architecture</h3>
+    /* GLOBAL SITE OUTER LAYOUT (Main Nav Sidebar Anchor) */
+    .site-wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 992px) {
+      .site-wrapper {
+        grid-template-columns: var(--sidebar-width) 1fr;
+      }
+    }
+
+    /* MOCK PRIMARY SITE NAVIGATION SIDEBAR */
+    .primary-site-nav {
+      background-color: #0b0b0c;
+      border-right: 1px solid var(--border-color);
+      padding: 2rem 1.5rem;
+      min-height: 100vh;
+    }
+    .primary-site-nav .logo {
+      color: var(--accent-gold);
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+    .primary-site-nav ul {
+      list-style: none;
+    }
+    .primary-site-nav li {
+      margin-bottom: 1rem;
+      font-size: 13px;
+    }
+    .primary-site-nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+    .primary-site-nav li.active a {
+      color: var(--text-primary);
+      font-weight: bold;
+    }
+
+    /* RIGHT CONTENT PANE CONTAINER */
+    .content-pane {
+      padding: 2rem 1.5rem;
+      max-width: 1200px;
+    }
+
+    @media (min-width: 1200px) {
+      .content-pane {
+        padding: 3rem 4rem;
+      }
+    }
+
+    /* CASE STUDY TOP BREADCRUMB */
+    .breadcrumb {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+    .breadcrumb a {
+      color: var(--accent-gold);
+      text-decoration: none;
+    }
+
+    /* FRONTMATTER EXECUTIVE BANNER */
+    .executive-header {
+      margin-bottom: 2.5rem;
+    }
+    .executive-header h1 {
+      font-size: 2rem;
+      color: #ffffff;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+    .metric-callout {
+      border-left: 3px solid var(--accent-gold);
+      background-color: var(--bg-panel);
+      padding: 1.25rem;
+      margin-top: 1rem;
+    }
+    .metric-callout h2 {
+      font-size: 1.1rem;
+      color: #ffffff;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+    .metric-callout p {
+      color: var(--text-muted);
+      font-size: 14px;
+      margin: 0;
+    }
+
+    /* INNER CASE STUDY GRID */
+    .case-study-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      border-top: 1px solid var(--border-color);
+      padding-top: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .case-study-grid {
+        grid-template-columns: 280px 1fr; /* Secondary specs sidebar */
+        align-items: start;
+      }
+    }
+
+    /* SPECIFICATION BLUEPRINT SIDEBAR */
+    .specs-blueprint-sidebar {
+      background-color: var(--bg-panel);
+      border: 1px solid var(--border-color);
+      padding: 1.25rem;
+    }
+    .sidebar-block {
+      margin-bottom: 1.5rem;
+    }
+    .sidebar-block:last-child {
+      margin-bottom: 0;
+    }
+    .sidebar-block h3 {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 700;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 4px;
+      margin-bottom: 10px;
+    }
+    .spec-matrix-list {
+      list-style: none;
+    }
+    .spec-matrix-list li {
+      font-size: 13px;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+    .spec-matrix-list li:last-child {
+      margin-bottom: 0;
+    }
+    .spec-label {
+      color: var(--accent-gold);
+      font-weight: 600;
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+    .spec-value {
+      color: var(--text-primary);
+    }
+
+    /* MAIN NARRATIVE CONTENT AREA */
+    .narrative-body {
+      max-width: 68ch; /* Bound line length */
+    }
+    
+    .narrative-body p {
+      color: #d4d4d8;
+      margin-bottom: 1.5rem;
+      font-size: 15px;
+    }
+    .narrative-body p strong {
+      color: #ffffff;
+    }
+
+    .narrative-body h2 {
+      font-size: 1.35rem;
+      color: #ffffff;
+      margin: 2.5rem 0 1rem 0;
+      font-weight: 600;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 6px;
+    }
+    .narrative-body h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .narrative-body h3 {
+      font-size: 1.1rem;
+      color: #ffffff;
+      margin: 1.75rem 0 0.5rem 0;
+      font-weight: 600;
+    }
+
+    /* REFACTORED IMPACT LIST (Using Terminal Monospace Glyphs) */
+    .impact-tree-list {
+      list-style: none;
+      margin-bottom: 1.5rem;
+    }
+    .impact-tree-list li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.75rem;
+      font-size: 14px;
+      color: #d4d4d8;
+    }
+    .impact-tree-list li::before {
+      content: "├";
+      position: absolute;
+      left: 0;
+      color: var(--accent-gold);
+      font-family: monospace;
+      font-weight: bold;
+    }
+    .impact-tree-list li:last-child::before {
+      content: "└";
+    }
+  </style>
+</head>
+<body>
+
+  <div class="site-wrapper">
+    
+    <nav class="primary-site-nav mono">
+      <div class="logo">Liukonen.dev</div>
+      <ul>
+        <li><a href="#">/ HOME</a></li>
+        <li class="active"><a href="#">/ SHOWCASE</a></li>
+        <li><a href="#">/ WRITEUPS</a></li>
+        <li><a href="#">/ OPEN_SOURCE</a></li>
+        <li><a href="#">/ CAREER</a></li>
+        <li><a href="#">/ CONTACT</a></li>
+      </ul>
+    </nav>
+
+    <div class="content-pane">
+      
+      <div class="breadcrumb mono">
+        <a href="#">~/root</a> / <a href="#">SHOWCASE</a> / SearchFacade
+      </div>
+
+      <header class="executive-header">
+        <h1>SearchFacade - One contract. Two engines. Zero risk</h1>
+        
+        <div class="metric-callout">
+          <h2 class="mono">// ROLE: Senior Software Engineer / Solutions Architect</h2>
+          <p>RESULT: Cut delivery time by over 50% while eliminating rollout risk through instant, feature-flagged provider switching.</p>
+        </div>
+      </header>
+
+      <div class="case-study-grid">
+        
+        <aside class="specs-blueprint-sidebar mono">
+          <div class="sidebar-block">
+            <h3>~/TECHNICAL_SPECS</h3>
+            <ul class="spec-matrix-list">
+              <li>
+                <span class="spec-label">Backend</span>
+                <span class="spec-value">Angular</span>
+              </li>
+              <li>
+                <span class="spec-label">Architecture</span>
+                <span class="spec-value">Interface-driven, Provider Pattern</span>
+              </li>
+              <li>
+                <span class="spec-label">Data Contracts</span>
+                <span class="spec-value">DTO-based design</span>
+              </li>
+              <li>
+                <span class="spec-label">Feature Control</span>
+                <span class="spec-value">Feature Flags (region-based)</span>
+              </li>
+              <li>
+                <span class="spec-label">Deployment</span>
+                <span class="spec-value">Azure CICD</span>
+              </li>
+              <li>
+                <span class="spec-label">Testing</span>
+                <span class="spec-value">Unit + Contract + Selenium Testing</span>
+              </li>
+              <li>
+                <span class="spec-label">Observability</span>
+                <span class="spec-value">Metrics (latency, error rates)</span>
+              </li>
+            </ul>
+          </div>
+        </aside>
+
+        <main class="narrative-body">
+          
+          <h2>SearchFacade</h2>
+          <p>
+            Led the architectural redesign of a global search migration by introducing a <strong>provider abstraction layer with feature flag routing</strong>, eliminating the need for per-site rewrites. Delivered a production-ready dual-provider system in 3 sprints instead of a full quarter. Enabled <strong>instant rollback, gradual rollout, and reduced development effort by weeks</strong>.
+          </p>
+
+          <h2>Key Features & Impact</h2>
+
+          <h3>1. Provider Abstraction Layer</h3>
+          <ul class="impact-tree-list">
+            <li>Decoupled application logic from search providers</li>
+            <li>Enabled seamless swapping between legacy and new systems</li>
+          </ul>
+
+          <h3>2. Feature Flag Routing</h3>
+          <ul class="impact-tree-list">
+            <li>Instant toggle between providers per region/site</li>
+            <li>Eliminated risky deployments for rollouts</li>
+          </ul>
+
+          <h3>3. DTO Standardization</h3>
+          <ul class="impact-tree-list">
+            <li>Unified data contracts across systems</li>
+            <li>Reduced integration complexity and bugs</li>
+          </ul>
+
+          <h3>4. Accelerated Delivery</h3>
+          <ul class="impact-tree-list">
+            <li>Delivered full migration capability in <strong>3 sprints vs. 1 quarter</strong></li>
+            <li>Saved <strong>weeks of engineering effort</strong></li>
+          </ul>
+
+          <h3>5. Zero-Risk Rollback</h3>
+          <ul class="impact-tree-list">
+            <li>No redeploy required</li>
+            <li>Immediate fallback to legacy provider on failure</li>
+          </ul>
+
+        </main>
+      </div>
+
     </div>
-    <!-- Item 2 -->
-    <div class="card" onclick="toggleDetails('details2')">
-        <h3>Leadership</h3>
-    </div>
-    <!-- Item 3 -->
-    <div class="card" onclick="toggleDetails('details3')">
-        <h3>Strategy</h3>
-    </div>
+  </div>
 
-    <!-- Expansion Areas -->
-    <div id="details1" class="expanded-content">Expanded details for Architecture...</div>
-    <div id="details2" class="expanded-content">Expanded details for Leadership...</div>
-    <div id="details3" class="expanded-content">Expanded details for Strategy...</div>
-</div>
-
-<script>
-    function toggleDetails(id) {
-        // Hide all others
-        document.querySelectorAll('.expanded-content').forEach(el => el.style.display = 'none');
-        // Show selected
-        document.getElementById(id).style.display = 'block';
-    }
-</script>
+</body>
+</html>

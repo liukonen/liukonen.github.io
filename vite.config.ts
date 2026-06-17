@@ -2,13 +2,6 @@ import {defineConfig} from 'vite'
 import preact from  '@preact/preset-vite'
 import Icons from 'unplugin-icons/vite'
 
-
-// vite.config.ts
-//import { defineConfig } from 'vite';
-//import preact from '@preact/preset-vite';
-//import commonjs from '@rollup/plugin-commonjs';
-
-// Equivalent to your esbuild settings
 export default defineConfig(({ mode }) => ({
   plugins: [
     preact(),
@@ -35,9 +28,8 @@ export default defineConfig(({ mode }) => ({
         comments: false,
       },
     },
-              // same as esbuild target
     sourcemap: mode === 'development',  // only in dev
-    //outDir: 'dist',             // match your esbuild output dir (you can change if needed)
+    //outDir: 'dist', // match your esbuild output dir (you can change if needed)
     //minify: mode !== 'development',
     rollupOptions: {
       output: {
@@ -56,4 +48,4 @@ export default defineConfig(({ mode }) => ({
       'react-dom': 'preact/compat',
     },
   },
-}));
+}))
