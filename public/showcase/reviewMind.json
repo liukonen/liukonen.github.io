@@ -20,7 +20,7 @@
     "business impact potential": "Identify product pain points instantly; Surface high-value positive reviews for marketing; Enable data-driven product decisions"
   },
   "weight": "4",
-  "id": "reviewMind",
+  "content": "<p>Transformed gigabytes of unstructured product reviews into a queryable intelligence layer using NLP and a modular batch-processing pipeline. Designed a loosely coupled architecture with DTO-driven boundaries, enabling parallel development and hot-swappable components. Delivered a working semantic search and sentiment engine in under 24 hours, winning the company hackathon.</p>\n",
   "hasCaseStudy": true,
-  "content": "<p>Transformed gigabytes of unstructured product reviews into a queryable intelligence layer using NLP and a modular batch-processing pipeline. Designed a loosely coupled architecture with DTO-driven boundaries, enabling parallel development and hot-swappable components. Delivered a working semantic search and sentiment engine in under 24 hours, winning the company hackathon.</p>\n"
+  "id": "reviewMind"
 }

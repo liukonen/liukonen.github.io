@@ -5,13 +5,9 @@ impact: Automated stock analysis, alerts, and reporting with low-latency pipelin
 tech: Go, Bun, .NET, NATS, Protobuf, GitLab CI/CD, Ansible, Grafana, Gotify, Cloudflare Tunnel, Oracle Cloud, Alpine/Distroless Containers
 weight: 3
 specs:
-  Orchestrator: Go
-  API Service: Bun
-  Workers: Go
-  Legacy Services: .NET
+  Services: Go / Bun / .NET
   Messaging: NATS
-  Cache Layer: Redis
-  Persistence: SQLite
+  Persistence: SQLite / Redis
   Observability: OpenTelemetry
   Monitoring: Grafana
   Uptime Checks: Uptime Kuma

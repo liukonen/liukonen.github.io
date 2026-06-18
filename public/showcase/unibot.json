@@ -20,7 +20,7 @@
     "low-latency optimization": "Regex-based fast paths bypassed NLP.;→ Improved response time significantly.",
     "graceful failure handling": "Silent fallback with structured logging.;→ Protected user experience while preserving diagnostics."
   },
-  "id": "unibot",
+  "content": "<h1>Headless Commerce Orchestration</h1>\n<p>Built a <strong>multi-channel orchestration layer</strong> that eliminated the need for native mobile apps by leveraging SMS and social platforms as primary user interfaces. Designed a <strong>brand-aware, stateless middleware system</strong> capable of routing natural language requests across multiple backends. Reduced channel onboarding time from months to days through <strong>clean architectural separation and reusable pipelines</strong>.</p>\n",
   "hasCaseStudy": true,
-  "content": "<h1>Headless Commerce Orchestration</h1>\n<p>Built a <strong>multi-channel orchestration layer</strong> that eliminated the need for native mobile apps by leveraging SMS and social platforms as primary user interfaces. Designed a <strong>brand-aware, stateless middleware system</strong> capable of routing natural language requests across multiple backends. Reduced channel onboarding time from months to days through <strong>clean architectural separation and reusable pipelines</strong>.</p>\n"
+  "id": "unibot"
 }

@@ -21,7 +21,7 @@
     "accelerated delivery": "Delivered full migration capability in 3 sprints vs. 1 quarter; Saved weeks of engineering effort",
     "zero-risk rollback": "No redeploy required; Immediate fallback to legacy provider on failure"
   },
-  "id": "SearchFacade",
+  "content": "<p>Led the architectural redesign of a global search migration by introducing a <strong>provider abstraction layer with feature flag routing</strong>, eliminating the need for per-site rewrites. Delivered a production-ready dual-provider system in 3 sprints instead of a full quarter. Enabled <strong>instant rollback, gradual rollout, and reduced development effort by weeks</strong>.</p>\n",
   "hasCaseStudy": true,
-  "content": "<p>Led the architectural redesign of a global search migration by introducing a <strong>provider abstraction layer with feature flag routing</strong>, eliminating the need for per-site rewrites. Delivered a production-ready dual-provider system in 3 sprints instead of a full quarter. Enabled <strong>instant rollback, gradual rollout, and reduced development effort by weeks</strong>.</p>\n"
+  "id": "SearchFacade"
 }
