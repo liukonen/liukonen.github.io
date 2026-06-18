@@ -5,13 +5,9 @@
   "tech": "Go, Bun, .NET, NATS, Protobuf, GitLab CI/CD, Ansible, Grafana, Gotify, Cloudflare Tunnel, Oracle Cloud, Alpine/Distroless Containers",
   "weight": "3",
   "specs": {
-    "orchestrator": "Go",
-    "api service": "Bun",
-    "workers": "Go",
-    "legacy services": ".NET",
+    "services": "Go / Bun / .NET",
     "messaging": "NATS",
-    "cache layer": "Redis",
-    "persistence": "SQLite",
+    "persistence": "SQLite / Redis",
     "observability": "OpenTelemetry",
     "monitoring": "Grafana",
     "uptime checks": "Uptime Kuma",
@@ -31,7 +27,7 @@
     "monitoring & alerting": "Grafana for metrics; Uptime Kuma for endpoint + NATS health checks (<1 min detection); Gotify for real-time error notifications",
     "devops maturity": "CI/CD pipelines via GitLab; Infrastructure as Code via Ansible"
   },
-  "id": "StockHomelabArchitecture",
+  "content": "<p>I built a <strong>hybrid, event-driven stock intelligence platform</strong> using a Go orchestrator, NATS messaging, and a dual data layer (Redis + SQLite). All services run as <strong>native binaries in distroless containers</strong>, minimizing runtime overhead and attack surface. The system delivers <strong>real-time portfolio data and AI-curated insights</strong>, with full observability, retry logic, and sub-minute failure detection.</p>\n",
   "hasCaseStudy": true,
-  "content": "<p>I built a <strong>hybrid, event-driven stock intelligence platform</strong> using a Go orchestrator, NATS messaging, and a dual data layer (Redis + SQLite). All services run as <strong>native binaries in distroless containers</strong>, minimizing runtime overhead and attack surface. The system delivers <strong>real-time portfolio data and AI-curated insights</strong>, with full observability, retry logic, and sub-minute failure detection.</p>\n"
+  "id": "StockHomelabArchitecture"
 }
