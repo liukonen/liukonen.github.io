@@ -13,11 +13,11 @@
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
   img-src 'self' liukonen.dev wts.one data:;
   font-src 'self' https://fonts.gstatic.com;
-  connect-src 'self' dev.to cdnjs.cloudflare.com https://formspree.io https://cloudflareinsights.com;
+  connect-src 'self' dev.to cdnjs.cloudflare.com https://formspree.io https://cloudflareinsights.com https://uptime-api.liukonen.workers.dev;
   media-src 'self' liukonen.dev;
   object-src 'none';
-  child-src 'none';
-  frame-src 'none';
+  child-src 'self' https://stats.uptimerobot.com;
+  frame-src 'self' https://stats.uptimerobot.com;
   form-action 'self' https://formspree.io;
   base-uri 'self';
   manifest-src 'self';

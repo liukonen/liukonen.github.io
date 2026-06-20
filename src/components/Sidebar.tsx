@@ -3,6 +3,7 @@ import Github from '~icons/bi/github'
 import Linkedin from '~icons/bi/linkedin'
 import { lazy, Suspense } from 'preact/compat'
 import useIsMobile from '../services/isMobile'
+import Activity from '~icons/bi/activity'
 
 export default function Sidebar({ currentRoute }: Readonly<{ currentRoute: string }>) {
   
@@ -26,9 +27,19 @@ export default function Sidebar({ currentRoute }: Readonly<{ currentRoute: strin
       </Suspense>
       )}
       <div className="social-links">
-        <a href="https://github.com/liukonen" target="_blank" aria-label="Luke's Github page"><Github /></a>
-        <a href="https://linkedin.com/in/lukeliukonen" target="_blank" aria-label="Luke's LinkedIn page"><Linkedin /></a>
-        <a href="https://dev.to/liukonen" target="_blank" aria-label="Luke's Dev.to page"><CodeSlash /></a>
+        <a href="https://github.com/liukonen" target="_blank" aria-label="Luke's Github page" className="hud-status-node" data-tooltip="Github"><Github /></a>
+        <a href="https://linkedin.com/in/lukeliukonen" target="_blank" aria-label="Luke's LinkedIn page" className="hud-status-node" data-tooltip="LinkedIn"><Linkedin /></a>
+        <a href="https://dev.to/liukonen" target="_blank" aria-label="Luke's Dev.to page" className="hud-status-node" data-tooltip="Dev.to"><CodeSlash /></a>
+        {!isMobileDevice && (
+          <button
+            className="hud-status-node"
+            data-tooltip="System Status"
+            onClick={() => globalThis.dispatchEvent(new CustomEvent("open-uptime-modal"))}
+            aria-label="System Status"
+          >
+            <Activity />
+          </button>
+        )}
       </div>
     </aside>
   )

@@ -3,6 +3,7 @@ import { lazy, Suspense } from 'preact/compat'
 import Sidebar from './components/Sidebar'
 import { Navigation } from './components/NavBar'
 import isMobile from './services/isMobile'
+import UptimeModal from './components/UptimeModal'
 
 const Home = lazy(() => import('./pages/Home'))
 const OpenSourceProjects = lazy(() => import('./pages/OpenSourceProjects'))
@@ -16,6 +17,7 @@ const Showcase = lazy(() => import('./pages/showcase'))
 const CaseStudies = lazy(() => import('./pages/CaseStudies'))
 const ShowcaseDetail = lazy(() => import('./pages/ShowcaseDetail'))
 const CaseStudy = lazy(() => import('./pages/case-study'))
+
 
 export default function App() {
   const [route, setRoute] = useState(location.hash || '#/')
@@ -89,6 +91,7 @@ export default function App() {
         <Suspense fallback={null}>
         {renderContent()}
         </Suspense>
+        <UptimeModal />
       </main>
     </div>
   )
