@@ -8,29 +8,15 @@ export default defineConfig(({ mode }) => ({
     Icons({
       compiler: 'jsx',
       jsx: 'preact',
-      autoInstall: true
+      autoInstall: false
     })
   ],
   build: {
-    target: 'esnext',
+    target: 'es2022',
     outDir: 'dist',
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        passes: 3,
-        drop_console: true,
-        pure_funcs: ['consolr.info', 'console.log']
-      },
-      mangle: {
-        toplevel: true,
-      },
-      format: {
-        comments: false,
-      },
-    },
+    minify: 'esbuild',
     sourcemap: mode === 'development',  // only in dev
     //outDir: 'dist', // match your esbuild output dir (you can change if needed)
-    //minify: mode !== 'development',
     rollupOptions: {
       output: {
         manualChunks: undefined,
@@ -40,12 +26,6 @@ export default defineConfig(({ mode }) => ({
   css: {
     preprocessorOptions: {
       scss: {} 
-    },
-  },
-  resolve: {
-    alias: {
-      react: 'preact/compat',
-      'react-dom': 'preact/compat',
     },
   },
 }))

@@ -24,7 +24,7 @@ jobs:
 
       - name: Install & Build
         run: |
-          npm install
+          npm ci --omit=optional
           npm run build # This runs your content compile + vite build
 
       - name: Upload Artifact
