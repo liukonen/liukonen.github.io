@@ -605,6 +605,10 @@
       "path": "#/TECH_SHOWCASE"
     },
     {
+      "id": "CASE_STUDIES",
+      "path": "#/CASE_STUDIES"
+    },
+    {
       "id": "WRITEUPS",
       "path": "#/ARTICLES"
     },
