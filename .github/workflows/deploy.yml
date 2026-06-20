@@ -22,9 +22,10 @@ jobs:
           node-version: '26'
           cache: 'npm'
 
+          # TODO: known bug with vite and roledown. omit the optional deps removal for now (npm ci --omit=optional)
       - name: Install & Build
         run: |
-          npm ci --omit=optional
+          npm ci
           npm run build # This runs your content compile + vite build
 
       - name: Upload Artifact
