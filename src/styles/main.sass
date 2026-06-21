@@ -438,14 +438,6 @@ div.bento
   gap: 40px
   margin-bottom: 45px
 
-  .era-info
-    h4
-      font-size: 1.15rem
-      color: $text-main
-    p
-      color: $text-muted
-      font-size: 0.95rem
-      margin-top: 5px
 
 // --- THEATRICAL ERA CONTAINER (STAGGERED REVEAL) ---
 .era-container
@@ -489,8 +481,6 @@ div.bento
 
 .top-buffer-10
   margin-top: 10px
-.top-buffer-15
-  margin-top: 15px
 .top-buffer-20
   margin-top: 20px
 .top-buffer-40
@@ -671,16 +661,6 @@ body
     letter-spacing: 0.015em
     font-size: 1.05rem
     margin-bottom: 1.6rem // Vertical rhythm
-
-.tech-footer
-  margin-top: 40px
-  padding-top: 20px
-  border-top: 1px solid $border-subtle
-  display: flex
-  gap: 10px
-  flex-wrap: wrap
-  opacity: 0.45
-  font-size: 0.8rem
 
 // --- HOME PAGE (MINIMAL) ---
 .mini-article-row
@@ -879,14 +859,7 @@ body
     border-top: 1px dashed $border-dark
     margin-top: 3rem
     padding-top: 1.6rem
-    .return-link
-      color: $gold-accent
-      text-decoration: none
-      font-family: $font-main
-      font-size: 0.85rem
-      letter-spacing: 1px
-      &:hover
-        text-decoration: underline
+
 
 .golden-header
   font-family: $font-main
@@ -913,16 +886,7 @@ body
   display: inline-flex
   align-items: center
   justify-content: center
-
-  .pulse-icon
-    color: $gold-accent // Your burnished gold token
-    width: 20px
-    height: 20px
-    opacity: 0.8
-    transition: opacity 0.15s ease
-
   &:hover 
-
     // 1. The Tooltip Text Box
     &::before
       content: attr(data-tooltip)
@@ -1171,6 +1135,7 @@ body
   align-items: center
   justify-content: center
   z-index: 300
+  animation: slideUp 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards
 
 @keyframes fadeIn
   from
@@ -1282,6 +1247,8 @@ body
   overflow: hidden 
   display: flex
   background: $bg-deep
+  //min-width: 0
+  min-height: 400px
 
 
 // --- TEXT BODY LAYER WITH SIGNATURE GOLDEN SCROLLBAR ---
@@ -1295,8 +1262,28 @@ body
   line-height: 1.75
   color: $text-main
   max-width: 75ch
+  h1
+     font-size: 2rem
+     font-family: $font-mono
+     color: $gold-accent
+ 
+  h2
+    font-size: 1.6rem
+    border-bottom: 1px solid $alpha-gold-20
+    padding-bottom: 0.5em
+ 
+  p
+    margin-bottom: 1em
+    color: $text-muted
+ 
+  a
+    color: $gold-accent
+    text-decoration: none
+    transition: all $transition-primary
+    &:hover
+      text-decoration: underline
+      filter: brightness(1.2)
 
-  // Custom Inline Code Telemetry Mirroring
   code
     font-family: $font-mono
     font-size: 0.9em
@@ -1306,6 +1293,28 @@ body
     border-radius: 4px
     color: #FFFFFF
     overflow-x: auto
+  pre
+    border-left: 3px solid $gold-accent // Adds a clean vertical anchor line
+    background: linear-gradient(rgba($bg-darker, 1) 50%, rgba(mix($bg-darker, $bg-deep), 0.5) 50%)
+    background-size: 100% 4rem // Creates a subtle, lightweight terminal line-row effect
+    line-height: 2rem
+    background: $bg-darker
+    padding: 15px
+    margin: 1em 0
+    max-width: 100% !important
+    min-width: 0 !important
+    
+    // Allow horizontal scrolling on the code snippet ONLY
+    overflow-x: auto !important
+    white-space: pre !important
+    word-break: normal !important
+    
+    // Optional: Style a minimal scrollbar so it fits the dark theme
+    &::-webkit-scrollbar
+      height: 6px
+    &::-webkit-scrollbar-thumb
+      background: $border-subtle
+      border-radius: 3px
 
   // THE REPLICATED REFINED GOLD SCROLLBAR ENGINE
   &::-webkit-scrollbar
@@ -1382,15 +1391,22 @@ body
 
   pre
     background: $bg-darker
-    border: 1px solid $border-subtle
-    border-radius: 4px
     padding: 15px
-    overflow-x: auto
     margin: 1em 0
-    max-width: 100%
-    overflow-x: auto
-    white-space: pre-wrap
-    word-break: break-word
+    max-width: 100% !important
+    min-width: 0 !important
+    
+    // Allow horizontal scrolling on the code snippet ONLY
+    overflow-x: auto !important
+    white-space: pre !important
+    word-break: normal !important
+    
+    // Optional: Style a minimal scrollbar so it fits the dark theme
+    &::-webkit-scrollbar
+      height: 6px
+    &::-webkit-scrollbar-thumb
+      background: $border-subtle
+      border-radius: 3px
 
     code
       background: transparent
