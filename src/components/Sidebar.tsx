@@ -14,7 +14,7 @@ export default function Sidebar({ currentRoute }: Readonly<{ currentRoute: strin
   return (
     <aside className="sidebar">
       <div className="brand-logo">Liukonen.dev</div>
-      <img src="/profile_image.webp" alt="Luke Liukonen" className="profile-img" fetchpriority="high" decoding="async" />
+      <img src="/profile_image.webp" alt="Luke Liukonen" className="profile-img" fetchpriority="high" loading="eager" />
       
       <div className="hero-intro">
         <h1>Luke Liukonen</h1>
