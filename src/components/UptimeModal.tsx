@@ -77,7 +77,8 @@ export default function UptimeModal() {
           freshDataAcquired = true
         }
       } catch (ex) {
-        setError(ex.message || "Failed to load uptime metrics")
+        const err = ex instanceof Error ? ex : new Error(String(ex))
+        setError(err.message || "Failed to load uptime metrics")
       }
     }
   }
@@ -110,7 +111,8 @@ export default function UptimeModal() {
         setIsRevalidating(false)
       }
     } catch (err) {
-      setError(err.message || "Failed to load uptime metrics")
+      const errObject = err instanceof Error ? err : new Error(String(err))
+      setError(errObject.message || "Failed to load uptime metrics")
       setIsRevalidating(false)
     } finally {
       setLoading(false)
