@@ -40,4 +40,4 @@ async function runReadOnlyPurge() {
   }
 }
 
-runReadOnlyPurge();
+await runReadOnlyPurge();
