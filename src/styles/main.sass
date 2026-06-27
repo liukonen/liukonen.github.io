@@ -34,6 +34,21 @@
   font-style: normal
   font-display: swap
 
+  // --- FLUID SCALING ENGINE ---
+// Define your core viewport anchors
+$fluid-min-width: 375    // Mobile breakpoint (px)
+$fluid-max-width: 1400   // Desktop max-width content shell (px)
+
+// Pure functional function to calculate the ideal clamp string
+@function fluid($min-px, $max-px)
+  $min-rem: calc($min-px / 16)
+  $max-rem: calc($max-px / 16)
+  
+  $slope: calc(($max-px - $min-px) / ($fluid-max-width - $fluid-min-width))
+  $y-axis-intersection: -1 * $fluid-min-width * $slope + $min-px
+  $y-axis-intersection-rem: calc($y-axis-intersection / 16)
+  
+  @return clamp(#{$min-rem}rem, #{$y-axis-intersection-rem}rem + #{$slope * 100}vw, #{$max-rem}rem)
 
 // --- COLOR PALETTE (Cool-Neutral + Metallic Gold) ---
 // CORE
@@ -45,6 +60,7 @@ $bg-darker: $bg-deep      // Alias to avoid overly-warm blacks
 $text-main: #E6E6E6     // Primary text (high legibility)
 $text-muted: #C7CBD1    // Neutral-cool muted text (removes sepia tone)
 $text-tertiary: #7A7A7A // Low-contrast tertiary text
+$text-prose: #d4d4d8
 
 // Accents (Metallic Gold System)
 $gold-accent: #D4A857   // Primary metallic gold
@@ -75,6 +91,19 @@ $alpha-gold-code: rgba($gold-accent, 0.8)
 $spotlight-color: $alpha-gold-10
 $max-width-content: 1100px
 
+
+// --- REFINED FLUID VARIABLES ---
+$max-width-content: 1100px
+
+// Typography Hierarchy 
+$font-size-h1: fluid(28, 48)          // Smoothly scales from ~1.75rem to 3rem
+$font-size-body: fluid(15, 16)        // Gentle scale step for optimal block reading
+$font-size-card-title: fluid(18, 20)  // Balances small panels against spacious monitors
+
+// Global Layout Spacing Tokens
+$space-section-gap: fluid(50, 112)    // Replaces static 7rem blocks with a rolling rhythm
+$space-card-padding: fluid(24, 35)   // Replaces hard 35px padding in grids
+
 // --- THE BRIDGE ---
 // This makes these variables available to your TSX style props
 :root
@@ -101,9 +130,10 @@ body
   // The global drafting paper grid
   background-image: radial-gradient($bg-surface 1px, transparent 1px)
   background-size: 30px 30px
-  line-height: 1.7
-  letter-spacing: 0.015em
+  line-height: 1.75
+  letter-spacing: 0.01em
   overflow-x: hidden
+  -webkit-font-smoothing: antialiased
 // focus styles
 *:focus
   outline: none
@@ -128,7 +158,7 @@ textarea:focus-visible
   height: 100vh
   position: sticky
   top: 0
-  padding: 60px 50px
+  padding: 60px fluid(24, 50)
   display: flex
   flex-direction: column
   border-right: 1px solid $alpha-gold-05
@@ -165,18 +195,19 @@ textarea:focus-visible
 
 
   h1
-    font-size: 1.8rem
-    letter-spacing: -1px
-    line-height: 1.1
+    font-size: clamp(1.6rem, 4vw, 2rem)
+    letter-spacing: -0.03em
+    line-height: 1.15
     font-family: $font-main
+    font-weight: 600
 
   .subtitle
     color: $gold-accent
-    font-family: $font-main
-    font-size: 0.75rem
-    margin-top: 8px
+    font-family: $font-mono
+    font-size: 0.7rem
+    margin-top: 10px
     text-transform: uppercase
-    letter-spacing: 1px
+    letter-spacing: 0.012em
 
 // --- NAVIGATION ---
 .nav-links
@@ -271,7 +302,7 @@ textarea:focus-visible
   font-family: $font-main
   font-size: 0.8rem
   color: $brass-muted
-  margin-bottom: 45px
+  margin-bottom: fluid(24, 45)
 
   a
     color: inherit
@@ -291,19 +322,19 @@ textarea:focus-visible
   color: $gold-accent
   letter-spacing: 5px
   font-size: 0.7rem
-  margin-bottom: 35px
+  margin-bottom: fluid(18, 35)
   display: block
   text-transform: uppercase
 
 .grid-2
   display: grid
   grid-template-columns: 1fr 1fr
-  gap: 24px
+  gap: fluid(16, 24)
 
 .grid-3 
   display: grid
   grid-template-columns: repeat(3, 1fr)
-  gap: 24px
+  gap: fluid(16, 24)
 
 .bento
   background: $bg-surface
@@ -348,7 +379,7 @@ div.bento
 
 .card
   background: $bg-surface
-  padding: 35px
+  padding: $space-card-padding
   border-radius: 4px
   border: 1px solid $border-subtle
   cursor: pointer
@@ -357,6 +388,7 @@ div.bento
   position: relative
   overflow: hidden
   margin-bottom: 3rem
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease
   &::before
     content: ''
     position: absolute
@@ -393,10 +425,10 @@ div.bento
   // The HOVER State: rewarding interaction with a depth change and a brighter blueprint
   &:hover
     transition: $transition-primary
-    transform: translateY(-5px)
+    transform: translateY(-4px)
     border-color: $alpha-gold-30
-    background-color: color-mix($bg-surface, white 1.5%)
-    box-shadow: 0 10px 40px rgba(0,0,0,0.4)
+    background-color: color-mix($bg-surface, #fff 1%) // Cleaner contrast mixing
+    box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5)
 
     // Make icon brighter on hover so the card looks 'active'
     &::before
@@ -434,8 +466,8 @@ div.bento
 // --- PROFESSIONAL ERAS ---
 .era
   display: flex
-  gap: 40px
-  margin-bottom: 45px
+  gap: fluid(20, 40)
+  margin-bottom: fluid(24, 45)
 
 
 // --- THEATRICAL ERA CONTAINER (STAGGERED REVEAL) ---
@@ -479,16 +511,16 @@ div.bento
     color: $bg-deep
 
 .top-buffer-10
-  margin-top: 10px
+  margin-top: fluid(8, 10)
 .top-buffer-20
-  margin-top: 20px
+  margin-top: fluid(12, 20)
 .top-buffer-40
-  margin-top: 40px
+  margin-top: fluid(20, 40)
 
 .tag-wrapper
   display: flex
   flex-wrap: wrap
-  margin-top: 20px
+  margin-top: fluid(12, 20)
   gap: 8px
 
 .no-decor
@@ -499,27 +531,26 @@ div.bento
 
 .tag
   font-family: $font-mono
-  font-size: 0.7rem
+  font-size: 0.65rem
   font-weight: 600
   text-transform: uppercase
-  letter-spacing: 0.05em
-  padding: 3px 8px
-  border-radius: 2px
-  background: rgba($gold-accent, 0.03)
-  border: 1px solid rgba($gold-accent, 0.45)
+  letter-spacing: 0.06em
+  padding: 4px 8px
+  border-radius: 3px
+  background: rgba($gold-accent, 0.04)
+  border: 1px solid rgba($gold-accent, 0.2)
   color: #ffdfa9
   display: inline-block
   line-height: 1
   margin-right: 6px
   margin-bottom: 6px
-  
-  // Smooth, intentional transit path for properties that change
-  transition: background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s cubic-bezier(0.16, 1, 0.3, 1)
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1)
 
   &:hover
     background: rgba($gold-accent, 0.12)       // Double the background tint density
-    border-color: rgba($gold-accent, 0.8)     // Hard-flash the border closer to full opacity
+    border-color: rgba($gold-accent, 0.7)     
     color: #ffffff                            // Snap text to pure luminescent white
+    transform: translateY(-1px)     // Tactile response
 
 // --- FOOTER ---
 footer
@@ -537,7 +568,7 @@ footer
 header
   @extend .default-margin
   h1
-    font-size: 3rem
+    font-size: $font-size-h1
     font-weight: 600
     font-family: $font-main
   p
@@ -614,7 +645,7 @@ html
   // Transitions the opacity when the route changes
   animation: viewFadeIn 0.3s ease-out
   flex: 1
-  padding: 8rem
+  padding: fluid(32,128)//8rem
   position: relative
 
 @keyframes viewFadeIn
@@ -711,7 +742,7 @@ body
 
 .interactive-link
   position: relative
-  display: inline-flex // Helps with vertical alignment in rows
+  display: inline-flex 
   flex-direction: column
   align-items: center
   color: $text-main
@@ -719,8 +750,6 @@ body
   transition: color $transition-primary, transform $transition-primary
   font-weight: 400
 
-  // The Invisible "Spacer" Strategy
-  // We use a pseudo-element to "hold the space" for the bold version
   &::before
     display: block
     content: attr(data-text)
@@ -734,8 +763,7 @@ body
     color: $gold-accent
     transform: translateY(-3px)
     font-weight: 700
-    // Optional: very faint glow that works on dark backgrounds
-    text-shadow: 0 0 15 px rgba(212, 175, 55, 0.15)
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.15)
 
   // Underline logic
   &::after
@@ -800,11 +828,11 @@ body
   .tech-specs
     display: grid
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
-    gap: 1.6rem
+    gap: fluid(16, 24)
     background: rgba(255, 215, 0, 0.03)
     border: 1px solid $border-dark
-    padding: 1.6rem
-    margin-bottom: 3rem
+    padding: fluid(16, 24)
+    margin-bottom: fluid(24, 48)
     border-radius: 4px
 
     .spec
@@ -819,10 +847,10 @@ body
 
   .technical-body
     h2
-      font-size: 1.6rem
+      font-size: fluid(22, 26)
       border-left: 3px solid $gold-accent
       padding-left: 1rem
-      margin: 3rem 0 1.6rem
+      margin: 3rem 0 fluid(22, 26)
       color: $text-main
       text-transform: uppercase
       letter-spacing: 1px
@@ -1169,7 +1197,7 @@ body
   justify-content: space-between
   align-items: center
   padding: 20px 30px
-  border-b: 1px solid $border-subtle
+  border-bottom: 1px solid $border-subtle
   background: #0E0E10
 
   h3
@@ -1254,26 +1282,36 @@ body
 .link-modal-body
   flex: 1
   overflow-y: auto
-  padding: 30px
+  padding: fluid(24, 45)
   width: 100%
   margin: 0 auto // Keeps the 64ch column perfectly pinned to the absolute center of the viewport
-  font-size: 1rem
+  font-size: $font-size-body
   line-height: 1.75
   color: $text-main
-  max-width: 75ch
+  max-width: 70ch
   h1
-     font-size: 2rem
-     font-family: $font-mono
-     color: $gold-accent
+     font-size: $font-size-h1
+     font-family: $font-main
+     //color: $gold-accent
+     font-weight: 700
+     letter-spacing: -0.02em
+     color: $text-main
+     margin-bottom: 1.5rem
  
   h2
-    font-size: 1.6rem
-    border-bottom: 1px solid $alpha-gold-20
-    padding-bottom: 0.5em
- 
-  p
-    margin-bottom: 1em
-    color: $text-muted
+    font-size: 1.35rem
+    font-family: $font-main // CRITICAL: Maintain unified font structure
+    font-weight: 600
+    color: $gold-accent
+    border-bottom: 1px solid $border-subtle // Use clean dashboard token borders
+    padding-bottom: 0.4em
+    margin-top: 2rem
+    margin-bottom: 1rem
+  p, li, blockquote
+    color: $text-prose
+    font-family: $font-main
+    line-height: 1.75
+    margin-bottom: 1.25rem
  
   a
     color: $gold-accent
@@ -1285,10 +1323,10 @@ body
 
   code
     font-family: $font-mono
-    font-size: 0.9em
-    background: rgba($bg-deep, 0.8)
-    padding: 2px 6px
-    border: 1px solid rgba($border-subtle, 0.5)
+    font-size: 0.85em
+    background: rgba($bg-surface, 0.6)
+    padding: 3px 6px
+    border: 1px solid $border-subtle //1px solid rgba($border-subtle, 0.5)
     border-radius: 4px
     color: #FFFFFF
     overflow-x: auto
@@ -1340,7 +1378,7 @@ body
   gap: 8px
   padding: 12px 30px
   background: #0E0E10
-  border-t: 1px solid $border-subtle
+  border-top: 1px solid $border-subtle
   font-size: 9px
   color: rgba($text-muted, 0.5)
   letter-spacing: 0.04em
@@ -1594,15 +1632,15 @@ body
 .project-meta-top
   display: flex
   flex-direction: column
-  gap: 1.5rem
-  padding: 1.5rem
+  gap: fluid(16, 24)
+  padding: fluid(16, 24)
   border: 1px solid $border-dark
   background: $bg-surface
-  margin: 1.5rem 0
+  margin: fluid(16, 24) 0
   
   @media (min-width: $max-width-content)
     flex-direction: row
-    gap: 3rem
+    gap: fluid(24, 48)
 
   .meta-item
     font-size: 14px
@@ -1617,6 +1655,7 @@ body
 // --- GLOBAL TEXT WIDTH CONTROL ---
 p, .era-paragraph, .markdown-engine p, .technical-body p
   max-width: 65ch
+  margin-bottom: 1.75rem
 
 /* ============================================================
    UPTIME MODAL — FULLY ISOLATED STYLES
@@ -1670,7 +1709,7 @@ $red-beacon: #EF4444
   justify-content: space-between
   align-items: center
   padding: 20px 24px
-  border-b: 1px solid $border-subtle
+  border-bottom: 1px solid $border-subtle
   background: #0E0E10
 
   .header-meta
@@ -1733,7 +1772,7 @@ $red-beacon: #EF4444
     justify-content: space-between
     padding: 14px 16px 12px 16px
     border-top: 1px solid rgba($gold-accent, 0.8) // Distinct structural gold frame anchor line
-    border-b: 1px solid $border-subtle
+    border-bottom: 1px solid $border-subtle
     background: rgba($bg-surface, 0.3)
     
     .col-lbl
@@ -1766,7 +1805,7 @@ $red-beacon: #EF4444
     position: relative
     display: flex
     background: $bg-surface
-    border-b: 1px solid $bg-deep
+    border-bottom: 1px solid $bg-deep
     transition: background 0.12s ease
     
     &:hover
@@ -1852,7 +1891,68 @@ $red-beacon: #EF4444
   justify-content: space-between
   padding: 14px 24px
   background: #0E0E10
-  border-t: 1px solid $border-subtle
+  border-top: 1px solid $border-subtle
   font-size: 9px
   color: $text-muted
   letter-spacing: 0.04em
+
+// ============================================================
+// 6-SECOND INTRO-ONLY HEARTBEAT ENGINE (EXPLICIT COLOR FIX)
+// ============================================================
+@keyframes telemetry-intro-six
+  0%
+    transform: scale(1)
+    opacity: 0.35
+    color: $text-main // Force your base icon color instantly on mount
+  
+  // Pulse 1
+  10%
+    transform: scale(1.15)
+    opacity: 1
+    color: $green-beacon
+    filter: drop-shadow(0 0 4px rgba($green-beacon, 0.6))
+  20%
+    transform: scale(1)
+    opacity: 0.35
+    color: $text-main
+    filter: drop-shadow(0 0 0px rgba($green-beacon, 0))
+  
+  // Pulse 2 
+  30%
+    transform: scale(1.15)
+    opacity: 1
+    color: $green-beacon
+    filter: drop-shadow(0 0 4px rgba($green-beacon, 0.6))
+  40%
+    transform: scale(1)
+    opacity: 0.35
+    color: $text-main
+    filter: drop-shadow(0 0 0px rgba($green-beacon, 0))
+    
+  // Pulse 3
+  50%
+    transform: scale(1.15)
+    opacity: 1
+    color: $green-beacon
+    filter: drop-shadow(0 0 4px rgba($green-beacon, 0.6))
+
+  // HARD LANDING: Matches the exact opacity and hex color of Github/LinkedIn
+  60%, 100%
+    transform: scale(1)
+    color: $text-main 
+    filter: drop-shadow(0 0 0px rgba($green-beacon, 0))
+
+button.hud-status-node
+  background: none
+  border: none
+  padding: 0
+  cursor: pointer
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  
+  svg
+    // 'forwards' ensures it never jumps back to frame 0%
+    animation: telemetry-intro-six 6s ease-in-out forwards
+    will-change: transform, opacity, filter
+    transition: color 0.3s ease-in-out
