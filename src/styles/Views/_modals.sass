@@ -1,0 +1,479 @@
+@use '../shared' as *
+
+// ==========================================================================
+// LINK OVERLAY MODAL
+// ==========================================================================
+
+
+
+
+
+
+
+.link-modal-title-link
+  @extend %interactive-link-base
+//   @extend %flex-1
+//   @extend %cursor-pointer
+//   @extend %transition-primary
+//   text-decoration: none
+//   color: inherit
+
+//   h3
+//     margin: 0
+//     color: $text-main
+//     font-size: 1.3rem
+//     font-weight: 700
+
+//   &:hover h3
+//     color: $gold-accent
+//     text-decoration: underline
+
+//   @extend %bg-none
+//   @extend %border-none
+//   @extend %font-size-meta
+//   @extend %cursor-pointer
+//   color: $text-muted
+//   padding: 4px
+//   transition: color 0.12s ease
+//   &:hover
+//     color: #FFFFFF
+
+// ==========================================================================
+// LINK OVERLAY MODAL (Refactored to match Telemetry Blueprint)
+// ==========================================================================
+
+.link-modal-body
+  @extend %flex-1
+  @extend %overflow-y-auto
+  @extend %w-full
+  @extend %m-0-auto
+  @extend %max-w-prose
+  padding: fluid(24, 45)
+  font-size: $font-size-body
+  line-height: 1.75
+  color: $text-main
+  h1
+    font-weight: 700
+    letter-spacing: -0.02em
+    color: $text-main
+    margin-bottom: 1.5rem
+    font-size: 2rem
+    font-family: $font-mono
+  h2
+    font-family: $font-main 
+    font-weight: 600
+    color: $gold-accent
+    margin-top: 2rem
+    margin-bottom: 1rem
+    font-size: 1.6rem
+    border-bottom: 1px solid $alpha-gold-20
+    padding-bottom: 0.5em    
+  p, li, blockquote
+    color: $text-prose
+    font-family: $font-main
+    line-height: 1.75
+    margin-bottom: 1.25rem
+  a
+    @extend %text-gold-color
+    @extend %transition-primary
+    text-decoration: none
+    &:hover
+      text-decoration: underline
+      filter: brightness(1.2)
+  code
+    @extend %font-mono-family
+    overflow-x: auto
+    background: $alpha-gold-05
+    border: 1px solid $alpha-gold-10
+    padding: 2px 6px
+    border-radius: 3px
+    font-family: $font-mono
+    font-size: 0.9em
+    color: $alpha-gold-code
+ 
+  pre
+    @extend %overflow-y-auto
+    border-left: 3px solid $gold-accent 
+    line-height: 2rem
+    background: $bg-darker
+    padding: 15px
+    margin: 1em 0
+    max-width: 100% !important
+    min-width: 0 !important
+    @extend %white-space-pre
+    @extend %word-break-normal
+ 
+    &::-webkit-scrollbar
+      height: 6px
+    &::-webkit-scrollbar-thumb
+      background: $border-subtle
+      border-radius: 3px
+  // Dev.to HTML Element Pipeline Overrides
+  h1, h2, h3, h4
+    color: $text-main
+    margin-top: 1.6em
+    margin-bottom: 0.5em
+    font-weight: 600
+  p
+    margin-bottom: 1em
+    color: $text-muted
+  pre code
+    background: transparent
+    border: none
+    padding: 0
+    color: $text-muted
+  blockquote
+    border-left: 3px solid $gold-accent
+    padding-left: 1em
+    //margin-left: 0
+    margin: 1.6em 0
+    opacity: 0.85
+  ul, ol
+    margin-left: 1.6em
+    margin-bottom: 1em
+    li
+      margin-bottom: 0.5em
+  img
+    max-width: 100%
+    height: auto
+    border-radius: 4px
+    margin: 1.6em 0
+    border: 1px solid $border-subtle
+  table
+    @extend %w-full
+    @extend %border-collapse
+    margin: 1.6em 0
+    th, td
+      padding: 0.75em
+      @extend %text-left
+      border: 1px solid $border-subtle
+    th
+      background: $alpha-gold-05
+      color: $text-main
+
+.link-modal-loading, .link-modal-error
+  @extend %w-full
+  @extend %text-center
+  @extend %font-size-nano
+  @extend %anim-system-pulse
+  padding: 60px 0
+  color: rgba($text-muted, 0.6)
+
+.link-modal-error
+  @extend %d-flex
+  @extend %justify-center
+  @extend %h-screen
+  color: #ff6b6b
+  font-size: 1.1rem
+.link-modal-overlay
+  @extend %pos-fixed
+  @extend %inset-0
+  @extend %w-screen
+  @extend %h-screen-fluid
+  @extend %d-flex
+  @extend %justify-center
+  @extend %z-modal-bg
+  @extend %anim-slide-up
+  background: rgba(11, 11, 12, 0.88) // Matched to telemetry opacity
+  backdrop-filter: blur(4px)
+  padding: 2rem
+
+.link-modal-container
+  @extend %w-full
+  @extend %d-flex
+  @extend %flex-col
+  @extend %overflow-hidden // Force containment like telemetry
+  @extend %anim-modal-boot
+  max-width: 820px // Matched exact width
+  max-height: 85vh
+  background: $bg-deep
+  border: 1px solid $border-subtle
+  border-radius: 6px
+  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.7) // Added telemetry deep shadow
+
+.link-modal-header
+  @extend %d-flex
+  @extend %justify-between
+  padding: 20px 24px // Exact Telemetry HUD Header Padding
+  border-bottom: 1px solid $border-subtle
+  background: #0E0E10
+  gap: 16px
+
+  .header-meta
+    @extend %d-flex
+    @extend %flex-col
+    @extend %flex-1
+    //@extend %min-w-0
+    gap: 4px
+
+    h2
+      @extend %font-mono-family
+      @extend %fw-700
+      font-size: 13px // Forced to crisp HUD tracking matrix size
+      color: $text-main
+      margin: 0
+      text-transform: uppercase
+      line-height: 1.4
+
+    .header-tags
+      @extend %d-flex
+      @extend %font-size-micro
+      gap: 8px
+      color: $text-muted
+      font-weight: 600
+      
+      .tag-separator
+        color: rgba($text-muted, 0.3)
+
+  .link-modal-close
+    @extend %bg-none
+    @extend %border-none
+    @extend %font-size-meta
+    @extend %cursor-pointer
+    @extend %d-flex
+    @extend %align-center
+    gap: 8px
+    color: $text-muted
+    padding: 4px
+    transition: color 0.12s ease
+    flex-shrink: 0
+    
+    .kbd-hint
+      @extend %font-size-micro
+      border: 1px solid rgba($border-subtle, 0.8)
+      padding: 1px 4px
+      border-radius: 3px
+      opacity: 0
+      transform: translateX(2px)
+      transition: all 0.15s ease
+      
+    &:hover 
+      color: #FFFFFF
+      .kbd-hint
+        opacity: 1
+        transform: translateX(0)
+
+// High-Contrast Framing Accent Line
+.link-modal-frame-line
+  width: 100%
+  height: 1px
+  background: rgba($gold-accent, 0.8)
+  border-bottom: 1px solid $border-subtle
+
+.link-modal-content-scrollzone
+  @extend %flex-1
+  @extend %overflow-y-auto
+  @extend %min-h-0
+  background: $bg-deep
+  
+  &::-webkit-scrollbar
+    width: 6px
+  &::-webkit-scrollbar-track
+    background: transparent
+  &::-webkit-scrollbar-thumb
+    background: rgba(229, 169, 60, 0.2)
+    border-radius: 4px
+    &:hover
+      background: $gold-accent
+
+.link-modal-footer
+  @extend %d-flex
+  @extend %justify-between
+  @extend %font-size-micro
+  @extend %ls-shout
+  padding: 14px 24px // Mirrored exactly to telemetry layout footer
+  background: #0E0E10
+  border-top: 1px solid $border-subtle
+  color: $text-muted
+  
+  .footer-right
+    @extend %d-flex
+    gap: 8px
+    .tag-separator
+      color: rgba($text-muted, 0.3)
+
+// ==========================================================================
+// UPTIME / TELEMETRY MODAL
+// ==========================================================================
+.telemetry-overlay
+  @extend %pos-fixed
+  @extend %inset-0
+  @extend %w-screen
+  @extend %h-screen-fluid
+  @extend %d-flex
+  @extend %justify-center
+  @extend %z-modal-telemetry
+  background: rgba(11, 11, 12, 0.88) 
+  backdrop-filter: blur(4px)
+
+.telemetry-modal
+  @extend %w-full
+  @extend %d-flex
+  @extend %flex-col
+  @extend %overflow-hidden
+  max-width: 820px 
+  background: $bg-deep
+  border: 1px solid $border-subtle
+  border-radius: 6px
+  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.7)
+
+.telemetry-header
+  @extend %d-flex
+  @extend %justify-between
+  @extend %justify-center
+  padding: 20px 24px
+  border-bottom: 1px solid $border-subtle
+  background: #0E0E10
+
+  .header-meta
+    @extend %d-flex
+    @extend %flex-col
+    gap: 4px
+    h2
+      @extend %font-mono-family
+      @extend %fw-700
+      @extend %ls-telemetry
+      font-size: 13px
+      color: $text-main
+      margin: 0
+    .header-tags
+      @extend %d-flex
+      @extend %justify-center
+      @extend %font-size-micro
+      gap: 8px
+      color: $text-muted
+      font-weight: 600
+      .tag-separator
+        color: rgba($text-muted, 0.3)
+
+  .close-btn
+    @extend %bg-none
+    @extend %border-none
+    @extend %font-size-meta
+    @extend %cursor-pointer
+    color: $text-muted
+    padding: 4px
+    transition: color 0.12s ease
+    &:hover
+      color: #FFFFFF
+
+.telemetry-content
+  padding: 24px
+  background: $bg-deep
+
+.telemetry-status-message
+  @extend %font-size-nano
+  @extend %text-center
+  padding: 40px 0
+  color: $text-muted
+  &.error
+    color: $red-beacon
+
+.telemetry-sheet
+  @extend %d-flex
+  @extend %flex-col
+  @extend %w-full
+
+  .sheet-header
+    @extend %d-flex
+    @extend %justify-between
+    padding: 14px 16px 12px 16px
+    border-top: 1px solid rgba($gold-accent, 0.8) 
+    border-bottom: 1px solid $border-subtle
+    background: rgba($bg-surface, 0.3)
+    
+    .col-lbl
+      @extend %font-size-micro
+      @extend %fw-600
+      @extend %ls-shout
+      color: $text-muted
+    .col-node
+      @extend %flex-1
+    .metrics-lbl-group
+      @extend %d-flex
+      @extend %text-right
+      gap: 36px
+      .col-lbl
+        width: 55px
+      .col-latency
+        width: 65px
+      .col-pulse
+        width: 45px
+        @extend %text-center
+
+  .sheet-body
+    @extend %d-flex
+    @extend %flex-col
+
+  .sheet-row
+    @extend %pos-relative
+    @extend %d-flex
+    @extend %bg-surface
+    border-bottom: 1px solid $bg-deep
+    transition: background 0.12s ease
+    &:hover
+      background: #141417
+
+    .row-beacon
+      @extend %pos-absolute
+      @extend %inset-0
+      bottom: 0
+      width: 2px
+      &.online
+        background: rgba($green-beacon, 0.4)
+      &.offline
+        background: $red-beacon
+
+    .row-content
+      @extend %flex-1
+      @extend %d-flex
+      @extend %justify-between
+      @extend %justify-center
+      padding: 14px 16px 14px 20px
+
+      .node-name
+        @extend %font-size-nano
+        @extend %fw-600
+        @extend %ls-meta
+        color: $text-main
+
+      .node-metrics
+        @extend %d-flex
+        @extend %justify-center
+        @extend %text-right
+        gap: 36px
+        .metric-val
+          @extend %font-size-nano
+          @extend %fw-600
+          color: rgba($text-main, 0.75)
+          width: 55px
+        .latency-val
+          width: 65px
+          .unit
+            @extend %font-size-micro
+            color: $text-muted
+            margin-left: 1px
+        .col-pulse-container
+          width: 45px
+          display: inline-flex
+          @extend %justify-center
+
+        .pulse-vector
+          width: 15px
+          height: 15px
+          &.active
+            @extend %text-gold-color
+            filter: drop-shadow(0 0 4px rgba($gold-accent, 0.3))
+            animation: telemetry-pulse-glow 2.5s infinite ease-in-out
+          &.failed
+            color: $red-beacon
+
+.telemetry-footer
+  @extend %d-flex
+  @extend %justify-between
+  @extend %font-size-micro
+  @extend %ls-shout
+  padding: 14px 24px
+  background: #0E0E10
+  border-top: 1px solid $border-subtle
+  color: $text-muted

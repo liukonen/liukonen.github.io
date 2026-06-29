@@ -1,0 +1,58 @@
+@use '../shared' as *
+
+
+/// ==========================================================================
+/// Element SURFACES
+/// ==========================================================================
+
+
+/// @surface gold-spacer
+/// @description gold space for separating sections
+/// @usage Home
+.gold-spacer
+  height: 1px
+  @extend %w-full
+  background: $gold-accent
+  margin: 3rem 0
+
+/// @surface project-meta-top
+/// @description Shows Role and stack in grey box with gold boarder
+/// @usage ShpwcaseDetail
+.project-meta-top
+  @extend %d-flex
+  @extend %flex-col
+  gap: fluid(16, 24)
+  padding: fluid(16, 24)
+  border: 1px solid $border-dark
+  background: $bg-surface
+  margin: fluid(16, 24) 0
+  @media (min-width: $max-width-content)
+    flex-direction: row // Kept as direct properties to comply with cross-media rules
+    gap: fluid(24, 48)
+  .meta-item
+    font-size: 14px
+    color: $text-main
+    strong
+      color: $gold-accent 
+      margin-right: 0.5rem
+      text-transform: uppercase
+
+/// @surface project-actions
+/// @description Under the open source title, we need to display websites, tags and the like
+/// @usage LabDetail
+.project-actions
+  border-top: 1px solid rgba(255, 255, 255, 0.05)
+  padding-top: 20px
+
+/// @surface action-link
+/// @description for project actions, this formats the links
+/// @usage LabDetail
+.action-link
+  @extend %action-link-base
+  &:hover
+    transform: translateY(-2px)
+    filter: brightness(1.2)
+    text-decoration: underline
+  .action-prefix
+    opacity: 0.4
+    color: $text-main

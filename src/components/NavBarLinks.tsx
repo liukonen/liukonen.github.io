@@ -5,7 +5,7 @@ export default function NavLinks({ onClose }: { readonly onClose: () => void }) 
     <div className="nav-links show">
         <a href="#/" onClick={onClose}>— / HOME</a>
       {portfolioData.sidebar.map((item) => (
-        <a href={item.path} onClick={onClose}  className={'top-buffer-40'}>
+        <a href={item.path} onClick={onClose}  className={'mt-4'}>
           — / {item.id}
         </a>
       ))}

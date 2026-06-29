@@ -98,3 +98,6 @@ dist-ssr
 *.sw?
 src/styles/*.css
 src/styles/*.css.map
+
+*storybook.log
+storybook-static

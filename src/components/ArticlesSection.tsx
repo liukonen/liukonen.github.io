@@ -61,18 +61,19 @@ const ArticleEntry = ({ article, onArticleClick, isMobile }: any) =>
       target={isMobile ? "_blank" : undefined}
       onClick={(e) => onArticleClick(e, article)}
     >
-  <div className="card">
-
-      <span><BoxArrowUpRight /></span>
-         {article.title.length > 80 ? article.title.slice(0, 77) + "..." : article.title}
-      
- 
-      <span className="article-date-mono">
-        {new Date(article.published_at).toLocaleDateString("en-US", {
-          month: "short",
-          day: "2-digit",
-          year: "2-digit"
-        })}
-      </span>
-  </div>
-   </a>
+    <div className="card">
+        <span>
+          <BoxArrowUpRight />
+        </span>
+        <div class="lnk">
+           {article.title.length > 80 ? article.title.slice(0, 77) + "..." : article.title}
+        </div>
+        <span className="article-date-mono">
+          {new Date(article.published_at).toLocaleDateString("en-US", {
+            month: "short",
+            day: "2-digit",
+            year: "2-digit"
+          })}
+        </span>
+      </div>
+     </a>

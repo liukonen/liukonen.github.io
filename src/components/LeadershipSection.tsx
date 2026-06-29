@@ -82,7 +82,7 @@ export const LeadershipSection = () => {
                 class={`card ${activeId === sec.id ? 'active' : ''}`}
                 onClick={() => toggleSection(sec.id)}
               >
-                <h2 class="section-label interactive-link">
+                <h2 class="base-label lnk">
                   {sec.title} 
                   <span class={`caret-indicator ${activeId === sec.id ? 'rotated' : ''}`}>▼</span>
                 </h2>

@@ -1,0 +1,61 @@
+@use '../shared' as *
+
+/// ==========================================================================
+/// CARD SURFACES
+/// ==========================================================================
+
+
+/// @surface Card
+/// @description Standard card for general content
+/// @usage Sections( Article Career, Leaadership, OpenSource) CompanyCard, Archive, Articls, Era, OpenSourceProjects, Showcase, 
+.card
+  @extend %card-core-rules
+
+/// @surface art-card
+/// @description Article Card that supports data in corner
+/// @usage Articles
+.art-card
+  @extend %card-core-rules
+  @extend %pb-4
+  border-bottom: 1px solid $border-subtle
+  
+  h3
+    margin: 10px 0
+    font-size: 1.4rem
+    color: $text-main
+    transition: color $transition-primary
+    &:hover
+      color: $gold-accent    
+  p
+    letter-spacing: 0.015em
+  .date
+    @extend %text-date-meta
+
+/// @surface comp-card
+/// @description Company Card that has second row of content
+/// @usage CompanyCard
+.comp-card
+  @extend %card-core-rules
+  h4
+    @include top-buffer-10    
+  div
+    @extend %mt-3
+
+/// ==========================================================================
+/// BENTO SURFACE
+/// ==========================================================================
+
+/// @section Bento
+/// @description 
+/// @usage about.md (header), Leadership, Showcase Detail, 
+.bento
+  @extend %bento-surface
+  ul
+    @extend %list-reset
+    li
+      @extend %list-item-chevron
+
+/// @section Benta Showcase Section
+/// @description a specialized surface for Benta Showcase items
+/// @usasge Showcase Detail
+.bento-showcase-section

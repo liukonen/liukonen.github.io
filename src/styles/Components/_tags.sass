@@ -1,0 +1,37 @@
+@use '../shared' as *
+
+// ==========================================================================
+// TAG SURFACES
+// ==========================================================================
+
+/// @surface tag-wrapper
+/// @description a container for tags
+/// @usage Tags, LabDetail
+.tag-wrapper
+  @extend %tag-wrapper-base
+
+
+/// @section Tags
+/// @description shared tag control style.
+/// @usage Tags, CareerSecton, CompanyCard, LinkModal, OpensourceSection, UptimeModal, Articles, CaseStudies, LabDetail, OpenSourceprojects, Showcase
+.tag
+  @extend %font-mono-family
+  font-size: 0.65rem
+  font-weight: 600
+  text-transform: uppercase
+  letter-spacing: 0.06em
+  padding: 4px 8px
+  border-radius: 3px
+  background: rgba($gold-accent, 0.04)
+  border: 1px solid rgba($gold-accent, 0.2)
+  color: #ffdfa9
+  display: inline-block
+  line-height: 1
+  margin-right: 6px
+  margin-bottom: 6px
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1)
+  &:hover
+    background: rgba($gold-accent, 0.12)       
+    border-color: rgba($gold-accent, 0.7)     
+    color: #ffffff                            
+    transform: translateY(-1px)

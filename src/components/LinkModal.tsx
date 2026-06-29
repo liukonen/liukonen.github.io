@@ -15,12 +15,10 @@ export default function LinkModal({ articleId, onClose, title, url, onContentLoa
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        onClose()
-      }
+      if (e.key === 'Escape') onClose()
     }
 
-  if (articleId) {
+    if (articleId) {
       document.addEventListener('keydown', handleEscape)
       document.body.style.overflow = 'hidden'
       setLoading(true)
@@ -45,35 +43,77 @@ export default function LinkModal({ articleId, onClose, title, url, onContentLoa
   if (!articleId) return null
 
   const modalContent = (
-    <div className="link-modal-overlay" onClick={onClose}>
-      <div className="link-modal-container" onClick={(e) => e.stopPropagation()}>
+    <div className="link-modal-overlay" style={{ padding: '2rem' }}>
+      <div 
+        className="link-modal-container" 
+        onClick={(e) => e.stopPropagation()}
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          maxHeight: '85vh',
+          overflow: 'hidden'
+        }}
+      >
         
-        {/* Modal Top HUD Navigation */}
-        <div className="link-modal-header">
-          {url ? (
-            <a href={url} target="_blank" rel="noopener noreferrer" className="link-modal-title-link">
-              <h3>{title || 'Article'}</h3>
-            </a>
-          ) : (
-            <h3>{title || 'Article'}</h3>
-          )}
+        {/* Unified Top HUD Navigation Grid */}
+        <div 
+          className="link-modal-header font-mono" 
+          style={{ 
+            display: 'flex', 
+            alignItems: 'flex-start', 
+            justifyContent: 'space-between', 
+            gap: '16px' 
+          }}
+        >
+          <div className="header-meta" style={{ flex: '1', minWidth: '0' }}>
+            {url ? (
+              <a href={url} target="_blank" rel="noopener noreferrer" className="link-modal-title-link" style={{ textDecoration: 'none' }}>
+                <h2 style={{ whiteSpace: 'normal', wordBreak: 'break-word', margin: '0 0 4px 0', lineHeight: '1.4' }}>
+                  {title ? `${title}` : 'DOCUMENT::FETCH_ENTRY'}
+                </h2>
+              </a>
+            ) : (
+              <h2 style={{ whiteSpace: 'normal', wordBreak: 'break-word', margin: '0 0 4px 0', lineHeight: '1.4' }}>
+                {title ? `${title}` : 'DOCUMENT::FETCH_ENTRY'}
+              </h2>
+            )}
+            <div className="header-tags">
+              <span>STACK::FLUENTBIT_LOKI_GRAFANA</span>
+              <span className="tag-separator">|</span>
+              <span>INFRA::RASPBERRY_PI_NODES</span>
+            </div>
+          </div>
+          
           <button 
             className="link-modal-close" 
             onClick={onClose}
             aria-label="Close modal"
+            style={{ flexShrink: 0 }}
           >
-            <span className="kbd-hint font-mono">ESC</span>
+            <span className="kbd-hint">ESC</span>
             <span className="close-icon">×</span>
           </button>
         </div>
 
-        {/* Core Content Body Zone */}
-        <div className="link-modal-content">
+        {/* High-Contrast Framing Line (Matches Telemetry Layout Edge) */}
+        <div className="link-modal-frame-line" /> 
+
+        {/* Core Scrollzone Container - Isolated Vertical Scroll Context */}
+        <div 
+          className="link-modal-content-scrollzone" 
+          style={{ 
+            flex: '1', 
+            overflowY: 'auto', 
+            minHeight: '0',
+            WebkitOverflowScrolling: 'touch'
+          }}
+        >
           {loading ? (
             <div className="link-modal-loading font-mono">LOADING_STREAM_RESOURCES...</div>
           ) : content ? (
             <div 
               className="link-modal-body"
+              style={{ maxWidth: '100%', overflowX: 'hidden' }}
               dangerouslySetInnerHTML={{ __html: content }}
             />
           ) : (
