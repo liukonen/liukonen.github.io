@@ -32,7 +32,7 @@ export default function Labs() {
               // {project.id.toUpperCase()}
             </span>
           </div>
-          <h4><BoxArrowUpRight /> {project.title}</h4>
+          <h4 class="lnk"><BoxArrowUpRight /> {project.title}</h4>
           <p>
             {project.description}
           </p>

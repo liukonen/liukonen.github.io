@@ -49,13 +49,13 @@ export default function LabDetail({ id }: Props) {
           </div>
         )}
 
-        <div className="top-buffer-10">
+        <div className="mt-1">
         <Tags tags={project.tech} />
         </div>
       </header>
 
-      <section className="project-body top-buffer-40">
-        <p className="top-buffer-20" style={{ fontSize: '1.2rem', lineHeight: '1.8', color: 'var(--text-muted)' }}>
+      <section className="project-body mt-4">
+        <p className="mt-2" style={{ fontSize: '1.2rem', lineHeight: '1.8', color: 'var(--text-muted)' }}>
           {project.description}
         </p>
         <section className="technical-body markdown-engine" dangerouslySetInnerHTML={{ __html: projectData.content }} />

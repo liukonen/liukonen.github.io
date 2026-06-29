@@ -28,7 +28,7 @@ export default function OpenSourceProjects() {
               </span>
             </div>
             
-            <h4 style={{ marginTop: '15px' }}>{project.title}</h4>
+            <h4 class="mt-1 lnk">{project.title}</h4>
             <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginTop: '8px' }}>
               {project.description}
             </p>

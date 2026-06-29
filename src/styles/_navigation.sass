@@ -1,0 +1,140 @@
+// ==========================================================================
+// SITE NAVIGATION PLATFORM
+// ==========================================================================
+@use 'shared' as *
+
+// NavBar Objects (MOBILE)
+
+.nav-links
+  @extend %list-reset
+  @extend %font-main-family
+  display: none
+  flex-direction: column
+  padding: 1rem
+  background: $bg-deep
+  &.show
+    @extend %d-flex
+  @media (min-width: $max-width-content)
+    display: flex  // Directly applied to comply with Sass media rules
+    background: transparent
+  @media (max-width: $max-width-content)
+    display: none 
+  li
+    margin: 22px 0
+  a
+    @extend %d-flex
+    @extend %align-center
+    @extend %text-uppercase
+    @extend %transition-primary
+    text-decoration: none
+    color: $text-muted 
+    font-size: 0.75rem
+    letter-spacing: 3px
+    cursor: pointer
+    .line
+      @extend %transition-primary
+      width: 25px
+      height: 1px
+      background: $text-muted
+      margin-right: 15px
+    &:hover, &.active
+      @extend %text-gold-color
+      .line
+        width: 55px
+        background: $gold-accent
+ 
+.nav-container
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  z-index: 1000
+  background: $bg-darker
+  border-bottom: 1px solid $border-dark
+  
+  @media (min-width: $max-width-content)
+    visibility: hidden
+
+.mobile-top-bar
+  @extend %d-flex
+  @extend %align-center
+  justify-content: space-between
+  padding: 1rem
+  
+  @media (min-width: $max-width-content)
+    display: none
+
+.brand
+  @extend %text-gold-color
+  font-weight: bold
+  font-family: monospace
+
+.hamburger
+  @extend %text-gold-color
+  background: none
+  border: none
+  font-family: monospace
+  font-size: 1.2rem
+  cursor: pointer
+
+.mobile-expansion-drawer
+  display: none 
+  width: 100%
+  
+  @media (max-width: $max-width-content)
+    display: block !important
+    visibility: visible !important
+    overflow: visible !important 
+    max-height: 0
+    opacity: 0
+    transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease
+    
+    &.is-open
+      max-height: 2000px !important 
+      opacity: 1 !important
+      padding: 1.5rem 0
+      margin-bottom: 1rem
+
+//Breadcrumbs (Pages)
+.breadcrumb
+  font-family: $font-main
+  font-size: 0.8rem
+  color: $brass-muted
+  margin-bottom: fluid(24, 45)
+  a
+    color: inherit
+    text-decoration: none
+    transition: color $transition-primary
+    &:hover
+      color: $gold-accent
+  .sep
+    margin: 0 10px
+    opacity: 0.5
+.last_Breadcrumb
+  color: $gold-accent
+
+// Social Links (SIDEBAR)
+.social-links
+  margin-top: auto
+  @extend %d-flex
+  @extend %font-main-family
+  gap: 15px
+  font-size: 1.8rem
+  
+  a, button
+    @extend %d-flex
+    @extend %align-center
+    @extend %transition-primary
+    justify-content: center
+    color: $text-muted
+    background: none
+    border: none
+    padding: 0
+    font-size: 1.8rem
+    cursor: pointer
+    
+    &:hover
+      @extend %text-gold-color
+      
+  @media (min-width: $max-width-content)
+    margin-top: auto

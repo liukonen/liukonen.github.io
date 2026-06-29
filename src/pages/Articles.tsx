@@ -46,7 +46,7 @@ export default function Articles() {
       ) : (
         <div className="full-article-grid grid-2">
           {articles.map(article => (
-            <div key={article.id} className="card verbose-article-card">
+            <div key={article.id} className="art-card">
               <a 
                 href={article.url} 
                 target={isMobile ? "_blank" : undefined}
@@ -59,7 +59,7 @@ export default function Articles() {
               <div className="tag-cloud">
                 {article.tag_list.map(tag => <span key={tag} className="tag">#{tag}</span>)}
               </div>
-              <div className="card-meta">
+              <div className="date">
                 {new Date(article.published_at).toLocaleDateString('en-US', { 
                   month: 'short', 
                   day: '2-digit', 

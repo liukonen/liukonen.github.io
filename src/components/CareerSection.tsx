@@ -19,7 +19,7 @@ const EraEntry = ({ era } : any) => (
       <span className={"golden-header"}>
         // {era.company.toUpperCase()}
       </span>
-      <h4 className={"top-buffer-10"}>
+      <h4 className={"mt-1 lnk"}>
         {era.title}
       </h4>
       <p>

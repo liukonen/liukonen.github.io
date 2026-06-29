@@ -16,7 +16,7 @@ export default function Showcase() {
           // {title.toUpperCase()}
         </span>
 
-        <span className="header">{item.impact}</span>
+        <span className="header lnk">{item.impact}</span>
         <p style={{color: 'var(--brass-muted)'}}>Role: {item.role} </p>
         <Tags tags={item.tags} />
       </div>

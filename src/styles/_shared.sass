@@ -1,0 +1,625 @@
+// ==========================================================================
+// 1. FLUID SCALING ENGINE
+// ==========================================================================
+$fluid-min-width: 375    // Mobile breakpoint (px)
+$fluid-max-width: 1400   // Desktop max-width content shell (px)
+
+@function fluid($min-px, $max-px)
+  $min-rem: calc($min-px / 16)
+  $max-rem: calc($max-px / 16)
+  
+  $slope: calc(($max-px - $min-px) / ($fluid-max-width - $fluid-min-width))
+  $y-axis-intersection: -1 * $fluid-min-width * $slope + $min-px
+  $y-axis-intersection-rem: calc($y-axis-intersection / 16)
+  
+  @return clamp(#{$min-rem}rem, #{$y-axis-intersection-rem}rem + #{$slope * 100}vw, #{$max-rem}rem)
+
+// ==========================================================================
+// 2. DESIGN TOKENS & COLOR PALETTE
+// ==========================================================================
+$bg-deep: #0F1012       
+$bg-surface: #1A1A1A    
+$bg-modal: #1A1A1A      
+$bg-darker: $bg-deep      
+
+$text-main: #E6E6E6     
+$text-muted: #C7CBD1    
+$text-tertiary: #7A7A7A 
+$text-prose: #d4d4d8
+
+$gold-accent: #D4A857   
+$gold-hover: #E0B76A    
+$brass-muted: #8C6A32   
+$border-subtle: #1A1A1A 
+$border-dark: #8C6A32   
+
+$font-main: 'IBM Plex Sans', sans-serif
+$font-mono: 'Cascadia Code', 'Cascadia Mono', monospace
+$font-default: 'Cascadia Code'
+
+$transition-primary: 0.15s cubic-bezier(0.16, 1, 0.3, 1)
+
+// RGBA Tints
+$alpha-text-main-05: #202020
+$alpha-text-main-10: #262626
+$alpha-gold-05: rgba($gold-accent, 0.05)
+$alpha-gold-10: rgba($gold-accent, 0.1)
+$alpha-gold-15: rgba($gold-accent, 0.15)
+$alpha-gold-20: rgba($gold-accent, 0.2)
+$alpha-gold-30: rgba($gold-accent, 0.3)
+$alpha-gold-40: rgba($gold-accent, 0.4)
+$alpha-gold-code: rgba($gold-accent, 0.8)
+$spotlight-color: $alpha-gold-10
+$spotlight-radius: 250px
+$max-width-content: 1100px
+
+// Typography Hierarchy 
+$font-size-h1: fluid(28, 48)          
+$font-size-body: fluid(15, 16)        
+$font-size-card-title: fluid(18, 20)  
+
+// Layout Spacing
+$space-section-gap: fluid(50, 112)    
+$space-card-padding: fluid(24, 35)   
+
+// Uptime Status Beacons
+$green-beacon: #22C55E
+$red-beacon: #EF4444
+
+// ==========================================================================
+// 3. CORE GLOBAL KEYFRAMES
+// ==========================================================================
+@keyframes theatricalReveal
+  from
+    opacity: 0
+    transform: translateY(25px)
+  to
+    opacity: 1
+    transform: translateY(0)
+
+@keyframes fadeAndRise
+  from
+    opacity: 0
+    transform: translateY(15px)
+  to
+    opacity: 1
+    transform: translateY(0)
+
+@keyframes slideDownFade 
+  from 
+    opacity: 0
+    transform: translateY(12px)
+  to 
+    opacity: 1
+    transform: translateY(0)
+
+@keyframes tooltip-fade-in
+  from
+    opacity: 0
+    transform: translate(-50%, 4px)
+  to
+    opacity: 1
+    transform: translate(-50%, 0)
+
+@keyframes viewFadeIn
+  from
+    opacity: 0
+    transform: translateY(4px)
+  to
+    opacity: 1
+    transform: translateY(0)
+
+@keyframes slideUp
+  from
+    opacity: 0
+    transform: translateY(30px)
+  to
+    opacity: 1
+    transform: translateY(0)
+
+@keyframes modal-boot
+  0%
+    opacity: 0
+    transform: scale(0.98) translateY(4px)
+  100%
+    opacity: 1
+    transform: scale(1) translateY(0)    
+
+@keyframes pulse
+  0%, 100%
+    opacity: 0.6
+  50%
+    opacity: 1
+
+@keyframes telemetry-pulse-glow
+  0%, 100%
+    opacity: 0.5
+    transform: scale(0.96)
+  50%
+    opacity: 1
+    transform: scale(1.04)
+
+@keyframes telemetry-intro-six
+  0%, 20%, 40%, 60%
+    transform: scale(1)
+    opacity: 0.35
+    color: $text-main
+  10%, 30%, 50%
+    transform: scale(1.15)
+    opacity: 1
+    color: $green-beacon
+    filter: drop-shadow(0 0 4px rgba($green-beacon, 0.6))
+  100%
+    transform: scale(1)
+    color: $text-main
+
+
+// ==========================================================================
+// FLUID RESPONSIVE SCALING FUNCTION
+// ==========================================================================
+@function fluid($min-size, $max-size, $min-breakpoint: 380, $max-breakpoint: 1400)
+  $v: calc(($max-size - $min-size) / ($max-breakpoint - $min-breakpoint))
+  $w: $v * 100
+  $y: $min-size - ($v * $min-breakpoint)
+  
+  // Format to standard CSS clamp() runtime mapping
+  @return clamp(#{$min-size}px, calc(#{$w}vw + #{$y}px), #{$max-size}px)
+
+// ==========================================================================
+// UTILITY SPACERS (MIXINS)
+// ==========================================================================
+@mixin top-buffer-10
+  margin-top: fluid(8, 10)
+
+@mixin top-buffer-20
+  margin-top: fluid(12, 20)
+
+@mixin top-buffer-40
+  margin-top: fluid(20, 40)
+
+@mixin default-margin
+  margin-bottom: 7rem
+
+
+// ==========================================================================
+// ABSTRACT LAYOUT & SURFACE TEMPLATES
+// ==========================================================================
+
+// Base structural box model
+%base-box
+  background: $bg-surface
+  border-radius: 4px
+  border: 1px solid $border-subtle
+  position: relative
+  overflow: hidden
+
+// Concrete Bento Surface Variant
+%bento-surface
+  @extend %base-box
+  padding: 12px
+  display: flex
+  flex-direction: column
+
+// Concrete Interactive Card Surface Variant
+%card-surface
+  @extend %base-box
+  padding: $space-card-padding
+  cursor: pointer
+  display: flex
+  flex-direction: column
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease
+
+  &:hover
+    transition: $transition-primary
+    transform: translateY(-4px)
+    border-color: $alpha-gold-30
+    background-color: color-mix($bg-surface, #fff 1%) 
+    box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5)
+
+%interactive-link-base
+  position: relative
+  display: inline-flex 
+  text-decoration: none
+  transition: color $transition-primary, transform $transition-primary
+
+  &:hover
+    color: $gold-accent
+    transform: translateY(-3px)
+
+  &::after
+    content: ''
+    position: absolute
+    width: 0
+    height: 1px
+    bottom: -2px
+    left: 50%
+    background-color: $gold-accent
+    transition: width 0.3s ease, left 0.3s ease
+
+  &:hover::after
+    width: 100%
+    left: 0
+
+%list-reset
+  list-style-type: none 
+  padding-left: 0
+  margin-left: 0
+
+// --- Group: Custom Icon List Items ---
+%list-item-chevron
+  position: relative 
+  list-style-type: none 
+  padding-left: 1.2rem 
+  
+  p, span 
+    display: inline
+    margin: 0
+    padding: 0
+    
+  &::before
+    content: "›" 
+    position: absolute 
+    left: 0 
+    top: 0 
+    color: $gold-accent   
+    font-family: $font-mono
+    font-weight: 700 
+    font-size: 14px 
+    line-height: 1.4
+
+// --- Group: Atomic Structural Layouts ---
+%w-full-true
+  grid-column: 1 / -1
+
+// --- Group: Atomic Spacing Scale ---
+
+// Margin Top
+%mt-3
+  margin-top: 15px
+%mt-5
+  margin-top: 2.5rem
+// Margin Bottom
+%mb-2
+  margin-bottom: 12px
+
+%mb-4
+  margin-bottom: 20px
+
+%mb-6
+  margin-bottom: 3rem
+
+// Padding   
+%pb-4
+  padding-bottom: 30px
+
+%pt-5
+  padding-top: 2.5rem
+
+// --- Group: Typography Profiles ---
+%text-h4-base
+  font-size: 1.25rem
+  font-weight: 600
+  color: $text-main
+  position: relative
+  z-index: 2
+
+%text-body-base
+  font-size: 0.95rem
+  color: $text-muted
+  line-height: 1.7
+  position: relative
+  z-index: 2
+
+%text-date-meta
+  font-family: $font-mono
+  font-size: 0.75rem
+  color: $brass-muted
+  text-transform: uppercase
+
+// --- Group: Decorative Patterns & Masks ---
+%card-vector-mask
+  content: ''
+  position: absolute
+  bottom: -40px
+  right: -40px
+  width: 200px
+  height: 200px
+  background-color: color-mix($gold-accent, white 10%)
+  opacity: 0.03
+  transition: 0.4s ease
+  pointer-events: none
+  mask-image: url('./card-pattern.svg')
+  -webkit-mask-image: url('./card-pattern.svg')
+  -webkit-mask-size: cover
+  mask-size: cover
+
+%bg-surface
+  background: $bg-surface
+// Layout & Flex Alignment
+%d-flex
+  display: flex
+
+%flex-col
+  flex-direction: column
+
+%flex-1
+  flex: 1
+
+%align-center
+  align-items: center
+
+%pos-sticky
+  position: sticky
+
+%pos-relative
+  position: relative
+
+// Dimensions & Bounds
+%w-full
+  width: 100%
+
+%h-screen
+  height: 100vh
+
+%min-h-screen
+  min-height: 100vh
+
+%mx-auto
+  margin-left: auto
+  margin-right: auto
+
+%m-0-auto
+  margin: 0 auto
+
+// Display Mechanics
+%overflow-y-auto
+  overflow-y: auto
+
+%overflow-x-hidden
+  overflow-x: hidden
+
+// Typography Foundations
+%font-main-family
+  font-family: $font-main
+
+%font-mono-family
+  font-family: $font-mono
+
+%text-gold-color
+  color: $gold-accent
+
+%text-uppercase
+  text-transform: uppercase
+
+%fw-600
+  font-weight: 600
+
+%fw-700
+  font-weight: 700
+
+%ls-tight
+  letter-spacing: -0.03em
+
+%ls-wide
+  letter-spacing: 0.012em
+
+%lh-tight
+  line-height: 1.15
+
+// Decorative Elements
+%profile-image-shadow
+  box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.1), 8px 12px 30px -10px rgba(212, 175, 55, 0.2), 16px 24px 50px -15px rgba(212, 175, 55, 0.12)
+
+%object-cover
+  object-fit: cover
+
+// Animations Core
+%anim-view-fade-in
+  animation: viewFadeIn 0.3s ease-out
+
+%transition-primary
+  transition: $transition-primary
+
+// ==========================================================================
+// SYSTEM ATOMIC PLUGINS (New Additions to avoid collision)
+// ==========================================================================
+%pos-absolute
+  position: absolute
+// Positioning
+%pos-fixed
+  position: fixed
+
+%inset-0
+  top: 0
+  left: 0
+
+%z-modal-bg
+  z-index: 300
+
+%z-modal-telemetry
+  z-index: 200
+
+// Dimensions
+%w-screen
+  width: 100vw
+
+%h-screen-fluid
+  height: 100vh
+
+%max-w-prose
+  max-width: 70ch
+
+// Flexbox Alignments
+%justify-center
+  align-items: center
+  justify-content: center
+
+%justify-between
+  justify-content: space-between
+
+%align-start
+  align-items: flex-start
+
+// Interactivity & Resets
+%cursor-pointer
+  cursor: pointer
+
+%bg-none
+  background: none
+
+%border-none
+  border: none
+
+%text-left
+  text-align: left
+
+%text-center
+  text-align: center
+
+%text-right
+  text-align: right
+
+%border-collapse
+  border-collapse: collapse
+
+// Specific Text Adjustments
+%ls-meta
+  letter-spacing: 0.02em
+
+%ls-shout
+  letter-spacing: 0.04em
+
+%ls-telemetry
+  letter-spacing: 0.06em
+
+%font-size-meta
+  font-size: 14px
+
+%font-size-micro
+  font-size: 9px
+
+%font-size-nano
+  font-size: 11px
+
+// Structural Helpers
+%min-h-0
+  min-height: 0
+
+%overflow-hidden
+  overflow: hidden
+
+%white-space-pre
+  white-space: pre !important
+
+%word-break-normal
+  word-break: normal !important
+
+// Theatrical Animations
+%anim-slide-up
+  animation: slideUp 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards
+
+%anim-modal-boot
+  animation: modal-boot 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards
+
+%anim-system-pulse
+  animation: pulse 1.6s ease-in-out infinite
+
+// ==========================================================================
+// NEW GLOBAL LAYOUT & COMPONENT PRIMITIVES
+// ==========================================================================
+
+// --- Group: Structural Micro-Layouts ---
+%grid-2
+  display: grid
+  grid-template-columns: 1fr 1fr
+  gap: fluid(16, 24)
+
+%grid-3
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  gap: fluid(16, 24)
+
+%tag-wrapper-base
+  display: flex
+  flex-wrap: wrap
+  margin-top: fluid(12, 20)
+  gap: 8px
+
+%no-decor
+  text-decoration: none
+  color: inherit
+
+// --- Group: Interactive Micro-Actions ---
+%action-link-base
+  color: $gold-accent
+  text-decoration: none
+  font-family: $font-default
+  font-size: 0.9rem
+  letter-spacing: 1px
+  transition: transform 0.2s ease, filter 0.2s ease
+  display: flex
+  align-items: center
+  gap: 8px
+
+%anim-slide-down-fade
+  animation: slideDownFade 0.35s cubic-bezier(0.16, 1, 0.3, 1)
+
+
+%w-max-form
+  max-width: 650px
+
+// --- Group: Atomic Form Field Primitives ---
+%form-input-base
+  width: 100%
+  background: $bg-surface
+  border: 1px solid $border-subtle
+  padding: 18px
+  color: $text-main
+  font-family: $font-main
+  border-radius: 4px
+  outline: none
+  transition: $transition-primary
+  
+  &:focus
+    border-color: $gold-accent
+
+
+// --- Group: Button Interactive Systems ---
+%btn-outline-gold
+  background: transparent
+  border: 1px solid $gold-accent
+  color: $gold-accent
+  padding: 14px 35px
+  font-family: $font-mono
+  font-size: 0.8rem
+  letter-spacing: 2px
+  text-transform: uppercase
+  cursor: pointer
+  transition: $transition-primary
+  position: relative 
+  z-index: 2
+  
+  &:hover
+    background: $gold-accent
+    color: $bg-deep
+
+// THE CORE BLUEPRINT: Shared base wrapper for all variants
+%card-core-rules
+  @extend %card-surface
+  @extend %mb-6
+  position: relative // Ensure the masked absolute element clips or positions correctly
+  &::before
+    @extend %card-vector-mask
+  &:hover
+    &::before
+      opacity: 0.1
+      transform: scale(1.1)
+  h4
+    @extend %text-h4-base
+    @extend %mb-2
+  p
+    @extend %text-body-base
+    flex-grow: 1
+  a
+    @extend %interactive-link-base
+

@@ -1,0 +1,18 @@
+// ==========================================================================
+// INTERACTIVE INPUT COMPONENTS
+// ==========================================================================
+@use '../shared' as *
+
+// COMPONENT: The Contact Form Layout Wrapper
+.contact-form
+  @extend %w-max-form
+  
+  // Scopes inputs if you want them specifically tied to the container block
+  input, textarea
+    @extend %form-input-base
+    @extend %mb-4
+
+
+// COMPONENT: Interactive Outlined Button
+.btn
+  @extend %btn-outline-gold

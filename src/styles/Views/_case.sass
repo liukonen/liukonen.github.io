@@ -1,0 +1,80 @@
+@use '../shared' as *
+
+/// ==========================================================================
+/// CASE SURFACES
+/// ==========================================================================
+
+
+// @surface case-study-view, showcase-view
+// @description a specialzied surface for Case Studies and Showcases (full techincal writeups)
+// @usage CaseStudy, ShowcaseDetail
+.case-study-view, .showcase-view
+  max-width: 900px
+  margin: 0 auto
+  padding: 2rem
+  line-height: 1.6
+  color: $text-muted
+  .study-header, .showcase-header
+    border-bottom: 1px dashed $border-dark
+    margin-bottom: 2.5rem
+    padding-bottom: 1.6rem
+    h1
+      @extend %font-mono-family
+      color: $gold-accent
+      font-size: 2.5rem
+      padding-bottom: 1.6rem
+  .tech-specs
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+    gap: fluid(16, 24)
+    background: rgba(255, 215, 0, 0.03)
+    border: 1px solid $border-dark
+    padding: fluid(16, 24)
+    margin-bottom: fluid(24, 48)
+    border-radius: 4px
+    .spec
+      font-size: 0.9rem
+      strong
+        color: $gold-accent
+        display: block
+        font-size: 0.75rem
+        letter-spacing: 1px
+        margin-bottom: 0.25rem
+        @extend %font-mono-family
+  .technical-body
+    h2
+      font-size: fluid(22, 26)
+      border-left: 3px solid $gold-accent
+      padding-left: 1rem
+      margin: 3rem 0 fluid(22, 26)
+      color: $text-main
+      text-transform: uppercase
+      letter-spacing: 1px
+    p
+      margin-bottom: 1.6rem
+      color: $text-muted
+    ul, ol
+      margin-bottom: 2rem
+      padding-left: 1.6rem
+      li
+        margin-bottom: 0.75rem
+        &::marker
+          color: $gold-accent
+    img
+      display: block
+      max-width: 100%
+      height: auto
+      margin: 3rem auto
+      border: 1px solid $border-dark
+      padding: 1rem
+      background: $bg-darker
+    hr
+      border: 0
+      border-top: 1px solid $border-dark
+      margin: 4rem 0
+    blockquote
+      border-left: 2px solid $border-dark
+      margin: 2rem 0
+      padding: 1rem 2rem
+      font-style: italic
+      color: $text-muted
