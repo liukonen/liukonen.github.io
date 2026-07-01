@@ -9,7 +9,7 @@ export default function Home() {
   const { profile, eras, labs } = portfolioData
 
   return (
-    <div className="page-layer">
+    <div>
       <Breadcrumb path="#/ERA" />
       <section id="eras" className="showcase-grid">
         <Header title='Career' subtitle="My Professional career so far" />

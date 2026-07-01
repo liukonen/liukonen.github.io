@@ -9,14 +9,14 @@ export default function CaseStudy({ id }) {
     window.scrollTo(0, 0)
   }, [id])
 
-  if (!study) return <div className="loader">// DECRYPTING_TECHNICAL_LOGS...</div>
+  if (!study) return <div>// DECRYPTING_TECHNICAL_LOGS...</div>
 
   return (
-    <article className="case-study-view page-layer">
+    <article className="case-study-view">
       <header className="study-header">
         <Breadcrumb path={`#/CASE_STUDIES/${id}`} />
         <h1>{study.title}</h1>
-        <div className="impact-callout">RESULT: {study.impact}</div>
+        <div>RESULT: {study.impact}</div>
       </header>
 
       <aside className="tech-specs">
@@ -26,8 +26,8 @@ export default function CaseStudy({ id }) {
 
       <section className="technical-body" dangerouslySetInnerHTML={{ __html: study.content }} />
 
-      <footer className="case-footer">
-        <a href={`#/TECH_SHOWCASE/${id}`} className="return-link btn">// EXIT_TO_SUMMARY</a>
+      <footer>
+        <a href={`#/TECH_SHOWCASE/${id}`} className="btn">// EXIT_TO_SUMMARY</a>
       </footer>
     </article>
   )

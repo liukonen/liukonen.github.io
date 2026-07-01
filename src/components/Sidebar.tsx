@@ -32,7 +32,7 @@ export default function Sidebar({ currentRoute }: Readonly<{ currentRoute: strin
         <a href="https://dev.to/liukonen" target="_blank" aria-label="Luke's Dev.to page" className="hud-status-node" data-tooltip="Dev.to"><CodeSlash /></a>
         {!isMobileDevice && (
           <button
-            className="social-icons hud-status-node"
+            className="hud-status-node"
             data-tooltip="System Status"
             onClick={() => globalThis.dispatchEvent(new CustomEvent("open-uptime-modal"))}
             aria-label="System Status"

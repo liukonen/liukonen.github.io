@@ -87,7 +87,7 @@ export default function App() {
       {isMobileDevice  && <Navigation />}
       
       <Sidebar currentRoute={route} />
-      <main className="content-area page-transition" key={route}>
+      <main className="content-area" key={route}>
         <Suspense fallback={null}>
         {renderContent()}
         </Suspense>

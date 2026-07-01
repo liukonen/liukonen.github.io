@@ -8,6 +8,7 @@
     "content:compile": "node ./scripts/compile-content.mjs",
     "cleanup:deps": "npx depcheck && npm prune && npm dedupe",
     "cleanup:sass": "node ./scripts/sass-cleanup.mjs",
+    "cleanup:sass-tsx": "node ./scripts/tsx-class-cleanup.mjs",
     "fonts:extract": "npm run fonts:cascadia && npm run fonts:plex",
     "fonts:cascadia": "shx cp node_modules/@fontsource/cascadia-code/files/cascadia-code-latin-{200,300,400,500,600,700}-normal.woff2 public/fonts && shx cp node_modules/@fontsource/cascadia-code/files/cascadia-code-latin-ext-{200,300,400,500,600,700}-normal.woff2 public/fonts",
     "fonts:plex": "shx cp node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-{200,300,400,500,600,700}-normal.woff2 public/fonts && shx cp node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-ext-{200,300,400,500,600,700}-normal.woff2 public/fonts",
@@ -21,12 +22,13 @@
     "@svgr/core": "^8.1.0",
     "@svgr/plugin-jsx": "^8.1.0",
     "esbuild": "^0.28.1",
+    "glob": "^13.0.6",
     "marked": "18.0.5",
-    "preact": "^10.29.2",
+    "preact": "10.29.3",
     "sass": "^1.101.0",
     "typescript": "^6.0.3",
     "unplugin-icons": "^23.0.1",
-    "vite": "^8.0.16"
+    "vite": "8.1.2"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^5.2.1",

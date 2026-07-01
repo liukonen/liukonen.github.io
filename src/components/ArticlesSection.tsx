@@ -34,8 +34,8 @@ export default function ArticlesSection() {
         // Evaluating sandbox experiments and homelab architectures for enterprise production viability.
       </p>
       < br />
-      <section className="home-articles-section">
-        <div className="mini-article-list grid-2">
+      <section>
+        <div className="grid-2">
           {articles.map(article => <ArticleEntry article={article} onArticleClick={handleArticleClick} isMobile={isMobile} />)}
         </div>
       </section>

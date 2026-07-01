@@ -9,7 +9,7 @@ export default function Labs() {
   const labEntries = Object.entries(portfolioData.archive)
 
   return (
-    <div className="page-layer">
+    <div>
       <Breadcrumb path="#/ARCHIVE" />
 
       <div class="default-margin">

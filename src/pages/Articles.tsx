@@ -36,13 +36,13 @@ export default function Articles() {
   }
 
   return (
-    <div className="page-layer articles-view">
+    <div>
       <Breadcrumb path="#/ARTICLES" />
 
       <Header title="Writeups, Guides, and Tutorials" subtitle="Technical documentation and architectural insights from my dev.to profile" />
 
       {loading ? (
-        <div className="terminal-loader">PULLING_REMOTE_DATA...</div>
+        <div>PULLING_REMOTE_DATA...</div>
       ) : (
         <div className="full-article-grid grid-2">
           {articles.map(article => (
@@ -56,7 +56,7 @@ export default function Articles() {
                 <h3><BoxArrowUpRight /> {article.title}</h3>
               </a>
               <p>{article.description}</p>
-              <div className="tag-cloud">
+              <div>
                 {article.tag_list.map(tag => <span key={tag} className="tag">#{tag}</span>)}
               </div>
               <div className="date">

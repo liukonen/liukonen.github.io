@@ -70,7 +70,7 @@ export const LeadershipSection = () => {
 
   return (
     <section id="leadership" class="leadership-section">
-      <div class="page-wrapper">
+      <div>
         
         {/* The Core Control Grid */}
         <div class="grid-3 leadership-controls">
@@ -91,7 +91,7 @@ export const LeadershipSection = () => {
               {/* MOBILE VIEWPORT: Injected directly inline underneath the triggering card */}
               <div class={`mobile-expansion-drawer ${activeId === sec.id ? 'is-open' : ''}`}>
                 {activeId === sec.id && (
-                  <div class="expanded-content">
+                  <div>
                     {sec.content}
                   </div>
                 )}
@@ -105,7 +105,7 @@ export const LeadershipSection = () => {
         <div class={`expansion-viewport desktop-only-viewport ${activeId ? 'is-open' : ''}`}>
           {activeId && (
             <div class="expansion-viewport-inner">
-              <div class="expanded-content">
+              <div>
                 {sections.find(s => s.id === activeId)?.content}
               </div>
             </div>

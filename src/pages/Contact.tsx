@@ -61,24 +61,24 @@ export default function Contact() {
   )}&body=${encodeURIComponent(message)}`
 
   return (
-    <div className="page-layer contact-view">
+    <div>
       <Breadcrumb path="#/contact" />
       <Header title="Contact Me" subtitle="I am open to networking, collaboration, and general inquiries." />
 
 
-      <section className="contact-content">
+      <section>
         {/* SUCCESS TOAST */}
         {status === "success" &&
-          <div className="alert alert-success" role="status" aria-live="polite">
-            <span className="alert-icon" aria-hidden="true">✓</span> Message transmitted
+          <div role="status" aria-live="polite">
+            <span aria-hidden="true">✓</span> Message transmitted
             successfully. I'll get back to you soon.
           </div>}
 
         {/* ERROR / FALLBACK TOAST */}
         {status === "error" &&
-          <div className="alert alert-danger fallback-alert" id="form-error-message" role="alert">
-            <div className="alert-body">
-              <span className="alert-icon" aria-hidden="true">⚠</span>
+          <div id="form-error-message" role="alert">
+            <div>
+              <span aria-hidden="true">⚠</span>
               <div>
                 <strong>API Transmission Failed.</strong>
                 <br />
@@ -86,21 +86,21 @@ export default function Contact() {
                 client.
               </div>
             </div>
-            <div className="alert-actions">
-              <a href={mailtoUrl} className="btn btn-primary" aria-label="Send message via your email application">
+            <div>
+              <a href={mailtoUrl} className="btn" aria-label="Send message via your email application">
                 Send via Email App
               </a>
-              <button onClick={handleCopy} className="btn btn-secondary" aria-label="Copy message to clipboard">
+              <button onClick={handleCopy} className="btn" aria-label="Copy message to clipboard">
                 {copied ? "Copied!" : "Copy Message"}
               </button>
-              <button onClick={resetForm} className="btn btn-text" aria-label="Dismiss error message">
+              <button onClick={resetForm} className="btn" aria-label="Dismiss error message">
                 Dismiss
               </button>
             </div>
           </div>}
 
         {/* CONTACT FORM */}
-        <div className="form-container">
+        <div>
           <form
             action="https://formspree.io/f/xnnewjvy"
             method="POST"
@@ -111,7 +111,7 @@ export default function Contact() {
               ? "form-disabled"
               : ""}`}
           >
-            <div className="form-group">
+            <div>
               <label htmlFor="email">Email Address</label>
               <input
                 id="email"
@@ -127,7 +127,7 @@ export default function Contact() {
               />
             </div>
 
-            <div className="form-group">
+            <div>
               <label htmlFor="message">Message</label>
               <textarea
                 id="message"
@@ -144,10 +144,10 @@ export default function Contact() {
               />
             </div>
 
-            <div className="form-actions">
+            <div>
               <button
                 type="submit"
-                className="btn btn-submit"
+                className="btn"
                 disabled={status === "submitting" || status === "error"}
                 aria-label={status === "submitting" ? "Transmitting message" : "Submit contact form"}
               >

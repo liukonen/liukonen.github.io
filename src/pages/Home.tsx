@@ -14,7 +14,7 @@ import { LeadershipSection } from "../components/LeadershipSection"
 export default function Home() {
   const { profile, eras, labs } = portfolioData
   return (
-    <div className="page-layer">
+    <div>
       <Breadcrumb path="#/" />
 
       {/* --- ABOUT SECTION --- */}

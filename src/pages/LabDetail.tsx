@@ -13,7 +13,7 @@ interface Props {
 export default function LabDetail({ id }: Props) {
   const project = portfolioData.labs[id]
   if (!project) {
-    return <div className="page-layer">Project Not Found</div>
+    return <div>Project Not Found</div>
   }
 
   const [projectData, setProjectData] = useState(null)
@@ -22,14 +22,14 @@ export default function LabDetail({ id }: Props) {
     fetch(`/open-source/${project.repo}.json`).then(r => r.json()).then(setProjectData)
     window.scrollTo(0, 0)
   }, [id])
-  if (!projectData) return <div className="loader">// DECRYPTING_TECHNICAL_LOGS...</div>
+  if (!projectData) return <div>// DECRYPTING_TECHNICAL_LOGS...</div>
 
 
   return (
-    <div className="page-layer">
+    <div>
       <Breadcrumb path={`#/OPEN_SOURCE_PROJECTS/${id}`} />
 
-      <header className="project-header">
+      <header>
         <h1 class="lab-header">
           {project.title}
         </h1>
@@ -54,7 +54,7 @@ export default function LabDetail({ id }: Props) {
         </div>
       </header>
 
-      <section className="project-body mt-4">
+      <section className="mt-4">
         <p className="mt-2 lab-detail-desc">
           {project.description}
         </p>

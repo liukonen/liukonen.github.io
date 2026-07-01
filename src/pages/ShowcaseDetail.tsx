@@ -11,13 +11,13 @@ export default function ShowcaseDetail({ id }) {
     window.scrollTo(0, 0);
   }, [id]);
 
-  if (!showcase) return <div className="loader">// DECRYPTING_PROJECT_DATA...</div>;
+  if (!showcase) return <div>// DECRYPTING_PROJECT_DATA...</div>;
 
   return (
-    <article className="showcase-view page-layer">
+    <article className="showcase-view">
       <header className="showcase-header">
         <h1>{showcase.title}</h1>
-        <div className="impact-callout">RESULT: {showcase.impact}</div>
+        <div>RESULT: {showcase.impact}</div>
         
         {/* RE-ADDED ROLE & STACK BLOCK */}
         <div className="project-meta-top">
@@ -29,7 +29,7 @@ export default function ShowcaseDetail({ id }) {
       <div className="showcase-main-layout">
         
         {/* Left Column: Technical Specs Grid */}
-        <aside className="specs-blueprint-sidebar mono">
+        <aside className="specs-blueprint-sidebar">
           <h3>~/TECHNICAL_SPECS</h3>
           {showcase.specs && (
             <table>
@@ -46,13 +46,13 @@ export default function ShowcaseDetail({ id }) {
         </aside>
 
         {/* Right Column: Narrative Content */}
-        <div className="showcase-content-stream">
+        <div>
           <section 
             className="technical-body" 
             dangerouslySetInnerHTML={{ __html: showcase.content }} 
           />
 
-          <section className="action-section">
+          <section>
             {showcase.hasCaseStudy && (
               <button className="btn" onClick={() => window.location.hash = `#/CASE_STUDIES/${id}`}>
                 READ_CASE_STUDY
@@ -64,7 +64,7 @@ export default function ShowcaseDetail({ id }) {
         {/* Bento Grid Layer */}
         {showcase.features && Object.keys(showcase.features).length > 0 && (
           <section className="bento-showcase-section">
-            <h2 className="section-title">// KEY FEATURES & IMPACT</h2>
+            <h2>// KEY FEATURES & IMPACT</h2>
             <div className="grid-2">
               {Object.entries(showcase.features).map(([title, itemsString], index) => {
                 const formattedTitle = title

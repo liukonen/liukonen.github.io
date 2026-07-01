@@ -6,7 +6,7 @@ import Tags from '../components/Tags'
 
 export default function Showcase() {
   return (
-  <section className="showcase-container page-layer">
+  <section>
     <Breadcrumb path="#/SHOWCASE" />
         <Header title='Showcase' subtitle="Larger projects I Architected, Managed, and Led" />
     <div className="showcase-grid">

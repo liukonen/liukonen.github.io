@@ -78,7 +78,7 @@ export default function LinkModal({ articleId, onClose, title, url, onContentLoa
             aria-label="Close modal"
           >
             <span className="kbd-hint">ESC</span>
-            <span className="close-icon">×</span>
+            <span>×</span>
           </button>
         </div>
 

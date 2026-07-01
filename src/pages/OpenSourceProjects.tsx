@@ -9,7 +9,7 @@ export default function OpenSourceProjects() {
   const labEntries = Object.entries(portfolioData.labs)
 
   return (
-    <div className="page-layer">
+    <div>
       <Breadcrumb path="#/OPEN_SOURCE_PROJECTS" />
       <Header 
         title="Open Source Projects" 

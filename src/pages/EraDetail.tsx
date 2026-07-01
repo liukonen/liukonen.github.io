@@ -5,10 +5,10 @@ import Breadcrumb from "../components/Breadcrumb"
 export default function EraDetail({ id }: Props) {
   const era = portfolioData.eras.find(e => e.id === id)
 
-  if (!era) return <div className="page-layer">Error: Era Not Found</div>
+  if (!era) return <div>Error: Era Not Found</div>
 
   return (
-    <div className="page-layer detail-view" key={id}>
+    <div className="detail-view" key={id}>
       <div className="era-container">
         <Breadcrumb path={`#/ERA/${id}`} />
 
@@ -20,8 +20,8 @@ export default function EraDetail({ id }: Props) {
               className="company-logo-large"
               onError={e => (e.currentTarget.style.display = "none")}
             />
-            <div className="header-text">
-              <h1 className="gold-text">
+            <div>
+              <h1>
                 {era.company}
               </h1>
               <a href={era.website} target="_blank" className="external-link">
@@ -45,7 +45,7 @@ export default function EraDetail({ id }: Props) {
             </div>
             <div className="meta-item">
               <label>OFFICIAL TITLE</label>
-              <span className="brass-text">
+              <span>
                 {era.title}
               </span>
             </div>
@@ -59,7 +59,7 @@ export default function EraDetail({ id }: Props) {
           </div>
         </header>
 
-        <section className="era-content">
+        <section>
           <span className="section-label">~/ THE_DOSSIER</span>
           <div className="description-container">
             {era.long_description.map((paragraph, index) =>
@@ -70,7 +70,7 @@ export default function EraDetail({ id }: Props) {
           </div>
         </section>
 
-        <footer className="detail-footer">
+        <footer>
           <button onClick={() => window.history.back()} className="btn">
             RETURN_TO_TIMELINE
           </button>
