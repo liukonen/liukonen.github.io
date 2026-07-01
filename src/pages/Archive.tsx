@@ -25,7 +25,7 @@ export default function Labs() {
       <section className="grid-2">
      
       {labEntries.map(([id, project]) => (
-        <a href={'https://liukonen.github.io/archive/' + project.id + '/'} target='_blank' style={{ textDecoration: 'none', color: 'inherit' }}>
+        <a href={'https://liukonen.github.io/archive/' + project.id + '/'} target='_blank'>
         <div key={id} className="card archive">
           <div className={"archive-header"}>
             <span className={"archive-id"}>
@@ -33,7 +33,7 @@ export default function Labs() {
             </span>
           </div>
           <h4 class="lnk"><BoxArrowUpRight /> {project.title}</h4>
-          <p>
+          <p className="clr-muted">
             {project.description}
           </p>
         </div>

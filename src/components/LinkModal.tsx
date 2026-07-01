@@ -43,37 +43,25 @@ export default function LinkModal({ articleId, onClose, title, url, onContentLoa
   if (!articleId) return null
 
   const modalContent = (
-    <div className="link-modal-overlay" style={{ padding: '2rem' }}>
-      <div 
-        className="link-modal-container" 
+    <div className="link-modal-overlay pd-2rm">
+      <div
+        className="link-modal-container modal-pane-frame-max" 
         onClick={(e) => e.stopPropagation()}
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          maxHeight: '85vh',
-          overflow: 'hidden'
-        }}
       >
         
         {/* Unified Top HUD Navigation Grid */}
         <div 
-          className="link-modal-header font-mono" 
-          style={{ 
-            display: 'flex', 
-            alignItems: 'flex-start', 
-            justifyContent: 'space-between', 
-            gap: '16px' 
-          }}
+          className="link-modal-header font-mono modal-row-split-gap" 
         >
-          <div className="header-meta" style={{ flex: '1', minWidth: '0' }}>
+          <div className="header-meta modal-cell-fill">
             {url ? (
-              <a href={url} target="_blank" rel="noopener noreferrer" className="link-modal-title-link" style={{ textDecoration: 'none' }}>
-                <h2 style={{ whiteSpace: 'normal', wordBreak: 'break-word', margin: '0 0 4px 0', lineHeight: '1.4' }}>
+              <a href={url} target="_blank" rel="noopener noreferrer" className="link-modal-title-link no-decor">
+                <h2 className="modal-txt-wrap">
                   {title ? `${title}` : 'DOCUMENT::FETCH_ENTRY'}
                 </h2>
               </a>
             ) : (
-              <h2 style={{ whiteSpace: 'normal', wordBreak: 'break-word', margin: '0 0 4px 0', lineHeight: '1.4' }}>
+              <h2 className="modal-txt-wrap">
                 {title ? `${title}` : 'DOCUMENT::FETCH_ENTRY'}
               </h2>
             )}
@@ -85,10 +73,9 @@ export default function LinkModal({ articleId, onClose, title, url, onContentLoa
           </div>
           
           <button 
-            className="link-modal-close" 
+            className="link-modal-close modal-no-shrink" 
             onClick={onClose}
             aria-label="Close modal"
-            style={{ flexShrink: 0 }}
           >
             <span className="kbd-hint">ESC</span>
             <span className="close-icon">×</span>
@@ -100,20 +87,13 @@ export default function LinkModal({ articleId, onClose, title, url, onContentLoa
 
         {/* Core Scrollzone Container - Isolated Vertical Scroll Context */}
         <div 
-          className="link-modal-content-scrollzone" 
-          style={{ 
-            flex: '1', 
-            overflowY: 'auto', 
-            minHeight: '0',
-            WebkitOverflowScrolling: 'touch'
-          }}
+          className="link-modal-content-scrollzone modal-scroll-y" 
         >
           {loading ? (
             <div className="link-modal-loading font-mono">LOADING_STREAM_RESOURCES...</div>
           ) : content ? (
             <div 
-              className="link-modal-body"
-              style={{ maxWidth: '100%', overflowX: 'hidden' }}
+              className="link-modal-body modal-clip-x"
               dangerouslySetInnerHTML={{ __html: content }}
             />
           ) : (

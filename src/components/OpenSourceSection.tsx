@@ -28,7 +28,7 @@ const LabEntry = ({ project, id }: { project: any, id: string }) => (
       </span>
       <h4 className={"mt-1 lnk"}>{project.title}</h4>
       <p>{project.description}</p>
-      <div style={{ marginTop: '15px' }}>
+      <div className="mt-15px">
         {project.tech.slice(0, 3).map(t => (
           <span key={t} className="tag">{t}</span>
         ))}

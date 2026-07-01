@@ -50,7 +50,7 @@ export default function EraDetail({ id }: Props) {
               </span>
             </div>
           </div>
-          <div style={{ marginTop: "5px" }}>
+          <div className="mt-5px">
             {era.tech.map(t =>
               <span key={t} className="tag">
                 {t}

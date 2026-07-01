@@ -22,14 +22,14 @@ export default function OpenSourceProjects() {
             className="card" 
             onClick={() => window.location.hash = `#/OPEN_SOURCE_PROJECTS/${id}`}
           >
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-              <span style={{ fontFamily: 'Cascadia Code', fontSize: '0.65rem', color: 'var(--brass-muted)' }}>
+            <div className="flex-split-top row-align-top row-justify-sb">
+              <span className="archive-id">
                 // {id.toUpperCase()}
               </span>
             </div>
             
             <h4 class="mt-1 lnk">{project.title}</h4>
-            <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginTop: '8px' }}>
+            <p className="clr-muted fs-09 mt-8px">
               {project.description}
             </p>
             <Tags tags={project.tech.slice(0,3)} />

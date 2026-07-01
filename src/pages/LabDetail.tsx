@@ -30,7 +30,7 @@ export default function LabDetail({ id }: Props) {
       <Breadcrumb path={`#/OPEN_SOURCE_PROJECTS/${id}`} />
 
       <header className="project-header">
-        <h1 style={{ fontSize: '3.5rem', color: 'var(--gold-accent)' }}>
+        <h1 class="lab-header">
           {project.title}
         </h1>
         {project.buttons && project.buttons.length > 0 && (
@@ -55,15 +55,14 @@ export default function LabDetail({ id }: Props) {
       </header>
 
       <section className="project-body mt-4">
-        <p className="mt-2" style={{ fontSize: '1.2rem', lineHeight: '1.8', color: 'var(--text-muted)' }}>
+        <p className="mt-2 lab-detail-desc">
           {project.description}
         </p>
         <section className="technical-body markdown-engine" dangerouslySetInnerHTML={{ __html: projectData.content }} />
       </section>
 
       <button 
-        className="btn" 
-        style={{ marginTop: '60px' }} 
+        className="btn mt-60px" 
         onClick={() => window.location.hash = '#/OPEN_SOURCE_PROJECTS'}
       >
         ← RETURN_TO_LAB
