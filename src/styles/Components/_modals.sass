@@ -1,48 +1,9 @@
 @use '../shared' as *
 
-// ==========================================================================
-// LINK OVERLAY MODAL
-// ==========================================================================
-
-
-
-
-
-
-
-.link-modal-title-link
+.c-modal-title-link
   @extend %interactive-link-base
-//   @extend %flex-1
-//   @extend %cursor-pointer
-//   @extend %transition-primary
-//   text-decoration: none
-//   color: inherit
 
-//   h3
-//     margin: 0
-//     color: $text-main
-//     font-size: 1.3rem
-//     font-weight: 700
-
-//   &:hover h3
-//     color: $gold-accent
-//     text-decoration: underline
-
-//   @extend %bg-none
-//   @extend %border-none
-//   @extend %font-size-meta
-//   @extend %cursor-pointer
-//   color: $text-muted
-//   padding: 4px
-//   transition: color 0.12s ease
-//   &:hover
-//     color: #FFFFFF
-
-// ==========================================================================
-// LINK OVERLAY MODAL (Refactored to match Telemetry Blueprint)
-// ==========================================================================
-
-.link-modal-body
+.c-modal-body
   @extend %flex-1
   @extend %overflow-y-auto
   @extend %w-full
@@ -60,14 +21,14 @@
     font-size: 2rem
     font-family: $font-mono
   h2
-    font-family: $font-main 
+    font-family: $font-main
     font-weight: 600
     color: $gold-accent
     margin-top: 2rem
     margin-bottom: 1rem
     font-size: 1.6rem
     border-bottom: 1px solid $alpha-gold-20
-    padding-bottom: 0.5em    
+    padding-bottom: 0.5em
   p, li, blockquote
     color: $text-prose
     font-family: $font-main
@@ -90,10 +51,10 @@
     font-family: $font-mono
     font-size: 0.9em
     color: $alpha-gold-code
- 
+
   pre
     @extend %overflow-y-auto
-    border-left: 3px solid $gold-accent 
+    border-left: 3px solid $gold-accent
     line-height: 2rem
     background: $bg-darker
     padding: 15px
@@ -102,7 +63,7 @@
     min-width: 0 !important
     @extend %white-space-pre
     @extend %word-break-normal
- 
+
     &::-webkit-scrollbar
       height: 6px
     &::-webkit-scrollbar-thumb
@@ -151,21 +112,15 @@
       background: $alpha-gold-05
       color: $text-main
 
-.link-modal-loading, .link-modal-error
-  @extend %w-full
-  @extend %text-center
-  @extend %font-size-nano
-  @extend %anim-system-pulse
-  padding: 60px 0
-  color: rgba($text-muted, 0.6)
 
-.link-modal-error
+.c-modal-error
   @extend %d-flex
   @extend %justify-center
   @extend %h-screen
   color: #ff6b6b
   font-size: 1.1rem
-.link-modal-overlay
+
+.l-modal-overlay
   @extend %pos-fixed
   @extend %inset-0
   @extend %w-screen
@@ -178,7 +133,8 @@
   backdrop-filter: blur(4px)
   padding: 2rem
 
-.link-modal-container
+
+.c-modal-container
   @extend %w-full
   @extend %d-flex
   @extend %flex-col
@@ -191,7 +147,8 @@
   border-radius: 6px
   box-shadow: 0 32px 64px rgba(0, 0, 0, 0.7) // Added telemetry deep shadow
 
-.link-modal-header
+
+.c-modal-header
   @extend %d-flex
   @extend %justify-between
   padding: 20px 24px // Exact Telemetry HUD Header Padding
@@ -199,31 +156,12 @@
   background: #0E0E10
   gap: 16px
 
-// .header-meta
-//   @extend %d-flex
-//   @extend %flex-col
-//   @extend %flex-1
-//   //@extend %min-w-0
-//   gap: 4px
-//   h2
-//     @extend %font-mono-family
-//     @extend %fw-700
-//     font-size: 13px // Forced to crisp HUD tracking matrix size
-//     color: $text-main
-//     margin: 0
-//     text-transform: uppercase
-//     line-height: 1.4
-.f-hd-md-tags
-  @extend %d-flex
-  @extend %font-size-micro
-  gap: 8px
-  color: $text-muted
-  font-weight: 600
 
-.tag-separator
+.c-tag-separator
   color: rgba($text-muted, 0.3)
 
-.link-modal-close
+
+.c-modal-close
   @extend %bg-none
   @extend %border-none
   @extend %font-size-meta
@@ -235,8 +173,9 @@
   padding: 4px
   transition: color 0.12s ease
   flex-shrink: 0
-    
-.kbd-hint
+
+
+.c-kbd-hint
   @extend %font-size-micro
   border: 1px solid rgba($border-subtle, 0.8)
   padding: 1px 4px
@@ -244,25 +183,26 @@
   opacity: 0
   transform: translateX(2px)
   transition: all 0.15s ease
-  &:hover 
+  &:hover
     color: #FFFFFF
     .kbd-hint
       opacity: 1
       transform: translateX(0)
 
-// High-Contrast Framing Accent Line
-.link-modal-frame-line
+
+.c-modal-frame-line
   width: 100%
   height: 1px
   background: rgba($gold-accent, 0.8)
   border-bottom: 1px solid $border-subtle
 
-.link-modal-content-scrollzone
+
+.c-modal-scrollzone
   @extend %flex-1
   @extend %overflow-y-auto
   @extend %min-h-0
   background: $bg-deep
-  
+
   &::-webkit-scrollbar
     width: 6px
   &::-webkit-scrollbar-track
@@ -273,7 +213,8 @@
     &:hover
       background: $gold-accent
 
-.link-modal-footer
+
+.c-modal-footer
   @extend %d-flex
   @extend %justify-between
   @extend %font-size-micro
@@ -282,16 +223,15 @@
   background: #0E0E10
   border-top: 1px solid $border-subtle
   color: $text-muted
-  
-.footer-right
+
+
+.l-footer-right
   @extend %d-flex
   gap: 8px
 
 
-// ==========================================================================
-// UPTIME / TELEMETRY MODAL
-// ==========================================================================
-.telemetry-overlay
+
+.l-telemetry-overlay
   @extend %pos-fixed
   @extend %inset-0
   @extend %w-screen
@@ -299,21 +239,23 @@
   @extend %d-flex
   @extend %justify-center
   @extend %z-modal-telemetry
-  background: rgba(11, 11, 12, 0.88) 
+  background: rgba(11, 11, 12, 0.88)
   backdrop-filter: blur(4px)
 
-.telemetry-modal
+
+.c-telemetry-modal
   @extend %w-full
   @extend %d-flex
   @extend %flex-col
   @extend %overflow-hidden
-  max-width: 820px 
+  max-width: 820px
   background: $bg-deep
   border: 1px solid $border-subtle
   border-radius: 6px
   box-shadow: 0 32px 64px rgba(0, 0, 0, 0.7)
 
-.telemetry-header
+
+.c-telemetry-header
   @extend %d-flex
   @extend %justify-between
   @extend %justify-center
@@ -321,21 +263,8 @@
   border-bottom: 1px solid $border-subtle
   background: #0E0E10
 
-.f-hd-md-meta
-  @extend %d-flex
-  @extend %flex-col
-  gap: 4px
-  h2
-    @extend %font-mono-family
-    @extend %fw-700
-    @extend %ls-telemetry
-    font-size: 13px
-    color: $text-main
-    margin: 0
 
-
-
-.close-btn
+.c-close-btn
   @extend %bg-none
   @extend %border-none
   @extend %font-size-meta
@@ -346,11 +275,13 @@
   &:hover
     color: #FFFFFF
 
-.telemetry-content
+
+.c-telemetry-content
   padding: 24px
   background: $bg-deep
 
-.telemetry-status-message
+
+.c-telemetry-status
   @extend %font-size-nano
   @extend %text-center
   padding: 40px 0
@@ -358,7 +289,8 @@
   &.error
     color: $red-beacon
 
-.telemetry-sheet
+
+.c-telemetry-sheet
   @extend %d-flex
   @extend %flex-col
   @extend %w-full
@@ -367,10 +299,10 @@
     @extend %d-flex
     @extend %justify-between
     padding: 14px 16px 12px 16px
-    border-top: 1px solid rgba($gold-accent, 0.8) 
+    border-top: 1px solid rgba($gold-accent, 0.8)
     border-bottom: 1px solid $border-subtle
     background: rgba($bg-surface, 0.3)
-    
+
     .col-lbl
       @extend %font-size-micro
       @extend %fw-600
@@ -457,7 +389,8 @@
           &.failed
             color: $red-beacon
 
-.telemetry-footer
+
+.c-telemetry-footer
   @extend %d-flex
   @extend %justify-between
   @extend %font-size-micro
@@ -466,3 +399,12 @@
   background: #0E0E10
   border-top: 1px solid $border-subtle
   color: $text-muted
+
+
+.c-modal-loading, .c-modal-error
+  @extend %w-full
+  @extend %text-center
+  @extend %font-size-nano
+  @extend %anim-system-pulse
+  padding: 60px 0
+  color: rgba($text-muted, 0.6)

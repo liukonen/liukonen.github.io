@@ -41,6 +41,8 @@
     "@vitest/browser-playwright": "^4.1.9",
     "@vitest/coverage-v8": "^4.1.9",
     "playwright": "^1.61.1",
+    "postcss": "^8.5.16",
+    "postcss-selector-parser": "^7.1.4",
     "purgecss": "^8.0.0",
     "shx": "^0.4.0",
     "storybook": "^10.4.6",

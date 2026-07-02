@@ -62,7 +62,7 @@ async function verifySafeguards(dir, newTokens) {
       const content = await fs.readFile(resPath, 'utf-8');
       for (const token of tokenSet) {
         if (!token) continue;
-        const tokenRegex = new RegExp(`\\b${token}\\b`);
+        const tokenRegex = new RegExp(`(?<![\\w-])${token}(?![\\w-])`);
         if (tokenRegex.test(content)) {
           throw new Error(`SAFEGUARD BREACH: Token '${token}' already active in '${resPath}'. Run aborted to prevent string pollution.`);
         }

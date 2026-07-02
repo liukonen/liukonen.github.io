@@ -4,7 +4,7 @@
 export default function Showcase() {
   return (
   <div>
-      <div className="breadcrumb">
+      <div className="c-breadcrumb">
         <a href="#/">~/root</a> <span className="sep">/</span> SHOWCASE
       </div>
       

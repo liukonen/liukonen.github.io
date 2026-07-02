@@ -26,7 +26,7 @@ export default function Sidebar({ currentRoute }: Readonly<{ currentRoute: strin
         <SidebarLinks currentRoute={currentRoute} />
       </Suspense>
       )}
-      <div className="social-links">
+      <div className="l-social-links">
         <a href="https://github.com/liukonen" target="_blank" aria-label="Luke's Github page" className="c-hud-status" data-tooltip="Github"><Github /></a>
         <a href="https://linkedin.com/in/lukeliukonen" target="_blank" aria-label="Luke's LinkedIn page" className="c-hud-status" data-tooltip="LinkedIn"><Linkedin /></a>
         <a href="https://dev.to/liukonen" target="_blank" aria-label="Luke's Dev.to page" className="c-hud-status" data-tooltip="Dev.to"><CodeSlash /></a>

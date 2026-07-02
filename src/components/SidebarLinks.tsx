@@ -6,7 +6,7 @@ export default function SidebarLinks({ currentRoute }: Readonly<{currentRoute: s
   }
 
     return (
-        <nav className="nav-links">
+        <nav className="l-nav-links">
         <ul className="sidebar-ul">
           <li className="sidebar-li"><a href="#/" className={currentRoute === '#/' ? 'active' : ''}><span className="line"></span>/ HOME</a></li>
           {portfolioData.sidebar.map((item, index) => (

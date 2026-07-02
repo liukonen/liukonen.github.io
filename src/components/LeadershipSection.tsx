@@ -89,7 +89,7 @@ export const LeadershipSection = () => {
               </div>
 
               {/* MOBILE VIEWPORT: Injected directly inline underneath the triggering card */}
-              <div class={`mobile-expansion-drawer ${activeId === sec.id ? 'is-open' : ''}`}>
+              <div class={`l-mobile-drawer ${activeId === sec.id ? 'is-open' : ''}`}>
                 {activeId === sec.id && (
                   <div>
                     {sec.content}

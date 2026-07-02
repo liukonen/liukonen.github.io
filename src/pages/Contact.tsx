@@ -87,13 +87,13 @@ export default function Contact() {
               </div>
             </div>
             <div>
-              <a href={mailtoUrl} className="btn" aria-label="Send message via your email application">
+              <a href={mailtoUrl} className="c-btn" aria-label="Send message via your email application">
                 Send via Email App
               </a>
-              <button onClick={handleCopy} className="btn" aria-label="Copy message to clipboard">
+              <button onClick={handleCopy} className="c-btn" aria-label="Copy message to clipboard">
                 {copied ? "Copied!" : "Copy Message"}
               </button>
-              <button onClick={resetForm} className="btn" aria-label="Dismiss error message">
+              <button onClick={resetForm} className="c-btn" aria-label="Dismiss error message">
                 Dismiss
               </button>
             </div>
@@ -107,9 +107,7 @@ export default function Contact() {
             aria-label="Connect with Luke Liukonen via email form."
             aria-describedby={status === "error" ? "form-error-message" : undefined}
             onSubmit={handleSubmit}
-            className={`contact-form ${status === "error"
-              ? "form-disabled"
-              : ""}`}
+            className={`c-contact-form ${status === "error" ? "form-disabled" : ""}`}
           >
             <div>
               <label htmlFor="email">Email Address</label>
@@ -147,7 +145,7 @@ export default function Contact() {
             <div>
               <button
                 type="submit"
-                className="btn"
+                className="c-btn"
                 disabled={status === "submitting" || status === "error"}
                 aria-label={status === "submitting" ? "Transmitting message" : "Submit contact form"}
               >

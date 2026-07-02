@@ -27,7 +27,7 @@ export default function CaseStudy({ id }) {
       <section className="technical-body" dangerouslySetInnerHTML={{ __html: study.content }} />
 
       <footer>
-        <a href={`#/TECH_SHOWCASE/${id}`} className="btn">// EXIT_TO_SUMMARY</a>
+        <a href={`#/TECH_SHOWCASE/${id}`} className="c-btn">// EXIT_TO_SUMMARY</a>
       </footer>
     </article>
   )

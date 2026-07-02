@@ -106,4 +106,27 @@ p, .f-body-prose p, .prose-engine p, .technical-body p
   font-weight: 600
   margin-right: 4px
 
+.f-breadcrumb-active
+  //color: $gold-accent.f-md-tags
+  @extend %d-flex
+  @extend %font-size-micro
+  gap: 8px
+  color: $text-muted
+  font-weight: 600
+
+
+.f-md-meta
+  @extend %d-flex
+  @extend %flex-col
+  gap: 4px
+  h2
+    @extend %font-mono-family
+    @extend %fw-700
+    @extend %ls-telemetry
+    font-size: 13px
+    color: $text-main
+    margin: 0
+
+
+
 

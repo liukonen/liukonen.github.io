@@ -21,15 +21,15 @@ export default function ShowcaseDetail({ id }) {
         
         {/* RE-ADDED ROLE & STACK BLOCK */}
         <div className="project-meta-top">
-          <div className="meta-item"><strong>ROLE:</strong> {showcase.role}</div>
-          <div className="meta-item"><strong>STACK:</strong> {showcase.tech}</div>
+          <div className="c-meta-item"><strong>ROLE:</strong> {showcase.role}</div>
+          <div className="c-meta-item"><strong>STACK:</strong> {showcase.tech}</div>
         </div>
       </header>
 
-      <div className="showcase-main-layout">
+      <div className="l-showcase-layout">
         
         {/* Left Column: Technical Specs Grid */}
-        <aside className="specs-blueprint-sidebar">
+        <aside className="c-blueprint-sidebar">
           <h3>~/TECHNICAL_SPECS</h3>
           {showcase.specs && (
             <table>
@@ -54,7 +54,7 @@ export default function ShowcaseDetail({ id }) {
 
           <section>
             {showcase.hasCaseStudy && (
-              <button className="btn" onClick={() => window.location.hash = `#/CASE_STUDIES/${id}`}>
+              <button className="c-btn" onClick={() => window.location.hash = `#/CASE_STUDIES/${id}`}>
                 READ_CASE_STUDY
               </button>
             )}

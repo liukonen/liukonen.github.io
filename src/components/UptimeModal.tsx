@@ -131,20 +131,20 @@ export default function UptimeModal() {
     : ""
 
   return (
-    <div className="telemetry-overlay" onClick={() => setOpen(false)}>
-      <div className="telemetry-modal" onClick={e => e.stopPropagation()}>
+    <div className="l-telemetry-overlay" onClick={() => setOpen(false)}>
+      <div className="c-telemetry-modal" onClick={e => e.stopPropagation()}>
         {/* System HUD Header */}
-        <div className="telemetry-header">
-          <div className="f-hd-md-meta">
+        <div className="c-telemetry-header">
+          <div className="f-md-meta">
             <h2>SYSTEM_STATUS_METRICS</h2>
-            <div className="f-hd-md-tags f-font-mono">
+            <div className="f-md-tags f-font-mono">
               <span className="tag">TOPOLOGY::HYBRID_DISTRIBUTED_EDGE</span>
-              <span className="tag-separator">|</span>
+              <span className="c-tag-separator">|</span>
               <span className="tag">ORCHESTRATION::ISOLATED_PROCESS_NODES</span>
             </div>
           </div>
           <button
-            className="close-btn"
+            className="c-close-btn"
             onClick={() => setOpen(false)}
             aria-label="Close modal"
           >
@@ -152,18 +152,18 @@ export default function UptimeModal() {
           </button>
         </div>
 
-        <div className="telemetry-content">
+        <div className="c-telemetry-content">
           {loading &&
-            <div className="telemetry-status-message f-font-mono">
+            <div className="c-telemetry-status f-font-mono">
               LOADING_UPSTREAM_METRICS...
             </div>}
           {error &&
-            <div className="telemetry-status-message error f-font-mono">
+            <div className="c-telemetry-status error f-font-mono">
               ERROR::{error.toUpperCase()}
             </div>}
 
           {monitors &&
-            <div className="telemetry-sheet">
+            <div className="c-telemetry-sheet">
               {/* Columns Blueprint Header with Gold Border Accent Frame */}
               <div className="sheet-header f-font-mono">
                 <span className="col-lbl col-node">
@@ -237,13 +237,13 @@ export default function UptimeModal() {
 
         {/* Consolidated Systems Footer */}
         {updatedAt &&
-          <div className="telemetry-footer f-font-mono">
+          <div className="c-telemetry-footer f-font-mono">
             <span>
               ENGINE_METRICS_LAST_PULL: {formattedTime}
             </span>
-            <div className="footer-right">
+            <div className="l-footer-right">
               <span>DATA_SOURCE::UPTIME_ROBOT_API</span>
-              <span className="tag-separator">|</span>
+              <span className="c-tag-separator">|</span>
               <span>CACHE_EDGE::CLOUDFLARE_WORKERS</span>
             </div>
           </div>}

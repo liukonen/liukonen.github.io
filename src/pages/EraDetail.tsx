@@ -9,7 +9,7 @@ export default function EraDetail({ id }: Props) {
 
   return (
     <div className="l-detail-view" key={id}>
-      <div className="era-container">
+      <div className="l-era-container">
         <Breadcrumb path={`#/ERA/${id}`} />
 
         <header className="l-era-header">
@@ -30,20 +30,20 @@ export default function EraDetail({ id }: Props) {
             </div>
           </div>
 
-          <div className="meta-strip">
-            <div className="meta-item">
+          <div className="c-meta-strip">
+            <div className="c-meta-item">
               <label>TENURE</label>
               <span>
                 {era.year}
               </span>
             </div>
-            <div className="meta-item">
+            <div className="c-meta-item">
               <label>FUNCTIONAL ROLE</label>
               <span>
                 {era.role}
               </span>
             </div>
-            <div className="meta-item">
+            <div className="c-meta-item">
               <label>OFFICIAL TITLE</label>
               <span>
                 {era.title}
@@ -71,7 +71,7 @@ export default function EraDetail({ id }: Props) {
         </section>
 
         <footer>
-          <button onClick={() => window.history.back()} className="btn">
+          <button onClick={() => window.history.back()} className="c-btn">
             RETURN_TO_TIMELINE
           </button>
         </footer>

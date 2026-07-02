@@ -48,7 +48,7 @@ export default function Home() {
         <div class="gold-spacer" aria-hidden="true"></div>
       {/* --- CONTACT SECTION --- */}
       <section id="contact" className="l-showcase-grid">
-        <button className="btn" onClick={() => (location.hash = "#/CONTACT")}>
+        <button className="c-btn" onClick={() => (location.hash = "#/CONTACT")}>
           GET_IN_TOUCH
         </button>
       </section>

@@ -62,7 +62,7 @@ export default function LabDetail({ id }: Props) {
       </section>
 
       <button 
-        className="btn mt-60px" 
+        className="c-btn mt-60px" 
         onClick={() => window.location.hash = '#/OPEN_SOURCE_PROJECTS'}
       >
         ← RETURN_TO_LAB
