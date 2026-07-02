@@ -135,9 +135,9 @@ export default function UptimeModal() {
       <div className="telemetry-modal" onClick={e => e.stopPropagation()}>
         {/* System HUD Header */}
         <div className="telemetry-header">
-          <div className="header-meta">
+          <div className="f-hd-md-meta">
             <h2>SYSTEM_STATUS_METRICS</h2>
-            <div className="header-tags font-mono">
+            <div className="f-hd-md-tags font-mono">
               <span className="tag">TOPOLOGY::HYBRID_DISTRIBUTED_EDGE</span>
               <span className="tag-separator">|</span>
               <span className="tag">ORCHESTRATION::ISOLATED_PROCESS_NODES</span>

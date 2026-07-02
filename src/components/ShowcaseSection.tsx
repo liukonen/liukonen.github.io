@@ -4,7 +4,7 @@ import showcaseData from  '../data/showcase.json'
 export default function ShowcaseSection() {
   return (
     <section className="showcase-grid">
-      <span className="section-label">
+      <span className="f-label-mono f-clr-accent">
         ~/ SHOWCASE_PROJECTS
       </span>
       <br />

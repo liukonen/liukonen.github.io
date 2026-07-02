@@ -28,7 +28,7 @@ export default function Labs() {
         <a href={'https://liukonen.github.io/archive/' + project.id + '/'} target='_blank'>
         <div key={id} className="card archive">
           <div className={"archive-header"}>
-            <span className={"archive-id"}>
+            <span className={"f-meta-xs"}>
               // {project.id.toUpperCase()}
             </span>
           </div>

@@ -21,7 +21,7 @@ export default function Home() {
 
       <section
         id="about"
-        className={"markdown-engine"}
+        className={"prose-engine"}
         dangerouslySetInnerHTML={{ __html: aboutData.content }}
       />
       <div class="gold-spacer" aria-hidden="true" />
@@ -56,7 +56,7 @@ export default function Home() {
       <footer>
         &copy; 2026 {profile.brand} // Liukonen.dev
         <section
-          className={"markdown-engine "}
+          className={"prose-engine "}
           id="footer"
           dangerouslySetInnerHTML={{ __html: footerData.content }}
         />

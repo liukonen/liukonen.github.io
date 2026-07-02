@@ -12,12 +12,12 @@ export default function Showcase() {
     <div className="showcase-grid">
     {Object.entries(showcaseData).map(([title, item]) => (
       <div key={item.id} className="card" onClick={() => window.location.hash = `#/TECH_SHOWCASE/${item.id}`}>
-        <span className="archive-id">
+        <span className="f-meta-xs">
           // {title.toUpperCase()}
         </span>
 
-        <span className="header lnk">{item.impact}</span>
-        <p className="clr-brass-muted">Role: {item.role} </p>
+        <span className="f-hd-md f-clr-main lnk">{item.impact}</span>
+        <p className="f-clr-mutedass-muted">Role: {item.role} </p>
         <Tags tags={item.tags} />
       </div>
     ))}

@@ -23,7 +23,7 @@ export default function OpenSourceProjects() {
             onClick={() => window.location.hash = `#/OPEN_SOURCE_PROJECTS/${id}`}
           >
             <div className="flex-split-top row-align-top row-justify-sb">
-              <span className="archive-id">
+              <span className="f-meta-xs">
                 // {id.toUpperCase()}
               </span>
             </div>

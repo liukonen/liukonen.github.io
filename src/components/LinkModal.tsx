@@ -53,7 +53,7 @@ export default function LinkModal({ articleId, onClose, title, url, onContentLoa
         <div 
           className="link-modal-header font-mono modal-row-split-gap" 
         >
-          <div className="header-meta modal-cell-fill">
+          <div className="f-hd-md-meta modal-cell-fill">
             {url ? (
               <a href={url} target="_blank" rel="noopener noreferrer" className="link-modal-title-link no-decor">
                 <h2 className="modal-txt-wrap">
@@ -65,7 +65,7 @@ export default function LinkModal({ articleId, onClose, title, url, onContentLoa
                 {title ? `${title}` : 'DOCUMENT::FETCH_ENTRY'}
               </h2>
             )}
-            <div className="header-tags">
+            <div className="f-hd-md-tags">
               <span>STACK::FLUENTBIT_LOKI_GRAFANA</span>
               <span className="tag-separator">|</span>
               <span>INFRA::RASPBERRY_PI_NODES</span>

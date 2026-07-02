@@ -28,7 +28,7 @@ export default function ArticlesSection() {
 
   return (
     <section id="writeups" className="showcase-grid">
-      <span className="section-label">~/ RECENT_WRITEN_ARTICLES</span>
+      <span className="f-label-mono f-clr-accent">~/ RECENT_WRITEN_ARTICLES</span>
       <p>
         // Technical spikes, systems research, and engineering explorations.<br />
         // Evaluating sandbox experiments and homelab architectures for enterprise production viability.
@@ -68,7 +68,7 @@ const ArticleEntry = ({ article, onArticleClick, isMobile }: any) =>
         <div class="lnk">
            {article.title.length > 80 ? article.title.slice(0, 77) + "..." : article.title}
         </div>
-        <span className="article-date-mono">
+        <span className="f-mono-muted">
           {new Date(article.published_at).toLocaleDateString("en-US", {
             month: "short",
             day: "2-digit",

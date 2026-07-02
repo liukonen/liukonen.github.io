@@ -4,7 +4,7 @@ import Tags from "./Tags"
 export default function CareerSection({ eras }: Readonly<any>) {
     return (
       <section id="eras" className="showcase-grid">
-        <span className="section-label">~/ RECENT_CAREER</span>
+        <span className="f-label-mono f-clr-accent">~/ RECENT_CAREER</span>
         {eras.slice(0, 3).map((era: any) => (
           <EraEntry key={era.id} era={era} />
         ))}
@@ -16,7 +16,7 @@ export default function CareerSection({ eras }: Readonly<any>) {
 const EraEntry = ({ era } : any) => (
   <a href={`#/ERA/${era.id}`} className={"no-decor"}>
     <div className="card" key={era.id}>    
-      <span className={"golden-header"}>
+      <span className={"f-hd-md f-clr-muted"}>
         // {era.company.toUpperCase()}
       </span>
       <h4 className={"mt-1 lnk"}>

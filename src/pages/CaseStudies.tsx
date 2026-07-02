@@ -12,11 +12,11 @@ export default function Showcase() {
     <div className="showcase-grid">
     {Object.entries(showcaseData).filter(([title, item]) => item.hasCaseStudy).map(([title, item]) => (        
       <div key={item.id} className="card archive" onClick={() => window.location.hash = `#/CASE_STUDIES/${item.id}`}>
-        <span className={"archive-id"}>
+        <span className={"f-meta-xs"}>
           // {title.toUpperCase()}
         </span>
 
-        <span class="header lnk">{item.impact}</span>
+        <span class="f-hd-md f-clr-main lnk">{item.impact}</span>
         <p>Role: {item.role}</p>
         <Tags tags={item.tags} />
       </div>

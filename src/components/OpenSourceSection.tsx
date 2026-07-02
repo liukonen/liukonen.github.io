@@ -3,7 +3,7 @@ import MoreFooter from "./MoreFooter"
 export default function OpenSourceSection({ repos }: Readonly<any>) {
     return (
       <section id="featured-labs" className="showcase-grid">
-        <span className="section-label"> ~/ OPEN_SOURCE_PROJECTS</span>
+        <span className="f-label-mono f-clr-accent"> ~/ OPEN_SOURCE_PROJECTS</span>
         <p>
 
           // Secondary utilities, legacy tools, and experimental code.  <br />
@@ -23,7 +23,7 @@ export default function OpenSourceSection({ repos }: Readonly<any>) {
 const LabEntry = ({ project, id }: { project: any, id: string }) => (
     <a href={`#/OPEN_SOURCE_PROJECTS/${id}`} className={"no-decor"}>
     <div className="card" key={id}>
-      <span className={"small-header"}>
+      <span className={"f-hd-xs f-clr-muted"}>
         // PROJ_{id.toUpperCase()}
       </span>
       <h4 className={"mt-1 lnk"}>{project.title}</h4>

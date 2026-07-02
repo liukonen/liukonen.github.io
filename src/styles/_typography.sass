@@ -1,7 +1,7 @@
 @use 'shared' as *
 
 // Labels & Micro Typography
-.base-label
+.f-label-mono
   @extend %font-mono-family
   letter-spacing: 5px
   font-size: 0.7rem
@@ -9,16 +9,22 @@
   margin-bottom: fluid(18, 35)
   display: block
 
-.section-label
-  @extend .base-label
-  color: $gold-accent
 
 // Structural Prose Adjustments
-p, .era-paragraph, .markdown-engine p, .technical-body p
+p, .era-paragraph, .prose-engine p, .technical-body p
   max-width: 65ch
   margin-bottom: 1.75rem
 
-.markdown-engine
+.f-clr-accent
+  color: $gold-accent !important
+
+.f-clr-muted
+  color: $brass-muted !important
+
+.f-clr-main
+  color: $text-main !important
+
+.prose-engine
   a
     @extend %text-gold-color
     text-decoration: none
@@ -42,17 +48,22 @@ p, .era-paragraph, .markdown-engine p, .technical-body p
     margin: 1rem 0
 
 // Headers Manifest
-.header, .golden-header
+.f-hd-md
   @extend %font-main-family
   font-size: 1.6rem
 
-.header
-  color: $text-main
-
-.golden-header
-  color: $brass-muted
-
-.small-header
+.f-hd-xs
   @extend %font-main-family
   font-size: 0.6rem
+
+.f-mono-muted
+  @extend %font-mono-family
+  font-size: 0.8rem
+  color: $brass-muted
+  min-width: 60px
+  display: inline
+
+.f-meta-xs
+  font-family: $font-default
+  font-size: 0.65rem
   color: $brass-muted

@@ -58,7 +58,7 @@ export default function LabDetail({ id }: Props) {
         <p className="mt-2 lab-detail-desc">
           {project.description}
         </p>
-        <section className="technical-body markdown-engine" dangerouslySetInnerHTML={{ __html: projectData.content }} />
+        <section className="technical-body prose-engine" dangerouslySetInnerHTML={{ __html: projectData.content }} />
       </section>
 
       <button 

@@ -60,7 +60,7 @@ export default function EraDetail({ id }: Props) {
         </header>
 
         <section>
-          <span className="section-label">~/ THE_DOSSIER</span>
+          <span className="f-label-mono f-clr-accent">~/ THE_DOSSIER</span>
           <div className="description-container">
             {era.long_description.map((paragraph, index) =>
               <p key={index} className="era-paragraph">

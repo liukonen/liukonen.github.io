@@ -13,12 +13,12 @@ export default function Sidebar({ currentRoute }: Readonly<{ currentRoute: strin
 
   return (
     <aside className="sidebar">
-      <div className="brand-logo">Liukonen.dev</div>
-      <img src="/profile_image.webp" alt="Luke Liukonen" className="profile-img" fetchpriority="high" loading="eager" />
+      <div className="sidebar-logo">Liukonen.dev</div>
+      <img src="/profile_image.webp" alt="Luke Liukonen" className="sidebar-avatar" fetchpriority="high" loading="eager" />
       
       <div className="hero-intro">
-        <h1>Luke Liukonen</h1>
-        <p className="subtitle">Senior Full Stack Software Engineer // Technical Lead // AI Strategy // Infrastructure</p>
+        <h1 className="sidebar-title">Luke Liukonen</h1>
+        <p className="sidebar-subtitle">Senior Full Stack Software Engineer // Technical Lead // AI Strategy // Infrastructure</p>
       </div>
 
       {!isMobileDevice && (

@@ -2,7 +2,7 @@ export default function CompanyCard({era}: Readonly<any>) {
 
     return (
           <div className="comp-card" key={era.id} onClick={() => location.hash = `#/ERA/${era.id}`}>    
-  <span class="golden-header">
+  <span class="f-hd-md f-clr-muted">
                 // {era.company.toUpperCase()}
               </span>
               <h4 class="lnk">{era.title}</h4>

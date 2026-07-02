@@ -6,19 +6,17 @@
 @use '_layout'
 @use 'navigation'
 @use 'Views/modals'
-@use 'Components/card'
-@use 'Components/elements'
+@use 'Components/index'
 @use 'Base/forms'
 
 // Sub-Component Layers
 @use 'typography'
+
 @use 'telemetry'
 @use 'views'
 
-@use 'Components/tags'
 @use 'articles'
 @use 'Views/case'
-@use 'Components/expansion'
 
 // ==========================================================================
 // 2. SELF-HOSTED FONTS
@@ -152,10 +150,10 @@ textarea:focus-visible
   color: inherit
  
 
-.header
-  font-family: $font-main
-  font-size: 1.6rem
-  color: $text-main
+// .header
+//   font-family: $font-main
+//   font-size: 1.6rem
+//   color: $text-main
 
 .default-margin
   @include default-margin
@@ -220,10 +218,10 @@ header
     line-height: 1.1
     font-family: $font-main
 
-.small-header
-  font-family: $font-main
-  font-size: 0.6rem
-  color: $brass-muted
+// .small-header
+//   font-family: $font-main
+//   font-size: 0.6rem
+//   color: $brass-muted
 
 // .company-card
 //   h4

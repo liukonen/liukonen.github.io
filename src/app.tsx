@@ -65,7 +65,7 @@ export default function App() {
 
    }
   useEffect(() => {
-    const contentArea = document.querySelector('.content-area')
+    const contentArea = document.querySelector('.l-scroll-y')
     
     const handleHash = () => {
 
@@ -83,11 +83,11 @@ export default function App() {
   const isMobileDevice = isMobile()
 
   return (
-    <div className="app-shell">
+    <div className="l-shell">
       {isMobileDevice  && <Navigation />}
       
       <Sidebar currentRoute={route} />
-      <main className="content-area" key={route}>
+      <main className="l-scroll-y" key={route}>
         <Suspense fallback={null}>
         {renderContent()}
         </Suspense>
