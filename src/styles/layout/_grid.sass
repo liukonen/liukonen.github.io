@@ -110,3 +110,23 @@
   @media (max-width: $max-width-content)
     display: none !important
 
+.l-scroll-y
+  @extend %h-screen
+  @extend %overflow-y-auto
+  @extend %overflow-x-hidden
+  @extend %anim-view-fade-in
+  @extend %flex-1
+  @extend %pos-relative
+  padding: fluid(32, 128)
+  &::-webkit-scrollbar
+    width: 6px
+  &::-webkit-scrollbar-thumb
+    @extend %transition-primary
+    background: $alpha-gold-20 
+    border-radius: 10px    
+  @media (max-width: $max-width-content)
+    width: 100%
+    height: auto          
+    overflow-y: visible   
+    padding: 40px 30px
+

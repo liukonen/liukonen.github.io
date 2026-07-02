@@ -26,6 +26,9 @@
   @extend %d-flex
   gap: fluid(20, 40)
   margin-bottom: fluid(24, 45)
+  @media (max-width: $max-width-content)
+    flex-direction: column
+    gap: 10px
 
 .era-container
   @extend %overflow-x-hidden
