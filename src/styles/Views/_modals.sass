@@ -199,21 +199,21 @@
   background: #0E0E10
   gap: 16px
 
-.header-meta
-  @extend %d-flex
-  @extend %flex-col
-  @extend %flex-1
-  //@extend %min-w-0
-  gap: 4px
-  h2
-    @extend %font-mono-family
-    @extend %fw-700
-    font-size: 13px // Forced to crisp HUD tracking matrix size
-    color: $text-main
-    margin: 0
-    text-transform: uppercase
-    line-height: 1.4
-.header-tags, .f-hd-md-tags
+// .header-meta
+//   @extend %d-flex
+//   @extend %flex-col
+//   @extend %flex-1
+//   //@extend %min-w-0
+//   gap: 4px
+//   h2
+//     @extend %font-mono-family
+//     @extend %fw-700
+//     font-size: 13px // Forced to crisp HUD tracking matrix size
+//     color: $text-main
+//     margin: 0
+//     text-transform: uppercase
+//     line-height: 1.4
+.f-hd-md-tags
   @extend %d-flex
   @extend %font-size-micro
   gap: 8px
@@ -244,12 +244,11 @@
   opacity: 0
   transform: translateX(2px)
   transition: all 0.15s ease
-  
-&:hover 
-  color: #FFFFFF
-  .kbd-hint
-    opacity: 1
-    transform: translateX(0)
+  &:hover 
+    color: #FFFFFF
+    .kbd-hint
+      opacity: 1
+      transform: translateX(0)
 
 // High-Contrast Framing Accent Line
 .link-modal-frame-line

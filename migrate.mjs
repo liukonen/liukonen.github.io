@@ -37,17 +37,14 @@ async function loadMigrationMap() {
     if (oldClass && newToken) {
       mappings[oldClass] = newToken;
       fileTargets[oldClass] = {
-        sourceFile: sourceFile,
-        newToken: newToken,
-        destFile: destFile,
-        folder: folder
+        sourceFile, newToken, destFile, folder
       };
     }
   }
   return { mappings, fileTargets };
 }
 
-// 2. Pass 1 Safeguard Check
+// 2. Pass 1: Global Safeguard Word-Boundary Check
 async function verifySafeguards(dir, newTokens) {
   const files = await fs.readdir(dir, { withFileTypes: true });
   const tokenSet = new Set();
@@ -65,18 +62,26 @@ async function verifySafeguards(dir, newTokens) {
       const content = await fs.readFile(resPath, 'utf-8');
       for (const token of tokenSet) {
         if (!token) continue;
-        if (content.includes(`className="${token}"`) || content.includes(`className={${token}}`)) {
-          throw new Error(`SAFEGUARD BREACH: Token '${token}' already active in '${resPath}'. Run aborted.`);
+        const tokenRegex = new RegExp(`\\b${token}\\b`);
+        if (tokenRegex.test(content)) {
+          throw new Error(`SAFEGUARD BREACH: Token '${token}' already active in '${resPath}'. Run aborted to prevent string pollution.`);
         }
       }
     }
   }
 }
 
-// 3. Pass 2 Execution: Class attribute updates in TSX
+// 3. Pass 2: Omnivorous Attribute Replacer (class=, className=, quotes, literals)
 async function updateTsxFiles(dir, mappings) {
   const files = await fs.readdir(dir, { withFileTypes: true });
-  const classNamePattern = /className="([^"]*)"/g;
+  
+  // Group 1: captures "class" or "className"
+  // Group 2/3: captures quotes and content depending on the syntax pattern
+  const classPatterns = [
+    /\b(class|className)=(["'])(.*?)\2/g,         // class="a b", className='a b'
+    /\b(class|className)=\{`([^`]*)`\}/g,         // className={`a b`}
+    /\b(class|className)=\{(["'])(.*?)\2\}/g      // className={"a b"}
+  ];
 
   for (const file of files) {
     const resPath = path.join(dir, file.name);
@@ -86,10 +91,22 @@ async function updateTsxFiles(dir, mappings) {
       await updateTsxFiles(resPath, mappings);
     } else if (file.isFile() && /\.(tsx|ts|jsx|js)$/.test(file.name)) {
       const content = await fs.readFile(resPath, 'utf-8');
+      let newContent = content;
       let fileChanged = false;
 
-      const newContent = content.replace(classNamePattern, (fullMatch, classString) => {
-        const currentClasses = classString.trim().split(/\s+/);
+      const replaceLogic = (fullMatch, attrName, p2, p3) => {
+        let classString;
+        
+        // Differentiate between template literal matches and standard quote matches
+        if (fullMatch.includes('`')) {
+          classString = p2;
+        } else {
+          classString = p3;
+        }
+
+        if (classString === undefined) return fullMatch;
+
+        const currentClasses = classString.split(/\s+/);
         let lineChanged = false;
         
         const updatedClasses = currentClasses.map(className => {
@@ -103,10 +120,19 @@ async function updateTsxFiles(dir, mappings) {
 
         if (lineChanged) {
           const flattenedString = updatedClasses.join(' ').replace(/\s+/g, ' ').trim();
-          return `className="${flattenedString}"`;
+          
+          // Reconstruct exact original wrapper using dynamic attribute name
+          if (fullMatch.startsWith(`${attrName}={\``)) return `${attrName}={\`${flattenedString}\`}`;
+          if (fullMatch.startsWith(`${attrName}=\{"`)) return `${attrName}=\{"${flattenedString}"\}`;
+          if (fullMatch.startsWith(`${attrName}=\{'`)) return `${attrName}=\{'${flattenedString}'\}`;
+          if (fullMatch.startsWith(`${attrName}="`)) return `${attrName}="${flattenedString}"`;
+          if (fullMatch.startsWith(`${attrName}='`)) return `${attrName}='${flattenedString}'`;
         }
-
         return fullMatch;
+      };
+
+      classPatterns.forEach(pattern => {
+        newContent = newContent.replace(pattern, replaceLogic);
       });
 
       if (fileChanged) {
@@ -117,7 +143,7 @@ async function updateTsxFiles(dir, mappings) {
   }
 }
 
-// 4. Extract, Clean Indentation, and Move SASS Blocks
+// 4. Pass 3: Multi-Block SASS Extractor
 async function moveSassBlocks(fileTargets) {
   console.log('Migrating physical SASS declaration blocks...');
 
@@ -129,50 +155,92 @@ async function moveSassBlocks(fileTargets) {
     const destPath = path.join(folderPath, target.destFile);
 
     if (!existsSync(sourcePath)) {
-      console.warn(`  Warning: Source SASS file missing, skipping extraction: ${sourcePath}`);
+      console.warn(`  Warning: Source SASS file missing: ${sourcePath}`);
       continue;
     }
 
     let sourceContent = await fs.readFile(sourcePath, 'utf-8');
+    let lines = sourceContent.split(/\r?\n/);
+    const targetSelector = `.${oldClass}`;
+    
+    let blockFound = true;
+    let occurrencesProcessed = 0;
 
-    const escapedClass = oldClass.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-    const sassBlockPattern = new RegExp(`^[ \t]*\\.${escapedClass}\\b[^\\n]*\\n((?:[ \t]+[^\\n]*\\n|\\s*\\n)*)`, 'm');
+    while (blockFound) {
+      blockFound = false;
+      let targetLineIdx = -1;
+      let baseIndent = 0;
 
-    const match = sourceContent.match(sassBlockPattern);
-
-    if (match) {
-      const fullMatchedBlock = match[0];
-      const blockBody = match[1];
-
-      const bodyLines = blockBody.split('\n');
-      const firstIndentedLine = bodyLines.find(l => l.trim().length > 0);
-      let baseIndentLength = 0;
-      
-      if (firstIndentedLine) {
-        const indentMatch = firstIndentedLine.match(/^([ \t]*)/);
-        if (indentMatch) baseIndentLength = indentMatch[1].length;
+      for (let i = 0; i < lines.length; i++) {
+        const trimmed = lines[i].trim();
+        if (trimmed === targetSelector || trimmed.startsWith(`${targetSelector} `) || trimmed.startsWith(`${targetSelector}:`)) {
+          targetLineIdx = i;
+          const matchIndent = lines[i].match(/^([ \t]*)/);
+          baseIndent = matchIndent ? matchIndent[1].length : 0;
+          blockFound = true;
+          break; 
+        }
       }
 
-      const normalizedBodyLines = bodyLines.map(line => {
-        if (!line.trim()) return ''; 
-        const lineIndent = line.match(/^([ \t]*)/)[1].length;
-        const relativeIndent = Math.max(0, lineIndent - baseIndentLength);
-        return '  ' + ' '.repeat(relativeIndent) + line.trim();
-      });
+      if (targetLineIdx !== -1) {
+        const collectedLines = [];
+        let nextLineIdx = targetLineIdx + 1;
 
-      const cleanedBody = normalizedBodyLines.join('\n');
-      const restructuredSass = `.${target.newToken}\n${cleanedBody}\n`;
+        while (nextLineIdx < lines.length) {
+          const currentLine = lines[nextLineIdx];
+          
+          if (!currentLine.trim()) {
+            collectedLines.push(currentLine);
+            nextLineIdx++;
+            continue;
+          }
 
-      await fs.mkdir(folderPath, { recursive: true });
-      if (!existsSync(destPath)) {
-        await fs.writeFile(destPath, "@use '../shared' as *\n\n", 'utf-8');
+          const currentIndent = currentLine.match(/^([ \t]*)/)[0].length;
+          if (currentIndent > baseIndent) {
+            collectedLines.push(currentLine);
+            nextLineIdx++;
+          } else {
+            break;
+          }
+        }
+
+        const blockBody = collectedLines.join('\n');
+        const bodyLines = blockBody.split('\n');
+        const firstRealLine = bodyLines.find(l => l.trim().length > 0);
+        let childBaseIndentLength = 0;
+        
+        if (firstRealLine) {
+          childBaseIndentLength = firstRealLine.match(/^([ \t]*)/)[0].length;
+        }
+
+        const normalizedBodyLines = bodyLines.map(line => {
+          if (!line.trim()) return '';
+          const lineIndent = line.match(/^([ \t]*)/)[0].length;
+          const relativeIndent = Math.max(0, lineIndent - childBaseIndentLength);
+          return '  ' + ' '.repeat(relativeIndent) + line.trim();
+        });
+
+        const cleanedBody = normalizedBodyLines.join('\n');
+        const restructuredSass = `.${target.newToken}\n${cleanedBody}\n\n`;
+
+        await fs.mkdir(folderPath, { recursive: true });
+        if (!existsSync(destPath)) {
+          await fs.writeFile(destPath, "@use '../shared' as *\n\n", 'utf-8');
+        }
+
+        await fs.appendFile(destPath, restructuredSass, 'utf-8');
+        occurrencesProcessed++;
+
+        const deleteCount = nextLineIdx - targetLineIdx;
+        lines.splice(targetLineIdx, deleteCount, `// Migrated .${oldClass} to ${target.folder}/${target.destFile}`);
       }
+    }
 
-      await fs.appendFile(destPath, restructuredSass, 'utf-8');
-      console.log(`  Moved SASS properties for .${oldClass} -> .${target.newToken} inside: ${destPath}`);
-
-      sourceContent = sourceContent.replace(fullMatchedBlock, `// Migrated .${oldClass} to ${target.folder}/${target.destFile}\n`);
-      await fs.writeFile(sourcePath, sourceContent, 'utf-8');
+    if (occurrencesProcessed > 0) {
+      console.log(`  Moved ${occurrencesProcessed} SASS block(s) for .${oldClass} -> .${target.newToken} inside: ${destPath}`);
+      await fs.writeFile(sourcePath, lines.join('\n'), 'utf-8');
+    } else {
+      console.warn(`  Warning: Could not locate class rule .${oldClass} inside ${target.sourceFile}`);
     }
   }
 }
@@ -180,7 +248,6 @@ async function moveSassBlocks(fileTargets) {
 // 5. Scaffolding Folders & Index Forwarding
 async function provisionSassArchitecture(fileTargets) {
   console.log('Verifying SASS directory scaffolding and index routing...');
-  
   for (const target of Object.values(fileTargets)) {
     if (!target.folder || !target.destFile) continue;
     
@@ -225,18 +292,6 @@ async function provisionSassArchitecture(fileTargets) {
     await provisionSassArchitecture(fileTargets);
     
     console.log('\nMigration engine execution complete.');
-
-    // Print proposed main.sass changes to terminal cleanly
-    const uniqueFolders = new Set(Object.values(fileTargets).map(t => t.folder).filter(Boolean));
-    if (uniqueFolders.size > 0) {
-      console.log('\n======================================================');
-      console.log('👉 ACTION REQUIRED: Add/Verify these imports in main.sass:');
-      console.log('======================================================\n');
-      uniqueFolders.forEach(folder => {
-        console.log(`@use '${folder}/index' as *`);
-      });
-      console.log('\n======================================================\n');
-    }
 
   } catch (error) {
     console.error('\nExecution Halted:', error.message);

@@ -44,9 +44,16 @@
 
 
 .l-expansion-viewport
-  width: 100%
+  @extend %w-full
 
-
+.l-expansion-viewport.is-open 
+  border-top: 1px solid rgba(68, 66, 67, 0.4) 
+  padding-top: 2.5rem 
+  background-color: rgba(255, 255, 255, 0.02) 
+  border-left: 2px solid var(--accent-color, #e5a93c) 
+  padding-left: 0.75rem
+  margin-left: -0.75rem
+  border-radius: 0 4px 4px 0
 
 .l-default-margin
   @include default-margin

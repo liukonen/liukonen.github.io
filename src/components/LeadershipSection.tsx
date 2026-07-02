@@ -69,13 +69,13 @@ export const LeadershipSection = () => {
   ]
 
   return (
-    <section id="leadership" class="leadership-section">
+    <section id="leadership" className="l-leadership-section">
       <div>
         
         {/* The Core Control Grid */}
         <div class="l-grid-3 leadership-controls">
           {sections.map((sec) => (
-            <div key={sec.id} class="leadership-node">
+            <div key={sec.id} className="l-leadership-node">
               
               {/* Trigger Header */}
               <div 
@@ -102,7 +102,7 @@ export const LeadershipSection = () => {
         </div>
 
         {/* DESKTOP VIEWPORT: Shared layout zone remaining at the baseline root */}
-        <div class={`expansion-viewport desktop-only-viewport ${activeId ? 'is-open' : ''}`}>
+        <div class={`l-expansion-viewport l-desktop-viewport ${activeId ? 'is-open' : ''}`}>
           {activeId && (
             <div class="expansion-viewport-inner">
               <div>
