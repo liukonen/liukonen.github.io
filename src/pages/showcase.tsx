@@ -9,14 +9,14 @@ export default function Showcase() {
   <section>
     <Breadcrumb path="#/SHOWCASE" />
         <Header title='Showcase' subtitle="Larger projects I Architected, Managed, and Led" />
-    <div className="showcase-grid">
+    <div className="l-showcase-grid">
     {Object.entries(showcaseData).map(([title, item]) => (
       <div key={item.id} className="card" onClick={() => window.location.hash = `#/TECH_SHOWCASE/${item.id}`}>
         <span className="f-meta-xs">
           // {title.toUpperCase()}
         </span>
 
-        <span className="f-hd-md f-clr-main lnk">{item.impact}</span>
+        <span className="f-hd-md f-clr-main c-link-interactive">{item.impact}</span>
         <p className="f-clr-mutedass-muted">Role: {item.role} </p>
         <Tags tags={item.tags} />
       </div>

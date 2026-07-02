@@ -1,0 +1,112 @@
+@use '../shared' as *
+
+.l-art-grid
+  display: grid
+  gap: 30px
+  margin-top: 40px
+
+
+.l-archive
+  .archive-header
+    @extend %d-flex
+    justify-content: space-between
+    align-items: flex-start
+
+
+
+  h4
+    @extend %mt-3
+
+  p
+    font-size: 0.9rem
+    color: $text-muted
+    margin-top: 8px
+.l-grid-2
+  display: grid
+  grid-template-columns: 1fr 1fr
+  gap: fluid(16, 24)
+  @media (max-width: $max-width-content)
+    grid-template-columns: 1fr
+
+
+.l-grid-3
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  gap: fluid(16, 24)
+  @media (max-width: $max-width-content)
+    grid-template-columns: 1fr
+
+@media (max-width: $max-width-content)
+  .l-grid-3.leadership-controls
+    display: flex !important
+    flex-direction: column !important
+    gap: 1rem
+
+
+.l-expansion-viewport
+  width: 100%
+
+
+
+.l-default-margin
+  @include default-margin
+
+
+.l-showcase-grid
+  margin-bottom: 100px
+
+
+.l-detail-view
+  max-width: 900px
+
+
+.l-era-header
+  @include default-margin
+  .brand-box
+    display: flex
+    align-items: center
+    gap: 30px
+    margin-bottom: 40px
+    .company-logo-large
+      width: 80px
+      height: 80px
+      border-radius: 8px
+      filter: grayscale(1) brightness(0.8)
+      border: 1px solid rgba(255, 255, 255, 0.1)
+      padding: 10px
+      background: #fff
+    .external-link
+      font-family: $font-mono
+      font-size: 0.8rem
+      color: $gold-accent
+      text-decoration: none
+      &:hover
+        text-decoration: underline
+
+
+.l-description-container
+  margin-top: 20px
+  max-width: 75ch
+
+
+
+.l-hero-intro
+  h1
+    letter-spacing: -0.02em
+    line-height: 1.1
+    font-family: $font-main
+
+
+.l-leadership-section
+  width: 100%
+
+
+.l-leadership-node
+  display: flex
+  flex-direction: column
+
+.l-desktop-viewport
+  display: block
+  @media (max-width: $max-width-content)
+    display: none !important
+

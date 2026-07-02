@@ -137,7 +137,7 @@ export default function UptimeModal() {
         <div className="telemetry-header">
           <div className="f-hd-md-meta">
             <h2>SYSTEM_STATUS_METRICS</h2>
-            <div className="f-hd-md-tags font-mono">
+            <div className="f-hd-md-tags f-font-mono">
               <span className="tag">TOPOLOGY::HYBRID_DISTRIBUTED_EDGE</span>
               <span className="tag-separator">|</span>
               <span className="tag">ORCHESTRATION::ISOLATED_PROCESS_NODES</span>
@@ -154,26 +154,26 @@ export default function UptimeModal() {
 
         <div className="telemetry-content">
           {loading &&
-            <div className="telemetry-status-message font-mono">
+            <div className="telemetry-status-message f-font-mono">
               LOADING_UPSTREAM_METRICS...
             </div>}
           {error &&
-            <div className="telemetry-status-message error font-mono">
+            <div className="telemetry-status-message error f-font-mono">
               ERROR::{error.toUpperCase()}
             </div>}
 
           {monitors &&
             <div className="telemetry-sheet">
               {/* Columns Blueprint Header with Gold Border Accent Frame */}
-              <div className="sheet-header font-mono">
+              <div className="sheet-header f-font-mono">
                 <span className="col-lbl col-node">
                   MONITOR_NODE (SINGLE_INSTANCE)
                 </span>
                 <div className="metrics-lbl-group">
                   <span className="col-lbl">1D</span>
                   <span className="col-lbl">7D</span>
-                  <span className="col-lbl text-gold">30D_SLA</span>
-                  <span className="col-lbl col-latency text-gold">LATENCY</span>
+                  <span className="col-lbl f-text-gold">30D_SLA</span>
+                  <span className="col-lbl col-latency f-text-gold">LATENCY</span>
                   <span className="col-lbl col-pulse">STATUS</span>
                 </div>
               </div>
@@ -190,21 +190,21 @@ export default function UptimeModal() {
                     />
 
                     <div className="row-content">
-                      <span className="node-name font-mono">
+                      <span className="node-name f-font-mono">
                         {m.name.toUpperCase().replace(/[\(\)]/g, "")}
                       </span>
 
-                      <div className="node-metrics font-mono">
+                      <div className="node-metrics f-font-mono">
                         <span className="metric-val">
                           {Number.parseFloat(m.uptime.day1).toFixed(2)}%
                         </span>
                         <span className="metric-val">
                           {Number.parseFloat(m.uptime.day7).toFixed(2)}%
                         </span>
-                        <span className="metric-val text-gold-value">
+                        <span className="metric-val f-text-gold-value">
                           {Number.parseFloat(m.uptime.day30).toFixed(3)}%
                         </span>
-                        <span className="metric-val latency-val text-gold-value">
+                        <span className="metric-val latency-val f-text-gold-value">
                           {Number(m.response).toFixed(0)}
                           <span className="unit">ms</span>
                         </span>
@@ -237,7 +237,7 @@ export default function UptimeModal() {
 
         {/* Consolidated Systems Footer */}
         {updatedAt &&
-          <div className="telemetry-footer font-mono">
+          <div className="telemetry-footer f-font-mono">
             <span>
               ENGINE_METRICS_LAST_PULL: {formattedTime}
             </span>

@@ -49,16 +49,16 @@ export default function LabDetail({ id }: Props) {
           </div>
         )}
 
-        <div className="mt-1">
+        <div className="f-mt-1">
         <Tags tags={project.tech} />
         </div>
       </header>
 
-      <section className="mt-4">
-        <p className="mt-2 lab-detail-desc">
+      <section className="f-mt-4">
+        <p className="f-mt-2 lab-detail-desc">
           {project.description}
         </p>
-        <section className="technical-body prose-engine" dangerouslySetInnerHTML={{ __html: projectData.content }} />
+        <section className="technical-body c-prose-container" dangerouslySetInnerHTML={{ __html: projectData.content }} />
       </section>
 
       <button 

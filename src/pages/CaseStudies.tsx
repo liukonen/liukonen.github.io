@@ -9,9 +9,9 @@ export default function Showcase() {
   <section>
     <Breadcrumb path="#/CASE_STUDIES" />
     <Header title='Case Studies' subtitle="Larger projects I Architected, Managed, and Led" />
-    <div className="showcase-grid">
+    <div className="l-showcase-grid">
     {Object.entries(showcaseData).filter(([title, item]) => item.hasCaseStudy).map(([title, item]) => (        
-      <div key={item.id} className="card archive" onClick={() => window.location.hash = `#/CASE_STUDIES/${item.id}`}>
+      <div key={item.id} className="card l-archive" onClick={() => window.location.hash = `#/CASE_STUDIES/${item.id}`}>
         <span className={"f-meta-xs"}>
           // {title.toUpperCase()}
         </span>

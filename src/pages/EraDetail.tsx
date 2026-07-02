@@ -8,11 +8,11 @@ export default function EraDetail({ id }: Props) {
   if (!era) return <div>Error: Era Not Found</div>
 
   return (
-    <div className="detail-view" key={id}>
+    <div className="l-detail-view" key={id}>
       <div className="era-container">
         <Breadcrumb path={`#/ERA/${id}`} />
 
-        <header className="era-header">
+        <header className="l-era-header">
           <div className="brand-box">
             <img
               src={era.logoUrl}
@@ -61,9 +61,9 @@ export default function EraDetail({ id }: Props) {
 
         <section>
           <span className="f-label-mono f-clr-accent">~/ THE_DOSSIER</span>
-          <div className="description-container">
+          <div className="l-description-container">
             {era.long_description.map((paragraph, index) =>
-              <p key={index} className="era-paragraph">
+              <p key={index} className="f-body-prose">
                 {paragraph}
               </p>
             )}

@@ -15,7 +15,7 @@ export default function OpenSourceProjects() {
         title="Open Source Projects" 
         subtitle="A collection of specialized utilities, hardware monitors, and architectural experiments." 
       />
-      <section className="grid-2 showcase-grid">
+      <section className="l-grid-2 l-showcase-grid">
         {labEntries.map(([id, project]) => (
           <div 
             key={id} 

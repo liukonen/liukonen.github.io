@@ -27,7 +27,7 @@ export default function ArticlesSection() {
   }
 
   return (
-    <section id="writeups" className="showcase-grid">
+    <section id="writeups" className="l-showcase-grid">
       <span className="f-label-mono f-clr-accent">~/ RECENT_WRITEN_ARTICLES</span>
       <p>
         // Technical spikes, systems research, and engineering explorations.<br />
@@ -35,7 +35,7 @@ export default function ArticlesSection() {
       </p>
       < br />
       <section>
-        <div className="grid-2">
+        <div className="l-grid-2">
           {articles.map(article => <ArticleEntry article={article} onArticleClick={handleArticleClick} isMobile={isMobile} />)}
         </div>
       </section>
@@ -57,7 +57,7 @@ const ArticleEntry = ({ article, onArticleClick, isMobile }: any) =>
     <a
       href={article.url}
       key={article.id}
-      className="mini-article-row"
+      className="c-art-row"
       target={isMobile ? "_blank" : undefined}
       onClick={(e) => onArticleClick(e, article)}
     >

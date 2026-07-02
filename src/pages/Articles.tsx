@@ -44,7 +44,7 @@ export default function Articles() {
       {loading ? (
         <div>PULLING_REMOTE_DATA...</div>
       ) : (
-        <div className="full-article-grid grid-2">
+        <div className="l-art-grid l-grid-2">
           {articles.map(article => (
             <div key={article.id} className="art-card">
               <a 

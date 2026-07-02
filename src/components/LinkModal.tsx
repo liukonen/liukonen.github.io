@@ -51,11 +51,11 @@ export default function LinkModal({ articleId, onClose, title, url, onContentLoa
         
         {/* Unified Top HUD Navigation Grid */}
         <div 
-          className="link-modal-header font-mono modal-row-split-gap" 
+          className="link-modal-header f-font-mono modal-row-split-gap" 
         >
           <div className="f-hd-md-meta modal-cell-fill">
             {url ? (
-              <a href={url} target="_blank" rel="noopener noreferrer" className="link-modal-title-link no-decor">
+              <a href={url} target="_blank" rel="noopener noreferrer" className="link-modal-title-link f-no-decor">
                 <h2 className="modal-txt-wrap">
                   {title ? `${title}` : 'DOCUMENT::FETCH_ENTRY'}
                 </h2>
@@ -90,19 +90,19 @@ export default function LinkModal({ articleId, onClose, title, url, onContentLoa
           className="link-modal-content-scrollzone modal-scroll-y" 
         >
           {loading ? (
-            <div className="link-modal-loading font-mono">LOADING_STREAM_RESOURCES...</div>
+            <div className="link-modal-loading f-font-mono">LOADING_STREAM_RESOURCES...</div>
           ) : content ? (
             <div 
               className="link-modal-body modal-clip-x"
               dangerouslySetInnerHTML={{ __html: content }}
             />
           ) : (
-            <div className="link-modal-error font-mono">ERROR::FETCH_PIPELINE_FAILED</div>
+            <div className="link-modal-error f-font-mono">ERROR::FETCH_PIPELINE_FAILED</div>
           )}
         </div>
 
         {/* Integrated Low-Profile Meta Footer */}
-        <div className="link-modal-footer font-mono">
+        <div className="link-modal-footer f-font-mono">
           <span>DOC_SOURCE::DEV_TO_API</span>
           <span className="tag-separator">|</span>
           <span>RENDER_ENGINE::VHTML_RAW_PARSER</span>

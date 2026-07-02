@@ -1,6 +1,17 @@
-@use 'shared' as *
+@use '../shared' as *
 
-.hud-status-node
+.c-art-row
+  @extend %align-center
+  gap: 15px
+  padding: 12px 0
+  text-decoration: none
+  border-bottom: 1px solid $border-subtle
+  color: $text-muted
+  transition: color $transition-primary
+
+
+
+.c-hud-status
   @extend %pos-relative
   @extend %bg-none
   @extend %border-none
@@ -9,23 +20,23 @@
   display: inline-flex
   align-items: center
   justify-content: center
-  
-  &:hover 
+
+  &:hover
     &::before
       content: attr(data-tooltip)
       @extend %pos-absolute
       @extend %font-mono-family
       @extend %fw-600
-      bottom: 135% 
+      bottom: 135%
       left: 50%
       transform: translateX(-50%)
-      background: #141416 
+      background: #141416
       color: $text-main
       font-size: 10px
       letter-spacing: 0.05em
       white-space: nowrap
       padding: 6px 10px
-      border: 1px solid rgba($border-subtle, 0.8) 
+      border: 1px solid rgba($border-subtle, 0.8)
       border-radius: 4px
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4)
       z-index: 50
@@ -43,7 +54,7 @@
       z-index: 50
       pointer-events: none
 
-button.hud-status-node
+button.c-hud-status
   @extend %bg-none
   @extend %border-none
   @extend %cursor-pointer
@@ -57,6 +68,9 @@ button.hud-status-node
     transition: color 0.3s ease-in-out
 
 .tooltip-trigger
+  @extend .c-tooltip
+
+.c-tooltip
   @extend %pos-relative
   @extend %text-left
   border-bottom: 1px dashed var(--accent-color, $gold-accent)
@@ -103,3 +117,8 @@ button.hud-status-node
 
   &:hover::before
     opacity: 1
+.c-link-interactive
+  @extend %interactive-link-base
+
+
+

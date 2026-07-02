@@ -3,7 +3,7 @@ import Tags from "./Tags"
 
 export default function CareerSection({ eras }: Readonly<any>) {
     return (
-      <section id="eras" className="showcase-grid">
+      <section id="eras" className="l-showcase-grid">
         <span className="f-label-mono f-clr-accent">~/ RECENT_CAREER</span>
         {eras.slice(0, 3).map((era: any) => (
           <EraEntry key={era.id} era={era} />

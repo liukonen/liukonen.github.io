@@ -2,7 +2,7 @@ import MoreFooter from "./MoreFooter"
 
 export default function OpenSourceSection({ repos }: Readonly<any>) {
     return (
-      <section id="featured-labs" className="showcase-grid">
+      <section id="featured-labs" className="l-showcase-grid">
         <span className="f-label-mono f-clr-accent"> ~/ OPEN_SOURCE_PROJECTS</span>
         <p>
 
@@ -10,7 +10,7 @@ export default function OpenSourceSection({ repos }: Readonly<any>) {
           // Focused on local-first execution, minimal dependency footprints, and raw systems craft.
         </p>
         <br />
-        <div className="grid-2">
+        <div className="l-grid-2">
           {Object.entries(repos).slice(0, 4).map(([id, project]) => (
             <LabEntry id={id} project={project} />
           ))}

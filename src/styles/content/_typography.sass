@@ -1,0 +1,109 @@
+@use '../shared' as *
+
+.c-prose-container
+  a
+    @extend %text-gold-color
+    text-decoration: none
+    &:hover
+      text-decoration: underline
+  ul, ol
+    padding-left: 2rem
+    margin-bottom: 1rem
+    color: $text-muted
+  h2
+    @extend %text-gold-color
+    font-size: 1.6rem
+    border-bottom: 1px solid $border-dark
+    padding-bottom: 0.5rem
+  img
+    @extend %w-full
+    max-width: 100%
+    height: auto
+    border: 1px solid $border-dark
+    border-radius: 4px
+    margin: 1rem 0
+
+// Labels & Micro Typography
+.f-label-mono
+  @extend %font-mono-family
+  letter-spacing: 5px
+  font-size: 0.7rem
+  text-transform: uppercase
+  margin-bottom: fluid(18, 35)
+  display: block
+
+
+// Structural Prose Adjustments
+p, .era-paragraph, .prose-engine p, .technical-body p
+  max-width: 65ch
+  margin-bottom: 1.75rem
+
+.f-clr-accent
+  color: $gold-accent !important
+
+.f-clr-muted
+  color: $brass-muted !important
+
+.f-clr-main
+  color: $text-main !important
+
+// Migrated .prose-engine to content/_typography.sass
+// Headers Manifest
+.f-hd-md
+  @extend %font-main-family
+  font-size: 1.6rem
+
+.f-hd-xs
+  @extend %font-main-family
+  font-size: 0.6rem
+
+.f-mono-muted
+  @extend %font-mono-family
+  font-size: 0.8rem
+  color: $brass-muted
+  min-width: 60px
+  display: inline
+
+.f-meta-xs
+  font-family: $font-default
+  font-size: 0.65rem
+  color: $brass-muted
+
+.f-font-mono
+  font-family: $font-mono
+  letter-spacing: 0.02em
+
+
+.f-text-gold
+  color: $gold-accent
+  font-weight: 700
+
+
+.f-text-gold-value
+  color: $gold-hover !important
+
+
+.f-no-decor
+  text-decoration: none
+  color: inherit
+
+
+
+.f-mt-1
+  @include top-buffer-10
+
+
+.f-mt-2
+  @include top-buffer-20
+
+
+.f-mt-4
+  @include top-buffer-40
+
+
+.f-gold-bullet
+  color: $gold-accent
+  font-weight: 600
+  margin-right: 4px
+
+

@@ -3,12 +3,12 @@ import showcaseData from  '../data/showcase.json'
 
 export default function ShowcaseSection() {
   return (
-    <section className="showcase-grid">
+    <section className="l-showcase-grid">
       <span className="f-label-mono f-clr-accent">
         ~/ SHOWCASE_PROJECTS
       </span>
       <br />
-      <div class="grid-3">
+      <div class="l-grid-3">
       {
         Object.entries(showcaseData).splice(0, 3).map(([title, item]) => 
           (

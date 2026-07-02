@@ -39,7 +39,7 @@ export const LeadershipSection = () => {
       id: 'how', 
       title: how.text, 
       content: (
-        <ul class="grid-2">
+        <ul className="l-grid-2">
           {how.points.map(p => (
             <li class="bento" key={p.id}>
               <strong class="gold-bullet">{p.id}:</strong> {p.content}
@@ -52,7 +52,7 @@ export const LeadershipSection = () => {
       id: 'opt', 
       title: optimize.text, 
       content: (
-        <ul class="grid-2">
+        <ul className="l-grid-2">
           {optimize.items.map((i, idx) => <li class="bento" key={idx}>{i}</li>)}
         </ul>
       )
@@ -61,7 +61,7 @@ export const LeadershipSection = () => {
       id: 'dont', 
       title: dont.text, 
       content: (
-        <ul class="grid-2">
+        <ul className="l-grid-2">
           {dont.items.map((i, idx) => <li class="bento" key={idx}>{i}</li>)}
         </ul>
       )
@@ -73,7 +73,7 @@ export const LeadershipSection = () => {
       <div>
         
         {/* The Core Control Grid */}
-        <div class="grid-3 leadership-controls">
+        <div class="l-grid-3 leadership-controls">
           {sections.map((sec) => (
             <div key={sec.id} class="leadership-node">
               

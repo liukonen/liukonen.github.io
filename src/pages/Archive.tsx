@@ -22,11 +22,11 @@ export default function Labs() {
       </div>
 
       {/* The Full Bento Grid */}
-      <section className="grid-2">
+      <section className="l-grid-2">
      
       {labEntries.map(([id, project]) => (
         <a href={'https://liukonen.github.io/archive/' + project.id + '/'} target='_blank'>
-        <div key={id} className="card archive">
+        <div key={id} className="card l-archive">
           <div className={"archive-header"}>
             <span className={"f-meta-xs"}>
               // {project.id.toUpperCase()}

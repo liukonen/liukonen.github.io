@@ -199,59 +199,57 @@
   background: #0E0E10
   gap: 16px
 
-  // .header-meta
-  //   @extend %d-flex
-  //   @extend %flex-col
-  //   @extend %flex-1
-  //   //@extend %min-w-0
-  //   gap: 4px
+.header-meta
+  @extend %d-flex
+  @extend %flex-col
+  @extend %flex-1
+  //@extend %min-w-0
+  gap: 4px
+  h2
+    @extend %font-mono-family
+    @extend %fw-700
+    font-size: 13px // Forced to crisp HUD tracking matrix size
+    color: $text-main
+    margin: 0
+    text-transform: uppercase
+    line-height: 1.4
+.header-tags, .f-hd-md-tags
+  @extend %d-flex
+  @extend %font-size-micro
+  gap: 8px
+  color: $text-muted
+  font-weight: 600
 
-  //   h2
-  //     @extend %font-mono-family
-  //     @extend %fw-700
-  //     font-size: 13px // Forced to crisp HUD tracking matrix size
-  //     color: $text-main
-  //     margin: 0
-  //     text-transform: uppercase
-  //     line-height: 1.4
+.tag-separator
+  color: rgba($text-muted, 0.3)
 
-  //   .header-tags
-  //     @extend %d-flex
-  //     @extend %font-size-micro
-  //     gap: 8px
-  //     color: $text-muted
-  //     font-weight: 600
-      
-  //     .tag-separator
-  //       color: rgba($text-muted, 0.3)
-
-  .link-modal-close
-    @extend %bg-none
-    @extend %border-none
-    @extend %font-size-meta
-    @extend %cursor-pointer
-    @extend %d-flex
-    @extend %align-center
-    gap: 8px
-    color: $text-muted
-    padding: 4px
-    transition: color 0.12s ease
-    flex-shrink: 0
+.link-modal-close
+  @extend %bg-none
+  @extend %border-none
+  @extend %font-size-meta
+  @extend %cursor-pointer
+  @extend %d-flex
+  @extend %align-center
+  gap: 8px
+  color: $text-muted
+  padding: 4px
+  transition: color 0.12s ease
+  flex-shrink: 0
     
-    .kbd-hint
-      @extend %font-size-micro
-      border: 1px solid rgba($border-subtle, 0.8)
-      padding: 1px 4px
-      border-radius: 3px
-      opacity: 0
-      transform: translateX(2px)
-      transition: all 0.15s ease
-      
-    &:hover 
-      color: #FFFFFF
-      .kbd-hint
-        opacity: 1
-        transform: translateX(0)
+.kbd-hint
+  @extend %font-size-micro
+  border: 1px solid rgba($border-subtle, 0.8)
+  padding: 1px 4px
+  border-radius: 3px
+  opacity: 0
+  transform: translateX(2px)
+  transition: all 0.15s ease
+  
+&:hover 
+  color: #FFFFFF
+  .kbd-hint
+    opacity: 1
+    transform: translateX(0)
 
 // High-Contrast Framing Accent Line
 .link-modal-frame-line
@@ -286,11 +284,10 @@
   border-top: 1px solid $border-subtle
   color: $text-muted
   
-  .footer-right
-    @extend %d-flex
-    gap: 8px
-    .tag-separator
-      color: rgba($text-muted, 0.3)
+.footer-right
+  @extend %d-flex
+  gap: 8px
+
 
 // ==========================================================================
 // UPTIME / TELEMETRY MODAL
@@ -325,37 +322,30 @@
   border-bottom: 1px solid $border-subtle
   background: #0E0E10
 
-  // .header-meta
-  //   @extend %d-flex
-  //   @extend %flex-col
-  //   gap: 4px
-  //   h2
-  //     @extend %font-mono-family
-  //     @extend %fw-700
-  //     @extend %ls-telemetry
-  //     font-size: 13px
-  //     color: $text-main
-  //     margin: 0
-  //   .header-tags
-  //     @extend %d-flex
-  //     @extend %justify-center
-  //     @extend %font-size-micro
-  //     gap: 8px
-  //     color: $text-muted
-  //     font-weight: 600
-  //     .tag-separator
-  //       color: rgba($text-muted, 0.3)
+.f-hd-md-meta
+  @extend %d-flex
+  @extend %flex-col
+  gap: 4px
+  h2
+    @extend %font-mono-family
+    @extend %fw-700
+    @extend %ls-telemetry
+    font-size: 13px
+    color: $text-main
+    margin: 0
 
-  .close-btn
-    @extend %bg-none
-    @extend %border-none
-    @extend %font-size-meta
-    @extend %cursor-pointer
-    color: $text-muted
-    padding: 4px
-    transition: color 0.12s ease
-    &:hover
-      color: #FFFFFF
+
+
+.close-btn
+  @extend %bg-none
+  @extend %border-none
+  @extend %font-size-meta
+  @extend %cursor-pointer
+  color: $text-muted
+  padding: 4px
+  transition: color 0.12s ease
+  &:hover
+    color: #FFFFFF
 
 .telemetry-content
   padding: 24px

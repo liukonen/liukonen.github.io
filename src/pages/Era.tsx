@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div>
       <Breadcrumb path="#/ERA" />
-      <section id="eras" className="showcase-grid">
+      <section id="eras" className="l-showcase-grid">
         <Header title='Career' subtitle="My Professional career so far" />
         {eras.map((era) => (
           <EraEntry key={era.id} era={era} />

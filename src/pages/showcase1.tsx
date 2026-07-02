@@ -8,7 +8,7 @@ export default function Showcase() {
         <a href="#/">~/root</a> <span className="sep">/</span> SHOWCASE
       </div>
       
-      <header className="era-header">
+      <header className="l-era-header">
         <h1>Showcase Projects and Hackathons</h1>
         <p>note: much of the data was redacted for privacy and IP. Diagrams, mocks are "rerecorded" for demonstration purposes only and are taken from memory.</p>
       </header>

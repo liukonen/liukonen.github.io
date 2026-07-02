@@ -65,7 +65,7 @@ export default function ShowcaseDetail({ id }) {
         {showcase.features && Object.keys(showcase.features).length > 0 && (
           <section className="bento-showcase-section">
             <h2>// KEY FEATURES & IMPACT</h2>
-            <div className="grid-2">
+            <div className="l-grid-2">
               {Object.entries(showcase.features).map(([title, itemsString], index) => {
                 const formattedTitle = title
                   .replace(/_/g, ' ')
@@ -75,7 +75,7 @@ export default function ShowcaseDetail({ id }) {
 
                 return (
                   <div className="bento" key={index}>
-                    <strong className="gold-bullet">{formattedTitle}</strong>
+                    <strong className="f-gold-bullet">{formattedTitle}</strong>
                     <ul className="">
                       {items.map((item, i) => (
                         <li key={i} dangerouslySetInnerHTML={{ __html: item }} />
