@@ -1,84 +1,77 @@
-import fs from 'fs/promises';
+// import fs from 'fs';
+// import path from 'path';
+
+// const ROOT_DIR = './src/styles';
+// const data = {
+//   placeholders: {}, // %name: { file: '', extendedBy: [] }
+//   hardcodedBloat: [], // List of instances where a value is duplicated across files
+//   dependencyMap: {}  // File-to-file relationships
+// };
+
+// function scan(dir) {
+//   fs.readdirSync(dir).forEach(file => {
+//     const fullPath = path.join(dir, file);
+//     if (fs.statSync(fullPath).isDirectory()) scan(fullPath);
+//     else if (file.endsWith('.sass')) processFile(fullPath);
+//   });
+// }
+
+// function processFile(filePath) {
+//   const content = fs.readFileSync(filePath, 'utf8');
+  
+//   // 1. Map Placeholders
+//   const phRegex = /^%([\w-]+)/gm;
+//   let match;
+//   while ((match = phRegex.exec(content)) !== null) {
+//     data.placeholders[match[1]] = { file: filePath, extendedBy: [] };
+//   }
+
+//   // 2. Identify Potential Bloat (Hardcoded values that appear in > 1 file)
+//   // This looks for common patterns that should be %placeholders
+//   const potentialBloat = ['padding: 18px', 'border-radius: 4px', 'margin-bottom: 3rem'];
+//   potentialBloat.forEach(val => {
+//     if (content.includes(val)) {
+//       data.hardcodedBloat.push({ file: filePath, val });
+//     }
+//   });
+// }
+
+// scan(ROOT_DIR);
+// fs.writeFileSync('bloat.json', JSON.stringify(data, null, 2));
+// console.log('Analysis complete: bloat.json generated.');
+import fs from 'fs';
 import path from 'path';
 
-const STYLES_DIR = './src/styles';
-const OUTPUT_FILE = './sass_density_map.json';
+const ROOT_DIR = './src/styles';
 
-// Global Token Dictionary to shrink strings down to short IDs
-const dict = [];
-function t(str) {
-  let idx = dict.indexOf(str);
-  if (idx === -1) {
-    idx = dict.push(str) - 1;
-  }
-  return idx;
-}
-
-async function scanDir(dir) {
-  const files = await fs.readdir(dir, { withFileTypes: true });
-  const nodes = [];
-
-  for (const file of files) {
-    const fullPath = path.join(dir, file.name);
-    const relPath = path.relative(STYLES_DIR, fullPath).replace(/\\/g, '/');
-
-    if (file.isDirectory()) {
-      nodes.push(...(await scanDir(fullPath)));
-    } else if (file.isFile() && /\.(sass|scss)$/.test(file.name)) {
-      const content = await fs.readFile(fullPath, 'utf-8');
-      
-      const selectors = [];
-      // Tokenize selectors, extends, uses, and forwards
-      const lines = content.split(/\r?\n/);
-      let currentSelector = null;
-
-      for (const line of lines) {
-        const trimmed = line.trim();
-        if (!trimmed) continue;
-
-        // Detect high-level routing or dependency declarations
-        if (trimmed.startsWith('@use ') || trimmed.startsWith('@forward ')) {
-          selectors.push([t(trimmed)]); 
-          continue;
-        }
-
-        // Detect a class selector or placeholder rule
-        if (trimmed.startsWith('.') || trimmed.startsWith('%')) {
-          currentSelector = trimmed.split(/\s+/)[0]; // get base token
-          selectors.push([t(currentSelector)]);
-          continue;
-        }
-
-        // Detect internal dependencies inside the current block
-        if (trimmed.startsWith('@extend ') && currentSelector) {
-          const target = trimmed.replace('@extend ', '').trim();
-          // Find the last added selector array and push the dependency token ID
-          selectors[selectors.length - 1].push(t(`ext:${target}`));
-        }
-      }
-
-      // Format: [FileNameID, [[SelectorID, DepID, DepID], [Selector2ID]]]
-      nodes.push([t(relPath), selectors]);
+// Helper to find all .sass files recursively
+function getAllFiles(dirPath, arrayOfFiles = []) {
+  const files = fs.readdirSync(dirPath);
+  files.forEach(file => {
+    const fullPath = path.join(dirPath, file);
+    if (fs.statSync(fullPath).isDirectory()) {
+      arrayOfFiles = getAllFiles(fullPath, arrayOfFiles);
+    } else if (file.endsWith('.sass')) {
+      arrayOfFiles.push(fullPath);
     }
-  }
-  return nodes;
+  });
+  return arrayOfFiles;
 }
 
-(async () => {
-  try {
-    console.log('Encoding SASS graph into ultra-dense payload...');
-    const graph = await scanDir(STYLES_DIR);
-    
-    // The ultimate payload: [Dictionary Array, Graph Matrix Array]
-    const packedPayload = [dict, graph];
-    
-    // Stringify with zero indentation/whitespace
-    await fs.writeFile(OUTPUT_FILE, JSON.stringify(packedPayload), 'utf-8');
-    
-    const stats = await fs.stat(OUTPUT_FILE);
-    console.log(`Success! File optimized down to ${(stats.size / 1024).toFixed(2)} KB.`);
-    console.log(`Provide the contents of '${OUTPUT_FILE}' when ready for deduplication.`);
-  } catch (err) {
-    console.error('Extraction failed:', err.message);
-  }
-})();
+function generateTrueMap() {
+  const allFiles = getAllFiles(ROOT_DIR);
+  const map = {};
+
+  allFiles.forEach(f => {
+    const content = fs.readFileSync(f, 'utf8');
+    const fileName = path.basename(f);
+    // Find all @extend %patterns
+    const matches = [...content.matchAll(/@extend\s+%([\w-]+)/g)];
+    map[fileName] = matches.map(m => m[1]);
+  });
+  
+  fs.writeFileSync('true_map_for_ai.json', JSON.stringify(map, null, 2));
+  console.log('Success! Map generated: true_map_for_ai.json');
+}
+
+generateTrueMap();

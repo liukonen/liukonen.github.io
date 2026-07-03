@@ -4,6 +4,7 @@ import Sidebar from './components/Sidebar'
 import { Navigation } from './components/NavBar'
 import isMobile from './services/isMobile'
 import UptimeModal from './components/UptimeModal'
+import {ImageModal} from './components/ImageModal'
 
 const Home = lazy(() => import('./pages/Home'))
 const OpenSourceProjects = lazy(() => import('./pages/OpenSourceProjects'))
@@ -21,6 +22,7 @@ const CaseStudy = lazy(() => import('./pages/case-study'))
 
 export default function App() {
   const [route, setRoute] = useState(location.hash || '#/')
+  const [modalSrc, setModalSrc] = useState<string | null>(null)
 
   const routes = {
     '/': Home,
@@ -64,6 +66,20 @@ export default function App() {
 
 
    }
+  const handleContentClick = (e: MouseEvent) => {
+    const target = e.target as HTMLElement
+    
+    // Only target images that specifically have the Architecture Diagram alt text
+    const mediaTarget = target.closest('img[alt="Architecture Diagram"]')
+    
+    if (mediaTarget) {
+      const src = mediaTarget.getAttribute('src')
+      if (src) {
+        setModalSrc(src)
+      }
+    }
+  }
+
   useEffect(() => {
     const contentArea = document.querySelector('.l-scroll-y')
     
@@ -87,11 +103,12 @@ export default function App() {
       {isMobileDevice  && <Navigation />}
       
       <Sidebar currentRoute={route} />
-      <main className="l-scroll-y" key={route}>
+      <main className="l-scroll-y" key={route} onClick={handleContentClick as any}>
         <Suspense fallback={null}>
         {renderContent()}
         </Suspense>
         <UptimeModal />
+        <ImageModal src={modalSrc} onClose={() => setModalSrc(null)} />
       </main>
     </div>
   )

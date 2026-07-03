@@ -8,26 +8,20 @@
 
 .l-archive
   .archive-header
-    @extend %d-flex
-    justify-content: space-between
-    align-items: flex-start
-
-
-
+    @include d-flex(space-between, flex-start)
   h4
     @extend %mt-3
-
   p
     font-size: 0.9rem
-    color: $text-muted
+    color: var(--brass-muted)
     margin-top: 8px
+
 .l-grid-2
   display: grid
   grid-template-columns: 1fr 1fr
   gap: fluid(16, 24)
   @media (max-width: $max-width-content)
     grid-template-columns: 1fr
-
 
 .l-grid-3
   display: grid
@@ -85,7 +79,7 @@
     .external-link
       font-family: $font-mono
       font-size: 0.8rem
-      color: $gold-accent
+      color: var(--gold-accent)
       text-decoration: none
       &:hover
         text-decoration: underline
@@ -101,7 +95,7 @@
   h1
     letter-spacing: -0.02em
     line-height: 1.1
-    font-family: $font-main
+    font-family: var(--font-main)
 
 
 .l-leadership-section
@@ -138,7 +132,7 @@
     padding: 40px 30px
 
 .l-era
-  @extend %d-flex
+  @exten %d-flex
   gap: fluid(20, 40)
   margin-bottom: fluid(24, 45)
   @media (max-width: $max-width-content)

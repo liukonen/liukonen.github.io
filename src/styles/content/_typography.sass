@@ -39,7 +39,7 @@ p, .f-body-prose p, .prose-engine p, .technical-body p
   margin-bottom: 1.75rem
 
 .f-clr-accent
-  color: $gold-accent !important
+  color: var(--gold-accent) !important
 
 .f-clr-muted
   color: $brass-muted !important
@@ -75,7 +75,7 @@ p, .f-body-prose p, .prose-engine p, .technical-body p
 
 
 .f-text-gold
-  color: $gold-accent
+  color: var(--gold-accent)
   font-weight: 700
 
 
@@ -102,22 +102,22 @@ p, .f-body-prose p, .prose-engine p, .technical-body p
 
 
 .f-gold-bullet
-  color: $gold-accent
+  color: var(--gold-accent)
   font-weight: 600
   margin-right: 4px
 
 .f-breadcrumb-active
-  //color: $gold-accent.f-md-tags
-  @extend %d-flex
+  //color: var(--gold-accent) //.f-md-tags
+  //@include d-flex()
   @extend %font-size-micro
   gap: 8px
-  color: $text-muted
+  color: var(--gold-accent)
   font-weight: 600
 
 
 .f-md-meta
-  @extend %d-flex
-  @extend %flex-col
+  @include d-flex()
+  @include flex-col
   gap: 4px
   h2
     @extend %font-mono-family

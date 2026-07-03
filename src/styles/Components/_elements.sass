@@ -12,15 +12,15 @@
 .gold-spacer
   height: 1px
   @extend %w-full
-  background: $gold-accent
+  background: var(--gold-accent)
   margin: 3rem 0
 
 /// @surface project-meta-top
 /// @description Shows Role and stack in grey box with gold boarder
 /// @usage ShpwcaseDetail
 .project-meta-top
-  @extend %d-flex
-  @extend %flex-col
+  @include d-flex()
+  @include flex-col
   gap: fluid(16, 24)
   padding: fluid(16, 24)
   border: 1px solid $border-dark
@@ -33,7 +33,7 @@
     font-size: 14px
     color: $text-main
     strong
-      color: $gold-accent 
+      color: var(--gold-accent) 
       margin-right: 0.5rem
       text-transform: uppercase
 

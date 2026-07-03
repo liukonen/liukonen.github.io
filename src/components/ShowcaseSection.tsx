@@ -13,7 +13,7 @@ export default function ShowcaseSection() {
         Object.entries(showcaseData).splice(0, 3).map(([title, item]) => 
           (
             <div key={item.id} className="card" onClick={() => window.location.hash = `#/TECH_SHOWCASE/${item.id}`}>
-              <span class="lnk">{item.impact}</span>
+              <span class="c-link-interactive">{item.impact}</span>
           </div>
           )
         )

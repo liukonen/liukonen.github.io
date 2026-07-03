@@ -65,7 +65,7 @@ const ArticleEntry = ({ article, onArticleClick, isMobile }: any) =>
         <span>
           <BoxArrowUpRight />
         </span>
-        <div class="lnk">
+        <div class="c-link-interactive">
            {article.title.length > 80 ? article.title.slice(0, 77) + "..." : article.title}
         </div>
         <span className="f-mono-muted">

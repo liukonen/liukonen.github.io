@@ -28,7 +28,7 @@ export default function OpenSourceProjects() {
               </span>
             </div>
             
-            <h4 class="mt-1 lnk">{project.title}</h4>
+            <h4 class="mt-1 c-link-interactive">{project.title}</h4>
             <p className="clr-muted fs-09 mt-8px">
               {project.description}
             </p>

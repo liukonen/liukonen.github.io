@@ -16,7 +16,7 @@ export default function Showcase() {
           // {title.toUpperCase()}
         </span>
 
-        <span class="f-hd-md f-clr-main lnk">{item.impact}</span>
+        <span class="f-hd-md f-clr-main c-link-interactive">{item.impact}</span>
         <p>Role: {item.role}</p>
         <Tags tags={item.tags} />
       </div>

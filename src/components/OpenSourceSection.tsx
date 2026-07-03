@@ -26,7 +26,7 @@ const LabEntry = ({ project, id }: { project: any, id: string }) => (
       <span className={"f-hd-xs f-clr-muted"}>
         // PROJ_{id.toUpperCase()}
       </span>
-      <h4 className={"mt-1 lnk"}>{project.title}</h4>
+      <h4 className={"mt-1 c-link-interactive"}>{project.title}</h4>
       <p>{project.description}</p>
       <div className="mt-15px">
         {project.tech.slice(0, 3).map(t => (

@@ -5,7 +5,7 @@ export default function CompanyCard({era}: Readonly<any>) {
   <span class="f-hd-md f-clr-muted">
                 // {era.company.toUpperCase()}
               </span>
-              <h4 class="lnk">{era.title}</h4>
+              <h4 class="c-link-interactive">{era.title}</h4>
               <p>{era.scope}</p>
               <p>{era.role}</p>
               <div>

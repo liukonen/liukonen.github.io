@@ -25,14 +25,14 @@ export default function Labs() {
       <section className="l-grid-2">
      
       {labEntries.map(([id, project]) => (
-        <a href={'https://liukonen.github.io/archive/' + project.id + '/'} target='_blank'>
+        <a href={'https://liukonen.github.io/archive/' + project.id + '/'} target='_blank' className={"no-decor"}>
         <div key={id} className="card l-archive">
           <div className={"archive-header"}>
             <span className={"f-meta-xs"}>
               // {project.id.toUpperCase()}
             </span>
           </div>
-          <h4 class="lnk"><BoxArrowUpRight /> {project.title}</h4>
+          <h4 class="c-link-interactive"><BoxArrowUpRight /> {project.title}</h4>
           <p className="clr-muted">
             {project.description}
           </p>

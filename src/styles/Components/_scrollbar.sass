@@ -3,8 +3,8 @@
 .sidebar
   @extend %h-screen
   @extend %pos-sticky
-  @extend %d-flex
-  @extend %flex-col
+  @include d-flex()
+  @include flex-col
   width: 380px
   top: 0
   padding: 60px fluid(24, 50)
@@ -32,8 +32,7 @@
 
 .sidebar-li
   @extend %mb-2
-  @extend %d-flex
-  @extend %align-center
+  @include d-flex(null, center)
 
 .sidebar-avatar
   @extend %bg-surface

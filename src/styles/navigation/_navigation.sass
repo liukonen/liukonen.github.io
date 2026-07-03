@@ -8,7 +8,7 @@
   padding: 1rem
   background: $bg-deep
   &.show
-    @extend %d-flex
+    @include d-flex()
   @media (min-width: $max-width-content)
     display: flex  
     background: transparent
@@ -17,8 +17,7 @@
   li
     margin: 22px 0
   a
-    @extend %d-flex
-    @extend %align-center
+    @include d-flex(null,center)
     @extend %text-uppercase
     @extend %transition-primary
     text-decoration: none
@@ -36,7 +35,7 @@
       @extend %text-gold-color
       .line
         width: 55px
-        background: $gold-accent
+        background: var(--gold-accent)
  
 .l-nav-container
   position: fixed
@@ -50,9 +49,7 @@
     visibility: hidden
 
 .l-mobile-topbar
-  @extend %d-flex
-  @extend %align-center
-  justify-content: space-between
+  @include d-flex(space-between, center)
   padding: 1rem
   @media (min-width: $max-width-content)
     display: none
@@ -88,12 +85,12 @@
 
 .l-social-links
   margin-top: auto
-  @extend %d-flex
+  @include d-flex()
   @extend %font-main-family
   gap: 15px
   font-size: 1.8rem
   a, button
-    @extend %d-flex
+    @include d-flex(center, center)
     @extend %align-center
     @extend %transition-primary
     justify-content: center

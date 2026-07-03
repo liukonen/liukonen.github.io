@@ -98,13 +98,13 @@ body
 *:focus
   outline: none
 *:focus-visible
-  outline: 2px solid $gold-accent
+  outline: 2px solid var(--gold-accent)
   outline-offset: 4px
   transition: outline-offset 0.1s ease
 input:focus-visible,
 textarea:focus-visible
   outline-offset: 0px
-  border-color: $gold-accent
+  border-color: var(--gold-accent)
 
 // Utility Utilities
 // Migrated .font-mono to content/_typography.sass
@@ -126,7 +126,7 @@ header
   h1
     font-size: $font-size-h1
     font-weight: 600
-    font-family: $font-main
+    font-family: var(--font-main)
   p
     @include top-buffer-10
     color: $text-muted
@@ -168,7 +168,7 @@ header
     li
       @extend %bento-surface
   strong
-    color: $gold-accent
+    color: var(--gold-accent)
     font-weight: 600
     margin-right: 4px
     
@@ -191,14 +191,15 @@ footer
   border-top: 1px solid rgba(255, 255, 255, 0.05)
   padding: 10px 0
   color: $brass-muted
-  font-family: $font-main
+  font-family: var(--font-main)
   font-size: 0.8rem
   letter-spacing: 1px
   opacity: 0.6
   p
     font-family: $font-default
     font-size: 0.8rem
-
+  a
+    color: $brass-muted
 // ==========================================================================
 // 8. RESPONSIVE MEDIA BREAKPOINTS
 // ==========================================================================

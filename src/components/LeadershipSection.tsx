@@ -42,7 +42,7 @@ export const LeadershipSection = () => {
         <ul className="l-grid-2">
           {how.points.map(p => (
             <li class="bento" key={p.id}>
-              <strong class="gold-bullet">{p.id}:</strong> {p.content}
+              <strong class="f-gold-bullet">{p.id}:</strong> {p.content}
             </li>
           ))}
         </ul>
@@ -82,7 +82,7 @@ export const LeadershipSection = () => {
                 class={`card ${activeId === sec.id ? 'active' : ''}`}
                 onClick={() => toggleSection(sec.id)}
               >
-                <h2 class="f-label-mono lnk">
+                <h2 class="f-label-mono c-link-interactive">
                   {sec.title} 
                   <span class={`caret-indicator ${activeId === sec.id ? 'rotated' : ''}`}>▼</span>
                 </h2>
