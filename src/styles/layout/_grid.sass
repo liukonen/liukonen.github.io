@@ -8,6 +8,7 @@
 
 ///dictate the overall layout for the archive view.
 .l-archive
+  /// format the top header of the archive page.
   .archive-header
     @include d-flex(space-between, flex-start)
   h4
@@ -34,6 +35,7 @@
     grid-template-columns: 1fr
 
 @media (max-width: $max-width-content)
+  ///handle the specific layout requirements for the leadership view.
   .l-grid-3.leadership-controls
     display: flex !important
     flex-direction: column !important
@@ -68,11 +70,13 @@
 ///handle the specific layout requirements for Era timeline views.
 .l-era-header
   @include default-margin
+  /// style company logos and branding containers in detail views.
   .brand-box
     display: flex
     align-items: center
     gap: 30px
     margin-bottom: 40px
+    /// handle company logo
     .company-logo-large
       width: 80px
       height: 80px
@@ -81,6 +85,7 @@
       border: 1px solid rgba(255, 255, 255, 0.1)
       padding: 10px
       background: #fff
+    /// style links that leave the site.
     .external-link
       font-family: $font-mono
       font-size: 0.8rem
@@ -122,10 +127,10 @@
   @extend %h-screen
   @extend %overflow-y-auto
   @extend %overflow-x-hidden
-  @extend %anim-view-fade-in
   @extend %flex-1
   @extend %pos-relative
   padding: fluid(32, 128)
+  animation: viewFadeIn 0.3s ease-out
   &::-webkit-scrollbar
     width: 6px
   &::-webkit-scrollbar-thumb

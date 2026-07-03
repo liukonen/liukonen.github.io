@@ -6,15 +6,14 @@
     "build": "vite build",
     "preview": "vite preview",
     "content:compile": "node ./scripts/compile-content.mjs",
+    "DocumentSass": "node ./scripts/compile-stylesheet.mjs",
     "cleanup:deps": "npx depcheck && npm prune && npm dedupe",
     "cleanup:sass": "node ./scripts/sass-cleanup.mjs",
     "cleanup:sass-tsx": "node ./scripts/tsx-class-cleanup.mjs",
     "fonts:extract": "npm run fonts:cascadia && npm run fonts:plex",
     "fonts:cascadia": "shx cp node_modules/@fontsource/cascadia-code/files/cascadia-code-latin-{200,300,400,500,600,700}-normal.woff2 public/fonts && shx cp node_modules/@fontsource/cascadia-code/files/cascadia-code-latin-ext-{200,300,400,500,600,700}-normal.woff2 public/fonts",
     "fonts:plex": "shx cp node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-{200,300,400,500,600,700}-normal.woff2 public/fonts && shx cp node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-ext-{200,300,400,500,600,700}-normal.woff2 public/fonts",
-    "prepare": "husky install",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@iconify-json/bi": "^1.2.7",
@@ -24,30 +23,20 @@
     "esbuild": "^0.28.1",
     "glob": "^13.0.6",
     "marked": "18.0.5",
-    "preact": "10.29.3",
+    "preact": "10.29.4",
     "sass": "^1.101.0",
     "typescript": "^6.0.3",
     "unplugin-icons": "^23.0.1",
-    "vite": "8.1.2"
+    "vite": "8.1.3"
   },
   "devDependencies": {
-    "@chromatic-com/storybook": "^5.2.1",
     "@fontsource/cascadia-code": "^5.2.3",
     "@fontsource/ibm-plex-sans": "^5.2.8",
-    "@storybook/addon-a11y": "^10.4.6",
-    "@storybook/addon-docs": "^10.4.6",
-    "@storybook/addon-vitest": "^10.4.6",
-    "@storybook/preact-vite": "^10.4.6",
-    "@vitest/browser-playwright": "^4.1.9",
-    "@vitest/coverage-v8": "^4.1.9",
-    "playwright": "^1.61.1",
+    "fast-glob": "^3.3.3",
     "postcss": "^8.5.16",
-    "postcss-selector-parser": "^7.1.4",
+    "postcss-sass": "^0.5.0",
     "purgecss": "^8.0.0",
-    "shx": "^0.4.0",
-    "storybook": "^10.4.6",
-    "storybook-design-token": "^5.0.0",
-    "vitest": "^4.1.9"
+    "shx": "^0.4.0"
   },
   "overrides": {
     "lodash": "4.18.1",

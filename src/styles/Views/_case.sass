@@ -6,13 +6,14 @@
 
 
 
-// a specialzied surface for Case Studies and Showcases (full techincal writeups)
+/// a specialzied surface for Case Studies and Showcases (full techincal writeups)
 .case-study-view, .showcase-view
   max-width: 900px
   margin: 0 auto
   padding: 2rem
   line-height: 1.6
   color: $text-muted
+  /// lay out the headers for case studies and showcases.
   .study-header, .showcase-header
     border-bottom: 1px solid $border-dark
     margin-bottom: 2.5rem
@@ -22,6 +23,7 @@
       color: var(--gold-accent)
       font-size: 2.5rem
       padding-bottom: 1.6rem
+  /// format technical specifications, constraints, and their containing body block.
   .tech-specs
     display: grid
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
@@ -31,6 +33,7 @@
     padding: fluid(16, 24)
     margin-bottom: fluid(24, 48)
     border-radius: 4px
+    /// format technical specifications, constraints, and their containing body block.
     .spec
       font-size: 0.9rem
       strong
@@ -40,6 +43,7 @@
         letter-spacing: 1px
         margin-bottom: 0.25rem
         @extend %font-mono-family
+  /// format technical specifications, constraints, and their containing body block.
   .technical-body
     h2
       font-size: fluid(22, 26)

@@ -118,7 +118,7 @@ button.c-hud-status
 
 /// apply standard interactive link behavior with animations.
 .c-link-interactive
-  @extend %interactive-link-base
+  @include interactive-link-base()
 
 
 /// align multiple `.c-meta-item` elements horizontally.
@@ -199,6 +199,7 @@ button.c-hud-status
     transition: color $transition-primary
     &:hover
       color: var(--gold-accent)
+  /// Breadcrumb Seperator
   .sep
     margin: 0 10px
     opacity: 0.5
