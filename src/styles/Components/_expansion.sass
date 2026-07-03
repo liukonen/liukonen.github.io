@@ -2,7 +2,7 @@
 
 ///wrap the animating content of an expandable drawer.
 .expansion-viewport-inner 
-  @extend %anim-slide-down-fade
+  animation: slideDownFade 0.35s cubic-bezier(0.16, 1, 0.3, 1)
 
 /// format a collapsible caret icon.
 .caret-indicator
@@ -11,6 +11,7 @@
   font-size: 0.75rem
   color: $brass-muted
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1)
+  /// Rotate the caret
   &.rotated
     transform: rotate(180deg)
     color: var(--gold-accent)

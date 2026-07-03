@@ -66,20 +66,30 @@ export default function App() {
 
 
    }
-  const handleContentClick = (e: MouseEvent) => {
-    const target = e.target as HTMLElement
+  // const handleContentClick = (e: MouseEvent) => {
+  //   const target = e.target as HTMLElement
     
-    // Only target images that specifically have the Architecture Diagram alt text
-    const mediaTarget = target.closest('img[alt="Architecture Diagram"]')
+  //   // Only target images that specifically have the Architecture Diagram alt text
+  //   const mediaTarget = target.closest('img[alt="Architecture Diagram"]')
     
-    if (mediaTarget) {
-      const src = mediaTarget.getAttribute('src')
-      if (src) {
-        setModalSrc(src)
-      }
+  //   if (mediaTarget) {
+  //     const src = mediaTarget.getAttribute('src')
+  //     if (src) {
+  //       setModalSrc(src)
+  //     }
+  //   }
+  // }
+  useEffect(() => {
+    const handleDiagramOpen = (e: CustomEvent) => {
+      if (e.detail) setModalSrc(e.detail)
     }
-  }
 
+    globalThis.addEventListener('open-diagram', handleDiagramOpen as EventListener)
+    
+    return () => {
+      globalThis.removeEventListener('open-diagram', handleDiagramOpen as EventListener)
+    }
+  }, [])
   useEffect(() => {
     const contentArea = document.querySelector('.l-scroll-y')
     
@@ -103,7 +113,7 @@ export default function App() {
       {isMobileDevice  && <Navigation />}
       
       <Sidebar currentRoute={route} />
-      <main className="l-scroll-y" key={route} onClick={handleContentClick as any}>
+      <main className="l-scroll-y" key={route}>
         <Suspense fallback={null}>
         {renderContent()}
         </Suspense>

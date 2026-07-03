@@ -3,15 +3,37 @@
 
 ///the main wrapper for the contact form.
 .c-contact-form
-  @extend %w-max-form
+  max-width: 650px
 
   // Scopes inputs if you want them specifically tied to the container block
   input, textarea
-    @extend %form-input-base
-    @extend %mb-4
+    margin-bottom: 20px
+    width: 100%
+    background: $bg-surface
+    border: 1px solid $border-subtle
+    padding: 18px
+    color: $text-main
+    font-family: var(--font-main)
+    border-radius: 4px
+    outline: none
+    transition: $transition-primary
+    &:focus
+      border-color: var(--gold-accent)
 
 ///the standard interactive button component.
 .c-btn
-  @extend %btn-outline-gold
-
-
+  background: transparent
+  border: 1px solid var(--gold-accent)
+  color: var(--gold-accent)
+  padding: 14px 35px
+  font-family: $font-mono
+  font-size: 0.8rem
+  letter-spacing: 2px
+  text-transform: uppercase
+  cursor: pointer
+  transition: $transition-primary
+  position: relative 
+  z-index: 2  
+  &:hover
+    background: var(--gold-accent)
+    color: $bg-deep

@@ -7,10 +7,11 @@
 
 /// a container for tags
 .tag-wrapper
-  @extend %tag-wrapper-base
-
-
-
+  display: flex
+  flex-wrap: wrap
+  margin-top: fluid(12, 20)
+  gap: 8px
+  
 /// shared tag control style.
 .tag
   @extend %font-mono-family

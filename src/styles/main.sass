@@ -106,21 +106,7 @@ textarea:focus-visible
   outline-offset: 0px
   border-color: var(--gold-accent)
 
-// Utility Utilities
-// Migrated .font-mono to content/_typography.sass
-// Migrated .text-gold to content/_typography.sass
-// Migrated .text-gold-value to content/_typography.sass
-// Migrated .lnk to components/_cards.sass
-// Migrated .grid-2 to layout/_grid.sass
-// Migrated .grid-3 to layout/_grid.sass
-// Migrated .expansion-viewport to layout/_grid.sass
-// Migrated .no-decor to content/_typography.sass
-// .header
-//   font-family: $font-main
-//   font-size: 1.6rem
-//   color: $text-main
 
-// Migrated .default-margin to layout/_grid.sass
 header
   @include default-margin
   h1
@@ -131,25 +117,6 @@ header
     @include top-buffer-10
     color: $text-muted
     max-width: 600px
-
-// Migrated .mt-1 to content/_typography.sass
-// Migrated .mt-2 to content/_typography.sass
-// Migrated .mt-4 to content/_typography.sass
-// Migrated .showcase-grid to layout/_grid.sass
-// Migrated .detail-view to layout/_grid.sass
-// Migrated .era-header to layout/_grid.sass
-// Migrated .description-container to layout/_grid.sass
-// Migrated .hero-intro to layout/_grid.sass
-// .small-header
-//   font-family: $font-main
-//   font-size: 0.6rem
-//   color: $brass-muted
-
-// .company-card
-//   h4
-//     @include top-buffer-10
-//   div
-//     margin-top: 15px
 
 #about
   margin-bottom: 80px
@@ -166,27 +133,12 @@ header
     @media (max-width: $max-width-content)
       grid-template-columns: 1fr
     li
-      @extend %bento-surface
+      @include bento-surface()
   strong
     color: var(--gold-accent)
     font-weight: 600
     margin-right: 4px
-    
-
-
-  //@extend %bento-surface
-  //ul
-  //  @extend %list-reset
-  //  li
-      
-  
-
-
-// Migrated .brand-logo to components/_cards.sass
-// Migrated .leadership-section to layout/_grid.sass
-// Migrated .leadership-node to layout/_grid.sass
-// Migrated .desktop-only-viewport to layout/_grid.sass
-// Migrated .gold-bullet to content/_typography.sass
+     
 footer
   border-top: 1px solid rgba(255, 255, 255, 0.05)
   padding: 10px 0

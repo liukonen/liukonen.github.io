@@ -25,8 +25,9 @@
   background: $bg-surface
   margin: fluid(16, 24) 0
   @media (min-width: $max-width-content)
-    flex-direction: row // Kept as direct properties to comply with cross-media rules
+    flex-direction: row 
     gap: fluid(24, 48)
+  /// format individual pieces of metadata.
   .meta-item
     font-size: 14px
     color: $text-main
@@ -44,11 +45,20 @@
 
 /// for project actions, this formats the links
 .action-link
-  @extend %action-link-base
+  color: var(--gold-accent)
+  text-decoration: none
+  font-family: $font-default
+  font-size: 0.9rem
+  letter-spacing: 1px
+  transition: transform 0.2s ease, filter 0.2s ease
+  display: flex
+  align-items: center
+  gap: 8px
   &:hover
     transform: translateY(-2px)
     filter: brightness(1.2)
     text-decoration: underline
+  /// be an icon or text prefix for action links.
   .action-prefix
     opacity: 0.4
     color: $text-main

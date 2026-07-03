@@ -8,6 +8,7 @@
   flex-direction: column
   padding: 1rem
   background: $bg-deep
+  /// shows the navigation links
   &.show
     @include d-flex()
   @media (min-width: $max-width-content)
@@ -26,6 +27,7 @@
     font-size: 0.75rem
     letter-spacing: 3px
     cursor: pointer
+    //render decorative separating lines.
     .line
       @extend %transition-primary
       width: 25px
@@ -34,6 +36,7 @@
       margin-right: 15px
     &:hover, &.active
       @extend %text-gold-color
+      /// highlight the active link  
       .line
         width: 55px
         background: var(--gold-accent)
@@ -83,6 +86,7 @@
     max-height: 0
     opacity: 0
     transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease
+    /// special formate when drawer is open
     &.is-open
       max-height: 2000px !important 
       opacity: 1 !important

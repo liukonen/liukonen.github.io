@@ -32,8 +32,9 @@ export default async function processMarkdownFile({
       type === "about" || type === "footer"
         ? `./${svgName}`
         : `.${relpaths[type]}/${svgName}`
-
-    content = content.replace(m[0], `![Architecture Diagram](${rel})`)
+    const imgHtml = `<img src="${rel}" alt="Architecture Diagram" style="cursor: zoom-in;" onclick="window.dispatchEvent(new CustomEvent('open-diagram', { detail: '${rel}' }))" />`;
+    content = content.replace(m[0], imgHtml);
+    //content = content.replace(m[0], `![Architecture Diagram](${rel})`)
   }
 
   const enrichedHtml = markdownToHtml(content, data.glossary)

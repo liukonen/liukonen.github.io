@@ -12,7 +12,7 @@
 /// Article Card that supports data in corner
 .art-card
   @extend %card-core-rules
-  @extend %pb-4
+  padding-bottom: 30px
   border-bottom: 1px solid $border-subtle
   
   h3
@@ -24,8 +24,12 @@
       color: var(--gold-accent)    
   p
     letter-spacing: 0.015em
+  /// Article Date Format on bottom left
   .date
-    @extend %text-date-meta
+    font-family: $font-mono
+    font-size: 0.75rem
+    color: $brass-muted
+    text-transform: uppercase
 
 /// Company Card that has second row of content
 .comp-card
@@ -41,12 +45,28 @@
 
 /// Standard Bento box section layout. 
 .bento
-  @extend %bento-surface
+  @include bento-surface()
   ul
     @extend %list-reset
     li
-      @extend %list-item-chevron
+      position: relative 
+      list-style-type: none 
+      padding-left: 1.2rem 
+      p, span 
+        display: inline
+        margin: 0
+        padding: 0
+      &::before
+        content: "›" 
+        position: absolute 
+        left: 0 
+        top: 0 
+        color: var(--gold-accent)   
+        font-family: $font-mono
+        font-weight: 700 
+        font-size: 14px 
+        line-height: 1.4
 
 /// A specialized surface for Benta Showcase items
 .bento-showcase-section
-  @extend %w-full-true
+  grid-column: 1 / -1
