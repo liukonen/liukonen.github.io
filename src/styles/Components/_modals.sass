@@ -1,8 +1,11 @@
 @use '../shared' as *
 
+
+///style interactive links within the modal title.
 .c-modal-title-link
   @extend %interactive-link-base
 
+///structure the internal layout architecture of generic modals.
 .c-modal-body
   @extend %flex-1
   @extend %overflow-y-auto
@@ -112,13 +115,14 @@
       background: $alpha-gold-05
       color: $text-main
 
-
+///dictate the loading or error states within a modal.
 .c-modal-error
   @include d-flex(center, center)
   @extend %h-screen
   color: #ff6b6b
   font-size: 1.1rem
 
+///create the fixed, full-screen background overlay behind modals.
 .l-modal-overlay
   @extend %pos-fixed
   @extend %inset-0
@@ -131,7 +135,7 @@
   backdrop-filter: blur(4px)
   padding: 2rem
 
-
+///structure the internal layout architecture of generic modals.
 .c-modal-container
   @extend %w-full
   @include d-flex()
@@ -145,7 +149,7 @@
   border-radius: 6px
   box-shadow: 0 32px 64px rgba(0, 0, 0, 0.7) // Added telemetry deep shadow
 
-
+///structure the internal layout architecture of generic modals.
 .c-modal-header
   @include d-flex(space-between, null)
   padding: 20px 24px // Exact Telemetry HUD Header Padding
@@ -153,11 +157,11 @@
   background: #0E0E10
   gap: 16px
 
-
+///a visual divider placed between inline tags.
 .c-tag-separator
   color: rgba($text-muted, 0.3)
 
-
+///style the close icon/button for generic modals.
 .c-modal-close
   @include bg-none
   @extend %border-none
@@ -171,7 +175,7 @@
   transition: color 0.12s ease
   flex-shrink: 0
 
-
+///style keyboard shortcut hints (like "Esc").
 .c-kbd-hint
   @extend %font-size-micro
   border: 1px solid rgba($border-subtle, 0.8)
@@ -185,14 +189,14 @@
     opacity: 1
     transform: translateX(0)
 
-
+///render a stylized border or frame around the modal.
 .c-modal-frame-line
   width: 100%
   height: 1px
   background: rgba($gold-accent, 0.8)
   border-bottom: 1px solid $border-subtle
 
-
+///manage the scrollable area inside a modal.
 .c-modal-scrollzone
   @extend %flex-1
   @extend %overflow-y-auto
@@ -209,7 +213,7 @@
     &:hover
       background: var(--gold-accent)
 
-
+///structure the internal layout architecture of generic modals.
 .c-modal-footer
   @include d-flex(space-between, null)
   @extend %font-size-micro
@@ -219,13 +223,12 @@
   border-top: 1px solid $border-subtle
   color: $text-muted
 
-
+///align footer content to the right side of the screen.
 .l-footer-right
   @include d-flex()
   gap: 8px
 
-
-
+///create the fixed, full-screen background overlay behind modals.
 .l-telemetry-overlay
   @extend %pos-fixed
   @extend %inset-0
@@ -236,7 +239,7 @@
   background: rgba(11, 11, 12, 0.88)
   backdrop-filter: blur(4px)
 
-
+/// structure the specific layout of the Uptime/Telemetry overlay.
 .c-telemetry-modal
   @extend %w-full
   @include d-flex()
@@ -248,14 +251,14 @@
   border-radius: 6px
   box-shadow: 0 32px 64px rgba(0, 0, 0, 0.7)
 
-
+///structure the specific layout of the Uptime/Telemetry overlay.
 .c-telemetry-header
   @include d-flex(space-between, center)
   padding: 20px 24px
   border-bottom: 1px solid $border-subtle
   background: #0E0E10
 
-
+///a generic close button for UI overlays.
 .c-close-btn
   @include bg-none
   @extend %border-none
@@ -267,12 +270,12 @@
   &:hover
     color: #FFFFFF
 
-
+///structure the specific layout of the Uptime/Telemetry overlay.
 .c-telemetry-content
   padding: 24px
   background: $bg-deep
 
-
+///format the overall network status indicator.
 .c-telemetry-status
   @extend %font-size-nano
   @extend %text-center
@@ -281,7 +284,7 @@
   &.error
     color: $red-beacon
 
-
+///render the tabular data sheet within the telemetry modal.
 .c-telemetry-sheet
   @include d-flex()
   @include flex-col
@@ -376,7 +379,7 @@
           &.failed
             color: $red-beacon
 
-
+///structure the specific layout of the Uptime/Telemetry overlay.
 .c-telemetry-footer
   @include d-flex(space-between, null)
   @extend %font-size-micro
@@ -386,7 +389,7 @@
   border-top: 1px solid $border-subtle
   color: $text-muted
 
-
+///dictate the loading or error states within a modal.
 .c-modal-loading, .c-modal-error
   @extend %w-full
   @extend %text-center
@@ -395,6 +398,7 @@
   padding: 60px 0
   color: rgba($text-muted, 0.6)
 
+///manage the layout, content area, and close interaction for full-screen image views.
 .modal-image-view
   @include d-flex(center, center)
   position: fixed

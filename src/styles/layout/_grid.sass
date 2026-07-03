@@ -1,11 +1,12 @@
 @use '../shared' as *
 
+///apply a CSS grid specifically optimized for article cards.
 .l-art-grid
   display: grid
   gap: 30px
   margin-top: 40px
 
-
+///dictate the overall layout for the archive view.
 .l-archive
   .archive-header
     @include d-flex(space-between, flex-start)
@@ -16,6 +17,7 @@
     color: var(--brass-muted)
     margin-top: 8px
 
+///generate 2-column and 3-column CSS grid layouts.
 .l-grid-2
   display: grid
   grid-template-columns: 1fr 1fr
@@ -23,6 +25,7 @@
   @media (max-width: $max-width-content)
     grid-template-columns: 1fr
 
+///generate 2-column and 3-column CSS grid layouts.
 .l-grid-3
   display: grid
   grid-template-columns: repeat(3, 1fr)
@@ -36,10 +39,11 @@
     flex-direction: column !important
     gap: 1rem
 
-
+/// handle the layout for expandable drawer components.
 .l-expansion-viewport
   @extend %w-full
 
+///trigger the expanded state and associated animations.
 .l-expansion-viewport.is-open 
   border-top: 1px solid rgba(68, 66, 67, 0.4) 
   padding-top: 2.5rem 
@@ -49,18 +53,19 @@
   margin-left: -0.75rem
   border-radius: 0 4px 4px 0
 
+///enforce a standard margin constraint across the page.
 .l-default-margin
   @include default-margin
 
-
+///dictate the grid layout for technical showcases.
 .l-showcase-grid
   margin-bottom: 100px
 
-
+///the primary layout wrapper for detail pages.
 .l-detail-view
   max-width: 900px
 
-
+///handle the specific layout requirements for Era timeline views.
 .l-era-header
   @include default-margin
   .brand-box
@@ -84,33 +89,35 @@
       &:hover
         text-decoration: underline
 
-
+///constrain description blocks within detail views.
 .l-description-container
   margin-top: 20px
   max-width: 75ch
 
 
-
+///structure the primary introduction/hero section.
 .l-hero-intro
   h1
     letter-spacing: -0.02em
     line-height: 1.1
     font-family: var(--font-main)
 
-
+///handle layout for specific leadership tree or chart nodes.
 .l-leadership-section
   width: 100%
 
-
+///handle layout for specific leadership tree or chart nodes.
 .l-leadership-node
   display: flex
   flex-direction: column
 
+///limit or optimize layout specifically for desktop screens.
 .l-desktop-viewport
   display: block
   @media (max-width: $max-width-content)
     display: none !important
 
+///apply vertical scrolling to a container, mapping to `overflow-y-auto`.
 .l-scroll-y
   @extend %h-screen
   @extend %overflow-y-auto
@@ -131,6 +138,7 @@
     overflow-y: visible   
     padding: 40px 30px
 
+///handle the specific layout requirements for Era timeline views.
 .l-era
   @exten %d-flex
   gap: fluid(20, 40)
@@ -139,12 +147,12 @@
     flex-direction: column
     gap: 10px
 
-
+///handle the specific layout requirements for Era timeline views.
 .l-era-container
   @extend %overflow-x-hidden
   @extend %w-full
 
-
+///dictate the grid layout for technical showcases.
 .l-showcase-layout
   display: grid
   grid-template-columns: 1fr
@@ -153,5 +161,3 @@
   margin-top: 2rem
   @media (min-width: $max-width-content)
     grid-template-columns: 320px 1fr
-
-

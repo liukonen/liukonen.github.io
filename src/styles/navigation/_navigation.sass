@@ -1,5 +1,6 @@
 @use '../shared' as *
 
+/// structure the top navigation and its link elements.
 .l-nav-links
   @extend %list-reset
   @extend %font-main-family
@@ -37,6 +38,7 @@
         width: 55px
         background: var(--gold-accent)
  
+/// structure the top navigation and its link elements.
 .l-nav-container
   position: fixed
   top: 0
@@ -48,17 +50,20 @@
   @media (min-width: $max-width-content)
     visibility: hidden
 
+/// apply mobile-specific navigation layouts.
 .l-mobile-topbar
   @include d-flex(space-between, center)
   padding: 1rem
   @media (min-width: $max-width-content)
     display: none
 
+/// the primary logo or brand text in the navigation bar.
 .c-nav-brand
   @extend %text-gold-color
   font-weight: bold
   font-family: monospace
 
+/// render the mobile hamburger menu icon.
 .c-hamburger
   @extend %text-gold-color
   background: none
@@ -67,6 +72,7 @@
   font-size: 1.2rem
   cursor: pointer
 
+/// apply mobile-specific navigation layouts.
 .l-mobile-drawer
   display: none 
   width: 100%
@@ -83,6 +89,7 @@
       padding: 1.5rem 0
       margin-bottom: 1rem
 
+/// lay out social media icons/links horizontally.
 .l-social-links
   margin-top: auto
   @include d-flex()

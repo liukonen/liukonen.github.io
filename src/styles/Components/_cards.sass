@@ -1,5 +1,5 @@
 @use '../shared' as *
-
+/// horizontal layout container specifically for article lists.
 .c-art-row
   @extend %align-center
   gap: 15px
@@ -10,7 +10,7 @@
   transition: color $transition-primary
 
 
-
+/// render a heads-up display status indicator in the sidebar.
 .c-hud-status
   @extend %pos-relative
   @include bg-none
@@ -53,6 +53,7 @@
       z-index: 50
       pointer-events: none
 
+/// render a heads-up display status indicator in the sidebar.
 button.c-hud-status
   @include bg-none
   @extend %border-none
@@ -66,6 +67,7 @@ button.c-hud-status
     will-change: transform, opacity, filter
     transition: color 0.3s ease-in-out
 
+/// attach hover interactions for glossary tooltips.
 .tooltip-trigger
   @extend %pos-relative
   @extend %text-left
@@ -113,11 +115,13 @@ button.c-hud-status
 
   &:hover::before
     opacity: 1
+
+/// apply standard interactive link behavior with animations.
 .c-link-interactive
   @extend %interactive-link-base
 
 
-
+/// align multiple `.c-meta-item` elements horizontally.
 .c-meta-strip
   display: grid
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))
@@ -126,6 +130,8 @@ button.c-hud-status
   background: $bg-surface
   border: 1px solid $border-subtle
   border-radius: 4px
+
+  /// format individual pieces of metadata.
   .c-meta-item
     label
       display: block
@@ -138,7 +144,7 @@ button.c-hud-status
       font-weight: 600
       font-size: 0.9rem
 
-
+/// apply a technical/blueprint aesthetic to the showcase sidebar.
 .c-blueprint-sidebar
   background-color: $bg-surface
   border: 1px solid $border-dark
@@ -181,6 +187,7 @@ button.c-hud-status
         font-size: 14px
         line-height: 1.4
 
+/// render breadcrumb navigation paths.
 .c-breadcrumb
   font-family: var(--font-main)
   font-size: 0.8rem

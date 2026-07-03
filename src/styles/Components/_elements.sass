@@ -6,18 +6,16 @@
 /// ==========================================================================
 
 
-/// @surface gold-spacer
-/// @description gold space for separating sections
-/// @usage Home
+
+/// gold space for separating sections
 .gold-spacer
   height: 1px
   @extend %w-full
   background: var(--gold-accent)
   margin: 3rem 0
 
-/// @surface project-meta-top
-/// @description Shows Role and stack in grey box with gold boarder
-/// @usage ShpwcaseDetail
+
+/// Shows Role and stack in grey box with gold boarder
 .project-meta-top
   @include d-flex()
   @include flex-col
@@ -37,16 +35,14 @@
       margin-right: 0.5rem
       text-transform: uppercase
 
-/// @surface project-actions
-/// @description Under the open source title, we need to display websites, tags and the like
-/// @usage LabDetail
+
+/// Under the open source title, we need to display websites, tags and the like
 .project-actions
   border-top: 1px solid rgba(255, 255, 255, 0.05)
   padding-top: 20px
 
-/// @surface action-link
-/// @description for project actions, this formats the links
-/// @usage LabDetail
+
+/// for project actions, this formats the links
 .action-link
   @extend %action-link-base
   &:hover

@@ -5,15 +5,11 @@
 /// ==========================================================================
 
 
-/// @surface Card
-/// @description Standard card for general content
-/// @usage Sections( Article Career, Leaadership, OpenSource) CompanyCard, Archive, Articls, Era, OpenSourceProjects, Showcase, 
+/// Standard card for general content
 .card
   @extend %card-core-rules
 
-/// @surface art-card
-/// @description Article Card that supports data in corner
-/// @usage Articles
+/// Article Card that supports data in corner
 .art-card
   @extend %card-core-rules
   @extend %pb-4
@@ -31,9 +27,7 @@
   .date
     @extend %text-date-meta
 
-/// @surface comp-card
-/// @description Company Card that has second row of content
-/// @usage CompanyCard
+/// Company Card that has second row of content
 .comp-card
   @extend %card-core-rules
   h4
@@ -45,9 +39,7 @@
 /// BENTO SURFACE
 /// ==========================================================================
 
-/// @section Bento
-/// @description 
-/// @usage about.md (header), Leadership, Showcase Detail, 
+/// Standard Bento box section layout. 
 .bento
   @extend %bento-surface
   ul
@@ -55,8 +47,6 @@
     li
       @extend %list-item-chevron
 
-/// @section Benta Showcase Section
-/// @description a specialized surface for Benta Showcase items
-/// @usasge Showcase Detail
+/// A specialized surface for Benta Showcase items
 .bento-showcase-section
   @extend %w-full-true

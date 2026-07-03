@@ -1,5 +1,6 @@
 @use '../shared' as *
 
+///constrain and format long-form markdown/text content.
 .c-prose-container
   a
     @extend %text-gold-color
@@ -23,7 +24,7 @@
     border-radius: 4px
     margin: 1rem 0
 
-// Labels & Micro Typography
+// force a monospaced font family for technical data or labels.
 .f-label-mono
   @extend %font-mono-family
   letter-spacing: 5px
@@ -38,25 +39,29 @@ p, .f-body-prose p, .prose-engine p, .technical-body p
   max-width: 65ch
   margin-bottom: 1.75rem
 
+///apply the primary accent color to text.
 .f-clr-accent
   color: var(--gold-accent) !important
 
+///apply a muted or secondary color to text.
 .f-clr-muted
   color: $brass-muted !important
 
+/// apply the primary text color.
 .f-clr-main
   color: $text-main !important
 
-// Migrated .prose-engine to content/_typography.sass
-// Headers Manifest
+// apply medium and extra-small font sizes for headings.
 .f-hd-md
   @extend %font-main-family
   font-size: 1.6rem
 
+///apply medium and extra-small font sizes for headings.
 .f-hd-xs
   @extend %font-main-family
   font-size: 0.6rem
 
+///force a monospaced font family for technical data or labels.
 .f-mono-muted
   @extend %font-mono-family
   font-size: 0.8rem
@@ -64,48 +69,51 @@ p, .f-body-prose p, .prose-engine p, .technical-body p
   min-width: 60px
   display: inline
 
+///apply font sizing specifically optimized for metadata.
 .f-meta-xs
   font-family: $font-default
   font-size: 0.65rem
   color: $brass-muted
 
+///force a monospaced font family for technical data or labels.
 .f-font-mono
   font-family: $font-mono
   letter-spacing: 0.02em
 
-
+///apply the gold accent color strictly to text nodes.
 .f-text-gold
   color: var(--gold-accent)
   font-weight: 700
 
-
+///apply the gold accent color strictly to text nodes.
 .f-text-gold-value
   color: $gold-hover !important
 
-
+///strip standard browser text decoration (like underlines).
 .f-no-decor
   text-decoration: none
   color: inherit
 
 
-
+///apply typographic margin-top values.
 .f-mt-1
   @include top-buffer-10
 
-
+///apply typographic margin-top values.
 .f-mt-2
   @include top-buffer-20
 
-
+///apply typographic margin-top values.
 .f-mt-4
   @include top-buffer-40
 
-
+///render list items with a custom gold bullet point.
 .f-gold-bullet
   color: var(--gold-accent)
   font-weight: 600
   margin-right: 4px
 
+///style the text of the currently active breadcrumb.
 .f-breadcrumb-active
   //color: var(--gold-accent) //.f-md-tags
   //@include d-flex()
@@ -114,7 +122,7 @@ p, .f-body-prose p, .prose-engine p, .technical-body p
   color: var(--gold-accent)
   font-weight: 600
 
-
+///apply font sizing specifically optimized for metadata.
 .f-md-meta
   @include d-flex()
   @include flex-col
