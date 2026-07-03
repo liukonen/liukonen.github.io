@@ -1,0 +1,3 @@
+old_class,source_file,new_token,dest_file,group_folder
+contact-form,Base/_forms.sass,c-contact-form,_forms.sass,components
+btn,Base/_forms.sass,c-btn,_forms.sass,components

@@ -1,3 +1,13 @@
+:root
+  --bg-deep: $bg-deep
+  --bg-surface: $bg-surface
+  --text-main: $text-main
+  --text-muted: $text-muted
+  --gold-accent: $gold-accent
+  --brass-muted: $brass-muted
+  --font-mono: 'Cascadia Code', monospace
+  --font-main: 'IBM Plex Sans', sans-serif
+  
 // ==========================================================================
 // 1. FLUID SCALING ENGINE
 // ==========================================================================
@@ -181,6 +191,28 @@ $red-beacon: #EF4444
   margin-bottom: 7rem
 
 
+// Layout Mixins
+@mixin d-flex($justify: null, $align: null)
+  display: flex
+  @if $justify
+    justify-content: $justify
+  @if $align
+    align-items: $align
+
+@mixin flex-col
+  display: flex
+  flex-direction: column
+
+// Utility Mixins
+@mixin pos-absolute($bottom: 0, $left: 0)
+  position: absolute
+  bottom: $bottom
+  left: $left
+
+@mixin bg-none
+  background: none
+  border: none
+
 // ==========================================================================
 // ABSTRACT LAYOUT & SURFACE TEMPLATES
 // ==========================================================================
@@ -221,9 +253,8 @@ $red-beacon: #EF4444
   display: inline-flex 
   text-decoration: none
   transition: color $transition-primary, transform $transition-primary
-
   &:hover
-    color: $gold-accent
+    color: var(--gold-accent)
     transform: translateY(-3px)
 
   &::after
@@ -233,7 +264,7 @@ $red-beacon: #EF4444
     height: 1px
     bottom: -2px
     left: 50%
-    background-color: $gold-accent
+    background-color: var(--gold-accent)
     transition: width 0.3s ease, left 0.3s ease
 
   &:hover::after
@@ -261,7 +292,7 @@ $red-beacon: #EF4444
     position: absolute 
     left: 0 
     top: 0 
-    color: $gold-accent   
+    color: var(--gold-accent)   
     font-family: $font-mono
     font-weight: 700 
     font-size: 14px 
@@ -324,7 +355,7 @@ $red-beacon: #EF4444
   right: -40px
   width: 200px
   height: 200px
-  background-color: color-mix($gold-accent, white 10%)
+  background-color: color-mix(var(--gold-accent), white 10%)
   opacity: 0.03
   transition: 0.4s ease
   pointer-events: none
@@ -336,8 +367,8 @@ $red-beacon: #EF4444
 %bg-surface
   background: $bg-surface
 // Layout & Flex Alignment
-%d-flex
-  display: flex
+// %d-flex
+//   display: flex
 
 %flex-col
   flex-direction: column
@@ -380,13 +411,13 @@ $red-beacon: #EF4444
 
 // Typography Foundations
 %font-main-family
-  font-family: $font-main
+  font-family: var(--font-main)
 
 %font-mono-family
   font-family: $font-mono
 
 %text-gold-color
-  color: $gold-accent
+  color: var(--gold-accent)
 
 %text-uppercase
   text-transform: uppercase
@@ -423,8 +454,8 @@ $red-beacon: #EF4444
 // ==========================================================================
 // SYSTEM ATOMIC PLUGINS (New Additions to avoid collision)
 // ==========================================================================
-%pos-absolute
-  position: absolute
+// %pos-absolute
+//   position: absolute
 // Positioning
 %pos-fixed
   position: fixed
@@ -464,8 +495,8 @@ $red-beacon: #EF4444
 %cursor-pointer
   cursor: pointer
 
-%bg-none
-  background: none
+// %bg-none
+//   background: none
 
 %border-none
   border: none
@@ -551,7 +582,7 @@ $red-beacon: #EF4444
 
 // --- Group: Interactive Micro-Actions ---
 %action-link-base
-  color: $gold-accent
+  color: var(--gold-accent)
   text-decoration: none
   font-family: $font-default
   font-size: 0.9rem
@@ -575,20 +606,20 @@ $red-beacon: #EF4444
   border: 1px solid $border-subtle
   padding: 18px
   color: $text-main
-  font-family: $font-main
+  font-family: var(--font-main)
   border-radius: 4px
   outline: none
   transition: $transition-primary
   
   &:focus
-    border-color: $gold-accent
+    border-color: var(--gold-accent)
 
 
 // --- Group: Button Interactive Systems ---
 %btn-outline-gold
   background: transparent
-  border: 1px solid $gold-accent
-  color: $gold-accent
+  border: 1px solid var(--gold-accent)
+  color: var(--gold-accent)
   padding: 14px 35px
   font-family: $font-mono
   font-size: 0.8rem
@@ -600,7 +631,7 @@ $red-beacon: #EF4444
   z-index: 2
   
   &:hover
-    background: $gold-accent
+    background: var(--gold-accent)
     color: $bg-deep
 
 // THE CORE BLUEPRINT: Shared base wrapper for all variants

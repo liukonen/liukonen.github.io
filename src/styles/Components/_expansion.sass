@@ -1,27 +1,117 @@
 @use '../shared' as *
 
-.expansion-viewport 
-  @extend %w-full
-
-.expansion-viewport.is-open 
-  border-top: 1px solid rgba(68, 66, 67, 0.4) 
-  padding-top: 2.5rem 
-  background-color: rgba(255, 255, 255, 0.02) 
-  border-left: 2px solid var(--accent-color, #e5a93c) 
-  padding-left: 0.75rem
-  margin-left: -0.75rem
-  border-radius: 0 4px 4px 0
-
+///wrap the animating content of an expandable drawer.
 .expansion-viewport-inner 
   @extend %anim-slide-down-fade
 
+/// format a collapsible caret icon.
 .caret-indicator
   display: inline-block
   margin-left: 0.5rem
   font-size: 0.75rem
   color: $brass-muted
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1)
-  
   &.rotated
     transform: rotate(180deg)
-    color: $gold-accent
+    color: var(--gold-accent)
+
+/// apply a muted or secondary color to text.
+.f-clr-mutedass-muted
+  color: $brass-muted !important
+
+/// explicitly set the font size to 0.9 units.
+.fs-09
+  font-size: 0.9rem !important
+
+/// apply exact pixel-based margin-top values.
+.mt-8px
+  margin-top: 8px !important
+
+///  apply exact pixel-based margin-top values.
+.mt-60px
+  margin-top: 60px !important
+
+/// apply exact pixel-based margin-top values.
+.mt-15px
+  margin-top: 15px !important
+
+/// apply exact pixel-based margin-top values.
+.mt-5px
+  margin-top: 5px !important
+
+///apply a muted color block.
+.clr-muted
+  color: $text-muted !important
+
+/// force flex rows to align top and justify space-between.
+.row-justify-sb
+  justify-content: space-between !important
+
+/// force flex rows to align top and justify space-between.
+.row-align-top
+  align-items: flex-start !important
+
+///create a flex layout split with top alignment.
+.flex-split-top
+  display: flex !important
+
+/// format the header and description of lab detail pages.
+.lab-detail-desc
+  font-size: 1.2rem !important
+  line-height: 1.8 !important
+  color: $text-muted !important
+
+/// format the header and description of lab detail pages.
+.lab-header
+  font-size: 3.5rem !important
+  color: var(--gold-accent) !important
+
+/// apply a 2rem padding utility.
+.pd-2rm
+  padding: 2rem !important
+
+/// internal utility classes to handle flexbox behaviors, wrapping, and scrolling within specific modal nodes.
+.modal-clip-x
+  max-width: 100% !important
+  overflow-x: hidden !important
+
+/// internal utility classes to handle flexbox behaviors, wrapping, and scrolling within specific modal nodes.
+.modal-cell-fill
+  flex: 1 !important
+  min-width: 0px !important
+
+/// internal utility classes to handle flexbox behaviors, wrapping, and scrolling within specific modal nodes.
+.modal-no-shrink
+  flex-shrink: 0 !important
+
+/// internal utility classes to handle flexbox behaviors, wrapping, and scrolling within specific modal nodes.
+.modal-scroll-y
+  flex: 1 !important
+  overflow-y: auto !important
+  min-height: 0px !important
+  -webkit-overflow-scrolling: touch !important
+
+///internal utility classes to handle flexbox behaviors, wrapping, and scrolling within specific modal nodes.
+.modal-txt-wrap
+  white-space: normal !important
+  word-break: break-word !important
+  margin: 0 0 4px 0 !important
+  line-height: 1.4 !important
+
+/// strip standard element decorations.
+.no-decor
+  text-decoration: none !important
+
+///internal utility classes to handle flexbox behaviors, wrapping, and scrolling within specific modal nodes.
+.modal-row-split-gap
+  display: flex !important
+  align-items: flex-start !important
+  justify-content: space-between !important
+  gap: 16px !important
+
+///internal utility classes to handle flexbox behaviors, wrapping, and scrolling within specific modal nodes.
+.modal-pane-frame-max
+  display: flex !important
+  flex-direction: column !important
+  max-height: 85vh !important
+  overflow: hidden !important

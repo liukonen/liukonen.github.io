@@ -1,0 +1,11 @@
+@use '../shared' as *
+
+/// the foundational application shell containing the sidebar and main content.
+.l-shell
+  @include d-flex()
+  @extend %m-0-auto
+  @extend %min-h-screen
+  max-width: 1400px
+  @media (max-width: $max-width-content)
+    flex-direction: column
+    min-height: auto

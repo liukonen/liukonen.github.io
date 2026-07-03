@@ -24,13 +24,13 @@ export const InterfaceSandbox = () => (
       <section style={{ marginBottom: '50px' }}>
         <h3 style={{ fontFamily: 'monospace', color: '#d4a857', fontSize: '0.85rem', marginBottom: '15px' }}>// SPACING BUFFERS</h3>
         <div style={{ background: '#1A1A1A', border: '1px dashed rgba(255,255,255,0.1)', padding: '15px' }}>
-          <div className="mt-1" style={{ background: 'rgba(214,168,87,0.1)', padding: '10px' }}>
+          <div className="f-mt-1" style={{ background: 'rgba(214,168,87,0.1)', padding: '10px' }}>
             <code>.mt-1</code> applied (Fluid offset tracking)
           </div>
-          <div className="mt-2" style={{ background: 'rgba(214,168,87,0.1)', padding: '10px' }}>
+          <div className="f-mt-2" style={{ background: 'rgba(214,168,87,0.1)', padding: '10px' }}>
             <code>mt-2</code> applied
           </div>
-          <div className="mt-4" style={{ background: 'rgba(214,168,87,0.1)', padding: '10px' }}>
+          <div className="f-mt-4" style={{ background: 'rgba(214,168,87,0.1)', padding: '10px' }}>
             <code>.mt-4</code> applied
           </div>
         </div>

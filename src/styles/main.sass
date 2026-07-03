@@ -3,22 +3,11 @@
 // ==========================================================================
 @forward 'shared'
 @use 'shared' as *
-@use '_layout'
-@use 'navigation'
-@use 'Views/modals'
-@use 'Components/card'
-@use 'Components/elements'
-@use 'Base/forms'
-
-// Sub-Component Layers
-@use 'typography'
-@use 'telemetry'
-@use 'views'
-
-@use 'Components/tags'
-@use 'articles'
+@use 'Components/index' as *
+@use 'content/index' as *
+@use 'layout/index' as *
+@use 'navigation/index' as *
 @use 'Views/case'
-@use 'Components/expansion'
 
 // ==========================================================================
 // 2. SELF-HOSTED FONTS
@@ -109,121 +98,52 @@ body
 *:focus
   outline: none
 *:focus-visible
-  outline: 2px solid $gold-accent
+  outline: 2px solid var(--gold-accent)
   outline-offset: 4px
   transition: outline-offset 0.1s ease
 input:focus-visible,
 textarea:focus-visible
   outline-offset: 0px
-  border-color: $gold-accent
+  border-color: var(--gold-accent)
 
 // Utility Utilities
-.font-mono
-  font-family: $font-mono
-  letter-spacing: 0.02em
+// Migrated .font-mono to content/_typography.sass
+// Migrated .text-gold to content/_typography.sass
+// Migrated .text-gold-value to content/_typography.sass
+// Migrated .lnk to components/_cards.sass
+// Migrated .grid-2 to layout/_grid.sass
+// Migrated .grid-3 to layout/_grid.sass
+// Migrated .expansion-viewport to layout/_grid.sass
+// Migrated .no-decor to content/_typography.sass
+// .header
+//   font-family: $font-main
+//   font-size: 1.6rem
+//   color: $text-main
 
-.text-gold
-  color: $gold-accent
-  font-weight: 700
-
-.text-gold-value
-  color: $gold-hover !important
-
-.lnk
-  @extend %interactive-link-base
-
-
-.grid-2
-  display: grid
-  grid-template-columns: 1fr 1fr
-  gap: fluid(16, 24)
-
-.grid-3 
-  display: grid
-  grid-template-columns: repeat(3, 1fr)
-  gap: fluid(16, 24)
-
-.expansion-viewport 
-  width: 100%
-
-
-.no-decor
-  text-decoration: none
-  color: inherit
- 
-
-.header
-  font-family: $font-main
-  font-size: 1.6rem
-  color: $text-main
-
-.default-margin
-  @include default-margin
-
+// Migrated .default-margin to layout/_grid.sass
 header
-  @extend .default-margin
+  @include default-margin
   h1
     font-size: $font-size-h1
     font-weight: 600
-    font-family: $font-main
+    font-family: var(--font-main)
   p
     @include top-buffer-10
     color: $text-muted
     max-width: 600px
 
-.mt-1
-  @include top-buffer-10
-
-.mt-2
-  @include top-buffer-20
-
-.mt-4
-  @include top-buffer-40
-
-.showcase-grid
-  margin-bottom: 100px
-
-.detail-view
-  max-width: 900px
-
-.era-header
-  @extend .default-margin
-  .brand-box
-    display: flex
-    align-items: center
-    gap: 30px
-    margin-bottom: 40px
-    .company-logo-large
-      width: 80px
-      height: 80px
-      border-radius: 8px
-      filter: grayscale(1) brightness(0.8) 
-      border: 1px solid rgba(255, 255, 255, 0.1)
-      padding: 10px
-      background: #fff 
-    .external-link
-      font-family: $font-mono
-      font-size: 0.8rem
-      color: $gold-accent
-      text-decoration: none
-      &:hover
-        text-decoration: underline
-
-.description-container
-  margin-top: 20px
-  max-width: 75ch 
-
-
-.hero-intro
-  h1
-    letter-spacing: -0.02em
-    line-height: 1.1
-    font-family: $font-main
-
-.small-header
-  font-family: $font-main
-  font-size: 0.6rem
-  color: $brass-muted
+// Migrated .mt-1 to content/_typography.sass
+// Migrated .mt-2 to content/_typography.sass
+// Migrated .mt-4 to content/_typography.sass
+// Migrated .showcase-grid to layout/_grid.sass
+// Migrated .detail-view to layout/_grid.sass
+// Migrated .era-header to layout/_grid.sass
+// Migrated .description-container to layout/_grid.sass
+// Migrated .hero-intro to layout/_grid.sass
+// .small-header
+//   font-family: $font-main
+//   font-size: 0.6rem
+//   color: $brass-muted
 
 // .company-card
 //   h4
@@ -237,60 +157,55 @@ header
     margin-top: 20px
     color: $text-muted
     font-size: 1.1rem
+  ul
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: fluid(16, 24)
+    font-size: 1.1rem
+    color: $text-muted
+    @media (max-width: $max-width-content)
+      grid-template-columns: 1fr
+    li
+      @extend %bento-surface
+  strong
+    color: var(--gold-accent)
+    font-weight: 600
+    margin-right: 4px
+    
 
 
-.brand-logo
-  visibility: hidden
-
-.leadership-section
-  width: 100%
-
-.leadership-node
-  display: flex
-  flex-direction: column
+  //@extend %bento-surface
+  //ul
+  //  @extend %list-reset
+  //  li
+      
+  
 
 
-
-.desktop-only-viewport
-  display: block
-.gold-bullet
-  color: $gold-accent
-  font-weight: 600
-  margin-right: 4px
-
+// Migrated .brand-logo to components/_cards.sass
+// Migrated .leadership-section to layout/_grid.sass
+// Migrated .leadership-node to layout/_grid.sass
+// Migrated .desktop-only-viewport to layout/_grid.sass
+// Migrated .gold-bullet to content/_typography.sass
 footer
   border-top: 1px solid rgba(255, 255, 255, 0.05)
   padding: 10px 0
   color: $brass-muted
-  font-family: $font-main
+  font-family: var(--font-main)
   font-size: 0.8rem
   letter-spacing: 1px
   opacity: 0.6
   p
     font-family: $font-default
     font-size: 0.8rem
-
+  a
+    color: $brass-muted
 // ==========================================================================
 // 8. RESPONSIVE MEDIA BREAKPOINTS
 // ==========================================================================
-@media (min-width: $max-width-content)
-  .brand-logo
-    visibility: visible
+
 
 @media (max-width: $max-width-content)
-  .grid-2, .grid-3
-    grid-template-columns: 1fr
-  .era
-    flex-direction: column
-    gap: 10px
   body::before
     content: none !important
     background: none !important
-
-  .grid-3.leadership-controls
-    display: flex !important
-    flex-direction: column !important
-    gap: 1rem
-
-  .desktop-only-viewport
-    display: none !important

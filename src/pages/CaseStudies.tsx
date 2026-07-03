@@ -6,17 +6,17 @@ import Tags from '../components/Tags'
 
 export default function Showcase() {
   return (
-  <section className="showcase-container page-layer">
+  <section>
     <Breadcrumb path="#/CASE_STUDIES" />
     <Header title='Case Studies' subtitle="Larger projects I Architected, Managed, and Led" />
-    <div className="showcase-grid">
+    <div className="l-showcase-grid">
     {Object.entries(showcaseData).filter(([title, item]) => item.hasCaseStudy).map(([title, item]) => (        
-      <div key={item.id} className="card archive" onClick={() => window.location.hash = `#/CASE_STUDIES/${item.id}`}>
-        <span className={"archive-id"}>
+      <div key={item.id} className="card l-archive" onClick={() => window.location.hash = `#/CASE_STUDIES/${item.id}`}>
+        <span className={"f-meta-xs"}>
           // {title.toUpperCase()}
         </span>
 
-        <span class="header lnk">{item.impact}</span>
+        <span class="f-hd-md f-clr-main c-link-interactive">{item.impact}</span>
         <p>Role: {item.role}</p>
         <Tags tags={item.tags} />
       </div>

@@ -12,7 +12,7 @@ export default function Breadcrumb({ path }: Readonly<BreadcrumbProps>) {
   }
 
   return (
-    <div className="breadcrumb">
+    <div className="c-breadcrumb">
       {/* Root */}
       <a href="#/">~/root</a>
 
@@ -25,7 +25,7 @@ export default function Breadcrumb({ path }: Readonly<BreadcrumbProps>) {
 
             {isLast ? (
               // Last item → NOT a link
-              <span className={"last_Breadcrumb"}>{part}</span>
+              <span className={"f-breadcrumb-active"}>{part}</span>
             ) : (
               <a href={buildPath(i)}>{part}</a>
             )}

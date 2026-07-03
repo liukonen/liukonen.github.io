@@ -9,27 +9,27 @@ export default function OpenSourceProjects() {
   const labEntries = Object.entries(portfolioData.labs)
 
   return (
-    <div className="page-layer">
+    <div>
       <Breadcrumb path="#/OPEN_SOURCE_PROJECTS" />
       <Header 
         title="Open Source Projects" 
         subtitle="A collection of specialized utilities, hardware monitors, and architectural experiments." 
       />
-      <section className="grid-2 showcase-grid">
+      <section className="l-grid-2 l-showcase-grid">
         {labEntries.map(([id, project]) => (
           <div 
             key={id} 
             className="card" 
             onClick={() => window.location.hash = `#/OPEN_SOURCE_PROJECTS/${id}`}
           >
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-              <span style={{ fontFamily: 'Cascadia Code', fontSize: '0.65rem', color: 'var(--brass-muted)' }}>
+            <div className="flex-split-top row-align-top row-justify-sb">
+              <span className="f-meta-xs">
                 // {id.toUpperCase()}
               </span>
             </div>
             
-            <h4 class="mt-1 lnk">{project.title}</h4>
-            <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginTop: '8px' }}>
+            <h4 class="mt-1 c-link-interactive">{project.title}</h4>
+            <p className="clr-muted fs-09 mt-8px">
               {project.description}
             </p>
             <Tags tags={project.tech.slice(0,3)} />

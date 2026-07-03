@@ -11,3 +11,4 @@ fi
 
 # Your existing tasks
 npm run fonts:extract && npm run content:compile
+node ./scripts/compile-stylesheet.mjs

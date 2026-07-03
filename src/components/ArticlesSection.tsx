@@ -27,15 +27,15 @@ export default function ArticlesSection() {
   }
 
   return (
-    <section id="writeups" className="showcase-grid">
-      <span className="section-label">~/ RECENT_WRITEN_ARTICLES</span>
+    <section id="writeups" className="l-showcase-grid">
+      <span className="f-label-mono f-clr-accent">~/ RECENT_WRITEN_ARTICLES</span>
       <p>
         // Technical spikes, systems research, and engineering explorations.<br />
         // Evaluating sandbox experiments and homelab architectures for enterprise production viability.
       </p>
       < br />
-      <section className="home-articles-section">
-        <div className="mini-article-list grid-2">
+      <section>
+        <div className="l-grid-2">
           {articles.map(article => <ArticleEntry article={article} onArticleClick={handleArticleClick} isMobile={isMobile} />)}
         </div>
       </section>
@@ -57,7 +57,7 @@ const ArticleEntry = ({ article, onArticleClick, isMobile }: any) =>
     <a
       href={article.url}
       key={article.id}
-      className="mini-article-row"
+      className="c-art-row"
       target={isMobile ? "_blank" : undefined}
       onClick={(e) => onArticleClick(e, article)}
     >
@@ -65,10 +65,10 @@ const ArticleEntry = ({ article, onArticleClick, isMobile }: any) =>
         <span>
           <BoxArrowUpRight />
         </span>
-        <div class="lnk">
+        <div class="c-link-interactive">
            {article.title.length > 80 ? article.title.slice(0, 77) + "..." : article.title}
         </div>
-        <span className="article-date-mono">
+        <span className="f-mono-muted">
           {new Date(article.published_at).toLocaleDateString("en-US", {
             month: "short",
             day: "2-digit",

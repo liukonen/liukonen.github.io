@@ -6,18 +6,18 @@ import Tags from '../components/Tags'
 
 export default function Showcase() {
   return (
-  <section className="showcase-container page-layer">
+  <section>
     <Breadcrumb path="#/SHOWCASE" />
         <Header title='Showcase' subtitle="Larger projects I Architected, Managed, and Led" />
-    <div className="showcase-grid">
+    <div className="l-showcase-grid">
     {Object.entries(showcaseData).map(([title, item]) => (
       <div key={item.id} className="card" onClick={() => window.location.hash = `#/TECH_SHOWCASE/${item.id}`}>
-        <span style={{ fontFamily: 'Cascadia Code', fontSize: '0.65rem', color: 'var(--brass-muted)' }}>
+        <span className="f-meta-xs">
           // {title.toUpperCase()}
         </span>
 
-        <span className="header lnk">{item.impact}</span>
-        <p style={{color: 'var(--brass-muted)'}}>Role: {item.role} </p>
+        <span className="f-hd-md f-clr-main c-link-interactive">{item.impact}</span>
+        <p className="f-clr-mutedass-muted">Role: {item.role} </p>
         <Tags tags={item.tags} />
       </div>
     ))}

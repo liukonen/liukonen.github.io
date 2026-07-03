@@ -1,0 +1,163 @@
+@use '../shared' as *
+
+///apply a CSS grid specifically optimized for article cards.
+.l-art-grid
+  display: grid
+  gap: 30px
+  margin-top: 40px
+
+///dictate the overall layout for the archive view.
+.l-archive
+  .archive-header
+    @include d-flex(space-between, flex-start)
+  h4
+    @extend %mt-3
+  p
+    font-size: 0.9rem
+    color: var(--brass-muted)
+    margin-top: 8px
+
+///generate 2-column and 3-column CSS grid layouts.
+.l-grid-2
+  display: grid
+  grid-template-columns: 1fr 1fr
+  gap: fluid(16, 24)
+  @media (max-width: $max-width-content)
+    grid-template-columns: 1fr
+
+///generate 2-column and 3-column CSS grid layouts.
+.l-grid-3
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  gap: fluid(16, 24)
+  @media (max-width: $max-width-content)
+    grid-template-columns: 1fr
+
+@media (max-width: $max-width-content)
+  .l-grid-3.leadership-controls
+    display: flex !important
+    flex-direction: column !important
+    gap: 1rem
+
+/// handle the layout for expandable drawer components.
+.l-expansion-viewport
+  @extend %w-full
+
+///trigger the expanded state and associated animations.
+.l-expansion-viewport.is-open 
+  border-top: 1px solid rgba(68, 66, 67, 0.4) 
+  padding-top: 2.5rem 
+  background-color: rgba(255, 255, 255, 0.02) 
+  border-left: 2px solid var(--accent-color, #e5a93c) 
+  padding-left: 0.75rem
+  margin-left: -0.75rem
+  border-radius: 0 4px 4px 0
+
+///enforce a standard margin constraint across the page.
+.l-default-margin
+  @include default-margin
+
+///dictate the grid layout for technical showcases.
+.l-showcase-grid
+  margin-bottom: 100px
+
+///the primary layout wrapper for detail pages.
+.l-detail-view
+  max-width: 900px
+
+///handle the specific layout requirements for Era timeline views.
+.l-era-header
+  @include default-margin
+  .brand-box
+    display: flex
+    align-items: center
+    gap: 30px
+    margin-bottom: 40px
+    .company-logo-large
+      width: 80px
+      height: 80px
+      border-radius: 8px
+      filter: grayscale(1) brightness(0.8)
+      border: 1px solid rgba(255, 255, 255, 0.1)
+      padding: 10px
+      background: #fff
+    .external-link
+      font-family: $font-mono
+      font-size: 0.8rem
+      color: var(--gold-accent)
+      text-decoration: none
+      &:hover
+        text-decoration: underline
+
+///constrain description blocks within detail views.
+.l-description-container
+  margin-top: 20px
+  max-width: 75ch
+
+
+///structure the primary introduction/hero section.
+.l-hero-intro
+  h1
+    letter-spacing: -0.02em
+    line-height: 1.1
+    font-family: var(--font-main)
+
+///handle layout for specific leadership tree or chart nodes.
+.l-leadership-section
+  width: 100%
+
+///handle layout for specific leadership tree or chart nodes.
+.l-leadership-node
+  display: flex
+  flex-direction: column
+
+///limit or optimize layout specifically for desktop screens.
+.l-desktop-viewport
+  display: block
+  @media (max-width: $max-width-content)
+    display: none !important
+
+///apply vertical scrolling to a container, mapping to `overflow-y-auto`.
+.l-scroll-y
+  @extend %h-screen
+  @extend %overflow-y-auto
+  @extend %overflow-x-hidden
+  @extend %anim-view-fade-in
+  @extend %flex-1
+  @extend %pos-relative
+  padding: fluid(32, 128)
+  &::-webkit-scrollbar
+    width: 6px
+  &::-webkit-scrollbar-thumb
+    @extend %transition-primary
+    background: $alpha-gold-20 
+    border-radius: 10px    
+  @media (max-width: $max-width-content)
+    width: 100%
+    height: auto          
+    overflow-y: visible   
+    padding: 40px 30px
+
+///handle the specific layout requirements for Era timeline views.
+.l-era
+  @exten %d-flex
+  gap: fluid(20, 40)
+  margin-bottom: fluid(24, 45)
+  @media (max-width: $max-width-content)
+    flex-direction: column
+    gap: 10px
+
+///handle the specific layout requirements for Era timeline views.
+.l-era-container
+  @extend %overflow-x-hidden
+  @extend %w-full
+
+///dictate the grid layout for technical showcases.
+.l-showcase-layout
+  display: grid
+  grid-template-columns: 1fr
+  gap: 2rem
+  align-items: start
+  margin-top: 2rem
+  @media (min-width: $max-width-content)
+    grid-template-columns: 320px 1fr

@@ -5,14 +5,14 @@ import Breadcrumb from "../components/Breadcrumb"
 export default function EraDetail({ id }: Props) {
   const era = portfolioData.eras.find(e => e.id === id)
 
-  if (!era) return <div className="page-layer">Error: Era Not Found</div>
+  if (!era) return <div>Error: Era Not Found</div>
 
   return (
-    <div className="page-layer detail-view" key={id}>
-      <div className="era-container">
+    <div className="l-detail-view" key={id}>
+      <div className="l-era-container">
         <Breadcrumb path={`#/ERA/${id}`} />
 
-        <header className="era-header">
+        <header className="l-era-header">
           <div className="brand-box">
             <img
               src={era.logoUrl}
@@ -20,8 +20,8 @@ export default function EraDetail({ id }: Props) {
               className="company-logo-large"
               onError={e => (e.currentTarget.style.display = "none")}
             />
-            <div className="header-text">
-              <h1 className="gold-text">
+            <div>
+              <h1>
                 {era.company}
               </h1>
               <a href={era.website} target="_blank" className="external-link">
@@ -30,27 +30,27 @@ export default function EraDetail({ id }: Props) {
             </div>
           </div>
 
-          <div className="meta-strip">
-            <div className="meta-item">
+          <div className="c-meta-strip">
+            <div className="c-meta-item">
               <label>TENURE</label>
               <span>
                 {era.year}
               </span>
             </div>
-            <div className="meta-item">
+            <div className="c-meta-item">
               <label>FUNCTIONAL ROLE</label>
               <span>
                 {era.role}
               </span>
             </div>
-            <div className="meta-item">
+            <div className="c-meta-item">
               <label>OFFICIAL TITLE</label>
-              <span className="brass-text">
+              <span>
                 {era.title}
               </span>
             </div>
           </div>
-          <div style={{ marginTop: "5px" }}>
+          <div className="mt-5px">
             {era.tech.map(t =>
               <span key={t} className="tag">
                 {t}
@@ -59,19 +59,19 @@ export default function EraDetail({ id }: Props) {
           </div>
         </header>
 
-        <section className="era-content">
-          <span className="section-label">~/ THE_DOSSIER</span>
-          <div className="description-container">
+        <section>
+          <span className="f-label-mono f-clr-accent">~/ THE_DOSSIER</span>
+          <div className="l-description-container">
             {era.long_description.map((paragraph, index) =>
-              <p key={index} className="era-paragraph">
+              <p key={index} className="f-body-prose">
                 {paragraph}
               </p>
             )}
           </div>
         </section>
 
-        <footer className="detail-footer">
-          <button onClick={() => window.history.back()} className="btn">
+        <footer>
+          <button onClick={() => window.history.back()} className="c-btn">
             RETURN_TO_TIMELINE
           </button>
         </footer>

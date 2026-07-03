@@ -9,10 +9,10 @@ export default function Labs() {
   const labEntries = Object.entries(portfolioData.archive)
 
   return (
-    <div className="page-layer">
+    <div>
       <Breadcrumb path="#/ARCHIVE" />
 
-      <div class="default-margin">
+      <div class="l-default-margin">
         <Header title='The Archive'
         subtitle="A collection of versions of this website, showcasing the evolution of design and content over time. Each entry represents a snapshot of the site's development, reflecting changes in layout, features, and overall aesthetic. Explore the archive to see how the site has transformed and to gain insights into the design decisions made throughout its history."
         >          
@@ -22,18 +22,18 @@ export default function Labs() {
       </div>
 
       {/* The Full Bento Grid */}
-      <section className="grid-2">
+      <section className="l-grid-2">
      
       {labEntries.map(([id, project]) => (
-        <a href={'https://liukonen.github.io/archive/' + project.id + '/'} target='_blank' style={{ textDecoration: 'none', color: 'inherit' }}>
-        <div key={id} className="card archive">
+        <a href={'https://liukonen.github.io/archive/' + project.id + '/'} target='_blank' className={"no-decor"}>
+        <div key={id} className="card l-archive">
           <div className={"archive-header"}>
-            <span className={"archive-id"}>
+            <span className={"f-meta-xs"}>
               // {project.id.toUpperCase()}
             </span>
           </div>
-          <h4 class="lnk"><BoxArrowUpRight /> {project.title}</h4>
-          <p>
+          <h4 class="c-link-interactive"><BoxArrowUpRight /> {project.title}</h4>
+          <p className="clr-muted">
             {project.description}
           </p>
         </div>

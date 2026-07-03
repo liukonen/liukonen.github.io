@@ -7,12 +7,12 @@ export function Navigation() {
   const LazyNavLinks = lazy(() => import('./NavBarLinks'))
 
   return (
-    <nav className="nav-container">
+    <nav className="l-nav-container">
       {/* --- MOBILE TOP BAR --- */}
-      <div className="mobile-top-bar">
-        <span className="brand">Liukonen.dev</span>
+      <div className="l-mobile-topbar">
+        <span className="c-nav-brand">Liukonen.dev</span>
         <button 
-          className="hamburger" 
+          className="c-hamburger" 
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle Menu"
         >

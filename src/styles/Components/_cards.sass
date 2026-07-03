@@ -1,0 +1,204 @@
+@use '../shared' as *
+/// horizontal layout container specifically for article lists.
+.c-art-row
+  @extend %align-center
+  gap: 15px
+  padding: 12px 0
+  text-decoration: none
+  border-bottom: 1px solid $border-subtle
+  color: $text-muted
+  transition: color $transition-primary
+
+
+/// render a heads-up display status indicator in the sidebar.
+.c-hud-status
+  @extend %pos-relative
+  @include bg-none
+  @extend %border-none
+  @extend %cursor-pointer
+  padding: 4px
+  display: inline-flex
+  align-items: center
+  justify-content: center
+
+  &:hover
+    &::before
+      content: attr(data-tooltip)
+      position: absolute
+      //@inlude pos-absolute()
+      @extend %font-mono-family
+      @extend %fw-600
+      bottom: 135%
+      left: 50%
+      transform: translateX(-50%)
+      background: #141416
+      color: $text-main
+      font-size: 10px
+      letter-spacing: 0.05em
+      white-space: nowrap
+      padding: 6px 10px
+      border: 1px solid rgba($border-subtle, 0.8)
+      border-radius: 4px
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4)
+      z-index: 50
+      pointer-events: none
+      animation: tooltip-fade-in 0.1s ease-out
+    &::after
+      content: ""
+      @include pos-absolute(115%, 50%)
+      transform: translateX(-50%)
+      border-width: 5px
+      border-style: solid
+      border-color: #141416 transparent transparent transparent
+      z-index: 50
+      pointer-events: none
+
+/// render a heads-up display status indicator in the sidebar.
+button.c-hud-status
+  @include bg-none
+  @extend %border-none
+  @extend %cursor-pointer
+  padding: 0
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  svg
+    animation: telemetry-intro-six 6s ease-in-out forwards
+    will-change: transform, opacity, filter
+    transition: color 0.3s ease-in-out
+
+/// attach hover interactions for glossary tooltips.
+.tooltip-trigger
+  @extend %pos-relative
+  @extend %text-left
+  border-bottom: 1px dashed var(--accent-color, var(--gold-accent))
+  cursor: help
+  color: inherit
+  text-decoration: none
+
+  &::after
+    content: attr(data-tooltip)
+    position: absolute
+    bottom: 150%
+    left: 50%
+    transform: translateX(-50%) translateY(10px)
+    width: 260px
+    padding: 12px
+    background-color: $bg-modal
+    color: #eee
+    font-size: 0.85rem
+    line-height: 1.4
+    border-radius: 6px
+    border: 1px solid $border-dark
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5)
+    opacity: 0
+    pointer-events: none
+    transition: opacity 0.2s ease, transform 0.2s ease
+    z-index: 100
+
+  &:hover::after
+    opacity: 1
+    transform: translateX(-50%) translateY(0)
+
+  &::before
+    content: ''
+    @include pos-absolute(130%, 50%)
+    @extend %text-left
+    //bottom: 130%
+    //left: 50%
+    transform: translateX(-50%)
+    border: 6px solid transparent
+    border-top-color: $bg-modal
+    opacity: 0
+    transition: opacity 0.2s ease
+    z-index: 101
+
+  &:hover::before
+    opacity: 1
+
+/// apply standard interactive link behavior with animations.
+.c-link-interactive
+  @extend %interactive-link-base
+
+
+/// align multiple `.c-meta-item` elements horizontally.
+.c-meta-strip
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))
+  gap: 20px
+  padding: 25px
+  background: $bg-surface
+  border: 1px solid $border-subtle
+  border-radius: 4px
+
+  /// format individual pieces of metadata.
+  .c-meta-item
+    label
+      display: block
+      @extend %font-mono-family
+      @extend %fw-600
+      font-size: 0.6rem
+      color: $brass-muted
+      margin-bottom: 5px
+    span
+      font-weight: 600
+      font-size: 0.9rem
+
+/// apply a technical/blueprint aesthetic to the showcase sidebar.
+.c-blueprint-sidebar
+  background-color: $bg-surface
+  border: 1px solid $border-dark
+  padding: 1.5rem
+  @media (min-width: $max-width-content)
+    top: 2rem
+    z-index: 10
+    width: 100%
+  h3
+    @extend %text-gold-color
+    font-size: 11px
+    border-bottom: 1px solid var(--gold-accent)
+    padding-bottom: 6px
+    margin-bottom: 1rem
+    text-transform: uppercase
+    letter-spacing: 0.05em
+  table
+    @extend %w-full
+    @extend %border-collapse
+    tr
+      @include d-flex()
+      @include flex-col
+      padding: 12px 0
+      border-bottom: 1px solid $bg-surface
+      &:first-child
+        padding-top: 0
+      &:last-child
+        border-bottom: none
+    td
+      padding: 0
+      &:first-child
+        @extend %text-gold-color
+        font-size: 10px
+        font-weight: 700
+        text-transform: uppercase
+        letter-spacing: 0.05em
+        margin-bottom: 4px
+      &:last-child
+        color: $text-main
+        font-size: 14px
+        line-height: 1.4
+
+/// render breadcrumb navigation paths.
+.c-breadcrumb
+  font-family: var(--font-main)
+  font-size: 0.8rem
+  color: $brass-muted
+  margin-bottom: fluid(24, 45)
+  a
+    color: inherit
+    text-decoration: none
+    transition: color $transition-primary
+    &:hover
+      color: var(--gold-accent)
+  .sep
+    margin: 0 10px
+    opacity: 0.5

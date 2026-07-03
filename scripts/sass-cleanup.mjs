@@ -5,7 +5,7 @@ async function runReadOnlyPurge() {
     console.log("Analyzing SASS compilation output against codebase...");
 
     const purgeCSSResult = await new PurgeCSS().purge({
-      // 1. Files to scan for class names (your layout & injected templates)
+      // 1. Files to scan for class names
       content: [
         './src/**/*.tsx',
         './src/*.tsx', 
@@ -15,12 +15,18 @@ async function runReadOnlyPurge() {
         './public/open-source/*.json',
         './public/showcase/*.json'        
       ],
-      // 2. Your compiled CSS file (compile your SASS to CSS first)
+      // 2. Your compiled CSS file
       css: [
         './src/styles/main.css',
       ],
       // 3. Reject instead of stripping (Readonly Mode)
       rejected: true, 
+      
+      // FIX: Aggressive multi-line string text extractor
+      defaultExtractor: (content) => {
+        // This catches text elements matching your standard SASS class configurations
+        return content.match(/[\w-/:]+(?<!:)/g) || [];
+      }
     });
 
     console.log("\n--- PURGECSS DRY RUN RESULTS ---");

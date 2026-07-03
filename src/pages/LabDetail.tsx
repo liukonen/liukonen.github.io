@@ -13,7 +13,7 @@ interface Props {
 export default function LabDetail({ id }: Props) {
   const project = portfolioData.labs[id]
   if (!project) {
-    return <div className="page-layer">Project Not Found</div>
+    return <div>Project Not Found</div>
   }
 
   const [projectData, setProjectData] = useState(null)
@@ -22,15 +22,15 @@ export default function LabDetail({ id }: Props) {
     fetch(`/open-source/${project.repo}.json`).then(r => r.json()).then(setProjectData)
     window.scrollTo(0, 0)
   }, [id])
-  if (!projectData) return <div className="loader">// DECRYPTING_TECHNICAL_LOGS...</div>
+  if (!projectData) return <div>// DECRYPTING_TECHNICAL_LOGS...</div>
 
 
   return (
-    <div className="page-layer">
+    <div>
       <Breadcrumb path={`#/OPEN_SOURCE_PROJECTS/${id}`} />
 
-      <header className="project-header">
-        <h1 style={{ fontSize: '3.5rem', color: 'var(--gold-accent)' }}>
+      <header>
+        <h1 class="lab-header">
           {project.title}
         </h1>
         {project.buttons && project.buttons.length > 0 && (
@@ -49,21 +49,20 @@ export default function LabDetail({ id }: Props) {
           </div>
         )}
 
-        <div className="mt-1">
+        <div className="f-mt-1">
         <Tags tags={project.tech} />
         </div>
       </header>
 
-      <section className="project-body mt-4">
-        <p className="mt-2" style={{ fontSize: '1.2rem', lineHeight: '1.8', color: 'var(--text-muted)' }}>
+      <section className="f-mt-4">
+        <p className="f-mt-2 lab-detail-desc">
           {project.description}
         </p>
-        <section className="technical-body markdown-engine" dangerouslySetInnerHTML={{ __html: projectData.content }} />
+        <section className="technical-body c-prose-container" dangerouslySetInnerHTML={{ __html: projectData.content }} />
       </section>
 
       <button 
-        className="btn" 
-        style={{ marginTop: '60px' }} 
+        className="c-btn mt-60px" 
         onClick={() => window.location.hash = '#/OPEN_SOURCE_PROJECTS'}
       >
         ← RETURN_TO_LAB

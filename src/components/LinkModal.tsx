@@ -43,88 +43,68 @@ export default function LinkModal({ articleId, onClose, title, url, onContentLoa
   if (!articleId) return null
 
   const modalContent = (
-    <div className="link-modal-overlay" style={{ padding: '2rem' }}>
-      <div 
-        className="link-modal-container" 
+    <div className="l-modal-overlay pd-2rm">
+      <div
+        className="c-modal-container modal-pane-frame-max" 
         onClick={(e) => e.stopPropagation()}
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          maxHeight: '85vh',
-          overflow: 'hidden'
-        }}
       >
         
         {/* Unified Top HUD Navigation Grid */}
         <div 
-          className="link-modal-header font-mono" 
-          style={{ 
-            display: 'flex', 
-            alignItems: 'flex-start', 
-            justifyContent: 'space-between', 
-            gap: '16px' 
-          }}
+          className="c-modal-header f-font-mono modal-row-split-gap" 
         >
-          <div className="header-meta" style={{ flex: '1', minWidth: '0' }}>
+          <div className="f-md-meta modal-cell-fill">
             {url ? (
-              <a href={url} target="_blank" rel="noopener noreferrer" className="link-modal-title-link" style={{ textDecoration: 'none' }}>
-                <h2 style={{ whiteSpace: 'normal', wordBreak: 'break-word', margin: '0 0 4px 0', lineHeight: '1.4' }}>
+              <a href={url} target="_blank" rel="noopener noreferrer" className="c-modal-title-link f-no-decor">
+                <h2 className="modal-txt-wrap">
                   {title ? `${title}` : 'DOCUMENT::FETCH_ENTRY'}
                 </h2>
               </a>
             ) : (
-              <h2 style={{ whiteSpace: 'normal', wordBreak: 'break-word', margin: '0 0 4px 0', lineHeight: '1.4' }}>
+              <h2 className="modal-txt-wrap">
                 {title ? `${title}` : 'DOCUMENT::FETCH_ENTRY'}
               </h2>
             )}
-            <div className="header-tags">
+            <div className="f-md-tags">
               <span>STACK::FLUENTBIT_LOKI_GRAFANA</span>
-              <span className="tag-separator">|</span>
+              <span className="c-tag-separator">|</span>
               <span>INFRA::RASPBERRY_PI_NODES</span>
             </div>
           </div>
           
           <button 
-            className="link-modal-close" 
+            className="c-modal-close modal-no-shrink" 
             onClick={onClose}
             aria-label="Close modal"
-            style={{ flexShrink: 0 }}
           >
-            <span className="kbd-hint">ESC</span>
-            <span className="close-icon">×</span>
+            <span className="c-kbd-hint">ESC</span>
+            <span>×</span>
           </button>
         </div>
 
         {/* High-Contrast Framing Line (Matches Telemetry Layout Edge) */}
-        <div className="link-modal-frame-line" /> 
+        <div className="c-modal-frame-line" /> 
 
         {/* Core Scrollzone Container - Isolated Vertical Scroll Context */}
         <div 
-          className="link-modal-content-scrollzone" 
-          style={{ 
-            flex: '1', 
-            overflowY: 'auto', 
-            minHeight: '0',
-            WebkitOverflowScrolling: 'touch'
-          }}
+          className="c-modal-scrollzone modal-scroll-y" 
         >
           {loading ? (
-            <div className="link-modal-loading font-mono">LOADING_STREAM_RESOURCES...</div>
+            <div className="c-modal-loading f-font-mono">LOADING_STREAM_RESOURCES...</div>
           ) : content ? (
             <div 
-              className="link-modal-body"
-              style={{ maxWidth: '100%', overflowX: 'hidden' }}
+              className="c-modal-body modal-clip-x"
               dangerouslySetInnerHTML={{ __html: content }}
             />
           ) : (
-            <div className="link-modal-error font-mono">ERROR::FETCH_PIPELINE_FAILED</div>
+            <div className="c-modal-error f-font-mono">ERROR::FETCH_PIPELINE_FAILED</div>
           )}
         </div>
 
         {/* Integrated Low-Profile Meta Footer */}
-        <div className="link-modal-footer font-mono">
+        <div className="c-modal-footer f-font-mono">
           <span>DOC_SOURCE::DEV_TO_API</span>
-          <span className="tag-separator">|</span>
+          <span className="c-tag-separator">|</span>
           <span>RENDER_ENGINE::VHTML_RAW_PARSER</span>
         </div>
 

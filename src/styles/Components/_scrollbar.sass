@@ -1,0 +1,68 @@
+@use '../_shared' as *
+
+///manage the specific styling, layout, and list structure of the global sidebar.
+.sidebar
+  @extend %h-screen
+  @extend %pos-sticky
+  @include d-flex()
+  @include flex-col
+  width: 380px
+  top: 0
+  padding: 60px fluid(24, 50)
+  border-right: 1px solid $alpha-gold-05
+  @media (max-width: $max-width-content)
+    width: 100%
+    height: auto          
+    position: relative    
+    border-right: none
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05)
+    padding: 100px 30px 40px 30px 
+
+///manage the specific styling, layout, and list structure of the global sidebar.
+.sidebar-logo
+  @extend %font-mono-family
+  @extend %text-gold-color
+  @extend %fw-700
+  margin-bottom: 30px
+  font-size: 1.1rem
+  visibility: hidden
+  @media (min-width: $max-width-content)
+    visibility: visible
+
+///manage the specific styling, layout, and list structure of the global sidebar.
+.sidebar-ul
+  @extend %list-reset
+
+///manage the specific styling, layout, and list structure of the global sidebar.
+.sidebar-li
+  @extend %mb-2
+  @include d-flex(null, center)
+
+///manage the specific styling, layout, and list structure of the global sidebar.
+.sidebar-avatar
+  @extend %bg-surface
+  @extend %object-cover
+  @extend %pos-relative
+  @extend %profile-image-shadow
+  width: 140px
+  height: 140px
+  border-radius: 6px
+  margin-bottom: 30px
+  display: inline-block
+
+///manage the specific styling, layout, and list structure of the global sidebar.
+.sidebar-subtitle
+  @extend %text-gold-color
+  @extend %font-mono-family
+  @extend %mt-3
+  @extend %text-uppercase
+  @extend %ls-wide
+  font-size: 0.7rem
+
+///manage the specific styling, layout, and list structure of the global sidebar.
+.sidebar-title
+  @extend %font-main-family
+  @extend %fw-600
+  @extend %ls-tight
+  @extend %lh-tight
+  font-size: clamp(1.6rem, 4vw, 2rem)

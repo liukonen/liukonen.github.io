@@ -1,48 +1,12 @@
 @use '../shared' as *
 
-// ==========================================================================
-// LINK OVERLAY MODAL
-// ==========================================================================
 
-
-
-
-
-
-
-.link-modal-title-link
+///style interactive links within the modal title.
+.c-modal-title-link
   @extend %interactive-link-base
-//   @extend %flex-1
-//   @extend %cursor-pointer
-//   @extend %transition-primary
-//   text-decoration: none
-//   color: inherit
 
-//   h3
-//     margin: 0
-//     color: $text-main
-//     font-size: 1.3rem
-//     font-weight: 700
-
-//   &:hover h3
-//     color: $gold-accent
-//     text-decoration: underline
-
-//   @extend %bg-none
-//   @extend %border-none
-//   @extend %font-size-meta
-//   @extend %cursor-pointer
-//   color: $text-muted
-//   padding: 4px
-//   transition: color 0.12s ease
-//   &:hover
-//     color: #FFFFFF
-
-// ==========================================================================
-// LINK OVERLAY MODAL (Refactored to match Telemetry Blueprint)
-// ==========================================================================
-
-.link-modal-body
+///structure the internal layout architecture of generic modals.
+.c-modal-body
   @extend %flex-1
   @extend %overflow-y-auto
   @extend %w-full
@@ -60,17 +24,17 @@
     font-size: 2rem
     font-family: $font-mono
   h2
-    font-family: $font-main 
+    font-family: var(--font-main)
     font-weight: 600
-    color: $gold-accent
+    color: var(--gold-accent)
     margin-top: 2rem
     margin-bottom: 1rem
     font-size: 1.6rem
     border-bottom: 1px solid $alpha-gold-20
-    padding-bottom: 0.5em    
+    padding-bottom: 0.5em
   p, li, blockquote
     color: $text-prose
-    font-family: $font-main
+    font-family: var(--font-main)
     line-height: 1.75
     margin-bottom: 1.25rem
   a
@@ -90,10 +54,10 @@
     font-family: $font-mono
     font-size: 0.9em
     color: $alpha-gold-code
- 
+
   pre
     @extend %overflow-y-auto
-    border-left: 3px solid $gold-accent 
+    border-left: 3px solid var(--gold-accent)
     line-height: 2rem
     background: $bg-darker
     padding: 15px
@@ -102,7 +66,7 @@
     min-width: 0 !important
     @extend %white-space-pre
     @extend %word-break-normal
- 
+
     &::-webkit-scrollbar
       height: 6px
     &::-webkit-scrollbar-thumb
@@ -123,7 +87,7 @@
     padding: 0
     color: $text-muted
   blockquote
-    border-left: 3px solid $gold-accent
+    border-left: 3px solid var(--gold-accent)
     padding-left: 1em
     //margin-left: 0
     margin: 1.6em 0
@@ -151,37 +115,31 @@
       background: $alpha-gold-05
       color: $text-main
 
-.link-modal-loading, .link-modal-error
-  @extend %w-full
-  @extend %text-center
-  @extend %font-size-nano
-  @extend %anim-system-pulse
-  padding: 60px 0
-  color: rgba($text-muted, 0.6)
-
-.link-modal-error
-  @extend %d-flex
-  @extend %justify-center
+///dictate the loading or error states within a modal.
+.c-modal-error
+  @include d-flex(center, center)
   @extend %h-screen
   color: #ff6b6b
   font-size: 1.1rem
-.link-modal-overlay
+
+///create the fixed, full-screen background overlay behind modals.
+.l-modal-overlay
   @extend %pos-fixed
   @extend %inset-0
   @extend %w-screen
   @extend %h-screen-fluid
-  @extend %d-flex
-  @extend %justify-center
+  @include d-flex(center, center)
   @extend %z-modal-bg
   @extend %anim-slide-up
   background: rgba(11, 11, 12, 0.88) // Matched to telemetry opacity
   backdrop-filter: blur(4px)
   padding: 2rem
 
-.link-modal-container
+///structure the internal layout architecture of generic modals.
+.c-modal-container
   @extend %w-full
-  @extend %d-flex
-  @extend %flex-col
+  @include d-flex()
+  @include flex-col
   @extend %overflow-hidden // Force containment like telemetry
   @extend %anim-modal-boot
   max-width: 820px // Matched exact width
@@ -191,81 +149,60 @@
   border-radius: 6px
   box-shadow: 0 32px 64px rgba(0, 0, 0, 0.7) // Added telemetry deep shadow
 
-.link-modal-header
-  @extend %d-flex
-  @extend %justify-between
+///structure the internal layout architecture of generic modals.
+.c-modal-header
+  @include d-flex(space-between, null)
   padding: 20px 24px // Exact Telemetry HUD Header Padding
   border-bottom: 1px solid $border-subtle
   background: #0E0E10
   gap: 16px
 
-  .header-meta
-    @extend %d-flex
-    @extend %flex-col
-    @extend %flex-1
-    //@extend %min-w-0
-    gap: 4px
+///a visual divider placed between inline tags.
+.c-tag-separator
+  color: rgba($text-muted, 0.3)
 
-    h2
-      @extend %font-mono-family
-      @extend %fw-700
-      font-size: 13px // Forced to crisp HUD tracking matrix size
-      color: $text-main
-      margin: 0
-      text-transform: uppercase
-      line-height: 1.4
+///style the close icon/button for generic modals.
+.c-modal-close
+  @include bg-none
+  @extend %border-none
+  @extend %font-size-meta
+  @extend %cursor-pointer
+  @include d-flex(center, null)
+  @extend %align-center
+  gap: 8px
+  color: $text-muted
+  padding: 4px
+  transition: color 0.12s ease
+  flex-shrink: 0
 
-    .header-tags
-      @extend %d-flex
-      @extend %font-size-micro
-      gap: 8px
-      color: $text-muted
-      font-weight: 600
-      
-      .tag-separator
-        color: rgba($text-muted, 0.3)
+///style keyboard shortcut hints (like "Esc").
+.c-kbd-hint
+  @extend %font-size-micro
+  border: 1px solid rgba($border-subtle, 0.8)
+  padding: 1px 4px
+  border-radius: 3px
+  opacity: 0
+  transform: translateX(2px)
+  transition: all 0.15s ease
+  &:hover
+    color: #FFFFFF
+    opacity: 1
+    transform: translateX(0)
 
-  .link-modal-close
-    @extend %bg-none
-    @extend %border-none
-    @extend %font-size-meta
-    @extend %cursor-pointer
-    @extend %d-flex
-    @extend %align-center
-    gap: 8px
-    color: $text-muted
-    padding: 4px
-    transition: color 0.12s ease
-    flex-shrink: 0
-    
-    .kbd-hint
-      @extend %font-size-micro
-      border: 1px solid rgba($border-subtle, 0.8)
-      padding: 1px 4px
-      border-radius: 3px
-      opacity: 0
-      transform: translateX(2px)
-      transition: all 0.15s ease
-      
-    &:hover 
-      color: #FFFFFF
-      .kbd-hint
-        opacity: 1
-        transform: translateX(0)
-
-// High-Contrast Framing Accent Line
-.link-modal-frame-line
+///render a stylized border or frame around the modal.
+.c-modal-frame-line
   width: 100%
   height: 1px
   background: rgba($gold-accent, 0.8)
   border-bottom: 1px solid $border-subtle
 
-.link-modal-content-scrollzone
+///manage the scrollable area inside a modal.
+.c-modal-scrollzone
   @extend %flex-1
   @extend %overflow-y-auto
   @extend %min-h-0
   background: $bg-deep
-  
+
   &::-webkit-scrollbar
     width: 6px
   &::-webkit-scrollbar-track
@@ -274,94 +211,72 @@
     background: rgba(229, 169, 60, 0.2)
     border-radius: 4px
     &:hover
-      background: $gold-accent
+      background: var(--gold-accent)
 
-.link-modal-footer
-  @extend %d-flex
-  @extend %justify-between
+///structure the internal layout architecture of generic modals.
+.c-modal-footer
+  @include d-flex(space-between, null)
   @extend %font-size-micro
   @extend %ls-shout
   padding: 14px 24px // Mirrored exactly to telemetry layout footer
   background: #0E0E10
   border-top: 1px solid $border-subtle
   color: $text-muted
-  
-  .footer-right
-    @extend %d-flex
-    gap: 8px
-    .tag-separator
-      color: rgba($text-muted, 0.3)
 
-// ==========================================================================
-// UPTIME / TELEMETRY MODAL
-// ==========================================================================
-.telemetry-overlay
+///align footer content to the right side of the screen.
+.l-footer-right
+  @include d-flex()
+  gap: 8px
+
+///create the fixed, full-screen background overlay behind modals.
+.l-telemetry-overlay
   @extend %pos-fixed
   @extend %inset-0
   @extend %w-screen
   @extend %h-screen-fluid
-  @extend %d-flex
-  @extend %justify-center
+  @include d-flex(center, center)
   @extend %z-modal-telemetry
-  background: rgba(11, 11, 12, 0.88) 
+  background: rgba(11, 11, 12, 0.88)
   backdrop-filter: blur(4px)
 
-.telemetry-modal
+/// structure the specific layout of the Uptime/Telemetry overlay.
+.c-telemetry-modal
   @extend %w-full
-  @extend %d-flex
-  @extend %flex-col
+  @include d-flex()
+  @include flex-col
   @extend %overflow-hidden
-  max-width: 820px 
+  max-width: 820px
   background: $bg-deep
   border: 1px solid $border-subtle
   border-radius: 6px
   box-shadow: 0 32px 64px rgba(0, 0, 0, 0.7)
 
-.telemetry-header
-  @extend %d-flex
-  @extend %justify-between
-  @extend %justify-center
+///structure the specific layout of the Uptime/Telemetry overlay.
+.c-telemetry-header
+  @include d-flex(space-between, center)
   padding: 20px 24px
   border-bottom: 1px solid $border-subtle
   background: #0E0E10
 
-  .header-meta
-    @extend %d-flex
-    @extend %flex-col
-    gap: 4px
-    h2
-      @extend %font-mono-family
-      @extend %fw-700
-      @extend %ls-telemetry
-      font-size: 13px
-      color: $text-main
-      margin: 0
-    .header-tags
-      @extend %d-flex
-      @extend %justify-center
-      @extend %font-size-micro
-      gap: 8px
-      color: $text-muted
-      font-weight: 600
-      .tag-separator
-        color: rgba($text-muted, 0.3)
+///a generic close button for UI overlays.
+.c-close-btn
+  @include bg-none
+  @extend %border-none
+  @extend %font-size-meta
+  @extend %cursor-pointer
+  color: $text-muted
+  padding: 4px
+  transition: color 0.12s ease
+  &:hover
+    color: #FFFFFF
 
-  .close-btn
-    @extend %bg-none
-    @extend %border-none
-    @extend %font-size-meta
-    @extend %cursor-pointer
-    color: $text-muted
-    padding: 4px
-    transition: color 0.12s ease
-    &:hover
-      color: #FFFFFF
-
-.telemetry-content
+///structure the specific layout of the Uptime/Telemetry overlay.
+.c-telemetry-content
   padding: 24px
   background: $bg-deep
 
-.telemetry-status-message
+///format the overall network status indicator.
+.c-telemetry-status
   @extend %font-size-nano
   @extend %text-center
   padding: 40px 0
@@ -369,19 +284,19 @@
   &.error
     color: $red-beacon
 
-.telemetry-sheet
-  @extend %d-flex
-  @extend %flex-col
+///render the tabular data sheet within the telemetry modal.
+.c-telemetry-sheet
+  @include d-flex()
+  @include flex-col
   @extend %w-full
 
   .sheet-header
-    @extend %d-flex
-    @extend %justify-between
+    @include d-flex(space-between, null)
     padding: 14px 16px 12px 16px
-    border-top: 1px solid rgba($gold-accent, 0.8) 
+    border-top: 1px solid rgba($gold-accent, 0.8)
     border-bottom: 1px solid $border-subtle
     background: rgba($bg-surface, 0.3)
-    
+
     .col-lbl
       @extend %font-size-micro
       @extend %fw-600
@@ -390,7 +305,7 @@
     .col-node
       @extend %flex-1
     .metrics-lbl-group
-      @extend %d-flex
+      @include d-flex()
       @extend %text-right
       gap: 36px
       .col-lbl
@@ -402,12 +317,12 @@
         @extend %text-center
 
   .sheet-body
-    @extend %d-flex
-    @extend %flex-col
+    @include d-flex()
+    @include flex-col
 
   .sheet-row
     @extend %pos-relative
-    @extend %d-flex
+    @include d-flex()
     @extend %bg-surface
     border-bottom: 1px solid $bg-deep
     transition: background 0.12s ease
@@ -415,9 +330,8 @@
       background: #141417
 
     .row-beacon
-      @extend %pos-absolute
+      @include pos-absolute(0, 0)
       @extend %inset-0
-      bottom: 0
       width: 2px
       &.online
         background: rgba($green-beacon, 0.4)
@@ -426,9 +340,7 @@
 
     .row-content
       @extend %flex-1
-      @extend %d-flex
-      @extend %justify-between
-      @extend %justify-center
+      @include d-flex(space-between, center)
       padding: 14px 16px 14px 20px
 
       .node-name
@@ -438,8 +350,7 @@
         color: $text-main
 
       .node-metrics
-        @extend %d-flex
-        @extend %justify-center
+        @include d-flex(center, center)
         @extend %text-right
         gap: 36px
         .metric-val
@@ -468,12 +379,73 @@
           &.failed
             color: $red-beacon
 
-.telemetry-footer
-  @extend %d-flex
-  @extend %justify-between
+///structure the specific layout of the Uptime/Telemetry overlay.
+.c-telemetry-footer
+  @include d-flex(space-between, null)
   @extend %font-size-micro
   @extend %ls-shout
   padding: 14px 24px
   background: #0E0E10
   border-top: 1px solid $border-subtle
   color: $text-muted
+
+///dictate the loading or error states within a modal.
+.c-modal-loading, .c-modal-error
+  @extend %w-full
+  @extend %text-center
+  @extend %font-size-nano
+  @extend %anim-system-pulse
+  padding: 60px 0
+  color: rgba($text-muted, 0.6)
+
+///manage the layout, content area, and close interaction for full-screen image views.
+.modal-image-view
+  @include d-flex(center, center)
+  position: fixed
+  inset: 0
+  background: rgba(0, 0, 0, 0.85)
+  backdrop-filter: blur(4px)
+  z-index: 1000
+  cursor: zoom-out
+  padding: 2rem
+
+  // New Button Rules
+  .modal-close-btn
+    position: absolute
+    top: 2rem
+    left: 2rem
+    width: 3rem
+    height: 3rem
+    background: transparent
+    border: none
+    color: #ffffff
+    cursor: pointer
+    z-index: 1001 // Keeps it clickable above everything
+    transition: transform 0.2s ease, color 0.2s ease
+    @include d-flex(center, center)
+    padding: 0.5rem
+
+    &:hover
+      color: #D4A857 // Matches the gold highlight used elsewhere
+      transform: scale(1.1)
+
+    svg
+      width: 100%
+      height: 100%
+
+  .modal-content
+    @include d-flex(center, center)
+    position: relative
+    width: 100%
+    max-width: 90vw
+    height: 100%
+    max-height: 90vh
+    border-radius: 8px
+    padding: 1rem
+    cursor: default
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5)
+
+    img
+      width: 100%
+      height: 100%
+      object-fit: contain

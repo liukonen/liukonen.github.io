@@ -1,11 +1,7 @@
-// ==========================================================================
-// SITE NAVIGATION PLATFORM
-// ==========================================================================
-@use 'shared' as *
+@use '../shared' as *
 
-// NavBar Objects (MOBILE)
-
-.nav-links
+/// structure the top navigation and its link elements.
+.l-nav-links
   @extend %list-reset
   @extend %font-main-family
   display: none
@@ -13,17 +9,16 @@
   padding: 1rem
   background: $bg-deep
   &.show
-    @extend %d-flex
+    @include d-flex()
   @media (min-width: $max-width-content)
-    display: flex  // Directly applied to comply with Sass media rules
+    display: flex  
     background: transparent
   @media (max-width: $max-width-content)
     display: none 
   li
     margin: 22px 0
   a
-    @extend %d-flex
-    @extend %align-center
+    @include d-flex(null,center)
     @extend %text-uppercase
     @extend %transition-primary
     text-decoration: none
@@ -41,9 +36,10 @@
       @extend %text-gold-color
       .line
         width: 55px
-        background: $gold-accent
+        background: var(--gold-accent)
  
-.nav-container
+/// structure the top navigation and its link elements.
+.l-nav-container
   position: fixed
   top: 0
   left: 0
@@ -51,25 +47,24 @@
   z-index: 1000
   background: $bg-darker
   border-bottom: 1px solid $border-dark
-  
   @media (min-width: $max-width-content)
     visibility: hidden
 
-.mobile-top-bar
-  @extend %d-flex
-  @extend %align-center
-  justify-content: space-between
+/// apply mobile-specific navigation layouts.
+.l-mobile-topbar
+  @include d-flex(space-between, center)
   padding: 1rem
-  
   @media (min-width: $max-width-content)
     display: none
 
-.brand
+/// the primary logo or brand text in the navigation bar.
+.c-nav-brand
   @extend %text-gold-color
   font-weight: bold
   font-family: monospace
 
-.hamburger
+/// render the mobile hamburger menu icon.
+.c-hamburger
   @extend %text-gold-color
   background: none
   border: none
@@ -77,10 +72,10 @@
   font-size: 1.2rem
   cursor: pointer
 
-.mobile-expansion-drawer
+/// apply mobile-specific navigation layouts.
+.l-mobile-drawer
   display: none 
   width: 100%
-  
   @media (max-width: $max-width-content)
     display: block !important
     visibility: visible !important
@@ -88,41 +83,21 @@
     max-height: 0
     opacity: 0
     transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease
-    
     &.is-open
       max-height: 2000px !important 
       opacity: 1 !important
       padding: 1.5rem 0
       margin-bottom: 1rem
 
-//Breadcrumbs (Pages)
-.breadcrumb
-  font-family: $font-main
-  font-size: 0.8rem
-  color: $brass-muted
-  margin-bottom: fluid(24, 45)
-  a
-    color: inherit
-    text-decoration: none
-    transition: color $transition-primary
-    &:hover
-      color: $gold-accent
-  .sep
-    margin: 0 10px
-    opacity: 0.5
-.last_Breadcrumb
-  color: $gold-accent
-
-// Social Links (SIDEBAR)
-.social-links
+/// lay out social media icons/links horizontally.
+.l-social-links
   margin-top: auto
-  @extend %d-flex
+  @include d-flex()
   @extend %font-main-family
   gap: 15px
   font-size: 1.8rem
-  
   a, button
-    @extend %d-flex
+    @include d-flex(center, center)
     @extend %align-center
     @extend %transition-primary
     justify-content: center
@@ -132,9 +107,7 @@
     padding: 0
     font-size: 1.8rem
     cursor: pointer
-    
     &:hover
       @extend %text-gold-color
-      
   @media (min-width: $max-width-content)
     margin-top: auto

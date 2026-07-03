@@ -14,14 +14,14 @@ import { LeadershipSection } from "../components/LeadershipSection"
 export default function Home() {
   const { profile, eras, labs } = portfolioData
   return (
-    <div className="page-layer">
+    <div>
       <Breadcrumb path="#/" />
 
       {/* --- ABOUT SECTION --- */}
 
       <section
         id="about"
-        className={"markdown-engine"}
+        className={"prose-engine"}
         dangerouslySetInnerHTML={{ __html: aboutData.content }}
       />
       <div class="gold-spacer" aria-hidden="true" />
@@ -47,8 +47,8 @@ export default function Home() {
       </Suspense>
         <div class="gold-spacer" aria-hidden="true"></div>
       {/* --- CONTACT SECTION --- */}
-      <section id="contact" className="showcase-grid">
-        <button className="btn" onClick={() => (location.hash = "#/CONTACT")}>
+      <section id="contact" className="l-showcase-grid">
+        <button className="c-btn" onClick={() => (location.hash = "#/CONTACT")}>
           GET_IN_TOUCH
         </button>
       </section>
@@ -56,7 +56,7 @@ export default function Home() {
       <footer>
         &copy; 2026 {profile.brand} // Liukonen.dev
         <section
-          className={"markdown-engine "}
+          className={"prose-engine "}
           id="footer"
           dangerouslySetInnerHTML={{ __html: footerData.content }}
         />
