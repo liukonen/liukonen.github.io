@@ -2,8 +2,10 @@
 
 /// structure the top navigation and its link elements.
 .l-nav-links
-  @extend %list-reset
-  @extend %font-main-family
+  list-style-type: none 
+  padding-left: 0
+  margin-left: 0
+  font-family: $font-main
   display: none
   flex-direction: column
   padding: 1rem
@@ -20,8 +22,8 @@
     margin: 22px 0
   a
     @include d-flex(null,center)
-    @extend %text-uppercase
-    @extend %transition-primary
+    text-transform: uppercase
+    transition: $transition-primary
     text-decoration: none
     color: $text-muted 
     font-size: 0.75rem
@@ -29,17 +31,17 @@
     cursor: pointer
     //render decorative separating lines.
     .line
-      @extend %transition-primary
+      transition: $transition-primary
       width: 25px
       height: 1px
       background: $text-muted
-      margin-right: 15px
+      margin-right: $m3
     &:hover, &.active
-      @extend %text-gold-color
+      color: $gold-accent
       /// highlight the active link  
       .line
         width: 55px
-        background: var(--gold-accent)
+        background: $gold-accent
  
 /// structure the top navigation and its link elements.
 .l-nav-container
@@ -62,13 +64,13 @@
 
 /// the primary logo or brand text in the navigation bar.
 .c-nav-brand
-  @extend %text-gold-color
+  color: $gold-accent
   font-weight: bold
   font-family: monospace
 
 /// render the mobile hamburger menu icon.
 .c-hamburger
-  @extend %text-gold-color
+  color: $gold-accent
   background: none
   border: none
   font-family: monospace
@@ -97,14 +99,12 @@
 .l-social-links
   margin-top: auto
   @include d-flex()
-  @extend %font-main-family
-  gap: 15px
+  font-family: $font-main
+  gap: $m3
   font-size: 1.8rem
   a, button
     @include d-flex(center, center)
-    @extend %align-center
-    @extend %transition-primary
-    justify-content: center
+    transition: $transition-primary
     color: $text-muted
     background: none
     border: none
@@ -112,6 +112,6 @@
     font-size: 1.8rem
     cursor: pointer
     &:hover
-      @extend %text-gold-color
+      color: $gold-accent
   @media (min-width: $max-width-content)
     margin-top: auto

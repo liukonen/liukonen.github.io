@@ -44,7 +44,6 @@
 | `.caret-indicator.rotated` | Rotate the caret | LeadershipSection.tsx |
 | `.clr-muted` | apply a muted color block. | Archive.tsx, OpenSourceProjects.tsx |
 | `.expansion-viewport-inner` | wrap the animating content of an expandable drawer. | LeadershipSection.tsx |
-| `.f-clr-mutedass-muted` | apply a muted or secondary color to text. | showcase.tsx |
 | `.flex-split-top` | create a flex layout split with top alignment. | OpenSourceProjects.tsx |
 | `.fs-09` | explicitly set the font size to 0.9 units. | OpenSourceProjects.tsx |
 | `.lab-detail-desc` | format the header and description of lab detail pages. | LabDetail.tsx |
@@ -162,7 +161,7 @@
 | `.f-breadcrumb-active` | style the text of the currently active breadcrumb. | Breadcrumb.tsx |
 | `.f-clr-accent` | apply the primary accent color to text. | ArticlesSection.tsx, CareerSection.tsx, EraDetail.tsx, MoreFooter.tsx, OpenSourceSection.tsx, ShowcaseSection.tsx |
 | `.f-clr-main` | apply the primary text color. | CaseStudies.tsx, showcase.tsx |
-| `.f-clr-muted` | apply a muted or secondary color to text. | CareerSection.tsx, CompanyCard.tsx, OpenSourceSection.tsx |
+| `.f-clr-muted` | apply a muted or secondary color to text. | CareerSection.tsx, CompanyCard.tsx, OpenSourceSection.tsx, showcase.tsx |
 | `.f-font-mono` | force a monospaced font family for technical data or labels. | LinkModal.tsx, UptimeModal.tsx |
 | `.f-gold-bullet` | render list items with a custom gold bullet point. | LeadershipSection.tsx, ShowcaseDetail.tsx |
 | `.f-hd-md` | apply medium and extra-small font sizes for headings. | CareerSection.tsx, CaseStudies.tsx, CompanyCard.tsx, showcase.tsx |

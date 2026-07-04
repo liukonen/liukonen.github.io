@@ -2,7 +2,7 @@
 
 ///manage the specific styling, layout, and list structure of the global sidebar.
 .sidebar
-  @extend %h-screen
+  height: 100vh
   @include d-flex()
   @include flex-col
   position: sticky
@@ -20,9 +20,9 @@
 
 ///manage the specific styling, layout, and list structure of the global sidebar.
 .sidebar-logo
-  @extend %font-mono-family
-  @extend %text-gold-color
-  @extend %fw-700
+  font-family: $font-mono
+  color: $gold-accent
+  font-weight: $fw700
   margin-bottom: 30px
   font-size: 1.1rem
   visibility: hidden
@@ -31,17 +31,19 @@
 
 ///manage the specific styling, layout, and list structure of the global sidebar.
 .sidebar-ul
-  @extend %list-reset
+  list-style-type: none 
+  padding-left: 0
+  margin-left: 0
 
 ///manage the specific styling, layout, and list structure of the global sidebar.
 .sidebar-li
-  @extend %mb-2
+  margin-bottom: $m2
   @include d-flex(null, center)
 
 ///manage the specific styling, layout, and list structure of the global sidebar.
 .sidebar-avatar
-  @extend %bg-surface
-  @extend %pos-relative
+  background: $bg-surface
+  position: relative
   object-fit: cover
   width: 140px
   height: 140px
@@ -53,17 +55,17 @@
 
 ///manage the specific styling, layout, and list structure of the global sidebar.
 .sidebar-subtitle
-  @extend %text-gold-color
-  @extend %font-mono-family
-  @extend %mt-3
-  @extend %text-uppercase
+  color: $gold-accent
+  font-family: $font-mono
+  margin-top: $m3
+  text-transform: uppercase
   letter-spacing: 0.012em
   font-size: 0.7rem
 
 ///manage the specific styling, layout, and list structure of the global sidebar.
 .sidebar-title
-  @extend %font-main-family
-  @extend %fw-600
+  font-family: $font-main
+  font-weight: $fw600
   line-height: 1.15
   letter-spacing: -0.03em
   font-size: clamp(1.6rem, 4vw, 2rem)

@@ -3,7 +3,7 @@
 ///constrain and format long-form markdown/text content.
 .c-prose-container
   a
-    @extend %text-gold-color
+    color: $gold-accent
     text-decoration: none
     &:hover
       text-decoration: underline
@@ -12,12 +12,12 @@
     margin-bottom: 1rem
     color: $text-muted
   h2
-    @extend %text-gold-color
+    color: $gold-accent
     font-size: 1.6rem
     border-bottom: 1px solid $border-dark
     padding-bottom: 0.5rem
   img
-    @extend %w-full
+    width: 100%
     max-width: 100%
     height: auto
     border: 1px solid $border-dark
@@ -26,7 +26,7 @@
 
 /// force a monospaced font family for technical data or labels.
 .f-label-mono
-  @extend %font-mono-family
+  font-family: $font-mono
   letter-spacing: 5px
   font-size: 0.7rem
   text-transform: uppercase
@@ -41,7 +41,7 @@ p, .f-body-prose p, .prose-engine p, .technical-body p
 
 ///apply the primary accent color to text.
 .f-clr-accent
-  color: var(--gold-accent) !important
+  color: $gold-accent !important
 
 ///apply a muted or secondary color to text.
 .f-clr-muted
@@ -53,17 +53,17 @@ p, .f-body-prose p, .prose-engine p, .technical-body p
 
 /// apply medium and extra-small font sizes for headings.
 .f-hd-md
-  @extend %font-main-family
+  font-family: $font-main
   font-size: 1.6rem
 
 ///apply medium and extra-small font sizes for headings.
 .f-hd-xs
-  @extend %font-main-family
+  font-family: $font-main
   font-size: 0.6rem
 
 ///force a monospaced font family for technical data or labels.
 .f-mono-muted
-  @extend %font-mono-family
+  font-family: $font-mono
   font-size: 0.8rem
   color: $brass-muted
   min-width: 60px
@@ -82,8 +82,8 @@ p, .f-body-prose p, .prose-engine p, .technical-body p
 
 ///apply the gold accent color strictly to text nodes.
 .f-text-gold
-  color: var(--gold-accent)
-  font-weight: 700
+  color: $gold-accent
+  font-weight: $fw700
 
 ///apply the gold accent color strictly to text nodes.
 .f-text-gold-value
@@ -109,18 +109,18 @@ p, .f-body-prose p, .prose-engine p, .technical-body p
 
 ///render list items with a custom gold bullet point.
 .f-gold-bullet
-  color: var(--gold-accent)
-  font-weight: 600
+  color: $gold-accent
+  font-weight: $fw600
   margin-right: 4px
 
 ///style the text of the currently active breadcrumb.
 .f-breadcrumb-active
-  //color: var(--gold-accent) //.f-md-tags
+  //color: $gold-accent //.f-md-tags
   //@include d-flex()
-  @extend %font-size-micro
+  font-size: $font-Size-micro
   gap: 8px
-  color: var(--gold-accent)
-  font-weight: 600
+  color: $gold-accent
+  font-weight: $fw600
 
 ///apply font sizing specifically optimized for metadata.
 .f-md-meta
@@ -128,8 +128,8 @@ p, .f-body-prose p, .prose-engine p, .technical-body p
   @include flex-col
   gap: 4px
   h2
-    @extend %font-mono-family
-    @extend %fw-700
+    font-family: $font-mono
+    font-weight: $fw700
     letter-spacing: 0.06em
     font-size: 13px
     color: $text-main

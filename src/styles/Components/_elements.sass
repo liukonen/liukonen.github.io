@@ -10,14 +10,13 @@
 /// gold space for separating sections
 .gold-spacer
   height: 1px
-  @extend %w-full
-  background: var(--gold-accent)
+  width: 100%
+  background: $gold-accent
   margin: 3rem 0
 
 
 /// Shows Role and stack in grey box with gold boarder
 .project-meta-top
-  @include d-flex()
   @include flex-col
   gap: fluid(16, 24)
   padding: fluid(16, 24)
@@ -29,10 +28,10 @@
     gap: fluid(24, 48)
   /// format individual pieces of metadata.
   .meta-item
-    font-size: 14px
+    font-size: $font-size-meta
     color: $text-main
     strong
-      color: var(--gold-accent) 
+      color: $gold-accent 
       margin-right: 0.5rem
       text-transform: uppercase
 
@@ -45,7 +44,7 @@
 
 /// for project actions, this formats the links
 .action-link
-  color: var(--gold-accent)
+  color: $gold-accent
   text-decoration: none
   font-family: $font-default
   font-size: 0.9rem
