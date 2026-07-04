@@ -21,7 +21,7 @@
     color: $text-main
     transition: color $transition-primary
     &:hover
-      color: var(--gold-accent)    
+      color: $gold-accent    
   p
     letter-spacing: 0.015em
   /// Article Date Format on bottom left
@@ -37,7 +37,7 @@
   h4
     @include top-buffer-10    
   div
-    @extend %mt-3
+    margin-top: $m3
 
 /// ==========================================================================
 /// BENTO SURFACE
@@ -47,7 +47,9 @@
 .bento
   @include bento-surface()
   ul
-    @extend %list-reset
+    list-style-type: none 
+    padding-left: 0
+    margin-left: 0
     li
       position: relative 
       list-style-type: none 
@@ -61,10 +63,10 @@
         position: absolute 
         left: 0 
         top: 0 
-        color: var(--gold-accent)   
+        color: $gold-accent   
         font-family: $font-mono
-        font-weight: 700 
-        font-size: 14px 
+        font-weight: $fw700 
+        font-size: $font-size-meta 
         line-height: 1.4
 
 /// A specialized surface for Benta Showcase items

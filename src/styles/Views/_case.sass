@@ -19,8 +19,8 @@
     margin-bottom: 2.5rem
     padding-bottom: 1.6rem
     h1
-      @extend %font-mono-family
-      color: var(--gold-accent)
+      font-family: $font-mono
+      color: $gold-accent
       font-size: 2.5rem
       padding-bottom: 1.6rem
   /// format technical specifications, constraints, and their containing body block.
@@ -37,17 +37,17 @@
     .spec
       font-size: 0.9rem
       strong
-        color: var(--gold-accent)
+        color: $gold-accent
         display: block
         font-size: 0.75rem
         letter-spacing: 1px
         margin-bottom: 0.25rem
-        @extend %font-mono-family
+        font-family: $font-mono
   /// format technical specifications, constraints, and their containing body block.
   .technical-body
     h2
       font-size: fluid(22, 26)
-      border-left: 3px solid var(--gold-accent)
+      border-left: 3px solid $gold-accent
       padding-left: 1rem
       margin: 3rem 0 fluid(22, 26)
       color: $text-main
@@ -62,7 +62,7 @@
       li
         margin-bottom: 0.75rem
         &::marker
-          color: var(--gold-accent)
+          color: $gold-accent
     img
       display: block
       max-width: 100%

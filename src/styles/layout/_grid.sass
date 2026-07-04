@@ -12,10 +12,10 @@
   .archive-header
     @include d-flex(space-between, flex-start)
   h4
-    @extend %mt-3
+    margin-top: $m3
   p
     font-size: 0.9rem
-    color: var(--brass-muted)
+    color: $brass-muted
     margin-top: 8px
 
 ///generate 2-column and 3-column CSS grid layouts.
@@ -43,7 +43,7 @@
 
 /// handle the layout for expandable drawer components.
 .l-expansion-viewport
-  @extend %w-full
+  width: 100%
 
 ///trigger the expanded state and associated animations.
 .l-expansion-viewport.is-open 
@@ -89,7 +89,7 @@
     .external-link
       font-family: $font-mono
       font-size: 0.8rem
-      color: var(--gold-accent)
+      color: $gold-accent
       text-decoration: none
       &:hover
         text-decoration: underline
@@ -105,7 +105,7 @@
   h1
     letter-spacing: -0.02em
     line-height: 1.1
-    font-family: var(--font-main)
+    font-family: $font-main
 
 ///handle layout for specific leadership tree or chart nodes.
 .l-leadership-section
@@ -124,17 +124,17 @@
 
 ///apply vertical scrolling to a container, mapping to `overflow-y-auto`.
 .l-scroll-y
-  @extend %h-screen
-  @extend %overflow-y-auto
-  @extend %overflow-x-hidden
-  @extend %flex-1
-  @extend %pos-relative
+  height: 100vh
+  overflow-y: auto
+  overflow-x: hidden
+  flex: 1
+  position: relative
   padding: fluid(32, 128)
   animation: viewFadeIn 0.3s ease-out
   &::-webkit-scrollbar
     width: 6px
   &::-webkit-scrollbar-thumb
-    @extend %transition-primary
+    transition: $transition-primary
     background: $alpha-gold-20 
     border-radius: 10px    
   @media (max-width: $max-width-content)
@@ -145,7 +145,7 @@
 
 ///handle the specific layout requirements for Era timeline views.
 .l-era
-  @exten %d-flex
+  @include d-flex()
   gap: fluid(20, 40)
   margin-bottom: fluid(24, 45)
   @media (max-width: $max-width-content)
@@ -154,8 +154,8 @@
 
 ///handle the specific layout requirements for Era timeline views.
 .l-era-container
-  @extend %overflow-x-hidden
-  @extend %w-full
+  overflow-x: hidden
+  width: 100%
 
 ///dictate the grid layout for technical showcases.
 .l-showcase-layout
