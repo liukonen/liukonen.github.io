@@ -23,7 +23,7 @@
     "esbuild": "^0.28.2",
     "glob": "^13.0.6",
     "marked": "18.0.10",
-    "preact": "10.29.4",
+    "preact": "10.29.8",
     "sass": "^1.103.1",
     "typescript": "7.0.2",
     "unplugin-icons": "^23.0.1",
