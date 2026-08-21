@@ -1,6 +1,6 @@
 // Attempts to analyze where to flatten SASS and what elements might be safe to remove
-import fs from 'fs'
-import path from 'path'
+import fs from 'node:fs'
+import path from 'node:path'
 
 const ROOT_DIR = './src/styles'
 const OUT_FILE = 'analysis.json'
@@ -20,43 +20,55 @@ function getAllFiles(dirPath, arrayOfFiles = []) {
 }
 
 function extractPlaceholders(content, file) {
-  const placeholders = {}
-  // SCSS style: %name { ... }
-  const scssRegex = /%([\w-]+)\s*\{([\s\S]*?)\}/g
-  let m
-  while ((m = scssRegex.exec(content)) !== null) {
-    const name = m[1]
-    const body = m[2].trim()
-    placeholders[name] = placeholders[name] || { definedIn: file, ruleBody: body, raw: m[0] }
-  }
+  return {...extractScssPlaceholders(content, file)}
+}
 
-  // Indented SASS style: %name then indented block
-  const lines = content.split(/\r?\n/)
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i]
-    const match = line.match(/^\s*%([\w-]+)\s*$/)
-    if (match) {
-      const name = match[1]
-      let j = i + 1
-      const bodyLines = []
-      while (j < lines.length) {
-        const l = lines[j]
-        if (/^\s*$/.test(l)) { j++; continue }
-        // stop when we hit a top-level selector or another placeholder or @rule
-        // A top-level selector is a line that starts at column 0 (no leading whitespace)
-        if (!/^\s+/.test(l)) break
-        if (/^\s*%[\w-]+\s*$/.test(l)) break
-        bodyLines.push(l)
-        j++
-      }
-      const body = bodyLines.join('\n').trim()
-      placeholders[name] = placeholders[name] || { definedIn: file, ruleBody: body, raw: `%${name}\n${body}` }
-      i = j - 1
-    }
+function extractScssPlaceholders(content, file) {
+  const placeholders = {}
+  const scssRegex = /%([\w-]+)\s*\{([\s\S]*?)\}/g
+  for (const match of content.matchAll(scssRegex)) {
+    const name = match[1]
+    const body = match[2].trim()
+    placeholders[name] = placeholders[name] || { definedIn: file, ruleBody: body, raw: match[0] }
   }
 
   return placeholders
 }
+
+function extractIndentedPlaceholders(content, file) {
+  const placeholders = {}
+  const lines = content.split(/\r?\n/)
+  for (let i = 0; i < lines.length; i++) {
+    const name = getIndentedPlaceholderName(lines[i])
+    if (!name) continue
+    const body = collectedIndentedBodyt(lines, i + 1)
+    if (!placeholders[name]) placeholders[name] = { definedIn: file, ruleBody: body, raw: `%${name}\n${body}` }
+  }
+  return placeholders
+}
+
+function getIndentedPlaceholderName(line) {
+  const match = line.match(/^\s*%([\w-]+)\s*$/)
+  return match ? match[1] : null
+}
+
+function collectIndentedBody(lines, startIndex) {
+  const bodyLines = []
+  const total = lines.length
+
+  for (let j = startIndex; j < total; j++) {
+    const l = lines[j]
+
+    if (/^\s*$/.test(l)) continue
+    if (!/^\s+/.test(l)) break
+    if (/^\s*%[\w-]+\s*$/.test(l)) break
+
+    bodyLines.push(l)
+  }
+
+  return bodyLines.join('\n').trim()
+}
+
 
 function findExtendOccurrences(content, file) {
   const occurrences = []
@@ -75,7 +87,11 @@ function findExtendOccurrences(content, file) {
       if (!l) continue
       // Heuristic: selector lines often start with ., #, &, %, or a tag name or contain '{'
       if (l.includes('{') || /^[.#&%]/.test(l) || /^[a-zA-Z]/.test(l)) {
-        selector = l.replace(/\s*{$/, '').trim()
+        if (l.endsWith('{')) {
+          selector = l.slice(0, -1).trim()
+        } else {
+          selector = l.trim()
+        }
         break
       }
     }
@@ -85,14 +101,28 @@ function findExtendOccurrences(content, file) {
 }
 
 function normalizeProps(ruleBody) {
-  const propRegex = /(^|\n)\s*([-\w]+)\s*:/g
   const props = []
-  let m
-  while ((m = propRegex.exec(ruleBody)) !== null) {
-    props.push(m[2])
+  const lines = ruleBody.split(/\r?\n/)
+
+  for (const line of lines) {
+    const trimmed = line.trim()
+
+    // Find the first colon — same behavior as your regex
+    const colonIndex = trimmed.indexOf(':')
+    if (colonIndex <= 0) continue
+
+    // Extract the property name
+    const prop = trimmed.slice(0, colonIndex).trim()
+
+    // Validate it matches [-\w]+ (same as your original capture group)
+    if (/^[-\w]+$/.test(prop)) {
+      props.push(prop)
+    }
   }
-  return props.sort()
+
+  return props.sort((a, b) => a.localeCompare(b))
 }
+
 
 function propSignature(ruleBody) {
   return normalizeProps(ruleBody).join('|')
@@ -161,8 +191,8 @@ function analyze() {
       extendsObject: used
     }
 
-    let suggestedAction = 'review'
-    let reason = 'needs manual review'
+    let suggestedAction 
+    let reason 
 
     if (count === 0) {
       suggestedAction = 'delete'
