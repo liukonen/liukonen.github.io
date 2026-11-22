@@ -1,4 +1,4 @@
 {
-  "content": "<p>Thanks to a number of LLM&#39;s including Gemini,ChatGpt, Copilot, and others for the assist in content writup, proofreading, and styling.</p>\n<p>Also thank you to <a href=\"https://brittanychiang.com/\">Brittany Chaing</a> for the inspiration. While I dont know Brittany personally, I drew a lot from the site design and flow!</p>\n<p> Coded in Visual Studio Code. Built with Preact and Sass, deployed with Github pages. Fonts are Cascadia Mono and IBM Plex Sans typeface.</p>\n",
+  "content": "<p> Coded in Visual Studio Code. Built with Preact and Sass, deployed with Github Pages. Typeset in Cascadia Mono and IBM Plex Sans.</p>\n",
   "id": "footer"
 }
