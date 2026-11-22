@@ -6,7 +6,7 @@
     "location": "Menomonee Falls, WI"
   },
   "eras": [
-    {
+{
       "id": "NM",
       "year": "2021 — PRES",
       "logoUrl": "https://liukonen.dev/archive/share/img/200/NM.webp",
@@ -14,8 +14,8 @@
       "website": "https://www.northwesternmutual.com/",
       "role": "Generative AI Committee / Playwright Testing SME / Observability Guild",
       "title": "Full Stack Software Engineer",
-      "scope": "I help guide backend architecture, automation strategy, and platform reliability work, contributing to AI initiatives, test engineering improvements, and observability across teams.",
-      "description": "Rebuilding legacy backend systems, writing automated test suites, and building secure internal AI tools.",
+      "scope": "I help guide backend architecture, automation strategy, and platform reliability work, contributing to AI initiatives, test engineering improvements, developer advocacy, and observability across teams.",
+      "description": "Rebuilding legacy backend systems, writing automated test suites, building secure internal AI tools, and driving internal technical education through conference talks.",
       "tech": [
         "Java",
         "Node",
@@ -25,14 +25,18 @@
         "Playwright",
         "AWS",
         "Kubernetes",
-        "LLM Tools"
+        "LLM Tools",
+        "Prompt Engineering",
+        "AI Token Optimization"
       ],
       "long_description": [
         "Core System Modernization: Worked as a key engineer replacing an old, vendor-built Java system with a decoupled case management platform running on a Flowable state engine. Moved complex, aging PowerBuilder logic into standalone Drools rule instances.",
         "AI Tooling & Automation: Built a custom internal Copilot assistant that handles technical documentation layout across the department, dropping manual engineering README work by 60% to 70%.",
         "Automated Test Engineering: Designed and shipped a comprehensive integration test suite using Playwright within a single sprint, stopping two major production bugs from making it to release.",
         "Team Mentorship & Training: Ran cross-functional technical training and knowledge-sharing sessions, mentoring cohorts of 20 to 30 developers to get new hires up to speed and improve team coding standards.",
-        "System Observability: Served as a subject matter expert for monitoring frameworks, setting up critical metric tracking to give teams clear visibility into system uptime and performance bottlenecks."
+        "System Observability: Served as a subject matter expert for monitoring frameworks, setting up critical metric tracking to give teams clear visibility into system uptime and performance bottlenecks.",
+        "Technical Speaking & Developer Advocacy: Authored and delivered a live conference talk on decommissioning legacy test suites by modernizing tooling and scaling AI-generated test coverage.",
+        "AI Architecture & Prompt Optimization: Speaking at 'Revel in Tech' on advanced AI token optimization, exploring best practices across prompt architecture, execution harnesses, feedback loops, and meta-programming."
       ]
     },
     {
