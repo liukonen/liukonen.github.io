@@ -5,8 +5,8 @@ I specialize in the "invisible" side of tech: the infrastructure, automation, an
 How I add value:
 
 - **I design for the long term.** I focus on clean architecture and proactive monitoring so systems don't become "technical debt" in two years.
-- **I bridge the gap.** Because of my background as a technical educator, I'm able to explain complex system designs to executives, stakeholders, and junior developers alike. I regularly share engineering practices and emerging technology concepts through conference presentations, technical talks, and cross-team knowledge sharing.
-- **I lead through mentorship.** I believe the best way to scale a system is to scale the people building it. I mentor engineers, present at technical conferences, and drive cross-team standards that raise the bar for the entire department.
-- **I lead with AI.** I’m currently driving AI adoption to modernize how we work and build.
+- **I bridge the gap.** My background as a technical educator and presenter helps me break down complex architecture and emerging tech clearly for executives, stakeholders, and engineers alike.
+- **I lead through mentorship.** Scaling a system starts with scaling the people building it. I mentor engineers and drive cross-team standards that raise the bar across the organization.
+- **I lead with AI.** I drive practical AI adoption—through structured workflows, shared playbooks, and hands-on experimentation—to modernize how teams work and build.
 
 Personal: I’m a Milwaukee native who loves local music and sports. I’m also a big believer in using tech for good—I’ve been contributing computing power to scientific research projects for years.
