@@ -32,7 +32,7 @@ export default function OpenSourceProjects() {
             <p className="clr-muted fs-09 mt-8px">
               {project.description}
             </p>
-            <Tags tags={project.tech.slice(0,3)} />
+             <Tags tags={project.tech.slice(0, 3)} concepts={'concepts' in project ? project.concepts?.slice(0, 2) : undefined} />
 
             
           </div>

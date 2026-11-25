@@ -8,7 +8,7 @@
   position: sticky
   width: 380px
   top: 0
-  padding: 60px fluid(24, 50)
+  padding: fluid(28, 48) fluid(24, 44)
   border-right: 1px solid $alpha-gold-05
   @media (max-width: $max-width-content)
     width: 100%
@@ -16,29 +16,23 @@
     position: relative    
     border-right: none
     border-bottom: 1px solid rgba(255, 255, 255, 0.05)
-    padding: 100px 30px 40px 30px 
+    padding: 88px 30px 32px
 
 ///manage the specific styling, layout, and list structure of the global sidebar.
 .sidebar-logo
   font-family: $font-mono
   color: $gold-accent
   font-weight: $fw700
-  margin-bottom: 30px
-  font-size: 1.1rem
-  visibility: hidden
-  @media (min-width: $max-width-content)
-    visibility: visible
+  margin-bottom: 1.5rem
+  font-size: 0.9rem
+  @media (max-width: $max-width-content)
+    display: none
 
 ///manage the specific styling, layout, and list structure of the global sidebar.
 .sidebar-ul
   list-style-type: none 
   padding-left: 0
   margin-left: 0
-
-///manage the specific styling, layout, and list structure of the global sidebar.
-.sidebar-li
-  margin-bottom: $m2
-  @include d-flex(null, center)
 
 ///manage the specific styling, layout, and list structure of the global sidebar.
 .sidebar-avatar
@@ -56,11 +50,16 @@
 ///manage the specific styling, layout, and list structure of the global sidebar.
 .sidebar-subtitle
   color: $gold-accent
-  font-family: $font-mono
-  margin-top: $m3
-  text-transform: uppercase
-  letter-spacing: 0.012em
-  font-size: 0.7rem
+  margin-top: 0.5rem
+  font-size: 1rem
+  font-weight: $fw600
+
+.sidebar-focus
+  color: $text-muted
+  font-size: 0.875rem
+  margin-top: 0.25rem
+  @media (max-width: $max-width-content)
+    margin-bottom: 1.25rem
 
 ///manage the specific styling, layout, and list structure of the global sidebar.
 .sidebar-title

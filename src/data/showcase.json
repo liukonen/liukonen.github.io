@@ -1,12 +1,16 @@
 {
-  "SearchFacade - One contract. Two engines. Zero risk": {
+  "Search Facade — One Contract, Two Engines, Zero Risk": {
     "id": "SearchFacade",
     "weight": 1,
     "tags": [
-      "DotNet",
+      ".NET",
       "Angular",
       "Selenium",
-      "Azure CICD"
+      "Azure"
+    ],
+    "concepts": [
+      "Feature Flags",
+      "CI/CD"
     ],
     "role": "Senior Software Engineer / Solutions Architect",
     "impact": "Cut delivery time by over 50% while eliminating rollout risk through instant, feature-flagged provider switching.",
@@ -18,12 +22,15 @@
     "tags": [
       "MS Bot Framework",
       "LUIS",
-      "Middleware Orchestration",
       "Redis",
-      "Node.js/.net"
+      "Node.js",
+      ".NET"
+    ],
+    "concepts": [
+      "Middleware Orchestration"
     ],
     "role": "Systems Architect / Middleware Lead",
-    "impact": "Eliminated the need for a dedicated app by shifting to ambient, multi-channel commerce",
+    "impact": "Eliminated the need for a dedicated app by shifting to ambient, multichannel commerce.",
     "hasCaseStudy": true
   },
   "Event-Driven Stock Intelligence Platform (Homelab to Cloud)": {
@@ -41,24 +48,30 @@
       "Gotify",
       "Cloudflare Tunnel",
       "Oracle Cloud",
-      "Alpine/Distroless Containers"
+      "Alpine Linux"
+    ],
+    "concepts": [
+      "Event-Driven Architecture",
+      "Distroless Containers"
     ],
     "role": "Full-stack architecture / DevOps / messaging backbone / observability / end-to-end",
-    "impact": "Automated stock analysis, alerts, and reporting with low-latency pipelines and zero-trust security, eliminating manual tracking",
+    "impact": "Automated stock analysis, alerts, and reporting with low-latency pipelines and zero-trust security, eliminating manual tracking.",
     "hasCaseStudy": true
   },
-  "ReviewMind -  Mining Meaning from Customer Chaos": {
+  "ReviewMind — Mining Meaning from Customer Chaos": {
     "id": "reviewMind",
     "weight": 4,
     "tags": [
-      "DotNet",
+      ".NET",
       "Docker",
-      "SqlLite",
+      "SQLite"
+    ],
+    "concepts": [
       "Unstructured Data Processing",
       "NLP (Sentiment Analysis & Keyword Extraction)",
       "Semantic Search"
     ],
-    "role": "Lead Solutions Architect /  Technical Lead",
+    "role": "Lead Solutions Architect / Technical Lead",
     "impact": "Unlocked previously unusable customer data and transformed it into actionable product intelligence.",
     "hasCaseStudy": true
   }

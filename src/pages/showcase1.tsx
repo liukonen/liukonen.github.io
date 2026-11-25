@@ -5,7 +5,7 @@ export default function Showcase() {
   return (
   <div>
       <div className="c-breadcrumb">
-        <a href="#/">~/root</a> <span className="sep">/</span> SHOWCASE
+        <a href="#/">~/Home</a> <span className="sep">/</span> SHOWCASE
       </div>
       
       <header className="l-era-header">

@@ -14,7 +14,7 @@ export default function Breadcrumb({ path }: Readonly<BreadcrumbProps>) {
   return (
     <div className="c-breadcrumb">
       {/* Root */}
-      <a href="#/">~/root</a>
+      <a href="#/">~/Home</a>
 
       {parts.map((part, i) => {
         const isLast = i === parts.length - 1

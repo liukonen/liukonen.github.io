@@ -1,38 +1,27 @@
 import MoreFooter from "./MoreFooter"
+import Tags from "./Tags"
 
-export default function OpenSourceSection({ repos }: Readonly<any>) {
-    return (
-      <section id="featured-labs" className="l-showcase-grid">
-        <span className="f-label-mono f-clr-accent"> ~/ OPEN_SOURCE_PROJECTS</span>
-        <p>
+type Project = Readonly<{ title: string; description: string; tech: string[]; concepts?: string[] }>
 
-          // Secondary utilities, legacy tools, and experimental code.  <br />
-          // Focused on local-first execution, minimal dependency footprints, and raw systems craft.
-        </p>
-        <br />
-        <div className="l-grid-2">
-          {Object.entries(repos).slice(0, 4).map(([id, project]) => (
-            <LabEntry id={id} project={project} />
-          ))}
-          </div>
-          <MoreFooter path={'#/OPEN_SOURCE_PROJECTS'} />
-      </section>
-    )
-}
-
-const LabEntry = ({ project, id }: { project: any, id: string }) => (
-    <a href={`#/OPEN_SOURCE_PROJECTS/${id}`} className={"no-decor"}>
-    <div className="card" key={id}>
-      <span className={"f-hd-xs f-clr-muted"}>
-        // PROJ_{id.toUpperCase()}
-      </span>
-      <h4 className={"mt-1 c-link-interactive"}>{project.title}</h4>
-      <p>{project.description}</p>
-      <div className="mt-15px">
-        {project.tech.slice(0, 3).map(t => (
-          <span key={t} className="tag">{t}</span>
+export default function OpenSourceSection({ repos }: Readonly<{ repos: Record<string, Project> }>) {
+  return (
+    <section id="featured-labs" className="l-showcase-grid">
+      <div className="home-section-heading">
+        <h2 className="home-section-title">Open Source Projects</h2>
+        <a href="https://github.com/liukonen" target="_blank" rel="noopener noreferrer">github.com/liukonen ↗</a>
+      </div>
+      <p>Utilities, legacy tools, and experiments focused on local-first execution, minimal dependencies, and systems craft.</p>
+      <div className="l-grid-2 home-card-grid home-open-source-grid">
+        {Object.entries(repos).slice(0, 4).map(([id, project]) => (
+          <a key={id} href={`#/OPEN_SOURCE_PROJECTS/${id}`} className="card f-no-decor">
+            <span className="home-card-meta">// PROJ_{id.toUpperCase()}</span>
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
+            <Tags tags={project.tech.slice(0, 3)} concepts={project.concepts?.slice(0, 2)} />
+          </a>
         ))}
       </div>
-    </div>
-    </a>
-)
+      <MoreFooter path="#/open_source" label="View More Open Source Projects" />
+    </section>
+  )
+}

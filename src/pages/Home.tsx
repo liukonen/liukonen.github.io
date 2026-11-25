@@ -1,20 +1,19 @@
-import { lazy, Suspense } from "preact/compat"
+import ArchiveIcon from "~icons/bi/archive"
 
 import portfolioData from "../data/portfolio.json"
 import aboutData from "../data/about.json"
 import footerData from "../data/footer.json"
 import Breadcrumb from "../components/Breadcrumb"
+import CareerSection from "../components/CareerSection"
+import OpenSourceSection from "../components/OpenSourceSection"
+import ArticlesSection from "../components/ArticlesSection"
+import ShowcaseSection from "../components/ShowcaseSection"
+import ContactSection from "../components/ContactSection"
 
-const CareerSection = lazy(() => import("../components/CareerSection"))
-const OpenSourceSection = lazy(() => import("../components/OpenSourceSection"))
-const ArticlesSection = lazy(() => import("../components/ArticlesSection"))
-const ShowcaseSection = lazy(() => import("../components/ShowcaseSection"))
-import { LeadershipSection } from "../components/LeadershipSection"
-
-export default function Home() {
+export default function Home({ contactHash }: Readonly<{ contactHash?: string }>) {
   const { profile, eras, labs } = portfolioData
   return (
-    <div>
+    <div className="home-content">
       <Breadcrumb path="#/" />
 
       {/* --- ABOUT SECTION --- */}
@@ -24,42 +23,27 @@ export default function Home() {
         className={"prose-engine"}
         dangerouslySetInnerHTML={{ __html: aboutData.content }}
       />
-      <div class="gold-spacer" aria-hidden="true" />
-      <section id="leadership">
-        <LeadershipSection />
-      </section>
-      {/* --- SHOWCASE  SECTIONS --- */}
-      <div class="gold-spacer" aria-hidden="true" />
-      <Suspense fallback={null}>
-        <ShowcaseSection />
-      </Suspense>
-      <div class="gold-spacer" aria-hidden="true" />
-      <Suspense fallback={null}>
-        <ArticlesSection />
-      </Suspense>
-      <div class="gold-spacer" aria-hidden="true" />
-      <Suspense fallback={null}>
-        <OpenSourceSection repos={labs} />
-      </Suspense>
-      <div class="gold-spacer" aria-hidden="true" />
-      <Suspense fallback={null}>
-        <CareerSection eras={eras} />
-      </Suspense>
-        <div class="gold-spacer" aria-hidden="true"></div>
-      {/* --- CONTACT SECTION --- */}
-      <section id="contact" className="l-showcase-grid">
-        <button className="c-btn" onClick={() => (location.hash = "#/CONTACT")}>
-          GET_IN_TOUCH
-        </button>
-      </section>
+      <div className="home-tag-key" aria-label="Technology tag key">
+        <span className="home-tag-key-label">Tag key</span>
+        <span className="tag c-topic-tag c-topic-tag--concept">Architectural Concept / Role</span>
+        <span className="tag c-topic-tag">Concrete Tech / Runtime</span>
+      </div>
+      <ShowcaseSection />
+      <ArticlesSection />
+      <OpenSourceSection repos={labs} />
+      <CareerSection eras={eras} />
+      <ContactSection contactHash={contactHash} />
 
-      <footer>
+      <footer className="site-colophon">
         &copy; 2026 {profile.brand} // Liukonen.dev
         <section
           className={"prose-engine "}
           id="footer"
           dangerouslySetInnerHTML={{ __html: footerData.content }}
         />
+        <a className="c-archive-link" href="#/archive" aria-label="Archive" title="Archive">
+          <ArchiveIcon aria-hidden="true" />
+        </a>
       </footer>
     </div>
   )

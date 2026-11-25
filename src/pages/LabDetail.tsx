@@ -3,25 +3,18 @@ import portfolioData from '../data/portfolio.json'
 import Tags from '../components/Tags'
 import Breadcrumb from '../components/Breadcrumb'
 import { useState, useEffect } from 'preact/hooks'
-interface Props {
-  id: string
-}
+type Project = { repo: string; title: string; buttons: { type: string; url: string }[]; tech: string[]; concepts?: string[]; description: string }
+const labs: Record<string, Project | undefined> = portfolioData.labs
 
-
-
-
-export default function LabDetail({ id }: Props) {
-  const project = portfolioData.labs[id]
-  if (!project) {
-    return <div>Project Not Found</div>
-  }
-
-  const [projectData, setProjectData] = useState(null)
-
+export default function LabDetail({ id }: Readonly<{ id: string }>) {
+  const project = labs[id]
+  const [projectData, setProjectData] = useState<{ content: string } | null>(null)
   useEffect(() => {
+    if (!project) return
     fetch(`/open-source/${project.repo}.json`).then(r => r.json()).then(setProjectData)
     window.scrollTo(0, 0)
-  }, [id])
+  }, [project])
+  if (!project) return <div>Project Not Found</div>
   if (!projectData) return <div>// DECRYPTING_TECHNICAL_LOGS...</div>
 
 
@@ -50,7 +43,7 @@ export default function LabDetail({ id }: Props) {
         )}
 
         <div className="f-mt-1">
-        <Tags tags={project.tech} />
+        <Tags tags={project.tech} concepts={project.concepts} />
         </div>
       </header>
 

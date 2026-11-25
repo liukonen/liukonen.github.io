@@ -2,46 +2,43 @@
 
 /// structure the top navigation and its link elements.
 .l-nav-links
-  list-style-type: none 
-  padding-left: 0
-  margin-left: 0
   font-family: $font-main
-  display: none
-  flex-direction: column
-  padding: 1rem
-  background: $bg-deep
-  /// shows the navigation links
+  margin-block: 1.25rem
+  ul, &.show
+    display: grid
+    gap: 0.25rem
   &.show
-    @include d-flex()
-  @media (min-width: $max-width-content)
-    display: flex  
-    background: transparent
-  @media (max-width: $max-width-content)
-    display: none 
-  li
-    margin: 22px 0
+    margin-block: 0
+    padding: 0.5rem 1rem 0.75rem
   a
     @include d-flex(null,center)
-    text-transform: uppercase
     transition: $transition-primary
     text-decoration: none
-    color: $text-muted 
-    font-size: 0.75rem
-    letter-spacing: 3px
-    cursor: pointer
-    //render decorative separating lines.
+    color: $text-muted
+    font-size: 0.9rem
+    min-height: 2.5rem
+    padding: 0.4rem 0.75rem
+    gap: 0.75rem
     .line
       transition: $transition-primary
-      width: 25px
+      width: 1rem
       height: 1px
-      background: $text-muted
-      margin-right: $m3
-    &:hover, &.active
+      background: $text-tertiary
+    &:hover, &:focus-visible, &.active
       color: $gold-accent
-      /// highlight the active link  
       .line
-        width: 55px
         background: $gold-accent
+    &.active
+      background: rgba($gold-accent, 0.08)
+      font-weight: $fw600
+      .line
+        width: 1.5rem
+  &.show a
+    min-height: 2.75rem
+    padding-inline: 0.75rem
+    border-radius: 0.375rem
+    &:hover, &:focus-visible
+      background: $bg-surface
  
 /// structure the top navigation and its link elements.
 .l-nav-container
@@ -52,15 +49,11 @@
   z-index: 1000
   background: $bg-darker
   border-bottom: 1px solid $border-dark
-  @media (min-width: $max-width-content)
-    visibility: hidden
 
 /// apply mobile-specific navigation layouts.
 .l-mobile-topbar
   @include d-flex(space-between, center)
   padding: 1rem
-  @media (min-width: $max-width-content)
-    display: none
 
 /// the primary logo or brand text in the navigation bar.
 .c-nav-brand

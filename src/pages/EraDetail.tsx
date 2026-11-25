@@ -1,8 +1,9 @@
 import { h } from "preact"
 import portfolioData from "../data/portfolio.json"
 import Breadcrumb from "../components/Breadcrumb"
+import Tags from "../components/Tags"
 
-export default function EraDetail({ id }: Props) {
+export default function EraDetail({ id }: Readonly<{ id: string }>) {
   const era = portfolioData.eras.find(e => e.id === id)
 
   if (!era) return <div>Error: Era Not Found</div>
@@ -50,13 +51,7 @@ export default function EraDetail({ id }: Props) {
               </span>
             </div>
           </div>
-          <div className="mt-5px">
-            {era.tech.map(t =>
-              <span key={t} className="tag">
-                {t}
-              </span>
-            )}
-          </div>
+          <Tags tags={era.tech} concepts={era.concepts} />
         </header>
 
         <section>

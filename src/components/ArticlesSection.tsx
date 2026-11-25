@@ -3,7 +3,7 @@ import LinkModal from "./LinkModal"
 import { useState, useEffect } from "preact/hooks"
 import { fetchDevArticles, DevArticle } from "../services/devToService"
 import useIsMobile from "../services/isMobile"
-import BoxArrowUpRight from '~icons/bi/box-arrow-up-right'
+import ArrowRight from '~icons/bi/arrow-right'
 
 
 export default function ArticlesSection() {
@@ -28,18 +28,17 @@ export default function ArticlesSection() {
 
   return (
     <section id="writeups" className="l-showcase-grid">
-      <span className="f-label-mono f-clr-accent">~/ RECENT_WRITEN_ARTICLES</span>
+      <div className="home-section-heading">
+        <h2 className="home-section-title">Recent Writeups</h2>
+        <a href="https://dev.to/liukonen" target="_blank" rel="noopener noreferrer">dev.to/liukonen ↗</a>
+      </div>
       <p>
-        // Technical spikes, systems research, and engineering explorations.<br />
-        // Evaluating sandbox experiments and homelab architectures for enterprise production viability.
+        Technical spikes, systems research, and a look at what it takes to bring sandbox experiments and homelab architectures into production.
       </p>
-      < br />
-      <section>
-        <div className="l-grid-2">
-          {articles.map(article => <ArticleEntry article={article} onArticleClick={handleArticleClick} isMobile={isMobile} />)}
-        </div>
-      </section>
-      <MoreFooter path={"#/ARTICLES"} />
+      <div className="home-article-list">
+        {articles.map(article => <ArticleEntry key={article.id} article={article} onArticleClick={handleArticleClick} isMobile={isMobile} />)}
+      </div>
+      <MoreFooter path="#/writeups" label="View More Writeups" />
       <LinkModal 
         articleId={modalArticleId || undefined} 
         onClose={() => {
@@ -53,27 +52,29 @@ export default function ArticlesSection() {
   )
 }
 
-const ArticleEntry = ({ article, onArticleClick, isMobile }: any) =>
+const ArticleEntry = ({ article, onArticleClick, isMobile }: {
+  article: DevArticle
+  onArticleClick: (event: MouseEvent, article: DevArticle) => void
+  isMobile: boolean
+}) =>
     <a
       href={article.url}
-      key={article.id}
       className="c-art-row"
       target={isMobile ? "_blank" : undefined}
       onClick={(e) => onArticleClick(e, article)}
     >
-    <div className="card">
-        <span>
-          <BoxArrowUpRight />
-        </span>
-        <div class="c-link-interactive">
-           {article.title.length > 80 ? article.title.slice(0, 77) + "..." : article.title}
-        </div>
-        <span className="f-mono-muted">
-          {new Date(article.published_at).toLocaleDateString("en-US", {
-            month: "short",
-            day: "2-digit",
-            year: "2-digit"
-          })}
-        </span>
+    <div className="home-article-entry">
+      <div className="home-article-copy">
+        <h3>{article.title}</h3>
+        {article.tag_list.length > 0 && <div className="home-article-tags">
+          {article.tag_list.slice(0, 4).map(tag => <span className="tag c-topic-tag" key={tag}>{tag}</span>)}
+        </div>}
       </div>
+      <div className="home-article-meta">
+        <time dateTime={article.published_at}>
+          {new Date(article.published_at).toLocaleDateString("en-US", { month: "short", day: "2-digit", year: "2-digit" })}
+        </time>
+        <span className="home-preview-label">Preview <ArrowRight aria-hidden="true" /></span>
+      </div>
+    </div>
      </a>

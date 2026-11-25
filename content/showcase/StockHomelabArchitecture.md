@@ -1,8 +1,9 @@
 ---
 title: Event-Driven Stock Intelligence Platform (Homelab to Cloud)
 role: Full-stack architecture / DevOps / messaging backbone / observability / end-to-end
-impact: Automated stock analysis, alerts, and reporting with low-latency pipelines and zero-trust security, eliminating manual tracking
-tech: Go, Bun, .NET, NATS, Protobuf, GitLab CI/CD, Ansible, Grafana, Gotify, Cloudflare Tunnel, Oracle Cloud, Alpine/Distroless Containers
+impact: Automated stock analysis, alerts, and reporting with low-latency pipelines and zero-trust security, eliminating manual tracking.
+tech: Go, Bun, .NET, NATS, Protobuf, GitLab CI/CD, Ansible, Grafana, Gotify, Cloudflare Tunnel, Oracle Cloud, Alpine Linux
+concepts: Event-Driven Architecture, Distroless Containers
 weight: 3
 specs:
   Services: Go / Bun / .NET

@@ -1,8 +1,8 @@
-Hi, I’m Luke. I’m a Software Engineer and Technical Lead with 20 years of experience.
+### Hi, I’m Luke. I’m a software engineer and technical lead with 20 years of experience.
 
-I specialize in the "invisible" side of tech: the infrastructure, automation, and system design that makes software stable and scalable. I’ve held Senior roles across different tech stacks, but my goal is always the same: translate high-level business goals into a technical reality that actually works.
+I specialize in the "invisible" side of tech: the infrastructure, automation, and system design that make software stable and scalable. I’ve held senior roles across different tech stacks, but my goal is always the same: translate high-level business goals into a technical reality that actually works.
 
-How I add value:
+## How I add value
 
 - **I design for the long term.** I focus on clean architecture and proactive monitoring so systems don't become "technical debt" in two years.
 - **I bridge the gap.** My background as a technical educator and presenter helps me break down complex architecture and emerging tech clearly for executives, stakeholders, and engineers alike.
