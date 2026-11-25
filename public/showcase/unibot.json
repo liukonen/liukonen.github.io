@@ -1,8 +1,9 @@
 {
   "title": "Headless Commerce Orchestration",
   "role": "Systems Architect / Middleware Lead",
-  "impact": "Eliminated the need for a dedicated app by shifting to ambient, multi-channel commerce",
-  "tech": "MS Bot Framework, LUIS, Middleware Orchestration, Redis, Node.js/.net",
+  "impact": "Eliminated the need for a dedicated app by shifting to ambient, multichannel commerce.",
+  "tech": "MS Bot Framework, LUIS, Redis, Node.js, .NET",
+  "concepts": "Middleware Orchestration",
   "weight": "2",
   "specs": {
     "orchestration": "Node.js",

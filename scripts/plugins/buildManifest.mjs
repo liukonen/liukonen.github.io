@@ -9,6 +9,7 @@ export default async function buildManifest(showcaseItems) {
           id: item.id,
           weight: Number.parseInt(item.weight) || 99,
           tags: item.tech ? item.tech.split(",").map(t => t.trim()) : [],
+          concepts: item.concepts ? item.concepts.split(",").map(t => t.trim()) : [],
           role: item.role || "",
           impact: item.impact || "",
           hasCaseStudy: item.hasCaseStudy

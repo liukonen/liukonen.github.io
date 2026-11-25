@@ -8,7 +8,10 @@
 | `.art-card .date` | Article Date Format on bottom left | Articles.tsx |
 | `.bento` | Standard Bento box section layout. | LeadershipSection.tsx, ShowcaseDetail.tsx |
 | `.bento-showcase-section` | A specialized surface for Benta Showcase items | ShowcaseDetail.tsx |
-| `.card` | Standard card for general content | Archive.tsx, ArticlesSection.tsx, CareerSection.tsx, CaseStudies.tsx, LeadershipSection.tsx, OpenSourceProjects.tsx, OpenSourceSection.tsx, ShowcaseSection.tsx, showcase.tsx |
+| `.c-career-card-heading` | *No description provided.* | CompanyCard.tsx |
+| `.c-career-card-heading .c-career-company` | *No description provided.* | CompanyCard.tsx |
+| `.c-career-page-heading` | *No description provided.* | Era.tsx |
+| `.card` | Standard card for general content | Archive.tsx, CareerSection.tsx, CaseStudies.tsx, LeadershipSection.tsx, OpenSourceProjects.tsx, OpenSourceSection.tsx, showcase.tsx |
 | `.comp-card` | Company Card that has second row of content | CompanyCard.tsx |
 
 ## _cards.sass
@@ -20,7 +23,7 @@
 | `.c-breadcrumb` | render breadcrumb navigation paths. | Breadcrumb.tsx, showcase1.tsx |
 | `.c-breadcrumb .sep` | Breadcrumb Seperator | Breadcrumb.tsx, showcase1.tsx |
 | `.c-hud-status` | render a heads-up display status indicator in the sidebar. | Sidebar.tsx |
-| `.c-link-interactive` | apply standard interactive link behavior with animations. | Archive.tsx, ArticlesSection.tsx, CareerSection.tsx, CaseStudies.tsx, CompanyCard.tsx, LeadershipSection.tsx, MoreFooter.tsx, OpenSourceProjects.tsx, OpenSourceSection.tsx, ShowcaseSection.tsx, showcase.tsx |
+| `.c-link-interactive` | apply standard interactive link behavior with animations. | Archive.tsx, CaseStudies.tsx, CompanyCard.tsx, LeadershipSection.tsx, OpenSourceProjects.tsx, showcase.tsx |
 | `.c-meta-strip` | align multiple `.c-meta-item` elements horizontally. | EraDetail.tsx |
 | `.c-meta-strip .c-meta-item` | format individual pieces of metadata. | EraDetail.tsx |
 | `.tooltip-trigger` | attach hover interactions for glossary tooltips. | None |
@@ -31,7 +34,7 @@
 | :--- | :--- | :--- |
 | `.action-link` | for project actions, this formats the links | LabDetail.tsx |
 | `.action-link .action-prefix` | be an icon or text prefix for action links. | LabDetail.tsx |
-| `.gold-spacer` | gold space for separating sections | Home.tsx |
+| `.gold-spacer` | gold space for separating sections | None |
 | `.project-actions` | Under the open source title, we need to display websites, tags and the like | LabDetail.tsx |
 | `.project-meta-top` | Shows Role and stack in grey box with gold boarder | ShowcaseDetail.tsx |
 | `.project-meta-top .meta-item` | format individual pieces of metadata. | None |
@@ -55,11 +58,11 @@
 | `.modal-row-split-gap` | internal utility classes to handle flexbox behaviors, wrapping, and scrolling within specific modal nodes. | LinkModal.tsx |
 | `.modal-scroll-y` | internal utility classes to handle flexbox behaviors, wrapping, and scrolling within specific modal nodes. | LinkModal.tsx |
 | `.modal-txt-wrap` | internal utility classes to handle flexbox behaviors, wrapping, and scrolling within specific modal nodes. | LinkModal.tsx |
-| `.mt-15px` | apply exact pixel-based margin-top values. | OpenSourceSection.tsx |
-| `.mt-5px` | apply exact pixel-based margin-top values. | EraDetail.tsx |
+| `.mt-15px` | apply exact pixel-based margin-top values. | None |
+| `.mt-5px` | apply exact pixel-based margin-top values. | None |
 | `.mt-60px` | apply exact pixel-based margin-top values. | LabDetail.tsx |
 | `.mt-8px` | apply exact pixel-based margin-top values. | OpenSourceProjects.tsx |
-| `.no-decor` | strip standard element decorations. | Archive.tsx, Articles.tsx, CareerSection.tsx, OpenSourceSection.tsx |
+| `.no-decor` | strip standard element decorations. | Archive.tsx, Articles.tsx, CompanyCard.tsx |
 | `.pd-2rm` | apply a 2rem padding utility. | LinkModal.tsx |
 | `.row-align-top` | force flex rows to align top and justify space-between. | OpenSourceProjects.tsx |
 | `.row-justify-sb` | force flex rows to align top and justify space-between. | OpenSourceProjects.tsx |
@@ -68,8 +71,21 @@
 
 | Class Path | Description | Files Using Tag |
 | :--- | :--- | :--- |
-| `.c-btn` | the standard interactive button component. | Contact.tsx, EraDetail.tsx, Home.tsx, LabDetail.tsx, ShowcaseDetail.tsx, case-study.tsx |
-| `.c-contact-form` | the main wrapper for the contact form. | Contact.tsx |
+| `.c-btn` | the standard interactive button component. | ContactSection.tsx, EraDetail.tsx, LabDetail.tsx, ShowcaseDetail.tsx, case-study.tsx |
+| `.c-contact` | *No description provided.* | ContactSection.tsx |
+| `.c-contact-actions` | *No description provided.* | ContactSection.tsx |
+| `.c-contact-copy` | *No description provided.* | ContactSection.tsx |
+| `.c-contact-copy-feedback` | *No description provided.* | ContactSection.tsx |
+| `.c-contact-direct` | *No description provided.* | None |
+| `.c-contact-email-button` | *No description provided.* | ContactSection.tsx |
+| `.c-contact-form` | the main wrapper for the contact form. | ContactSection.tsx |
+| `.c-contact-form .c-btn` | *No description provided.* | ContactSection.tsx |
+| `.c-contact-form .c-contact-error` | *No description provided.* | ContactSection.tsx |
+| `.c-contact-form .c-contact-success` | *No description provided.* | ContactSection.tsx |
+| `.c-contact-header` | *No description provided.* | ContactSection.tsx |
+| `.c-contact-header .home-section-title` | *No description provided.* | ContactSection.tsx |
+| `.c-contact-panel` | *No description provided.* | ContactSection.tsx |
+| `.c-contact-socials` | *No description provided.* | ContactSection.tsx |
 
 ## _modals.sass
 
@@ -130,7 +146,7 @@
 | :--- | :--- | :--- |
 | `.sidebar` | manage the specific styling, layout, and list structure of the global sidebar. | NavBarLinks.tsx, Sidebar.tsx, SidebarLinks.tsx |
 | `.sidebar-avatar` | manage the specific styling, layout, and list structure of the global sidebar. | Sidebar.tsx |
-| `.sidebar-li` | manage the specific styling, layout, and list structure of the global sidebar. | SidebarLinks.tsx |
+| `.sidebar-focus` | *No description provided.* | Sidebar.tsx |
 | `.sidebar-logo` | manage the specific styling, layout, and list structure of the global sidebar. | Sidebar.tsx |
 | `.sidebar-subtitle` | manage the specific styling, layout, and list structure of the global sidebar. | Sidebar.tsx |
 | `.sidebar-title` | manage the specific styling, layout, and list structure of the global sidebar. | Sidebar.tsx |
@@ -140,8 +156,10 @@
 
 | Class Path | Description | Files Using Tag |
 | :--- | :--- | :--- |
-| `.tag` | shared tag control style. | Articles.tsx, CompanyCard.tsx, EraDetail.tsx, OpenSourceSection.tsx, Tags.tsx, UptimeModal.tsx |
+| `.tag` | shared tag control style. | Articles.tsx, ArticlesSection.tsx, Home.tsx, Tags.tsx, UptimeModal.tsx |
 | `.tag-wrapper` | a container for tags | LabDetail.tsx, Tags.tsx |
+| `.tag.c-topic-tag` | *No description provided.* | ArticlesSection.tsx, Home.tsx, Tags.tsx |
+| `.tag.c-topic-tag.c-topic-tag--concept` | *No description provided.* | Home.tsx, Tags.tsx |
 
 ## _case.sass
 
@@ -159,21 +177,21 @@
 | :--- | :--- | :--- |
 | `.c-prose-container` | constrain and format long-form markdown/text content. | LabDetail.tsx |
 | `.f-breadcrumb-active` | style the text of the currently active breadcrumb. | Breadcrumb.tsx |
-| `.f-clr-accent` | apply the primary accent color to text. | ArticlesSection.tsx, CareerSection.tsx, EraDetail.tsx, MoreFooter.tsx, OpenSourceSection.tsx, ShowcaseSection.tsx |
+| `.f-clr-accent` | apply the primary accent color to text. | EraDetail.tsx |
 | `.f-clr-main` | apply the primary text color. | CaseStudies.tsx, showcase.tsx |
-| `.f-clr-muted` | apply a muted or secondary color to text. | CareerSection.tsx, CompanyCard.tsx, OpenSourceSection.tsx, showcase.tsx |
+| `.f-clr-muted` | apply a muted or secondary color to text. | showcase.tsx |
 | `.f-font-mono` | force a monospaced font family for technical data or labels. | LinkModal.tsx, UptimeModal.tsx |
 | `.f-gold-bullet` | render list items with a custom gold bullet point. | LeadershipSection.tsx, ShowcaseDetail.tsx |
-| `.f-hd-md` | apply medium and extra-small font sizes for headings. | CareerSection.tsx, CaseStudies.tsx, CompanyCard.tsx, showcase.tsx |
-| `.f-hd-xs` | apply medium and extra-small font sizes for headings. | OpenSourceSection.tsx |
-| `.f-label-mono` | force a monospaced font family for technical data or labels. | ArticlesSection.tsx, CareerSection.tsx, EraDetail.tsx, LeadershipSection.tsx, MoreFooter.tsx, OpenSourceSection.tsx, ShowcaseSection.tsx |
+| `.f-hd-md` | apply medium and extra-small font sizes for headings. | CaseStudies.tsx, showcase.tsx |
+| `.f-hd-xs` | apply medium and extra-small font sizes for headings. | None |
+| `.f-label-mono` | force a monospaced font family for technical data or labels. | EraDetail.tsx, LeadershipSection.tsx |
 | `.f-md-meta` | apply font sizing specifically optimized for metadata. | LinkModal.tsx, UptimeModal.tsx |
 | `.f-meta-xs` | apply font sizing specifically optimized for metadata. | Archive.tsx, CaseStudies.tsx, OpenSourceProjects.tsx, showcase.tsx |
-| `.f-mono-muted` | force a monospaced font family for technical data or labels. | ArticlesSection.tsx |
+| `.f-mono-muted` | force a monospaced font family for technical data or labels. | None |
 | `.f-mt-1` | apply typographic margin-top values. | LabDetail.tsx |
 | `.f-mt-2` | apply typographic margin-top values. | LabDetail.tsx |
 | `.f-mt-4` | apply typographic margin-top values. | LabDetail.tsx |
-| `.f-no-decor` | strip standard browser text decoration (like underlines). | LinkModal.tsx |
+| `.f-no-decor` | strip standard browser text decoration (like underlines). | CareerSection.tsx, LinkModal.tsx, OpenSourceSection.tsx, ShowcaseSection.tsx |
 | `.f-text-gold` | apply the gold accent color strictly to text nodes. | UptimeModal.tsx |
 | `.f-text-gold-value` | apply the gold accent color strictly to text nodes. | UptimeModal.tsx |
 
@@ -196,14 +214,14 @@
 | `.l-era-header .brand-box .external-link` | style links that leave the site. | EraDetail.tsx |
 | `.l-expansion-viewport` | handle the layout for expandable drawer components. | LeadershipSection.tsx |
 | `.l-expansion-viewport.is-open` | trigger the expanded state and associated animations. | LeadershipSection.tsx |
-| `.l-grid-2` | generate 2-column and 3-column CSS grid layouts. | Archive.tsx, Articles.tsx, ArticlesSection.tsx, LeadershipSection.tsx, OpenSourceProjects.tsx, OpenSourceSection.tsx, ShowcaseDetail.tsx |
-| `.l-grid-3` | generate 2-column and 3-column CSS grid layouts. | LeadershipSection.tsx, ShowcaseSection.tsx |
+| `.l-grid-2` | generate 2-column and 3-column CSS grid layouts. | Archive.tsx, Articles.tsx, LeadershipSection.tsx, OpenSourceProjects.tsx, OpenSourceSection.tsx, ShowcaseDetail.tsx |
+| `.l-grid-3` | generate 2-column and 3-column CSS grid layouts. | LeadershipSection.tsx |
 | `.l-grid-3 .l-grid-3.leadership-controls` | handle the specific layout requirements for the leadership view. | LeadershipSection.tsx |
 | `.l-hero-intro` | structure the primary introduction/hero section. | Sidebar.tsx |
 | `.l-leadership-node` | handle layout for specific leadership tree or chart nodes. | LeadershipSection.tsx |
 | `.l-leadership-section` | handle layout for specific leadership tree or chart nodes. | LeadershipSection.tsx |
-| `.l-scroll-y` | apply vertical scrolling to a container, mapping to `overflow-y-auto`. | app.tsx |
-| `.l-showcase-grid` | dictate the grid layout for technical showcases. | ArticlesSection.tsx, CareerSection.tsx, CaseStudies.tsx, Era.tsx, Home.tsx, OpenSourceProjects.tsx, OpenSourceSection.tsx, ShowcaseSection.tsx, showcase.tsx |
+| `.l-scroll-y` | apply vertical scrolling to a container, mapping to `overflow-y-auto`. | SidebarLinks.tsx, app.tsx |
+| `.l-showcase-grid` | dictate the grid layout for technical showcases. | ArticlesSection.tsx, CareerSection.tsx, CaseStudies.tsx, ContactSection.tsx, Era.tsx, OpenSourceProjects.tsx, OpenSourceSection.tsx, ShowcaseSection.tsx, showcase.tsx |
 | `.l-showcase-layout` | dictate the grid layout for technical showcases. | ShowcaseDetail.tsx |
 
 ## _shell.sass
@@ -211,6 +229,49 @@
 | Class Path | Description | Files Using Tag |
 | :--- | :--- | :--- |
 | `.l-shell` | the foundational application shell containing the sidebar and main content. | app.tsx |
+
+## main.sass
+
+| Class Path | Description | Files Using Tag |
+| :--- | :--- | :--- |
+| `.c-art-row + .c-art-row .home-article-entry` | *No description provided.* | ArticlesSection.tsx |
+| `.c-more-link` | *No description provided.* | MoreFooter.tsx |
+| `.c-more-link .l-scroll-y.l-scroll-home` | *No description provided.* | None |
+| `.home-article-copy` | *No description provided.* | ArticlesSection.tsx |
+| `.home-article-copy .c-art-row` | *No description provided.* | ArticlesSection.tsx |
+| `.home-article-entry` | *No description provided.* | ArticlesSection.tsx |
+| `.home-article-list` | *No description provided.* | ArticlesSection.tsx |
+| `.home-article-meta` | *No description provided.* | ArticlesSection.tsx |
+| `.home-article-tags` | *No description provided.* | ArticlesSection.tsx |
+| `.home-article-tags .tag` | *No description provided.* | ArticlesSection.tsx |
+| `.home-card-grid` | *No description provided.* | CareerSection.tsx, OpenSourceSection.tsx |
+| `.home-card-grid .c-art-row .card` | *No description provided.* | None |
+| `.home-card-grid .card` | *No description provided.* | CareerSection.tsx, OpenSourceSection.tsx |
+| `.home-card-grid .card .home-card-meta` | *No description provided.* | CareerSection.tsx, OpenSourceSection.tsx |
+| `.home-card-grid .card .tag-wrapper` | *No description provided.* | None |
+| `.home-career-card-heading` | *No description provided.* | CareerSection.tsx |
+| `.home-career-card-heading .home-career-company` | *No description provided.* | CareerSection.tsx |
+| `.home-career-grid` | *No description provided.* | CareerSection.tsx |
+| `.home-career-grid .card` | *No description provided.* | CareerSection.tsx |
+| `.home-content > .l-showcase-grid` | *No description provided.* | None |
+| `.home-open-source-grid` | *No description provided.* | OpenSourceSection.tsx |
+| `.home-open-source-grid .card` | *No description provided.* | OpenSourceSection.tsx |
+| `.home-preview-label` | *No description provided.* | ArticlesSection.tsx |
+| `.home-preview-label .home-article-entry` | *No description provided.* | ArticlesSection.tsx |
+| `.home-preview-label .home-article-meta` | *No description provided.* | ArticlesSection.tsx |
+| `.home-section-heading` | *No description provided.* | ArticlesSection.tsx, CareerSection.tsx, OpenSourceSection.tsx, ShowcaseSection.tsx |
+| `.home-section-heading .home-section-title` | *No description provided.* | ArticlesSection.tsx, CareerSection.tsx, OpenSourceSection.tsx, ShowcaseSection.tsx |
+| `.home-section-title` | *No description provided.* | ArticlesSection.tsx, CareerSection.tsx, ContactSection.tsx, OpenSourceSection.tsx, ShowcaseSection.tsx |
+| `.home-showcase-card` | *No description provided.* | ShowcaseSection.tsx |
+| `.home-showcase-card .tag-wrapper` | *No description provided.* | None |
+| `.home-showcase-list` | *No description provided.* | ShowcaseSection.tsx |
+| `.home-showcase-outcome` | *No description provided.* | ShowcaseSection.tsx |
+| `.home-tag-key` | *No description provided.* | Home.tsx |
+| `.home-tag-key .tag` | *No description provided.* | Home.tsx |
+| `.home-tag-key-label` | *No description provided.* | Home.tsx |
+| `.site-colophon` | *No description provided.* | Home.tsx |
+| `.site-colophon .c-archive-link` | *No description provided.* | Home.tsx |
+| `.site-colophon .prose-engine p` | *No description provided.* | Home.tsx |
 
 ## _navigation.sass
 
@@ -223,7 +284,10 @@
 | `.l-mobile-topbar` | apply mobile-specific navigation layouts. | NavBar.tsx |
 | `.l-nav-container` | structure the top navigation and its link elements. | NavBar.tsx |
 | `.l-nav-links` | structure the top navigation and its link elements. | NavBarLinks.tsx, SidebarLinks.tsx |
-| `.l-nav-links.show` | shows the navigation links | NavBarLinks.tsx |
-| `.l-nav-links.show .line` | highlight the active link | None |
+| `.l-nav-links.show` | *No description provided.* | NavBarLinks.tsx |
+| `.l-nav-links.show .line` | *No description provided.* | None |
+| `.l-nav-links.show a` | *No description provided.* | NavBarLinks.tsx |
+| `.l-nav-links.show.active` | *No description provided.* | None |
+| `.l-nav-links.show.active .line` | *No description provided.* | None |
 | `.l-social-links` | lay out social media icons/links horizontally. | Sidebar.tsx |
 

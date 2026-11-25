@@ -12,14 +12,15 @@ export default function Home() {
     <div>
       <Breadcrumb path="#/ERA" />
       <section id="eras" className="l-showcase-grid">
-        <Header title='Career' subtitle="My Professional career so far" />
+        <div className="c-career-page-heading">
+          <Header title='Career' subtitle="My professional career so far" />
+          <span>20+ years engineering</span>
+        </div>
         {eras.map((era) => (
-          <EraEntry key={era.id} era={era} />
+          <CompanyCard key={era.id} era={era} />
         ))}
       </section>
       <FooterCounter count={eras.length} />
     </div>
   )
 }
-
-const EraEntry = ({ era }) => (<CompanyCard era={era} />)

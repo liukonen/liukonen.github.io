@@ -8,7 +8,7 @@
   "eras": [
 {
       "id": "NM",
-      "year": "2021 — PRES",
+      "year": "2021 — Present",
       "logoUrl": "https://liukonen.dev/archive/share/img/200/NM.webp",
       "company": "Northwestern Mutual",
       "website": "https://www.northwesternmutual.com/",
@@ -18,14 +18,16 @@
       "description": "Rebuilding legacy backend systems, writing automated test suites, building secure internal AI tools, and driving internal technical education through conference talks.",
       "tech": [
         "Java",
-        "Node",
+        "Node.js",
         "React",
         "Flowable",
         "Drools",
         "Playwright",
         "AWS",
-        "Kubernetes",
-        "LLM Tools",
+        "Kubernetes"
+      ],
+      "concepts": [
+        "LLM Tooling",
         "Prompt Engineering",
         "AI Token Optimization"
       ],
@@ -55,9 +57,9 @@
         "T-SQL",
         "Docker",
         "Sitecore",
-        "CICD",
         "Selenium"
       ],
+      "concepts": ["CI/CD"],
       "long_description": [
         "Platform Migration Layer: Designed and wrote a custom facade-based bridge architecture for a major e-commerce search migration. Kept full backward compatibility with the old system intact, cutting the estimated timeline by ~50% and allowing a safe, phased rollout.",
         "DevOps Environment Automation: Owned the move to containerize our internal tools. Wrote Docker environment-as-code setup scripts that completely stopped configuration drift and cut new developer setup times from 2.5 days down to ~4 hours.",
@@ -178,10 +180,10 @@
   ],
   "labs": {
     "Html_Text_Editor": {
-      "title": "Html Text Editor",
+      "title": "HTML Text Editor",
       "description": "A consolidated, browser-based toolkit providing a unified interface for common text transformations, code formatting, and data manipulation.",
       "image": "img/card/htmledit.webp",
-      "long_description": "I developed an advanced text editor for custom work. It started as console and winform applications, then evolved into a single web-based app, and now it's a PWA. It can load files from your desktop and save them in the browser cache or as a download.",
+      "long_description": "I developed an advanced text editor for custom work. It started as console and Windows Forms applications, then evolved into a single web app, and now it's a PWA. It can load files from your desktop and save them in the browser cache or as a download.",
       "buttons": [
         {
           "type": "Website",
@@ -193,11 +195,13 @@
         }
       ],
       "tech": [
-        "PWA",
-        "Javascript",
+        "JavaScript",
+        "Bootstrap"
+      ],
+      "concepts": [
+        "Progressive Web Apps (PWA)",
         "Text Manipulation",
-        "Bootstrap",
-        "Brewoser Utilitiy"
+        "Browser Utility"
       ],
       "repo": "htmlTextEditor",
       "branch": "master"
@@ -219,8 +223,11 @@
       ],
       "tech": [
         "C#",
-        "Winforms",
-        "MEF Plugin Architecture",
+        "Windows Forms",
+        "Managed Extensibility Framework (MEF)"
+      ],
+      "concepts": [
+        "Plugin Architecture",
         "REST APIs",
         "Notification Icon",
         "Direct DLL calls"
@@ -230,7 +237,7 @@
     },
     "Tic_Tac_Math": {
       "title": "Tic Tac Math",
-      "description": "A simple math tic tac toe game to teach children basic math.",
+      "description": "A tic-tac-toe game that teaches children basic arithmetic.",
       "long_description": "Back in school around 2003 or 04, I developed a Tic Tac Toe game using Visual Basic 6 and Microsoft Agents for input and output. Recently, I found the original source code and rewrote it in .NET, consolidating the logic into a single program with options to switch math types (divide, multiply, add, and subtract). As a side project during some time off, I converted the game to JavaScript and HTML, and brought back the Agents and text-to-speech functionality through the browser.",
       "image": "img/card/ttm.webp",
       "buttons": [
@@ -248,22 +255,21 @@
         }
       ],
       "tech": [
-        "Javascript",
-        "Jquery",
-        "Browser TTS",
-        "Progressive Web Apps (PWA)",
+        "JavaScript",
+        "jQuery",
         "MS Agents (discontinued)",
         "Microsoft TTS",
         "Visual Basic 6",
-        "Visual Basic .net",
-        "Installers (nullsoft and Microsoft One Click Installer)"
+        "VB.NET",
+        "Installers (Nullsoft and ClickOnce)"
       ],
+      "concepts": ["Browser Text-to-Speech", "Progressive Web Apps (PWA)"],
       "repo": "tictacmath",
       "branch": "master"
     },
     "RiverScriptBot": {
-      "title": "RiverScriptBot",
-      "description": "A UI and NodeJS Rivescript server chatbot.",
+      "title": "RiverScript Bot",
+      "description": "A chatbot with a React UI and a Node.js server running RiveScript.",
       "long_description": "I have created several chatbots over the years, including one in Vue.js and another in Angular, as well as a REST-based bot using Rivescript and Node.js. My interest in chatbots began in the early 2000s when I worked on an AIML project that used MS Agent, TTS, and speech recognition. Later, I worked with the Alice project and presented a version of my project at the MMAC Be The Spark tour, which utilized Microsoft cognitive services and a vocal chatbot capable of detecting and translating on the fly. I recently migrated the AIML code to RiveScript to create this chatbot.",
       "image": "img/card/chat.webp",
       "buttons": [
@@ -282,12 +288,11 @@
       ],
       "tech": [
         "React",
-        "Node.JS",
-        "SASS",
-        "API REST calls",
-        "CI/CD",
+        "Node.js",
+        "Sass",
         "RiveScript"
       ],
+      "concepts": ["REST APIs", "CI/CD"],
       "repo": "RiverScriptBackend",
       "branch": "Main"
     },
@@ -605,32 +610,28 @@
   ],
   "sidebar": [
     {
-      "id": "SHOWCASE",
+      "label": "Showcase",
       "path": "#/TECH_SHOWCASE"
     },
     {
-      "id": "CASE_STUDIES",
+      "label": "Case Studies",
       "path": "#/CASE_STUDIES"
     },
     {
-      "id": "WRITEUPS",
+      "label": "Writeups",
       "path": "#/ARTICLES"
     },
     {
-      "id": "OPEN_SOURCE",
+      "label": "Open Source",
       "path": "#/OPEN_SOURCE_PROJECTS"
     },
     {
-      "id": "CAREER",
+      "label": "Career",
       "path": "#/ERA"
     },
     {
-      "id": "CONTACT",
-      "path": "#/CONTACT"
-    },
-    {
-      "id": "ARCHIVE",
-      "path": "#/ARCHIVE"
+      "label": "Contact",
+      "path": "#contact"
     }
   ],
   "leadership": {

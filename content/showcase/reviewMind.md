@@ -1,8 +1,9 @@
 ---
-title: ReviewMind -  Mining Meaning from Customer Chaos
-role: Lead Solutions Architect /  Technical Lead
+title: ReviewMind — Mining Meaning from Customer Chaos
+role: Lead Solutions Architect / Technical Lead
 impact: Unlocked previously unusable customer data and transformed it into actionable product intelligence.
-tech: DotNet, Docker, SqlLite, Unstructured Data Processing, NLP (Sentiment Analysis & Keyword Extraction), Semantic Search
+tech: .NET, Docker, SQLite
+concepts: Unstructured Data Processing, NLP (Sentiment Analysis & Keyword Extraction), Semantic Search
 specs:
   Language: DotNet
   NLP_Engine: Java-based academic model (Docker)

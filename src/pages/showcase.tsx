@@ -7,7 +7,7 @@ import Tags from '../components/Tags'
 export default function Showcase() {
   return (
   <section>
-    <Breadcrumb path="#/SHOWCASE" />
+    <Breadcrumb path="#/showcase" />
         <Header title='Showcase' subtitle="Larger projects I Architected, Managed, and Led" />
     <div className="l-showcase-grid">
     {Object.entries(showcaseData).map(([title, item]) => (
@@ -18,7 +18,7 @@ export default function Showcase() {
 
         <span className="f-hd-md f-clr-main c-link-interactive">{item.impact}</span>
         <p className="f-clr-muted">Role: {item.role} </p>
-        <Tags tags={item.tags} />
+        <Tags tags={item.tags} concepts={item.concepts} />
       </div>
     ))}
     </div>

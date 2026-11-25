@@ -5,12 +5,12 @@ import { Navigation } from './components/NavBar'
 import isMobile from './services/isMobile'
 import UptimeModal from './components/UptimeModal'
 import {ImageModal} from './components/ImageModal'
+import { parseRoute } from './routes'
 
 const Home = lazy(() => import('./pages/Home'))
 const OpenSourceProjects = lazy(() => import('./pages/OpenSourceProjects'))
 const LabDetail = lazy(() => import('./pages/LabDetail'))
 const Archive = lazy(() => import('./pages/Archive'))
-const Contact = lazy(() => import('./pages/Contact'))
 const EraDetail = lazy(() => import('./pages/EraDetail'))
 const Era = lazy(() => import('./pages/Era'))
 const Articles = lazy(() => import('./pages/Articles'))
@@ -23,6 +23,8 @@ const CaseStudy = lazy(() => import('./pages/case-study'))
 export default function App() {
   const [route, setRoute] = useState(location.hash || '#/')
   const [modalSrc, setModalSrc] = useState<string | null>(null)
+  const { path, param } = parseRoute(route)
+  const isContactRoute = path === 'CONTACT' && !param
 
   const routes = {
     '/': Home,
@@ -32,18 +34,6 @@ export default function App() {
     '/ERA': Era,
     '/ARTICLES': Articles,
     '/CASE_STUDIES': CaseStudies,
-    '/CONTACT': Contact,
-   }
-
-   const parseRoute = (route:string) => {
-    const clean = route.replace('#', '')
-    const parts = clean.split('/').filter(Boolean)
-
-    return {
-      path: parts[0] || '',
-      param: parts[1] || null,
-      full: clean
-    }
    }
 
    const matchDynamic = (path: string, param: string | null) => {
@@ -58,7 +48,7 @@ export default function App() {
 
    
    const renderContent = () => {
-    const { path, param } = parseRoute(route)
+    if (isContactRoute) return <Home contactHash={route} />
     const dynamic = matchDynamic(path, param)
     if (dynamic) return dynamic
     const Page = routes[`/${path}` as keyof typeof routes] || Home
@@ -91,14 +81,14 @@ export default function App() {
     }
   }, [])
   useEffect(() => {
-    const contentArea = document.querySelector('.l-scroll-y')
-    
     const handleHash = () => {
-
       const newRoute = location.hash || '#/'
-      window.scrollTo(0, 0)
-
-      contentArea?.scrollTo(0,0)
+      const next = parseRoute(newRoute)
+      if (next.path !== 'CONTACT' || next.param) {
+        const top: ScrollToOptions = { top: 0, behavior: 'instant' }
+        window.scrollTo(top)
+        document.querySelector('.l-scroll-y')?.scrollTo(top)
+      }
       setRoute(newRoute)
     }
 
@@ -113,7 +103,7 @@ export default function App() {
       {isMobileDevice  && <Navigation />}
       
       <Sidebar currentRoute={route} />
-      <main className="l-scroll-y" key={route}>
+      <main className={`l-scroll-y${path === '' || isContactRoute ? ' l-scroll-home' : ''}`} key={isContactRoute ? '#/' : route}>
         <Suspense fallback={null}>
         {renderContent()}
         </Suspense>

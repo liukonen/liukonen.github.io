@@ -1,7 +1,12 @@
 import { useState, useEffect } from 'preact/hooks';
 
-export default function ShowcaseDetail({ id }) {
-  const [showcase, setShowcase] = useState(null);
+type ShowcaseData = {
+  title: string; impact: string; role: string; tech: string; content: string;
+  concepts?: string; hasCaseStudy: boolean; specs?: Record<string, string>; features?: Record<string, string>;
+};
+
+export default function ShowcaseDetail({ id }: Readonly<{ id: string }>) {
+  const [showcase, setShowcase] = useState<ShowcaseData | null>(null);
 
   useEffect(() => {
     fetch(`/showcase/${id}.json`)
@@ -23,6 +28,7 @@ export default function ShowcaseDetail({ id }) {
         <div className="project-meta-top">
           <div className="c-meta-item"><strong>ROLE:</strong> {showcase.role}</div>
           <div className="c-meta-item"><strong>STACK:</strong> {showcase.tech}</div>
+          {showcase.concepts && <div className="c-meta-item"><strong>CONCEPTS:</strong> {showcase.concepts}</div>}
         </div>
       </header>
 

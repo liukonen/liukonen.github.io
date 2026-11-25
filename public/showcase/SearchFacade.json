@@ -1,8 +1,9 @@
 {
-  "title": "SearchFacade - One contract. Two engines. Zero risk",
+  "title": "Search Facade — One Contract, Two Engines, Zero Risk",
   "role": "Senior Software Engineer / Solutions Architect",
   "impact": "Cut delivery time by over 50% while eliminating rollout risk through instant, feature-flagged provider switching.",
-  "tech": "DotNet, Angular, Selenium, Azure CICD",
+  "tech": ".NET, Angular, Selenium, Azure",
+  "concepts": "Feature Flags, CI/CD",
   "weight": "1",
   "specs": {
     "frontend": "Angular",

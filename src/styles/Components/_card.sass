@@ -34,10 +34,50 @@
 /// Company Card that has second row of content
 .comp-card
   @extend %card-core-rules
+  border-color: $alpha-gold-40
+  background: $bg-surface
+  &:hover
+    border-color: $alpha-gold-code
   h4
     @include top-buffer-10    
-  div
+  > .tag-wrapper
     margin-top: $m3
+
+.c-career-card-heading
+  display: flex
+  flex-wrap: wrap
+  align-items: baseline
+  justify-content: space-between
+  gap: 0.5rem
+  margin-top: 0
+  .c-career-company
+    color: $gold-accent
+    font-family: $font-mono
+    font-size: 0.875rem
+    font-weight: $fw600
+  time
+    color: $text-tertiary
+    font-family: $font-mono
+    font-size: 0.75rem
+
+.c-career-page-heading
+  display: flex
+  align-items: flex-start
+  justify-content: space-between
+  gap: 1rem
+  header
+    margin: 0
+  > span
+    color: $text-tertiary
+    font-family: $font-mono
+    font-size: 0.75rem
+    white-space: nowrap
+    padding-top: 0.75rem
+  @media (max-width: 560px)
+    flex-direction: column
+    gap: 0
+    > span
+      padding-top: 0
 
 /// ==========================================================================
 /// BENTO SURFACE

@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'preact/hooks'
 import Breadcrumb from '../components/Breadcrumb'
 
-export default function CaseStudy({ id }) {
-  const [study, setStudy] = useState(null)
+type StudyData = { title: string; impact: string; role: string; tech: string; content: string }
+
+export default function CaseStudy({ id }: Readonly<{ id: string }>) {
+  const [study, setStudy] = useState<StudyData | null>(null)
 
   useEffect(() => {
     fetch(`/case-studies/${id}.json`).then(r => r.json()).then(setStudy)

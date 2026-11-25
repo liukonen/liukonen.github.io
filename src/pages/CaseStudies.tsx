@@ -18,7 +18,7 @@ export default function Showcase() {
 
         <span class="f-hd-md f-clr-main c-link-interactive">{item.impact}</span>
         <p>Role: {item.role}</p>
-        <Tags tags={item.tags} />
+         <Tags tags={item.tags} concepts={item.concepts} />
       </div>
     
     ))}

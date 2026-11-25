@@ -1,6 +1,7 @@
 @use '../shared' as *
 /// horizontal layout container specifically for article lists.
 .c-art-row
+  display: block
   align-items: center
   gap: $m3
   padding: 12px 0
@@ -8,6 +9,8 @@
   border-bottom: 1px solid $border-subtle
   color: $text-muted
   transition: color $transition-primary
+  &:hover
+    color: $text-main
 
 
 /// render a heads-up display status indicator in the sidebar.
