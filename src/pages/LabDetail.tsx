@@ -55,7 +55,7 @@ export default function LabDetail({ id }: Readonly<{ id: string }>) {
       </section>
 
       <button 
-        className="c-btn mt-60px" 
+        className="c-btn c-page-action mt-60px"
         onClick={() => window.location.hash = '#/OPEN_SOURCE_PROJECTS'}
       >
         ← RETURN_TO_LAB

@@ -60,7 +60,7 @@ export default function ShowcaseDetail({ id }: Readonly<{ id: string }>) {
 
           <section>
             {showcase.hasCaseStudy && (
-              <button className="c-btn" onClick={() => window.location.hash = `#/CASE_STUDIES/${id}`}>
+              <button className="c-btn c-page-action" onClick={() => window.location.hash = `#/CASE_STUDIES/${id}`}>
                 READ_CASE_STUDY
               </button>
             )}

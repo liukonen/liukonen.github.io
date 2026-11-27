@@ -66,7 +66,7 @@ export default function EraDetail({ id }: Readonly<{ id: string }>) {
         </section>
 
         <footer>
-          <button onClick={() => window.history.back()} className="c-btn">
+          <button onClick={() => window.history.back()} className="c-btn c-page-action">
             RETURN_TO_TIMELINE
           </button>
         </footer>

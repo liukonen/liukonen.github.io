@@ -296,6 +296,89 @@ header
     border-left: 0
     border-top: 1px solid $alpha-gold-20
 
+.c-page-card-grid
+  display: grid
+  gap: fluid(16, 24)
+  &--two
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+    @media (max-width: $max-width-content)
+      grid-template-columns: 1fr
+
+.c-page-card-list
+  display: grid
+  gap: 1rem
+  margin-bottom: 2rem
+
+.c-page-card
+  display: block
+  margin-bottom: 0
+  padding: fluid(18, 24)
+  border: 1px solid $alpha-gold-30
+  border-radius: 8px
+  background: $bg-surface
+  color: $text-main
+  text-decoration: none
+  transition: border-color $transition-primary, background-color $transition-primary, transform $transition-primary
+  &:hover, &:focus-visible
+    border-color: $alpha-gold-40
+    background: #1d1e20
+    transform: translateY(-2px)
+  h2
+    margin: 0.5rem 0
+    color: $text-main
+    font-size: 1.1rem
+    line-height: 1.4
+  p
+    margin: 0.5rem 0
+    color: $text-muted
+    font-size: 0.95rem
+  .tag-wrapper
+    margin-top: 0.75rem
+
+.c-page-showcase-card
+  display: grid
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr)
+  align-items: center
+  gap: 1.5rem
+  h2
+    color: $gold-accent
+    font-size: 0.95rem
+  @media (max-width: 700px)
+    grid-template-columns: 1fr
+
+.c-page-showcase-outcome
+  padding-left: 1.25rem
+  border-left: 1px solid $alpha-gold-20
+  > span
+    color: $gold-accent
+    font-family: $font-mono
+    font-size: 0.7rem
+    text-transform: uppercase
+    letter-spacing: 0.06em
+  @media (max-width: 700px)
+    padding: 0.75rem 0 0
+    border-left: 0
+    border-top: 1px solid $alpha-gold-20
+
+.c-page-action
+  min-height: 2.75rem
+  padding: 0.7rem 1rem
+  border: 1px solid $alpha-gold-40
+  border-radius: 6px
+  background: rgba($gold-accent, 0.1)
+  color: $gold-accent
+  font-family: $font-mono
+  font-size: 0.8rem
+  font-weight: $fw600
+  letter-spacing: 0.02em
+  text-decoration: none
+  transition: background-color $transition-primary, border-color $transition-primary, color $transition-primary, transform $transition-primary
+  &:hover, &:focus-visible
+    border-color: $gold-accent
+    background: $gold-accent
+    color: $bg-deep
+    transform: translateY(-2px)
+
 .home-article-list
   overflow: hidden
   border: 1px solid $alpha-text-main-10
@@ -326,6 +409,11 @@ header
     transition: color $transition-primary
   .c-art-row:hover & h3
     color: $gold-accent
+  .home-article-description
+    margin: 0.4rem 0 0
+    color: $text-muted
+    font-size: 0.85rem
+    line-height: 1.55
 
 .home-article-tags
   display: flex

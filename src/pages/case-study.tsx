@@ -29,7 +29,7 @@ export default function CaseStudy({ id }: Readonly<{ id: string }>) {
       <section className="technical-body" dangerouslySetInnerHTML={{ __html: study.content }} />
 
       <footer>
-        <a href={`#/TECH_SHOWCASE/${id}`} className="c-btn">// EXIT_TO_SUMMARY</a>
+        <a href={`#/TECH_SHOWCASE/${id}`} className="c-btn c-page-action">// EXIT_TO_SUMMARY</a>
       </footer>
     </article>
   )

@@ -9,9 +9,21 @@ import OpenSourceSection from "../components/OpenSourceSection"
 import ArticlesSection from "../components/ArticlesSection"
 import ShowcaseSection from "../components/ShowcaseSection"
 import ContactSection from "../components/ContactSection"
+import { consumeHomeSection } from "../services/homeNavigation"
+import { useEffect } from "preact/hooks"
 
 export default function Home({ contactHash }: Readonly<{ contactHash?: string }>) {
   const { profile, eras, labs } = portfolioData
+
+  useEffect(() => {
+    const sectionId = consumeHomeSection()
+    if (!sectionId) return
+
+    requestAnimationFrame(() => {
+      document.getElementById(sectionId)?.scrollIntoView({ block: 'start', behavior: 'instant' })
+    })
+  }, [])
+
   return (
     <div className="home-content">
       <Breadcrumb path="#/" />
