@@ -67,7 +67,7 @@ const ArticleEntry = ({ article, onArticleClick, isMobile }: {
       <div className="home-article-copy">
         <h3>{article.title}</h3>
         {article.tag_list.length > 0 && <div className="home-article-tags">
-          {article.tag_list.slice(0, 4).map(tag => <span className="tag c-topic-tag" key={tag}>{tag}</span>)}
+          {article.tag_list.slice(0, 4).map(tag => <span className="tag c-topic-tag c-topic-tag--concept" key={tag}>{tag}</span>)}
         </div>}
       </div>
       <div className="home-article-meta">

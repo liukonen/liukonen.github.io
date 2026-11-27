@@ -6,7 +6,7 @@ import Header from '../components/Header'
 import LinkModal from '../components/LinkModal'
 import useIsMobile from '../services/isMobile'
 
-import BoxArrowUpRight from '~icons/bi/box-arrow-up-right'
+import ArrowRight from '~icons/bi/arrow-right'
 
 
 export default function Articles() {
@@ -44,34 +44,40 @@ export default function Articles() {
       {loading ? (
         <div>PULLING_REMOTE_DATA...</div>
       ) : (
-        <div className="l-art-grid l-grid-2">
+        <div className="home-article-list">
           {articles.map(article => (
-            <div key={article.id} className="art-card">
-              <a 
-                href={article.url} 
-                target={isMobile ? "_blank" : undefined}
-                onClick={(e) => handleArticleClick(e as any, article)}
-                className={"no-decor"}
-              >
-                <h3><BoxArrowUpRight /> {article.title}</h3>
-              </a>
-              <p>{article.description}</p>
-              <div>
-                {article.tag_list.map(tag => <span key={tag} className="tag">#{tag}</span>)}
+            <a
+              key={article.id}
+              href={article.url}
+              target={isMobile ? "_blank" : undefined}
+              rel={isMobile ? "noopener noreferrer" : undefined}
+              onClick={(e) => handleArticleClick(e as any, article)}
+              className="c-art-row"
+            >
+              <div className="home-article-entry">
+                <div className="home-article-copy">
+                  <h3>{article.title}</h3>
+                  <p className="home-article-description">{article.description}</p>
+                  {article.tag_list.length > 0 && (
+                    <div className="home-article-tags">
+                      {article.tag_list.map(tag => <span key={tag} className="tag c-topic-tag c-topic-tag--concept">{tag}</span>)}
+                    </div>
+                  )}
+                </div>
+                <div className="home-article-meta">
+                  <time dateTime={article.published_at}>
+                    {new Date(article.published_at).toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: '2-digit' })}
+                  </time>
+                  <span>{article.reading_time_minutes} min read</span>
+                  <span className="home-preview-label">Preview <ArrowRight aria-hidden="true" /></span>
+                </div>
               </div>
-              <div className="date">
-                {new Date(article.published_at).toLocaleDateString('en-US', { 
-                  month: 'short', 
-                  day: '2-digit', 
-                  year: '2-digit' 
-                })} • {article.reading_time_minutes} min read
-              </div>
-            </div>
+            </a>
           ))}
-          <FooterCounter count={articles.length} />
         </div>
 
       )}
+      {!loading && <FooterCounter count={articles.length} />}
 
       <LinkModal articleId={modalArticleId || undefined} onClose={() => {
         setModalArticleId(null)
